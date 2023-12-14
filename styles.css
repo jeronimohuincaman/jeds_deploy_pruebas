@@ -36741,6 +36741,7 @@ html {
 /*!**********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].rules[0].oneOf[0].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].rules[0].oneOf[0].use[2]!./node_modules/resolve-url-loader/index.js??ruleSet[1].rules[6].rules[1].use[0]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[6].rules[1].use[1]!./src/@fuse/styles/main.scss?ngGlobalStyle ***!
   \**********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/* 1. Components */
 /* ----------------------------------------------------------------------------------------------------- */
 /*  @ Example viewer
 /* ----------------------------------------------------------------------------------------------------- */
@@ -36890,6 +36891,7 @@ textarea [data-autocompleted] {
   background-color: transparent !important;
 }
 
+/* 2. Overrides */
 /* -------------------------------------------------------------------------- */
 /*  @ Overlay
 /* -------------------------------------------------------------------------- */
@@ -38599,9 +38601,6 @@ pre[class*=language-] .hljs-link {
   --tw-bg-opacity: 1 !important;
   background-color: rgb(51 65 85 / var(--tw-bg-opacity)) !important;
 }
-
-/* 1. Components */
-/* 2. Overrides */
 /*!******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].rules[0].oneOf[0].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].rules[0].oneOf[0].use[2]!./node_modules/resolve-url-loader/index.js??ruleSet[1].rules[6].rules[1].use[0]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[6].rules[1].use[1]!./src/styles/styles.scss?ngGlobalStyle ***!
   \******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
@@ -38984,6 +38983,9 @@ body.light mat-option:nth-child(odd):hover {
 .mb-5 {
     margin-bottom: 1.25rem !important;
 }
+.mb-8 {
+    margin-bottom: 2rem !important;
+}
 .mb-px {
     margin-bottom: 1px !important;
 }
@@ -39179,6 +39181,9 @@ body.light mat-option:nth-child(odd):hover {
 .max-h-400 {
     max-height: 100rem !important;
 }
+.max-h-\[150px\] {
+    max-height: 150px !important;
+}
 .max-h-\[75vh\] {
     max-height: 75vh !important;
 }
@@ -39346,6 +39351,9 @@ body.light mat-option:nth-child(odd):hover {
 }
 .cursor-pointer {
     cursor: pointer !important;
+}
+.resize-none {
+    resize: none !important;
 }
 .resize {
     resize: both !important;
@@ -40593,6 +40601,9 @@ body.light mat-option:nth-child(odd):hover {
     .sm\:w-140 {
         width: 35rem !important;
     }
+    .sm\:w-192 {
+        width: 48rem !important;
+    }
     .sm\:w-80 {
         width: 20rem !important;
     }
@@ -40610,6 +40621,9 @@ body.light mat-option:nth-child(odd):hover {
     }
     .sm\:min-w-140 {
         min-width: 35rem !important;
+    }
+    .sm\:min-w-192 {
+        min-width: 48rem !important;
     }
     .sm\:min-w-30 {
         min-width: 7.5rem !important;
