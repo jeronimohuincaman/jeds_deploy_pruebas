@@ -7052,7 +7052,7 @@ __webpack_require__.r(__webpack_exports__);
 const appConfig = {
   providers: [(0,_angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_5__.provideAnimations)(), (0,_angular_common_http__WEBPACK_IMPORTED_MODULE_6__.provideHttpClient)(), (0,_angular_router__WEBPACK_IMPORTED_MODULE_7__.provideRouter)(app_app_routes__WEBPACK_IMPORTED_MODULE_1__.appRoutes, (0,_angular_router__WEBPACK_IMPORTED_MODULE_7__.withPreloading)(_angular_router__WEBPACK_IMPORTED_MODULE_7__.PreloadAllModules), (0,_angular_router__WEBPACK_IMPORTED_MODULE_7__.withInMemoryScrolling)({
     scrollPositionRestoration: 'enabled'
-  })),
+  }), (0,_angular_router__WEBPACK_IMPORTED_MODULE_7__.withHashLocation)()),
   // Material Date Adapter
   {
     provide: _angular_material_core__WEBPACK_IMPORTED_MODULE_8__.DateAdapter,
