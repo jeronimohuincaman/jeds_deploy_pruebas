@@ -1,7 +1,7 @@
 "use strict";
 (self["webpackChunkfuse"] = self["webpackChunkfuse"] || []).push([["default-src_fuse_components_alert_index_ts"],{
 
-/***/ 8214:
+/***/ 98214:
 /*!*******************************************************!*\
   !*** ./src/@fuse/components/alert/alert.component.ts ***!
   \*******************************************************/
@@ -11,17 +11,17 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "FuseAlertComponent": () => (/* binding */ FuseAlertComponent)
 /* harmony export */ });
-/* harmony import */ var _angular_cdk_coercion__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/cdk/coercion */ 867);
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/common */ 6477);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/core */ 6839);
-/* harmony import */ var _angular_material_button__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @angular/material/button */ 3677);
-/* harmony import */ var _angular_material_icon__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @angular/material/icon */ 9941);
-/* harmony import */ var _fuse_animations__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @fuse/animations */ 8288);
-/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! rxjs */ 228);
-/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! rxjs */ 116);
-/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! rxjs */ 8951);
-/* harmony import */ var _fuse_components_alert_alert_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @fuse/components/alert/alert.service */ 6589);
-/* harmony import */ var _fuse_services_utils_utils_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @fuse/services/utils/utils.service */ 6922);
+/* harmony import */ var _angular_cdk_coercion__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/cdk/coercion */ 70867);
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/common */ 86477);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/core */ 86839);
+/* harmony import */ var _angular_material_button__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @angular/material/button */ 83677);
+/* harmony import */ var _angular_material_icon__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @angular/material/icon */ 69941);
+/* harmony import */ var _fuse_animations__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @fuse/animations */ 28288);
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! rxjs */ 80228);
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! rxjs */ 60116);
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! rxjs */ 68951);
+/* harmony import */ var _fuse_components_alert_alert_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @fuse/components/alert/alert.service */ 76589);
+/* harmony import */ var _fuse_services_utils_utils_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @fuse/services/utils/utils.service */ 66922);
 
 
 
@@ -366,7 +366,7 @@ FuseAlertComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_3
 
 /***/ }),
 
-/***/ 6589:
+/***/ 76589:
 /*!*****************************************************!*\
   !*** ./src/@fuse/components/alert/alert.service.ts ***!
   \*****************************************************/
@@ -376,8 +376,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "FuseAlertService": () => (/* binding */ FuseAlertService)
 /* harmony export */ });
-/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! rxjs */ 6067);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ 6839);
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! rxjs */ 26067);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ 86839);
 
 
 class FuseAlertService {
@@ -445,7 +445,7 @@ FuseAlertService.ɵprov = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_1_
 
 /***/ }),
 
-/***/ 786:
+/***/ 50786:
 /*!***************************************************!*\
   !*** ./src/@fuse/components/alert/alert.types.ts ***!
   \***************************************************/
@@ -456,7 +456,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ 7483:
+/***/ 17483:
 /*!*********************************************!*\
   !*** ./src/@fuse/components/alert/index.ts ***!
   \*********************************************/
@@ -467,12 +467,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "FuseAlertComponent": () => (/* reexport safe */ _fuse_components_alert_public_api__WEBPACK_IMPORTED_MODULE_0__.FuseAlertComponent),
 /* harmony export */   "FuseAlertService": () => (/* reexport safe */ _fuse_components_alert_public_api__WEBPACK_IMPORTED_MODULE_0__.FuseAlertService)
 /* harmony export */ });
-/* harmony import */ var _fuse_components_alert_public_api__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @fuse/components/alert/public-api */ 9849);
+/* harmony import */ var _fuse_components_alert_public_api__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @fuse/components/alert/public-api */ 99849);
 
 
 /***/ }),
 
-/***/ 9849:
+/***/ 99849:
 /*!**************************************************!*\
   !*** ./src/@fuse/components/alert/public-api.ts ***!
   \**************************************************/
@@ -483,9 +483,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "FuseAlertComponent": () => (/* reexport safe */ _fuse_components_alert_alert_component__WEBPACK_IMPORTED_MODULE_0__.FuseAlertComponent),
 /* harmony export */   "FuseAlertService": () => (/* reexport safe */ _fuse_components_alert_alert_service__WEBPACK_IMPORTED_MODULE_1__.FuseAlertService)
 /* harmony export */ });
-/* harmony import */ var _fuse_components_alert_alert_component__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @fuse/components/alert/alert.component */ 8214);
-/* harmony import */ var _fuse_components_alert_alert_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @fuse/components/alert/alert.service */ 6589);
-/* harmony import */ var _fuse_components_alert_alert_types__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @fuse/components/alert/alert.types */ 786);
+/* harmony import */ var _fuse_components_alert_alert_component__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @fuse/components/alert/alert.component */ 98214);
+/* harmony import */ var _fuse_components_alert_alert_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @fuse/components/alert/alert.service */ 76589);
+/* harmony import */ var _fuse_components_alert_alert_types__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @fuse/components/alert/alert.types */ 50786);
 
 
 

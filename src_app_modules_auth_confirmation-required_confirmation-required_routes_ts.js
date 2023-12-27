@@ -1,7 +1,7 @@
 "use strict";
 (self["webpackChunkfuse"] = self["webpackChunkfuse"] || []).push([["src_app_modules_auth_confirmation-required_confirmation-required_routes_ts"],{
 
-/***/ 4500:
+/***/ 14500:
 /*!***************************************************************************************!*\
   !*** ./src/app/modules/auth/confirmation-required/confirmation-required.component.ts ***!
   \***************************************************************************************/
@@ -11,9 +11,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "AuthConfirmationRequiredComponent": () => (/* binding */ AuthConfirmationRequiredComponent)
 /* harmony export */ });
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ 6679);
-/* harmony import */ var _fuse_animations__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @fuse/animations */ 8288);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ 6839);
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ 86679);
+/* harmony import */ var _fuse_animations__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @fuse/animations */ 28288);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ 86839);
 
 
 
@@ -96,7 +96,7 @@ AuthConfirmationRequiredComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IM
 
 /***/ }),
 
-/***/ 2250:
+/***/ 42250:
 /*!************************************************************************************!*\
   !*** ./src/app/modules/auth/confirmation-required/confirmation-required.routes.ts ***!
   \************************************************************************************/
@@ -106,7 +106,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var app_modules_auth_confirmation_required_confirmation_required_component__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! app/modules/auth/confirmation-required/confirmation-required.component */ 4500);
+/* harmony import */ var app_modules_auth_confirmation_required_confirmation_required_component__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! app/modules/auth/confirmation-required/confirmation-required.component */ 14500);
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ([{
   path: '',
