@@ -316,9 +316,6 @@ function TablaDinamicaComponent_tr_5_Template(rf, ctx) {
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelement"](0, "tr", 28);
   }
 }
-const _c1 = function () {
-  return [5, 10, 25, 50];
-};
 class TablaDinamicaComponent {
   // * para que el padre te diga cuando recargar la tabla
   eventoUpdate() {
@@ -340,7 +337,7 @@ class TablaDinamicaComponent {
     this._userService = _userService;
     this.filterLikeCache = '';
     this.PageIndex = 0;
-    this.Pagesize = 10;
+    this.pageSizeOptions = [5, 10, 25, 50, 100];
     this.cache = true;
     //------------------------- Filters
     this.filterComponent = undefined;
@@ -422,10 +419,8 @@ class TablaDinamicaComponent {
     this.agregarEstilos();
   }
   ngAfterViewInit() {
-    if (!!this.dataSource) {
-      this.dataSource.paginator = this.paginator;
-      this.dataSource.sort = this.sort;
-    }
+    this.dataSource.paginator = this.paginator;
+    this.dataSource.sort = this.sort;
     this.sort.sortChange.subscribe(sort => {
       if (this.renderType == 'ssp') {
         let column = sort.active;
@@ -529,10 +524,19 @@ class TablaDinamicaComponent {
         this.filterDataSource = r.data.result ? r.data.result : r.data;
         this.dataSource = new _angular_material_table__WEBPACK_IMPORTED_MODULE_5__.MatTableDataSource(r.data.result ? r.data.result : r.data);
         this.paginator.length = r.totalCount;
-        this.paginator.pageIndex = this.PageIndex;
         if (this.renderType == 'client') {
+          //  Si el paginado es por front...
+          this.paginator.length = this.filterDataSource.length; //... Se le asigna el largo de la cantidad de elementos que deveulva el back.
           this.dataSource.paginator = this.paginator;
           this.dataSource.sort = this.sort;
+        }
+        this.paginator.pageIndex = this.PageIndex;
+        //Asigna el tamaño de pagina dinamicamente segun el porcentaje de 5, 10, 25, 50, 100
+        this.pageSizeOptions = [Math.ceil(this.paginator.length * 0.05), Math.ceil(this.paginator.length * 0.1), Math.ceil(this.paginator.length * 0.25), Math.ceil(this.paginator.length * 0.5), this.paginator.length];
+        //Eliminamos elementos repetidos
+        this.pageSizeOptions = [...new Set(this.pageSizeOptions)];
+        if (!this.Pagesize) {
+          this.Pagesize = this.pageSizeOptions[2];
         }
       });
     }
@@ -719,7 +723,7 @@ TablaDinamicaComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODU
     functionEmitter: "functionEmitter"
   },
   decls: 8,
-  vars: 9,
+  vars: 8,
   consts: [[1, "w-full", "cont-with-paginator", "mat-elevation-z8", "mb-22"], [1, "w-full", "max-h-[75vh]", "overflow-y-auto", "mt-2"], ["mat-table", "", "matSort", "", 1, "w-full", "smm:px-0", "smm:mt-0", "mt-4", "small-table-text", "mb-8", "cont-with-paginator", 3, "dataSource"], [3, "matColumnDef", 4, "ngFor", "ngForOf"], ["mat-header-row", "", 4, "matHeaderRowDef", "matHeaderRowDefSticky"], ["mat-row", "", 4, "matRowDef", "matRowDefColumns"], [1, "bg-slate-800", "rounded-b-2xl"], ["aria-label", "Select page of users", 1, "w-full", "rounded-b-lg", "shadow-md", "mat-paginator-sticky", "fixed", 3, "pageSizeOptions", "pageIndex", "pageSize", "page"], [3, "matColumnDef"], [4, "ngIf", "ngIfElse"], ["botones", ""], ["mat-header-cell", "", "mat-sort-header", "", 4, "matHeaderCellDef"], ["mat-cell", "", 4, "matCellDef"], ["mat-header-cell", "", "mat-sort-header", ""], ["mat-cell", ""], [1, "mobile-label"], [1, "descripcion"], ["mat-header-cell", "", 4, "matHeaderCellDef"], ["mat-header-cell", ""], [1, ""], ["color", "accent", "matTooltipPosition", "above", "matTooltipClass", "tooltip-class", "matTooltipShowDelay", "100", "matTooltipHideDelay", "100", "TooltipTouchGestures", "auto", 3, "disabled", "mat-icon-button", "mat-button", "ngClass", "matTooltip", "click", 4, "ngFor", "ngForOf"], ["color", "accent", "matTooltipPosition", "above", "matTooltipClass", "tooltip-class", "matTooltipShowDelay", "100", "matTooltipHideDelay", "100", "TooltipTouchGestures", "auto", 3, "disabled", "ngClass", "matTooltip", "click"], ["origin", ""], ["class", "dark:bg-primary dark:rounded-full", 3, "svgIcon", 4, "ngIf"], ["class", "dark:bg-primary dark:rounded-full text-center justify-center items-center", 3, "svgIcon", 4, "ngIf"], [1, "dark:bg-primary", "dark:rounded-full", 3, "svgIcon"], [1, "dark:bg-primary", "dark:rounded-full", "text-center", "justify-center", "items-center", 3, "svgIcon"], ["mat-header-row", ""], ["mat-row", ""]],
   template: function TablaDinamicaComponent_Template(rf, ctx) {
     if (rf & 1) {
@@ -744,7 +748,7 @@ TablaDinamicaComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODU
       _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](1);
       _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵproperty"]("matRowDefColumns", ctx.columnsParams);
       _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](2);
-      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵproperty"]("pageSizeOptions", _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵpureFunction0"](8, _c1))("pageIndex", ctx.PageIndex)("pageSize", ctx.Pagesize);
+      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵproperty"]("pageSizeOptions", ctx.pageSizeOptions)("pageIndex", ctx.PageIndex)("pageSize", ctx.Pagesize);
     }
   },
   dependencies: [_angular_common__WEBPACK_IMPORTED_MODULE_10__.NgClass, _angular_common__WEBPACK_IMPORTED_MODULE_10__.NgForOf, _angular_common__WEBPACK_IMPORTED_MODULE_10__.NgIf, _angular_material_table__WEBPACK_IMPORTED_MODULE_5__.MatTable, _angular_material_table__WEBPACK_IMPORTED_MODULE_5__.MatHeaderCellDef, _angular_material_table__WEBPACK_IMPORTED_MODULE_5__.MatHeaderRowDef, _angular_material_table__WEBPACK_IMPORTED_MODULE_5__.MatColumnDef, _angular_material_table__WEBPACK_IMPORTED_MODULE_5__.MatCellDef, _angular_material_table__WEBPACK_IMPORTED_MODULE_5__.MatRowDef, _angular_material_table__WEBPACK_IMPORTED_MODULE_5__.MatHeaderCell, _angular_material_table__WEBPACK_IMPORTED_MODULE_5__.MatCell, _angular_material_table__WEBPACK_IMPORTED_MODULE_5__.MatHeaderRow, _angular_material_table__WEBPACK_IMPORTED_MODULE_5__.MatRow, _angular_material_sort__WEBPACK_IMPORTED_MODULE_9__.MatSort, _angular_material_sort__WEBPACK_IMPORTED_MODULE_9__.MatSortHeader, _angular_material_paginator__WEBPACK_IMPORTED_MODULE_8__.MatPaginator, _angular_material_icon__WEBPACK_IMPORTED_MODULE_11__.MatIcon, _angular_material_tooltip__WEBPACK_IMPORTED_MODULE_12__.MatTooltip, _shared_pipes_activo_pipe__WEBPACK_IMPORTED_MODULE_3__.ActivoPipe],
