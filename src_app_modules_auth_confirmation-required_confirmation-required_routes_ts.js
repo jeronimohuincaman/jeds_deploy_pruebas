@@ -1,7 +1,7 @@
 "use strict";
 (self["webpackChunkfuse"] = self["webpackChunkfuse"] || []).push([["src_app_modules_auth_confirmation-required_confirmation-required_routes_ts"],{
 
-/***/ 30696:
+/***/ 14500:
 /*!***************************************************************************************!*\
   !*** ./src/app/modules/auth/confirmation-required/confirmation-required.component.ts ***!
   \***************************************************************************************/
@@ -9,12 +9,11 @@
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   AuthConfirmationRequiredComponent: () => (/* binding */ AuthConfirmationRequiredComponent)
+/* harmony export */   "AuthConfirmationRequiredComponent": () => (/* binding */ AuthConfirmationRequiredComponent)
 /* harmony export */ });
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ 27947);
-/* harmony import */ var _fuse_animations__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @fuse/animations */ 94748);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ 61699);
-var _class;
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ 86679);
+/* harmony import */ var _fuse_animations__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @fuse/animations */ 28288);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ 86839);
 
 
 
@@ -27,12 +26,11 @@ class AuthConfirmationRequiredComponent {
    */
   constructor() {}
 }
-_class = AuthConfirmationRequiredComponent;
-_class.ɵfac = function AuthConfirmationRequiredComponent_Factory(t) {
-  return new (t || _class)();
+AuthConfirmationRequiredComponent.ɵfac = function AuthConfirmationRequiredComponent_Factory(t) {
+  return new (t || AuthConfirmationRequiredComponent)();
 };
-_class.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineComponent"]({
-  type: _class,
+AuthConfirmationRequiredComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineComponent"]({
+  type: AuthConfirmationRequiredComponent,
   selectors: [["auth-confirmation-required"]],
   standalone: true,
   features: [_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵStandaloneFeature"]],
@@ -98,7 +96,7 @@ _class.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefi
 
 /***/ }),
 
-/***/ 92381:
+/***/ 42250:
 /*!************************************************************************************!*\
   !*** ./src/app/modules/auth/confirmation-required/confirmation-required.routes.ts ***!
   \************************************************************************************/
@@ -108,7 +106,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var app_modules_auth_confirmation_required_confirmation_required_component__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! app/modules/auth/confirmation-required/confirmation-required.component */ 30696);
+/* harmony import */ var app_modules_auth_confirmation_required_confirmation_required_component__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! app/modules/auth/confirmation-required/confirmation-required.component */ 14500);
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ([{
   path: '',

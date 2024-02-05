@@ -1,7 +1,7 @@
 "use strict";
 (self["webpackChunkfuse"] = self["webpackChunkfuse"] || []).push([["src_app_modules_auth_reset-password_reset-password_routes_ts"],{
 
-/***/ 91781:
+/***/ 69036:
 /*!***************************************!*\
   !*** ./src/@fuse/validators/index.ts ***!
   \***************************************/
@@ -9,14 +9,14 @@
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   FuseValidators: () => (/* reexport safe */ _fuse_validators_public_api__WEBPACK_IMPORTED_MODULE_0__.FuseValidators)
+/* harmony export */   "FuseValidators": () => (/* reexport safe */ _fuse_validators_public_api__WEBPACK_IMPORTED_MODULE_0__.FuseValidators)
 /* harmony export */ });
-/* harmony import */ var _fuse_validators_public_api__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @fuse/validators/public-api */ 35325);
+/* harmony import */ var _fuse_validators_public_api__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @fuse/validators/public-api */ 46749);
 
 
 /***/ }),
 
-/***/ 35325:
+/***/ 46749:
 /*!********************************************!*\
   !*** ./src/@fuse/validators/public-api.ts ***!
   \********************************************/
@@ -24,14 +24,14 @@ __webpack_require__.r(__webpack_exports__);
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   FuseValidators: () => (/* reexport safe */ _fuse_validators_validators__WEBPACK_IMPORTED_MODULE_0__.FuseValidators)
+/* harmony export */   "FuseValidators": () => (/* reexport safe */ _fuse_validators_validators__WEBPACK_IMPORTED_MODULE_0__.FuseValidators)
 /* harmony export */ });
-/* harmony import */ var _fuse_validators_validators__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @fuse/validators/validators */ 39796);
+/* harmony import */ var _fuse_validators_validators__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @fuse/validators/validators */ 14485);
 
 
 /***/ }),
 
-/***/ 39796:
+/***/ 14485:
 /*!********************************************!*\
   !*** ./src/@fuse/validators/validators.ts ***!
   \********************************************/
@@ -39,7 +39,7 @@ __webpack_require__.r(__webpack_exports__);
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   FuseValidators: () => (/* binding */ FuseValidators)
+/* harmony export */   "FuseValidators": () => (/* binding */ FuseValidators)
 /* harmony export */ });
 class FuseValidators {
   /**
@@ -89,7 +89,7 @@ class FuseValidators {
 
 /***/ }),
 
-/***/ 82816:
+/***/ 2471:
 /*!*************************************************************************!*\
   !*** ./src/app/modules/auth/reset-password/reset-password.component.ts ***!
   \*************************************************************************/
@@ -97,23 +97,22 @@ class FuseValidators {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   AuthResetPasswordComponent: () => (/* binding */ AuthResetPasswordComponent)
+/* harmony export */   "AuthResetPasswordComponent": () => (/* binding */ AuthResetPasswordComponent)
 /* harmony export */ });
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/common */ 26575);
-/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/forms */ 28849);
-/* harmony import */ var _angular_material_button__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @angular/material/button */ 90895);
-/* harmony import */ var _angular_material_form_field__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/material/form-field */ 51333);
-/* harmony import */ var _angular_material_icon__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @angular/material/icon */ 86515);
-/* harmony import */ var _angular_material_input__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @angular/material/input */ 10026);
-/* harmony import */ var _angular_material_progress_spinner__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @angular/material/progress-spinner */ 33910);
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @angular/router */ 27947);
-/* harmony import */ var _fuse_animations__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @fuse/animations */ 94748);
-/* harmony import */ var _fuse_components_alert__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @fuse/components/alert */ 98184);
-/* harmony import */ var _fuse_validators__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @fuse/validators */ 91781);
-/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! rxjs */ 17474);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/core */ 61699);
-/* harmony import */ var app_core_auth_auth_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! app/core/auth/auth.service */ 54855);
-var _class;
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/common */ 86477);
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/forms */ 69542);
+/* harmony import */ var _angular_material_button__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @angular/material/button */ 83677);
+/* harmony import */ var _angular_material_form_field__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/material/form-field */ 98750);
+/* harmony import */ var _angular_material_icon__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @angular/material/icon */ 69941);
+/* harmony import */ var _angular_material_input__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @angular/material/input */ 4322);
+/* harmony import */ var _angular_material_progress_spinner__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @angular/material/progress-spinner */ 15312);
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @angular/router */ 86679);
+/* harmony import */ var _fuse_animations__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @fuse/animations */ 28288);
+/* harmony import */ var _fuse_components_alert__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @fuse/components/alert */ 17483);
+/* harmony import */ var _fuse_validators__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @fuse/validators */ 69036);
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! rxjs */ 32313);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/core */ 86839);
+/* harmony import */ var app_core_auth_auth_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! app/core/auth/auth.service */ 88951);
 
 
 
@@ -278,12 +277,11 @@ class AuthResetPasswordComponent {
     });
   }
 }
-_class = AuthResetPasswordComponent;
-_class.ɵfac = function AuthResetPasswordComponent_Factory(t) {
-  return new (t || _class)(_angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdirectiveInject"](app_core_auth_auth_service__WEBPACK_IMPORTED_MODULE_3__.AuthService), _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdirectiveInject"](_angular_forms__WEBPACK_IMPORTED_MODULE_5__.UntypedFormBuilder));
+AuthResetPasswordComponent.ɵfac = function AuthResetPasswordComponent_Factory(t) {
+  return new (t || AuthResetPasswordComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdirectiveInject"](app_core_auth_auth_service__WEBPACK_IMPORTED_MODULE_3__.AuthService), _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdirectiveInject"](_angular_forms__WEBPACK_IMPORTED_MODULE_5__.UntypedFormBuilder));
 };
-_class.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdefineComponent"]({
-  type: _class,
+AuthResetPasswordComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdefineComponent"]({
+  type: AuthResetPasswordComponent,
   selectors: [["auth-reset-password"]],
   viewQuery: function AuthResetPasswordComponent_Query(rf, ctx) {
     if (rf & 1) {
@@ -427,7 +425,7 @@ _class.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdefi
 
 /***/ }),
 
-/***/ 54023:
+/***/ 95666:
 /*!**********************************************************************!*\
   !*** ./src/app/modules/auth/reset-password/reset-password.routes.ts ***!
   \**********************************************************************/
@@ -437,7 +435,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var app_modules_auth_reset_password_reset_password_component__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! app/modules/auth/reset-password/reset-password.component */ 82816);
+/* harmony import */ var app_modules_auth_reset_password_reset_password_component__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! app/modules/auth/reset-password/reset-password.component */ 2471);
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ([{
   path: '',
