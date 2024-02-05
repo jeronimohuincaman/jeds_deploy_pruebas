@@ -1,0 +1,318 @@
+"use strict";
+(self["webpackChunkfuse"] = self["webpackChunkfuse"] || []).push([["common"],{
+
+/***/ 89566:
+/*!*************************************************!*\
+  !*** ./src/app/shared/constants/date-format.ts ***!
+  \*************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   MY_DATE_FORMATS: () => (/* binding */ MY_DATE_FORMATS)
+/* harmony export */ });
+// @Component({
+//     selector: 'app-save-stock-inicial',
+//     templateUrl: './save.component.html',
+//     styleUrls: ['./save.component.scss'],
+//     providers: [{ provide: MAT_DATE_FORMATS, useValue: MY_DATE_FORMATS }]
+// })
+/**
+ * Formateo de fecha
+ */
+const MY_DATE_FORMATS = {
+  parse: {
+    dateInput: 'mm/dd/yyyy'
+  },
+  display: {
+    dateInput: 'dd/MM/yyyy',
+    monthYearLabel: 'MMM yyyy',
+    dateA11yLabel: 'LL',
+    monthYearA11yLabel: 'MMMM yyyy'
+  }
+};
+
+/***/ }),
+
+/***/ 60331:
+/*!***************************************************************!*\
+  !*** ./node_modules/rxjs/dist/esm/internal/firstValueFrom.js ***!
+  \***************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   firstValueFrom: () => (/* binding */ firstValueFrom)
+/* harmony export */ });
+/* harmony import */ var _util_EmptyError__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./util/EmptyError */ 31967);
+/* harmony import */ var _Subscriber__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Subscriber */ 58559);
+
+
+function firstValueFrom(source, config) {
+  const hasConfig = typeof config === 'object';
+  return new Promise((resolve, reject) => {
+    const subscriber = new _Subscriber__WEBPACK_IMPORTED_MODULE_0__.SafeSubscriber({
+      next: value => {
+        resolve(value);
+        subscriber.unsubscribe();
+      },
+      error: reject,
+      complete: () => {
+        if (hasConfig) {
+          resolve(config.defaultValue);
+        } else {
+          reject(new _util_EmptyError__WEBPACK_IMPORTED_MODULE_1__.EmptyError());
+        }
+      }
+    });
+    source.subscribe(subscriber);
+  });
+}
+
+/***/ }),
+
+/***/ 52484:
+/*!*************************************************************!*\
+  !*** ./node_modules/@angular/material/fesm2022/toolbar.mjs ***!
+  \*************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   MatToolbar: () => (/* binding */ MatToolbar),
+/* harmony export */   MatToolbarModule: () => (/* binding */ MatToolbarModule),
+/* harmony export */   MatToolbarRow: () => (/* binding */ MatToolbarRow),
+/* harmony export */   throwToolbarMixedModesError: () => (/* binding */ throwToolbarMixedModesError)
+/* harmony export */ });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ 61699);
+/* harmony import */ var _angular_material_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/material/core */ 55309);
+/* harmony import */ var _angular_cdk_platform__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/cdk/platform */ 73274);
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/common */ 26575);
+var _class, _class2, _class3;
+
+
+
+
+
+
+// Boilerplate for applying mixins to MatToolbar.
+/** @docs-private */
+const _c0 = ["*", [["mat-toolbar-row"]]];
+const _c1 = ["*", "mat-toolbar-row"];
+const _MatToolbarBase = (0,_angular_material_core__WEBPACK_IMPORTED_MODULE_0__.mixinColor)(class {
+  constructor(_elementRef) {
+    this._elementRef = _elementRef;
+  }
+});
+class MatToolbarRow {}
+_class = MatToolbarRow;
+_class.ɵfac = function _class_Factory(t) {
+  return new (t || _class)();
+};
+_class.ɵdir = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineDirective"]({
+  type: _class,
+  selectors: [["mat-toolbar-row"]],
+  hostAttrs: [1, "mat-toolbar-row"],
+  exportAs: ["matToolbarRow"]
+});
+(function () {
+  (typeof ngDevMode === "undefined" || ngDevMode) && _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵsetClassMetadata"](MatToolbarRow, [{
+    type: _angular_core__WEBPACK_IMPORTED_MODULE_1__.Directive,
+    args: [{
+      selector: 'mat-toolbar-row',
+      exportAs: 'matToolbarRow',
+      host: {
+        'class': 'mat-toolbar-row'
+      }
+    }]
+  }], null, null);
+})();
+class MatToolbar extends _MatToolbarBase {
+  constructor(elementRef, _platform, document) {
+    super(elementRef);
+    this._platform = _platform;
+    // TODO: make the document a required param when doing breaking changes.
+    this._document = document;
+  }
+  ngAfterViewInit() {
+    if (this._platform.isBrowser) {
+      this._checkToolbarMixedModes();
+      this._toolbarRows.changes.subscribe(() => this._checkToolbarMixedModes());
+    }
+  }
+  /**
+   * Throws an exception when developers are attempting to combine the different toolbar row modes.
+   */
+  _checkToolbarMixedModes() {
+    if (this._toolbarRows.length && (typeof ngDevMode === 'undefined' || ngDevMode)) {
+      // Check if there are any other DOM nodes that can display content but aren't inside of
+      // a <mat-toolbar-row> element.
+      const isCombinedUsage = Array.from(this._elementRef.nativeElement.childNodes).filter(node => !(node.classList && node.classList.contains('mat-toolbar-row'))).filter(node => node.nodeType !== (this._document ? this._document.COMMENT_NODE : 8)).some(node => !!(node.textContent && node.textContent.trim()));
+      if (isCombinedUsage) {
+        throwToolbarMixedModesError();
+      }
+    }
+  }
+}
+_class2 = MatToolbar;
+_class2.ɵfac = function _class2_Factory(t) {
+  return new (t || _class2)(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_1__.ElementRef), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdirectiveInject"](_angular_cdk_platform__WEBPACK_IMPORTED_MODULE_2__.Platform), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdirectiveInject"](_angular_common__WEBPACK_IMPORTED_MODULE_3__.DOCUMENT));
+};
+_class2.ɵcmp = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineComponent"]({
+  type: _class2,
+  selectors: [["mat-toolbar"]],
+  contentQueries: function _class2_ContentQueries(rf, ctx, dirIndex) {
+    if (rf & 1) {
+      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵcontentQuery"](dirIndex, MatToolbarRow, 5);
+    }
+    if (rf & 2) {
+      let _t;
+      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵqueryRefresh"](_t = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵloadQuery"]()) && (ctx._toolbarRows = _t);
+    }
+  },
+  hostAttrs: [1, "mat-toolbar"],
+  hostVars: 4,
+  hostBindings: function _class2_HostBindings(rf, ctx) {
+    if (rf & 2) {
+      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵclassProp"]("mat-toolbar-multiple-rows", ctx._toolbarRows.length > 0)("mat-toolbar-single-row", ctx._toolbarRows.length === 0);
+    }
+  },
+  inputs: {
+    color: "color"
+  },
+  exportAs: ["matToolbar"],
+  features: [_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵInheritDefinitionFeature"]],
+  ngContentSelectors: _c1,
+  decls: 2,
+  vars: 0,
+  template: function _class2_Template(rf, ctx) {
+    if (rf & 1) {
+      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵprojectionDef"](_c0);
+      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵprojection"](0);
+      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵprojection"](1, 1);
+    }
+  },
+  styles: [".cdk-high-contrast-active .mat-toolbar{outline:solid 1px}.mat-toolbar .mat-mdc-button-base.mat-unthemed{--mdc-text-button-label-text-color: inherit;--mdc-outlined-button-label-text-color: inherit}.mat-toolbar-row,.mat-toolbar-single-row{display:flex;box-sizing:border-box;padding:0 16px;width:100%;flex-direction:row;align-items:center;white-space:nowrap}.mat-toolbar-multiple-rows{display:flex;box-sizing:border-box;flex-direction:column;width:100%}"],
+  encapsulation: 2,
+  changeDetection: 0
+});
+(function () {
+  (typeof ngDevMode === "undefined" || ngDevMode) && _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵsetClassMetadata"](MatToolbar, [{
+    type: _angular_core__WEBPACK_IMPORTED_MODULE_1__.Component,
+    args: [{
+      selector: 'mat-toolbar',
+      exportAs: 'matToolbar',
+      inputs: ['color'],
+      host: {
+        'class': 'mat-toolbar',
+        '[class.mat-toolbar-multiple-rows]': '_toolbarRows.length > 0',
+        '[class.mat-toolbar-single-row]': '_toolbarRows.length === 0'
+      },
+      changeDetection: _angular_core__WEBPACK_IMPORTED_MODULE_1__.ChangeDetectionStrategy.OnPush,
+      encapsulation: _angular_core__WEBPACK_IMPORTED_MODULE_1__.ViewEncapsulation.None,
+      template: "<ng-content></ng-content>\n<ng-content select=\"mat-toolbar-row\"></ng-content>\n",
+      styles: [".cdk-high-contrast-active .mat-toolbar{outline:solid 1px}.mat-toolbar .mat-mdc-button-base.mat-unthemed{--mdc-text-button-label-text-color: inherit;--mdc-outlined-button-label-text-color: inherit}.mat-toolbar-row,.mat-toolbar-single-row{display:flex;box-sizing:border-box;padding:0 16px;width:100%;flex-direction:row;align-items:center;white-space:nowrap}.mat-toolbar-multiple-rows{display:flex;box-sizing:border-box;flex-direction:column;width:100%}"]
+    }]
+  }], function () {
+    return [{
+      type: _angular_core__WEBPACK_IMPORTED_MODULE_1__.ElementRef
+    }, {
+      type: _angular_cdk_platform__WEBPACK_IMPORTED_MODULE_2__.Platform
+    }, {
+      type: undefined,
+      decorators: [{
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_1__.Inject,
+        args: [_angular_common__WEBPACK_IMPORTED_MODULE_3__.DOCUMENT]
+      }]
+    }];
+  }, {
+    _toolbarRows: [{
+      type: _angular_core__WEBPACK_IMPORTED_MODULE_1__.ContentChildren,
+      args: [MatToolbarRow, {
+        descendants: true
+      }]
+    }]
+  });
+})();
+/**
+ * Throws an exception when attempting to combine the different toolbar row modes.
+ * @docs-private
+ */
+function throwToolbarMixedModesError() {
+  throw Error('MatToolbar: Attempting to combine different toolbar modes. ' + 'Either specify multiple `<mat-toolbar-row>` elements explicitly or just place content ' + 'inside of a `<mat-toolbar>` for a single row.');
+}
+class MatToolbarModule {}
+_class3 = MatToolbarModule;
+_class3.ɵfac = function _class3_Factory(t) {
+  return new (t || _class3)();
+};
+_class3.ɵmod = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineNgModule"]({
+  type: _class3
+});
+_class3.ɵinj = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineInjector"]({
+  imports: [_angular_material_core__WEBPACK_IMPORTED_MODULE_0__.MatCommonModule, _angular_material_core__WEBPACK_IMPORTED_MODULE_0__.MatCommonModule]
+});
+(function () {
+  (typeof ngDevMode === "undefined" || ngDevMode) && _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵsetClassMetadata"](MatToolbarModule, [{
+    type: _angular_core__WEBPACK_IMPORTED_MODULE_1__.NgModule,
+    args: [{
+      imports: [_angular_material_core__WEBPACK_IMPORTED_MODULE_0__.MatCommonModule],
+      exports: [MatToolbar, MatToolbarRow, _angular_material_core__WEBPACK_IMPORTED_MODULE_0__.MatCommonModule],
+      declarations: [MatToolbar, MatToolbarRow]
+    }]
+  }], null, null);
+})();
+
+/**
+ * Generated bundle index. Do not edit.
+ */
+
+
+
+/***/ }),
+
+/***/ 71670:
+/*!*********************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js ***!
+  \*********************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ _asyncToGenerator)
+/* harmony export */ });
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) {
+  try {
+    var info = gen[key](arg);
+    var value = info.value;
+  } catch (error) {
+    reject(error);
+    return;
+  }
+  if (info.done) {
+    resolve(value);
+  } else {
+    Promise.resolve(value).then(_next, _throw);
+  }
+}
+function _asyncToGenerator(fn) {
+  return function () {
+    var self = this,
+      args = arguments;
+    return new Promise(function (resolve, reject) {
+      var gen = fn.apply(self, args);
+      function _next(value) {
+        asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value);
+      }
+      function _throw(err) {
+        asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err);
+      }
+      _next(undefined);
+    });
+  };
+}
+
+/***/ })
+
+}]);
+//# sourceMappingURL=common.js.map
