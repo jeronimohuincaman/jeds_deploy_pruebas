@@ -210,7 +210,7 @@ AuthSignInComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_
       _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelement"](14, "img", 13);
       _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
       _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](15, "div", 14);
-      _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](16, "Iniciar Sesi\u00F3n");
+      _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](16, "Inicio de Sesi\u00F3n");
       _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
       _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtemplate"](17, AuthSignInComponent_fuse_alert_17_Template, 2, 5, "fuse-alert", 15);
       _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](18, "form", 16, 17)(20, "mat-form-field", 18)(21, "mat-label");
