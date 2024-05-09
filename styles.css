@@ -36741,7 +36741,6 @@ html {
 /*!**********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].rules[0].oneOf[0].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].rules[0].oneOf[0].use[2]!./node_modules/resolve-url-loader/index.js??ruleSet[1].rules[6].rules[1].use[0]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[6].rules[1].use[1]!./src/@fuse/styles/main.scss?ngGlobalStyle ***!
   \**********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
-/* 1. Components */
 /* ----------------------------------------------------------------------------------------------------- */
 /*  @ Example viewer
 /* ----------------------------------------------------------------------------------------------------- */
@@ -36891,7 +36890,6 @@ textarea [data-autocompleted] {
   background-color: transparent !important;
 }
 
-/* 2. Overrides */
 /* -------------------------------------------------------------------------- */
 /*  @ Overlay
 /* -------------------------------------------------------------------------- */
@@ -38601,6 +38599,9 @@ pre[class*=language-] .hljs-link {
   --tw-bg-opacity: 1 !important;
   background-color: rgb(51 65 85 / var(--tw-bg-opacity)) !important;
 }
+
+/* 1. Components */
+/* 2. Overrides */
 /*!******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].rules[0].oneOf[0].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].rules[0].oneOf[0].use[2]!./node_modules/resolve-url-loader/index.js??ruleSet[1].rules[6].rules[1].use[0]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[6].rules[1].use[1]!./src/styles/styles.scss?ngGlobalStyle ***!
   \******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
@@ -38977,8 +38978,8 @@ body.light mat-option:nth-child(odd):hover {
 .mb-18 {
     margin-bottom: 4.5rem !important;
 }
-.mb-2 {
-    margin-bottom: 0.5rem !important;
+.mb-22 {
+    margin-bottom: 5.5rem !important;
 }
 .mb-3 {
     margin-bottom: 0.75rem !important;
@@ -39171,9 +39172,6 @@ body.light mat-option:nth-child(odd):hover {
 }
 .h-8 {
     height: 2rem !important;
-}
-.h-\[150px\] {
-    height: 150px !important;
 }
 .h-full {
     height: 100% !important;
@@ -39545,9 +39543,6 @@ body.light mat-option:nth-child(odd):hover {
 .border-t {
     border-top-width: 1px !important;
 }
-.border-t-2 {
-    border-top-width: 2px !important;
-}
 .border-dashed {
     border-style: dashed !important;
 }
@@ -39569,10 +39564,6 @@ body.light mat-option:nth-child(odd):hover {
 .border-primary {
     --tw-border-opacity: 1 !important;
     border-color: rgba(var(--fuse-primary-rgb), var(--tw-border-opacity)) !important;
-}
-.border-slate-200 {
-    --tw-border-opacity: 1 !important;
-    border-color: rgb(226 232 240 / var(--tw-border-opacity)) !important;
 }
 .border-slate-300 {
     --tw-border-opacity: 1 !important;
@@ -39803,17 +39794,11 @@ body.light mat-option:nth-child(odd):hover {
 .object-center {
     object-position: center !important;
 }
-.p-1 {
-    padding: 0.25rem !important;
-}
 .p-16 {
     padding: 4rem !important;
 }
 .p-2 {
     padding: 0.5rem !important;
-}
-.p-3 {
-    padding: 0.75rem !important;
 }
 .p-4 {
     padding: 1rem !important;
@@ -39890,9 +39875,6 @@ body.light mat-option:nth-child(odd):hover {
 }
 .pb-0 {
     padding-bottom: 0px !important;
-}
-.pb-10 {
-    padding-bottom: 2.5rem !important;
 }
 .pb-4 {
     padding-bottom: 1rem !important;
@@ -40001,9 +39983,6 @@ body.light mat-option:nth-child(odd):hover {
 }
 .tracking-tight {
     letter-spacing: -0.025em !important;
-}
-.tracking-wider {
-    letter-spacing: 0.05em !important;
 }
 .text-accent {
     --tw-text-opacity: 1 !important;
@@ -40191,11 +40170,6 @@ body.light mat-option:nth-child(odd):hover {
 .shadow-sm {
     --tw-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05) !important;
     --tw-shadow-colored: 0 1px 2px 0 var(--tw-shadow-color) !important;
-    box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow) !important;
-}
-.shadow-xl {
-    --tw-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1) !important;
-    --tw-shadow-colored: 0 20px 25px -5px var(--tw-shadow-color), 0 8px 10px -6px var(--tw-shadow-color) !important;
     box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow) !important;
 }
 .outline {
@@ -40615,11 +40589,11 @@ body.light mat-option:nth-child(odd):hover {
     .sm\:w-100 {
         width: 25rem !important;
     }
-    .sm\:w-120 {
-        width: 30rem !important;
-    }
     .sm\:w-140 {
         width: 35rem !important;
+    }
+    .sm\:w-192 {
+        width: 48rem !important;
     }
     .sm\:w-80 {
         width: 20rem !important;
@@ -40636,11 +40610,11 @@ body.light mat-option:nth-child(odd):hover {
     .sm\:min-w-100 {
         min-width: 25rem !important;
     }
-    .sm\:min-w-120 {
-        min-width: 30rem !important;
-    }
     .sm\:min-w-140 {
         min-width: 35rem !important;
+    }
+    .sm\:min-w-192 {
+        min-width: 48rem !important;
     }
     .sm\:min-w-30 {
         min-width: 7.5rem !important;
@@ -40900,9 +40874,6 @@ body.light mat-option:nth-child(odd):hover {
     .lg\:px-28 {
         padding-left: 7rem !important;
         padding-right: 7rem !important;
-    }
-    .lg\:text-2xl {
-        font-size: 1.25rem !important;
     }
     .lg\:shadow {
         --tw-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1) !important;

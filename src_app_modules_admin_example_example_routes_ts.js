@@ -1,7 +1,7 @@
 "use strict";
 (self["webpackChunkfuse"] = self["webpackChunkfuse"] || []).push([["src_app_modules_admin_example_example_routes_ts"],{
 
-/***/ 11973:
+/***/ 19918:
 /*!************************************************************!*\
   !*** ./src/app/modules/admin/example/example.component.ts ***!
   \************************************************************/
@@ -9,10 +9,9 @@
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   ExampleComponent: () => (/* binding */ ExampleComponent)
+/* harmony export */   "ExampleComponent": () => (/* binding */ ExampleComponent)
 /* harmony export */ });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ 61699);
-var _class;
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ 86839);
 
 class ExampleComponent {
   /**
@@ -20,12 +19,11 @@ class ExampleComponent {
    */
   constructor() {}
 }
-_class = ExampleComponent;
-_class.ɵfac = function ExampleComponent_Factory(t) {
-  return new (t || _class)();
+ExampleComponent.ɵfac = function ExampleComponent_Factory(t) {
+  return new (t || ExampleComponent)();
 };
-_class.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
-  type: _class,
+ExampleComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
+  type: ExampleComponent,
   selectors: [["example"]],
   standalone: true,
   features: [_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵStandaloneFeature"]],
@@ -45,7 +43,7 @@ _class.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefi
 
 /***/ }),
 
-/***/ 18212:
+/***/ 72386:
 /*!*********************************************************!*\
   !*** ./src/app/modules/admin/example/example.routes.ts ***!
   \*********************************************************/
@@ -55,7 +53,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var app_modules_admin_example_example_component__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! app/modules/admin/example/example.component */ 11973);
+/* harmony import */ var app_modules_admin_example_example_component__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! app/modules/admin/example/example.component */ 19918);
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ([{
   path: '',

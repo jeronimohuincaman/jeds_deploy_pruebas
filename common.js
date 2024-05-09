@@ -1,7 +1,7 @@
 "use strict";
 (self["webpackChunkfuse"] = self["webpackChunkfuse"] || []).push([["common"],{
 
-/***/ 89566:
+/***/ 93611:
 /*!*************************************************!*\
   !*** ./src/app/shared/constants/date-format.ts ***!
   \*************************************************/
@@ -9,7 +9,7 @@
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   MY_DATE_FORMATS: () => (/* binding */ MY_DATE_FORMATS)
+/* harmony export */   "MY_DATE_FORMATS": () => (/* binding */ MY_DATE_FORMATS)
 /* harmony export */ });
 // @Component({
 //     selector: 'app-save-stock-inicial',
@@ -34,7 +34,7 @@ const MY_DATE_FORMATS = {
 
 /***/ }),
 
-/***/ 60331:
+/***/ 54363:
 /*!***************************************************************!*\
   !*** ./node_modules/rxjs/dist/esm/internal/firstValueFrom.js ***!
   \***************************************************************/
@@ -42,10 +42,10 @@ const MY_DATE_FORMATS = {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   firstValueFrom: () => (/* binding */ firstValueFrom)
+/* harmony export */   "firstValueFrom": () => (/* binding */ firstValueFrom)
 /* harmony export */ });
-/* harmony import */ var _util_EmptyError__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./util/EmptyError */ 31967);
-/* harmony import */ var _Subscriber__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Subscriber */ 58559);
+/* harmony import */ var _util_EmptyError__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./util/EmptyError */ 14423);
+/* harmony import */ var _Subscriber__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Subscriber */ 19904);
 
 
 function firstValueFrom(source, config) {
@@ -71,7 +71,7 @@ function firstValueFrom(source, config) {
 
 /***/ }),
 
-/***/ 52484:
+/***/ 46322:
 /*!*************************************************************!*\
   !*** ./node_modules/@angular/material/fesm2022/toolbar.mjs ***!
   \*************************************************************/
@@ -79,16 +79,15 @@ function firstValueFrom(source, config) {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   MatToolbar: () => (/* binding */ MatToolbar),
-/* harmony export */   MatToolbarModule: () => (/* binding */ MatToolbarModule),
-/* harmony export */   MatToolbarRow: () => (/* binding */ MatToolbarRow),
-/* harmony export */   throwToolbarMixedModesError: () => (/* binding */ throwToolbarMixedModesError)
+/* harmony export */   "MatToolbar": () => (/* binding */ MatToolbar),
+/* harmony export */   "MatToolbarModule": () => (/* binding */ MatToolbarModule),
+/* harmony export */   "MatToolbarRow": () => (/* binding */ MatToolbarRow),
+/* harmony export */   "throwToolbarMixedModesError": () => (/* binding */ throwToolbarMixedModesError)
 /* harmony export */ });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ 61699);
-/* harmony import */ var _angular_material_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/material/core */ 55309);
-/* harmony import */ var _angular_cdk_platform__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/cdk/platform */ 73274);
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/common */ 26575);
-var _class, _class2, _class3;
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ 86839);
+/* harmony import */ var _angular_material_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/material/core */ 443);
+/* harmony import */ var _angular_cdk_platform__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/cdk/platform */ 15712);
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/common */ 86477);
 
 
 
@@ -105,12 +104,11 @@ const _MatToolbarBase = (0,_angular_material_core__WEBPACK_IMPORTED_MODULE_0__.m
   }
 });
 class MatToolbarRow {}
-_class = MatToolbarRow;
-_class.ɵfac = function _class_Factory(t) {
-  return new (t || _class)();
+MatToolbarRow.ɵfac = function MatToolbarRow_Factory(t) {
+  return new (t || MatToolbarRow)();
 };
-_class.ɵdir = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineDirective"]({
-  type: _class,
+MatToolbarRow.ɵdir = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineDirective"]({
+  type: MatToolbarRow,
   selectors: [["mat-toolbar-row"]],
   hostAttrs: [1, "mat-toolbar-row"],
   exportAs: ["matToolbarRow"]
@@ -154,14 +152,13 @@ class MatToolbar extends _MatToolbarBase {
     }
   }
 }
-_class2 = MatToolbar;
-_class2.ɵfac = function _class2_Factory(t) {
-  return new (t || _class2)(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_1__.ElementRef), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdirectiveInject"](_angular_cdk_platform__WEBPACK_IMPORTED_MODULE_2__.Platform), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdirectiveInject"](_angular_common__WEBPACK_IMPORTED_MODULE_3__.DOCUMENT));
+MatToolbar.ɵfac = function MatToolbar_Factory(t) {
+  return new (t || MatToolbar)(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_1__.ElementRef), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdirectiveInject"](_angular_cdk_platform__WEBPACK_IMPORTED_MODULE_2__.Platform), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdirectiveInject"](_angular_common__WEBPACK_IMPORTED_MODULE_3__.DOCUMENT));
 };
-_class2.ɵcmp = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineComponent"]({
-  type: _class2,
+MatToolbar.ɵcmp = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineComponent"]({
+  type: MatToolbar,
   selectors: [["mat-toolbar"]],
-  contentQueries: function _class2_ContentQueries(rf, ctx, dirIndex) {
+  contentQueries: function MatToolbar_ContentQueries(rf, ctx, dirIndex) {
     if (rf & 1) {
       _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵcontentQuery"](dirIndex, MatToolbarRow, 5);
     }
@@ -172,7 +169,7 @@ _class2.ɵcmp = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵd
   },
   hostAttrs: [1, "mat-toolbar"],
   hostVars: 4,
-  hostBindings: function _class2_HostBindings(rf, ctx) {
+  hostBindings: function MatToolbar_HostBindings(rf, ctx) {
     if (rf & 2) {
       _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵclassProp"]("mat-toolbar-multiple-rows", ctx._toolbarRows.length > 0)("mat-toolbar-single-row", ctx._toolbarRows.length === 0);
     }
@@ -185,7 +182,7 @@ _class2.ɵcmp = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵd
   ngContentSelectors: _c1,
   decls: 2,
   vars: 0,
-  template: function _class2_Template(rf, ctx) {
+  template: function MatToolbar_Template(rf, ctx) {
     if (rf & 1) {
       _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵprojectionDef"](_c0);
       _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵprojection"](0);
@@ -242,14 +239,13 @@ function throwToolbarMixedModesError() {
   throw Error('MatToolbar: Attempting to combine different toolbar modes. ' + 'Either specify multiple `<mat-toolbar-row>` elements explicitly or just place content ' + 'inside of a `<mat-toolbar>` for a single row.');
 }
 class MatToolbarModule {}
-_class3 = MatToolbarModule;
-_class3.ɵfac = function _class3_Factory(t) {
-  return new (t || _class3)();
+MatToolbarModule.ɵfac = function MatToolbarModule_Factory(t) {
+  return new (t || MatToolbarModule)();
 };
-_class3.ɵmod = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineNgModule"]({
-  type: _class3
+MatToolbarModule.ɵmod = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineNgModule"]({
+  type: MatToolbarModule
 });
-_class3.ɵinj = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineInjector"]({
+MatToolbarModule.ɵinj = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineInjector"]({
   imports: [_angular_material_core__WEBPACK_IMPORTED_MODULE_0__.MatCommonModule, _angular_material_core__WEBPACK_IMPORTED_MODULE_0__.MatCommonModule]
 });
 (function () {
