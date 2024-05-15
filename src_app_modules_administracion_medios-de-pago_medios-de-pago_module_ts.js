@@ -315,7 +315,7 @@ class MediosDePagoComponent {
           error: error => {
             // Manejar el error
             console.error('Error en el servicio:', error);
-            this.alert.error("Este medio de pago no puede eliminarse. Tiene elementos asociados.");
+            this.alert.warning("Este medio de pago no puede eliminarse. Tiene elementos asociados.");
           }
         });
       }

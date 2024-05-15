@@ -126,8 +126,8 @@ class AuthSignInComponent {
   ngOnInit() {
     // Create the form
     this.signInForm = this._formBuilder.group({
-      user: ['jp', [_angular_forms__WEBPACK_IMPORTED_MODULE_4__.Validators.required]],
-      pass: ['jp', _angular_forms__WEBPACK_IMPORTED_MODULE_4__.Validators.required]
+      user: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_4__.Validators.required]],
+      pass: ['', _angular_forms__WEBPACK_IMPORTED_MODULE_4__.Validators.required]
     });
   }
   // -----------------------------------------------------------------------------------------------------

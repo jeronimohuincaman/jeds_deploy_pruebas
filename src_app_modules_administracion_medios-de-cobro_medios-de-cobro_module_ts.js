@@ -454,7 +454,7 @@ class MediosDeCobroComponent {
           error: error => {
             // Manejar el error
             console.error(error);
-            alert("Este Medio de cobro no puede eliminarse. Tiene elementos asociados.");
+            this.alert.warning("Este Medio de cobro no puede eliminarse. Tiene elementos asociados.");
           }
         });
       }

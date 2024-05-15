@@ -328,7 +328,7 @@ class FondosComponent {
           error: error => {
             // Manejar el error
             console.error(error);
-            alert("Este Fondo no puede eliminarse. Tiene elementos asociados.");
+            this.alert.warning("Este Fondo no puede eliminarse. Tiene elementos asociados.");
           }
         });
       }

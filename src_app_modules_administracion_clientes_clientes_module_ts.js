@@ -278,7 +278,7 @@ class ClientesComponent {
           error: error => {
             // Manejar el error
             console.error('Error en el servicio:', error);
-            this.alert.error("Este Cliente no puede eliminarse. Tiene elementos asociados.");
+            this.alert.warning("Este Cliente no puede eliminarse. Tiene elementos asociados.");
           }
         });
       }

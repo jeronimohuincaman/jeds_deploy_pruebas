@@ -470,7 +470,7 @@ class TiposMovimientosComponent {
           error: error => {
             // Manejar el error
             console.error(error);
-            alert("Este Tipo de movimiento no puede eliminarse. Tiene elementos asociados.");
+            this.alert.warning("Este Tipo de movimiento no puede eliminarse. Tiene elementos asociados.");
           }
         });
       }

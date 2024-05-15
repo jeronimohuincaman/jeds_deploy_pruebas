@@ -704,8 +704,9 @@ class OrdenesDeCompraComponent {
       if (res === 'confirmed') {
         this._ordenesDeCompraService.deleteOrdenDeCompra(event.params.data.codigo).subscribe({
           next: res => {
+            console.log(res);
             // Manejar la respuesta exitosa
-            alert("Orden de compra eliminado con éxito.");
+            this.alert.success("Orden de compra eliminado con éxito.");
             if (res) {
               this.tabla.renderTabla();
             }
@@ -713,7 +714,7 @@ class OrdenesDeCompraComponent {
           error: error => {
             // Manejar el error
             console.error('Error en el servicio:', error);
-            alert("Esta orden de compra no puede eliminarse. Tiene elementos asociados.");
+            this.alert.warning("Esta orden de compra no puede eliminarse. Tiene elementos asociados.");
           }
         });
       }

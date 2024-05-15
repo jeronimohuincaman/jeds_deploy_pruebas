@@ -467,7 +467,7 @@ class TratamientosComponent {
           error: error => {
             // Manejar el error
             console.error(error);
-            alert("Este Tratamiento no puede eliminarse. Tiene elementos asociados.");
+            this.alert.warning("Este Tratamiento no puede eliminarse. Tiene elementos asociados.");
           }
         });
       }

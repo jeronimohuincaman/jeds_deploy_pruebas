@@ -197,7 +197,7 @@ class ProveedoresComponent {
           error: error => {
             // Manejar el error
             console.error(error);
-            alert("Este Proveedor no puede eliminarse. Tiene elementos asociados.");
+            this.alert.warning("Este Proveedor no puede eliminarse. Tiene elementos asociados.");
           }
         });
       }
