@@ -39086,6 +39086,9 @@ body.light mat-option:nth-child(odd):hover {
 .mt-8 {
     margin-top: 2rem !important;
 }
+.mt-\[-30px\] {
+    margin-top: -30px !important;
+}
 .line-clamp-1 {
     overflow: hidden !important;
     display: -webkit-box !important;
@@ -39827,6 +39830,9 @@ body.light mat-option:nth-child(odd):hover {
 }
 .p-4 {
     padding: 1rem !important;
+}
+.p-5 {
+    padding: 1.25rem !important;
 }
 .p-6 {
     padding: 1.5rem !important;

@@ -8091,6 +8091,7 @@ class AuthService {
     this._navigationMenu = [];
     this.rutas = [];
     this.tiposArticuloPermitidos = [];
+    this.tipoCliente = [];
     this.avisado = false;
   }
   /**
@@ -8243,12 +8244,14 @@ class AuthService {
       return this.loadDatosEmpresa().pipe((0,rxjs__WEBPACK_IMPORTED_MODULE_5__.switchMap)(() => {
         return (0,rxjs__WEBPACK_IMPORTED_MODULE_6__.of)(true);
       }));
-    } else if (!this.tiposArticuloPermitidos.length) {
+    } else if (!this.tiposArticuloPermitidos.length && !this.tipoCliente.length) {
       // Si los datos de la empresa están cargados pero los tipos de artículos no, cárgalos
       this.tiposArticuloPermitidos = this.parsearTiposArticulo(this._empresa);
+      // Si los datos de la empresa están cargados pero el tipo de cliente no, cárgalos
+      this.tipoCliente = this.parsearTipoCliente(this._empresa);
       return (0,rxjs__WEBPACK_IMPORTED_MODULE_6__.of)(true);
     } else {
-      // Los datos de la empresa y los tipos de artículos ya están cargados
+      // Los datos de la empresa, tipos de artículos y cliente asociado ya están cargados
       return (0,rxjs__WEBPACK_IMPORTED_MODULE_6__.of)(true);
     }
   }
@@ -8276,6 +8279,7 @@ class AuthService {
   extractDatosEmpresa(empresa) {
     this._empresa = empresa;
     this.tiposArticuloPermitidos = this.parsearTiposArticulo(empresa);
+    this.tipoCliente = this.parsearTipoCliente(empresa);
   }
   parsearTiposArticulo(data) {
     let tiposPermitidos = [];
@@ -8289,6 +8293,13 @@ class AuthService {
       tiposPermitidos.push('servicio');
     }
     return tiposPermitidos;
+  }
+  parsearTipoCliente(data) {
+    let tipoCliente = [];
+    if (data.cliente_asociado === 1) {
+      tipoCliente.push('cliente_asociado');
+    }
+    return tipoCliente;
   }
   /**
    * Cerrar sesión
@@ -15864,7 +15875,6 @@ class AppAlertService {
     });
   }
   warning(message) {
-    console.log(message, 'warning mensaje');
     this.emitConfig.emit({
       message: message,
       type: 'warning'
@@ -15895,10 +15905,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var H_51573I145_jedstion_source_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js */ 71670);
 /* harmony import */ var environments_environment__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! environments/environment */ 92340);
 /* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! rxjs */ 76317);
-/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! rxjs */ 54363);
-/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! rxjs */ 10745);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/core */ 86839);
-/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/common/http */ 33765);
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! rxjs */ 50635);
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! rxjs */ 54363);
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! rxjs */ 10745);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/core */ 86839);
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/common/http */ 33765);
 
 
 
@@ -15918,6 +15929,7 @@ class EmpresaService {
       articulo_insumo: 0,
       articulo_producto: 0,
       articulo_servicio: 0,
+      cliente_asociado: 0,
       favicon: null
     });
     this._empresa.next({
@@ -15930,6 +15942,7 @@ class EmpresaService {
       articulo_insumo: 0,
       articulo_producto: 0,
       articulo_servicio: 0,
+      cliente_asociado: 0,
       favicon: null
     });
   }
@@ -15950,6 +15963,7 @@ class EmpresaService {
       articulo_insumo: empresaData.articulo_insumo,
       articulo_producto: empresaData.articulo_producto,
       articulo_servicio: empresaData.articulo_servicio,
+      cliente_asociado: empresaData.cliente_asociado,
       favicon: faviconUrl
     });
   }
@@ -15969,6 +15983,16 @@ class EmpresaService {
     }
     return tiposPermitidos;
   }
+  parsearTipoCliente(data) {
+    let tipoCliente = [];
+    if (data.cliente_asociado === 1) {
+      tipoCliente.push('cliente_asociado');
+    }
+    return tipoCliente;
+  }
+  tieneClientesAsociados() {
+    return this.empresa$.pipe((0,rxjs__WEBPACK_IMPORTED_MODULE_3__.map)(empresa => empresa.cliente_asociado === 1));
+  }
   parsearDatosEmpresa(empresa) {
     return {
       idempresa: empresa.idempresa,
@@ -15980,6 +16004,7 @@ class EmpresaService {
       articulo_insumo: empresa.articulo_insumo,
       articulo_producto: empresa.articulo_producto,
       articulo_servicio: empresa.articulo_servicio,
+      cliente_asociado: empresa.cliente_asociado,
       favicon: empresa.favicon
     };
   }
@@ -15987,7 +16012,7 @@ class EmpresaService {
     var _this = this;
     return (0,H_51573I145_jedstion_source_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
       _this.inProcess = true;
-      const res = yield (0,rxjs__WEBPACK_IMPORTED_MODULE_3__.firstValueFrom)(_this._httpClient.post(`${environments_environment__WEBPACK_IMPORTED_MODULE_1__.environment.empresa.api}`, null));
+      const res = yield (0,rxjs__WEBPACK_IMPORTED_MODULE_4__.firstValueFrom)(_this._httpClient.post(`${environments_environment__WEBPACK_IMPORTED_MODULE_1__.environment.empresa.api}`, null));
       _this._empresaData = _this.parsearDatosEmpresa(res['empresa']);
       return true;
     })();
@@ -16010,15 +16035,16 @@ class EmpresaService {
       articulo_insumo: 0,
       articulo_producto: 0,
       articulo_servicio: 0,
+      cliente_asociado: 0,
       favicon: null
     };
-    return (0,rxjs__WEBPACK_IMPORTED_MODULE_4__.of)(empresaData);
+    return (0,rxjs__WEBPACK_IMPORTED_MODULE_5__.of)(empresaData);
   }
 }
 EmpresaService.ɵfac = function EmpresaService_Factory(t) {
-  return new (t || EmpresaService)(_angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵinject"](_angular_common_http__WEBPACK_IMPORTED_MODULE_6__.HttpClient));
+  return new (t || EmpresaService)(_angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵinject"](_angular_common_http__WEBPACK_IMPORTED_MODULE_7__.HttpClient));
 };
-EmpresaService.ɵprov = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdefineInjectable"]({
+EmpresaService.ɵprov = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdefineInjectable"]({
   token: EmpresaService,
   factory: EmpresaService.ɵfac,
   providedIn: 'root'
@@ -16133,8 +16159,10 @@ const environment = {
     view_proveedores: `${$BASE_REST}/view_proveedors`,
     view_ven_pago_tipos: `${$BASE_REST}/view_ven_pago_tipos`,
     ven_pago_tipos: `${$BASE_REST}/ven_pago_tipos`,
+    clientes: `${$BASE_REST}/adm_clientes`,
     view_clientes: `${$BASE_REST}/view_clientes`,
-    egr_tipo_pagos: `${$BASE_REST}/egr_tipo_pagos`
+    egr_tipo_pagos: `${$BASE_REST}/egr_tipo_pagos`,
+    condicion_iva: `${$BASE_REST}/select?modelo=condicioniva&campo_id=codigo&campo_descripcion=descripcion&campo_activo=activo`
   },
   fondos: {
     fondos: `${$BASE_REST}/fondos_fondos`,
@@ -16168,7 +16196,7 @@ const environment = {
     orden_compra: `${$BASE_REST}/compras_orden_compras`,
     orden_compra_items: `${$BASE_REST}/compras_orden_compra_items`
   },
-  localidades: `${$BASE_REST}/localidads`,
+  localidades: `${$BASE_REST}/select?modelo=localidad&campo_id=codigo&campo_descripcion=descripcion&campo_activo=`,
   controlador: `${$BASE_API}/controlador`,
   menu: `${$BASE_REST}/com_menus`,
   empresa: {
