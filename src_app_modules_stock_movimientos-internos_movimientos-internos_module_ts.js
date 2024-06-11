@@ -11,7 +11,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "AddArticuloComponent": () => (/* binding */ AddArticuloComponent)
 /* harmony export */ });
-/* harmony import */ var H_51573I145_jedstion_source_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js */ 71670);
+/* harmony import */ var C_xampp_htdocs_jedstion_source_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js */ 71670);
 /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! @angular/forms */ 69542);
 /* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! rxjs */ 80228);
 /* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! rxjs */ 78947);
@@ -168,10 +168,10 @@ class AddArticuloComponent {
    */
   getArticulosDepositos() {
     var _this = this;
-    return (0,H_51573I145_jedstion_source_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
+    return (0,C_xampp_htdocs_jedstion_source_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
       const articulos_um_deposito = yield (0,rxjs__WEBPACK_IMPORTED_MODULE_13__.firstValueFrom)(_this._movimientosInternosService.getArticulosDepositos(_this.data.deposito_egreso)); //solicitamos los aticulos que esten en un deposito
       new Promise( /*#__PURE__*/function () {
-        var _ref = (0,H_51573I145_jedstion_source_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* (resolve) {
+        var _ref = (0,C_xampp_htdocs_jedstion_source_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* (resolve) {
           _this.articulos = articulos_um_deposito.list;
           _this.filteredArticulos = _this.form.get('articulo').valueChanges.pipe((0,rxjs__WEBPACK_IMPORTED_MODULE_14__.startWith)(''), (0,rxjs__WEBPACK_IMPORTED_MODULE_15__.map)(value => _this._filterArticulos(value)));
           resolve(true);
@@ -223,7 +223,7 @@ class AddArticuloComponent {
   getUnidadesDeMedidaArticulos(idarticulo) {
     var _this2 = this;
     new Promise( /*#__PURE__*/function () {
-      var _ref2 = (0,H_51573I145_jedstion_source_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* (resolve) {
+      var _ref2 = (0,C_xampp_htdocs_jedstion_source_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* (resolve) {
         _this2.unidades_de_medida = _this2.articulos.filter(a => a.idarticulo === idarticulo).map(a => {
           return {
             idarticulo: a.idarticulo,
@@ -245,10 +245,10 @@ class AddArticuloComponent {
    */
   getDepositos(option) {
     var _this3 = this;
-    return (0,H_51573I145_jedstion_source_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
+    return (0,C_xampp_htdocs_jedstion_source_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
       const Depositos = yield (0,rxjs__WEBPACK_IMPORTED_MODULE_13__.firstValueFrom)(_this3._movimientosInternosService.getDepositos(option));
       new Promise( /*#__PURE__*/function () {
-        var _ref3 = (0,H_51573I145_jedstion_source_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* (resolve) {
+        var _ref3 = (0,C_xampp_htdocs_jedstion_source_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* (resolve) {
           _this3.depositos = Depositos.list.filter(deposito => deposito.iddeposito != _this3.data.deposito_egreso); //Solo se almacenan los depositos que sean distintos al deposito de origen.
           resolve(true);
         });
@@ -276,7 +276,7 @@ class AddArticuloComponent {
       let stock; //variable auxiliar   
       let cantidad_existente = 0;
       let existeMovimiento = this.data.movimientos.length > 0 ? true : false; //Consultamos sí hay movimientos
-      if (existeMovimiento) {
+      if (existeMovimiento && this.data.esEdicion === false) {
         //Sí existe minimo un movimiento...
         let articulos_existentes = this.data.movimientos.filter(a => a.idarticulo === articulo_um.idarticulo && a.idunidadmedida === articulo_um.idunidadmedida); //Se hace esto para mantener el stock actualizado, en caso de haber sido modificado.
         //Si existen movimientos de articulos con la misma UM... 
@@ -462,7 +462,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "FilterMenuComponent": () => (/* binding */ FilterMenuComponent)
 /* harmony export */ });
-/* harmony import */ var H_51573I145_jedstion_source_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js */ 71670);
+/* harmony import */ var C_xampp_htdocs_jedstion_source_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js */ 71670);
 /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/forms */ 69542);
 /* harmony import */ var _fuse_animations__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @fuse/animations */ 28288);
 /* harmony import */ var _angular_material_core__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @angular/material/core */ 443);
@@ -585,7 +585,7 @@ class FilterMenuComponent {
    */
   getUsuarios() {
     var _this = this;
-    return (0,H_51573I145_jedstion_source_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
+    return (0,C_xampp_htdocs_jedstion_source_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
       const Usuarios = yield (0,rxjs__WEBPACK_IMPORTED_MODULE_7__.firstValueFrom)(_this._movimientosInternosService.getUsuarios());
       _this.filterUsuarios = Usuarios.list;
     })();
@@ -595,7 +595,7 @@ class FilterMenuComponent {
    */
   getDepositos() {
     var _this2 = this;
-    return (0,H_51573I145_jedstion_source_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
+    return (0,C_xampp_htdocs_jedstion_source_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
       const stk_list = yield (0,rxjs__WEBPACK_IMPORTED_MODULE_7__.firstValueFrom)(_this2._movimientosInternosService.getDepositos(true));
       _this2.filterDeposito = stk_list.list;
     })();
@@ -778,7 +778,7 @@ class MovimientosInternosComponent {
     };
     this.extraParams = '';
     this.parametrosActualizados = new _angular_core__WEBPACK_IMPORTED_MODULE_11__.EventEmitter();
-    this.env = environments_environment__WEBPACK_IMPORTED_MODULE_2__.environment.stock.movimiento_internos + '?sort=-idmovimientointerno';
+    this.env = environments_environment__WEBPACK_IMPORTED_MODULE_2__.environment.stock.movimiento_internos + '?sort=-fecha';
     this.search = new _angular_forms__WEBPACK_IMPORTED_MODULE_12__.FormControl('');
     this._headerTextService.setTitulo(this.router);
     /**
@@ -971,7 +971,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "SaveComponent": () => (/* binding */ SaveComponent)
 /* harmony export */ });
-/* harmony import */ var H_51573I145_jedstion_source_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js */ 71670);
+/* harmony import */ var C_xampp_htdocs_jedstion_source_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js */ 71670);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/core */ 86839);
 /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @angular/forms */ 69542);
 /* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! rxjs */ 80228);
@@ -1313,10 +1313,10 @@ class SaveComponent {
   }
   getDepositos(option) {
     var _this = this;
-    return (0,H_51573I145_jedstion_source_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
+    return (0,C_xampp_htdocs_jedstion_source_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
       const Depositos = yield (0,rxjs__WEBPACK_IMPORTED_MODULE_15__.firstValueFrom)(_this._movimientosInternosService.getDepositos(option));
       new Promise( /*#__PURE__*/function () {
-        var _ref = (0,H_51573I145_jedstion_source_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* (resolve) {
+        var _ref = (0,C_xampp_htdocs_jedstion_source_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* (resolve) {
           _this.depositos = Depositos.list;
           _this.filteredDepositos = _this.form.get('deposito_egreso').valueChanges.pipe((0,rxjs__WEBPACK_IMPORTED_MODULE_16__.startWith)(''), (0,rxjs__WEBPACK_IMPORTED_MODULE_17__.map)(value => _this._filterDepositos(value)));
           resolve(true);
@@ -1342,9 +1342,9 @@ class SaveComponent {
   }
   getItems(idmovimientointerno) {
     var _this2 = this;
-    return (0,H_51573I145_jedstion_source_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
+    return (0,C_xampp_htdocs_jedstion_source_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
       return new Promise( /*#__PURE__*/function () {
-        var _ref2 = (0,H_51573I145_jedstion_source_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* (resolve) {
+        var _ref2 = (0,C_xampp_htdocs_jedstion_source_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* (resolve) {
           const items = yield (0,rxjs__WEBPACK_IMPORTED_MODULE_15__.firstValueFrom)(_this2._movimientosInternosService.getItems(idmovimientointerno));
           _this2.mov_art_list = items.list;
           resolve(_this2.mov_art_list);
@@ -1369,11 +1369,13 @@ class SaveComponent {
         let d = this.depositos.find(d => d.descripcion === this.form.get('deposito_egreso').value);
         deposito_egreso_value = d.iddeposito;
       }
+      let esEdicion = this.movimiento_interno ? true : false;
       this.dialogo.open(_addArticulo_add_articulo_component__WEBPACK_IMPORTED_MODULE_2__.AddArticuloComponent, {
         panelClass: 'ayuda-dialog',
         data: {
           deposito_egreso: deposito_egreso_value,
-          movimientos: this.mov_art_list
+          movimientos: this.mov_art_list,
+          esEdicion: esEdicion
         }
       }).afterClosed().subscribe({
         next: res => {
@@ -1761,6 +1763,7 @@ class MovimientosInternosService {
     f += !option ? 'filter[activo]=1' : '';
     let subject = new rxjs__WEBPACK_IMPORTED_MODULE_2__.Subject();
     this.http.get(`${environments_environment__WEBPACK_IMPORTED_MODULE_0__.environment.stock.depositos}${f}`).subscribe(resp => {
+      this._authService.accessToken = resp.token;
       subject.next({
         list: resp.result
       });
@@ -1771,6 +1774,7 @@ class MovimientosInternosService {
     let f = `?filter[deposito]=${deposito_origen}`;
     let subject = new rxjs__WEBPACK_IMPORTED_MODULE_2__.Subject();
     this.http.get(`${environments_environment__WEBPACK_IMPORTED_MODULE_0__.environment.stock.view_stock_articulo_depositos}${f}`).subscribe(resp => {
+      this._authService.accessToken = resp.token;
       subject.next({
         list: resp.result
       });
@@ -1782,6 +1786,7 @@ class MovimientosInternosService {
     f += `&expand=um`;
     let subject = new rxjs__WEBPACK_IMPORTED_MODULE_2__.Subject();
     this.http.get(`${environments_environment__WEBPACK_IMPORTED_MODULE_0__.environment.stock.articulo_unidad_medidas}${f}`).subscribe(resp => {
+      this._authService.accessToken = resp.token;
       subject.next({
         list: resp.result
       });
@@ -1792,6 +1797,7 @@ class MovimientosInternosService {
     let f = `?filter[idmovimientointerno]=${idmovimientointerno}`;
     let subject = new rxjs__WEBPACK_IMPORTED_MODULE_2__.Subject();
     this.http.get(`${environments_environment__WEBPACK_IMPORTED_MODULE_0__.environment.stock.view_stock_movimientos}${f}`).subscribe(resp => {
+      this._authService.accessToken = resp.token;
       subject.next({
         list: resp.result
       });
@@ -1802,6 +1808,7 @@ class MovimientosInternosService {
     let f = `?sort=asc`;
     let subject = new rxjs__WEBPACK_IMPORTED_MODULE_2__.Subject();
     this.http.get(`${environments_environment__WEBPACK_IMPORTED_MODULE_0__.environment.login.view_usuarios}${f}`).subscribe(resp => {
+      this._authService.accessToken = resp.token;
       subject.next({
         list: resp.result
       });

@@ -11,7 +11,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "AddArticuloComponent": () => (/* binding */ AddArticuloComponent)
 /* harmony export */ });
-/* harmony import */ var H_51573I145_jedstion_source_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js */ 71670);
+/* harmony import */ var C_xampp_htdocs_jedstion_source_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js */ 71670);
 /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! @angular/forms */ 69542);
 /* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! rxjs */ 80228);
 /* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! rxjs */ 78947);
@@ -190,10 +190,10 @@ class AddArticuloComponent {
    */
   getArticulosDepositos() {
     var _this = this;
-    return (0,H_51573I145_jedstion_source_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
+    return (0,C_xampp_htdocs_jedstion_source_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
       const articulos_um_deposito = yield (0,rxjs__WEBPACK_IMPORTED_MODULE_13__.firstValueFrom)(_this._entregasService.getArticulosDepositos(_this.data.deposito_entrega)); //solicitamos los aticulos que esten en un deposito
       new Promise( /*#__PURE__*/function () {
-        var _ref = (0,H_51573I145_jedstion_source_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* (resolve) {
+        var _ref = (0,C_xampp_htdocs_jedstion_source_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* (resolve) {
           _this.articulos = articulos_um_deposito.list;
           _this.filteredArticulos = _this.form.get('articulo').valueChanges.pipe((0,rxjs__WEBPACK_IMPORTED_MODULE_14__.startWith)(''), (0,rxjs__WEBPACK_IMPORTED_MODULE_15__.map)(value => _this._filterArticulos(value)));
           resolve(true);
@@ -243,7 +243,7 @@ class AddArticuloComponent {
   */
   getVentas() {
     var _this2 = this;
-    return (0,H_51573I145_jedstion_source_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
+    return (0,C_xampp_htdocs_jedstion_source_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
       const ventas = yield (0,rxjs__WEBPACK_IMPORTED_MODULE_13__.firstValueFrom)(_this2._entregasService.getVentas());
       _this2.ventas = ventas.list;
       _this2.filteredVentas = _this2.form.get('venta').valueChanges.pipe((0,rxjs__WEBPACK_IMPORTED_MODULE_14__.startWith)(''), (0,rxjs__WEBPACK_IMPORTED_MODULE_15__.map)(value => _this2._filterVentas(value)));
@@ -277,7 +277,7 @@ class AddArticuloComponent {
   getUnidadesDeMedidaArticulos(idarticulo) {
     var _this3 = this;
     new Promise( /*#__PURE__*/function () {
-      var _ref2 = (0,H_51573I145_jedstion_source_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* (resolve) {
+      var _ref2 = (0,C_xampp_htdocs_jedstion_source_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* (resolve) {
         _this3.unidades_de_medida = _this3.articulos.filter(a => a.idarticulo === idarticulo).map(a => {
           return {
             idarticulo: a.idarticulo,
@@ -311,8 +311,8 @@ class AddArticuloComponent {
       let stock; //variable auxiliar   
       let cantidad_existente = 0;
       let existeMovimiento = this.data.movimientos.length > 0 ? true : false; //Consultamos sí hay movimientos
-      if (existeMovimiento) {
-        //Sí existe minimo un movimiento...
+      if (existeMovimiento && this.data.esEdicion === false) {
+        //Sí existe minimo un movimiento y es una crecion...
         let articulos_existentes = this.data.movimientos.filter(a => a.idarticulo === articulo_um.idarticulo && a.idunidadmedida === articulo_um.idunidadmedida); //Se hace esto para mantener el stock actualizado, en caso de haber sido modificado.
         //Si existen movimientos de articulos con la misma UM...
         articulos_existentes.forEach(ae => {
@@ -362,6 +362,7 @@ class AddArticuloComponent {
           if (existeMovimiento) {
             this.form.get('unidadmedida').setValue('');
             this.form.get('venta').setValue('');
+            this.form.get('stock_existente').setValue('');
             return this.alert.warning('Ya existe un movimiento de ese articulo con esa unidad de medida asociado a esa venta.');
           }
           if (this.form.get('cantidad').value <= articulo.stock && this.form.get('cantidad').value > 0) {
@@ -564,8 +565,8 @@ class EntregasComponent {
     this.router = router;
     this._headerTextService = _headerTextService;
     this.dataSource = new _angular_material_table__WEBPACK_IMPORTED_MODULE_10__.MatTableDataSource();
-    this.headers = ['Fecha', 'Hora', 'Responsable', 'Deposito', 'Usuario Encargado', 'Acciones'];
-    this.column_params = ['fecha', 'hora', 'nick_usuario', 'descripcion_deposito', 'nick_usuario_entrega', 'acciones'];
+    this.headers = ['Fecha', 'Hora', 'Responsable', 'Observaciones', 'Deposito', 'Usuario Encargado', 'Acciones'];
+    this.column_params = ['fecha', 'hora', 'nick_usuario', 'observaciones', 'descripcion_deposito', 'nick_usuario_entrega', 'acciones'];
     this.funcionesObjeto = null;
     this.filtroBusqueda = '';
     this.filtersLike = ['nick_usuario', 'descripcion_deposito', 'nick_usuario_entrega'];
@@ -576,7 +577,7 @@ class EntregasComponent {
     };
     this.extraParams = '';
     this.parametrosActualizados = new _angular_core__WEBPACK_IMPORTED_MODULE_11__.EventEmitter();
-    this.env = environments_environment__WEBPACK_IMPORTED_MODULE_2__.environment.stock.entregas + '?sort=-identrega';
+    this.env = environments_environment__WEBPACK_IMPORTED_MODULE_2__.environment.stock.entregas + '?sort=-fecha_hora';
     this.search = new _angular_forms__WEBPACK_IMPORTED_MODULE_12__.FormControl('');
     this._headerTextService.setTitulo(this.router);
     /**
@@ -707,6 +708,7 @@ class EntregasComponent {
   }
   ngOnDestroy() {
     this._searchService.unsubscribe();
+    this.dialogo.closeAll();
   }
 }
 EntregasComponent.ɵfac = function EntregasComponent_Factory(t) {
@@ -770,7 +772,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "FilterMenuComponent": () => (/* binding */ FilterMenuComponent)
 /* harmony export */ });
-/* harmony import */ var H_51573I145_jedstion_source_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js */ 71670);
+/* harmony import */ var C_xampp_htdocs_jedstion_source_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js */ 71670);
 /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/forms */ 69542);
 /* harmony import */ var _fuse_animations__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @fuse/animations */ 28288);
 /* harmony import */ var _angular_material_core__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @angular/material/core */ 443);
@@ -907,7 +909,7 @@ class FilterMenuComponent {
    */
   getUsuarios() {
     var _this = this;
-    return (0,H_51573I145_jedstion_source_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
+    return (0,C_xampp_htdocs_jedstion_source_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
       const Usuarios = yield (0,rxjs__WEBPACK_IMPORTED_MODULE_7__.firstValueFrom)(_this._entregasService.getUsuarios());
       _this.filterUsuarios = Usuarios.list;
     })();
@@ -917,7 +919,7 @@ class FilterMenuComponent {
    */
   getDepositos() {
     var _this2 = this;
-    return (0,H_51573I145_jedstion_source_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
+    return (0,C_xampp_htdocs_jedstion_source_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
       const stk_list = yield (0,rxjs__WEBPACK_IMPORTED_MODULE_7__.firstValueFrom)(_this2._entregasService.getDepositos(true));
       _this2.filterDeposito = stk_list.list;
     })();
@@ -1048,7 +1050,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "SaveComponent": () => (/* binding */ SaveComponent)
 /* harmony export */ });
-/* harmony import */ var H_51573I145_jedstion_source_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js */ 71670);
+/* harmony import */ var C_xampp_htdocs_jedstion_source_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js */ 71670);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/core */ 86839);
 /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @angular/forms */ 69542);
 /* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! rxjs */ 80228);
@@ -1425,10 +1427,10 @@ class SaveComponent {
   }
   getUsuarios(option) {
     var _this = this;
-    return (0,H_51573I145_jedstion_source_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
+    return (0,C_xampp_htdocs_jedstion_source_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
       const Usuarios = yield (0,rxjs__WEBPACK_IMPORTED_MODULE_15__.firstValueFrom)(_this._entregasService.getUsuarios(option));
       new Promise( /*#__PURE__*/function () {
-        var _ref = (0,H_51573I145_jedstion_source_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* (resolve) {
+        var _ref = (0,C_xampp_htdocs_jedstion_source_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* (resolve) {
           _this.usuarios = Usuarios.list;
           _this.filteredUsuarios = _this.form.get('usuario_entrega').valueChanges.pipe((0,rxjs__WEBPACK_IMPORTED_MODULE_16__.startWith)(''), (0,rxjs__WEBPACK_IMPORTED_MODULE_17__.map)(value => _this._filterUsuarios(value)));
           resolve(true);
@@ -1454,10 +1456,10 @@ class SaveComponent {
   }
   getDepositos(option) {
     var _this2 = this;
-    return (0,H_51573I145_jedstion_source_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
+    return (0,C_xampp_htdocs_jedstion_source_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
       const Depositos = yield (0,rxjs__WEBPACK_IMPORTED_MODULE_15__.firstValueFrom)(_this2._entregasService.getDepositos(option));
       new Promise( /*#__PURE__*/function () {
-        var _ref2 = (0,H_51573I145_jedstion_source_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* (resolve) {
+        var _ref2 = (0,C_xampp_htdocs_jedstion_source_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* (resolve) {
           _this2.depositos = Depositos.list;
           _this2.filteredDepositos = _this2.form.get('deposito_entrega').valueChanges.pipe((0,rxjs__WEBPACK_IMPORTED_MODULE_16__.startWith)(''), (0,rxjs__WEBPACK_IMPORTED_MODULE_17__.map)(value => _this2._filterDepositos(value)));
           resolve(true);
@@ -1488,9 +1490,9 @@ class SaveComponent {
    */
   getVentas() {
     var _this3 = this;
-    return (0,H_51573I145_jedstion_source_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
+    return (0,C_xampp_htdocs_jedstion_source_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
       return new Promise( /*#__PURE__*/function () {
-        var _ref3 = (0,H_51573I145_jedstion_source_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* (resolve) {
+        var _ref3 = (0,C_xampp_htdocs_jedstion_source_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* (resolve) {
           const Ventas = yield (0,rxjs__WEBPACK_IMPORTED_MODULE_15__.firstValueFrom)(_this3._entregasService.getVentas());
           _this3.ventas = Ventas.list;
           resolve(_this3.ventas);
@@ -1508,9 +1510,9 @@ class SaveComponent {
    */
   getItems(identrega) {
     var _this4 = this;
-    return (0,H_51573I145_jedstion_source_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
+    return (0,C_xampp_htdocs_jedstion_source_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
       return new Promise( /*#__PURE__*/function () {
-        var _ref4 = (0,H_51573I145_jedstion_source_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* (resolve) {
+        var _ref4 = (0,C_xampp_htdocs_jedstion_source_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* (resolve) {
           const items = yield (0,rxjs__WEBPACK_IMPORTED_MODULE_15__.firstValueFrom)(_this4._entregasService.getItems(identrega));
           _this4.mov_art_list = items.list;
           resolve(_this4.mov_art_list);
@@ -1535,11 +1537,13 @@ class SaveComponent {
         let d = this.depositos.find(d => d.descripcion === this.form.get('deposito_entrega').value);
         deposito_entrega_value = d.iddeposito;
       }
+      let esEdicion = this.entrega ? true : false;
       this.dialogo.open(_addArticulo_add_articulo_component__WEBPACK_IMPORTED_MODULE_2__.AddArticuloComponent, {
         panelClass: 'ayuda-dialog',
         data: {
           deposito_entrega: deposito_entrega_value,
-          movimientos: this.mov_art_list
+          movimientos: this.mov_art_list,
+          esEdicion: esEdicion
         }
       }).afterClosed().subscribe({
         next: res => {
@@ -1957,6 +1961,7 @@ class EntregasService {
     f += !option ? 'filter[activo]=1' : '';
     let subject = new rxjs__WEBPACK_IMPORTED_MODULE_2__.Subject();
     this.http.get(`${environments_environment__WEBPACK_IMPORTED_MODULE_0__.environment.stock.depositos}${f}`).subscribe(resp => {
+      this._authService.accessToken = resp.token;
       subject.next({
         list: resp.result
       });
@@ -1967,6 +1972,7 @@ class EntregasService {
     let f = `?filter[deposito]=${deposito}`;
     let subject = new rxjs__WEBPACK_IMPORTED_MODULE_2__.Subject();
     this.http.get(`${environments_environment__WEBPACK_IMPORTED_MODULE_0__.environment.stock.view_stock_articulo_depositos}${f}`).subscribe(resp => {
+      this._authService.accessToken = resp.token;
       subject.next({
         list: resp.result
       });
@@ -1978,6 +1984,7 @@ class EntregasService {
     f += `&expand=um`;
     let subject = new rxjs__WEBPACK_IMPORTED_MODULE_2__.Subject();
     this.http.get(`${environments_environment__WEBPACK_IMPORTED_MODULE_0__.environment.stock.articulo_unidad_medidas}${f}`).subscribe(resp => {
+      this._authService.accessToken = resp.token;
       subject.next({
         list: resp.result
       });
@@ -1988,6 +1995,7 @@ class EntregasService {
     let f = `?filter[identrega]=${identrega}`;
     let subject = new rxjs__WEBPACK_IMPORTED_MODULE_2__.Subject();
     this.http.get(`${environments_environment__WEBPACK_IMPORTED_MODULE_0__.environment.stock.view_stock_movimientos}${f}`).subscribe(resp => {
+      this._authService.accessToken = resp.token;
       subject.next({
         list: resp.result
       });
@@ -2008,6 +2016,7 @@ class EntregasService {
     f += !option ? 'filter[activo]=1' : '';
     let subject = new rxjs__WEBPACK_IMPORTED_MODULE_2__.Subject();
     this.http.get(`${environments_environment__WEBPACK_IMPORTED_MODULE_0__.environment.login.view_usuarios}${f}`).subscribe(resp => {
+      this._authService.accessToken = resp.token;
       subject.next({
         list: resp.result
       });

@@ -631,7 +631,7 @@ class UnidadesDeMedidaService {
    * Funcion en el Servicio
    * @param unidad_medida
    * @returns Una unidad de medida
-   */
+  */
   saveUnidadDeMedida(unidad_medida) {
     return this.http.post(`${environments_environment__WEBPACK_IMPORTED_MODULE_0__.environment.stock.unidad_medidas}`, unidad_medida);
   }
@@ -639,7 +639,7 @@ class UnidadesDeMedidaService {
    * Funcion en el servicio
    * @param unidad_medida
    * @returns Una unidad de medida actualizada
-   */
+  */
   updateUnidadDeMedida(unidad_medida) {
     return this.http.put(`${environments_environment__WEBPACK_IMPORTED_MODULE_0__.environment.stock.unidad_medidas}` + '/' + unidad_medida.idunidadmedida, unidad_medida);
   }
@@ -647,7 +647,7 @@ class UnidadesDeMedidaService {
    * Funcion en el servicio
    * @param idunidadmedida
    * @returns Elimina la unidad de medida
-   */
+  */
   deleteUnidadDeMedida(idunidadmedida) {
     return this.http.delete(environments_environment__WEBPACK_IMPORTED_MODULE_0__.environment.stock.unidad_medidas + '/' + idunidadmedida);
   }

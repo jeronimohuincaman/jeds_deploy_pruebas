@@ -11,7 +11,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "AddArticuloComponent": () => (/* binding */ AddArticuloComponent)
 /* harmony export */ });
-/* harmony import */ var H_51573I145_jedstion_source_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js */ 71670);
+/* harmony import */ var C_xampp_htdocs_jedstion_source_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js */ 71670);
 /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! @angular/forms */ 69542);
 /* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! rxjs */ 80228);
 /* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! rxjs */ 78947);
@@ -156,11 +156,11 @@ class AddArticuloComponent {
    */
   getArticulosOrdenCompra() {
     var _this = this;
-    return (0,H_51573I145_jedstion_source_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
+    return (0,C_xampp_htdocs_jedstion_source_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
       const articulos_um_oc = yield (0,rxjs__WEBPACK_IMPORTED_MODULE_13__.firstValueFrom)(_this._remitosService.getItemsOcPendiente(_this.data.orden_compra)); //solicitamos los aticulos que esten en una OC
       _this.articulos = articulos_um_oc.list;
       new Promise( /*#__PURE__*/function () {
-        var _ref = (0,H_51573I145_jedstion_source_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* (resolve) {
+        var _ref = (0,C_xampp_htdocs_jedstion_source_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* (resolve) {
           _this.filteredArticulos = _this.form.get('articulo').valueChanges.pipe((0,rxjs__WEBPACK_IMPORTED_MODULE_14__.startWith)(''), (0,rxjs__WEBPACK_IMPORTED_MODULE_15__.map)(value => _this._filterArticulos(value)));
           resolve(true);
         });
@@ -213,7 +213,7 @@ class AddArticuloComponent {
   getUnidadesDeMedidaArticulos(idarticulo) {
     var _this2 = this;
     new Promise( /*#__PURE__*/function () {
-      var _ref2 = (0,H_51573I145_jedstion_source_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* (resolve) {
+      var _ref2 = (0,C_xampp_htdocs_jedstion_source_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* (resolve) {
         _this2.unidades_de_medida = _this2.articulos.filter(a => a.idarticulo === idarticulo).map(a => {
           return {
             idarticulo: a.idarticulo,
@@ -221,14 +221,6 @@ class AddArticuloComponent {
             descripcion_um: a.descripcion_um,
             cantidad_pendiente: a.cantidad_pendiente
           };
-        });
-        //Esta fraccion de codigo es para que no haya items repetidos en el input.
-        _this2.unidades_de_medida.forEach(um => {
-          let arreglo_auxiliar = [];
-          if (!arreglo_auxiliar.some(item => item.idunidadmedida === um.idunidadmedida)) {
-            arreglo_auxiliar.push(um);
-          }
-          _this2.unidades_de_medida = arreglo_auxiliar;
         });
         resolve(true);
       });
@@ -447,7 +439,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "FilterMenuComponent": () => (/* binding */ FilterMenuComponent)
 /* harmony export */ });
-/* harmony import */ var H_51573I145_jedstion_source_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js */ 71670);
+/* harmony import */ var C_xampp_htdocs_jedstion_source_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js */ 71670);
 /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/forms */ 69542);
 /* harmony import */ var _fuse_animations__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @fuse/animations */ 28288);
 /* harmony import */ var _angular_material_core__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @angular/material/core */ 443);
@@ -586,7 +578,7 @@ class FilterMenuComponent {
    */
   getUsuarios() {
     var _this = this;
-    return (0,H_51573I145_jedstion_source_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
+    return (0,C_xampp_htdocs_jedstion_source_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
       const Usuarios = yield (0,rxjs__WEBPACK_IMPORTED_MODULE_7__.firstValueFrom)(_this._remitosService.getUsuarios());
       _this.filterUsuarios = Usuarios.list;
     })();
@@ -596,7 +588,7 @@ class FilterMenuComponent {
    */
   getProveedores() {
     var _this2 = this;
-    return (0,H_51573I145_jedstion_source_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
+    return (0,C_xampp_htdocs_jedstion_source_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
       const Proveedores = yield (0,rxjs__WEBPACK_IMPORTED_MODULE_7__.firstValueFrom)(_this2._remitosService.getProveedores());
       _this2.filterProveedor = Proveedores.list;
     })();
@@ -606,7 +598,7 @@ class FilterMenuComponent {
    */
   getDepositos() {
     var _this3 = this;
-    return (0,H_51573I145_jedstion_source_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
+    return (0,C_xampp_htdocs_jedstion_source_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
       const stk_list = yield (0,rxjs__WEBPACK_IMPORTED_MODULE_7__.firstValueFrom)(_this3._remitosService.getDepositos(true));
       _this3.filterDeposito = stk_list.list;
     })();
@@ -789,8 +781,8 @@ class RemitosComponent {
     this.router = router;
     this._headerTextService = _headerTextService;
     this.dataSource = new _angular_material_table__WEBPACK_IMPORTED_MODULE_10__.MatTableDataSource();
-    this.headers = ['Fecha', 'Hora', 'Responsable', 'Deposito', 'Proveedor', 'Orden compra', 'Acciones'];
-    this.column_params = ['fecha', 'hora', 'nick_usuario', 'descripcion_deposito', 'descripcion_proveedor', 'nro_orden_compra', 'acciones'];
+    this.headers = ['Fecha', 'Hora', 'Responsable', 'Observaciones', 'Deposito', 'Proveedor', 'Orden compra', 'Acciones'];
+    this.column_params = ['fecha', 'hora', 'nick_usuario', 'observaciones', 'descripcion_deposito', 'descripcion_proveedor', 'nro_orden_compra', 'acciones'];
     this.funcionesObjeto = null;
     this.filtroBusqueda = '';
     this.filtersLike = ['nick_usuario', 'descripcion_deposito', 'descripcion_proveedor'];
@@ -802,7 +794,7 @@ class RemitosComponent {
     };
     this.extraParams = '';
     this.parametrosActualizados = new _angular_core__WEBPACK_IMPORTED_MODULE_11__.EventEmitter();
-    this.env = environments_environment__WEBPACK_IMPORTED_MODULE_2__.environment.stock.remitos + '?sort=-idremito';
+    this.env = environments_environment__WEBPACK_IMPORTED_MODULE_2__.environment.stock.remitos + '?sort=-fecha_hora';
     this.search = new _angular_forms__WEBPACK_IMPORTED_MODULE_12__.FormControl('');
     this._headerTextService.setTitulo(this.router);
     /**
@@ -933,6 +925,7 @@ class RemitosComponent {
   }
   ngOnDestroy() {
     this._searchService.unsubscribe();
+    this.dialogo.closeAll();
   }
 }
 RemitosComponent.ɵfac = function RemitosComponent_Factory(t) {
@@ -996,7 +989,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "SaveComponent": () => (/* binding */ SaveComponent)
 /* harmony export */ });
-/* harmony import */ var H_51573I145_jedstion_source_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js */ 71670);
+/* harmony import */ var C_xampp_htdocs_jedstion_source_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js */ 71670);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/core */ 86839);
 /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @angular/forms */ 69542);
 /* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! rxjs */ 80228);
@@ -1099,7 +1092,7 @@ function SaveComponent_mat_option_34_Template(rf, ctx) {
   }
   if (rf & 2) {
     const oc_r25 = ctx.$implicit;
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("value", oc_r25.idordencompra);
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("value", oc_r25);
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](1);
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtextInterpolate2"](" N\u00B0 ", oc_r25.numero_oc, " / ", oc_r25.fecha_oc, " ");
   }
@@ -1286,6 +1279,7 @@ class SaveComponent {
     this._unsubscribeAll = new rxjs__WEBPACK_IMPORTED_MODULE_8__.Subject();
     this.creadoExitosamente = new _angular_core__WEBPACK_IMPORTED_MODULE_6__.EventEmitter();
     this.editadoExitosamente = new _angular_core__WEBPACK_IMPORTED_MODULE_6__.EventEmitter();
+    this.isUpdating = false; //flag para suprimir bucle infinito.
     this.remito = this.data ? this.data : null;
     this.title = this.remito?.idremito ? `Editar Remito ${this.remito.fecha} - ${this.remito.hora}` : `Nuevo Remito`;
     /* this`user = JSON.parse(sessionStorage.getItem('user')) */
@@ -1302,6 +1296,29 @@ class SaveComponent {
     this.newForm();
     this.exist();
     this.subscribeAlert();
+    this.subscribeInputs();
+  }
+  /**
+   * Se realizo esta funcion para solucionar el error recursivo de angular 'RangeError'
+   */
+  subscribeInputs() {
+    this.form.get('proveedor').valueChanges.subscribe(value => {
+      if (!this.isUpdating) {
+        this.seleccionItem(value);
+      }
+    });
+    this.form.get('oc_pendiente').valueChanges.subscribe(value => {
+      if (!this.isUpdating) {
+        //Debido a que se tuvo que cambiar la logica original del codigo para el renderizado cuando se escuchaban cambios, 
+        //se añado esta condicional que modifica la estructura de los datos de la OC segun sea alta o edicion de un remito
+        if (this.remito?.idremito) {
+          value = {
+            idordencompra: value
+          };
+        }
+        this.seleccionItem(value);
+      }
+    });
   }
   // Alert
   subscribeAlert() {
@@ -1338,9 +1355,11 @@ class SaveComponent {
         this.dataSource = new _angular_material_table__WEBPACK_IMPORTED_MODULE_7__.MatTableDataSource(this.mov_art_list);
         // Verifica el estado de habilitacion o deshabilitacion del control OC y Deposito si contiene movimientos o no
         if (this.mov_art_list.length != 0) {
+          this.form.get('proveedor').disable();
           this.form.get('oc_pendiente').disable();
           this.form.get('deposito').disable();
         } else {
+          this.form.get('proveedor').enable();
           this.form.get('oc_pendiente').enable();
           this.form.get('deposito').enable();
         }
@@ -1356,7 +1375,7 @@ class SaveComponent {
     });
   }
   /**
-  * Funcion para contar las palabras en las observaciones
+   * Funcion para contar las palabras en las observaciones
   */
   getPalabrasLength() {
     const observaciones = this.form.get('observaciones').value;
@@ -1369,8 +1388,8 @@ class SaveComponent {
     return this.getPalabrasLength() <= this.maxPalabras;
   }
   /**
-  * Si existe un stockinicial le mando 'true' a fondos y nada a TM para que me traiga todos los fondos y TMs al editar.
-  * Caso contrario, si se va a crear un stockinicial, llamo a los fondos sin enviarle un parametro asi me trae solo los activos y
+   * Si existe un stockinicial le mando 'true' a fondos y nada a TM para que me traiga todos los fondos y TMs al editar.
+   * Caso contrario, si se va a crear un stockinicial, llamo a los fondos sin enviarle un parametro asi me trae solo los activos y
   * le envio un paramtro a los tipos de stockinicials para que me traiga los activos.
   */
   exist() {
@@ -1382,10 +1401,10 @@ class SaveComponent {
   }
   getDepositos(option) {
     var _this = this;
-    return (0,H_51573I145_jedstion_source_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
+    return (0,C_xampp_htdocs_jedstion_source_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
       const Depositos = yield (0,rxjs__WEBPACK_IMPORTED_MODULE_15__.firstValueFrom)(_this._remitosService.getDepositos(option));
       new Promise( /*#__PURE__*/function () {
-        var _ref = (0,H_51573I145_jedstion_source_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* (resolve) {
+        var _ref = (0,C_xampp_htdocs_jedstion_source_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* (resolve) {
           _this.depositos = Depositos.list;
           _this.filteredDepositos = _this.form.get('deposito').valueChanges.pipe((0,rxjs__WEBPACK_IMPORTED_MODULE_16__.startWith)(''), (0,rxjs__WEBPACK_IMPORTED_MODULE_17__.map)(value => _this._filterDepositos(value)));
           resolve(true);
@@ -1406,11 +1425,17 @@ class SaveComponent {
   }
   getItemsOrdenDeCompraPendiente(object) {
     var _this2 = this;
-    return (0,H_51573I145_jedstion_source_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
+    return (0,C_xampp_htdocs_jedstion_source_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
       const OrdenesDeCompraPendiente = yield (0,rxjs__WEBPACK_IMPORTED_MODULE_15__.firstValueFrom)(_this2._remitosService.getItemsOcPendiente(object));
       _this2.orden_compras = OrdenesDeCompraPendiente.list;
+      // Sort the orden_compras by nro_orden_compra numerically
+      _this2.orden_compras.sort((a, b) => {
+        const nroA = parseInt(a.numero_oc, 10);
+        const nroB = parseInt(b.numero_oc, 10);
+        return nroA - nroB;
+      });
       new Promise( /*#__PURE__*/function () {
-        var _ref2 = (0,H_51573I145_jedstion_source_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* (resolve) {
+        var _ref2 = (0,C_xampp_htdocs_jedstion_source_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* (resolve) {
           //Encapsulo solo las propiedades que quiero utilizar.
           _this2.proveedores = OrdenesDeCompraPendiente.list.map(p => {
             return {
@@ -1427,6 +1452,8 @@ class SaveComponent {
               idproveedor: ocp.idproveedor
             };
           });
+          //Quito ordenes de compra repetidas.
+          _this2.getOrdenCompras();
           //Esta fraccion de codigo es para filtrar lo que se escriba en el input.
           _this2.filteredProveedores = _this2.form.get('proveedor').valueChanges.pipe((0,rxjs__WEBPACK_IMPORTED_MODULE_16__.startWith)(''), (0,rxjs__WEBPACK_IMPORTED_MODULE_17__.map)(value => _this2._filterProveedores(value)));
         });
@@ -1441,9 +1468,9 @@ class SaveComponent {
    */
   getProveedores() {
     var _this3 = this;
-    return (0,H_51573I145_jedstion_source_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
+    return (0,C_xampp_htdocs_jedstion_source_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
       new Promise( /*#__PURE__*/function () {
-        var _ref3 = (0,H_51573I145_jedstion_source_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* (resolve) {
+        var _ref3 = (0,C_xampp_htdocs_jedstion_source_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* (resolve) {
           //Esta fraccion de codigo es para que no haya items repetidos en el input.
           let arreglo_auxiliar = [];
           _this3.proveedores.forEach(p => {
@@ -1461,12 +1488,17 @@ class SaveComponent {
     })();
   }
   /**
-   * Esta funcion es la encargada de obtener los datos de las ordenes de compra
+   * Esta funcion es la encargada de obtener los datos de las ordenes de compra y que no se repitan.
+   * @param idproveedor Cuando queremos obtener solo las ordenes de compra de un proveedor utilicamos su id para filtrar.
    */
   getOrdenCompras(idproveedor) {
     var _this4 = this;
-    return (0,H_51573I145_jedstion_source_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
-      _this4.oc_pendientes = _this4.orden_compras.filter(oc => oc.idproveedor === idproveedor);
+    return (0,C_xampp_htdocs_jedstion_source_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
+      if (idproveedor) {
+        _this4.oc_pendientes = _this4.orden_compras.filter(oc => oc.idproveedor === idproveedor);
+      } else {
+        _this4.oc_pendientes = _this4.orden_compras;
+      }
       let arreglo_auxiliar = [];
       _this4.oc_pendientes.forEach(ocp => {
         if (!arreglo_auxiliar.some(oc => oc.idordencompra === ocp.idordencompra)) {
@@ -1489,29 +1521,44 @@ class SaveComponent {
     return option;
   }
   /**
-  * Esta funcion maneja las cambios de seleccion que puedan tener articulos, unidades de medida u ordenes de compra.
-  * @param $event
+   * Esta funcion maneja las cambios de seleccion que puedan tener articulos, unidades de medida u ordenes de compra.
+   * @param $event
   */
   seleccionItem($event) {
+    this.isUpdating = true;
     // Si se ha seleccionado un proveedor explícitamente, actualiza el campo del proveedor
     if ($event.Codigo) {
       this.getOrdenCompras($event.Codigo); // Buscamos las OC que posee ese proveedor.
-      // Actualizamos el campo del proveedor
-      this.form.get('proveedor').setValue($event);
+      // Actualizamos el campo del proveedor sin emitir eventos
+      this.form.get('proveedor').setValue($event, {
+        emitEvent: false
+      });
       // Habilitamos el campo de OC
       this.form.get('oc_pendiente').enable();
     }
     // Si se ha seleccionado una OC, actualiza el campo de OC pendiente
-    if ($event.oc) {
-      let oc = this.oc_pendientes.find(prov => prov.idordencompra === $event.oc);
-      this.form.get('oc_pendiente').setValue(oc.idordencompra);
+    if ($event.idordencompra) {
+      let oc = this.oc_pendientes.find(prov => prov.idordencompra === $event.idordencompra);
+      this.form.get('oc_pendiente').setValue(oc, {
+        emitEvent: false
+      });
+      let noExisteProveedor = this.form.get('proveedor').value === "" || this.form.get('proveedor').value.Codigo != $event.idproveedor; //Si el campo proveedor es igual a vacio Ó el proveedor es distinto.
+      if (noExisteProveedor) {
+        let proveedor = this.proveedores.find(p => p.Codigo === oc.idproveedor);
+        this.form.get('proveedor').setValue(proveedor, {
+          emitEvent: false
+        });
+        this.getOrdenCompras(proveedor.Codigo);
+      }
+      ;
     }
+    this.isUpdating = false;
   }
   getItems(idremito) {
     var _this5 = this;
-    return (0,H_51573I145_jedstion_source_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
+    return (0,C_xampp_htdocs_jedstion_source_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
       return new Promise( /*#__PURE__*/function () {
-        var _ref4 = (0,H_51573I145_jedstion_source_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* (resolve) {
+        var _ref4 = (0,C_xampp_htdocs_jedstion_source_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* (resolve) {
           const items = yield (0,rxjs__WEBPACK_IMPORTED_MODULE_15__.firstValueFrom)(_this5._remitosService.getItems(idremito));
           _this5.mov_art_list = items.list;
           resolve(_this5.mov_art_list);
@@ -1527,8 +1574,16 @@ class SaveComponent {
    */
   addMovimiento() {
     if (this.form.get('oc_pendiente').value != '') {
-      let orden_compra_value = this.form.get('oc_pendiente').value;
+      let orden_compra_value = this.form.get('oc_pendiente').value.idordencompra;
       let esEdicion = this.remito ? true : false;
+      // Validar que se haya seleccionado un deposito válido
+      if (!this.remito || this.remito && this.form.get('deposito').value !== this.remito.descripcion_deposito) {
+        const depositoSeleccionado = this.form.get('deposito').value;
+        const depositoExistente = this.depositos.find(deposito => deposito.iddeposito === depositoSeleccionado.iddeposito);
+        if (!depositoExistente) {
+          return this.alert.warning('El deposito seleccionado no existe. Por favor, seleccione un deposito válido.');
+        }
+      }
       this.dialogo.open(_addArticulo_add_articulo_component__WEBPACK_IMPORTED_MODULE_2__.AddArticuloComponent, {
         panelClass: 'ayuda-dialog',
         data: {
@@ -1552,8 +1607,9 @@ class SaveComponent {
             };
             this.mov_art_list = [...this.mov_art_list, movimiento_articulo];
             this.dataSource = new _angular_material_table__WEBPACK_IMPORTED_MODULE_7__.MatTableDataSource(this.mov_art_list); //Actualizo la tabla
-            // Desabilito el campo OC y Deposito
+            // Desabilito el campo proveedor, OC y Deposito
             if (this.mov_art_list.length != 0) {
+              this.form.get('proveedor').disable();
               this.form.get('oc_pendiente').disable();
               this.form.get('deposito').disable();
             }
@@ -1594,7 +1650,7 @@ class SaveComponent {
     this.form.get(input).setValue('');
     if (input == "proveedor") {
       this.form.get('oc_pendiente').setValue('');
-      this.oc_pendientes = this.orden_compras;
+      this.getOrdenCompras();
     }
   }
   onSubmit() {
@@ -1633,7 +1689,7 @@ class SaveComponent {
           idusuario: this.user.id,
           fecha_hora: fecha_hora,
           iddeposito: this.form.get('deposito').value.iddeposito,
-          idordencompra: this.form.get('oc_pendiente').value,
+          idordencompra: this.form.get('oc_pendiente').value.idordencompra,
           observaciones: this.form.get('observaciones').value
         },
         movimientos: movimientos
@@ -1679,7 +1735,7 @@ SaveComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_6__["�
   }])],
   decls: 74,
   vars: 30,
-  consts: [[1, "fixed", "inset-0", "sm:static", "max-h-screen", "sm:inset-auto", "flex", "flex-col", "sm:min-w-120", "sm:w-min-w-90", "sm:rounded-2xl", "overflow-y-auto", "overflow-hidden", "shadow-lg", "bg-white", "dark:bg-slate-900"], [1, "w-full", "px-4", "py-4", "bg-primary", "flex", "justify-between", "items-center"], [1, "text-white", "font-bold", "text-lg"], ["mat-icon-button", "", 3, "click"], [1, "text-white"], ["class", "fixed top-0 left-0 w-full flex justify-center items-center mt-8 alert-main z-99999", 3, "type", "appearance", 4, "ngIf"], [1, "flex", "flex-col", "w-full", "h-full", "p-4", "form-menu", 3, "formGroup"], [1, "shadow-md", "mb-3"], [1, "flex", "gap-1"], ["appearance", "outline", 1, "w-1/8"], ["matInput", "", "placeholder", "Fecha", "formControlName", "fecha", 3, "matDatepicker", "min", "max"], ["matSuffix", "", 3, "for"], ["picker", ""], ["matInput", "", "formControlName", "hora", "type", "time"], ["appearance", "outline", 1, "w-1/3"], ["type", "text", "matInput", "", "formControlName", "proveedor", 3, "matAutocomplete", "ngModelChange"], ["autoActiveFirstOption", "", 3, "displayWith"], ["auto", "matAutocomplete"], [3, "value", 4, "ngFor", "ngForOf"], ["matSuffix", "", "mat-icon-button", "", "class", "mr-2", 3, "click", 4, "ngIf"], ["formControlName", "oc_pendiente", 3, "ngModelChange"], ["type", "text", "matInput", "", "formControlName", "deposito", 3, "matAutocomplete"], ["art", "matAutocomplete"], ["appearance", "outline", 1, "w-full"], ["matInput", "", "formControlName", "observaciones", 1, "resize-none"], [1, "counter", 3, "ngClass"], [1, "overflow-y-auto", "max-h-[150px]", "h-[150px]", "shadow-xl", "pb-10", "border-t-2", "border-slate-200"], ["mat-table", "", 1, "w-full", "mt-1", 3, "dataSource"], ["matColumnDef", "articulo"], ["mat-header-cell", "", 4, "matHeaderCellDef"], ["mat-cell", "", 4, "matCellDef"], ["matColumnDef", "codigointerno"], ["matColumnDef", "unidadmedida"], ["matColumnDef", "cantidad"], ["matColumnDef", "acciones"], ["mat-header-row", "", 4, "matHeaderRowDef", "matHeaderRowDefSticky"], ["mat-row", "", 4, "matRowDef", "matRowDefColumns"], [1, "w-full", "md:flex", "justify-center", "pb-4", "md:px-4"], ["mat-raised-button", "", "color", "accent", 1, "w-full", "bg-primary", "rounded-none", "md:w-28", "md:rounded-3xl", "py-8", "md:py-0", 3, "click"], [1, "fixed", "top-0", "left-0", "w-full", "flex", "justify-center", "items-center", "mt-8", "alert-main", "z-99999", 3, "type", "appearance"], [3, "value"], ["matSuffix", "", "mat-icon-button", "", 1, "mr-2", 3, "click"], ["mat-header-cell", ""], ["mat-cell", ""], ["mat-mini-fab", "", "color", "primary", "matTooltip", "A\u00F1adir Articulo", "aria-label", "icon", 1, "rounded-full", 3, "click"], ["delete", ""], ["color", "warn"], ["mat-header-row", ""], ["mat-row", ""]],
+  consts: [[1, "fixed", "inset-0", "sm:static", "max-h-screen", "sm:inset-auto", "flex", "flex-col", "sm:min-w-120", "sm:w-min-w-90", "sm:rounded-2xl", "overflow-y-auto", "overflow-hidden", "shadow-lg", "bg-white", "dark:bg-slate-900"], [1, "w-full", "px-4", "py-4", "bg-primary", "flex", "justify-between", "items-center"], [1, "text-white", "font-bold", "text-lg"], ["mat-icon-button", "", 3, "click"], [1, "text-white"], ["class", "fixed top-0 left-0 w-full flex justify-center items-center mt-8 alert-main z-99999", 3, "type", "appearance", 4, "ngIf"], [1, "flex", "flex-col", "w-full", "h-full", "p-4", "form-menu", 3, "formGroup"], [1, "shadow-md", "mb-3"], [1, "flex", "gap-1"], ["appearance", "outline", 1, "w-1/8"], ["matInput", "", "placeholder", "Fecha", "formControlName", "fecha", 3, "matDatepicker", "min", "max"], ["matSuffix", "", 3, "for"], ["picker", ""], ["matInput", "", "formControlName", "hora", "type", "time"], ["appearance", "outline", 1, "w-1/3"], ["type", "text", "matInput", "", "formControlName", "proveedor", 3, "matAutocomplete"], ["autoActiveFirstOption", "", 3, "displayWith"], ["auto", "matAutocomplete"], [3, "value", 4, "ngFor", "ngForOf"], ["matSuffix", "", "mat-icon-button", "", "class", "mr-2", 3, "click", 4, "ngIf"], ["formControlName", "oc_pendiente"], ["type", "text", "matInput", "", "formControlName", "deposito", 3, "matAutocomplete"], ["art", "matAutocomplete"], ["appearance", "outline", 1, "w-full"], ["matInput", "", "formControlName", "observaciones", 1, "resize-none"], [1, "counter", 3, "ngClass"], [1, "overflow-y-auto", "max-h-[150px]", "h-[150px]", "shadow-xl", "pb-10", "border-t-2", "border-slate-200"], ["mat-table", "", 1, "w-full", "mt-1", 3, "dataSource"], ["matColumnDef", "articulo"], ["mat-header-cell", "", 4, "matHeaderCellDef"], ["mat-cell", "", 4, "matCellDef"], ["matColumnDef", "codigointerno"], ["matColumnDef", "unidadmedida"], ["matColumnDef", "cantidad"], ["matColumnDef", "acciones"], ["mat-header-row", "", 4, "matHeaderRowDef", "matHeaderRowDefSticky"], ["mat-row", "", 4, "matRowDef", "matRowDefColumns"], [1, "w-full", "md:flex", "justify-center", "pb-4", "md:px-4"], ["mat-raised-button", "", "color", "accent", 1, "w-full", "bg-primary", "rounded-none", "md:w-28", "md:rounded-3xl", "py-8", "md:py-0", 3, "click"], [1, "fixed", "top-0", "left-0", "w-full", "flex", "justify-center", "items-center", "mt-8", "alert-main", "z-99999", 3, "type", "appearance"], [3, "value"], ["matSuffix", "", "mat-icon-button", "", 1, "mr-2", 3, "click"], ["mat-header-cell", ""], ["mat-cell", ""], ["mat-mini-fab", "", "color", "primary", "matTooltip", "A\u00F1adir Articulo", "aria-label", "icon", 1, "rounded-full", 3, "click"], ["delete", ""], ["color", "warn"], ["mat-header-row", ""], ["mat-row", ""]],
   template: function SaveComponent_Template(rf, ctx) {
     if (rf & 1) {
       _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](0, "div", 0)(1, "div", 1)(2, "span", 2);
@@ -1704,11 +1760,7 @@ SaveComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_6__["�
       _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](21, "mat-form-field", 14)(22, "mat-label");
       _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](23, "Proveedor");
       _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](24, "input", 15);
-      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵlistener"]("ngModelChange", function SaveComponent_Template_input_ngModelChange_24_listener($event) {
-        return ctx.seleccionItem($event);
-      });
-      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
+      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelement"](24, "input", 15);
       _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](25, "mat-autocomplete", 16, 17);
       _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtemplate"](27, SaveComponent_mat_option_27_Template, 2, 2, "mat-option", 18);
       _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵpipe"](28, "async");
@@ -1719,11 +1771,6 @@ SaveComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_6__["�
       _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](32, "OC");
       _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
       _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](33, "mat-select", 20);
-      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵlistener"]("ngModelChange", function SaveComponent_Template_mat_select_ngModelChange_33_listener($event) {
-        return ctx.seleccionItem({
-          oc: $event
-        });
-      });
       _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtemplate"](34, SaveComponent_mat_option_34_Template, 2, 3, "mat-option", 18);
       _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
       _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtemplate"](35, SaveComponent_button_35_Template, 3, 0, "button", 19);
@@ -1797,7 +1844,7 @@ SaveComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_6__["�
       _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](2);
       _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("ngForOf", _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵpipeBind1"](28, 24, ctx.filteredProveedores));
       _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](2);
-      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("ngIf", ctx.form.get("proveedor").value);
+      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("ngIf", ctx.form.get("proveedor").value && ctx.mov_art_list.length == 0);
       _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](5);
       _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("ngForOf", ctx.oc_pendientes);
       _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](1);
@@ -1972,6 +2019,7 @@ class RemitosService {
     f += !option ? 'filter[activo]=1' : '';
     let subject = new rxjs__WEBPACK_IMPORTED_MODULE_2__.Subject();
     this.http.get(`${environments_environment__WEBPACK_IMPORTED_MODULE_0__.environment.stock.depositos}${f}`).subscribe(resp => {
+      this._authService.accessToken = resp.token;
       subject.next({
         list: resp.result
       });
@@ -1983,6 +2031,7 @@ class RemitosService {
     f += !option ? 'filter[activo]=1' : '';
     let subject = new rxjs__WEBPACK_IMPORTED_MODULE_2__.Subject();
     this.http.get(`${environments_environment__WEBPACK_IMPORTED_MODULE_0__.environment.administracion.proveedores}${f}`).subscribe(resp => {
+      this._authService.accessToken = resp.token;
       subject.next({
         list: resp
       });
@@ -1993,6 +2042,7 @@ class RemitosService {
     let f = `?filter[deposito]=${deposito_origen}`;
     let subject = new rxjs__WEBPACK_IMPORTED_MODULE_2__.Subject();
     this.http.get(`${environments_environment__WEBPACK_IMPORTED_MODULE_0__.environment.stock.view_stock_articulo_depositos}${f}`).subscribe(resp => {
+      this._authService.accessToken = resp.token;
       subject.next({
         list: resp.result
       });
@@ -2004,6 +2054,7 @@ class RemitosService {
     f += `&expand=um`;
     let subject = new rxjs__WEBPACK_IMPORTED_MODULE_2__.Subject();
     this.http.get(`${environments_environment__WEBPACK_IMPORTED_MODULE_0__.environment.stock.articulo_unidad_medidas}${f}`).subscribe(resp => {
+      this._authService.accessToken = resp.token;
       subject.next({
         list: resp.result
       });
@@ -2014,6 +2065,7 @@ class RemitosService {
     let f = `?filter[idremito]=${idremito}`;
     let subject = new rxjs__WEBPACK_IMPORTED_MODULE_2__.Subject();
     this.http.get(`${environments_environment__WEBPACK_IMPORTED_MODULE_0__.environment.stock.view_stock_movimientos}${f}`).subscribe(resp => {
+      this._authService.accessToken = resp.token;
       subject.next({
         list: resp.result
       });
@@ -2024,6 +2076,7 @@ class RemitosService {
     let f = `?sort=asc`;
     let subject = new rxjs__WEBPACK_IMPORTED_MODULE_2__.Subject();
     this.http.get(`${environments_environment__WEBPACK_IMPORTED_MODULE_0__.environment.login.view_usuarios}${f}`).subscribe(resp => {
+      this._authService.accessToken = resp.token;
       subject.next({
         list: resp.result
       });
@@ -2035,6 +2088,7 @@ class RemitosService {
     f += option ? `filter[idordencompra]=${option}&` : '';
     let subject = new rxjs__WEBPACK_IMPORTED_MODULE_2__.Subject();
     this.http.get(`${environments_environment__WEBPACK_IMPORTED_MODULE_0__.environment.stock.view_items_oc_pendientes}${f}`).subscribe(resp => {
+      this._authService.accessToken = resp.token;
       subject.next({
         list: resp.result
       });

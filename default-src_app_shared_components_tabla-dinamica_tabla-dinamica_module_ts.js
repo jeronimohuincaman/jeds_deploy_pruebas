@@ -79,15 +79,18 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "TablaDinamicaService": () => (/* binding */ TablaDinamicaService)
 /* harmony export */ });
-/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! rxjs */ 80228);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ 86839);
-/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ 33765);
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! rxjs */ 80228);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ 86839);
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/common/http */ 33765);
+/* harmony import */ var _core_auth_auth_service__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @core/auth/auth.service */ 88951);
+
 
 
 
 class TablaDinamicaService {
-  constructor(http) {
+  constructor(http, _authService) {
     this.http = http;
+    this._authService = _authService;
   }
   // private _providerbase: string = environment.baseRest + '/' ;
   /**
@@ -97,10 +100,11 @@ class TablaDinamicaService {
    * @returns
    */
   getData(endpoint, filter) {
-    var subject = new rxjs__WEBPACK_IMPORTED_MODULE_0__.Subject();
+    var subject = new rxjs__WEBPACK_IMPORTED_MODULE_1__.Subject();
     this.http.get(`${endpoint}${filter}`, {
       observe: 'response'
     }).subscribe(resp => {
+      if (resp.body.token) this._authService.accessToken = resp.body.token;
       subject.next({
         'data': resp.body,
         'totalPages': resp.headers.get('X-Pagination-Page-Count'),
@@ -111,9 +115,9 @@ class TablaDinamicaService {
   }
 }
 TablaDinamicaService.ɵfac = function TablaDinamicaService_Factory(t) {
-  return new (t || TablaDinamicaService)(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵinject"](_angular_common_http__WEBPACK_IMPORTED_MODULE_2__.HttpClient));
+  return new (t || TablaDinamicaService)(_angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵinject"](_angular_common_http__WEBPACK_IMPORTED_MODULE_3__.HttpClient), _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵinject"](_core_auth_auth_service__WEBPACK_IMPORTED_MODULE_0__.AuthService));
 };
-TablaDinamicaService.ɵprov = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineInjectable"]({
+TablaDinamicaService.ɵprov = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdefineInjectable"]({
   token: TablaDinamicaService,
   factory: TablaDinamicaService.ɵfac,
   providedIn: 'root'
