@@ -38943,6 +38943,10 @@ body.light mat-option:nth-child(odd):hover {
     margin-top: 1.25rem !important;
     margin-bottom: 1.25rem !important;
 }
+.my-6 {
+    margin-top: 1.5rem !important;
+    margin-bottom: 1.5rem !important;
+}
 .my-8 {
     margin-top: 2rem !important;
     margin-bottom: 2rem !important;
@@ -38990,6 +38994,9 @@ body.light mat-option:nth-child(odd):hover {
 .mb-5 {
     margin-bottom: 1.25rem !important;
 }
+.mb-6 {
+    margin-bottom: 1.5rem !important;
+}
 .mb-8 {
     margin-bottom: 2rem !important;
 }
@@ -39025,6 +39032,9 @@ body.light mat-option:nth-child(odd):hover {
 }
 .ml-6 {
     margin-left: 1.5rem !important;
+}
+.ml-\[215px\] {
+    margin-left: 215px !important;
 }
 .ml-auto {
     margin-left: auto !important;
@@ -39257,6 +39267,9 @@ body.light mat-option:nth-child(odd):hover {
 .w-30 {
     width: 7.5rem !important;
 }
+.w-36 {
+    width: 9rem !important;
+}
 .w-4 {
     width: 1rem !important;
 }
@@ -39266,11 +39279,20 @@ body.light mat-option:nth-child(odd):hover {
 .w-6 {
     width: 1.5rem !important;
 }
+.w-60 {
+    width: 15rem !important;
+}
 .w-7 {
     width: 1.75rem !important;
 }
+.w-72 {
+    width: 18rem !important;
+}
 .w-8 {
     width: 2rem !important;
+}
+.w-90 {
+    width: 22.5rem !important;
 }
 .w-full {
     width: 100% !important;
@@ -39472,6 +39494,11 @@ body.light mat-option:nth-child(odd):hover {
     margin-right: calc(0.75rem * var(--tw-space-x-reverse)) !important;
     margin-left: calc(0.75rem * calc(1 - var(--tw-space-x-reverse))) !important;
 }
+.space-x-4 > :not([hidden]) ~ :not([hidden]) {
+    --tw-space-x-reverse: 0 !important;
+    margin-right: calc(1rem * var(--tw-space-x-reverse)) !important;
+    margin-left: calc(1rem * calc(1 - var(--tw-space-x-reverse))) !important;
+}
 .space-y-1 > :not([hidden]) ~ :not([hidden]) {
     --tw-space-y-reverse: 0 !important;
     margin-top: calc(0.25rem * calc(1 - var(--tw-space-y-reverse))) !important;
@@ -39542,6 +39569,12 @@ body.light mat-option:nth-child(odd):hover {
 .rounded-l-lg {
     border-top-left-radius: 0.5rem !important;
     border-bottom-left-radius: 0.5rem !important;
+}
+.rounded-tl-lg {
+    border-top-left-radius: 0.5rem !important;
+}
+.rounded-tr-lg {
+    border-top-right-radius: 0.5rem !important;
 }
 .\!border {
     border-width: 1px !important;
@@ -39881,6 +39914,10 @@ body.light mat-option:nth-child(odd):hover {
     padding-left: 2rem !important;
     padding-right: 2rem !important;
 }
+.py-0 {
+    padding-top: 0px !important;
+    padding-bottom: 0px !important;
+}
 .py-1 {
     padding-top: 0.25rem !important;
     padding-bottom: 0.25rem !important;
@@ -39963,6 +40000,9 @@ body.light mat-option:nth-child(odd):hover {
 }
 .text-2xl {
     font-size: 1.25rem !important;
+}
+.text-3xl {
+    font-size: 1.5rem !important;
 }
 .text-4xl {
     font-size: 2rem !important;
@@ -40418,6 +40458,11 @@ body.light mat-option:nth-child(odd):hover {
 .hover\:opacity-80:hover {
     opacity: 0.8 !important;
 }
+.active\:scale-95:active {
+    --tw-scale-x: .95 !important;
+    --tw-scale-y: .95 !important;
+    transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y)) !important;
+}
 .group:hover .group-hover\:opacity-0 {
     opacity: 0 !important;
 }
@@ -40676,6 +40721,9 @@ body.light mat-option:nth-child(odd):hover {
     .sm\:w-2\/3 {
         width: 66.666667% !important;
     }
+    .sm\:w-3\/4 {
+        width: 75% !important;
+    }
     .sm\:w-80 {
         width: 20rem !important;
     }
@@ -40834,6 +40882,9 @@ body.light mat-option:nth-child(odd):hover {
     }
     .md\:block {
         display: block !important;
+    }
+    .md\:inline {
+        display: inline !important;
     }
     .md\:flex {
         display: flex !important;

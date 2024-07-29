@@ -250,6 +250,11 @@ class AddArticuloComponent {
     if (!this.form.valid) {
       return this.alert.error('Revise Los Datos Ingresados');
     } else {
+      let existeMovimiento = this.data.movimientos.find(movimiento => movimiento.articulo === this.form.get('articulo').value.idarticulo && movimiento.idunidadmedida === this.form.get('unidadmedida').value);
+      if (existeMovimiento) {
+        this.form.get('unidadmedida').setValue('');
+        return this.alert.warning('Ya existe un movimiento de ese articulo con esa unidad de medida.');
+      }
       let unidadmedida = this.unidades_de_medida.find(um => um.idunidadmedida === this.form.get('unidadmedida').value); //Traigo una UM que coincida con mi seleccion para poder utilizar su descripcion.
       let articulo = {
         articulo: this.form.get('articulo').value,
@@ -795,7 +800,6 @@ class OrdenesDeCompraComponent {
       if (res === 'confirmed') {
         this._ordenesDeCompraService.deleteOrdenDeCompra(event.params.data.codigo).subscribe({
           next: res => {
-            console.log(res);
             // Manejar la respuesta exitosa
             this.alert.success("Orden de compra eliminada con éxito.");
             if (res) {
@@ -1178,7 +1182,8 @@ class SaveComponent {
     this.dialogo = dialogo;
     this.columns = ['articulo', 'codigointerno', 'unidadmedida', 'cantidad', 'importe', 'acciones'];
     this.unidades_de_medida = [];
-    this.items_list = [];
+    this.mov_art_list = [];
+    this.mov_art_list_deleted = [];
     this.maxPalabras = 50;
     this.dataSource = new _angular_material_table__WEBPACK_IMPORTED_MODULE_8__.MatTableDataSource();
     this.showAlert = false;
@@ -1229,7 +1234,7 @@ class SaveComponent {
     if (this.orden_de_compra) {
       //Sí existe el orden de compra, cargo la grilla con sus articulos...
       this.getItems(this.orden_de_compra.codigo).then(res => {
-        this.items_list = res.map(m => {
+        this.mov_art_list = res.map(m => {
           return {
             articulo: m.articulo,
             cantidad: m.cantidad,
@@ -1240,9 +1245,9 @@ class SaveComponent {
             importe: m.importe
           };
         });
-        this.dataSource = new _angular_material_table__WEBPACK_IMPORTED_MODULE_8__.MatTableDataSource(this.items_list);
+        this.dataSource = new _angular_material_table__WEBPACK_IMPORTED_MODULE_8__.MatTableDataSource(this.mov_art_list);
         // Verifica el estado de habilitacion o deshabilitacion del control IVA, Presupuesto y Numero si contiene items o no
-        if (this.items_list.length != 0) {
+        if (this.mov_art_list.length != 0) {
           this.form.get('iva').disable();
           this.form.get('presupuesto').disable();
           this.form.get('numero').disable();
@@ -1328,8 +1333,8 @@ class SaveComponent {
       return new Promise( /*#__PURE__*/function () {
         var _ref2 = (0,C_work_jeds_jedstion_source_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* (resolve) {
           const items = yield (0,rxjs__WEBPACK_IMPORTED_MODULE_16__.firstValueFrom)(_this2._ordenesDeCompraService.getItems(idordencompra));
-          _this2.items_list = items.list;
-          resolve(_this2.items_list);
+          _this2.mov_art_list = items.list;
+          resolve(_this2.mov_art_list);
         });
         return function (_x2) {
           return _ref2.apply(this, arguments);
@@ -1345,8 +1350,14 @@ class SaveComponent {
    */
   addArticulo() {
     if (this.form.get('numero').value != '') {
+      let esEdicion = this.orden_de_compra ? true : false;
       this.dialogo.open(_addArticulo_add_articulo_component__WEBPACK_IMPORTED_MODULE_2__.AddArticuloComponent, {
-        panelClass: 'ayuda-dialog'
+        panelClass: 'ayuda-dialog',
+        data: {
+          movimientos: this.mov_art_list,
+          movimientos_eliminados: this.mov_art_list_deleted,
+          esEdicion: esEdicion
+        }
       }).afterClosed().subscribe({
         next: res => {
           if (res) {
@@ -1360,10 +1371,10 @@ class SaveComponent {
               codigo_interno_articulo: res.articulo.codigo_interno,
               importe: res.importe
             };
-            this.items_list = [...this.items_list, art_stk_ini];
-            this.dataSource = new _angular_material_table__WEBPACK_IMPORTED_MODULE_8__.MatTableDataSource(this.items_list); //Actualizo la tabla
+            this.mov_art_list = [...this.mov_art_list, art_stk_ini];
+            this.dataSource = new _angular_material_table__WEBPACK_IMPORTED_MODULE_8__.MatTableDataSource(this.mov_art_list); //Actualizo la tabla
             // Desabilito el campo IVA, Presupuesto y Numero
-            if (this.items_list.length != 0) {
+            if (this.mov_art_list.length != 0) {
               this.form.get('iva').disable();
               this.form.get('presupuesto').disable();
               this.form.get('numero').disable();
@@ -1383,12 +1394,12 @@ class SaveComponent {
    * @param articulo
    */
   deleteArticulo(articulo) {
-    this.items_list = this.items_list.filter(item => {
+    this.mov_art_list = this.mov_art_list.filter(item => {
       return item !== articulo;
     });
-    this.dataSource = new _angular_material_table__WEBPACK_IMPORTED_MODULE_8__.MatTableDataSource(this.items_list);
+    this.dataSource = new _angular_material_table__WEBPACK_IMPORTED_MODULE_8__.MatTableDataSource(this.mov_art_list);
     // Habilito el campo de IVA, Presupuesto y Numero si la lista de movimientos está vacía
-    if (this.items_list.length === 0) {
+    if (this.mov_art_list.length === 0) {
       this.form.get('iva').enable();
       this.form.get('presupuesto').enable();
       this.form.get('numero').enable();
@@ -1423,7 +1434,7 @@ class SaveComponent {
       if (!proveedor_existe) {
         return this.alert.warning('El proveedor seleccionado no existe. Por favor, seleccione un proveedor válido.');
       }
-      let items = this.items_list.map(objeto => ({
+      let items = this.mov_art_list.map(objeto => ({
         articulo: objeto.articulo,
         cantidad: objeto.cantidad,
         um: objeto.idunidadmedida,
@@ -1619,11 +1630,11 @@ SaveComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_7__["�
       _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵadvance"](2);
       _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵproperty"]("value", "27.0");
       _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵadvance"](2);
-      _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵproperty"]("ngIf", ctx.form.get("iva").value && ctx.items_list.length == 0);
+      _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵproperty"]("ngIf", ctx.form.get("iva").value && ctx.mov_art_list.length == 0);
       _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵadvance"](5);
-      _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵproperty"]("ngIf", ctx.form.get("presupuesto").value && ctx.items_list.length == 0);
+      _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵproperty"]("ngIf", ctx.form.get("presupuesto").value && ctx.mov_art_list.length == 0);
       _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵadvance"](5);
-      _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵproperty"]("ngIf", ctx.form.get("numero").value && ctx.items_list.length == 0);
+      _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵproperty"]("ngIf", ctx.form.get("numero").value && ctx.mov_art_list.length == 0);
       _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵadvance"](5);
       _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵproperty"]("ngClass", _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵpureFunction1"](39, _c0, !ctx.isPalabraMaxLengthReached()));
       _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵadvance"](1);

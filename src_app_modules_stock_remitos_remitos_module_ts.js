@@ -1030,16 +1030,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var C_work_jeds_jedstion_source_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js */ 71670);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/core */ 86839);
-/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! @angular/forms */ 69542);
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @angular/forms */ 69542);
 /* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! rxjs */ 80228);
 /* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! rxjs */ 68951);
-/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! rxjs */ 78947);
-/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! rxjs */ 32313);
-/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! rxjs */ 62566);
-/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! rxjs */ 19337);
-/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! rxjs */ 54363);
-/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! rxjs */ 44874);
-/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! rxjs */ 50635);
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! rxjs */ 54363);
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! rxjs */ 44874);
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! rxjs */ 50635);
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! rxjs */ 78947);
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! rxjs */ 32313);
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! rxjs */ 62566);
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! rxjs */ 19337);
 /* harmony import */ var _angular_material_dialog__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! @angular/material/dialog */ 67486);
 /* harmony import */ var _angular_material_core__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! @angular/material/core */ 443);
 /* harmony import */ var _angular_material_table__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/material/table */ 83348);
@@ -1135,7 +1135,7 @@ function SaveComponent_mat_option_34_Template(rf, ctx) {
     const oc_r25 = ctx.$implicit;
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵproperty"]("value", oc_r25);
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtextInterpolate2"](" N\u00B0 ", oc_r25.numero_oc, " / ", oc_r25.fecha_oc, " ");
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtextInterpolate1"](" ", oc_r25.fecha_numero_oc, " ");
   }
 }
 function SaveComponent_button_35_Template(rf, ctx) {
@@ -1328,7 +1328,6 @@ class SaveComponent {
     this._unsubscribeAll = new rxjs__WEBPACK_IMPORTED_MODULE_9__.Subject();
     this.creadoExitosamente = new _angular_core__WEBPACK_IMPORTED_MODULE_7__.EventEmitter();
     this.editadoExitosamente = new _angular_core__WEBPACK_IMPORTED_MODULE_7__.EventEmitter();
-    this.isUpdating = false; //flag para suprimir bucle infinito.
     this.remito = this.data ? this.data : null;
     this.title = this.remito?.idremito ? `Editar Remito ${this.remito.fecha} - ${this.remito.hora}` : `Nuevo Remito`;
     /* this`user = JSON.parse(sessionStorage.getItem('user')) */
@@ -1346,53 +1345,15 @@ class SaveComponent {
     });
     // Load empresa data
     this._empresaService.getEmpresa();
-    this.getItemsOrdenDeCompraPendiente().then(() => {
-      this.getProveedores();
-    });
     this.newForm();
-    this.exist();
-    this.subscribeAlert();
-    this.subscribeInputs();
+    this.loadServices().then(() => {
+      let oc = this.orden_compras.find(o => o.idordencompra === this.remito.idordencompra);
+      this.form.get('oc_pendiente').setValue(oc);
+    });
   }
   /**
-   * Se realizo esta funcion para solucionar el error recursivo de angular 'RangeError'
+   * Este metodo inicializa el formulario
    */
-  subscribeInputs() {
-    this.form.get('proveedor').valueChanges.subscribe(value => {
-      if (!this.isUpdating) {
-        this.seleccionItem(value);
-      }
-    });
-    this.form.get('oc_pendiente').valueChanges.subscribe(value => {
-      if (!this.isUpdating) {
-        //Debido a que se tuvo que cambiar la logica original del codigo para el renderizado cuando se escuchaban cambios, 
-        //se añado esta condicional que modifica la estructura de los datos de la OC segun sea alta o edicion de un remito
-        if (this.remito?.idremito) {
-          value = {
-            idordencompra: value
-          };
-        }
-        this.seleccionItem(value);
-      }
-    });
-  }
-  // Alert
-  subscribeAlert() {
-    this.alert.emitConfig.subscribe({
-      next: config => {
-        this.showAlert = true;
-        this._alertConfig = {
-          ...config,
-          appearance: 'border'
-        };
-        let time = 2;
-        (0,rxjs__WEBPACK_IMPORTED_MODULE_11__.timer)(100, 1500).pipe((0,rxjs__WEBPACK_IMPORTED_MODULE_12__.finalize)(() => {
-          this.showAlert = false;
-          this._alertConfig = null;
-        }), (0,rxjs__WEBPACK_IMPORTED_MODULE_13__.takeWhile)(() => time > 0), (0,rxjs__WEBPACK_IMPORTED_MODULE_10__.takeUntil)(this._unsubscribeAll), (0,rxjs__WEBPACK_IMPORTED_MODULE_14__.tap)(() => time -= 1)).subscribe();
-      }
-    });
-  }
   newForm() {
     const [dia, mes, anio] = this.remito ? this.remito.fecha.split('/') : ''; //Se hace esto para poder manejar el formato que se cambio en el render del componente de tabla dinamica.
     if (this.remito) {
@@ -1421,48 +1382,37 @@ class SaveComponent {
         }
       });
     }
-    this.form = new _angular_forms__WEBPACK_IMPORTED_MODULE_15__.FormGroup({
-      fecha: new _angular_forms__WEBPACK_IMPORTED_MODULE_15__.FormControl(this.remito?.fecha ? this.datePipe.transform(new Date(`${mes}/${dia}/${anio}`), 'yyyy-MM-dd') : this.datePipe.transform(new Date(), 'yyyy-MM-dd'), [_angular_forms__WEBPACK_IMPORTED_MODULE_15__.Validators.required]),
-      hora: new _angular_forms__WEBPACK_IMPORTED_MODULE_15__.FormControl(this.remito?.hora ? this.remito.hora : this.datePipe.transform(new Date(), 'HH:mm'), [_angular_forms__WEBPACK_IMPORTED_MODULE_15__.Validators.required]),
-      proveedor: new _angular_forms__WEBPACK_IMPORTED_MODULE_15__.FormControl(this.remito ? this.remito.descripcion_proveedor : '', [_angular_forms__WEBPACK_IMPORTED_MODULE_15__.Validators.required]),
-      oc_pendiente: new _angular_forms__WEBPACK_IMPORTED_MODULE_15__.FormControl(this.remito ? this.remito.idordencompra : '', [_angular_forms__WEBPACK_IMPORTED_MODULE_15__.Validators.required]),
-      deposito: new _angular_forms__WEBPACK_IMPORTED_MODULE_15__.FormControl(this.remito ? this.remito.descripcion_deposito : '', _angular_forms__WEBPACK_IMPORTED_MODULE_15__.Validators.required),
-      observaciones: new _angular_forms__WEBPACK_IMPORTED_MODULE_15__.FormControl(this.remito ? this.remito.observaciones : '', [_angular_forms__WEBPACK_IMPORTED_MODULE_15__.Validators.maxLength(this.maxPalabras)])
+    this.form = new _angular_forms__WEBPACK_IMPORTED_MODULE_11__.FormGroup({
+      fecha: new _angular_forms__WEBPACK_IMPORTED_MODULE_11__.FormControl(this.remito?.fecha ? this.datePipe.transform(new Date(`${mes}/${dia}/${anio}`), 'yyyy-MM-dd') : this.datePipe.transform(new Date(), 'yyyy-MM-dd'), [_angular_forms__WEBPACK_IMPORTED_MODULE_11__.Validators.required]),
+      hora: new _angular_forms__WEBPACK_IMPORTED_MODULE_11__.FormControl(this.remito?.hora ? this.remito.hora : this.datePipe.transform(new Date(), 'HH:mm'), [_angular_forms__WEBPACK_IMPORTED_MODULE_11__.Validators.required]),
+      proveedor: new _angular_forms__WEBPACK_IMPORTED_MODULE_11__.FormControl(this.remito ? this.remito.descripcion_proveedor : '', [_angular_forms__WEBPACK_IMPORTED_MODULE_11__.Validators.required]),
+      oc_pendiente: new _angular_forms__WEBPACK_IMPORTED_MODULE_11__.FormControl(this.remito ? this.remito.idordencompra : '', [_angular_forms__WEBPACK_IMPORTED_MODULE_11__.Validators.required]),
+      deposito: new _angular_forms__WEBPACK_IMPORTED_MODULE_11__.FormControl(this.remito ? this.remito.descripcion_deposito : '', _angular_forms__WEBPACK_IMPORTED_MODULE_11__.Validators.required),
+      observaciones: new _angular_forms__WEBPACK_IMPORTED_MODULE_11__.FormControl(this.remito ? this.remito.observaciones : '', [_angular_forms__WEBPACK_IMPORTED_MODULE_11__.Validators.maxLength(this.maxPalabras)])
     });
   }
   /**
-   * Funcion para contar las palabras en las observaciones
-  */
-  getPalabrasLength() {
-    const observaciones = this.form.get('observaciones').value;
-    return observaciones ? observaciones.length : 0;
-  }
-  /**
-  * Funcion para verificar si se ha alcanzado el límite de caracteres en las observaciones
-  */
-  isPalabraMaxLengthReached() {
-    return this.getPalabrasLength() <= this.maxPalabras;
-  }
-  /**
-   * Si existe un stockinicial le mando 'true' a fondos y nada a TM para que me traiga todos los fondos y TMs al editar.
-   * Caso contrario, si se va a crear un stockinicial, llamo a los fondos sin enviarle un parametro asi me trae solo los activos y
-  * le envio un paramtro a los tipos de stockinicials para que me traiga los activos.
-  */
-  exist() {
-    if (this.remito?.idremito) {
-      this.getDepositos(true);
-    } else {
-      this.getDepositos();
-    }
-  }
-  getDepositos(option) {
+   * Este metodo ejecuta todas las peticiones asincronas al mismo tiempo
+   */
+  loadServices() {
     var _this = this;
     return (0,C_work_jeds_jedstion_source_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
-      const Depositos = yield (0,rxjs__WEBPACK_IMPORTED_MODULE_16__.firstValueFrom)(_this._remitosService.getDepositos(option));
+      yield Promise.all([_this.getDepositos(), _this.getItemsOrdenDeCompraPendiente()]);
+    })();
+  }
+  // ############### Llamados a los servicios ###################
+  /**
+   * Controlador que obtiene los depósitos
+   * @param option
+   */
+  getDepositos(option) {
+    var _this2 = this;
+    return (0,C_work_jeds_jedstion_source_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
+      const Depositos = yield (0,rxjs__WEBPACK_IMPORTED_MODULE_12__.firstValueFrom)(_this2._remitosService.getDepositos(option));
       new Promise( /*#__PURE__*/function () {
         var _ref = (0,C_work_jeds_jedstion_source_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* (resolve) {
-          _this.depositos = Depositos.list;
-          _this.filteredDepositos = _this.form.get('deposito').valueChanges.pipe((0,rxjs__WEBPACK_IMPORTED_MODULE_17__.startWith)(''), (0,rxjs__WEBPACK_IMPORTED_MODULE_18__.map)(value => _this._filterDepositos(value)));
+          _this2.depositos = Depositos.list;
+          _this2.filteredDepositos = _this2.form.get('deposito').valueChanges.pipe((0,rxjs__WEBPACK_IMPORTED_MODULE_13__.startWith)(''), (0,rxjs__WEBPACK_IMPORTED_MODULE_14__.map)(value => _this2._filterDepositos(value)));
           resolve(true);
         });
         return function (_x) {
@@ -1471,47 +1421,43 @@ class SaveComponent {
       }());
     })();
   }
-  _filterDepositos(deposito) {
-    const filterValue = deposito.toString().toLowerCase();
-    return this.depositos.filter(deposito => deposito.descripcion.toLowerCase().includes(filterValue));
-  }
-  _filterProveedores(proveedor) {
-    const filterValue = proveedor.toString().toLowerCase();
-    return this.proveedores.filter(proveedor => proveedor.RazonSocial.toLowerCase().includes(filterValue));
-  }
+  /**
+   * Este metodo obtiene las ordenes de compra pendientes de entrega con sus items
+   * @param object
+   */
   getItemsOrdenDeCompraPendiente(object) {
-    var _this2 = this;
+    var _this3 = this;
     return (0,C_work_jeds_jedstion_source_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
-      const OrdenesDeCompraPendiente = yield (0,rxjs__WEBPACK_IMPORTED_MODULE_16__.firstValueFrom)(_this2._remitosService.getItemsOcPendiente(object));
-      _this2.orden_compras = OrdenesDeCompraPendiente.list;
+      const OrdenesDeCompraPendiente = yield (0,rxjs__WEBPACK_IMPORTED_MODULE_12__.firstValueFrom)(_this3._remitosService.getItemsOcPendiente(object));
+      _this3.orden_compras = OrdenesDeCompraPendiente.list;
       // Sort the orden_compras by nro_orden_compra numerically
-      _this2.orden_compras.sort((a, b) => {
+      _this3.orden_compras.sort((a, b) => {
         const nroA = parseInt(a.numero_oc, 10);
         const nroB = parseInt(b.numero_oc, 10);
         return nroA - nroB;
       });
+      //Encapsulo solo las propiedades que quiero utilizar.
+      _this3.proveedores = OrdenesDeCompraPendiente.list.map(p => {
+        return {
+          Codigo: p.idproveedor,
+          RazonSocial: p.razon_social
+        };
+      });
+      //Encapsulo solo las propiedades que quiero utilizar.
+      _this3.oc_pendientes = OrdenesDeCompraPendiente.list.map(ocp => {
+        return {
+          idordencompra: ocp.idordencompra,
+          fecha_numero_oc: ocp.fecha_numero_oc,
+          idproveedor: ocp.idproveedor
+        };
+      });
+      _this3.quitarRepetidos('proveedores');
+      _this3.quitarRepetidos('ordenes_compra');
       new Promise( /*#__PURE__*/function () {
         var _ref2 = (0,C_work_jeds_jedstion_source_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* (resolve) {
-          //Encapsulo solo las propiedades que quiero utilizar.
-          _this2.proveedores = OrdenesDeCompraPendiente.list.map(p => {
-            return {
-              Codigo: p.idproveedor,
-              RazonSocial: p.razon_social
-            };
-          });
-          //Encapsulo solo las propiedades que quiero utilizar.
-          _this2.oc_pendientes = OrdenesDeCompraPendiente.list.map(ocp => {
-            return {
-              idordencompra: ocp.idordencompra,
-              fecha_oc: ocp.fecha_oc,
-              numero_oc: ocp.numero_oc,
-              idproveedor: ocp.idproveedor
-            };
-          });
-          //Quito ordenes de compra repetidas.
-          _this2.getOrdenCompras();
           //Esta fraccion de codigo es para filtrar lo que se escriba en el input.
-          _this2.filteredProveedores = _this2.form.get('proveedor').valueChanges.pipe((0,rxjs__WEBPACK_IMPORTED_MODULE_17__.startWith)(''), (0,rxjs__WEBPACK_IMPORTED_MODULE_18__.map)(value => _this2._filterProveedores(value)));
+          _this3.filteredProveedores = _this3.form.get('proveedor').valueChanges.pipe((0,rxjs__WEBPACK_IMPORTED_MODULE_13__.startWith)(''), (0,rxjs__WEBPACK_IMPORTED_MODULE_14__.map)(value => _this3._filterProveedores(value)));
+          resolve(true);
         });
         return function (_x2) {
           return _ref2.apply(this, arguments);
@@ -1520,22 +1466,18 @@ class SaveComponent {
     })();
   }
   /**
-   * Esta funcion se encarga de que no haya datos repetidos en los [] que almacena los proveedores que tiene ordenes de compra pendientes.
+   * Este metodo obtiene los movimientos realizados
+   * @param idremito
+   * @returns
    */
-  getProveedores() {
-    var _this3 = this;
+  getItems(idremito) {
+    var _this4 = this;
     return (0,C_work_jeds_jedstion_source_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
-      new Promise( /*#__PURE__*/function () {
+      return new Promise( /*#__PURE__*/function () {
         var _ref3 = (0,C_work_jeds_jedstion_source_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* (resolve) {
-          //Esta fraccion de codigo es para que no haya items repetidos en el input.
-          let arreglo_auxiliar = [];
-          _this3.proveedores.forEach(p => {
-            if (!arreglo_auxiliar.some(pe => pe.Codigo === p.Codigo)) {
-              arreglo_auxiliar.push(p);
-            }
-            _this3.proveedores = arreglo_auxiliar;
-          });
-          resolve(true);
+          const items = yield (0,rxjs__WEBPACK_IMPORTED_MODULE_12__.firstValueFrom)(_this4._remitosService.getItems(idremito));
+          _this4.mov_art_list = items.list;
+          resolve(_this4.mov_art_list);
         });
         return function (_x3) {
           return _ref3.apply(this, arguments);
@@ -1543,88 +1485,7 @@ class SaveComponent {
       }());
     })();
   }
-  /**
-   * Esta funcion es la encargada de obtener los datos de las ordenes de compra y que no se repitan.
-   * @param idproveedor Cuando queremos obtener solo las ordenes de compra de un proveedor utilicamos su id para filtrar.
-   */
-  getOrdenCompras(idproveedor) {
-    var _this4 = this;
-    return (0,C_work_jeds_jedstion_source_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
-      if (idproveedor) {
-        _this4.oc_pendientes = _this4.orden_compras.filter(oc => oc.idproveedor === idproveedor);
-      } else {
-        _this4.oc_pendientes = _this4.orden_compras;
-      }
-      let arreglo_auxiliar = [];
-      _this4.oc_pendientes.forEach(ocp => {
-        if (!arreglo_auxiliar.some(oc => oc.idordencompra === ocp.idordencompra)) {
-          arreglo_auxiliar.push(ocp);
-        }
-        _this4.oc_pendientes = arreglo_auxiliar;
-      });
-    })();
-  }
-  getTextInput(option) {
-    if (option.descripcion) {
-      return option.descripcion;
-    }
-    if (option.deposito) {
-      return option.deposito;
-    }
-    if (option.RazonSocial) {
-      return option.RazonSocial;
-    }
-    return option;
-  }
-  /**
-   * Esta funcion maneja las cambios de seleccion que puedan tener articulos, unidades de medida u ordenes de compra.
-   * @param $event
-  */
-  seleccionItem($event) {
-    this.isUpdating = true;
-    // Si se ha seleccionado un proveedor explícitamente, actualiza el campo del proveedor
-    if ($event.Codigo) {
-      this.getOrdenCompras($event.Codigo); // Buscamos las OC que posee ese proveedor.
-      // Actualizamos el campo del proveedor sin emitir eventos
-      this.form.get('proveedor').setValue($event, {
-        emitEvent: false
-      });
-      // Habilitamos el campo de OC
-      this.form.get('oc_pendiente').enable();
-    }
-    // Si se ha seleccionado una OC, actualiza el campo de OC pendiente
-    if ($event.idordencompra) {
-      let oc = this.oc_pendientes.find(prov => prov.idordencompra === $event.idordencompra);
-      this.form.get('oc_pendiente').setValue(oc, {
-        emitEvent: false
-      });
-      let noExisteProveedor = this.form.get('proveedor').value === "" || this.form.get('proveedor').value.Codigo != $event.idproveedor; //Si el campo proveedor es igual a vacio Ó el proveedor es distinto.
-      if (noExisteProveedor) {
-        let proveedor = this.proveedores.find(p => p.Codigo === oc.idproveedor);
-        this.form.get('proveedor').setValue(proveedor, {
-          emitEvent: false
-        });
-        this.getOrdenCompras(proveedor.Codigo);
-      }
-      ;
-    }
-    this.isUpdating = false;
-  }
-  getItems(idremito) {
-    var _this5 = this;
-    return (0,C_work_jeds_jedstion_source_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
-      return new Promise( /*#__PURE__*/function () {
-        var _ref4 = (0,C_work_jeds_jedstion_source_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* (resolve) {
-          const items = yield (0,rxjs__WEBPACK_IMPORTED_MODULE_16__.firstValueFrom)(_this5._remitosService.getItems(idremito));
-          _this5.mov_art_list = items.list;
-          resolve(_this5.mov_art_list);
-        });
-        return function (_x4) {
-          return _ref4.apply(this, arguments);
-        };
-      }());
-    })();
-  }
+  // ############### Alta / Baja items de la grilla en modal ###################
   /**
    * Esta funcion añade un nuevo item a la grilla dentro del saveComponent.
    */
@@ -1699,16 +1560,10 @@ class SaveComponent {
     }
     this.alert.success("Artículo eliminado con éxito");
   }
+  // ############### Persistencia ###################
   /**
-  * Funcion para limpiar campos
-  */
-  limpiarCasillero(input) {
-    this.form.get(input).setValue('');
-    if (input == "proveedor") {
-      this.form.get('oc_pendiente').setValue('');
-      this.getOrdenCompras();
-    }
-  }
+   * Metodo de persistencia de datos
+   */
   onSubmit() {
     // Verificar la longitud de las observaciones
     if (!this.isPalabraMaxLengthReached()) {
@@ -1771,6 +1626,119 @@ class SaveComponent {
       }
     }
   }
+  // ############### Metodos funcionales ###################
+  /**
+  * Metodo que ayuda al autocompletado de un input
+  * @param deposito
+  * @returns
+  */
+  _filterDepositos(deposito) {
+    const filterValue = deposito.toString().toLowerCase();
+    return this.depositos.filter(deposito => deposito.descripcion.toLowerCase().includes(filterValue));
+  }
+  /**
+  * Metodo que ayuda al autocompletado de un input
+  * @param proveedor
+  * @returns
+  */
+  _filterProveedores(proveedor) {
+    const filterValue = proveedor.toString().toLowerCase();
+    return this.proveedores.filter(proveedor => proveedor.RazonSocial.toLowerCase().includes(filterValue));
+  }
+  /**
+  * Metodo de alertas
+  */
+  subscribeAlert() {
+    this.alert.emitConfig.subscribe({
+      next: config => {
+        this.showAlert = true;
+        this._alertConfig = {
+          ...config,
+          appearance: 'border'
+        };
+        let time = 2;
+        (0,rxjs__WEBPACK_IMPORTED_MODULE_15__.timer)(100, 1500).pipe((0,rxjs__WEBPACK_IMPORTED_MODULE_16__.finalize)(() => {
+          this.showAlert = false;
+          this._alertConfig = null;
+        }), (0,rxjs__WEBPACK_IMPORTED_MODULE_17__.takeWhile)(() => time > 0), (0,rxjs__WEBPACK_IMPORTED_MODULE_10__.takeUntil)(this._unsubscribeAll), (0,rxjs__WEBPACK_IMPORTED_MODULE_18__.tap)(() => time -= 1)).subscribe();
+      }
+    });
+  }
+  /**
+  * Funcion para limpiar campos
+  */
+  limpiarCasillero(input) {
+    this.form.get(input).setValue('');
+    if (input == "proveedor") {
+      this.form.get('oc_pendiente').setValue('');
+      // this.getOrdenCompras();
+    }
+  }
+  /**
+  * Funcion para contar las palabras en las observaciones
+  */
+  getPalabrasLength() {
+    const observaciones = this.form.get('observaciones').value;
+    return observaciones ? observaciones.length : 0;
+  }
+  /**
+  * Funcion para verificar si se ha alcanzado el límite de caracteres en las observaciones
+  */
+  isPalabraMaxLengthReached() {
+    return this.getPalabrasLength() <= this.maxPalabras;
+  }
+  /**
+   * Este metodo obtiene el valor de texto del input que lo utilice
+   * @param option
+   * @returns
+   */
+  getTextInput(option) {
+    if (option.descripcion) {
+      return option.descripcion;
+    }
+    if (option.deposito) {
+      return option.deposito;
+    }
+    if (option.RazonSocial) {
+      return option.RazonSocial;
+    }
+    return option;
+  }
+  /**
+  * Esta funcion quita los items repetidos que se utilizaran en combo select
+  * @param tipo
+  * @param option
+  */
+  quitarRepetidos(tipo, option) {
+    let arreglo_auxiliar = [];
+    switch (tipo) {
+      case 'proveedores':
+        this.proveedores.forEach(p => {
+          if (!arreglo_auxiliar.some(pe => pe.Codigo === p.Codigo)) {
+            arreglo_auxiliar.push(p);
+          }
+          this.proveedores = arreglo_auxiliar;
+        });
+        break;
+      case 'ordenes_compra':
+        if (option?.idproveedor) {
+          this.oc_pendientes = this.orden_compras.filter(oc => oc.idproveedor === option.idproveedor);
+        } else {
+          this.oc_pendientes = this.orden_compras;
+        }
+        ;
+        this.oc_pendientes.forEach(ocp => {
+          if (!arreglo_auxiliar.some(oc => oc.idordencompra === ocp.idordencompra)) {
+            arreglo_auxiliar.push(ocp);
+          }
+          this.oc_pendientes = arreglo_auxiliar;
+        });
+        break;
+    }
+  }
+  /**
+   * Este metodo cierra el matdialog
+   */
   onCloseMenu() {
     this.dialogRef.close(false);
   }
@@ -1827,7 +1795,7 @@ SaveComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_7__["�
       _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtext"](32, "OC");
       _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]();
       _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](33, "mat-select", 21);
-      _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtemplate"](34, SaveComponent_mat_option_34_Template, 2, 3, "mat-option", 18);
+      _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtemplate"](34, SaveComponent_mat_option_34_Template, 2, 2, "mat-option", 18);
       _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]();
       _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtemplate"](35, SaveComponent_button_35_Template, 3, 0, "button", 19);
       _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]();
@@ -1932,7 +1900,7 @@ SaveComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_7__["�
       _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵstyleProp"]("background-color", ctx.color_primario || "")("color", ctx.color_secundario || "");
     }
   },
-  dependencies: [_angular_common__WEBPACK_IMPORTED_MODULE_20__.NgClass, _angular_common__WEBPACK_IMPORTED_MODULE_20__.NgForOf, _angular_common__WEBPACK_IMPORTED_MODULE_20__.NgIf, _angular_material_table__WEBPACK_IMPORTED_MODULE_8__.MatTable, _angular_material_table__WEBPACK_IMPORTED_MODULE_8__.MatHeaderCellDef, _angular_material_table__WEBPACK_IMPORTED_MODULE_8__.MatHeaderRowDef, _angular_material_table__WEBPACK_IMPORTED_MODULE_8__.MatColumnDef, _angular_material_table__WEBPACK_IMPORTED_MODULE_8__.MatCellDef, _angular_material_table__WEBPACK_IMPORTED_MODULE_8__.MatRowDef, _angular_material_table__WEBPACK_IMPORTED_MODULE_8__.MatHeaderCell, _angular_material_table__WEBPACK_IMPORTED_MODULE_8__.MatCell, _angular_material_table__WEBPACK_IMPORTED_MODULE_8__.MatHeaderRow, _angular_material_table__WEBPACK_IMPORTED_MODULE_8__.MatRow, _angular_material_button__WEBPACK_IMPORTED_MODULE_22__.MatButton, _angular_material_button__WEBPACK_IMPORTED_MODULE_22__.MatIconButton, _angular_material_button__WEBPACK_IMPORTED_MODULE_22__.MatMiniFabButton, _angular_material_form_field__WEBPACK_IMPORTED_MODULE_23__.MatFormField, _angular_material_form_field__WEBPACK_IMPORTED_MODULE_23__.MatLabel, _angular_material_form_field__WEBPACK_IMPORTED_MODULE_23__.MatSuffix, _angular_material_select__WEBPACK_IMPORTED_MODULE_24__.MatSelect, _angular_material_core__WEBPACK_IMPORTED_MODULE_21__.MatOption, _angular_forms__WEBPACK_IMPORTED_MODULE_15__["ɵNgNoValidate"], _angular_forms__WEBPACK_IMPORTED_MODULE_15__.DefaultValueAccessor, _angular_forms__WEBPACK_IMPORTED_MODULE_15__.NgControlStatus, _angular_forms__WEBPACK_IMPORTED_MODULE_15__.NgControlStatusGroup, _angular_forms__WEBPACK_IMPORTED_MODULE_15__.FormGroupDirective, _angular_forms__WEBPACK_IMPORTED_MODULE_15__.FormControlName, _angular_material_input__WEBPACK_IMPORTED_MODULE_25__.MatInput, _angular_material_icon__WEBPACK_IMPORTED_MODULE_26__.MatIcon, _fuse_components_alert_alert_component__WEBPACK_IMPORTED_MODULE_6__.FuseAlertComponent, _angular_material_tooltip__WEBPACK_IMPORTED_MODULE_27__.MatTooltip, _angular_material_autocomplete__WEBPACK_IMPORTED_MODULE_28__.MatAutocomplete, _angular_material_autocomplete__WEBPACK_IMPORTED_MODULE_28__.MatAutocompleteTrigger, _angular_material_datepicker__WEBPACK_IMPORTED_MODULE_29__.MatDatepicker, _angular_material_datepicker__WEBPACK_IMPORTED_MODULE_29__.MatDatepickerInput, _angular_material_datepicker__WEBPACK_IMPORTED_MODULE_29__.MatDatepickerToggle, _angular_common__WEBPACK_IMPORTED_MODULE_20__.AsyncPipe],
+  dependencies: [_angular_common__WEBPACK_IMPORTED_MODULE_20__.NgClass, _angular_common__WEBPACK_IMPORTED_MODULE_20__.NgForOf, _angular_common__WEBPACK_IMPORTED_MODULE_20__.NgIf, _angular_material_table__WEBPACK_IMPORTED_MODULE_8__.MatTable, _angular_material_table__WEBPACK_IMPORTED_MODULE_8__.MatHeaderCellDef, _angular_material_table__WEBPACK_IMPORTED_MODULE_8__.MatHeaderRowDef, _angular_material_table__WEBPACK_IMPORTED_MODULE_8__.MatColumnDef, _angular_material_table__WEBPACK_IMPORTED_MODULE_8__.MatCellDef, _angular_material_table__WEBPACK_IMPORTED_MODULE_8__.MatRowDef, _angular_material_table__WEBPACK_IMPORTED_MODULE_8__.MatHeaderCell, _angular_material_table__WEBPACK_IMPORTED_MODULE_8__.MatCell, _angular_material_table__WEBPACK_IMPORTED_MODULE_8__.MatHeaderRow, _angular_material_table__WEBPACK_IMPORTED_MODULE_8__.MatRow, _angular_material_button__WEBPACK_IMPORTED_MODULE_22__.MatButton, _angular_material_button__WEBPACK_IMPORTED_MODULE_22__.MatIconButton, _angular_material_button__WEBPACK_IMPORTED_MODULE_22__.MatMiniFabButton, _angular_material_form_field__WEBPACK_IMPORTED_MODULE_23__.MatFormField, _angular_material_form_field__WEBPACK_IMPORTED_MODULE_23__.MatLabel, _angular_material_form_field__WEBPACK_IMPORTED_MODULE_23__.MatSuffix, _angular_material_select__WEBPACK_IMPORTED_MODULE_24__.MatSelect, _angular_material_core__WEBPACK_IMPORTED_MODULE_21__.MatOption, _angular_forms__WEBPACK_IMPORTED_MODULE_11__["ɵNgNoValidate"], _angular_forms__WEBPACK_IMPORTED_MODULE_11__.DefaultValueAccessor, _angular_forms__WEBPACK_IMPORTED_MODULE_11__.NgControlStatus, _angular_forms__WEBPACK_IMPORTED_MODULE_11__.NgControlStatusGroup, _angular_forms__WEBPACK_IMPORTED_MODULE_11__.FormGroupDirective, _angular_forms__WEBPACK_IMPORTED_MODULE_11__.FormControlName, _angular_material_input__WEBPACK_IMPORTED_MODULE_25__.MatInput, _angular_material_icon__WEBPACK_IMPORTED_MODULE_26__.MatIcon, _fuse_components_alert_alert_component__WEBPACK_IMPORTED_MODULE_6__.FuseAlertComponent, _angular_material_tooltip__WEBPACK_IMPORTED_MODULE_27__.MatTooltip, _angular_material_autocomplete__WEBPACK_IMPORTED_MODULE_28__.MatAutocomplete, _angular_material_autocomplete__WEBPACK_IMPORTED_MODULE_28__.MatAutocompleteTrigger, _angular_material_datepicker__WEBPACK_IMPORTED_MODULE_29__.MatDatepicker, _angular_material_datepicker__WEBPACK_IMPORTED_MODULE_29__.MatDatepickerInput, _angular_material_datepicker__WEBPACK_IMPORTED_MODULE_29__.MatDatepickerToggle, _angular_common__WEBPACK_IMPORTED_MODULE_20__.AsyncPipe],
   styles: ["@charset \"UTF-8\";\n.counter[_ngcontent-%COMP%] {\n  position: absolute;\n  bottom: 0.5rem;\n  right: 0.5rem;\n  font-size: 0.75rem;\n  color: #C9C9C9; \n}\n\n.counter.reached-max[_ngcontent-%COMP%] {\n  color: #e53e3e; \n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNhdmUuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUEsZ0JBQWdCO0FBQWhCO0VBQ0ksa0JBQUE7RUFDQSxjQUFBO0VBQ0EsYUFBQTtFQUNBLGtCQUFBO0VBQ0EsY0FBQSxFQUFBLHdCQUFBO0FBRUo7O0FBQ0E7RUFDSSxjQUFBLEVBQUEsb0RBQUE7QUFFSiIsImZpbGUiOiJzYXZlLmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLmNvdW50ZXIge1xyXG4gICAgcG9zaXRpb246IGFic29sdXRlO1xyXG4gICAgYm90dG9tOiAwLjVyZW07XHJcbiAgICByaWdodDogMC41cmVtO1xyXG4gICAgZm9udC1zaXplOiAwLjc1cmVtO1xyXG4gICAgY29sb3I6ICNDOUM5Qzk7IC8qIENvbG9yIGRlIHRleHRvIGdyaXMgKi9cclxufVxyXG5cclxuLmNvdW50ZXIucmVhY2hlZC1tYXgge1xyXG4gICAgY29sb3I6ICNlNTNlM2U7IC8qIENvbG9yIGRlIHRleHRvIHJvam8gY3VhbmRvIHNlIGFsY2FuemEgZWwgbMOtbWl0ZSAqL1xyXG59Il19 */\n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8uL3NyYy9hcHAvbW9kdWxlcy9zdG9jay9yZW1pdG9zL2NvbXBvbmVudHMvc2F2ZS9zYXZlLmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBLGdCQUFnQjtBQUFoQjtFQUNJLGtCQUFBO0VBQ0EsY0FBQTtFQUNBLGFBQUE7RUFDQSxrQkFBQTtFQUNBLGNBQUEsRUFBQSx3QkFBQTtBQUVKOztBQUNBO0VBQ0ksY0FBQSxFQUFBLG9EQUFBO0FBRUo7QUFDQSxvdUJBQW91QiIsInNvdXJjZXNDb250ZW50IjpbIi5jb3VudGVyIHtcclxuICAgIHBvc2l0aW9uOiBhYnNvbHV0ZTtcclxuICAgIGJvdHRvbTogMC41cmVtO1xyXG4gICAgcmlnaHQ6IDAuNXJlbTtcclxuICAgIGZvbnQtc2l6ZTogMC43NXJlbTtcclxuICAgIGNvbG9yOiAjQzlDOUM5OyAvKiBDb2xvciBkZSB0ZXh0byBncmlzICovXHJcbn1cclxuXHJcbi5jb3VudGVyLnJlYWNoZWQtbWF4IHtcclxuICAgIGNvbG9yOiAjZTUzZTNlOyAvKiBDb2xvciBkZSB0ZXh0byByb2pvIGN1YW5kbyBzZSBhbGNhbnphIGVsIGzDg8KtbWl0ZSAqL1xyXG59Il0sInNvdXJjZVJvb3QiOiIifQ== */"]
 });
 

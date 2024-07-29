@@ -7732,6 +7732,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _core_auth_guards_noAuth_guard__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./core/auth/guards/noAuth.guard */ 77255);
 /* harmony import */ var _layout_layout_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./layout/layout.component */ 36674);
 /* harmony import */ var _core_auth_guards_permiso_guard__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @core/auth/guards/permiso.guard */ 90305);
+/* harmony import */ var _shared_components_reportes_reporte_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./shared/components/reportes/reporte.component */ 35860);
+
 
 
 
@@ -7777,16 +7779,16 @@ const appRoutes = [
     loadChildren: () => __webpack_require__.e(/*! import() */ "src_app_modules_auth_confirmation-required_confirmation-required_routes_ts").then(__webpack_require__.bind(__webpack_require__, /*! ./modules/auth/confirmation-required/confirmation-required.routes */ 42250))
   }, {
     path: 'forgot-password',
-    loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-node_modules_angular_material_fesm2022_progress-spinner_mjs"), __webpack_require__.e("src_app_modules_auth_forgot-password_forgot-password_routes_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./modules/auth/forgot-password/forgot-password.routes */ 71584))
+    loadChildren: () => __webpack_require__.e(/*! import() */ "src_app_modules_auth_forgot-password_forgot-password_routes_ts").then(__webpack_require__.bind(__webpack_require__, /*! ./modules/auth/forgot-password/forgot-password.routes */ 71584))
   }, {
     path: 'reset-password',
-    loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-node_modules_angular_material_fesm2022_progress-spinner_mjs"), __webpack_require__.e("src_app_modules_auth_reset-password_reset-password_routes_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./modules/auth/reset-password/reset-password.routes */ 95666))
+    loadChildren: () => __webpack_require__.e(/*! import() */ "src_app_modules_auth_reset-password_reset-password_routes_ts").then(__webpack_require__.bind(__webpack_require__, /*! ./modules/auth/reset-password/reset-password.routes */ 95666))
   }, {
     path: 'sign-in',
-    loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-node_modules_angular_material_fesm2022_progress-spinner_mjs"), __webpack_require__.e("default-node_modules_angular_material_fesm2022_checkbox_mjs"), __webpack_require__.e("src_app_modules_auth_sign-in_sign-in_routes_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./modules/auth/sign-in/sign-in.routes */ 70967))
+    loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-node_modules_angular_material_fesm2022_checkbox_mjs"), __webpack_require__.e("src_app_modules_auth_sign-in_sign-in_routes_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./modules/auth/sign-in/sign-in.routes */ 70967))
   }, {
     path: 'sign-up',
-    loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-node_modules_angular_material_fesm2022_progress-spinner_mjs"), __webpack_require__.e("default-node_modules_angular_material_fesm2022_checkbox_mjs"), __webpack_require__.e("src_app_modules_auth_sign-up_sign-up_routes_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./modules/auth/sign-up/sign-up.routes */ 17725))
+    loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-node_modules_angular_material_fesm2022_checkbox_mjs"), __webpack_require__.e("src_app_modules_auth_sign-up_sign-up_routes_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./modules/auth/sign-up/sign-up.routes */ 17725))
   }]
 },
 // Admin routes
@@ -7810,83 +7812,98 @@ const appRoutes = [
   }, {
     path: 'bancos',
     canActivate: [_core_auth_guards_permiso_guard__WEBPACK_IMPORTED_MODULE_4__.PermisoGuard],
-    loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-node_modules_angular_material_fesm2022_progress-spinner_mjs"), __webpack_require__.e("default-src_app_shared_components_tabla-dinamica_tabla-dinamica_module_ts"), __webpack_require__.e("src_app_modules_administracion_bancos_bancos_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./modules/administracion/bancos/bancos.module */ 58884)).then(m => m.BancosModule)
+    loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-node_modules_angular_material_fesm2022_checkbox_mjs"), __webpack_require__.e("default-src_app_shared_components_tabla-dinamica_tabla-dinamica_module_ts"), __webpack_require__.e("src_app_modules_administracion_bancos_bancos_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./modules/administracion/bancos/bancos.module */ 58884)).then(m => m.BancosModule)
   }, {
     path: 'tratamientos',
     canActivate: [_core_auth_guards_permiso_guard__WEBPACK_IMPORTED_MODULE_4__.PermisoGuard],
-    loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-node_modules_angular_material_fesm2022_progress-spinner_mjs"), __webpack_require__.e("default-src_app_shared_components_tabla-dinamica_tabla-dinamica_module_ts"), __webpack_require__.e("src_app_modules_administracion_tratamientos_tratamientos_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./modules/administracion/tratamientos/tratamientos.module */ 42935)).then(m => m.TratamientosModule)
+    loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-node_modules_angular_material_fesm2022_checkbox_mjs"), __webpack_require__.e("default-src_app_shared_components_tabla-dinamica_tabla-dinamica_module_ts"), __webpack_require__.e("src_app_modules_administracion_tratamientos_tratamientos_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./modules/administracion/tratamientos/tratamientos.module */ 42935)).then(m => m.TratamientosModule)
   }, {
     path: 'proveedores',
     canActivate: [_core_auth_guards_permiso_guard__WEBPACK_IMPORTED_MODULE_4__.PermisoGuard],
-    loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-node_modules_angular_material_fesm2022_progress-spinner_mjs"), __webpack_require__.e("default-src_app_shared_components_tabla-dinamica_tabla-dinamica_module_ts"), __webpack_require__.e("src_app_modules_administracion_proveedores_proveedores_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./modules/administracion/proveedores/proveedores.module */ 85942)).then(m => m.ProveedoresModule)
+    loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-node_modules_angular_material_fesm2022_checkbox_mjs"), __webpack_require__.e("default-src_app_shared_components_tabla-dinamica_tabla-dinamica_module_ts"), __webpack_require__.e("src_app_modules_administracion_proveedores_proveedores_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./modules/administracion/proveedores/proveedores.module */ 85942)).then(m => m.ProveedoresModule)
   }, {
     path: 'fondos',
     canActivate: [_core_auth_guards_permiso_guard__WEBPACK_IMPORTED_MODULE_4__.PermisoGuard],
-    loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-node_modules_angular_material_fesm2022_progress-spinner_mjs"), __webpack_require__.e("default-src_app_shared_components_tabla-dinamica_tabla-dinamica_module_ts"), __webpack_require__.e("default-node_modules_angular_material_fesm2022_checkbox_mjs"), __webpack_require__.e("src_app_modules_fondos_fondos_fondos_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./modules/fondos/fondos/fondos.module */ 52522)).then(m => m.FondosModule)
+    loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-node_modules_angular_material_fesm2022_checkbox_mjs"), __webpack_require__.e("default-src_app_shared_components_tabla-dinamica_tabla-dinamica_module_ts"), __webpack_require__.e("src_app_modules_fondos_fondos_fondos_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./modules/fondos/fondos/fondos.module */ 52522)).then(m => m.FondosModule)
   }, {
     path: 'tipo-de-movimientos',
     canActivate: [_core_auth_guards_permiso_guard__WEBPACK_IMPORTED_MODULE_4__.PermisoGuard],
-    loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-node_modules_angular_material_fesm2022_progress-spinner_mjs"), __webpack_require__.e("default-src_app_shared_components_tabla-dinamica_tabla-dinamica_module_ts"), __webpack_require__.e("default-node_modules_angular_material_fesm2022_checkbox_mjs"), __webpack_require__.e("common"), __webpack_require__.e("src_app_modules_fondos_tipo-movimientos_tipo-movimientos_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./modules/fondos/tipo-movimientos/tipo-movimientos.module */ 30332)).then(m => m.TipoMovimientosModule)
+    loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-node_modules_angular_material_fesm2022_checkbox_mjs"), __webpack_require__.e("default-src_app_shared_components_tabla-dinamica_tabla-dinamica_module_ts"), __webpack_require__.e("common"), __webpack_require__.e("src_app_modules_fondos_tipo-movimientos_tipo-movimientos_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./modules/fondos/tipo-movimientos/tipo-movimientos.module */ 30332)).then(m => m.TipoMovimientosModule)
   }, {
     path: 'movimientos',
     canActivate: [_core_auth_guards_permiso_guard__WEBPACK_IMPORTED_MODULE_4__.PermisoGuard],
-    loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-node_modules_angular_material_fesm2022_progress-spinner_mjs"), __webpack_require__.e("default-src_app_shared_components_tabla-dinamica_tabla-dinamica_module_ts"), __webpack_require__.e("default-node_modules_angular_material_fesm2022_checkbox_mjs"), __webpack_require__.e("default-node_modules_angular_material_fesm2022_datepicker_mjs"), __webpack_require__.e("common"), __webpack_require__.e("src_app_modules_fondos_movimientos_movimientos_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./modules/fondos/movimientos/movimientos.module */ 18229)).then(m => m.MovimientosModule)
+    loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-node_modules_angular_material_fesm2022_checkbox_mjs"), __webpack_require__.e("default-src_app_shared_components_tabla-dinamica_tabla-dinamica_module_ts"), __webpack_require__.e("default-node_modules_angular_material_fesm2022_datepicker_mjs"), __webpack_require__.e("common"), __webpack_require__.e("src_app_modules_fondos_movimientos_movimientos_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./modules/fondos/movimientos/movimientos.module */ 18229)).then(m => m.MovimientosModule)
   }, {
     path: 'medios-de-cobro',
     canActivate: [_core_auth_guards_permiso_guard__WEBPACK_IMPORTED_MODULE_4__.PermisoGuard],
-    loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-node_modules_angular_material_fesm2022_progress-spinner_mjs"), __webpack_require__.e("default-src_app_shared_components_tabla-dinamica_tabla-dinamica_module_ts"), __webpack_require__.e("default-node_modules_angular_material_fesm2022_checkbox_mjs"), __webpack_require__.e("default-node_modules_angular_material_fesm2022_datepicker_mjs"), __webpack_require__.e("common"), __webpack_require__.e("src_app_modules_administracion_medios-de-cobro_medios-de-cobro_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./modules/administracion/medios-de-cobro/medios-de-cobro.module */ 71993)).then(m => m.MediosDeCobroModule)
+    loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-node_modules_angular_material_fesm2022_checkbox_mjs"), __webpack_require__.e("default-src_app_shared_components_tabla-dinamica_tabla-dinamica_module_ts"), __webpack_require__.e("default-node_modules_angular_material_fesm2022_datepicker_mjs"), __webpack_require__.e("common"), __webpack_require__.e("src_app_modules_administracion_medios-de-cobro_medios-de-cobro_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./modules/administracion/medios-de-cobro/medios-de-cobro.module */ 71993)).then(m => m.MediosDeCobroModule)
   }, {
     path: 'unidades-de-medida',
     canActivate: [_core_auth_guards_permiso_guard__WEBPACK_IMPORTED_MODULE_4__.PermisoGuard],
-    loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-node_modules_angular_material_fesm2022_progress-spinner_mjs"), __webpack_require__.e("default-src_app_shared_components_tabla-dinamica_tabla-dinamica_module_ts"), __webpack_require__.e("src_app_modules_stock_unidades-de-medida_unidades-de-medida_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./modules/stock/unidades-de-medida/unidades-de-medida.module */ 35220)).then(m => m.UnidadesDeMedidaModule)
+    loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-node_modules_angular_material_fesm2022_checkbox_mjs"), __webpack_require__.e("default-src_app_shared_components_tabla-dinamica_tabla-dinamica_module_ts"), __webpack_require__.e("src_app_modules_stock_unidades-de-medida_unidades-de-medida_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./modules/stock/unidades-de-medida/unidades-de-medida.module */ 35220)).then(m => m.UnidadesDeMedidaModule)
   }, {
     path: 'depositos',
     canActivate: [_core_auth_guards_permiso_guard__WEBPACK_IMPORTED_MODULE_4__.PermisoGuard],
-    loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-node_modules_angular_material_fesm2022_progress-spinner_mjs"), __webpack_require__.e("default-src_app_shared_components_tabla-dinamica_tabla-dinamica_module_ts"), __webpack_require__.e("default-node_modules_angular_material_fesm2022_checkbox_mjs"), __webpack_require__.e("common"), __webpack_require__.e("src_app_modules_stock_depositos_depositos_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./modules/stock/depositos/depositos.module */ 32556)).then(m => m.DepositosModule)
+    loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-node_modules_angular_material_fesm2022_checkbox_mjs"), __webpack_require__.e("default-src_app_shared_components_tabla-dinamica_tabla-dinamica_module_ts"), __webpack_require__.e("common"), __webpack_require__.e("src_app_modules_stock_depositos_depositos_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./modules/stock/depositos/depositos.module */ 32556)).then(m => m.DepositosModule)
   }, {
     path: 'rubros',
     canActivate: [_core_auth_guards_permiso_guard__WEBPACK_IMPORTED_MODULE_4__.PermisoGuard],
-    loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-node_modules_angular_material_fesm2022_progress-spinner_mjs"), __webpack_require__.e("default-src_app_shared_components_tabla-dinamica_tabla-dinamica_module_ts"), __webpack_require__.e("default-node_modules_angular_material_fesm2022_checkbox_mjs"), __webpack_require__.e("common"), __webpack_require__.e("src_app_modules_stock_rubros_rubros_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./modules/stock/rubros/rubros.module */ 12101)).then(m => m.RubrosModule)
+    loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-node_modules_angular_material_fesm2022_checkbox_mjs"), __webpack_require__.e("default-src_app_shared_components_tabla-dinamica_tabla-dinamica_module_ts"), __webpack_require__.e("common"), __webpack_require__.e("src_app_modules_stock_rubros_rubros_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./modules/stock/rubros/rubros.module */ 12101)).then(m => m.RubrosModule)
   }, {
     path: 'articulos',
     canActivate: [_core_auth_guards_permiso_guard__WEBPACK_IMPORTED_MODULE_4__.PermisoGuard],
-    loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-node_modules_angular_material_fesm2022_progress-spinner_mjs"), __webpack_require__.e("default-src_app_shared_components_tabla-dinamica_tabla-dinamica_module_ts"), __webpack_require__.e("default-node_modules_angular_material_fesm2022_checkbox_mjs"), __webpack_require__.e("default-node_modules_angular_material_fesm2022_datepicker_mjs"), __webpack_require__.e("common"), __webpack_require__.e("src_app_modules_stock_articulos_articulos_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./modules/stock/articulos/articulos.module */ 76270)).then(m => m.ArticulosModule)
+    loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-node_modules_angular_material_fesm2022_checkbox_mjs"), __webpack_require__.e("default-src_app_shared_components_tabla-dinamica_tabla-dinamica_module_ts"), __webpack_require__.e("default-node_modules_angular_material_fesm2022_datepicker_mjs"), __webpack_require__.e("common"), __webpack_require__.e("src_app_modules_stock_articulos_articulos_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./modules/stock/articulos/articulos.module */ 76270)).then(m => m.ArticulosModule)
   }, {
     path: 'clientes',
     canActivate: [_core_auth_guards_permiso_guard__WEBPACK_IMPORTED_MODULE_4__.PermisoGuard],
-    loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-node_modules_angular_material_fesm2022_progress-spinner_mjs"), __webpack_require__.e("default-src_app_shared_components_tabla-dinamica_tabla-dinamica_module_ts"), __webpack_require__.e("default-node_modules_angular_material_fesm2022_checkbox_mjs"), __webpack_require__.e("common"), __webpack_require__.e("src_app_modules_administracion_clientes_clientes_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./modules/administracion/clientes/clientes.module */ 53438)).then(m => m.ClientesModule)
+    loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-node_modules_angular_material_fesm2022_checkbox_mjs"), __webpack_require__.e("default-src_app_shared_components_tabla-dinamica_tabla-dinamica_module_ts"), __webpack_require__.e("common"), __webpack_require__.e("src_app_modules_administracion_clientes_clientes_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./modules/administracion/clientes/clientes.module */ 53438)).then(m => m.ClientesModule)
   }, {
     path: 'medios-de-pago',
     canActivate: [_core_auth_guards_permiso_guard__WEBPACK_IMPORTED_MODULE_4__.PermisoGuard],
-    loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-node_modules_angular_material_fesm2022_progress-spinner_mjs"), __webpack_require__.e("default-src_app_shared_components_tabla-dinamica_tabla-dinamica_module_ts"), __webpack_require__.e("default-node_modules_angular_material_fesm2022_checkbox_mjs"), __webpack_require__.e("common"), __webpack_require__.e("src_app_modules_administracion_medios-de-pago_medios-de-pago_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./modules/administracion/medios-de-pago/medios-de-pago.module */ 38971)).then(m => m.MediosDePagoModule)
+    loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-node_modules_angular_material_fesm2022_checkbox_mjs"), __webpack_require__.e("default-src_app_shared_components_tabla-dinamica_tabla-dinamica_module_ts"), __webpack_require__.e("common"), __webpack_require__.e("src_app_modules_administracion_medios-de-pago_medios-de-pago_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./modules/administracion/medios-de-pago/medios-de-pago.module */ 38971)).then(m => m.MediosDePagoModule)
   }, {
     path: 'pedidos-de-presupuesto',
     canActivate: [_core_auth_guards_permiso_guard__WEBPACK_IMPORTED_MODULE_4__.PermisoGuard],
-    loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-node_modules_angular_material_fesm2022_progress-spinner_mjs"), __webpack_require__.e("default-src_app_shared_components_tabla-dinamica_tabla-dinamica_module_ts"), __webpack_require__.e("default-node_modules_angular_material_fesm2022_checkbox_mjs"), __webpack_require__.e("common"), __webpack_require__.e("src_app_modules_compras_pedidos-de-presupuesto_pedidos-de-presupuestos_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./modules/compras/pedidos-de-presupuesto/pedidos-de-presupuestos.module */ 22225)).then(m => m.PedidosDePresupuestoModule)
+    loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-node_modules_angular_material_fesm2022_checkbox_mjs"), __webpack_require__.e("default-src_app_shared_components_tabla-dinamica_tabla-dinamica_module_ts"), __webpack_require__.e("common"), __webpack_require__.e("src_app_modules_compras_pedidos-de-presupuesto_pedidos-de-presupuestos_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./modules/compras/pedidos-de-presupuesto/pedidos-de-presupuestos.module */ 22225)).then(m => m.PedidosDePresupuestoModule)
   }, {
     path: 'stock-inicial',
     canActivate: [_core_auth_guards_permiso_guard__WEBPACK_IMPORTED_MODULE_4__.PermisoGuard],
-    loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-node_modules_angular_material_fesm2022_progress-spinner_mjs"), __webpack_require__.e("default-src_app_shared_components_tabla-dinamica_tabla-dinamica_module_ts"), __webpack_require__.e("default-node_modules_angular_material_fesm2022_datepicker_mjs"), __webpack_require__.e("common"), __webpack_require__.e("src_app_modules_stock_stock-inicial_stock-inicial_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./modules/stock/stock-inicial/stock-inicial.module */ 21625)).then(m => m.StockInicialModule)
+    loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-node_modules_angular_material_fesm2022_checkbox_mjs"), __webpack_require__.e("default-src_app_shared_components_tabla-dinamica_tabla-dinamica_module_ts"), __webpack_require__.e("default-node_modules_angular_material_fesm2022_datepicker_mjs"), __webpack_require__.e("common"), __webpack_require__.e("src_app_modules_stock_stock-inicial_stock-inicial_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./modules/stock/stock-inicial/stock-inicial.module */ 21625)).then(m => m.StockInicialModule)
   }, {
     path: 'ordenes-de-compra',
     canActivate: [_core_auth_guards_permiso_guard__WEBPACK_IMPORTED_MODULE_4__.PermisoGuard],
-    loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-node_modules_angular_material_fesm2022_progress-spinner_mjs"), __webpack_require__.e("default-src_app_shared_components_tabla-dinamica_tabla-dinamica_module_ts"), __webpack_require__.e("default-node_modules_angular_material_fesm2022_checkbox_mjs"), __webpack_require__.e("default-node_modules_angular_material_fesm2022_datepicker_mjs"), __webpack_require__.e("common"), __webpack_require__.e("src_app_modules_compras_ordenes-de-compra_ordenes-de-compra_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./modules/compras/ordenes-de-compra/ordenes-de-compra.module */ 37318)).then(m => m.OrdenesDeCompraModule)
+    loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-node_modules_angular_material_fesm2022_checkbox_mjs"), __webpack_require__.e("default-src_app_shared_components_tabla-dinamica_tabla-dinamica_module_ts"), __webpack_require__.e("default-node_modules_angular_material_fesm2022_datepicker_mjs"), __webpack_require__.e("common"), __webpack_require__.e("src_app_modules_compras_ordenes-de-compra_ordenes-de-compra_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./modules/compras/ordenes-de-compra/ordenes-de-compra.module */ 37318)).then(m => m.OrdenesDeCompraModule)
   }, {
     path: 'movimientos-internos',
     canActivate: [_core_auth_guards_permiso_guard__WEBPACK_IMPORTED_MODULE_4__.PermisoGuard],
-    loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-node_modules_angular_material_fesm2022_progress-spinner_mjs"), __webpack_require__.e("default-src_app_shared_components_tabla-dinamica_tabla-dinamica_module_ts"), __webpack_require__.e("default-node_modules_angular_material_fesm2022_checkbox_mjs"), __webpack_require__.e("default-node_modules_angular_material_fesm2022_datepicker_mjs"), __webpack_require__.e("common"), __webpack_require__.e("src_app_modules_stock_movimientos-internos_movimientos-internos_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./modules/stock/movimientos-internos/movimientos-internos.module */ 66422)).then(m => m.MovimientosInternosModule)
+    loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-node_modules_angular_material_fesm2022_checkbox_mjs"), __webpack_require__.e("default-src_app_shared_components_tabla-dinamica_tabla-dinamica_module_ts"), __webpack_require__.e("default-node_modules_angular_material_fesm2022_datepicker_mjs"), __webpack_require__.e("common"), __webpack_require__.e("src_app_modules_stock_movimientos-internos_movimientos-internos_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./modules/stock/movimientos-internos/movimientos-internos.module */ 66422)).then(m => m.MovimientosInternosModule)
   }, {
     path: 'movimiento-conversion',
     canActivate: [_core_auth_guards_permiso_guard__WEBPACK_IMPORTED_MODULE_4__.PermisoGuard],
-    loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-node_modules_angular_material_fesm2022_progress-spinner_mjs"), __webpack_require__.e("default-src_app_shared_components_tabla-dinamica_tabla-dinamica_module_ts"), __webpack_require__.e("default-node_modules_angular_material_fesm2022_checkbox_mjs"), __webpack_require__.e("default-node_modules_angular_material_fesm2022_datepicker_mjs"), __webpack_require__.e("common"), __webpack_require__.e("src_app_modules_stock_movimiento-conversion_movimiento-conversion_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./modules/stock/movimiento-conversion/movimiento-conversion.module */ 71194)).then(m => m.MovimientoConversionModule)
+    loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-node_modules_angular_material_fesm2022_checkbox_mjs"), __webpack_require__.e("default-src_app_shared_components_tabla-dinamica_tabla-dinamica_module_ts"), __webpack_require__.e("default-node_modules_angular_material_fesm2022_datepicker_mjs"), __webpack_require__.e("common"), __webpack_require__.e("src_app_modules_stock_movimiento-conversion_movimiento-conversion_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./modules/stock/movimiento-conversion/movimiento-conversion.module */ 71194)).then(m => m.MovimientoConversionModule)
   }, {
     path: 'remitos',
     canActivate: [_core_auth_guards_permiso_guard__WEBPACK_IMPORTED_MODULE_4__.PermisoGuard],
-    loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-node_modules_angular_material_fesm2022_progress-spinner_mjs"), __webpack_require__.e("default-src_app_shared_components_tabla-dinamica_tabla-dinamica_module_ts"), __webpack_require__.e("default-node_modules_angular_material_fesm2022_checkbox_mjs"), __webpack_require__.e("default-node_modules_angular_material_fesm2022_datepicker_mjs"), __webpack_require__.e("common"), __webpack_require__.e("src_app_modules_stock_remitos_remitos_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./modules/stock/remitos/remitos.module */ 35119)).then(m => m.RemitosModule)
+    loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-node_modules_angular_material_fesm2022_checkbox_mjs"), __webpack_require__.e("default-src_app_shared_components_tabla-dinamica_tabla-dinamica_module_ts"), __webpack_require__.e("default-node_modules_angular_material_fesm2022_datepicker_mjs"), __webpack_require__.e("common"), __webpack_require__.e("src_app_modules_stock_remitos_remitos_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./modules/stock/remitos/remitos.module */ 35119)).then(m => m.RemitosModule)
   }, {
     path: 'entregas',
     canActivate: [_core_auth_guards_permiso_guard__WEBPACK_IMPORTED_MODULE_4__.PermisoGuard],
-    loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-node_modules_angular_material_fesm2022_progress-spinner_mjs"), __webpack_require__.e("default-src_app_shared_components_tabla-dinamica_tabla-dinamica_module_ts"), __webpack_require__.e("default-node_modules_angular_material_fesm2022_checkbox_mjs"), __webpack_require__.e("default-node_modules_angular_material_fesm2022_datepicker_mjs"), __webpack_require__.e("common"), __webpack_require__.e("src_app_modules_stock_entregas_entregas_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./modules/stock/entregas/entregas.module */ 55526)).then(m => m.EntregasModule)
+    loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-node_modules_angular_material_fesm2022_checkbox_mjs"), __webpack_require__.e("default-src_app_shared_components_tabla-dinamica_tabla-dinamica_module_ts"), __webpack_require__.e("default-node_modules_angular_material_fesm2022_datepicker_mjs"), __webpack_require__.e("common"), __webpack_require__.e("src_app_modules_stock_entregas_entregas_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./modules/stock/entregas/entregas.module */ 55526)).then(m => m.EntregasModule)
+  }, {
+    path: 'usuarios',
+    canActivate: [_core_auth_guards_permiso_guard__WEBPACK_IMPORTED_MODULE_4__.PermisoGuard],
+    loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-node_modules_angular_material_fesm2022_checkbox_mjs"), __webpack_require__.e("default-src_app_shared_components_tabla-dinamica_tabla-dinamica_module_ts"), __webpack_require__.e("default-node_modules_angular_material_fesm2022_datepicker_mjs"), __webpack_require__.e("common"), __webpack_require__.e("src_app_modules_seguridad_usuarios_usuarios_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./modules/seguridad/usuarios/usuarios.module */ 89472)).then(m => m.UsuariosModule)
+  }, {
+    path: 'ventas',
+    canActivate: [_core_auth_guards_permiso_guard__WEBPACK_IMPORTED_MODULE_4__.PermisoGuard],
+    loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-node_modules_angular_material_fesm2022_checkbox_mjs"), __webpack_require__.e("default-src_app_shared_components_tabla-dinamica_tabla-dinamica_module_ts"), __webpack_require__.e("default-node_modules_angular_material_fesm2022_datepicker_mjs"), __webpack_require__.e("common"), __webpack_require__.e("src_app_modules_ventas_genericas_venta-generica_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./modules/ventas/genericas/venta-generica.module */ 18767)).then(m => m.VentaGenericasModule)
+  }, {
+    path: 'entrega_qr',
+    canActivate: [_core_auth_guards_permiso_guard__WEBPACK_IMPORTED_MODULE_4__.PermisoGuard],
+    loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-node_modules_angular_material_fesm2022_checkbox_mjs"), __webpack_require__.e("default-src_app_shared_components_tabla-dinamica_tabla-dinamica_module_ts"), __webpack_require__.e("default-node_modules_angular_material_fesm2022_datepicker_mjs"), __webpack_require__.e("common"), __webpack_require__.e("src_app_modules_stock_entregas-qr_entregas-qr_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./modules/stock/entregas-qr/entregas-qr.module */ 1453)).then(m => m.EntregasQRModule)
+  }, {
+    path: 'reporte/:path',
+    component: _shared_components_reportes_reporte_component__WEBPACK_IMPORTED_MODULE_5__.ReporteComponent
   }]
 }
 // Auth routes for authenticated users
@@ -15891,7 +15908,234 @@ const TitleType = [{
   icon: "",
   text: "Unidades de medida",
   path: "/unidades-de-medida"
+}, {
+  icon: "",
+  text: "Usuarios",
+  path: "/usuarios"
+}, {
+  icon: "",
+  text: "Ventas Genéricas",
+  path: "/ventas"
+}, {
+  icon: "",
+  text: "Entrega QR",
+  path: "/entrega_qr"
 }];
+
+/***/ }),
+
+/***/ 35860:
+/*!*****************************************************************!*\
+  !*** ./src/app/shared/components/reportes/reporte.component.ts ***!
+  \*****************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "ReporteComponent": () => (/* binding */ ReporteComponent)
+/* harmony export */ });
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/common */ 86477);
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/router */ 86679);
+/* harmony import */ var environments_environment__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! environments/environment */ 92340);
+/* harmony import */ var _shared_components_shared_component_module__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @shared/components/shared-component.module */ 46288);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/core */ 86839);
+/* harmony import */ var _shared_service_app_pwa_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @shared/service/app/pwa.service */ 16173);
+/* harmony import */ var _shared_pipes_safe_url_pipe__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @shared/pipes/safe-url.pipe */ 72129);
+
+
+
+
+
+
+
+
+class ReporteComponent {
+  constructor(route, pwaService) {
+    this.route = route;
+    this.pwaService = pwaService;
+  }
+  ngOnInit() {
+    this.route.paramMap.subscribe(params => {
+      const path = params.get('path');
+      if (path) {
+        this.reporteUrl = `${environments_environment__WEBPACK_IMPORTED_MODULE_0__.environment.baseRest}/${path}`;
+      } else {
+        console.error('No se proporcionó el camino del reporte');
+      }
+    });
+  }
+}
+ReporteComponent.ɵfac = function ReporteComponent_Factory(t) {
+  return new (t || ReporteComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_5__.ActivatedRoute), _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdirectiveInject"](_shared_service_app_pwa_service__WEBPACK_IMPORTED_MODULE_2__.PwaService));
+};
+ReporteComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdefineComponent"]({
+  type: ReporteComponent,
+  selectors: [["app-reporte"]],
+  standalone: true,
+  features: [_angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵStandaloneFeature"]],
+  decls: 2,
+  vars: 3,
+  consts: [["width", "100%", "height", "100%", 3, "src"]],
+  template: function ReporteComponent_Template(rf, ctx) {
+    if (rf & 1) {
+      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelement"](0, "iframe", 0);
+      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵpipe"](1, "safeUrl");
+    }
+    if (rf & 2) {
+      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵproperty"]("src", _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵpipeBind1"](1, 1, ctx.reporteUrl), _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵsanitizeResourceUrl"]);
+    }
+  },
+  dependencies: [_angular_common__WEBPACK_IMPORTED_MODULE_6__.CommonModule, _angular_router__WEBPACK_IMPORTED_MODULE_5__.RouterModule, _shared_components_shared_component_module__WEBPACK_IMPORTED_MODULE_1__.SharedComponentModule, _shared_pipes_safe_url_pipe__WEBPACK_IMPORTED_MODULE_3__.SafeUrlPipe],
+  encapsulation: 2
+});
+
+
+/***/ }),
+
+/***/ 46288:
+/*!**************************************************************!*\
+  !*** ./src/app/shared/components/shared-component.module.ts ***!
+  \**************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "SharedComponentModule": () => (/* binding */ SharedComponentModule)
+/* harmony export */ });
+/* harmony import */ var _angular_cdk_overlay__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/cdk/overlay */ 12778);
+/* harmony import */ var _angular_cdk_portal__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @angular/cdk/portal */ 12035);
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/common */ 86477);
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! @angular/forms */ 69542);
+/* harmony import */ var _angular_material_autocomplete__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! @angular/material/autocomplete */ 42556);
+/* harmony import */ var _angular_material_button__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @angular/material/button */ 83677);
+/* harmony import */ var _angular_material_divider__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! @angular/material/divider */ 20445);
+/* harmony import */ var _angular_material_form_field__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @angular/material/form-field */ 98750);
+/* harmony import */ var _angular_material_icon__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @angular/material/icon */ 69941);
+/* harmony import */ var _angular_material_input__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @angular/material/input */ 4322);
+/* harmony import */ var _angular_material_menu__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! @angular/material/menu */ 89314);
+/* harmony import */ var _angular_material_paginator__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/material/paginator */ 86907);
+/* harmony import */ var _angular_material_progress_spinner__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/material/progress-spinner */ 15312);
+/* harmony import */ var _angular_material_slide_toggle__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! @angular/material/slide-toggle */ 4291);
+/* harmony import */ var _angular_material_table__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/material/table */ 83348);
+/* harmony import */ var _angular_material_tooltip__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @angular/material/tooltip */ 52423);
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! @angular/router */ 86679);
+/* harmony import */ var _shared_pipes_safe_url_pipe__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @shared/pipes/safe-url.pipe */ 72129);
+/* harmony import */ var _shared_service_app_jeds_menu_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @shared/service/app/jeds-menu.service */ 92078);
+/* harmony import */ var _shared_service_app_pwa_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @shared/service/app/pwa.service */ 16173);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/core */ 86839);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+class SharedComponentModule {}
+SharedComponentModule.ɵfac = function SharedComponentModule_Factory(t) {
+  return new (t || SharedComponentModule)();
+};
+SharedComponentModule.ɵmod = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdefineNgModule"]({
+  type: SharedComponentModule
+});
+SharedComponentModule.ɵinj = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdefineInjector"]({
+  providers: [_shared_service_app_jeds_menu_service__WEBPACK_IMPORTED_MODULE_1__.JedsMenuService, _shared_service_app_pwa_service__WEBPACK_IMPORTED_MODULE_2__.PwaService],
+  imports: [_angular_material_table__WEBPACK_IMPORTED_MODULE_4__.MatTableModule, _angular_material_progress_spinner__WEBPACK_IMPORTED_MODULE_5__.MatProgressSpinnerModule, _angular_material_paginator__WEBPACK_IMPORTED_MODULE_6__.MatPaginatorModule, _angular_common__WEBPACK_IMPORTED_MODULE_7__.CommonModule, _angular_cdk_overlay__WEBPACK_IMPORTED_MODULE_8__.OverlayModule, _angular_cdk_portal__WEBPACK_IMPORTED_MODULE_9__.PortalModule, _angular_material_button__WEBPACK_IMPORTED_MODULE_10__.MatButtonModule, _angular_material_icon__WEBPACK_IMPORTED_MODULE_11__.MatIconModule, _angular_material_tooltip__WEBPACK_IMPORTED_MODULE_12__.MatTooltipModule, _angular_material_icon__WEBPACK_IMPORTED_MODULE_11__.MatIconModule, _angular_material_input__WEBPACK_IMPORTED_MODULE_13__.MatInputModule, _angular_material_form_field__WEBPACK_IMPORTED_MODULE_14__.MatFormFieldModule, _angular_material_slide_toggle__WEBPACK_IMPORTED_MODULE_15__.MatSlideToggleModule, _angular_material_menu__WEBPACK_IMPORTED_MODULE_16__.MatMenuModule, _angular_material_divider__WEBPACK_IMPORTED_MODULE_17__.MatDividerModule, _angular_material_autocomplete__WEBPACK_IMPORTED_MODULE_18__.MatAutocompleteModule, _angular_router__WEBPACK_IMPORTED_MODULE_19__.RouterModule, _angular_forms__WEBPACK_IMPORTED_MODULE_20__.ReactiveFormsModule]
+});
+
+(function () {
+  (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵsetNgModuleScope"](SharedComponentModule, {
+    declarations: [_shared_pipes_safe_url_pipe__WEBPACK_IMPORTED_MODULE_0__.SafeUrlPipe],
+    imports: [_angular_material_table__WEBPACK_IMPORTED_MODULE_4__.MatTableModule, _angular_material_progress_spinner__WEBPACK_IMPORTED_MODULE_5__.MatProgressSpinnerModule, _angular_material_paginator__WEBPACK_IMPORTED_MODULE_6__.MatPaginatorModule, _angular_common__WEBPACK_IMPORTED_MODULE_7__.CommonModule, _angular_cdk_overlay__WEBPACK_IMPORTED_MODULE_8__.OverlayModule, _angular_cdk_portal__WEBPACK_IMPORTED_MODULE_9__.PortalModule, _angular_material_button__WEBPACK_IMPORTED_MODULE_10__.MatButtonModule, _angular_material_icon__WEBPACK_IMPORTED_MODULE_11__.MatIconModule, _angular_material_tooltip__WEBPACK_IMPORTED_MODULE_12__.MatTooltipModule, _angular_material_icon__WEBPACK_IMPORTED_MODULE_11__.MatIconModule, _angular_material_input__WEBPACK_IMPORTED_MODULE_13__.MatInputModule, _angular_material_form_field__WEBPACK_IMPORTED_MODULE_14__.MatFormFieldModule, _angular_material_slide_toggle__WEBPACK_IMPORTED_MODULE_15__.MatSlideToggleModule, _angular_material_menu__WEBPACK_IMPORTED_MODULE_16__.MatMenuModule, _angular_material_divider__WEBPACK_IMPORTED_MODULE_17__.MatDividerModule, _angular_material_autocomplete__WEBPACK_IMPORTED_MODULE_18__.MatAutocompleteModule, _angular_router__WEBPACK_IMPORTED_MODULE_19__.RouterModule, _angular_forms__WEBPACK_IMPORTED_MODULE_20__.ReactiveFormsModule],
+    exports: [_shared_pipes_safe_url_pipe__WEBPACK_IMPORTED_MODULE_0__.SafeUrlPipe]
+  });
+})();
+
+/***/ }),
+
+/***/ 10198:
+/*!****************************************************!*\
+  !*** ./src/app/shared/constants/menu-positions.ts ***!
+  \****************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "IMenuPosition": () => (/* binding */ IMenuPosition)
+/* harmony export */ });
+const IMenuPosition = {
+  topLeft: [{
+    originX: 'end',
+    originY: 'bottom',
+    overlayX: 'start',
+    overlayY: 'top'
+  }],
+  topRight: [{
+    originX: 'start',
+    originY: 'bottom',
+    overlayX: 'end',
+    overlayY: 'top'
+  }],
+  bottomLeft: [{
+    originX: 'end',
+    originY: 'top',
+    overlayX: 'start',
+    overlayY: 'bottom'
+  }],
+  bottomRight: [{
+    originX: 'start',
+    originY: 'top',
+    overlayX: 'end',
+    overlayY: 'bottom'
+  }]
+};
+
+/***/ }),
+
+/***/ 72129:
+/*!***********************************************!*\
+  !*** ./src/app/shared/pipes/safe-url.pipe.ts ***!
+  \***********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "SafeUrlPipe": () => (/* binding */ SafeUrlPipe)
+/* harmony export */ });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ 86839);
+/* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/platform-browser */ 42512);
+
+
+class SafeUrlPipe {
+  constructor(sanitizer) {
+    this.sanitizer = sanitizer;
+  }
+  transform(url) {
+    return this.sanitizer.bypassSecurityTrustResourceUrl(url);
+  }
+}
+SafeUrlPipe.ɵfac = function SafeUrlPipe_Factory(t) {
+  return new (t || SafeUrlPipe)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__.DomSanitizer, 16));
+};
+SafeUrlPipe.ɵpipe = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefinePipe"]({
+  name: "safeUrl",
+  type: SafeUrlPipe,
+  pure: true
+});
+
 
 /***/ }),
 
@@ -16109,6 +16353,137 @@ EmpresaService.ɵprov = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_6__[
 
 /***/ }),
 
+/***/ 92078:
+/*!*********************************************************!*\
+  !*** ./src/app/shared/service/app/jeds-menu.service.ts ***!
+  \*********************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "JedsMenuService": () => (/* binding */ JedsMenuService)
+/* harmony export */ });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ 86839);
+/* harmony import */ var _shared_constants_menu_positions__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @shared/constants/menu-positions */ 10198);
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! rxjs */ 32673);
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! rxjs */ 10745);
+/* harmony import */ var _angular_cdk_portal__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/cdk/portal */ 12035);
+/* harmony import */ var _angular_cdk_overlay__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/cdk/overlay */ 12778);
+
+
+
+
+
+
+class JedsMenuService {
+  constructor(_overlay) {
+    this._overlay = _overlay;
+  }
+  /**
+   *
+   * @param component Componente a renderizar <ComponentType<any>>
+   * @param elementRef Elemento de origen para renderizado <ElementRef>
+   * @param data Data a enviar al overlay <any>
+   * @returns
+   */
+  open(component, elementRef, data) {
+    this._overlayRef = this.getMenuRef(elementRef);
+    this._overlayRef.attach(new _angular_cdk_portal__WEBPACK_IMPORTED_MODULE_1__.ComponentPortal(component, null, _angular_core__WEBPACK_IMPORTED_MODULE_2__.Injector.create({
+      providers: [{
+        provide: 'MENU_DATA',
+        useValue: data
+      }]
+    })));
+    this._menuRef = new JedsMenuRef(this._overlayRef);
+    return this._menuRef;
+  }
+  close(data) {
+    this._menuRef.close(data);
+  }
+  /**
+   *
+   * @param elementRef Elemento de origen para renderizado <ElementRef>
+   * @returns Creacion de Overlay <OverlayRef>
+   */
+  getMenuRef(elementRef) {
+    let position;
+    const init = elementRef.nativeElement.getBoundingClientRect();
+    if (init.x < window.innerHeight / 2) {
+      position = init.x < window.innerWidth / 2 ? _shared_constants_menu_positions__WEBPACK_IMPORTED_MODULE_0__.IMenuPosition.topLeft : _shared_constants_menu_positions__WEBPACK_IMPORTED_MODULE_0__.IMenuPosition.topRight;
+    } else {
+      position = init.x < window.innerWidth / 2 ? _shared_constants_menu_positions__WEBPACK_IMPORTED_MODULE_0__.IMenuPosition.bottomLeft : _shared_constants_menu_positions__WEBPACK_IMPORTED_MODULE_0__.IMenuPosition.bottomRight;
+    }
+    return this._overlay.create({
+      hasBackdrop: true,
+      backdropClass: 'fuse-backdrop-on-mobile',
+      scrollStrategy: this._overlay.scrollStrategies.block(),
+      positionStrategy: this._overlay.position()
+      // eslint-disable-next-line no-underscore-dangle
+      .flexibleConnectedTo(elementRef.nativeElement)
+      // .withLockedPosition(true)
+      .withPush(true).withPositions(position)
+    });
+  }
+}
+JedsMenuService.ɵfac = function JedsMenuService_Factory(t) {
+  return new (t || JedsMenuService)(_angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵinject"](_angular_cdk_overlay__WEBPACK_IMPORTED_MODULE_3__.Overlay));
+};
+JedsMenuService.ɵprov = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdefineInjectable"]({
+  token: JedsMenuService,
+  factory: JedsMenuService.ɵfac
+});
+
+class JedsMenuRef extends JedsMenuService {
+  constructor(overlayRef, overlay) {
+    super(overlay);
+    this.overlay = overlay;
+    this.overlayRef = overlayRef;
+    this.overlayRef.backdropClick().subscribe({
+      next: () => {
+        this.overlayRef.detach();
+      }
+    });
+  }
+  afterClosed() {
+    return this.overlayRef.detachments().pipe((0,rxjs__WEBPACK_IMPORTED_MODULE_4__.switchMap)(() => (0,rxjs__WEBPACK_IMPORTED_MODULE_5__.of)(this.data)));
+  }
+  close(data) {
+    this.data = data;
+    this.overlayRef.detach();
+  }
+}
+
+/***/ }),
+
+/***/ 16173:
+/*!***************************************************!*\
+  !*** ./src/app/shared/service/app/pwa.service.ts ***!
+  \***************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "PwaService": () => (/* binding */ PwaService)
+/* harmony export */ });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ 86839);
+
+class PwaService {
+  isPwa() {
+    return window.matchMedia('(display-mode: standalone)').matches || window.matchMedia('(display-mode: fullscreen)').matches;
+  }
+}
+PwaService.ɵfac = function PwaService_Factory(t) {
+  return new (t || PwaService)();
+};
+PwaService.ɵprov = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjectable"]({
+  token: PwaService,
+  factory: PwaService.ɵfac,
+  providedIn: 'root'
+});
+
+
+/***/ }),
+
 /***/ 92340:
 /*!*****************************************!*\
   !*** ./src/environments/environment.ts ***!
@@ -16129,7 +16504,8 @@ const environment = {
     users: `${$BASE_REST}/view_usuario_logins`,
     //users: `${$CARGA_WEB}/usuarios_login.php`,
     login: `${$BASE_REST}/usuario/login`,
-    view_usuarios: `${$BASE_REST}/view_usuarios`
+    view_usuarios: `${$BASE_REST}/view_usuarios`,
+    credencial_usuario: `${$BASE_REST}/view_usuario/generar_credencial?idusuario=`
   },
   administracion: {
     tratamientos: `${$BASE_REST}/tratamientos`,
@@ -16155,20 +16531,26 @@ const environment = {
     depositos: `${$BASE_REST}/stk_depositos`,
     rubros: `${$BASE_REST}/stk_rubros`,
     articulos: `${$BASE_REST}/stk_articulos`,
+    reporte_etiqueta: `${$BASE_REST}/stk_articulo/generar_etiquetas`,
     view_articulos: `${$BASE_REST}/view_articulos`,
     articulo_unidad_medidas: `${$BASE_REST}/stk_articulo_unidad_medidas`,
     stock_inicial: `${$BASE_REST}/stk_stock_inicials`,
     view_stock_inicials: `${$BASE_REST}/view_stock_inicials`,
     view_stock_movimientos: `${$BASE_REST}/view_stock_movimientos`,
     movimiento_internos: `${$BASE_REST}/stk_movimiento_internos`,
+    reporte_movimiento_internos: `${$BASE_REST}/stk_movimiento_interno/generar_reporte?idmovimientointerno=`,
+    ver_reporte_movimiento_internos: `${$BASE_REST}/`,
     view_stock_articulo_depositos: `${$BASE_REST}/view_stock_articulo_depositos`,
     movimiento_conversion: `${$BASE_REST}/stk_movimiento_conversions`,
     remitos: `${$BASE_REST}/stk_remitos`,
     view_items_oc_pendientes: `${$BASE_REST}/view_items_oc_pendientes`,
-    entregas: `${$BASE_REST}/stk_entregas`
+    entregas: `${$BASE_REST}/stk_entregas`,
+    reporte_entrega: `${$BASE_REST}/stk_entrega/generar_reporte?identrega=`
   },
   ventas: {
-    view_venta_selects: `${$BASE_REST}/view_venta_selects`
+    view_venta_selects: `${$BASE_REST}/view_venta_selects`,
+    view_venta_genericas: `${$BASE_REST}/view_venta_genericas`,
+    reporte_orden_servicio: `${$BASE_REST}/venta_generica_token/generar_orden?idventagenerica=`
   },
   compras: {
     pedido_presupuestos: `${$BASE_REST}/egr_pedido_presupuestos`,
