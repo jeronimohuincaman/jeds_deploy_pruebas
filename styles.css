@@ -39084,6 +39084,9 @@ body.light mat-option:nth-child(odd):hover {
 .mt-3 {
     margin-top: 0.75rem !important;
 }
+.mt-3\.5 {
+    margin-top: 0.875rem !important;
+}
 .mt-4 {
     margin-top: 1rem !important;
 }
@@ -39267,20 +39270,23 @@ body.light mat-option:nth-child(odd):hover {
 .w-30 {
     width: 7.5rem !important;
 }
+.w-32 {
+    width: 8rem !important;
+}
 .w-36 {
     width: 9rem !important;
 }
 .w-4 {
     width: 1rem !important;
 }
+.w-48 {
+    width: 12rem !important;
+}
 .w-5 {
     width: 1.25rem !important;
 }
 .w-6 {
     width: 1.5rem !important;
-}
-.w-60 {
-    width: 15rem !important;
 }
 .w-7 {
     width: 1.75rem !important;
@@ -39293,6 +39299,9 @@ body.light mat-option:nth-child(odd):hover {
 }
 .w-90 {
     width: 22.5rem !important;
+}
+.w-\[186px\] {
+    width: 186px !important;
 }
 .w-full {
     width: 100% !important;
@@ -40676,6 +40685,9 @@ body.light mat-option:nth-child(odd):hover {
     .sm\:mb-0 {
         margin-bottom: 0px !important;
     }
+    .sm\:ml-12 {
+        margin-left: 3rem !important;
+    }
     .sm\:ml-8 {
         margin-left: 2rem !important;
     }
@@ -40690,6 +40702,9 @@ body.light mat-option:nth-child(odd):hover {
     }
     .sm\:hidden {
         display: none !important;
+    }
+    .sm\:h-12 {
+        height: 3rem !important;
     }
     .sm\:h-20 {
         height: 5rem !important;
@@ -40711,6 +40726,9 @@ body.light mat-option:nth-child(odd):hover {
     }
     .sm\:w-100 {
         width: 25rem !important;
+    }
+    .sm\:w-12 {
+        width: 3rem !important;
     }
     .sm\:w-120 {
         width: 30rem !important;

@@ -15924,6 +15924,104 @@ const TitleType = [{
 
 /***/ }),
 
+/***/ 5729:
+/*!********************************************************************!*\
+  !*** ./src/app/shared/components/lector-qr/lector-qr.component.ts ***!
+  \********************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "LectorQrComponent": () => (/* binding */ LectorQrComponent)
+/* harmony export */ });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ 86839);
+/* harmony import */ var html5_qrcode__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! html5-qrcode */ 83421);
+
+
+
+class LectorQrComponent {
+  constructor() {
+    this.sendObject = new _angular_core__WEBPACK_IMPORTED_MODULE_1__.EventEmitter();
+  }
+  ngOnDestroy() {
+    this.stopScanner();
+  }
+  ngOnInit() {
+    this.initScanner();
+  }
+  initScanner() {
+    html5_qrcode__WEBPACK_IMPORTED_MODULE_0__.Html5Qrcode.getCameras().then(devices => {
+      if (devices && devices.length) {
+        const cameraId = devices[devices.length - 1].id;
+        this.scanner = new html5_qrcode__WEBPACK_IMPORTED_MODULE_0__.Html5Qrcode('reader');
+        this.scanner.start(cameraId, {
+          fps: 30,
+          qrbox: 250 // Ajusta el tamaño del cuadro de escaneo según sea necesario
+        }, (decodedText, decodedResult) => {
+          let code = decodedText.split(':')[1].replace('"', '').replace('"', '').replace('}', '');
+          this.stopScanner();
+          this.sendObject.emit(code);
+        }, error => {
+          console.log(error);
+        }).catch(err => {
+          console.log(err);
+        });
+      }
+    }).catch(err => {
+      console.log(err);
+    });
+  }
+  stopScanner() {
+    if (this.scanner) {
+      if (this.scanner.getState() == 2) {
+        this.scanner.stop().then(() => {
+          console.log("Escáner detenido.");
+          const overlayBackdrop = document.querySelector('.cdk-overlay-backdrop');
+          if (overlayBackdrop) {
+            // Verifica si hay más de un overlay (es decir, si se está ejecutando dentro de un modal)
+            const overlays = document.querySelectorAll('.cdk-overlay-backdrop');
+            if (overlays.length > 1) {
+              // Elimina el overlay del scanner (el último que se agregó)
+              overlays[overlays.length - 1].remove();
+            } else {
+              // Si solo hay un overlay, elimina ese
+              overlayBackdrop.remove();
+            }
+          }
+          const readerElement = document.getElementById('reader');
+          if (readerElement) {
+            readerElement.remove(); // Elimina el elemento del DOM
+          }
+        }).catch(err => {
+          console.error("Error al detener el escáner: ", err);
+        });
+      }
+    }
+  }
+}
+LectorQrComponent.ɵfac = function LectorQrComponent_Factory(t) {
+  return new (t || LectorQrComponent)();
+};
+LectorQrComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineComponent"]({
+  type: LectorQrComponent,
+  selectors: [["app-lector-qr"]],
+  outputs: {
+    sendObject: "sendObject"
+  },
+  decls: 1,
+  vars: 0,
+  consts: [["id", "reader", 1, "fixed", "inset-0", "adaptable-reader"]],
+  template: function LectorQrComponent_Template(rf, ctx) {
+    if (rf & 1) {
+      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](0, "div", 0);
+    }
+  },
+  styles: ["@charset \"UTF-8\";\n.adaptable-reader[_ngcontent-%COMP%] {\n  \n  \n}\n@media (max-width: 768px) {\n  .adaptable-reader[_ngcontent-%COMP%] {\n    width: 100%;\n    height: 35%;\n  }\n}\n@media (min-width: 769px) {\n  .adaptable-reader[_ngcontent-%COMP%] {\n    position: relative;\n    width: 500px;\n    height: 375px;\n    margin: auto;\n    transform: translateY(-50%);\n  }\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImxlY3Rvci1xci5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQSxnQkFBZ0I7QUFBaEI7RUFDRSw0QkFBQTtFQU1BLHNDQUFBO0FBSEY7QUFGRTtFQUZGO0lBR0ksV0FBQTtJQUNBLFdBQUE7RUFLRjtBQUNGO0FBRkU7RUFSRjtJQVNJLGtCQUFBO0lBQ0EsWUFBQTtJQUNBLGFBQUE7SUFDQSxZQUFBO0lBQ0EsMkJBQUE7RUFLRjtBQUNGIiwiZmlsZSI6ImxlY3Rvci1xci5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIi5hZGFwdGFibGUtcmVhZGVyIHtcclxuICAvKiBQYXJhIHBhbnRhbGxhcyBwZXF1ZcOxYXMgKi9cclxuICBAbWVkaWEgKG1heC13aWR0aDogNzY4cHgpIHsgXHJcbiAgICB3aWR0aDogMTAwJTtcclxuICAgIGhlaWdodDogMzUlO1xyXG4gIH1cclxuXHJcbiAgLyogUGFyYSBwYW50YWxsYXMgbWVkaWFuYXMgeSBncmFuZGVzICovXHJcbiAgQG1lZGlhIChtaW4td2lkdGg6IDc2OXB4KSB7IFxyXG4gICAgcG9zaXRpb246IHJlbGF0aXZlOyBcclxuICAgIHdpZHRoOiA1MDBweDsgXHJcbiAgICBoZWlnaHQ6IDM3NXB4O1xyXG4gICAgbWFyZ2luOiBhdXRvOyBcclxuICAgIHRyYW5zZm9ybTogdHJhbnNsYXRlWSgtNTAlKTsgXHJcbiAgfVxyXG59Il19 */\n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8uL3NyYy9hcHAvc2hhcmVkL2NvbXBvbmVudHMvbGVjdG9yLXFyL2xlY3Rvci1xci5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQSxnQkFBZ0I7QUFBaEI7RUFDRSw0QkFBQTtFQU1BLHNDQUFBO0FBSEY7QUFGRTtFQUZGO0lBR0ksV0FBQTtJQUNBLFdBQUE7RUFLRjtBQUNGO0FBRkU7RUFSRjtJQVNJLGtCQUFBO0lBQ0EsWUFBQTtJQUNBLGFBQUE7SUFDQSxZQUFBO0lBQ0EsMkJBQUE7RUFLRjtBQUNGO0FBQ0EsdzVCQUF3NUIiLCJzb3VyY2VzQ29udGVudCI6WyIuYWRhcHRhYmxlLXJlYWRlciB7XHJcbiAgLyogUGFyYSBwYW50YWxsYXMgcGVxdWXDg8KxYXMgKi9cclxuICBAbWVkaWEgKG1heC13aWR0aDogNzY4cHgpIHsgXHJcbiAgICB3aWR0aDogMTAwJTtcclxuICAgIGhlaWdodDogMzUlO1xyXG4gIH1cclxuXHJcbiAgLyogUGFyYSBwYW50YWxsYXMgbWVkaWFuYXMgeSBncmFuZGVzICovXHJcbiAgQG1lZGlhIChtaW4td2lkdGg6IDc2OXB4KSB7IFxyXG4gICAgcG9zaXRpb246IHJlbGF0aXZlOyBcclxuICAgIHdpZHRoOiA1MDBweDsgXHJcbiAgICBoZWlnaHQ6IDM3NXB4O1xyXG4gICAgbWFyZ2luOiBhdXRvOyBcclxuICAgIHRyYW5zZm9ybTogdHJhbnNsYXRlWSgtNTAlKTsgXHJcbiAgfVxyXG59Il0sInNvdXJjZVJvb3QiOiIifQ== */"]
+});
+
+
+/***/ }),
+
 /***/ 35860:
 /*!*****************************************************************!*\
   !*** ./src/app/shared/components/reportes/reporte.component.ts ***!
@@ -16002,27 +16100,29 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "SharedComponentModule": () => (/* binding */ SharedComponentModule)
 /* harmony export */ });
-/* harmony import */ var _angular_cdk_overlay__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/cdk/overlay */ 12778);
-/* harmony import */ var _angular_cdk_portal__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @angular/cdk/portal */ 12035);
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/common */ 86477);
-/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! @angular/forms */ 69542);
-/* harmony import */ var _angular_material_autocomplete__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! @angular/material/autocomplete */ 42556);
-/* harmony import */ var _angular_material_button__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @angular/material/button */ 83677);
-/* harmony import */ var _angular_material_divider__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! @angular/material/divider */ 20445);
-/* harmony import */ var _angular_material_form_field__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @angular/material/form-field */ 98750);
-/* harmony import */ var _angular_material_icon__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @angular/material/icon */ 69941);
-/* harmony import */ var _angular_material_input__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @angular/material/input */ 4322);
-/* harmony import */ var _angular_material_menu__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! @angular/material/menu */ 89314);
-/* harmony import */ var _angular_material_paginator__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/material/paginator */ 86907);
-/* harmony import */ var _angular_material_progress_spinner__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/material/progress-spinner */ 15312);
-/* harmony import */ var _angular_material_slide_toggle__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! @angular/material/slide-toggle */ 4291);
-/* harmony import */ var _angular_material_table__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/material/table */ 83348);
-/* harmony import */ var _angular_material_tooltip__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @angular/material/tooltip */ 52423);
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! @angular/router */ 86679);
+/* harmony import */ var _angular_cdk_overlay__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @angular/cdk/overlay */ 12778);
+/* harmony import */ var _angular_cdk_portal__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @angular/cdk/portal */ 12035);
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/common */ 86477);
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! @angular/forms */ 69542);
+/* harmony import */ var _angular_material_autocomplete__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! @angular/material/autocomplete */ 42556);
+/* harmony import */ var _angular_material_button__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @angular/material/button */ 83677);
+/* harmony import */ var _angular_material_divider__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! @angular/material/divider */ 20445);
+/* harmony import */ var _angular_material_form_field__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! @angular/material/form-field */ 98750);
+/* harmony import */ var _angular_material_icon__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @angular/material/icon */ 69941);
+/* harmony import */ var _angular_material_input__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @angular/material/input */ 4322);
+/* harmony import */ var _angular_material_menu__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! @angular/material/menu */ 89314);
+/* harmony import */ var _angular_material_paginator__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/material/paginator */ 86907);
+/* harmony import */ var _angular_material_progress_spinner__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/material/progress-spinner */ 15312);
+/* harmony import */ var _angular_material_slide_toggle__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! @angular/material/slide-toggle */ 4291);
+/* harmony import */ var _angular_material_table__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/material/table */ 83348);
+/* harmony import */ var _angular_material_tooltip__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @angular/material/tooltip */ 52423);
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! @angular/router */ 86679);
 /* harmony import */ var _shared_pipes_safe_url_pipe__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @shared/pipes/safe-url.pipe */ 72129);
 /* harmony import */ var _shared_service_app_jeds_menu_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @shared/service/app/jeds-menu.service */ 92078);
 /* harmony import */ var _shared_service_app_pwa_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @shared/service/app/pwa.service */ 16173);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/core */ 86839);
+/* harmony import */ var _lector_qr_lector_qr_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./lector-qr/lector-qr.component */ 5729);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/core */ 86839);
+
 
 
 
@@ -16048,18 +16148,18 @@ class SharedComponentModule {}
 SharedComponentModule.ɵfac = function SharedComponentModule_Factory(t) {
   return new (t || SharedComponentModule)();
 };
-SharedComponentModule.ɵmod = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdefineNgModule"]({
+SharedComponentModule.ɵmod = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdefineNgModule"]({
   type: SharedComponentModule
 });
-SharedComponentModule.ɵinj = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdefineInjector"]({
+SharedComponentModule.ɵinj = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdefineInjector"]({
   providers: [_shared_service_app_jeds_menu_service__WEBPACK_IMPORTED_MODULE_1__.JedsMenuService, _shared_service_app_pwa_service__WEBPACK_IMPORTED_MODULE_2__.PwaService],
-  imports: [_angular_material_table__WEBPACK_IMPORTED_MODULE_4__.MatTableModule, _angular_material_progress_spinner__WEBPACK_IMPORTED_MODULE_5__.MatProgressSpinnerModule, _angular_material_paginator__WEBPACK_IMPORTED_MODULE_6__.MatPaginatorModule, _angular_common__WEBPACK_IMPORTED_MODULE_7__.CommonModule, _angular_cdk_overlay__WEBPACK_IMPORTED_MODULE_8__.OverlayModule, _angular_cdk_portal__WEBPACK_IMPORTED_MODULE_9__.PortalModule, _angular_material_button__WEBPACK_IMPORTED_MODULE_10__.MatButtonModule, _angular_material_icon__WEBPACK_IMPORTED_MODULE_11__.MatIconModule, _angular_material_tooltip__WEBPACK_IMPORTED_MODULE_12__.MatTooltipModule, _angular_material_icon__WEBPACK_IMPORTED_MODULE_11__.MatIconModule, _angular_material_input__WEBPACK_IMPORTED_MODULE_13__.MatInputModule, _angular_material_form_field__WEBPACK_IMPORTED_MODULE_14__.MatFormFieldModule, _angular_material_slide_toggle__WEBPACK_IMPORTED_MODULE_15__.MatSlideToggleModule, _angular_material_menu__WEBPACK_IMPORTED_MODULE_16__.MatMenuModule, _angular_material_divider__WEBPACK_IMPORTED_MODULE_17__.MatDividerModule, _angular_material_autocomplete__WEBPACK_IMPORTED_MODULE_18__.MatAutocompleteModule, _angular_router__WEBPACK_IMPORTED_MODULE_19__.RouterModule, _angular_forms__WEBPACK_IMPORTED_MODULE_20__.ReactiveFormsModule]
+  imports: [_angular_material_table__WEBPACK_IMPORTED_MODULE_5__.MatTableModule, _angular_material_progress_spinner__WEBPACK_IMPORTED_MODULE_6__.MatProgressSpinnerModule, _angular_material_paginator__WEBPACK_IMPORTED_MODULE_7__.MatPaginatorModule, _angular_common__WEBPACK_IMPORTED_MODULE_8__.CommonModule, _angular_cdk_overlay__WEBPACK_IMPORTED_MODULE_9__.OverlayModule, _angular_cdk_portal__WEBPACK_IMPORTED_MODULE_10__.PortalModule, _angular_material_button__WEBPACK_IMPORTED_MODULE_11__.MatButtonModule, _angular_material_icon__WEBPACK_IMPORTED_MODULE_12__.MatIconModule, _angular_material_tooltip__WEBPACK_IMPORTED_MODULE_13__.MatTooltipModule, _angular_material_icon__WEBPACK_IMPORTED_MODULE_12__.MatIconModule, _angular_material_input__WEBPACK_IMPORTED_MODULE_14__.MatInputModule, _angular_material_form_field__WEBPACK_IMPORTED_MODULE_15__.MatFormFieldModule, _angular_material_slide_toggle__WEBPACK_IMPORTED_MODULE_16__.MatSlideToggleModule, _angular_material_menu__WEBPACK_IMPORTED_MODULE_17__.MatMenuModule, _angular_material_divider__WEBPACK_IMPORTED_MODULE_18__.MatDividerModule, _angular_material_autocomplete__WEBPACK_IMPORTED_MODULE_19__.MatAutocompleteModule, _angular_router__WEBPACK_IMPORTED_MODULE_20__.RouterModule, _angular_forms__WEBPACK_IMPORTED_MODULE_21__.ReactiveFormsModule]
 });
 
 (function () {
-  (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵsetNgModuleScope"](SharedComponentModule, {
-    declarations: [_shared_pipes_safe_url_pipe__WEBPACK_IMPORTED_MODULE_0__.SafeUrlPipe],
-    imports: [_angular_material_table__WEBPACK_IMPORTED_MODULE_4__.MatTableModule, _angular_material_progress_spinner__WEBPACK_IMPORTED_MODULE_5__.MatProgressSpinnerModule, _angular_material_paginator__WEBPACK_IMPORTED_MODULE_6__.MatPaginatorModule, _angular_common__WEBPACK_IMPORTED_MODULE_7__.CommonModule, _angular_cdk_overlay__WEBPACK_IMPORTED_MODULE_8__.OverlayModule, _angular_cdk_portal__WEBPACK_IMPORTED_MODULE_9__.PortalModule, _angular_material_button__WEBPACK_IMPORTED_MODULE_10__.MatButtonModule, _angular_material_icon__WEBPACK_IMPORTED_MODULE_11__.MatIconModule, _angular_material_tooltip__WEBPACK_IMPORTED_MODULE_12__.MatTooltipModule, _angular_material_icon__WEBPACK_IMPORTED_MODULE_11__.MatIconModule, _angular_material_input__WEBPACK_IMPORTED_MODULE_13__.MatInputModule, _angular_material_form_field__WEBPACK_IMPORTED_MODULE_14__.MatFormFieldModule, _angular_material_slide_toggle__WEBPACK_IMPORTED_MODULE_15__.MatSlideToggleModule, _angular_material_menu__WEBPACK_IMPORTED_MODULE_16__.MatMenuModule, _angular_material_divider__WEBPACK_IMPORTED_MODULE_17__.MatDividerModule, _angular_material_autocomplete__WEBPACK_IMPORTED_MODULE_18__.MatAutocompleteModule, _angular_router__WEBPACK_IMPORTED_MODULE_19__.RouterModule, _angular_forms__WEBPACK_IMPORTED_MODULE_20__.ReactiveFormsModule],
+  (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵsetNgModuleScope"](SharedComponentModule, {
+    declarations: [_shared_pipes_safe_url_pipe__WEBPACK_IMPORTED_MODULE_0__.SafeUrlPipe, _lector_qr_lector_qr_component__WEBPACK_IMPORTED_MODULE_3__.LectorQrComponent],
+    imports: [_angular_material_table__WEBPACK_IMPORTED_MODULE_5__.MatTableModule, _angular_material_progress_spinner__WEBPACK_IMPORTED_MODULE_6__.MatProgressSpinnerModule, _angular_material_paginator__WEBPACK_IMPORTED_MODULE_7__.MatPaginatorModule, _angular_common__WEBPACK_IMPORTED_MODULE_8__.CommonModule, _angular_cdk_overlay__WEBPACK_IMPORTED_MODULE_9__.OverlayModule, _angular_cdk_portal__WEBPACK_IMPORTED_MODULE_10__.PortalModule, _angular_material_button__WEBPACK_IMPORTED_MODULE_11__.MatButtonModule, _angular_material_icon__WEBPACK_IMPORTED_MODULE_12__.MatIconModule, _angular_material_tooltip__WEBPACK_IMPORTED_MODULE_13__.MatTooltipModule, _angular_material_icon__WEBPACK_IMPORTED_MODULE_12__.MatIconModule, _angular_material_input__WEBPACK_IMPORTED_MODULE_14__.MatInputModule, _angular_material_form_field__WEBPACK_IMPORTED_MODULE_15__.MatFormFieldModule, _angular_material_slide_toggle__WEBPACK_IMPORTED_MODULE_16__.MatSlideToggleModule, _angular_material_menu__WEBPACK_IMPORTED_MODULE_17__.MatMenuModule, _angular_material_divider__WEBPACK_IMPORTED_MODULE_18__.MatDividerModule, _angular_material_autocomplete__WEBPACK_IMPORTED_MODULE_19__.MatAutocompleteModule, _angular_router__WEBPACK_IMPORTED_MODULE_20__.RouterModule, _angular_forms__WEBPACK_IMPORTED_MODULE_21__.ReactiveFormsModule],
     exports: [_shared_pipes_safe_url_pipe__WEBPACK_IMPORTED_MODULE_0__.SafeUrlPipe]
   });
 })();
