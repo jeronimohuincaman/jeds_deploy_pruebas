@@ -492,6 +492,10 @@ class TablaDinamicaComponent {
               item.acarreo = item.acarreo === 1 ? 'Si' : '';
               item.bien_cargada = item.bien_cargada === 1 ? 'Si' : '';
             }
+            // Articulos
+            if (item.total_stock) {
+              item.total_stock = parseFloat(item.total_stock).toFixed(0);
+            }
           });
         } else {
           r.data.forEach(item => {
@@ -537,6 +541,10 @@ class TablaDinamicaComponent {
               item.colocacion = item.colocacion === 1 ? 'Si' : '';
               item.acarreo = item.acarreo === 1 ? 'Si' : '';
               item.bien_cargada = item.bien_cargada === 1 ? 'Si' : '';
+            }
+            // Articulos
+            if (item.total_stock) {
+              item.total_stock = parseFloat(item.total_stock).toFixed(0);
             }
           });
         }

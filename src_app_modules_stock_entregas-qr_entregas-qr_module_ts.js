@@ -810,6 +810,9 @@ class SaveComponent {
       stock_existente: new _angular_forms__WEBPACK_IMPORTED_MODULE_14__.FormControl(''),
       cantidad: new _angular_forms__WEBPACK_IMPORTED_MODULE_14__.FormControl('', _angular_forms__WEBPACK_IMPORTED_MODULE_14__.Validators.required)
     });
+    this.form.get('unidadmedida').disable();
+    this.form.get('stock_existente').disable();
+    this.form.get('cantidad').disable();
   }
   /**
    * Funcion que lista los articulos que posee un déposito.
@@ -851,6 +854,8 @@ class SaveComponent {
             } else {
               _this2.alert.error('Artículo no encontrado en este depósito.');
             }
+            _this2.form.get('unidadmedida').enable();
+            _this2.form.get('cantidad').enable();
           } else {
             _this2.alert.error('Artículo no encontrado.');
           }
@@ -926,8 +931,10 @@ class SaveComponent {
    * Metodo para el boton de suma para el campo de Cantidad.
    */
   sumaArticulo(input) {
-    const currentValue = Number(input.value) || 0;
-    this.form.controls['cantidad'].setValue(currentValue + 1);
+    if (this.idArticulo !== null) {
+      const currentValue = Number(input.value) || 0;
+      this.form.controls['cantidad'].setValue(currentValue + 1);
+    }
   }
   /**
    *
@@ -935,9 +942,11 @@ class SaveComponent {
    * Metodo para el boton de resta para el campo de Cantidad.
    */
   restaArticulo(input) {
-    const currentValue = Number(input.value) || 0;
-    if (currentValue > 0) {
-      this.form.controls['cantidad'].setValue(currentValue - 1);
+    if (this.idArticulo !== null) {
+      const currentValue = Number(input.value) || 0;
+      if (currentValue > 0) {
+        this.form.controls['cantidad'].setValue(currentValue - 1);
+      }
     }
   }
   /**
