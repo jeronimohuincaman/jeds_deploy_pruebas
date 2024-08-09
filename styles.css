@@ -39282,6 +39282,9 @@ body.light mat-option:nth-child(odd):hover {
 .w-3 {
     width: 0.75rem !important;
 }
+.w-3\/4 {
+    width: 75% !important;
+}
 .w-3\/5 {
     width: 60% !important;
 }
@@ -39320,9 +39323,6 @@ body.light mat-option:nth-child(odd):hover {
 }
 .w-\[186px\] {
     width: 186px !important;
-}
-.w-\[650px\] {
-    width: 650px !important;
 }
 .w-auto {
     width: auto !important;
@@ -40769,6 +40769,9 @@ body.light mat-option:nth-child(odd):hover {
     .sm\:w-44 {
         width: 11rem !important;
     }
+    .sm\:w-50 {
+        width: 12.5rem !important;
+    }
     .sm\:w-80 {
         width: 20rem !important;
     }
@@ -40783,6 +40786,9 @@ body.light mat-option:nth-child(odd):hover {
     }
     .sm\:w-auto {
         width: auto !important;
+    }
+    .sm\:w-full {
+        width: 100% !important;
     }
     .sm\:min-w-100 {
         min-width: 25rem !important;
@@ -40958,6 +40964,9 @@ body.light mat-option:nth-child(odd):hover {
     .md\:w-36 {
         width: 9rem !important;
     }
+    .md\:w-full {
+        width: 100% !important;
+    }
     .md\:min-w-140 {
         min-width: 35rem !important;
     }
@@ -41089,6 +41098,14 @@ body.light mat-option:nth-child(odd):hover {
         --tw-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1) !important;
         --tw-shadow-colored: 0 1px 3px 0 var(--tw-shadow-color), 0 1px 2px -1px var(--tw-shadow-color) !important;
         box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow) !important;
+    }
+}
+@media (min-width: 1440px) {
+    .xl\:w-\[650px\] {
+        width: 650px !important;
+    }
+    .xl\:w-full {
+        width: 100% !important;
     }
 }
 
