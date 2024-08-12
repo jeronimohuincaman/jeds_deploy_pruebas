@@ -161,8 +161,8 @@ class ArticulosComponent {
     this.pwaService = pwaService;
     this.selectedArticulos = [];
     this.dataSource = new _angular_material_table__WEBPACK_IMPORTED_MODULE_14__.MatTableDataSource();
-    this.column_params = ['seleccion', 'codigo_interno', 'descripcion', 'descripcion_rubro', 'descripcion_tipo', 'activo', 'total_stock', 'acciones'];
-    this.headers = ['', 'Código Interno', 'Descripción', 'Rubro', 'Tipo Articulo', 'Activo', 'Stock', ''];
+    this.column_params = ['seleccion', 'codigo_interno', 'descripcion', 'descripcion_rubro', 'descripcion_tipo', 'activo', 'total_stock', 'cantidad_pendiente', 'acciones'];
+    this.headers = ['', 'Código Interno', 'Descripción', 'Rubro', 'Tipo Articulo', 'Activo', 'Stock', 'Pendiente de entrega', ''];
     this.funcionesObjeto = null;
     this.filtroBusqueda = '';
     this.filtersLike = ['descripcion', 'codigo_interno'];
@@ -2075,7 +2075,7 @@ class SaveComponent {
         codigo_interno: new _angular_forms__WEBPACK_IMPORTED_MODULE_14__.FormControl(this.articulo ? this.articulo.codigo_interno : '', _angular_forms__WEBPACK_IMPORTED_MODULE_14__.Validators.required),
         descripcion: new _angular_forms__WEBPACK_IMPORTED_MODULE_14__.FormControl(this.articulo ? this.articulo.descripcion : '', _angular_forms__WEBPACK_IMPORTED_MODULE_14__.Validators.required),
         rubro: new _angular_forms__WEBPACK_IMPORTED_MODULE_14__.FormControl(this.articulo ? this.articulo.idrubro : '', _angular_forms__WEBPACK_IMPORTED_MODULE_14__.Validators.required),
-        unidad_medida: new _angular_forms__WEBPACK_IMPORTED_MODULE_14__.FormControl(this.articulo ? this.articulo.idunidadmedida : ''),
+        unidad_medida: new _angular_forms__WEBPACK_IMPORTED_MODULE_14__.FormControl(this.articulo ? this.articulo.idunidadmedida : '', this.articulo ? null : _angular_forms__WEBPACK_IMPORTED_MODULE_14__.Validators.required),
         stock_minimo: new _angular_forms__WEBPACK_IMPORTED_MODULE_14__.FormControl(this.articulo ? parseFloat(this.articulo.stock_minimo) : '', [_angular_forms__WEBPACK_IMPORTED_MODULE_14__.Validators.required, _angular_forms__WEBPACK_IMPORTED_MODULE_14__.Validators.min(0.0)]),
         activo: new _angular_forms__WEBPACK_IMPORTED_MODULE_14__.FormControl(this.articulo ? this.articulo?.activo ? 1 : 0 : '', _angular_forms__WEBPACK_IMPORTED_MODULE_14__.Validators.required)
       });
@@ -2083,7 +2083,7 @@ class SaveComponent {
       this.form = new _angular_forms__WEBPACK_IMPORTED_MODULE_14__.FormGroup({
         codigo_interno: new _angular_forms__WEBPACK_IMPORTED_MODULE_14__.FormControl(this.articulo ? this.articulo.codigo_interno : '', _angular_forms__WEBPACK_IMPORTED_MODULE_14__.Validators.required),
         descripcion: new _angular_forms__WEBPACK_IMPORTED_MODULE_14__.FormControl(this.articulo ? this.articulo.descripcion : '', _angular_forms__WEBPACK_IMPORTED_MODULE_14__.Validators.required),
-        unidad_medida: new _angular_forms__WEBPACK_IMPORTED_MODULE_14__.FormControl(this.articulo ? this.articulo.idunidadmedida : ''),
+        unidad_medida: new _angular_forms__WEBPACK_IMPORTED_MODULE_14__.FormControl(this.articulo ? this.articulo.idunidadmedida : '', this.articulo ? null : _angular_forms__WEBPACK_IMPORTED_MODULE_14__.Validators.required),
         rubro: new _angular_forms__WEBPACK_IMPORTED_MODULE_14__.FormControl(this.articulo ? this.articulo.idrubro : '', _angular_forms__WEBPACK_IMPORTED_MODULE_14__.Validators.required),
         stock_minimo: new _angular_forms__WEBPACK_IMPORTED_MODULE_14__.FormControl(this.articulo ? parseFloat(this.articulo.stock_minimo) : '', [_angular_forms__WEBPACK_IMPORTED_MODULE_14__.Validators.required, _angular_forms__WEBPACK_IMPORTED_MODULE_14__.Validators.min(0.0)]),
         activo: new _angular_forms__WEBPACK_IMPORTED_MODULE_14__.FormControl(this.articulo ? this.articulo?.activo ? 1 : 0 : '', _angular_forms__WEBPACK_IMPORTED_MODULE_14__.Validators.required),
@@ -2102,7 +2102,7 @@ class SaveComponent {
     } else if (tipo === 2) {
       this.form = new _angular_forms__WEBPACK_IMPORTED_MODULE_14__.FormGroup({
         codigo_interno: new _angular_forms__WEBPACK_IMPORTED_MODULE_14__.FormControl(this.articulo ? this.articulo.codigo_interno : '', _angular_forms__WEBPACK_IMPORTED_MODULE_14__.Validators.required),
-        unidad_medida: new _angular_forms__WEBPACK_IMPORTED_MODULE_14__.FormControl(this.articulo ? this.articulo.idunidadmedida : ''),
+        unidad_medida: new _angular_forms__WEBPACK_IMPORTED_MODULE_14__.FormControl(this.articulo ? this.articulo.idunidadmedida : '', this.articulo ? null : _angular_forms__WEBPACK_IMPORTED_MODULE_14__.Validators.required),
         descripcion: new _angular_forms__WEBPACK_IMPORTED_MODULE_14__.FormControl(this.articulo ? this.articulo.descripcion : '', _angular_forms__WEBPACK_IMPORTED_MODULE_14__.Validators.required),
         rubro: new _angular_forms__WEBPACK_IMPORTED_MODULE_14__.FormControl(this.articulo ? this.articulo.idrubro : '', _angular_forms__WEBPACK_IMPORTED_MODULE_14__.Validators.required),
         activo: new _angular_forms__WEBPACK_IMPORTED_MODULE_14__.FormControl(this.articulo ? this.articulo?.activo ? 1 : 0 : '', _angular_forms__WEBPACK_IMPORTED_MODULE_14__.Validators.required)

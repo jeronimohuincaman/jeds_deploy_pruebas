@@ -8194,6 +8194,7 @@ class AuthService {
         // Atencion sí cambia el estado tira 'undefined' y hay que volver a loguearse
         // Seteamos el menú correspondiente al usuario logueado
         this.navigationMenu = response.menu;
+        this._navigationService._navigationMenuData = this.navigationMenu;
         this.empresaData = response.empresa;
         const usuario = {
           id: response.usuario.codigo,
