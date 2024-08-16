@@ -971,8 +971,8 @@ class StockDepositoComponent {
       next: filter => {
         if (filter) {
           this.filter = filter;
-          this.extraParams = this.filter.tipo != -1 ? "filter[tipo_articulo]=" + this.filter.tipo : '';
-          this.extraParams = this.filter.rubro != -1 ? "filter[idrubro]=" + this.filter.rubro : '';
+          this.extraParams = this.filter?.tipo != -1 ? "filter[tipo_articulo]=" + this.filter.tipo : '';
+          this.extraParams += this.filter?.rubro != -1 ? "&filter[idrubro]=" + this.filter.rubro : '';
           this.tabla.filters(this.filtroBusqueda);
           // this._searchService.getSearchInput().setValue(this._tabsServices.getFiltroBuscadorPedido());
         }
