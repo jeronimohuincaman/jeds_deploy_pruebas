@@ -390,14 +390,17 @@ class MovimientoConversionComponent {
      * Aca se declaran los botones que iran en la grilla sobre el apartado de acciones.
      */
     this.funcionesObjeto = [{
-      icono: 'remove_red_eye',
       nombre_boton: "Ver",
-      functionName: 'ver'
-      //functionParams: 'id' // vacio o parametros, se manda desde el hijo el $event.data.[param]
+      functionName: 'ver',
+      iconoAccion: movimiento_conversion => 'jedstion:ver',
+      iconoAccionado: movimiento_conversion => '',
+      iconoDeshabilitado: movimiento_conversion => ''
     }, {
-      icono: 'delete',
       nombre_boton: "Eliminar",
-      functionName: 'eliminar'
+      functionName: 'eliminar',
+      iconoAccion: movimiento_conversion => 'jedstion:eliminar',
+      iconoAccionado: movimiento_conversion => '',
+      iconoDeshabilitado: movimiento_conversion => ''
     }];
   }
   ngOnInit() {

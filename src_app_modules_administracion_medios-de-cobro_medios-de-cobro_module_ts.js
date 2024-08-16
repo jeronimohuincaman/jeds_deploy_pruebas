@@ -337,7 +337,7 @@ class MediosDeCobroComponent {
     this.router = router;
     this._headerTextService = _headerTextService;
     this.dataSource = new _angular_material_table__WEBPACK_IMPORTED_MODULE_11__.MatTableDataSource();
-    this.headers = ['Descripción', 'Descuento / Recargo', 'Lleva Número', 'Lleva Vencimiento', 'Fecha de emision', 'Fecha de cobro', 'Duplica número', 'Lleva banco', 'Activo', 'Fondo'];
+    this.headers = ['Descripción', 'Descuento / Recargo', 'Lleva Número', 'Lleva Vencimiento', 'Fecha de emision', 'Fecha de cobro', 'Duplica número', 'Lleva banco', 'Activo', 'Fondo', 'Acciones'];
     this.column_params = ['descripcion', 'porcentaje', 'lleva_numero', 'lleva_vencimiento', 'lleva_fecha_emision', 'lleva_fecha_cobro', 'duplica_numero', 'lleva_banco', 'activo', 'fondo', 'acciones'];
     this.funcionesObjeto = null;
     this.filtroBusqueda = '';
@@ -355,21 +355,24 @@ class MediosDeCobroComponent {
     this.parametrosActualizados = new _angular_core__WEBPACK_IMPORTED_MODULE_12__.EventEmitter();
     this.env = environments_environment__WEBPACK_IMPORTED_MODULE_1__.environment.administracion.view_ven_pago_tipos + '?';
     this.search = new _angular_forms__WEBPACK_IMPORTED_MODULE_13__.FormControl('');
-    this.default_color =  true && 'text-primary';
+    this.default_color = 'border-primary text-primary';
     this._unsubscribeAll = new rxjs__WEBPACK_IMPORTED_MODULE_14__.Subject();
     this._headerTextService.setTitulo(this.router);
     /**
     * Aca se declaran los botones que iran en la grilla sobre el apartado de acciones.
     */
     this.funcionesObjeto = [{
-      icono: 'edit',
       nombre_boton: "Editar",
-      functionName: 'editar'
-      //functionParams: 'id' // vacio o parametros, se manda desde el hijo el $event.data.[param]
+      functionName: 'editar',
+      iconoAccion: medio_cobro => 'jedstion:editar',
+      iconoAccionado: medio_cobro => '',
+      iconoDeshabilitado: medio_cobro => ''
     }, {
-      icono: 'delete',
       nombre_boton: "Eliminar",
-      functionName: 'eliminar'
+      functionName: 'eliminar',
+      iconoAccion: medio_cobro => 'jedstion:eliminar',
+      iconoAccionado: medio_cobro => '',
+      iconoDeshabilitado: medio_cobro => ''
     }];
   }
   ngOnInit() {

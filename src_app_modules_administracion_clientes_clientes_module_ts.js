@@ -168,18 +168,23 @@ class ClientesComponent {
      * Aca se declaran los botones que iran en la grilla sobre el apartado de acciones.
      */
     this.funcionesObjeto = [{
-      icono: 'remove_red_eye',
       nombre_boton: "Ver",
-      functionName: 'ver'
-      //functionParams: 'id' // vacio o parametros, se manda desde el hijo el $event.data.[param]
+      functionName: 'ver',
+      iconoAccion: cliente => 'jedstion:ver',
+      iconoAccionado: cliente => '',
+      iconoDeshabilitado: cliente => ''
     }, {
-      icono: 'edit',
       nombre_boton: "Editar",
-      functionName: 'editar'
+      functionName: 'editar',
+      iconoAccion: cliente => 'jedstion:editar',
+      iconoAccionado: cliente => '',
+      iconoDeshabilitado: cliente => ''
     }, {
-      icono: 'delete',
       nombre_boton: "Eliminar",
-      functionName: 'eliminar'
+      functionName: 'eliminar',
+      iconoAccion: cliente => 'jedstion:eliminar',
+      iconoAccionado: cliente => '',
+      iconoDeshabilitado: cliente => ''
     }];
     this._empresaService.tieneClientesAsociados().subscribe(ClientesAsociados => {
       this.headers = ['Nombre y Apellido / Razón Social', 'CUIT', 'Condición', 'Teléfono', 'Localidad', 'E-mail', ClientesAsociados ? 'Cliente Asociado' : 'Contacto de Referencia', 'Acciones'];

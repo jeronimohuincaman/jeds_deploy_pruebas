@@ -889,18 +889,23 @@ class MovimientosInternosComponent {
      * Aca se declaran los botones que iran en la grilla sobre el apartado de acciones.
      */
     this.funcionesObjeto = [{
-      icono: 'edit',
       nombre_boton: "Editar",
-      functionName: 'editar'
-      //functionParams: 'id' // vacio o parametros, se manda desde el hijo el $event.data.[param]
+      functionName: 'editar',
+      iconoAccion: movimiento_interno => 'jedstion:editar',
+      iconoAccionado: movimiento_interno => '',
+      iconoDeshabilitado: movimiento_interno => ''
     }, {
-      icono: 'delete',
       nombre_boton: "Eliminar",
-      functionName: 'eliminar'
+      functionName: 'eliminar',
+      iconoAccion: movimiento_interno => 'jedstion:eliminar',
+      iconoAccionado: movimiento_interno => '',
+      iconoDeshabilitado: movimiento_interno => ''
     }, {
-      icono: 'print',
       nombre_boton: "Reporte",
-      functionName: 'reporte'
+      functionName: 'reporte',
+      iconoAccion: movimiento_interno => 'jedstion:imprimir',
+      iconoAccionado: movimiento_interno => '',
+      iconoDeshabilitado: movimiento_interno => ''
     }];
   }
   ngOnInit() {
@@ -1589,7 +1594,7 @@ class SaveComponent {
               stock: res.stock //Stock restante de ese articulo con esa um...
             };
 
-            this.mov_art_list = [...this.mov_art_list, movimiento_articulo];
+            this.mov_art_list = [movimiento_articulo, ...this.mov_art_list]; // Se agrega el nuevo articulo al comienzo de la lista para que siempre aparezca primero en la grilla
             this.dataSource = new _angular_material_table__WEBPACK_IMPORTED_MODULE_8__.MatTableDataSource(this.mov_art_list); //Actualizo la tabla
             if (this.mov_art_list.length != 0) {
               this.form.get('deposito_egreso').disable();

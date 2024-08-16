@@ -218,7 +218,7 @@ class FondosComponent {
     this._headerTextService = _headerTextService;
     this.dataSource = new _angular_material_table__WEBPACK_IMPORTED_MODULE_11__.MatTableDataSource();
     this.column_params = ['descripcion', 'saldo', 'activo', 'acciones'];
-    this.headers = ['Descripción', 'Saldo', 'Activo'];
+    this.headers = ['Descripción', 'Saldo', 'Activo', 'Acciones'];
     this.funcionesObjeto = null;
     this.filtroBusqueda = '';
     this.filtersLike = ['descripcion'];
@@ -236,18 +236,17 @@ class FondosComponent {
     * Aca se declaran los botones que iran en la grilla sobre el apartado de acciones.
     */
     this.funcionesObjeto = [{
-      icono: 'list_alt',
-      nombre_boton: "Movimientos",
-      functionName: 'movimientos'
-    }, {
-      icono: 'edit',
       nombre_boton: "Editar",
-      functionName: 'editar'
-      //functionParams: 'id' // vacio o parametros, se manda desde el hijo el $event.data.[param]
+      functionName: 'editar',
+      iconoAccion: fondo => 'jedstion:editar',
+      iconoAccionado: fondo => '',
+      iconoDeshabilitado: fondo => ''
     }, {
-      icono: 'delete',
       nombre_boton: "Eliminar",
-      functionName: 'eliminar'
+      functionName: 'eliminar',
+      iconoAccion: fondo => 'jedstion:eliminar',
+      iconoAccionado: fondo => '',
+      iconoDeshabilitado: fondo => ''
     }];
   }
   ngOnInit() {

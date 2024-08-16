@@ -233,14 +233,17 @@ class RubrosComponent {
      * Aca se declaran los botones que iran en la grilla sobre el apartado de acciones.
      */
     this.funcionesObjeto = [{
-      icono: 'edit',
       nombre_boton: "Editar",
-      functionName: 'editar'
-      //functionParams: 'id' // vacio o parametros, se manda desde el hijo el $event.data.[param]
+      functionName: 'editar',
+      iconoAccion: rubro => 'jedstion:editar',
+      iconoAccionado: rubro => '',
+      iconoDeshabilitado: rubro => ''
     }, {
-      icono: 'delete',
       nombre_boton: "Eliminar",
-      functionName: 'eliminar'
+      functionName: 'eliminar',
+      iconoAccion: rubro => 'jedstion:eliminar',
+      iconoAccionado: rubro => '',
+      iconoDeshabilitado: rubro => ''
     }];
   }
   ngOnInit() {

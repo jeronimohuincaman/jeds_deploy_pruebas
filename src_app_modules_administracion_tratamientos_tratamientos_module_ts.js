@@ -437,7 +437,7 @@ class TratamientosComponent {
     this._headerTextService = _headerTextService;
     this.dataSource = new _angular_material_table__WEBPACK_IMPORTED_MODULE_11__.MatTableDataSource();
     this.column_params = ['descripcion', 'activo', 'acciones'];
-    this.headers = ['Nombre', 'Activo'];
+    this.headers = ['Nombre', 'Activo', 'Acciones'];
     this.funcionesObjeto = null;
     this.filtroBusqueda = '';
     this.filtersLike = ['descripcion'];
@@ -455,14 +455,17 @@ class TratamientosComponent {
     * Aca se declaran los botones que iran en la grilla sobre el apartado de acciones.
     */
     this.funcionesObjeto = [{
-      icono: 'edit',
       nombre_boton: "Editar",
-      functionName: 'editar'
-      //functionParams: 'id' // vacio o parametros, se manda desde el hijo el $event.data.[param]
+      functionName: 'editar',
+      iconoAccion: tratamiento => 'jedstion:editar',
+      iconoAccionado: tratamiento => '',
+      iconoDeshabilitado: tratamiento => ''
     }, {
-      icono: 'delete',
       nombre_boton: "Eliminar",
-      functionName: 'eliminar'
+      functionName: 'eliminar',
+      iconoAccion: tratamiento => 'jedstion:eliminar',
+      iconoAccionado: tratamiento => '',
+      iconoDeshabilitado: tratamiento => ''
     }];
   }
   ngOnInit() {

@@ -440,7 +440,7 @@ class TiposMovimientosComponent {
     this._headerTextService = _headerTextService;
     this.dataSource = new _angular_material_table__WEBPACK_IMPORTED_MODULE_11__.MatTableDataSource();
     this.column_params = ['descripcion', 'activo', 'acciones'];
-    this.headers = ['Descripción', 'Activo'];
+    this.headers = ['Descripción', 'Activo', 'Acciones'];
     this.funcionesObjeto = null;
     this.filtroBusqueda = '';
     this.filtersLike = ['descripcion'];
@@ -458,14 +458,17 @@ class TiposMovimientosComponent {
     * Aca se declaran los botones que iran en la grilla sobre el apartado de acciones.
     */
     this.funcionesObjeto = [{
-      icono: 'edit',
       nombre_boton: "Editar",
-      functionName: 'editar'
-      //functionParams: 'id' // vacio o parametros, se manda desde el hijo el $event.data.[param]
+      functionName: 'editar',
+      iconoAccion: tipo_movimiento => 'jedstion:editar',
+      iconoAccionado: tipo_movimiento => '',
+      iconoDeshabilitado: tipo_movimiento => ''
     }, {
-      icono: 'delete',
       nombre_boton: "Eliminar",
-      functionName: 'eliminar'
+      functionName: 'eliminar',
+      iconoAccion: tipo_movimiento => 'jedstion:eliminar',
+      iconoAccionado: tipo_movimiento => '',
+      iconoDeshabilitado: tipo_movimiento => ''
     }];
   }
   ngOnInit() {

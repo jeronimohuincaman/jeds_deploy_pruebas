@@ -162,7 +162,7 @@ class ArticulosComponent {
     this.selectedArticulos = [];
     this.dataSource = new _angular_material_table__WEBPACK_IMPORTED_MODULE_14__.MatTableDataSource();
     this.column_params = ['seleccion', 'codigo_interno', 'descripcion', 'descripcion_rubro', 'descripcion_tipo', 'activo', 'total_stock', 'cantidad_pendiente', 'acciones'];
-    this.headers = ['', 'Código Interno', 'Descripción', 'Rubro', 'Tipo Articulo', 'Activo', 'Stock', 'Pendiente de entrega', ''];
+    this.headers = ['', 'Código Interno', 'Descripción', 'Rubro', 'Tipo Articulo', 'Activo', 'Stock', 'Pendiente de entrega', 'Acciones'];
     this.funcionesObjeto = null;
     this.filtroBusqueda = '';
     this.filtersLike = ['descripcion', 'codigo_interno'];
@@ -182,23 +182,29 @@ class ArticulosComponent {
     * Aca se declaran los botones que iran en la grilla sobre el apartado de acciones.
     */
     this.funcionesObjeto = [{
-      icono: 'edit',
       nombre_boton: "Editar",
-      functionName: 'editar'
-      //functionParams: 'id' // vacio o parametros, se manda desde el hijo el $event.data.[param]
+      functionName: 'editar',
+      iconoAccion: articulo => 'jedstion:editar',
+      iconoAccionado: articulo => '',
+      iconoDeshabilitado: articulo => ''
     }, {
-      icono: 'square_foot',
       nombre_boton: "Unidad de medida",
-      functionName: 'um'
-      //functionParams: 'id' // vacio o parametros, se manda desde el hijo el $event.data.[param]
+      functionName: 'um',
+      iconoAccion: articulo => 'jedstion:unidad_medida',
+      iconoAccionado: articulo => '',
+      iconoDeshabilitado: articulo => ''
     }, {
-      icono: 'inventory_2',
       nombre_boton: 'Stock',
-      functionName: 'stock'
+      functionName: 'stock',
+      iconoAccion: articulo => 'jedstion:stock',
+      iconoAccionado: articulo => '',
+      iconoDeshabilitado: articulo => ''
     }, {
-      icono: 'delete',
       nombre_boton: "Eliminar",
-      functionName: 'eliminar'
+      functionName: 'eliminar',
+      iconoAccion: articulo => 'jedstion:eliminar',
+      iconoAccionado: articulo => '',
+      iconoDeshabilitado: articulo => ''
     }];
   }
   ngOnInit() {

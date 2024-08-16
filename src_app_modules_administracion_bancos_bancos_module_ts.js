@@ -144,7 +144,7 @@ class BancosComponent {
     this._headerTextService = _headerTextService;
     this.dataSource = new _angular_material_table__WEBPACK_IMPORTED_MODULE_11__.MatTableDataSource();
     this.column_params = ['descripcion', 'activo', 'acciones'];
-    this.headers = ['Nombre Banco', 'Activo'];
+    this.headers = ['Nombre Banco', 'Activo', 'Acciones'];
     this.funcionesObjeto = null;
     this.filtroBusqueda = '';
     this.filtersLike = ['descripcion'];
@@ -155,21 +155,24 @@ class BancosComponent {
     this.parametrosActualizados = new _angular_core__WEBPACK_IMPORTED_MODULE_12__.EventEmitter();
     this.env = environments_environment__WEBPACK_IMPORTED_MODULE_1__.environment.administracion.bancos + '?';
     this.search = new _angular_forms__WEBPACK_IMPORTED_MODULE_13__.FormControl('');
-    this.default_color =  true && 'text-primary';
+    this.default_color = 'border-primary text-primary';
     this._unsubscribeAll = new rxjs__WEBPACK_IMPORTED_MODULE_14__.Subject();
     this._headerTextService.setTitulo(this.router);
     /**
     * Aca se declaran los botones que iran en la grilla sobre el apartado de acciones.
     */
     this.funcionesObjeto = [{
-      icono: 'edit',
       nombre_boton: "Editar",
-      functionName: 'editar'
-      //functionParams: 'id' // vacio o parametros, se manda desde el hijo el $event.data.[param]
+      functionName: 'editar',
+      iconoAccion: banco => 'jedstion:editar',
+      iconoAccionado: banco => '',
+      iconoDeshabilitado: banco => ''
     }, {
-      icono: 'delete',
       nombre_boton: "Eliminar",
-      functionName: 'eliminar'
+      functionName: 'eliminar',
+      iconoAccion: banco => 'jedstion:eliminar',
+      iconoAccionado: banco => '',
+      iconoDeshabilitado: banco => ''
     }];
   }
   ngOnInit() {

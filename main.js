@@ -8737,6 +8737,7 @@ class IconsService {
     matIconRegistry.addSvgIconSetInNamespace('heroicons_outline', domSanitizer.bypassSecurityTrustResourceUrl('assets/icons/heroicons-outline.svg'));
     matIconRegistry.addSvgIconSetInNamespace('heroicons_solid', domSanitizer.bypassSecurityTrustResourceUrl('assets/icons/heroicons-solid.svg'));
     matIconRegistry.addSvgIconSetInNamespace('heroicons_mini', domSanitizer.bypassSecurityTrustResourceUrl('assets/icons/heroicons-mini.svg'));
+    matIconRegistry.addSvgIconSetInNamespace('jedstion', domSanitizer.bypassSecurityTrustResourceUrl('assets/icons/jedstion.svg'));
   }
 }
 IconsService.ɵfac = function IconsService_Factory(t) {
@@ -16183,7 +16184,7 @@ const TitleType = [{
   path: "/example"
 }, {
   icon: "",
-  text: "Articulos",
+  text: "Artículos",
   path: "/articulos"
 }, {
   icon: "",

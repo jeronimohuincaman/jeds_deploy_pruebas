@@ -59,7 +59,7 @@ class ProveedoresComponent {
     this.router = router;
     this._headerTextService = _headerTextService;
     this.dataSource = new _angular_material_table__WEBPACK_IMPORTED_MODULE_9__.MatTableDataSource();
-    this.headers = ['CUIT', 'Razon Social', 'Dirección', 'Localidad', 'Teléfono', 'Email', 'Contacto', 'acciones'];
+    this.headers = ['CUIT', 'Razon Social', 'Dirección', 'Localidad', 'Teléfono', 'Email', 'Contacto', 'Acciones'];
     this.column_params = ['cuit', 'RazonSocial', 'Direccion', 'localidad_descripcion', 'telefono', 'Mail', 'contacto', 'acciones'];
     this.funcionesObjeto = null;
     this.filtroBusqueda = '';
@@ -78,14 +78,17 @@ class ProveedoresComponent {
     * Aca se declaran los botones que iran en la grilla sobre el apartado de acciones.
     */
     this.funcionesObjeto = [{
-      icono: 'edit',
       nombre_boton: "Editar",
-      functionName: 'editar'
-      //functionParams: 'id' // vacio o parametros, se manda desde el hijo el $event.data.[param]
+      functionName: 'editar',
+      iconoAccion: proveedor => 'jedstion:editar',
+      iconoAccionado: proveedor => '',
+      iconoDeshabilitado: proveedor => ''
     }, {
-      icono: 'delete',
       nombre_boton: "Eliminar",
-      functionName: 'eliminar'
+      functionName: 'eliminar',
+      iconoAccion: proveedor => 'jedstion:eliminar',
+      iconoAccionado: proveedor => '',
+      iconoDeshabilitado: proveedor => ''
     }];
   }
   ngOnInit() {

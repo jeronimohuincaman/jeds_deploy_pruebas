@@ -62,7 +62,7 @@ class UsuariosComponent {
     this.pwaService = pwaService;
     this.dataSource = new _angular_material_table__WEBPACK_IMPORTED_MODULE_10__.MatTableDataSource();
     this.column_params = ['nick', 'nombre', 'apellido', 'email', 'acciones'];
-    this.headers = ['Usuario', 'Nombre', 'Apellido', 'Mail', ''];
+    this.headers = ['Usuario', 'Nombre', 'Apellido', 'Mail', 'Acciones'];
     this.funcionesObjeto = null;
     this.filtroBusqueda = '';
     this.filtersLike = ['nick', 'email'];
@@ -71,32 +71,20 @@ class UsuariosComponent {
     this.parametrosActualizados = new _angular_core__WEBPACK_IMPORTED_MODULE_11__.EventEmitter();
     this.env = environments_environment__WEBPACK_IMPORTED_MODULE_0__.environment.login.view_usuarios + '?';
     this.search = new _angular_forms__WEBPACK_IMPORTED_MODULE_12__.FormControl('');
-    this.default_color =  true && 'text-primary';
+    this.default_color = 'border-primary text-primary';
     this._unsubscribeAll = new rxjs__WEBPACK_IMPORTED_MODULE_13__.Subject();
     this._headerTextService.setTitulo(this.router);
     /**
     * Aca se declaran los botones que iran en la grilla sobre el apartado de acciones.
     */
-    this.funcionesObjeto = [
-    // {
-    //     icono: 'edit',
-    //     nombre_boton: "Editar",
-    //     functionName: 'editar',
-    //     //functionParams: 'id' // vacio o parametros, se manda desde el hijo el $event.data.[param]
-    // },
-    {
-      icono: 'person_pin',
+    this.funcionesObjeto = [{
       nombre_boton: "Credencial",
-      functionName: 'credencial'
-    }
-    // {
-    //     icono: 'vpn_key',
-    //     nombre_boton: "Rol",
-    //     functionName: 'asignar_rol'
-    // }
-    ];
+      functionName: 'credencial',
+      iconoAccion: usuario => 'jedstion:imprimir',
+      iconoAccionado: usuario => '',
+      iconoDeshabilitado: usuario => ''
+    }];
   }
-
   ngOnInit() {
     // Subscribe to empresa data
     this._empresaService.empresa$.pipe((0,rxjs__WEBPACK_IMPORTED_MODULE_14__.takeUntil)(this._unsubscribeAll)).subscribe(empresa => {
