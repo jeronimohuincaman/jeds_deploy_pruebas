@@ -38985,9 +38985,6 @@ body.light mat-option:nth-child(odd):hover {
 .-mt-5 {
     margin-top: -1.25rem !important;
 }
-.mb-1 {
-    margin-bottom: 0.25rem !important;
-}
 .mb-12 {
     margin-bottom: 3rem !important;
 }
@@ -39062,6 +39059,9 @@ body.light mat-option:nth-child(odd):hover {
 }
 .mr-3 {
     margin-right: 0.75rem !important;
+}
+.mr-32 {
+    margin-right: 8rem !important;
 }
 .mr-4 {
     margin-right: 1rem !important;
@@ -39282,9 +39282,6 @@ body.light mat-option:nth-child(odd):hover {
 .w-3 {
     width: 0.75rem !important;
 }
-.w-3\/4 {
-    width: 75% !important;
-}
 .w-3\/5 {
     width: 60% !important;
 }
@@ -39485,9 +39482,6 @@ body.light mat-option:nth-child(odd):hover {
 }
 .justify-items-start {
     justify-items: start !important;
-}
-.gap-1 {
-    gap: 0.25rem !important;
 }
 .gap-2 {
     gap: 0.5rem !important;
@@ -40217,6 +40211,10 @@ body.light mat-option:nth-child(odd):hover {
     --tw-text-opacity: 1 !important;
     color: rgb(220 38 38 / var(--tw-text-opacity)) !important;
 }
+.text-slate-200 {
+    --tw-text-opacity: 1 !important;
+    color: rgb(226 232 240 / var(--tw-text-opacity)) !important;
+}
 .text-warn {
     --tw-text-opacity: 1 !important;
     color: rgba(var(--fuse-warn-rgb), var(--tw-text-opacity)) !important;
@@ -40756,14 +40754,8 @@ body.light mat-option:nth-child(odd):hover {
     .sm\:w-2\/4 {
         width: 50% !important;
     }
-    .sm\:w-28 {
-        width: 7rem !important;
-    }
     .sm\:w-3\/4 {
         width: 75% !important;
-    }
-    .sm\:w-32 {
-        width: 8rem !important;
     }
     .sm\:w-40 {
         width: 10rem !important;
@@ -40782,9 +40774,6 @@ body.light mat-option:nth-child(odd):hover {
     }
     .sm\:w-96 {
         width: 24rem !important;
-    }
-    .sm\:w-\[104px\] {
-        width: 104px !important;
     }
     .sm\:w-auto {
         width: auto !important;

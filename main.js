@@ -16390,6 +16390,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/router */ 86679);
 /* harmony import */ var environments_environment__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! environments/environment */ 92340);
 /* harmony import */ var _shared_components_shared_component_module__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @shared/components/shared-component.module */ 46288);
+/* harmony import */ var _angular_material_icon__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/material/icon */ 69941);
+/* harmony import */ var _angular_material_tooltip__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/material/tooltip */ 52423);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/core */ 86839);
 /* harmony import */ var _shared_service_app_pwa_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @shared/service/app/pwa.service */ 16173);
 /* harmony import */ var _shared_pipes_safe_url_pipe__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @shared/pipes/safe-url.pipe */ 72129);
@@ -16401,10 +16403,17 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
+
+
+
+
 class ReporteComponent {
-  constructor(route, pwaService) {
+  constructor(route, pwaService, location) {
     this.route = route;
     this.pwaService = pwaService;
+    this.location = location;
+    this.isActive = false;
   }
   ngOnInit() {
     this.route.paramMap.subscribe(params => {
@@ -16416,28 +16425,42 @@ class ReporteComponent {
       }
     });
   }
+  goBack() {
+    this.location.back();
+    this.isActive = true;
+  }
 }
 ReporteComponent.ɵfac = function ReporteComponent_Factory(t) {
-  return new (t || ReporteComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_5__.ActivatedRoute), _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdirectiveInject"](_shared_service_app_pwa_service__WEBPACK_IMPORTED_MODULE_2__.PwaService));
+  return new (t || ReporteComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_5__.ActivatedRoute), _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdirectiveInject"](_shared_service_app_pwa_service__WEBPACK_IMPORTED_MODULE_2__.PwaService), _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdirectiveInject"](_angular_common__WEBPACK_IMPORTED_MODULE_6__.Location));
 };
 ReporteComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdefineComponent"]({
   type: ReporteComponent,
   selectors: [["app-reporte"]],
   standalone: true,
   features: [_angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵStandaloneFeature"]],
-  decls: 2,
-  vars: 3,
-  consts: [["width", "100%", "height", "100%", 3, "src"]],
+  decls: 5,
+  vars: 4,
+  consts: [[1, "flex", "flex-col", "w-full", "h-full"], ["matTooltip", "Regresar", 1, "absolute", "right-0", "mr-32", "mt-4", 3, "click"], [1, "icon-size-1", "text-slate-200", 3, "svgIcon"], ["width", "100%", "height", "100%", 3, "src"]],
   template: function ReporteComponent_Template(rf, ctx) {
     if (rf & 1) {
-      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelement"](0, "iframe", 0);
-      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵpipe"](1, "safeUrl");
+      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](0, "div", 0)(1, "button", 1);
+      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵlistener"]("click", function ReporteComponent_Template_button_click_1_listener() {
+        return ctx.goBack();
+      });
+      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelement"](2, "mat-icon", 2);
+      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
+      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelement"](3, "iframe", 3);
+      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵpipe"](4, "safeUrl");
+      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
     }
     if (rf & 2) {
-      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵproperty"]("src", _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵpipeBind1"](1, 1, ctx.reporteUrl), _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵsanitizeResourceUrl"]);
+      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](2);
+      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵproperty"]("svgIcon", "feather:arrow-left-circle");
+      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](1);
+      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵproperty"]("src", _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵpipeBind1"](4, 2, ctx.reporteUrl), _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵsanitizeResourceUrl"]);
     }
   },
-  dependencies: [_angular_common__WEBPACK_IMPORTED_MODULE_6__.CommonModule, _angular_router__WEBPACK_IMPORTED_MODULE_5__.RouterModule, _shared_components_shared_component_module__WEBPACK_IMPORTED_MODULE_1__.SharedComponentModule, _shared_pipes_safe_url_pipe__WEBPACK_IMPORTED_MODULE_3__.SafeUrlPipe],
+  dependencies: [_angular_common__WEBPACK_IMPORTED_MODULE_6__.CommonModule, _angular_router__WEBPACK_IMPORTED_MODULE_5__.RouterModule, _shared_components_shared_component_module__WEBPACK_IMPORTED_MODULE_1__.SharedComponentModule, _shared_pipes_safe_url_pipe__WEBPACK_IMPORTED_MODULE_3__.SafeUrlPipe, _angular_material_icon__WEBPACK_IMPORTED_MODULE_7__.MatIconModule, _angular_material_icon__WEBPACK_IMPORTED_MODULE_7__.MatIcon, _angular_material_tooltip__WEBPACK_IMPORTED_MODULE_8__.MatTooltipModule, _angular_material_tooltip__WEBPACK_IMPORTED_MODULE_8__.MatTooltip],
   encapsulation: 2
 });
 

@@ -224,7 +224,7 @@ class RubrosComponent {
     };
     this.extraParams = '';
     this.parametrosActualizados = new _angular_core__WEBPACK_IMPORTED_MODULE_12__.EventEmitter();
-    this.env = environments_environment__WEBPACK_IMPORTED_MODULE_2__.environment.stock.rubros + '?';
+    this.env = environments_environment__WEBPACK_IMPORTED_MODULE_2__.environment.stock.rubros + '?sort=descripcion';
     this.search = new _angular_forms__WEBPACK_IMPORTED_MODULE_13__.FormControl('');
     this.default_color = 'border-primary text-primary';
     this._unsubscribeAll = new rxjs__WEBPACK_IMPORTED_MODULE_14__.Subject();

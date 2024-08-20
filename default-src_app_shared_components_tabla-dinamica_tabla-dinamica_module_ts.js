@@ -526,8 +526,9 @@ class TablaDinamicaComponent {
               item.bien_cargada = item.bien_cargada === 1 ? 'Si' : '';
             }
             // Articulos
-            if (item.total_stock) {
+            if (item.total_stock && item.cantidad_pendiente) {
               item.total_stock = parseFloat(item.total_stock).toFixed(0);
+              item.cantidad_pendiente = parseFloat(item.cantidad_pendiente).toFixed(0);
             }
           });
         } else {
@@ -576,8 +577,9 @@ class TablaDinamicaComponent {
               item.bien_cargada = item.bien_cargada === 1 ? 'Si' : '';
             }
             // Articulos
-            if (item.total_stock) {
+            if (item.total_stock && item.cantidad_pendiente) {
               item.total_stock = parseFloat(item.total_stock).toFixed(0);
+              item.cantidad_pendiente = parseFloat(item.cantidad_pendiente).toFixed(0);
             }
           });
         }
