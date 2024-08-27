@@ -16982,7 +16982,7 @@ const environment = {
     //users: `${$CARGA_WEB}/usuarios_login.php`,
     login: `${$BASE_REST}/usuario/login`,
     view_usuarios: `${$BASE_REST}/view_usuarios`,
-    credencial_usuario: `${$BASE_REST}/view_usuario/generar_credencial?idusuario=`
+    credencial_usuario: `${$BASE_REST}/view_usuario/generar_credencial`
   },
   administracion: {
     tratamientos: `${$BASE_REST}/tratamientos`,
@@ -17022,7 +17022,8 @@ const environment = {
     remitos: `${$BASE_REST}/stk_remitos`,
     view_items_oc_pendientes: `${$BASE_REST}/view_items_oc_pendientes`,
     entregas: `${$BASE_REST}/stk_entregas`,
-    reporte_entrega: `${$BASE_REST}/stk_entrega/generar_reporte?identrega=`
+    reporte_entrega: `${$BASE_REST}/stk_entrega/generar_reporte?identrega=`,
+    view_stock_entregas: `${$BASE_REST}/view_stock_entregas`
   },
   ventas: {
     view_venta_selects: `${$BASE_REST}/view_venta_selects`,

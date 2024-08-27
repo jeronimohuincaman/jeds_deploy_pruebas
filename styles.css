@@ -39975,6 +39975,9 @@ body.light mat-option:nth-child(odd):hover {
 .pb-0 {
     padding-bottom: 0px !important;
 }
+.pb-12 {
+    padding-bottom: 3rem !important;
+}
 .pb-5 {
     padding-bottom: 1.25rem !important;
 }

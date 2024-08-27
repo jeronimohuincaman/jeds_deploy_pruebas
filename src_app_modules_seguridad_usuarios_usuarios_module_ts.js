@@ -30,6 +30,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! @angular/router */ 86679);
 /* harmony import */ var _shared_components_header_text_header_text_service__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @shared/components/header-text/header-text.service */ 78978);
 /* harmony import */ var _shared_service_app_pwa_service__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @shared/service/app/pwa.service */ 16173);
+/* harmony import */ var _angular_material_button__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! @angular/material/button */ 83677);
+
 
 
 
@@ -60,9 +62,10 @@ class UsuariosComponent {
     this.router = router;
     this._headerTextService = _headerTextService;
     this.pwaService = pwaService;
+    this.selectedUsuarios = [];
     this.dataSource = new _angular_material_table__WEBPACK_IMPORTED_MODULE_10__.MatTableDataSource();
-    this.column_params = ['nick', 'nombre', 'apellido', 'email', 'acciones'];
-    this.headers = ['Usuario', 'Nombre', 'Apellido', 'Mail', 'Acciones'];
+    this.column_params = ['seleccion', 'nick', 'nombre', 'apellido', 'email', 'acciones'];
+    this.headers = ['', 'Usuario', 'Nombre', 'Apellido', 'Mail', 'Acciones'];
     this.funcionesObjeto = null;
     this.filtroBusqueda = '';
     this.filtersLike = ['nick', 'email'];
@@ -80,7 +83,7 @@ class UsuariosComponent {
     this.funcionesObjeto = [{
       nombre_boton: "Credencial",
       functionName: 'credencial',
-      iconoAccion: usuario => 'jedstion:imprimir',
+      iconoAccion: usuario => 'jedstion:credencial_usuario',
       iconoAccionado: usuario => '',
       iconoDeshabilitado: usuario => ''
     }];
@@ -137,6 +140,45 @@ class UsuariosComponent {
     }
   }
   /**
+   * Esta función es la que se encarga de la seleccion de check box de usuarios seleccionados
+   * @param selectedElements - La lista de usuarios seleccionados.
+   */
+  onSelectionChange(selectedElements) {
+    this.selectedUsuarios = selectedElements;
+  }
+  /**
+   * Esta funcion Genera un Reporte de Credencial/es y lo muestra en una nueva pestaña
+   */
+  reporteCredencial() {
+    if (!this.selectedUsuarios || this.selectedUsuarios.length === 0) {
+      this.alert.error('Debe seleccionar al menos un usuario.');
+      return;
+    } else {
+      let payload = null;
+      payload = {
+        usuarios: this.selectedUsuarios.map(element => ({
+          idusuario: element.codigo
+        }))
+      };
+      this._usuariosService.credencialUsuario(payload).subscribe(data => {
+        if (data.success) {
+          const reportePath = data.path;
+          if (this.pwaService.isPwa()) {
+            this.router.navigate(['/reporte', reportePath]);
+          } else {
+            const reporteUrl = `${environments_environment__WEBPACK_IMPORTED_MODULE_0__.environment.baseRest}/${reportePath}`;
+            window.open(reporteUrl, '_blank');
+          }
+        } else {
+          this.alert.error('Exiten Datos Nulos.');
+        }
+      }, error => {
+        console.error('Error en la solicitud del reporte de credenciales', error);
+        this.alert.error('Exiten Datos Nulos.');
+      });
+    }
+  }
+  /**
   * Funcion en el componente
   * - Esta funcion abre el modal de la Credencial del Usuario.
   * @param documentRef
@@ -144,7 +186,13 @@ class UsuariosComponent {
   */
   credencialUsuario(event) {
     const idUsuario = event.params.data.codigo;
-    this._usuariosService.credencialUsuario(idUsuario).subscribe(data => {
+    let payload = null;
+    payload = {
+      usuarios: [{
+        idusuario: idUsuario
+      }]
+    };
+    this._usuariosService.credencialUsuario(payload).subscribe(data => {
       if (data.success) {
         const reportePath = data.path;
         if (this.pwaService.isPwa()) {
@@ -187,23 +235,44 @@ UsuariosComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_11
   outputs: {
     parametrosActualizados: "parametrosActualizados"
   },
-  decls: 3,
-  vars: 9,
-  consts: [[1, "w-full", "flex", "flex-col", "relative"], [1, "pr-2", "pl-2"], [1, "bottom-10", "sm:bottom-0", "table-fixed", "sm:top-2", "w-full", "m-0", 3, "cache", "columnsNames", "renderType", "columnsParams", "endpoint", "functions", "extraClasses", "FiltersLikes", "extraParams", "functionEmitter"]],
+  decls: 16,
+  vars: 15,
+  consts: [[1, "w-full", "flex", "flex-col", "relative"], [1, "mb-12", "mt-6"], [1, "fixed", "right-10"], ["mat-flat-button", "", 1, "w-full", "px-6", "py-6", "!border", "border-solid", "rounded-lg", "md:w-55", "md:rounded-lg", 3, "click"], [1, "flex", "items-center"], ["width", "22", "height", "22", "viewBox", "0 0 26 26", "fill", "currentColor", "xmlns", "http://www.w3.org/2000/svg"], ["clip-path", "url(#clip0_535_423)"], ["d", "M20.5568 8.68182H19.4773V3.28409H6.52274V8.68182H5.4432C3.65115 8.68182 2.20456 10.1284 2.20456 11.9205V18.3977H6.52274V22.7159H19.4773V18.3977H23.7955V11.9205C23.7955 10.1284 22.3489 8.68182 20.5568 8.68182ZM8.68183 5.44318H17.3182V8.68182H8.68183V5.44318ZM17.3182 18.3977V20.5568H8.68183V16.2386H17.3182V18.3977ZM19.4773 16.2386V14.0795H6.52274V16.2386H4.36365V11.9205C4.36365 11.3267 4.84945 10.8409 5.4432 10.8409H20.5568C21.1506 10.8409 21.6364 11.3267 21.6364 11.9205V16.2386H19.4773Z"], ["d", "M19.4773 13.5398C20.0735 13.5398 20.5568 13.0564 20.5568 12.4602C20.5568 11.864 20.0735 11.3807 19.4773 11.3807C18.8811 11.3807 18.3977 11.864 18.3977 12.4602C18.3977 13.0564 18.8811 13.5398 19.4773 13.5398Z"], ["id", "clip0_535_423"], ["width", "25.9091", "height", "25.9091", "fill", "currentColor", "transform", "translate(0.0454712 0.0454559)"], [1, "ml-2", "text-lg", "mt-0.5", "hidden", "md:inline"], [1, "pr-2", "pl-2"], [1, "bottom-10", "sm:bottom-0", "table-fixed", "sm:top-2", "w-full", "m-0", 3, "cache", "columnsNames", "renderType", "columnsParams", "endpoint", "functions", "extraClasses", "FiltersLikes", "extraParams", "selectionChange", "functionEmitter"]],
   template: function UsuariosComponent_Template(rf, ctx) {
     if (rf & 1) {
-      _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵelementStart"](0, "div", 0)(1, "div", 1)(2, "app-tabla-dinamica", 2);
-      _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵlistener"]("functionEmitter", function UsuariosComponent_Template_app_tabla_dinamica_functionEmitter_2_listener($event) {
+      _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵelementStart"](0, "div", 0)(1, "div", 1)(2, "div", 2)(3, "button", 3);
+      _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵlistener"]("click", function UsuariosComponent_Template_button_click_3_listener() {
+        return ctx.reporteCredencial();
+      });
+      _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵelementStart"](4, "div", 4);
+      _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵnamespaceSVG"]();
+      _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵelementStart"](5, "svg", 5)(6, "g", 6);
+      _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵelement"](7, "path", 7)(8, "path", 8);
+      _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵelementEnd"]();
+      _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵelementStart"](9, "defs")(10, "clipPath", 9);
+      _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵelement"](11, "rect", 10);
+      _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵelementEnd"]()()();
+      _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵnamespaceHTML"]();
+      _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵelementStart"](12, "span", 11);
+      _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵtext"](13, "Imprimir Credencial");
+      _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵelementEnd"]()()()()();
+      _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵelementStart"](14, "div", 12)(15, "app-tabla-dinamica", 13);
+      _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵlistener"]("selectionChange", function UsuariosComponent_Template_app_tabla_dinamica_selectionChange_15_listener($event) {
+        return ctx.onSelectionChange($event);
+      })("functionEmitter", function UsuariosComponent_Template_app_tabla_dinamica_functionEmitter_15_listener($event) {
         return ctx.generarAcciones($event);
       });
       _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵelementEnd"]()()();
     }
     if (rf & 2) {
-      _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵadvance"](2);
+      _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵadvance"](3);
+      _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵclassMap"](ctx.color_primario ? "" : ctx.default_color);
+      _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵstyleProp"]("border", ctx.color_primario || "")("color", ctx.color_primario || "");
+      _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵadvance"](12);
       _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵproperty"]("cache", false)("columnsNames", ctx.headers)("renderType", "client")("columnsParams", ctx.column_params)("endpoint", ctx.env)("functions", ctx.funcionesObjeto)("extraClasses", "td.mat-cell border,td.mat-cell border-slate-400")("FiltersLikes", ctx.filtersLike)("extraParams", ctx.extraParams);
     }
   },
-  dependencies: [_shared_components_tabla_dinamica_tabla_dinamica_component__WEBPACK_IMPORTED_MODULE_1__.TablaDinamicaComponent],
+  dependencies: [_angular_material_button__WEBPACK_IMPORTED_MODULE_19__.MatButton, _shared_components_tabla_dinamica_tabla_dinamica_component__WEBPACK_IMPORTED_MODULE_1__.TablaDinamicaComponent],
   styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJ1c3Vhcmlvcy5jb21wb25lbnQuc2NzcyJ9 */\n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8uL3NyYy9hcHAvbW9kdWxlcy9zZWd1cmlkYWQvdXN1YXJpb3MvY29tcG9uZW50cy91c3Vhcmlvcy5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiO0FBQ0Esb0tBQW9LIiwic291cmNlUm9vdCI6IiJ9 */"]
 });
 
@@ -235,11 +304,11 @@ class UsuariosService {
   }
   /**
    *
-   * @param idusuario
-   * @returns
+   * @param usuarios
+   * @returns Genera un reporte de etiquetas
    */
-  credencialUsuario(idusuario) {
-    return this.http.get(`${environments_environment__WEBPACK_IMPORTED_MODULE_0__.environment.login.credencial_usuario}` + idusuario);
+  credencialUsuario(usuarios) {
+    return this.http.post(`${environments_environment__WEBPACK_IMPORTED_MODULE_0__.environment.login.credencial_usuario}`, usuarios);
   }
 }
 UsuariosService.ɵfac = function UsuariosService_Factory(t) {

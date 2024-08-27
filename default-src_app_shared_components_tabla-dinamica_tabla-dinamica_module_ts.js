@@ -340,7 +340,7 @@ class TablaDinamicaComponent {
     this._userService = _userService;
     this.default_color = 'text-primary';
     this.allSelected = false;
-    this.seleccionados = new Set();
+    this.seleccionados = [];
     this.selectionChange = new _angular_core__WEBPACK_IMPORTED_MODULE_5__.EventEmitter();
     this.filterLikeCache = '';
     this.PageIndex = 0;
@@ -684,21 +684,20 @@ class TablaDinamicaComponent {
     }
   }
   /**
-  * Selecciona o deselecciona todos los elementos de la página actual.
-  * @param seleccionado Indica si se deben seleccionar o deseleccionar todos los elementos.
-  */
+   * Selecciona o deselecciona todos los elementos de la página actual.
+   * @param seleccionado Indica si se deben seleccionar o deseleccionar todos los elementos.
+   */
   seleccionarTodos(seleccionado) {
     this.allSelected = seleccionado;
     const elementosPaginaActual = this.dataSource.data.slice(this.PageIndex * this.Pagesize, (this.PageIndex + 1) * this.Pagesize);
-    elementosPaginaActual.forEach(item => {
-      if (seleccionado) {
-        this.seleccionados.add(item.idarticulo);
-      } else {
-        this.seleccionados.delete(item.idarticulo);
-      }
-      item.selected = seleccionado;
-    });
-    this.selectionChange.emit(this.getElementosSeleccionados());
+    this.seleccionados = this.seleccionados.filter(item => !elementosPaginaActual.includes(item));
+    if (seleccionado) {
+      this.seleccionados.push(...elementosPaginaActual);
+    } else {
+      this.seleccionados = this.seleccionados.filter(item => !elementosPaginaActual.includes(item));
+    }
+    this.syncSelectionWithCurrentPage();
+    this.selectionChange.emit(this.seleccionados);
   }
   /**
    * Selecciona o deselecciona un elemento específico.
@@ -707,20 +706,23 @@ class TablaDinamicaComponent {
    */
   seleccionarElemento(element, seleccionado) {
     if (seleccionado) {
-      this.seleccionados.add(element.idarticulo);
+      if (!this.seleccionados.includes(element)) {
+        this.seleccionados.push(element);
+      }
     } else {
-      this.seleccionados.delete(element.idarticulo);
+      this.seleccionados = this.seleccionados.filter(item => item !== element);
     }
     element.selected = seleccionado;
-    this.allSelected = this.dataSource.data.every(item => this.seleccionados.has(item.idarticulo));
-    this.selectionChange.emit(this.getElementosSeleccionados());
+    this.syncSelectionWithCurrentPage();
+    this.allSelected = this.dataSource.data.every(item => this.seleccionados.includes(item));
+    this.selectionChange.emit(this.seleccionados);
   }
   /**
    * Obtiene todos los elementos seleccionados actualmente.
    * @returns Un array con los elementos que están actualmente seleccionados.
    */
   getElementosSeleccionados() {
-    return this.dataSource.data.filter(item => this.seleccionados.has(item.idarticulo));
+    return this.seleccionados;
   }
   /**
    * Sincroniza la selección de elementos con la página actual.
@@ -730,7 +732,7 @@ class TablaDinamicaComponent {
   syncSelectionWithCurrentPage() {
     const elementosPaginaActual = this.dataSource.data.slice(this.PageIndex * this.Pagesize, (this.PageIndex + 1) * this.Pagesize);
     elementosPaginaActual.forEach(item => {
-      item.selected = this.seleccionados.has(item.idarticulo);
+      item.selected = this.seleccionados.some(i => JSON.stringify(i) === JSON.stringify(item));
     });
   }
   /**
@@ -917,7 +919,7 @@ TablaDinamicaComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODU
   },
   decls: 8,
   vars: 8,
-  consts: [[1, "w-full", "cont-with-paginator", "mat-elevation-z8", "mb-2"], [1, "w-full", "max-h-[75vh]", "overflow-y-auto", "mt-2"], ["mat-table", "", "matSort", "", 1, "w-full", "smm:px-0", "smm:mt-0", "mt-4", "small-table-text", "mb-8", "cont-with-paginator", 3, "dataSource"], [3, "matColumnDef", 4, "ngFor", "ngForOf"], ["mat-header-row", "", 4, "matHeaderRowDef", "matHeaderRowDefSticky"], ["mat-row", "", 4, "matRowDef", "matRowDefColumns"], [1, "absolute", "bottom-0", "left-0", "right-0", "bg-slate-800", "rounded-b-2xl", "w-full"], ["aria-label", "Select page of users", 1, "w-full", "rounded-b-lg", "shadow-md", "mat-paginator-sticky", 3, "pageSizeOptions", "pageIndex", "pageSize", "page"], [3, "matColumnDef"], [4, "ngIf"], [4, "ngIf", "ngIfElse"], ["botones", ""], ["mat-header-cell", "", 4, "matHeaderCellDef"], ["mat-cell", "", 4, "matCellDef"], ["mat-header-cell", ""], [3, "checked", "change"], ["mat-cell", ""], ["mat-header-cell", "", "mat-sort-header", "", 4, "matHeaderCellDef"], ["mat-header-cell", "", "mat-sort-header", ""], [1, "descripcion"], ["mat-cell", "", "class", "mat-column-botones w-64", 4, "matCellDef"], ["mat-cell", "", 1, "mat-column-botones", "w-64"], [1, ""], ["color", "accent", "matTooltipPosition", "above", "matTooltipClass", "tooltip-class", "matTooltipShowDelay", "100", "matTooltipHideDelay", "100", "TooltipTouchGestures", "auto", 3, "disabled", "mat-icon-button", "mat-button", "ngClass", "matTooltip", "click", 4, "ngFor", "ngForOf"], ["color", "accent", "matTooltipPosition", "above", "matTooltipClass", "tooltip-class", "matTooltipShowDelay", "100", "matTooltipHideDelay", "100", "TooltipTouchGestures", "auto", 3, "disabled", "ngClass", "matTooltip", "click"], ["origin", ""], [1, "icon-container"], ["class", "icon ", 3, "class", "color", "svgIcon", 4, "ngIf"], ["class", "icon ", 3, "svgIcon", 4, "ngIf"], [1, "icon", 3, "svgIcon"], ["mat-header-row", ""], ["mat-row", ""]],
+  consts: [[1, "w-full", "cont-with-paginator", "mat-elevation-z8", "mb-2"], [1, "w-full", "max-h-[75vh]", "overflow-y-auto", "mt-2", "pb-12"], ["mat-table", "", "matSort", "", 1, "w-full", "smm:px-0", "smm:mt-0", "mt-4", "small-table-text", "mb-8", "cont-with-paginator", 3, "dataSource"], [3, "matColumnDef", 4, "ngFor", "ngForOf"], ["mat-header-row", "", 4, "matHeaderRowDef", "matHeaderRowDefSticky"], ["mat-row", "", 4, "matRowDef", "matRowDefColumns"], [1, "absolute", "bottom-0", "left-0", "right-0", "bg-slate-800", "rounded-b-2xl", "w-full"], ["aria-label", "Select page of users", 1, "w-full", "rounded-b-lg", "shadow-md", "mat-paginator-sticky", 3, "pageSizeOptions", "pageIndex", "pageSize", "page"], [3, "matColumnDef"], [4, "ngIf"], [4, "ngIf", "ngIfElse"], ["botones", ""], ["mat-header-cell", "", 4, "matHeaderCellDef"], ["mat-cell", "", 4, "matCellDef"], ["mat-header-cell", ""], [3, "checked", "change"], ["mat-cell", ""], ["mat-header-cell", "", "mat-sort-header", "", 4, "matHeaderCellDef"], ["mat-header-cell", "", "mat-sort-header", ""], [1, "descripcion"], ["mat-cell", "", "class", "mat-column-botones w-64", 4, "matCellDef"], ["mat-cell", "", 1, "mat-column-botones", "w-64"], [1, ""], ["color", "accent", "matTooltipPosition", "above", "matTooltipClass", "tooltip-class", "matTooltipShowDelay", "100", "matTooltipHideDelay", "100", "TooltipTouchGestures", "auto", 3, "disabled", "mat-icon-button", "mat-button", "ngClass", "matTooltip", "click", 4, "ngFor", "ngForOf"], ["color", "accent", "matTooltipPosition", "above", "matTooltipClass", "tooltip-class", "matTooltipShowDelay", "100", "matTooltipHideDelay", "100", "TooltipTouchGestures", "auto", 3, "disabled", "ngClass", "matTooltip", "click"], ["origin", ""], [1, "icon-container"], ["class", "icon ", 3, "class", "color", "svgIcon", 4, "ngIf"], ["class", "icon ", 3, "svgIcon", 4, "ngIf"], [1, "icon", 3, "svgIcon"], ["mat-header-row", ""], ["mat-row", ""]],
   template: function TablaDinamicaComponent_Template(rf, ctx) {
     if (rf & 1) {
       _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "div", 0)(1, "div", 1)(2, "table", 2);

@@ -612,8 +612,8 @@ class EntregasComponent {
     this._headerTextService = _headerTextService;
     this.pwaService = pwaService;
     this.dataSource = new _angular_material_table__WEBPACK_IMPORTED_MODULE_12__.MatTableDataSource();
-    this.headers = ['Fecha', 'Hora', 'Responsable', 'Observaciones', 'Deposito', 'Usuario Encargado', 'Acciones'];
-    this.column_params = ['fecha', 'hora', 'nick_usuario', 'observaciones', 'descripcion_deposito', 'nick_usuario_entrega', 'acciones'];
+    this.headers = ['Fecha', 'Hora', 'Responsable', 'Observaciones', 'Deposito', 'Usuario Encargado', 'Estado', 'Acciones'];
+    this.column_params = ['fecha', 'hora', 'nick_usuario', 'observaciones', 'descripcion_deposito', 'nick_usuario_entrega', 'descripcion_estado', 'acciones'];
     this.funcionesObjeto = null;
     this.filtroBusqueda = '';
     this.filtersLike = ['nick_usuario', 'descripcion_deposito', 'nick_usuario_entrega'];
@@ -624,7 +624,7 @@ class EntregasComponent {
     };
     this.extraParams = '';
     this.parametrosActualizados = new _angular_core__WEBPACK_IMPORTED_MODULE_13__.EventEmitter();
-    this.env = environments_environment__WEBPACK_IMPORTED_MODULE_2__.environment.stock.entregas + '?sort=-fecha_hora';
+    this.env = environments_environment__WEBPACK_IMPORTED_MODULE_2__.environment.stock.view_stock_entregas + '?sort=-fecha_hora';
     this.search = new _angular_forms__WEBPACK_IMPORTED_MODULE_14__.FormControl('');
     this.default_color = 'border-primary text-primary';
     this._unsubscribeAll = new rxjs__WEBPACK_IMPORTED_MODULE_15__.Subject();
@@ -1597,7 +1597,7 @@ class SaveComponent {
     this.form = new _angular_forms__WEBPACK_IMPORTED_MODULE_15__.FormGroup({
       fecha: new _angular_forms__WEBPACK_IMPORTED_MODULE_15__.FormControl(this.entrega?.fecha ? this.datePipe.transform(new Date(`${mes}/${dia}/${anio}`), 'yyyy-MM-dd') : this.datePipe.transform(new Date(), 'yyyy-MM-dd'), [_angular_forms__WEBPACK_IMPORTED_MODULE_15__.Validators.required]),
       hora: new _angular_forms__WEBPACK_IMPORTED_MODULE_15__.FormControl(this.entrega?.hora ? this.entrega.hora : this.datePipe.transform(new Date(), 'HH:mm'), _angular_forms__WEBPACK_IMPORTED_MODULE_15__.Validators.required),
-      usuario_entrega: new _angular_forms__WEBPACK_IMPORTED_MODULE_15__.FormControl(this.entrega ? this.entrega.nick_usuario_entrega : '', _angular_forms__WEBPACK_IMPORTED_MODULE_15__.Validators.required),
+      usuario_entrega: new _angular_forms__WEBPACK_IMPORTED_MODULE_15__.FormControl(this.entrega ? this.entrega.nick_usuario_entrega : ''),
       deposito_entrega: new _angular_forms__WEBPACK_IMPORTED_MODULE_15__.FormControl(this.entrega ? this.entrega.descripcion_deposito : '', _angular_forms__WEBPACK_IMPORTED_MODULE_15__.Validators.required),
       observaciones: new _angular_forms__WEBPACK_IMPORTED_MODULE_15__.FormControl(this.entrega ? this.entrega.observaciones : '', [_angular_forms__WEBPACK_IMPORTED_MODULE_15__.Validators.maxLength(this.maxPalabras)])
     });
@@ -1819,13 +1819,13 @@ class SaveComponent {
       return this.alert.error('Revise Los Datos Ingresados');
     } else {
       // Verificar si el usuario entrega seleccionado está en la lista de usuarios
-      if (!this.entrega || this.entrega && this.form.get('usuario_entrega').value !== this.entrega.nick_usuario_entrega) {
-        const usuarioSeleccionado = this.form.get('usuario_entrega').value;
-        const usuarioExistente = this.usuarios.find(usuario => usuario.codigo === usuarioSeleccionado.codigo);
-        if (!usuarioExistente) {
-          return this.alert.error('El usuario de entrega seleccionado no existe. Por favor, seleccione un usuario válido.');
-        }
-      }
+      // if (!this.entrega || (this.entrega && this.form.get('usuario_entrega').value !== this.entrega.nick_usuario_entrega)) {
+      //     const usuarioSeleccionado = this.form.get('usuario_entrega').value;
+      //     const usuarioExistente = this.usuarios.find(usuario => usuario.codigo === usuarioSeleccionado.codigo);
+      //     if (!usuarioExistente) {
+      //         return this.alert.error('El usuario de entrega seleccionado no existe. Por favor, seleccione un usuario válido.');
+      //     }
+      // }
       let movimientos = this.mov_art_list.map(objeto => ({
         idarticulo: objeto.idarticulo,
         cantidad: objeto.cantidad,
@@ -1846,8 +1846,9 @@ class SaveComponent {
           idusuario: this.user.id,
           fecha_hora: fecha_hora,
           iddeposito: this.form.get('deposito_entrega').value.iddeposito,
-          usuario_entrega: this.form.get('usuario_entrega').value.codigo,
-          observaciones: this.form.get('observaciones').value
+          usuario_entrega: this.form.get('usuario_entrega').value.codigo ? this.form.get('usuario_entrega').value.codigo : null,
+          observaciones: this.form.get('observaciones').value,
+          estado: this.form.get('usuario_entrega').value.codigo ? 1 : 0
         },
         movimientos: movimientos
       };
@@ -1891,7 +1892,7 @@ SaveComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_7__["�
     useValue: _shared_constants_date_format__WEBPACK_IMPORTED_MODULE_1__.MY_DATE_FORMATS
   }])],
   decls: 72,
-  vars: 37,
+  vars: 38,
   consts: [[1, "fixed", "inset-0", "sm:static", "max-h-screen", "sm:inset-auto", "flex", "flex-col", "sm:min-w-120", "sm:w-min-w-90", "sm:rounded-2xl", "overflow-y-auto", "overflow-hidden", "shadow-lg", "bg-white", "dark:bg-slate-900"], [1, "w-full", "px-4", "py-4", "flex", "justify-between", "items-center"], [1, "text-white", "font-bold", "text-lg"], ["mat-icon-button", "", 3, "click"], [1, "text-white"], ["class", "fixed top-0 left-0 w-full flex justify-center items-center mt-8 alert-main z-99999", 3, "type", "appearance", 4, "ngIf"], [1, "form-menu", "p-4", 3, "formGroup"], [1, "flex", "flex-col", "w-full", "h-full", "p-4"], [1, "flex", "gap-2", "flex-col", "sm:flex-row"], ["appearance", "outline", 1, "w-full", "sm:w-1/4"], ["matInput", "", "placeholder", "Fecha", "formControlName", "fecha", 3, "matDatepicker", "min", "max"], ["matSuffix", "", 3, "for"], ["picker", ""], ["matInput", "", "formControlName", "hora", "type", "time"], ["appearance", "outline", 1, "w-full", "sm:w-1/2"], ["type", "text", "matInput", "", "formControlName", "usuario_entrega", 3, "matAutocomplete"], ["autoActiveFirstOption", "", 3, "displayWith"], ["ue", "matAutocomplete"], [3, "value", 4, "ngFor", "ngForOf"], ["matSuffix", "", "mat-icon-button", "", "class", "mr-2", 3, "click", 4, "ngIf"], ["type", "text", "matInput", "", "formControlName", "deposito_entrega", 3, "matAutocomplete"], ["art", "matAutocomplete"], ["appearance", "outline", 1, "w-full"], ["matInput", "", "formControlName", "observaciones", 1, "resize-none"], [1, "counter", 3, "ngClass"], [1, "overflow-y-auto", "max-h-[215px]", "h-auto", "shadow-md", "rounded-lg"], ["mat-table", "", 1, "w-full", "mt-1", 3, "dataSource"], ["matColumnDef", "codigointerno"], ["mat-header-cell", "", "class", "rounded-tl-lg text-white w-auto", 3, "class", "background", 4, "matHeaderCellDef"], ["mat-cell", "", "class", "w-auto", 4, "matCellDef"], ["matColumnDef", "articulo"], ["mat-header-cell", "", "class", "text-white w-auto", 3, "class", "background", 4, "matHeaderCellDef"], ["matColumnDef", "unidadmedida"], ["mat-cell", "", 4, "matCellDef"], ["matColumnDef", "cantidad"], ["matColumnDef", "venta"], ["matColumnDef", "acciones"], ["mat-header-cell", "", "class", "rounded-tr-lg text-white w-auto", 3, "class", "background", 4, "matHeaderCellDef"], ["mat-header-row", "", 4, "matHeaderRowDef", "matHeaderRowDefSticky"], ["mat-row", "", 4, "matRowDef", "matRowDefColumns"], ["class", "flex justify-center items-center h-20", 4, "ngIf"], [1, "w-full", "md:flex", "md:justify-center", "md:pb-6", "md:px-6", "mt-auto"], ["mat-raised-button", "", 1, "w-full", "rounded-none", "md:w-36", "md:rounded-lg", "py-8", "md:py-0", 3, "click"], [1, "text-white", "font-medium", "text-base"], [1, "fixed", "top-0", "left-0", "w-full", "flex", "justify-center", "items-center", "mt-8", "alert-main", "z-99999", 3, "type", "appearance"], [3, "value"], ["matSuffix", "", "mat-icon-button", "", 1, "mr-2", 3, "click"], ["mat-header-cell", "", 1, "rounded-tl-lg", "text-white", "w-auto"], ["mat-cell", "", 1, "w-auto"], ["mat-header-cell", "", 1, "text-white", "w-auto"], ["mat-cell", ""], ["mat-header-cell", "", 1, "rounded-tr-lg", "text-white", "w-auto"], [1, "flex", "items-center", "justify-center", 3, "click"], [1, "text-inherit", "text-xl"], [1, "ml-2"], ["delete", ""], ["color", "warn"], ["mat-header-row", ""], ["mat-row", ""], [1, "flex", "justify-center", "items-center", "h-20"], [1, "text-gray-600", "text-lg"]],
   template: function SaveComponent_Template(rf, ctx) {
     if (rf & 1) {
@@ -1976,7 +1977,7 @@ SaveComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_7__["�
         return ctx.onSubmit();
       });
       _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](70, "span", 43);
-      _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtext"](71, "Guardar");
+      _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtext"](71);
       _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]()()()();
     }
     if (rf & 2) {
@@ -2001,7 +2002,7 @@ SaveComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_7__["�
       _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵadvance"](1);
       _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵproperty"]("displayWith", ctx.getTextUsuario);
       _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵadvance"](2);
-      _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵproperty"]("ngForOf", _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵpipeBind1"](28, 31, ctx.filteredUsuarios));
+      _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵproperty"]("ngForOf", _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵpipeBind1"](28, 32, ctx.filteredUsuarios));
       _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵadvance"](2);
       _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵproperty"]("ngIf", ctx.form.get("usuario_entrega").value);
       _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵadvance"](4);
@@ -2009,11 +2010,11 @@ SaveComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_7__["�
       _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵadvance"](1);
       _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵproperty"]("displayWith", ctx.getTextDeposito);
       _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵadvance"](2);
-      _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵproperty"]("ngForOf", _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵpipeBind1"](37, 33, ctx.filteredDepositos));
+      _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵproperty"]("ngForOf", _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵpipeBind1"](37, 34, ctx.filteredDepositos));
       _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵadvance"](2);
       _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵproperty"]("ngIf", ctx.form.get("deposito_entrega").value && ctx.mov_art_list.length == 0);
       _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵadvance"](5);
-      _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵproperty"]("ngClass", _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵpureFunction1"](35, _c0, !ctx.isPalabraMaxLengthReached()));
+      _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵproperty"]("ngClass", _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵpureFunction1"](36, _c0, !ctx.isPalabraMaxLengthReached()));
       _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵadvance"](1);
       _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtextInterpolate2"](" ", ctx.getPalabrasLength(), "/", ctx.maxPalabras, " ");
       _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵadvance"](2);
@@ -2027,6 +2028,8 @@ SaveComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_7__["�
       _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵadvance"](2);
       _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵclassMap"](ctx.color_primario ? "" : ctx.default_color);
       _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵstyleProp"]("background-color", ctx.color_primario || "");
+      _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵadvance"](2);
+      _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtextInterpolate1"](" ", ctx.form.get("usuario_entrega").value ? "Entregar" : "Precargar", " ");
     }
   },
   dependencies: [_angular_common__WEBPACK_IMPORTED_MODULE_20__.NgClass, _angular_common__WEBPACK_IMPORTED_MODULE_20__.NgForOf, _angular_common__WEBPACK_IMPORTED_MODULE_20__.NgIf, _angular_material_table__WEBPACK_IMPORTED_MODULE_8__.MatTable, _angular_material_table__WEBPACK_IMPORTED_MODULE_8__.MatHeaderCellDef, _angular_material_table__WEBPACK_IMPORTED_MODULE_8__.MatHeaderRowDef, _angular_material_table__WEBPACK_IMPORTED_MODULE_8__.MatColumnDef, _angular_material_table__WEBPACK_IMPORTED_MODULE_8__.MatCellDef, _angular_material_table__WEBPACK_IMPORTED_MODULE_8__.MatRowDef, _angular_material_table__WEBPACK_IMPORTED_MODULE_8__.MatHeaderCell, _angular_material_table__WEBPACK_IMPORTED_MODULE_8__.MatCell, _angular_material_table__WEBPACK_IMPORTED_MODULE_8__.MatHeaderRow, _angular_material_table__WEBPACK_IMPORTED_MODULE_8__.MatRow, _angular_material_button__WEBPACK_IMPORTED_MODULE_22__.MatButton, _angular_material_button__WEBPACK_IMPORTED_MODULE_22__.MatIconButton, _angular_material_form_field__WEBPACK_IMPORTED_MODULE_23__.MatFormField, _angular_material_form_field__WEBPACK_IMPORTED_MODULE_23__.MatLabel, _angular_material_form_field__WEBPACK_IMPORTED_MODULE_23__.MatSuffix, _angular_material_core__WEBPACK_IMPORTED_MODULE_21__.MatOption, _angular_forms__WEBPACK_IMPORTED_MODULE_15__["ɵNgNoValidate"], _angular_forms__WEBPACK_IMPORTED_MODULE_15__.DefaultValueAccessor, _angular_forms__WEBPACK_IMPORTED_MODULE_15__.NgControlStatus, _angular_forms__WEBPACK_IMPORTED_MODULE_15__.NgControlStatusGroup, _angular_forms__WEBPACK_IMPORTED_MODULE_15__.FormGroupDirective, _angular_forms__WEBPACK_IMPORTED_MODULE_15__.FormControlName, _angular_material_input__WEBPACK_IMPORTED_MODULE_24__.MatInput, _angular_material_icon__WEBPACK_IMPORTED_MODULE_25__.MatIcon, _fuse_components_alert_alert_component__WEBPACK_IMPORTED_MODULE_6__.FuseAlertComponent, _angular_material_autocomplete__WEBPACK_IMPORTED_MODULE_26__.MatAutocomplete, _angular_material_autocomplete__WEBPACK_IMPORTED_MODULE_26__.MatAutocompleteTrigger, _angular_material_datepicker__WEBPACK_IMPORTED_MODULE_27__.MatDatepicker, _angular_material_datepicker__WEBPACK_IMPORTED_MODULE_27__.MatDatepickerInput, _angular_material_datepicker__WEBPACK_IMPORTED_MODULE_27__.MatDatepickerToggle, _angular_common__WEBPACK_IMPORTED_MODULE_20__.AsyncPipe],
