@@ -1598,7 +1598,10 @@ class SaveComponent {
       fecha: new _angular_forms__WEBPACK_IMPORTED_MODULE_15__.FormControl(this.entrega?.fecha ? this.datePipe.transform(new Date(`${mes}/${dia}/${anio}`), 'yyyy-MM-dd') : this.datePipe.transform(new Date(), 'yyyy-MM-dd'), [_angular_forms__WEBPACK_IMPORTED_MODULE_15__.Validators.required]),
       hora: new _angular_forms__WEBPACK_IMPORTED_MODULE_15__.FormControl(this.entrega?.hora ? this.entrega.hora : this.datePipe.transform(new Date(), 'HH:mm'), _angular_forms__WEBPACK_IMPORTED_MODULE_15__.Validators.required),
       usuario_entrega: new _angular_forms__WEBPACK_IMPORTED_MODULE_15__.FormControl(this.entrega ? this.entrega.nick_usuario_entrega : ''),
-      deposito_entrega: new _angular_forms__WEBPACK_IMPORTED_MODULE_15__.FormControl(this.entrega ? this.entrega.descripcion_deposito : '', _angular_forms__WEBPACK_IMPORTED_MODULE_15__.Validators.required),
+      deposito_entrega: new _angular_forms__WEBPACK_IMPORTED_MODULE_15__.FormControl(this.entrega ? {
+        descripcion: this.entrega.descripcion_deposito,
+        iddeposito: this.entrega.iddeposito
+      } : '', _angular_forms__WEBPACK_IMPORTED_MODULE_15__.Validators.required),
       observaciones: new _angular_forms__WEBPACK_IMPORTED_MODULE_15__.FormControl(this.entrega ? this.entrega.observaciones : '', [_angular_forms__WEBPACK_IMPORTED_MODULE_15__.Validators.maxLength(this.maxPalabras)])
     });
   }
@@ -1847,8 +1850,7 @@ class SaveComponent {
           fecha_hora: fecha_hora,
           iddeposito: this.form.get('deposito_entrega').value.iddeposito,
           usuario_entrega: this.form.get('usuario_entrega').value.codigo ? this.form.get('usuario_entrega').value.codigo : null,
-          observaciones: this.form.get('observaciones').value,
-          estado: this.form.get('usuario_entrega').value.codigo ? 1 : 0
+          observaciones: this.form.get('observaciones').value
         },
         movimientos: movimientos
       };
