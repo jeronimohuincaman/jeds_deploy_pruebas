@@ -612,8 +612,8 @@ class EntregasComponent {
     this._headerTextService = _headerTextService;
     this.pwaService = pwaService;
     this.dataSource = new _angular_material_table__WEBPACK_IMPORTED_MODULE_12__.MatTableDataSource();
-    this.headers = ['Fecha', 'Hora', 'Responsable', 'Observaciones', 'Deposito', 'Usuario Encargado', 'Estado', 'Acciones'];
-    this.column_params = ['fecha', 'hora', 'nick_usuario', 'observaciones', 'descripcion_deposito', 'nick_usuario_entrega', 'descripcion_estado', 'acciones'];
+    this.headers = ['Fecha Precarga', 'Fecha Entrega', 'Responsable', 'Observaciones', 'Deposito', 'Usuario Encargado', 'Estado', 'Acciones'];
+    this.column_params = ['fecha_hora_precarga', 'fecha_hora_entrega', 'nick_usuario', 'observaciones', 'descripcion_deposito', 'nick_usuario_entrega', 'descripcion_estado', 'acciones'];
     this.funcionesObjeto = null;
     this.filtroBusqueda = '';
     this.filtersLike = ['nick_usuario', 'descripcion_deposito', 'nick_usuario_entrega'];
@@ -1529,7 +1529,7 @@ class SaveComponent {
     this.creadoExitosamente = new _angular_core__WEBPACK_IMPORTED_MODULE_7__.EventEmitter();
     this.editadoExitosamente = new _angular_core__WEBPACK_IMPORTED_MODULE_7__.EventEmitter();
     this.entrega = this.data ? this.data : null;
-    this.title = this.entrega?.identrega ? `Editar Entrega ${this.entrega.fecha} - ${this.entrega.hora}` : `Nueva Entrega`;
+    this.title = this.entrega?.identrega ? `Editar Entrega ${this.entrega.fecha_precarga} - ${this.entrega.hora_precarga}` : `Nueva Entrega`;
     /* this`user = JSON.parse(sessionStorage.getItem('user')) */
     this.user = JSON.parse(localStorage.getItem('user'));
     // Se define minDate como null o cualquier otra fecha límite que desees permitir hacia atras
@@ -1567,7 +1567,7 @@ class SaveComponent {
     });
   }
   newForm() {
-    const [dia, mes, anio] = this.entrega ? this.entrega.fecha.split('/') : ''; //Se hace esto para poder manejar el formato que se cambio en el render del componente de tabla dinamica.
+    const [dia, mes, anio] = this.entrega ? this.entrega.fecha_precarga.split('/') : ''; //Se hace esto para poder manejar el formato que se cambio en el render del componente de tabla dinamica.
     if (this.entrega) {
       Promise.all([this.getVentas(), this.getItems(this.entrega.identrega)]).then(([ventas, items]) => {
         this.ventas = ventas;
@@ -1595,8 +1595,8 @@ class SaveComponent {
       });
     }
     this.form = new _angular_forms__WEBPACK_IMPORTED_MODULE_15__.FormGroup({
-      fecha: new _angular_forms__WEBPACK_IMPORTED_MODULE_15__.FormControl(this.entrega?.fecha ? this.datePipe.transform(new Date(`${mes}/${dia}/${anio}`), 'yyyy-MM-dd') : this.datePipe.transform(new Date(), 'yyyy-MM-dd'), [_angular_forms__WEBPACK_IMPORTED_MODULE_15__.Validators.required]),
-      hora: new _angular_forms__WEBPACK_IMPORTED_MODULE_15__.FormControl(this.entrega?.hora ? this.entrega.hora : this.datePipe.transform(new Date(), 'HH:mm'), _angular_forms__WEBPACK_IMPORTED_MODULE_15__.Validators.required),
+      fecha: new _angular_forms__WEBPACK_IMPORTED_MODULE_15__.FormControl(this.entrega?.fecha_precarga ? this.datePipe.transform(new Date(`${mes}/${dia}/${anio}`), 'yyyy-MM-dd') : this.datePipe.transform(new Date(), 'yyyy-MM-dd'), [_angular_forms__WEBPACK_IMPORTED_MODULE_15__.Validators.required]),
+      hora: new _angular_forms__WEBPACK_IMPORTED_MODULE_15__.FormControl(this.entrega?.hora_precarga ? this.entrega.hora_precarga : this.datePipe.transform(new Date(), 'HH:mm'), _angular_forms__WEBPACK_IMPORTED_MODULE_15__.Validators.required),
       usuario_entrega: new _angular_forms__WEBPACK_IMPORTED_MODULE_15__.FormControl(this.entrega ? this.entrega.nick_usuario_entrega : ''),
       deposito_entrega: new _angular_forms__WEBPACK_IMPORTED_MODULE_15__.FormControl(this.entrega ? {
         descripcion: this.entrega.descripcion_deposito,
@@ -1843,11 +1843,11 @@ class SaveComponent {
       // Se formatea la fecha nuevamente al formato deseado (YYYY-MM-DD)
       const fecha_formateada = this.datePipe.transform(fecha, 'yyyy-MM-dd');
       // Se concatena a ambas fecha y hora
-      const fecha_hora = `${fecha_formateada} ${hora}`;
+      const fecha_hora_precarga = `${fecha_formateada} ${hora}`;
       const payload = {
         entrega: {
           idusuario: this.user.id,
-          fecha_hora: fecha_hora,
+          fecha_hora_precarga: fecha_hora_precarga,
           iddeposito: this.form.get('deposito_entrega').value.iddeposito,
           usuario_entrega: this.form.get('usuario_entrega').value.codigo ? this.form.get('usuario_entrega').value.codigo : null,
           observaciones: this.form.get('observaciones').value

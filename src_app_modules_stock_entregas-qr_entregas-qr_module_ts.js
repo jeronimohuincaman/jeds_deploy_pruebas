@@ -410,7 +410,7 @@ class EntregasQRComponent {
               stock: res.stock //Stock restante de ese articulo con esa um...
             };
 
-            this.mov_art_list = [...this.mov_art_list, movimiento_articulo];
+            this.mov_art_list = [movimiento_articulo, ...this.mov_art_list];
             this.dataSource = new _angular_material_table__WEBPACK_IMPORTED_MODULE_13__.MatTableDataSource(this.mov_art_list); //Actualizo la tabla
             // Deshabilito el control Deposito
             if (this.mov_art_list.length != 0) {

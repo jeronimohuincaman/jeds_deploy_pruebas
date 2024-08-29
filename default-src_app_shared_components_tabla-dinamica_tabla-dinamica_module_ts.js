@@ -488,6 +488,12 @@ class TablaDinamicaComponent {
             if (item.hora) {
               item.hora = this.cambiarformatoHora(item.hora);
             }
+            if (item.fecha_precarga) {
+              item.fecha_precarga = this.cambiarFormatoFecha(item.fecha_precarga);
+            }
+            if (item.hora_entrega) {
+              item.hora_entrega = this.cambiarformatoHora(item.hora_entrega);
+            }
             if (item.activo) {
               item.activo = item.activo === 1 ? 'Si' : '';
             }
