@@ -473,7 +473,9 @@ class EntregasQRComponent {
         return this.alert.warning('Debe ingresar un articulo a la orden de entrega.');
       }
       const fecha = new Date().toISOString().split('T')[0];
-      const hora = new Date().toLocaleTimeString();
+      const hora = new Date().toLocaleTimeString([], {
+        hour12: false
+      });
       // Se formatea la fecha nuevamente al formato deseado (YYYY-MM-DD)
       const fecha_formateada = this.datePipe.transform(fecha, 'yyyy-MM-dd');
       // Se concatena a ambas fecha y hora
@@ -481,7 +483,7 @@ class EntregasQRComponent {
       const payload = {
         entrega: {
           idusuario: this.user.id,
-          fecha_hora: fecha_hora,
+          fecha_hora_precarga: fecha_hora,
           iddeposito: this.form.get('deposito_entrega').value.iddeposito,
           usuario_entrega: this.idUsuario ? this.idUsuario : null,
           observaciones: `Entrega QR - Órden N°${this.orden_servicio}`
