@@ -1581,7 +1581,7 @@ class SaveComponent {
             descripcion_um: m.descripcion_um,
             codigo_interno: m.codigo_interno_articulo,
             stock: m.stock_minimo_articulo,
-            idventa: m.idventa ? venta.idventa : null,
+            idventa: m.idventa ? venta?.idventa : null,
             fecha_venta: venta ? venta.fecha : '',
             cliente_venta: venta ? venta.cliente : ''
           };
