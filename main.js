@@ -17009,7 +17009,7 @@ const environment = {
     rubros: `${$BASE_REST}/stk_rubros`,
     articulos: `${$BASE_REST}/stk_articulos`,
     reporte_etiqueta: `${$BASE_REST}/stk_articulo/generar_etiquetas`,
-    view_articulos: `${$BASE_REST}/view_articulos`,
+    view_articulos: `${$BASE_REST}/view_articulos?pagination=1`,
     articulo_unidad_medidas: `${$BASE_REST}/stk_articulo_unidad_medidas`,
     stock_inicial: `${$BASE_REST}/stk_stock_inicials`,
     view_stock_inicials: `${$BASE_REST}/view_stock_inicials`,
@@ -17023,8 +17023,10 @@ const environment = {
     view_items_oc_pendientes: `${$BASE_REST}/view_items_oc_pendientes`,
     entregas: `${$BASE_REST}/stk_entregas`,
     reporte_entrega: `${$BASE_REST}/stk_entrega/generar_reporte?identrega=`,
-    view_stock_entregas: `${$BASE_REST}/view_stock_entregas`
+    view_stock_entregas: `${$BASE_REST}/view_stock_entregas`,
+    ver_imagen: `${$BASE_REST}` // uploads/nombre_imagen se lo concatena en otros componentes
   },
+
   ventas: {
     view_venta_selects: `${$BASE_REST}/view_venta_selects`,
     view_venta_genericas: `${$BASE_REST}/view_venta_genericas`,
