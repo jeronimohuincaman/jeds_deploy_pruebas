@@ -173,7 +173,7 @@ function EntregasQRComponent_td_35_Template(rf, ctx) {
 }
 function EntregasQRComponent_th_37_Template(rf, ctx) {
   if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](0, "th", 43);
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](0, "th", 45);
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtext"](1, " Art\u00EDculo");
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementEnd"]();
   }
@@ -295,6 +295,7 @@ class EntregasQRComponent {
     this.buttonStyleOrdenServicio = 'default';
     this.credencialScaneada = false;
     this.ordenServicioScaneada = false;
+    this.deposito_default = 0;
     this._headerTextService.setTitulo(this.router);
     this.user = JSON.parse(localStorage.getItem('user'));
   }
@@ -303,6 +304,7 @@ class EntregasQRComponent {
     this._empresaService.empresa$.pipe((0,rxjs__WEBPACK_IMPORTED_MODULE_15__.takeUntil)(this._unsubscribeAll)).subscribe(empresa => {
       this.color_primario = empresa.color_primario;
       this.color_secundario = empresa.color_secundario;
+      this.deposito_default = empresa.deposito_default;
     });
     // Load empresa data
     this._empresaService.getEmpresa();
@@ -382,6 +384,11 @@ class EntregasQRComponent {
       new Promise( /*#__PURE__*/function () {
         var _ref = (0,C_work_jeds_jedstion_source_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* (resolve) {
           _this.depositos = Depositos.list;
+          // Filtrar y autoasignar el depósito por defecto
+          const depositoPorDefecto = _this.depositos.find(deposito => deposito.iddeposito === _this.deposito_default);
+          if (depositoPorDefecto) {
+            _this.form.get('deposito_entrega').setValue(depositoPorDefecto);
+          }
           _this.filteredDepositos = _this.form.get('deposito_entrega').valueChanges.pipe((0,rxjs__WEBPACK_IMPORTED_MODULE_18__.startWith)(''), (0,rxjs__WEBPACK_IMPORTED_MODULE_19__.map)(value => _this._filterDepositos(value)));
           resolve(true);
         });
@@ -430,7 +437,7 @@ class EntregasQRComponent {
               idunidadmedida: res.unidad_medida,
               descripcion_articulo: res.articulo.descripcion,
               descripcion_um: res.unidadmedida_descripcion,
-              codigo_interno: res.articulo.codigo_interno,
+              codigo_interno: res.articulo.codigo,
               stock: res.stock //Stock restante de ese articulo con esa um...
             };
 
@@ -548,7 +555,7 @@ EntregasQRComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_
   },
   decls: 54,
   vars: 42,
-  consts: [[1, "flex-auto", "p-2", "sm:p-10", "bg-card", "relative"], [1, "text-3xl", "font-semibold", "mb-6", "text-center"], [1, "flex", "items-center", "justify-center", "mb-6", 3, "click"], [1, "flex", "items-center", "justify-center", "w-12", "h-12", "rounded-full", "mr-4", 3, "ngClass", "ngStyle"], ["width", "22", "height", "22", "viewBox", "0 0 16 16", "fill", "currentColor", "xmlns", "http://www.w3.org/2000/svg"], ["d", "M2.66667 2.66667H6.66667V6.66667H2.66667V2.66667ZM13.3333 2.66667V6.66667H9.33333V2.66667H13.3333ZM9.33333 10H10.6667V8.66667H9.33333V7.33333H10.6667V8.66667H12V7.33333H13.3333V8.66667H12V10H13.3333V12H12V13.3333H10.6667V12H8.66667V13.3333H7.33333V10.6667H9.33333V10ZM10.6667 10V12H12V10H10.6667ZM2.66667 13.3333V9.33333H6.66667V13.3333H2.66667ZM4 4V5.33333H5.33333V4H4ZM10.6667 4V5.33333H12V4H10.6667ZM4 10.6667V12H5.33333V10.6667H4ZM2.66667 7.33333H4V8.66667H2.66667V7.33333ZM6 7.33333H8.66667V10H7.33333V8.66667H6V7.33333ZM7.33333 4H8.66667V6.66667H7.33333V4ZM1.33333 1.33333V4H0V1.33333C0 0.979711 0.140476 0.640573 0.390524 0.390524C0.640573 0.140476 0.979711 0 1.33333 0L4 0V1.33333H1.33333ZM14.6667 0C15.0203 0 15.3594 0.140476 15.6095 0.390524C15.8595 0.640573 16 0.979711 16 1.33333V4H14.6667V1.33333H12V0H14.6667ZM1.33333 12V14.6667H4V16H1.33333C0.979711 16 0.640573 15.8595 0.390524 15.6095C0.140476 15.3594 0 15.0203 0 14.6667V12H1.33333ZM14.6667 14.6667V12H16V14.6667C16 15.0203 15.8595 15.3594 15.6095 15.6095C15.3594 15.8595 15.0203 16 14.6667 16H12V14.6667H14.6667Z", "fill", "currentColor"], ["class", "text-lg font-semibold w-72", 4, "ngIf"], [1, "flex", "items-center", "justify-center", "mb-4", 3, "click"], [1, "flex", "flex-col", "form-menu", "items-center", "justify-center", "my-6", 3, "formGroup"], [1, "w-90"], [1, "block", "font-semibold", "text-lg", "mb-2"], ["appearance", "fill", 1, "w-full", "sm:w-90"], ["type", "text", "matInput", "", "formControlName", "deposito_entrega", "placeholder", "Seleccione Dep\u00F3sito", 3, "matAutocomplete"], ["mat-icon-button", "", "matSuffix", "", 4, "ngIf"], ["mat-icon-button", "", "matSuffix", "", 3, "click", 4, "ngIf"], ["autoActiveFirstOption", "", 3, "displayWith"], ["art", "matAutocomplete"], [3, "value", 4, "ngFor", "ngForOf"], ["mat-flat-button", "", 1, "w-36", "rounded-lg", "py-0", "ml-[215px]", "!border", "border-solid", 3, "click"], [1, "flex", "item-center"], [1, "text-lg"], [1, "overflow-y-auto", "max-h-[150px]", "h-[150px]", "shadow-md", "rounded-lg", "mt-8"], ["mat-table", "", 1, "w-full", 3, "dataSource"], ["matColumnDef", "codigo_interno"], ["mat-header-cell", "", "class", "rounded-tl-lg text-white", 3, "class", "background", 4, "matHeaderCellDef"], ["mat-cell", "", 4, "matCellDef"], ["matColumnDef", "articulo"], ["matColumnDef", "unidadmedida"], ["mat-header-cell", "", "class", "text-white", 3, "class", "background", 4, "matHeaderCellDef"], ["matColumnDef", "cantidad"], ["mat-header-cell", "", "class", "rounded-tr-lg text-white", 3, "class", "background", 4, "matHeaderCellDef"], ["mat-header-row", "", 4, "matHeaderRowDef", "matHeaderRowDefSticky"], ["mat-row", "", 4, "matRowDef", "matRowDefColumns"], ["class", "flex justify-center items-center h-20", 4, "ngIf"], [1, "flex", "items-center", "justify-center"], [1, "w-90", "mt-8"], ["mat-flat-button", "", 1, "rounded-lg", "w-36", "ml-[215px]", "py-0", 3, "click"], [1, "text-lg", "text-white"], [1, "text-lg", "font-semibold", "w-72"], ["mat-icon-button", "", "matSuffix", ""], ["mat-icon-button", "", "matSuffix", "", 3, "click"], [1, "text-xl"], [3, "value"], ["mat-header-cell", "", 1, "rounded-tl-lg", "text-white"], ["mat-cell", ""], ["mat-header-cell", "", 1, "text-white"], ["mat-header-cell", "", 1, "rounded-tr-lg", "text-white"], ["mat-header-row", ""], ["mat-row", ""], [1, "flex", "justify-center", "items-center", "h-20"], [1, "text-gray-600", "text-lg"]],
+  consts: [[1, "flex-auto", "p-2", "sm:p-10", "bg-card", "relative"], [1, "text-3xl", "font-semibold", "mb-6", "text-center"], [1, "flex", "items-center", "justify-center", "mb-6", 3, "click"], [1, "flex", "items-center", "justify-center", "w-12", "h-12", "rounded-full", "mr-4", 3, "ngClass", "ngStyle"], ["width", "22", "height", "22", "viewBox", "0 0 16 16", "fill", "currentColor", "xmlns", "http://www.w3.org/2000/svg"], ["d", "M2.66667 2.66667H6.66667V6.66667H2.66667V2.66667ZM13.3333 2.66667V6.66667H9.33333V2.66667H13.3333ZM9.33333 10H10.6667V8.66667H9.33333V7.33333H10.6667V8.66667H12V7.33333H13.3333V8.66667H12V10H13.3333V12H12V13.3333H10.6667V12H8.66667V13.3333H7.33333V10.6667H9.33333V10ZM10.6667 10V12H12V10H10.6667ZM2.66667 13.3333V9.33333H6.66667V13.3333H2.66667ZM4 4V5.33333H5.33333V4H4ZM10.6667 4V5.33333H12V4H10.6667ZM4 10.6667V12H5.33333V10.6667H4ZM2.66667 7.33333H4V8.66667H2.66667V7.33333ZM6 7.33333H8.66667V10H7.33333V8.66667H6V7.33333ZM7.33333 4H8.66667V6.66667H7.33333V4ZM1.33333 1.33333V4H0V1.33333C0 0.979711 0.140476 0.640573 0.390524 0.390524C0.640573 0.140476 0.979711 0 1.33333 0L4 0V1.33333H1.33333ZM14.6667 0C15.0203 0 15.3594 0.140476 15.6095 0.390524C15.8595 0.640573 16 0.979711 16 1.33333V4H14.6667V1.33333H12V0H14.6667ZM1.33333 12V14.6667H4V16H1.33333C0.979711 16 0.640573 15.8595 0.390524 15.6095C0.140476 15.3594 0 15.0203 0 14.6667V12H1.33333ZM14.6667 14.6667V12H16V14.6667C16 15.0203 15.8595 15.3594 15.6095 15.6095C15.3594 15.8595 15.0203 16 14.6667 16H12V14.6667H14.6667Z", "fill", "currentColor"], ["class", "text-lg font-semibold w-72", 4, "ngIf"], [1, "flex", "items-center", "justify-center", "mb-4", 3, "click"], [1, "flex", "flex-col", "form-menu", "items-center", "justify-center", "my-6", 3, "formGroup"], [1, "w-90"], [1, "block", "font-semibold", "text-lg", "mb-2"], ["appearance", "fill", 1, "w-full", "sm:w-90"], ["type", "text", "matInput", "", "formControlName", "deposito_entrega", "placeholder", "Seleccione Dep\u00F3sito", 3, "matAutocomplete"], ["mat-icon-button", "", "matSuffix", "", 4, "ngIf"], ["mat-icon-button", "", "matSuffix", "", 3, "click", 4, "ngIf"], ["autoActiveFirstOption", "", 3, "displayWith"], ["art", "matAutocomplete"], [3, "value", 4, "ngFor", "ngForOf"], ["mat-flat-button", "", 1, "w-36", "rounded-lg", "py-0", "ml-[215px]", "!border", "border-solid", 3, "click"], [1, "flex", "item-center"], [1, "text-lg"], [1, "overflow-y-auto", "max-h-[150px]", "h-[150px]", "shadow-md", "rounded-lg", "mt-8"], ["mat-table", "", 1, "w-full", 3, "dataSource"], ["matColumnDef", "codigo_interno"], ["mat-header-cell", "", "class", "rounded-tl-lg text-white", 3, "class", "background", 4, "matHeaderCellDef"], ["mat-cell", "", 4, "matCellDef"], ["matColumnDef", "articulo"], ["mat-header-cell", "", "class", "text-white", 3, "class", "background", 4, "matHeaderCellDef"], ["matColumnDef", "unidadmedida"], ["matColumnDef", "cantidad"], ["mat-header-cell", "", "class", "rounded-tr-lg text-white", 3, "class", "background", 4, "matHeaderCellDef"], ["mat-header-row", "", 4, "matHeaderRowDef", "matHeaderRowDefSticky"], ["mat-row", "", 4, "matRowDef", "matRowDefColumns"], ["class", "flex justify-center items-center h-20", 4, "ngIf"], [1, "flex", "items-center", "justify-center"], [1, "w-90", "mt-8"], ["mat-flat-button", "", 1, "rounded-lg", "w-36", "ml-[215px]", "py-0", 3, "click"], [1, "text-lg", "text-white"], [1, "text-lg", "font-semibold", "w-72"], ["mat-icon-button", "", "matSuffix", ""], ["mat-icon-button", "", "matSuffix", "", 3, "click"], [1, "text-xl"], [3, "value"], ["mat-header-cell", "", 1, "rounded-tl-lg", "text-white"], ["mat-cell", ""], ["mat-header-cell", "", 1, "text-white"], ["mat-header-cell", "", 1, "rounded-tr-lg", "text-white"], ["mat-header-row", ""], ["mat-row", ""], [1, "flex", "justify-center", "items-center", "h-20"], [1, "text-gray-600", "text-lg"]],
   template: function EntregasQRComponent_Template(rf, ctx) {
     if (rf & 1) {
       _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](0, "div", 0)(1, "h1", 1);
@@ -604,11 +611,11 @@ EntregasQRComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_
       _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtemplate"](35, EntregasQRComponent_td_35_Template, 2, 1, "td", 25);
       _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementContainerEnd"]();
       _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementContainerStart"](36, 26);
-      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtemplate"](37, EntregasQRComponent_th_37_Template, 2, 4, "th", 24);
+      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtemplate"](37, EntregasQRComponent_th_37_Template, 2, 4, "th", 27);
       _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtemplate"](38, EntregasQRComponent_td_38_Template, 2, 1, "td", 25);
       _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementContainerEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementContainerStart"](39, 27);
-      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtemplate"](40, EntregasQRComponent_th_40_Template, 2, 4, "th", 28);
+      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementContainerStart"](39, 28);
+      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtemplate"](40, EntregasQRComponent_th_40_Template, 2, 4, "th", 27);
       _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtemplate"](41, EntregasQRComponent_td_41_Template, 2, 1, "td", 25);
       _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementContainerEnd"]();
       _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementContainerStart"](42, 29);
