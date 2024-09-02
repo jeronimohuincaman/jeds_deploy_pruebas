@@ -71,7 +71,7 @@ function EntregasQRComponent_p_7_Template(rf, ctx) {
   if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵnamespaceSVG"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵnamespaceHTML"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](0, "p", 37);
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](0, "p", 38);
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtext"](1, " Escanear Credencial de Empleado ");
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementEnd"]();
   }
@@ -80,7 +80,7 @@ function EntregasQRComponent_p_8_Template(rf, ctx) {
   if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵnamespaceSVG"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵnamespaceHTML"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](0, "p", 37);
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](0, "p", 38);
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtext"](1);
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementEnd"]();
   }
@@ -94,7 +94,7 @@ function EntregasQRComponent_p_13_Template(rf, ctx) {
   if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵnamespaceSVG"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵnamespaceHTML"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](0, "p", 37);
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](0, "p", 38);
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtext"](1, " Escanear Orden de Servicio ");
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementEnd"]();
   }
@@ -103,7 +103,7 @@ function EntregasQRComponent_p_14_Template(rf, ctx) {
   if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵnamespaceSVG"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵnamespaceHTML"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](0, "p", 37);
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](0, "p", 38);
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtext"](1);
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementEnd"]();
   }
@@ -115,42 +115,42 @@ function EntregasQRComponent_p_14_Template(rf, ctx) {
 }
 function EntregasQRComponent_button_21_Template(rf, ctx) {
   if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](0, "button", 38)(1, "mat-icon");
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](0, "button", 39)(1, "mat-icon");
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtext"](2, "arrow_drop_down");
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementEnd"]()();
   }
 }
 function EntregasQRComponent_button_22_Template(rf, ctx) {
   if (rf & 1) {
-    const _r18 = _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵgetCurrentView"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](0, "button", 39);
+    const _r20 = _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵgetCurrentView"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](0, "button", 40);
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵlistener"]("click", function EntregasQRComponent_button_22_Template_button_click_0_listener() {
-      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵrestoreView"](_r18);
-      const ctx_r17 = _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵnextContext"]();
-      return _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵresetView"](ctx_r17.limpiarCasillero("deposito_entrega"));
+      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵrestoreView"](_r20);
+      const ctx_r19 = _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵnextContext"]();
+      return _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵresetView"](ctx_r19.limpiarCasillero("deposito_entrega"));
     });
-    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](1, "mat-icon", 40);
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](1, "mat-icon", 41);
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtext"](2, "clear");
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementEnd"]()();
   }
 }
 function EntregasQRComponent_mat_option_25_Template(rf, ctx) {
   if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](0, "mat-option", 41);
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](0, "mat-option", 42);
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtext"](1);
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementEnd"]();
   }
   if (rf & 2) {
-    const deposito_r19 = ctx.$implicit;
-    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵproperty"]("value", deposito_r19);
+    const deposito_r21 = ctx.$implicit;
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵproperty"]("value", deposito_r21);
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtextInterpolate1"](" ", deposito_r19.descripcion, " ");
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtextInterpolate1"](" ", deposito_r21.descripcion, " ");
   }
 }
 function EntregasQRComponent_th_34_Template(rf, ctx) {
   if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](0, "th", 42);
-    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtext"](1, " Art\u00EDculo");
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](0, "th", 43);
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtext"](1, " C\u00F3digo Interno ");
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementEnd"]();
   }
   if (rf & 2) {
@@ -161,20 +161,20 @@ function EntregasQRComponent_th_34_Template(rf, ctx) {
 }
 function EntregasQRComponent_td_35_Template(rf, ctx) {
   if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](0, "td", 43);
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](0, "td", 44);
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtext"](1);
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementEnd"]();
   }
   if (rf & 2) {
-    const movimiento_articulo_r20 = ctx.$implicit;
+    const movimiento_articulo_r22 = ctx.$implicit;
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtextInterpolate1"](" ", movimiento_articulo_r20.descripcion_articulo, " ");
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtextInterpolate1"](" ", movimiento_articulo_r22.codigo_interno, " ");
   }
 }
 function EntregasQRComponent_th_37_Template(rf, ctx) {
   if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](0, "th", 44);
-    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtext"](1, " U. de Medida ");
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](0, "th", 43);
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtext"](1, " Art\u00EDculo");
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementEnd"]();
   }
   if (rf & 2) {
@@ -185,20 +185,20 @@ function EntregasQRComponent_th_37_Template(rf, ctx) {
 }
 function EntregasQRComponent_td_38_Template(rf, ctx) {
   if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](0, "td", 43);
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](0, "td", 44);
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtext"](1);
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementEnd"]();
   }
   if (rf & 2) {
-    const movimiento_articulo_r21 = ctx.$implicit;
+    const movimiento_articulo_r23 = ctx.$implicit;
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtextInterpolate1"](" ", movimiento_articulo_r21.descripcion_um, " ");
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtextInterpolate1"](" ", movimiento_articulo_r23.descripcion_articulo, " ");
   }
 }
 function EntregasQRComponent_th_40_Template(rf, ctx) {
   if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](0, "th", 45);
-    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtext"](1, " Cantidad ");
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtext"](1, " U. de Medida ");
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementEnd"]();
   }
   if (rf & 2) {
@@ -209,29 +209,53 @@ function EntregasQRComponent_th_40_Template(rf, ctx) {
 }
 function EntregasQRComponent_td_41_Template(rf, ctx) {
   if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](0, "td", 43);
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](0, "td", 44);
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtext"](1);
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementEnd"]();
   }
   if (rf & 2) {
-    const movimiento_articulo_r22 = ctx.$implicit;
+    const movimiento_articulo_r24 = ctx.$implicit;
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtextInterpolate1"](" ", movimiento_articulo_r22.cantidad, " ");
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtextInterpolate1"](" ", movimiento_articulo_r24.descripcion_um, " ");
   }
 }
-function EntregasQRComponent_tr_42_Template(rf, ctx) {
+function EntregasQRComponent_th_43_Template(rf, ctx) {
   if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelement"](0, "tr", 46);
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](0, "th", 46);
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtext"](1, " Cantidad ");
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementEnd"]();
+  }
+  if (rf & 2) {
+    const ctx_r14 = _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵnextContext"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵclassMap"](ctx_r14.color_primario ? "" : ctx_r14.default_color);
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵstyleProp"]("background", ctx_r14.color_primario || "");
   }
 }
-function EntregasQRComponent_tr_43_Template(rf, ctx) {
+function EntregasQRComponent_td_44_Template(rf, ctx) {
+  if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](0, "td", 44);
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtext"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementEnd"]();
+  }
+  if (rf & 2) {
+    const movimiento_articulo_r25 = ctx.$implicit;
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtextInterpolate1"](" ", movimiento_articulo_r25.cantidad, " ");
+  }
+}
+function EntregasQRComponent_tr_45_Template(rf, ctx) {
   if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelement"](0, "tr", 47);
   }
 }
-function EntregasQRComponent_div_44_Template(rf, ctx) {
+function EntregasQRComponent_tr_46_Template(rf, ctx) {
   if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](0, "div", 48)(1, "p", 49);
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelement"](0, "tr", 48);
+  }
+}
+function EntregasQRComponent_div_47_Template(rf, ctx) {
+  if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](0, "div", 49)(1, "p", 50);
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtext"](2, "No hay art\u00EDculos cargados.");
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementEnd"]()();
   }
@@ -256,7 +280,7 @@ class EntregasQRComponent {
     this._headerTextService = _headerTextService;
     this.pwaService = pwaService;
     this.datePipe = datePipe;
-    this.columns = ['articulo', 'unidadmedida', 'cantidad'];
+    this.columns = ['codigo_interno', 'articulo', 'unidadmedida', 'cantidad'];
     this.dataSource = new _angular_material_table__WEBPACK_IMPORTED_MODULE_13__.MatTableDataSource();
     this.depositos = [];
     this.mov_art_list = [];
@@ -522,9 +546,9 @@ EntregasQRComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_
       _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵqueryRefresh"](_t = _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵloadQuery"]()) && (ctx.tabla = _t.first);
     }
   },
-  decls: 51,
+  decls: 54,
   vars: 42,
-  consts: [[1, "flex-auto", "p-2", "sm:p-10", "bg-card", "relative"], [1, "text-3xl", "font-semibold", "mb-6", "text-center"], [1, "flex", "items-center", "justify-center", "mb-6", 3, "click"], [1, "flex", "items-center", "justify-center", "w-12", "h-12", "rounded-full", "mr-4", 3, "ngClass", "ngStyle"], ["width", "22", "height", "22", "viewBox", "0 0 16 16", "fill", "currentColor", "xmlns", "http://www.w3.org/2000/svg"], ["d", "M2.66667 2.66667H6.66667V6.66667H2.66667V2.66667ZM13.3333 2.66667V6.66667H9.33333V2.66667H13.3333ZM9.33333 10H10.6667V8.66667H9.33333V7.33333H10.6667V8.66667H12V7.33333H13.3333V8.66667H12V10H13.3333V12H12V13.3333H10.6667V12H8.66667V13.3333H7.33333V10.6667H9.33333V10ZM10.6667 10V12H12V10H10.6667ZM2.66667 13.3333V9.33333H6.66667V13.3333H2.66667ZM4 4V5.33333H5.33333V4H4ZM10.6667 4V5.33333H12V4H10.6667ZM4 10.6667V12H5.33333V10.6667H4ZM2.66667 7.33333H4V8.66667H2.66667V7.33333ZM6 7.33333H8.66667V10H7.33333V8.66667H6V7.33333ZM7.33333 4H8.66667V6.66667H7.33333V4ZM1.33333 1.33333V4H0V1.33333C0 0.979711 0.140476 0.640573 0.390524 0.390524C0.640573 0.140476 0.979711 0 1.33333 0L4 0V1.33333H1.33333ZM14.6667 0C15.0203 0 15.3594 0.140476 15.6095 0.390524C15.8595 0.640573 16 0.979711 16 1.33333V4H14.6667V1.33333H12V0H14.6667ZM1.33333 12V14.6667H4V16H1.33333C0.979711 16 0.640573 15.8595 0.390524 15.6095C0.140476 15.3594 0 15.0203 0 14.6667V12H1.33333ZM14.6667 14.6667V12H16V14.6667C16 15.0203 15.8595 15.3594 15.6095 15.6095C15.3594 15.8595 15.0203 16 14.6667 16H12V14.6667H14.6667Z", "fill", "currentColor"], ["class", "text-lg font-semibold w-72", 4, "ngIf"], [1, "flex", "items-center", "justify-center", "mb-4", 3, "click"], [1, "flex", "flex-col", "form-menu", "items-center", "justify-center", "my-6", 3, "formGroup"], [1, "w-90"], [1, "block", "font-semibold", "text-lg", "mb-2"], ["appearance", "fill", 1, "w-full", "sm:w-90"], ["type", "text", "matInput", "", "formControlName", "deposito_entrega", "placeholder", "Seleccione Dep\u00F3sito", 3, "matAutocomplete"], ["mat-icon-button", "", "matSuffix", "", 4, "ngIf"], ["mat-icon-button", "", "matSuffix", "", 3, "click", 4, "ngIf"], ["autoActiveFirstOption", "", 3, "displayWith"], ["art", "matAutocomplete"], [3, "value", 4, "ngFor", "ngForOf"], ["mat-flat-button", "", 1, "w-36", "rounded-lg", "py-0", "ml-[215px]", "!border", "border-solid", 3, "click"], [1, "flex", "item-center"], [1, "text-lg"], [1, "overflow-y-auto", "max-h-[150px]", "h-[150px]", "shadow-md", "rounded-lg", "mt-8"], ["mat-table", "", 1, "w-full", 3, "dataSource"], ["matColumnDef", "articulo"], ["mat-header-cell", "", "class", "rounded-tl-lg text-white", 3, "class", "background", 4, "matHeaderCellDef"], ["mat-cell", "", 4, "matCellDef"], ["matColumnDef", "unidadmedida"], ["mat-header-cell", "", "class", "text-white", 3, "class", "background", 4, "matHeaderCellDef"], ["matColumnDef", "cantidad"], ["mat-header-cell", "", "class", "rounded-tr-lg text-white", 3, "class", "background", 4, "matHeaderCellDef"], ["mat-header-row", "", 4, "matHeaderRowDef", "matHeaderRowDefSticky"], ["mat-row", "", 4, "matRowDef", "matRowDefColumns"], ["class", "flex justify-center items-center h-20", 4, "ngIf"], [1, "flex", "items-center", "justify-center"], [1, "w-90", "mt-8"], ["mat-flat-button", "", 1, "rounded-lg", "w-36", "ml-[215px]", "py-0", 3, "click"], [1, "text-lg", "text-white"], [1, "text-lg", "font-semibold", "w-72"], ["mat-icon-button", "", "matSuffix", ""], ["mat-icon-button", "", "matSuffix", "", 3, "click"], [1, "text-xl"], [3, "value"], ["mat-header-cell", "", 1, "rounded-tl-lg", "text-white"], ["mat-cell", ""], ["mat-header-cell", "", 1, "text-white"], ["mat-header-cell", "", 1, "rounded-tr-lg", "text-white"], ["mat-header-row", ""], ["mat-row", ""], [1, "flex", "justify-center", "items-center", "h-20"], [1, "text-gray-600", "text-lg"]],
+  consts: [[1, "flex-auto", "p-2", "sm:p-10", "bg-card", "relative"], [1, "text-3xl", "font-semibold", "mb-6", "text-center"], [1, "flex", "items-center", "justify-center", "mb-6", 3, "click"], [1, "flex", "items-center", "justify-center", "w-12", "h-12", "rounded-full", "mr-4", 3, "ngClass", "ngStyle"], ["width", "22", "height", "22", "viewBox", "0 0 16 16", "fill", "currentColor", "xmlns", "http://www.w3.org/2000/svg"], ["d", "M2.66667 2.66667H6.66667V6.66667H2.66667V2.66667ZM13.3333 2.66667V6.66667H9.33333V2.66667H13.3333ZM9.33333 10H10.6667V8.66667H9.33333V7.33333H10.6667V8.66667H12V7.33333H13.3333V8.66667H12V10H13.3333V12H12V13.3333H10.6667V12H8.66667V13.3333H7.33333V10.6667H9.33333V10ZM10.6667 10V12H12V10H10.6667ZM2.66667 13.3333V9.33333H6.66667V13.3333H2.66667ZM4 4V5.33333H5.33333V4H4ZM10.6667 4V5.33333H12V4H10.6667ZM4 10.6667V12H5.33333V10.6667H4ZM2.66667 7.33333H4V8.66667H2.66667V7.33333ZM6 7.33333H8.66667V10H7.33333V8.66667H6V7.33333ZM7.33333 4H8.66667V6.66667H7.33333V4ZM1.33333 1.33333V4H0V1.33333C0 0.979711 0.140476 0.640573 0.390524 0.390524C0.640573 0.140476 0.979711 0 1.33333 0L4 0V1.33333H1.33333ZM14.6667 0C15.0203 0 15.3594 0.140476 15.6095 0.390524C15.8595 0.640573 16 0.979711 16 1.33333V4H14.6667V1.33333H12V0H14.6667ZM1.33333 12V14.6667H4V16H1.33333C0.979711 16 0.640573 15.8595 0.390524 15.6095C0.140476 15.3594 0 15.0203 0 14.6667V12H1.33333ZM14.6667 14.6667V12H16V14.6667C16 15.0203 15.8595 15.3594 15.6095 15.6095C15.3594 15.8595 15.0203 16 14.6667 16H12V14.6667H14.6667Z", "fill", "currentColor"], ["class", "text-lg font-semibold w-72", 4, "ngIf"], [1, "flex", "items-center", "justify-center", "mb-4", 3, "click"], [1, "flex", "flex-col", "form-menu", "items-center", "justify-center", "my-6", 3, "formGroup"], [1, "w-90"], [1, "block", "font-semibold", "text-lg", "mb-2"], ["appearance", "fill", 1, "w-full", "sm:w-90"], ["type", "text", "matInput", "", "formControlName", "deposito_entrega", "placeholder", "Seleccione Dep\u00F3sito", 3, "matAutocomplete"], ["mat-icon-button", "", "matSuffix", "", 4, "ngIf"], ["mat-icon-button", "", "matSuffix", "", 3, "click", 4, "ngIf"], ["autoActiveFirstOption", "", 3, "displayWith"], ["art", "matAutocomplete"], [3, "value", 4, "ngFor", "ngForOf"], ["mat-flat-button", "", 1, "w-36", "rounded-lg", "py-0", "ml-[215px]", "!border", "border-solid", 3, "click"], [1, "flex", "item-center"], [1, "text-lg"], [1, "overflow-y-auto", "max-h-[150px]", "h-[150px]", "shadow-md", "rounded-lg", "mt-8"], ["mat-table", "", 1, "w-full", 3, "dataSource"], ["matColumnDef", "codigo_interno"], ["mat-header-cell", "", "class", "rounded-tl-lg text-white", 3, "class", "background", 4, "matHeaderCellDef"], ["mat-cell", "", 4, "matCellDef"], ["matColumnDef", "articulo"], ["matColumnDef", "unidadmedida"], ["mat-header-cell", "", "class", "text-white", 3, "class", "background", 4, "matHeaderCellDef"], ["matColumnDef", "cantidad"], ["mat-header-cell", "", "class", "rounded-tr-lg text-white", 3, "class", "background", 4, "matHeaderCellDef"], ["mat-header-row", "", 4, "matHeaderRowDef", "matHeaderRowDefSticky"], ["mat-row", "", 4, "matRowDef", "matRowDefColumns"], ["class", "flex justify-center items-center h-20", 4, "ngIf"], [1, "flex", "items-center", "justify-center"], [1, "w-90", "mt-8"], ["mat-flat-button", "", 1, "rounded-lg", "w-36", "ml-[215px]", "py-0", 3, "click"], [1, "text-lg", "text-white"], [1, "text-lg", "font-semibold", "w-72"], ["mat-icon-button", "", "matSuffix", ""], ["mat-icon-button", "", "matSuffix", "", 3, "click"], [1, "text-xl"], [3, "value"], ["mat-header-cell", "", 1, "rounded-tl-lg", "text-white"], ["mat-cell", ""], ["mat-header-cell", "", 1, "text-white"], ["mat-header-cell", "", 1, "rounded-tr-lg", "text-white"], ["mat-header-row", ""], ["mat-row", ""], [1, "flex", "justify-center", "items-center", "h-20"], [1, "text-gray-600", "text-lg"]],
   template: function EntregasQRComponent_Template(rf, ctx) {
     if (rf & 1) {
       _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](0, "div", 0)(1, "h1", 1);
@@ -580,24 +604,28 @@ EntregasQRComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_
       _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtemplate"](35, EntregasQRComponent_td_35_Template, 2, 1, "td", 25);
       _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementContainerEnd"]();
       _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementContainerStart"](36, 26);
-      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtemplate"](37, EntregasQRComponent_th_37_Template, 2, 4, "th", 27);
+      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtemplate"](37, EntregasQRComponent_th_37_Template, 2, 4, "th", 24);
       _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtemplate"](38, EntregasQRComponent_td_38_Template, 2, 1, "td", 25);
       _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementContainerEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementContainerStart"](39, 28);
-      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtemplate"](40, EntregasQRComponent_th_40_Template, 2, 4, "th", 29);
+      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementContainerStart"](39, 27);
+      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtemplate"](40, EntregasQRComponent_th_40_Template, 2, 4, "th", 28);
       _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtemplate"](41, EntregasQRComponent_td_41_Template, 2, 1, "td", 25);
       _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementContainerEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtemplate"](42, EntregasQRComponent_tr_42_Template, 1, 0, "tr", 30);
-      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtemplate"](43, EntregasQRComponent_tr_43_Template, 1, 0, "tr", 31);
+      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementContainerStart"](42, 29);
+      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtemplate"](43, EntregasQRComponent_th_43_Template, 2, 4, "th", 30);
+      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtemplate"](44, EntregasQRComponent_td_44_Template, 2, 1, "td", 25);
+      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementContainerEnd"]();
+      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtemplate"](45, EntregasQRComponent_tr_45_Template, 1, 0, "tr", 31);
+      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtemplate"](46, EntregasQRComponent_tr_46_Template, 1, 0, "tr", 32);
       _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtemplate"](44, EntregasQRComponent_div_44_Template, 3, 0, "div", 32);
+      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtemplate"](47, EntregasQRComponent_div_47_Template, 3, 0, "div", 33);
       _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementEnd"]()()();
-      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](45, "div", 33)(46, "div", 34)(47, "button", 35);
-      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵlistener"]("click", function EntregasQRComponent_Template_button_click_47_listener() {
+      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](48, "div", 34)(49, "div", 35)(50, "button", 36);
+      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵlistener"]("click", function EntregasQRComponent_Template_button_click_50_listener() {
         return ctx.onSubmit();
       });
-      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](48, "div", 19)(49, "span", 36);
-      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtext"](50);
+      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](51, "div", 19)(52, "span", 37);
+      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtext"](53);
       _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementEnd"]()()()()()();
     }
     if (rf & 2) {
@@ -631,7 +659,7 @@ EntregasQRComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_
       _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵstyleProp"]("border", ctx.color_primario || "")("color", ctx.color_primario || "");
       _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵadvance"](5);
       _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵproperty"]("dataSource", ctx.dataSource);
-      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵadvance"](10);
+      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵadvance"](13);
       _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵproperty"]("matHeaderRowDef", ctx.columns)("matHeaderRowDefSticky", true);
       _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵadvance"](1);
       _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵproperty"]("matRowDefColumns", ctx.columns);
@@ -889,6 +917,7 @@ class SaveComponent {
         _this3.unidades_de_medida = _this3.articulos.filter(a => a.idarticulo === idarticulo).sort((a, b) => a.factor_um - b.factor_um).map(a => {
           return {
             idarticulo: a.idarticulo,
+            codigo_interno: a.codigo_interno,
             idunidadmedida: a.idunidadmedida,
             descripcion_um: a.um,
             stock: a.stock
