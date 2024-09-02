@@ -1572,7 +1572,7 @@ class SaveComponent {
       Promise.all([this.getVentas(), this.getItems(this.entrega.identrega)]).then(([ventas, items]) => {
         this.ventas = ventas;
         this.mov_art_list = items.map(m => {
-          let venta = this.ventas.find(v => v.idventa === m.idventa);
+          let venta = this.ventas.find(v => v.idventagenerica === m.idventa);
           return {
             idarticulo: m.idarticulo,
             cantidad: parseFloat(m.cantidad),
@@ -1581,7 +1581,7 @@ class SaveComponent {
             descripcion_um: m.descripcion_um,
             codigo_interno: m.codigo_interno_articulo,
             stock: m.stock_minimo_articulo,
-            idventa: m.idventa ? venta?.idventa : null,
+            idventa: m.idventa ? venta?.idventagenerica : null,
             fecha_venta: venta ? venta.fecha : '',
             cliente_venta: venta ? venta.cliente : ''
           };
@@ -2235,7 +2235,7 @@ class EntregasService {
   }
   getVentas() {
     let subject = new rxjs__WEBPACK_IMPORTED_MODULE_2__.Subject();
-    this.http.get(`${environments_environment__WEBPACK_IMPORTED_MODULE_0__.environment.ventas.view_venta_selects}`).subscribe(resp => {
+    this.http.get(`${environments_environment__WEBPACK_IMPORTED_MODULE_0__.environment.ventas.view_venta_genericas}`).subscribe(resp => {
       subject.next({
         list: resp.result
       });
