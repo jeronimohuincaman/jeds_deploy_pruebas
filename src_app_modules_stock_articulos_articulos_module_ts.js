@@ -173,7 +173,7 @@ class ArticulosComponent {
     };
     this.extraParams = '';
     this.parametrosActualizados = new _angular_core__WEBPACK_IMPORTED_MODULE_15__.EventEmitter();
-    this.env = environments_environment__WEBPACK_IMPORTED_MODULE_2__.environment.stock.view_articulos + '?sort=descripcion&pagination=1';
+    this.env = environments_environment__WEBPACK_IMPORTED_MODULE_2__.environment.stock.view_articulos + '?sort=descripcion&pagination=1&sort=-total_stock';
     this.search = new _angular_forms__WEBPACK_IMPORTED_MODULE_16__.FormControl('');
     this.default_color = 'border-primary text-primary';
     this._unsubscribeAll = new rxjs__WEBPACK_IMPORTED_MODULE_17__.Subject();
@@ -479,7 +479,7 @@ ArticulosComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_1
       _angular_core__WEBPACK_IMPORTED_MODULE_15__["ɵɵclassMap"](ctx.color_primario ? "" : ctx.default_color);
       _angular_core__WEBPACK_IMPORTED_MODULE_15__["ɵɵstyleProp"]("border", ctx.color_primario || "")("color", ctx.color_primario || "");
       _angular_core__WEBPACK_IMPORTED_MODULE_15__["ɵɵadvance"](12);
-      _angular_core__WEBPACK_IMPORTED_MODULE_15__["ɵɵproperty"]("cache", false)("columnsNames", ctx.headers)("renderType", "client")("columnsParams", ctx.column_params)("endpoint", ctx.env)("functions", ctx.funcionesObjeto)("extraClasses", "td.mat-cell border,td.mat-cell border-slate-400")("FiltersLikes", ctx.filtersLike)("extraParams", ctx.extraParams);
+      _angular_core__WEBPACK_IMPORTED_MODULE_15__["ɵɵproperty"]("cache", false)("columnsNames", ctx.headers)("renderType", "ssp")("columnsParams", ctx.column_params)("endpoint", ctx.env)("functions", ctx.funcionesObjeto)("extraClasses", "td.mat-cell border,td.mat-cell border-slate-400")("FiltersLikes", ctx.filtersLike)("extraParams", ctx.extraParams);
     }
   },
   dependencies: [_angular_material_button__WEBPACK_IMPORTED_MODULE_23__.MatButton, _shared_components_tabla_dinamica_tabla_dinamica_component__WEBPACK_IMPORTED_MODULE_3__.TablaDinamicaComponent],

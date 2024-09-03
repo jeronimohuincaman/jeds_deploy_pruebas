@@ -1528,6 +1528,7 @@ class SaveComponent {
     this._unsubscribeAll = new rxjs__WEBPACK_IMPORTED_MODULE_9__.Subject();
     this.creadoExitosamente = new _angular_core__WEBPACK_IMPORTED_MODULE_7__.EventEmitter();
     this.editadoExitosamente = new _angular_core__WEBPACK_IMPORTED_MODULE_7__.EventEmitter();
+    this.deposito_default = 0;
     this.entrega = this.data ? this.data : null;
     this.title = this.entrega?.identrega ? `Editar Entrega ${this.entrega.fecha_precarga} - ${this.entrega.hora_precarga}` : `Nueva Entrega`;
     /* this`user = JSON.parse(sessionStorage.getItem('user')) */
@@ -1542,6 +1543,7 @@ class SaveComponent {
     this._empresaService.empresa$.pipe((0,rxjs__WEBPACK_IMPORTED_MODULE_10__.takeUntil)(this._unsubscribeAll)).subscribe(empresa => {
       this.color_primario = empresa.color_primario;
       this.color_secundario = empresa.color_secundario;
+      this.deposito_default = empresa.deposito_default;
     });
     // Load empresa data
     this._empresaService.getEmpresa();
@@ -1572,7 +1574,7 @@ class SaveComponent {
       Promise.all([this.getVentas(), this.getItems(this.entrega.identrega)]).then(([ventas, items]) => {
         this.ventas = ventas;
         this.mov_art_list = items.map(m => {
-          let venta = this.ventas.find(v => v.idventagenerica === m.idventa);
+          let venta = this.ventas.find(v => v.idventagenericagenerica === m.idventagenerica);
           return {
             idarticulo: m.idarticulo,
             cantidad: parseFloat(m.cantidad),
@@ -1581,7 +1583,7 @@ class SaveComponent {
             descripcion_um: m.descripcion_um,
             codigo_interno: m.codigo_interno_articulo,
             stock: m.stock_minimo_articulo,
-            idventa: m.idventa ? venta?.idventagenerica : null,
+            idventagenerica: m.idventagenerica ? venta?.idventagenericagenerica : null,
             fecha_venta: venta ? venta.fecha : '',
             cliente_venta: venta ? venta.cliente : ''
           };
@@ -1597,7 +1599,10 @@ class SaveComponent {
     this.form = new _angular_forms__WEBPACK_IMPORTED_MODULE_15__.FormGroup({
       fecha: new _angular_forms__WEBPACK_IMPORTED_MODULE_15__.FormControl(this.entrega?.fecha_precarga ? this.datePipe.transform(new Date(`${mes}/${dia}/${anio}`), 'yyyy-MM-dd') : this.datePipe.transform(new Date(), 'yyyy-MM-dd'), [_angular_forms__WEBPACK_IMPORTED_MODULE_15__.Validators.required]),
       hora: new _angular_forms__WEBPACK_IMPORTED_MODULE_15__.FormControl(this.entrega?.hora_precarga ? this.entrega.hora_precarga : this.datePipe.transform(new Date(), 'HH:mm'), _angular_forms__WEBPACK_IMPORTED_MODULE_15__.Validators.required),
-      usuario_entrega: new _angular_forms__WEBPACK_IMPORTED_MODULE_15__.FormControl(this.entrega ? this.entrega.nick_usuario_entrega : ''),
+      usuario_entrega: new _angular_forms__WEBPACK_IMPORTED_MODULE_15__.FormControl(this.entrega?.usuario_entrega ? {
+        codigo: this.entrega.usuario_entrega,
+        nick: this.entrega.nick_usuario_entrega
+      } : ''),
       deposito_entrega: new _angular_forms__WEBPACK_IMPORTED_MODULE_15__.FormControl(this.entrega ? {
         descripcion: this.entrega.descripcion_deposito,
         iddeposito: this.entrega.iddeposito
@@ -1671,6 +1676,11 @@ class SaveComponent {
       new Promise( /*#__PURE__*/function () {
         var _ref2 = (0,C_work_jeds_jedstion_source_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* (resolve) {
           _this2.depositos = Depositos.list;
+          // Filtrar y autoasignar el depósito por defecto
+          const depositoPorDefecto = _this2.depositos.find(deposito => deposito.iddeposito === _this2.deposito_default);
+          if (depositoPorDefecto && !_this2.entrega) {
+            _this2.form.get('deposito_entrega').setValue(depositoPorDefecto);
+          }
           _this2.filteredDepositos = _this2.form.get('deposito_entrega').valueChanges.pipe((0,rxjs__WEBPACK_IMPORTED_MODULE_17__.startWith)(''), (0,rxjs__WEBPACK_IMPORTED_MODULE_18__.map)(value => _this2._filterDepositos(value)));
           resolve(true);
         });
@@ -1695,7 +1705,7 @@ class SaveComponent {
   }
   /**
    * Listamos los movimientos asociados a este registro
-   * @param idventa
+   * @param idventagenerica
    * @returns
    */
   getVentas() {
@@ -1766,7 +1776,7 @@ class SaveComponent {
               descripcion_um: res.unidadmedida_descripcion,
               codigo_interno: res.articulo.codigo_interno,
               stock: res.stock,
-              idventa: res.venta.idventa ? res.venta.idventa : null,
+              idventagenerica: res.venta.idventagenerica ? res.venta.idventagenerica : null,
               fecha_venta: res.venta ? res.venta.fecha : '',
               cliente_venta: res.venta ? res.venta.cliente : ''
             };
@@ -1833,7 +1843,7 @@ class SaveComponent {
         idarticulo: objeto.idarticulo,
         cantidad: objeto.cantidad,
         idunidadmedida: objeto.idunidadmedida,
-        idventa: objeto.idventa
+        idventagenerica: objeto.idventagenerica
       }));
       if (movimientos.length === 0) {
         return this.alert.warning('Debe ingresar un articulo a la orden de entrega');
@@ -1849,7 +1859,7 @@ class SaveComponent {
           idusuario: this.user.id,
           fecha_hora_precarga: fecha_hora_precarga,
           iddeposito: this.form.get('deposito_entrega').value.iddeposito,
-          usuario_entrega: this.form.get('usuario_entrega').value.codigo ? this.form.get('usuario_entrega').value.codigo : null,
+          usuario_entrega: this.form.get('usuario_entrega').value?.codigo ? this.form.get('usuario_entrega').value.codigo : null,
           observaciones: this.form.get('observaciones').value
         },
         movimientos: movimientos

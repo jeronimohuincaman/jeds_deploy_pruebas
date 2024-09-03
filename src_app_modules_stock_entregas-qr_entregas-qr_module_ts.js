@@ -897,7 +897,7 @@ class SaveComponent {
               _this2.buttonStyle = 'scanned';
               _this2.getUnidadesDeMedidaArticulos(articulo.idarticulo);
             } else {
-              _this2.alert.error('Artículo no encontrado en este depósito.');
+              _this2.alert.error('Artículo sin stock en este depósito.');
             }
             _this2.form.get('unidadmedida').enable();
             _this2.form.get('cantidad').enable();
