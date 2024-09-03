@@ -1356,7 +1356,7 @@ class EntregasQRService {
    * @returns Verifica si el QR escaneado de las Etiquetas de Articulos es valido.
    */
   getArticuloQR(idarticulo) {
-    return this.http.get(`${environments_environment__WEBPACK_IMPORTED_MODULE_0__.environment.stock.view_articulos}?filter[idarticulo]=` + idarticulo);
+    return this.http.get(`${environments_environment__WEBPACK_IMPORTED_MODULE_0__.environment.stock.view_articulos}?pagination=1&filter[idarticulo]=` + idarticulo);
   }
   /**
    *

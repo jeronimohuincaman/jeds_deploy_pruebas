@@ -17014,7 +17014,7 @@ const environment = {
     rubros: `${$BASE_REST}/stk_rubros`,
     articulos: `${$BASE_REST}/stk_articulos`,
     reporte_etiqueta: `${$BASE_REST}/stk_articulo/generar_etiquetas`,
-    view_articulos: `${$BASE_REST}/view_articulos?pagination=1`,
+    view_articulos: `${$BASE_REST}/view_articulos`,
     articulo_unidad_medidas: `${$BASE_REST}/stk_articulo_unidad_medidas`,
     stock_inicial: `${$BASE_REST}/stk_stock_inicials`,
     view_stock_inicials: `${$BASE_REST}/view_stock_inicials`,
