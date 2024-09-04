@@ -17029,9 +17029,9 @@ const environment = {
     entregas: `${$BASE_REST}/stk_entregas`,
     reporte_entrega: `${$BASE_REST}/stk_entrega/generar_reporte?identrega=`,
     view_stock_entregas: `${$BASE_REST}/view_stock_entregas`,
-    ver_imagen: `${$BASE_REST}` // uploads/nombre_imagen se lo concatena en otros componentes
+    ver_imagen: `${$BASE_REST}`,
+    view_stock_depositos: `${$BASE_REST}/view_stock_depositos`
   },
-
   ventas: {
     view_venta_selects: `${$BASE_REST}/view_venta_selects`,
     view_venta_genericas: `${$BASE_REST}/view_venta_genericas`,

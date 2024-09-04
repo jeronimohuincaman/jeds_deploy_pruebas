@@ -64,8 +64,8 @@ class DepositosComponent {
     this.router = router;
     this._headerTextService = _headerTextService;
     this.dataSource = new _angular_material_table__WEBPACK_IMPORTED_MODULE_11__.MatTableDataSource();
-    this.headers = ['Descripcion', 'Activo', 'Acciones'];
-    this.column_params = ['descripcion', 'activo', 'acciones'];
+    this.headers = ['Descripcion', 'Activo', 'Predeterminado', 'Acciones'];
+    this.column_params = ['descripcion', 'activo', 'es_default', 'acciones'];
     this.funcionesObjeto = null;
     this.filtroBusqueda = '';
     this.filtersLike = ['descripcion'];
@@ -74,7 +74,7 @@ class DepositosComponent {
     };
     this.extraParams = '';
     this.parametrosActualizados = new _angular_core__WEBPACK_IMPORTED_MODULE_12__.EventEmitter();
-    this.env = environments_environment__WEBPACK_IMPORTED_MODULE_1__.environment.stock.depositos + '?';
+    this.env = environments_environment__WEBPACK_IMPORTED_MODULE_1__.environment.stock.view_stock_depositos + '?';
     this.search = new _angular_forms__WEBPACK_IMPORTED_MODULE_13__.FormControl('');
     this.default_color = 'border-primary text-primary';
     this._unsubscribeAll = new rxjs__WEBPACK_IMPORTED_MODULE_14__.Subject();
@@ -728,6 +728,7 @@ class SaveComponent {
     this._unsubscribeAll = new rxjs__WEBPACK_IMPORTED_MODULE_5__.Subject();
     this.creadoExitosamente = new _angular_core__WEBPACK_IMPORTED_MODULE_4__.EventEmitter();
     this.editadoExitosamente = new _angular_core__WEBPACK_IMPORTED_MODULE_4__.EventEmitter();
+    this.deposito_default = 0;
     this.deposito = this.data ? this.data : null;
     this.title = this.deposito?.iddeposito ? 'Editar depósito' : 'Nuevo depósito';
   }
@@ -736,6 +737,7 @@ class SaveComponent {
     this._empresaService.empresa$.pipe((0,rxjs__WEBPACK_IMPORTED_MODULE_6__.takeUntil)(this._unsubscribeAll)).subscribe(empresa => {
       this.color_primario = empresa.color_primario;
       this.color_secundario = empresa.color_secundario;
+      this.deposito_default = empresa.deposito_default;
     });
     // Load empresa data
     this._empresaService.getEmpresa();
@@ -763,7 +765,7 @@ class SaveComponent {
     this.form = new _angular_forms__WEBPACK_IMPORTED_MODULE_11__.FormGroup({
       descripcion: new _angular_forms__WEBPACK_IMPORTED_MODULE_11__.FormControl(this.deposito ? this.deposito.descripcion : '', _angular_forms__WEBPACK_IMPORTED_MODULE_11__.Validators.required),
       activo: new _angular_forms__WEBPACK_IMPORTED_MODULE_11__.FormControl(this.deposito ? this.deposito?.activo ? 1 : 0 : '', _angular_forms__WEBPACK_IMPORTED_MODULE_11__.Validators.required),
-      default: new _angular_forms__WEBPACK_IMPORTED_MODULE_11__.FormControl('', _angular_forms__WEBPACK_IMPORTED_MODULE_11__.Validators.required)
+      default: new _angular_forms__WEBPACK_IMPORTED_MODULE_11__.FormControl(this.deposito.iddeposito === this.deposito_default ? 1 : 0, _angular_forms__WEBPACK_IMPORTED_MODULE_11__.Validators.required)
     });
   }
   onSubmit() {
