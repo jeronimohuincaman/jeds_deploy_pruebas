@@ -778,7 +778,7 @@ class SaveComponent {
         activo: this.form.get('activo').value,
         default: this.form.get('default').value
       };
-      if (this.deposito.iddeposito) {
+      if (this.deposito?.iddeposito) {
         this.depositosService.updateDeposito(payload).subscribe({
           next: data => {
             if (data) {
