@@ -765,7 +765,7 @@ class SaveComponent {
     this.form = new _angular_forms__WEBPACK_IMPORTED_MODULE_11__.FormGroup({
       descripcion: new _angular_forms__WEBPACK_IMPORTED_MODULE_11__.FormControl(this.deposito ? this.deposito.descripcion : '', _angular_forms__WEBPACK_IMPORTED_MODULE_11__.Validators.required),
       activo: new _angular_forms__WEBPACK_IMPORTED_MODULE_11__.FormControl(this.deposito ? this.deposito?.activo ? 1 : 0 : '', _angular_forms__WEBPACK_IMPORTED_MODULE_11__.Validators.required),
-      default: new _angular_forms__WEBPACK_IMPORTED_MODULE_11__.FormControl(this.deposito.iddeposito === this.deposito_default ? 1 : 0, _angular_forms__WEBPACK_IMPORTED_MODULE_11__.Validators.required)
+      default: new _angular_forms__WEBPACK_IMPORTED_MODULE_11__.FormControl(this.deposito?.iddeposito === this.deposito_default ? 1 : 0, _angular_forms__WEBPACK_IMPORTED_MODULE_11__.Validators.required)
     });
   }
   onSubmit() {
