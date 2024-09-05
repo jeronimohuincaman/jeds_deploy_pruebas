@@ -772,13 +772,13 @@ class SaveComponent {
     if (!this.form.valid) {
       return this.alert.error('Revise Los Datos Ingresados');
     } else {
-      const payload = {
-        ...this.deposito,
+      let payload = {
         descripcion: this.form.get('descripcion').value,
         activo: this.form.get('activo').value,
         default: this.form.get('default').value
       };
       if (this.deposito?.iddeposito) {
+        payload['iddeposito'] = this.deposito.iddeposito;
         this.depositosService.updateDeposito(payload).subscribe({
           next: data => {
             if (data) {
