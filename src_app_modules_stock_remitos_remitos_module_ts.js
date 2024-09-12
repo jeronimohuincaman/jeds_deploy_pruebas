@@ -258,6 +258,13 @@ class AddArticuloComponent {
             um_base: um_base
           };
         });
+        // Autoasigna la primera unidad de medida al control del formulario
+        if (_this2.unidades_de_medida.length > 0) {
+          _this2.form.get('unidadmedida').setValue(_this2.unidades_de_medida[0].idunidadmedida);
+          _this2.seleccionArticulo({
+            um: _this2.unidades_de_medida[0].idunidadmedida
+          });
+        }
         resolve(true);
       });
       return function (_x2) {
@@ -1453,6 +1460,7 @@ class SaveComponent {
     this._unsubscribeAll = new rxjs__WEBPACK_IMPORTED_MODULE_9__.Subject();
     this.creadoExitosamente = new _angular_core__WEBPACK_IMPORTED_MODULE_7__.EventEmitter();
     this.editadoExitosamente = new _angular_core__WEBPACK_IMPORTED_MODULE_7__.EventEmitter();
+    this.deposito_default = 0;
     this.remito = this.data ? this.data : null;
     this.title = this.remito?.idremito ? `Editar Remito ${this.remito.fecha} - ${this.remito.hora}` : `Nuevo Remito`;
     /* this`user = JSON.parse(sessionStorage.getItem('user')) */
@@ -1467,6 +1475,7 @@ class SaveComponent {
     this._empresaService.empresa$.pipe((0,rxjs__WEBPACK_IMPORTED_MODULE_10__.takeUntil)(this._unsubscribeAll)).subscribe(empresa => {
       this.color_primario = empresa.color_primario;
       this.color_secundario = empresa.color_secundario;
+      this.deposito_default = empresa.deposito_default;
     });
     // Load empresa data
     this._empresaService.getEmpresa();
@@ -1542,6 +1551,11 @@ class SaveComponent {
         var _ref = (0,C_work_jeds_jedstion_source_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* (resolve) {
           _this2.depositos = Depositos.list;
           _this2.filteredDepositos = _this2.form.get('deposito').valueChanges.pipe((0,rxjs__WEBPACK_IMPORTED_MODULE_13__.startWith)(''), (0,rxjs__WEBPACK_IMPORTED_MODULE_14__.map)(value => _this2._filterDepositos(value)));
+          // Filtrar y autoasignar el depósito por defecto
+          const depositoPorDefecto = _this2.depositos.find(deposito => deposito.iddeposito === _this2.deposito_default);
+          if (depositoPorDefecto && !_this2.remito) {
+            _this2.form.get('deposito').setValue(depositoPorDefecto);
+          }
           resolve(true);
         });
         return function (_x) {

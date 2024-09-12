@@ -497,8 +497,7 @@ class EntregasQRComponent {
       let movimientos = this.mov_art_list.map(objeto => ({
         idarticulo: objeto.idarticulo,
         cantidad: objeto.cantidad,
-        idunidadmedida: objeto.idunidadmedida,
-        idventa: this.orden_servicio
+        idunidadmedida: objeto.idunidadmedida
       }));
       if (movimientos.length === 0) {
         return this.alert.warning('Debe ingresar un articulo a la orden de entrega.');
@@ -517,7 +516,8 @@ class EntregasQRComponent {
           fecha_hora_precarga: fecha_hora,
           iddeposito: this.form.get('deposito_entrega').value.iddeposito,
           usuario_entrega: this.idUsuario ? this.idUsuario : null,
-          observaciones: `Entrega QR - Órden N°${this.orden_servicio}`
+          observaciones: `Entrega QR - Órden N°${this.orden_servicio}`,
+          idventagenerica: this.orden_servicio
         },
         movimientos: movimientos
       };

@@ -229,6 +229,13 @@ class AddArticuloComponent {
               um_base: um_base
             };
           });
+          // Autoasigna la primera unidad de medida al control del formulario
+          if (_this2.unidades_de_medida.length > 0) {
+            _this2.form.get('unidadmedida').setValue(_this2.unidades_de_medida[0].idunidadmedida);
+            _this2.seleccionArticulo({
+              um: _this2.unidades_de_medida[0].idunidadmedida
+            });
+          }
           resolve(true);
         });
         return function (_x2) {
@@ -1470,7 +1477,7 @@ class SaveComponent {
           this.dataSource = new _angular_material_table__WEBPACK_IMPORTED_MODULE_8__.MatTableDataSource(this.mov_art_list); //Actualizo la tabla
           // Desabilito el campo IVA, Presupuesto y Numero
           if (this.mov_art_list.length != 0) {
-            this.form.get('iva').disable();
+            // this.form.get('iva').disable();
             this.form.get('presupuesto').disable();
             // this.form.get('numero').disable();
           }
@@ -1496,7 +1503,7 @@ class SaveComponent {
     this.dataSource = new _angular_material_table__WEBPACK_IMPORTED_MODULE_8__.MatTableDataSource(this.mov_art_list);
     // Habilito el campo de IVA, Presupuesto y Numero si la lista de movimientos está vacía
     if (this.mov_art_list.length === 0) {
-      this.form.get('iva').enable();
+      // this.form.get('iva').enable();
       this.form.get('presupuesto').enable();
       // this.form.get('numero').enable();
     }
