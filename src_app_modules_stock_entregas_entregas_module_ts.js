@@ -599,10 +599,17 @@ class EntregasComponent {
         this.alert.error('Código QR vacío o inválido.');
         return;
       }
+      const data = this.tabla.getElementosExistentes(); // Utilizo todos los items del servicio
       const idventagenerica = parseInt(code, 10); // ID de la venta
-      const venta = `Venta N° ${idventagenerica}`; // Texto que aparecera en la barra de busqueda
-      this._searchService.getSearchInput().setValue(venta); // Le seteo el texto a la barra de busqueda
-      this.extraParams += `&filter[idventagenerica]=${idventagenerica}`; // Filtro por el ID concreto que recibo del escanner
+      let aux = data.filter(items => items.idventagenerica === idventagenerica); // Variable auxiliar para verificar si hay items asociados a la venta
+      if (aux?.length > 0) {
+        // Pregunto si hay items
+        const venta = `Venta N° ${idventagenerica}`; // Texto que aparecera en la barra de busqueda
+        this._searchService.getSearchInput().setValue(venta); // Le seteo el texto a la barra de busqueda
+        this.extraParams += `&filter[idventagenerica]=${idventagenerica}`; // Filtro por el ID concreto que recibo del escanner
+      } else {
+        this.alert.error('No hay items asociados a esa venta.');
+      }
       this.tabla.filters(this.filtroBusqueda); // Aplico filtro y renderizo la tabla
     });
   }
