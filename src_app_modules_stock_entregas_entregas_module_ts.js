@@ -581,6 +581,13 @@ class EntregasComponent {
     this.SearchTextSub$ = this._searchService.getSearchText().pipe(
     //Se obtienen los valores que coinciden con lo ingresado en la barra de busqueda
     (0,rxjs__WEBPACK_IMPORTED_MODULE_18__.debounceTime)(750), (0,rxjs__WEBPACK_IMPORTED_MODULE_19__.distinctUntilChanged)()).subscribe(value => {
+      // Esta condicion la hago como parche: cuando se buscaba una orden de servicio por QR se seteaba un determinado query param, 
+      // pero sí despues haciamos una busqueda por la barra de navegacion ese valor no se limpiaba, lo que generaba que el filtrado no sea certero. 
+      if (this.filter.orden_servicio === 1) {
+        this.extraParams = this.filtroBusqueda.replace(`&filter[idventagenerica]=${this.orden_servicio}`, ""); // Elimino el query params.
+        this.filter.orden_servicio = 0; // Le aviso al resto del sistema que ya no se esta filtrando por OS en los query params.
+      }
+
       this.filtroBusqueda = value;
       this.tabla.filters(this.filtroBusqueda);
     });
@@ -605,8 +612,10 @@ class EntregasComponent {
       if (aux?.length > 0) {
         // Pregunto si hay items
         const venta = `Venta N° ${idventagenerica}`; // Texto que aparecera en la barra de busqueda
+        this.orden_servicio = idventagenerica; // Almaceno la OS de manera global
+        this.filter.orden_servicio = 1; // Le aviso al resto del sistema de que en los query params se esta filtrando por esa OS
         this._searchService.getSearchInput().setValue(venta); // Le seteo el texto a la barra de busqueda
-        this.extraParams += `&filter[idventagenerica]=${idventagenerica}`; // Filtro por el ID concreto que recibo del escanner
+        this.extraParams = `&filter[idventagenerica]=${idventagenerica}`; // Filtro por el ID concreto que recibo del escanner
       } else {
         this.alert.error('No hay items asociados a esa venta.');
       }
