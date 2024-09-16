@@ -469,29 +469,31 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "EntregasComponent": () => (/* binding */ EntregasComponent)
 /* harmony export */ });
+/* harmony import */ var C_work_jeds_jedstion_source_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js */ 71670);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @angular/core */ 86839);
-/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! rxjs */ 80228);
-/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! rxjs */ 68951);
-/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! rxjs */ 71989);
-/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! rxjs */ 98977);
-/* harmony import */ var _angular_material_table__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @angular/material/table */ 83348);
-/* harmony import */ var _save_save_component__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./save/save.component */ 20113);
-/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! @angular/forms */ 69542);
-/* harmony import */ var _shared_components_tabla_dinamica_tabla_dinamica_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../shared/components/tabla-dinamica/tabla-dinamica.component */ 71549);
-/* harmony import */ var environments_environment__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! environments/environment */ 92340);
-/* harmony import */ var _filter_menu_filter_menu_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./filter-menu/filter-menu.component */ 48097);
-/* harmony import */ var _shared_components_lector_qr_lector_qr_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @shared/components/lector-qr/lector-qr.component */ 5729);
-/* harmony import */ var _service_entregas_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../service/entregas.service */ 78165);
-/* harmony import */ var _shared_service_app_empresa_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @shared/service/app/empresa.service */ 66270);
-/* harmony import */ var _fuse_services_confirmation__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @fuse/services/confirmation */ 25377);
-/* harmony import */ var _shared_service_app_alert_service__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @shared/service/app/alert.service */ 26375);
-/* harmony import */ var _angular_material_dialog__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! @angular/material/dialog */ 67486);
-/* harmony import */ var app_layout_common_search_search_service__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! app/layout/common/search/search.service */ 77374);
-/* harmony import */ var _shared_service_app_jeds_menu_service__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @shared/service/app/jeds-menu.service */ 92078);
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! @angular/router */ 86679);
-/* harmony import */ var _shared_components_header_text_header_text_service__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @shared/components/header-text/header-text.service */ 78978);
-/* harmony import */ var _shared_service_app_pwa_service__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @shared/service/app/pwa.service */ 16173);
-/* harmony import */ var _angular_material_button__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! @angular/material/button */ 83677);
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! rxjs */ 80228);
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! rxjs */ 68951);
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! rxjs */ 71989);
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! rxjs */ 98977);
+/* harmony import */ var _angular_material_table__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! @angular/material/table */ 83348);
+/* harmony import */ var _save_save_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./save/save.component */ 20113);
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! @angular/forms */ 69542);
+/* harmony import */ var _shared_components_tabla_dinamica_tabla_dinamica_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../shared/components/tabla-dinamica/tabla-dinamica.component */ 71549);
+/* harmony import */ var environments_environment__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! environments/environment */ 92340);
+/* harmony import */ var _filter_menu_filter_menu_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./filter-menu/filter-menu.component */ 48097);
+/* harmony import */ var _shared_components_lector_qr_lector_qr_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @shared/components/lector-qr/lector-qr.component */ 5729);
+/* harmony import */ var _service_entregas_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../service/entregas.service */ 78165);
+/* harmony import */ var _shared_service_app_empresa_service__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @shared/service/app/empresa.service */ 66270);
+/* harmony import */ var _fuse_services_confirmation__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @fuse/services/confirmation */ 25377);
+/* harmony import */ var _shared_service_app_alert_service__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @shared/service/app/alert.service */ 26375);
+/* harmony import */ var _angular_material_dialog__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! @angular/material/dialog */ 67486);
+/* harmony import */ var app_layout_common_search_search_service__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! app/layout/common/search/search.service */ 77374);
+/* harmony import */ var _shared_service_app_jeds_menu_service__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @shared/service/app/jeds-menu.service */ 92078);
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! @angular/router */ 86679);
+/* harmony import */ var _shared_components_header_text_header_text_service__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @shared/components/header-text/header-text.service */ 78978);
+/* harmony import */ var _shared_service_app_pwa_service__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @shared/service/app/pwa.service */ 16173);
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! @angular/common */ 86477);
+/* harmony import */ var _angular_material_button__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! @angular/material/button */ 83677);
 
 
 
@@ -514,6 +516,33 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
+
+function EntregasComponent_button_9_Template(rf, ctx) {
+  if (rf & 1) {
+    const _r3 = _angular_core__WEBPACK_IMPORTED_MODULE_14__["ɵɵgetCurrentView"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_14__["ɵɵelementStart"](0, "button", 3, 11);
+    _angular_core__WEBPACK_IMPORTED_MODULE_14__["ɵɵlistener"]("click", function EntregasComponent_button_9_Template_button_click_0_listener() {
+      _angular_core__WEBPACK_IMPORTED_MODULE_14__["ɵɵrestoreView"](_r3);
+      const ctx_r2 = _angular_core__WEBPACK_IMPORTED_MODULE_14__["ɵɵnextContext"]();
+      return _angular_core__WEBPACK_IMPORTED_MODULE_14__["ɵɵresetView"](ctx_r2.saveEntrega());
+    });
+    _angular_core__WEBPACK_IMPORTED_MODULE_14__["ɵɵelementStart"](2, "div", 4);
+    _angular_core__WEBPACK_IMPORTED_MODULE_14__["ɵɵnamespaceSVG"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_14__["ɵɵelementStart"](3, "svg", 12);
+    _angular_core__WEBPACK_IMPORTED_MODULE_14__["ɵɵelement"](4, "path", 13);
+    _angular_core__WEBPACK_IMPORTED_MODULE_14__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_14__["ɵɵnamespaceHTML"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_14__["ɵɵelementStart"](5, "span", 7);
+    _angular_core__WEBPACK_IMPORTED_MODULE_14__["ɵɵtext"](6, "Nueva Entrega");
+    _angular_core__WEBPACK_IMPORTED_MODULE_14__["ɵɵelementEnd"]()()();
+  }
+  if (rf & 2) {
+    const ctx_r0 = _angular_core__WEBPACK_IMPORTED_MODULE_14__["ɵɵnextContext"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_14__["ɵɵclassMap"](ctx_r0.color_primario ? "" : ctx_r0.default_color);
+    _angular_core__WEBPACK_IMPORTED_MODULE_14__["ɵɵstyleProp"]("border", ctx_r0.color_primario || "")("color", ctx_r0.color_primario || "");
+  }
+}
 class EntregasComponent {
   constructor(_entregasService, _empresaService, confirm, alert, dialogo, _searchService, _menuService, router, _headerTextService, pwaService) {
     this._entregasService = _entregasService;
@@ -526,7 +555,7 @@ class EntregasComponent {
     this.router = router;
     this._headerTextService = _headerTextService;
     this.pwaService = pwaService;
-    this.dataSource = new _angular_material_table__WEBPACK_IMPORTED_MODULE_13__.MatTableDataSource();
+    this.dataSource = new _angular_material_table__WEBPACK_IMPORTED_MODULE_15__.MatTableDataSource();
     this.headers = ['Fecha Precarga', 'Fecha Entrega', 'Responsable', 'Observaciones', 'Deposito', 'Usuario Encargado', 'Estado', 'Acciones'];
     this.column_params = ['fecha_hora_precarga', 'fecha_hora_entrega', 'nick_usuario', 'observaciones', 'descripcion_deposito', 'nick_usuario_entrega', 'descripcion_estado', 'acciones'];
     this.funcionesObjeto = null;
@@ -539,13 +568,14 @@ class EntregasComponent {
     };
     this.extraParams = '';
     this.parametrosActualizados = new _angular_core__WEBPACK_IMPORTED_MODULE_14__.EventEmitter();
-    this.env = environments_environment__WEBPACK_IMPORTED_MODULE_2__.environment.stock.view_stock_entregas + '?sort=-fecha_hora';
-    this.search = new _angular_forms__WEBPACK_IMPORTED_MODULE_15__.FormControl('');
+    this.env = environments_environment__WEBPACK_IMPORTED_MODULE_3__.environment.stock.view_stock_entregas + '?sort=-fecha_hora';
+    this.search = new _angular_forms__WEBPACK_IMPORTED_MODULE_16__.FormControl('');
     this.default_color = 'border-primary text-primary';
-    this._unsubscribeAll = new rxjs__WEBPACK_IMPORTED_MODULE_16__.Subject();
+    this._unsubscribeAll = new rxjs__WEBPACK_IMPORTED_MODULE_17__.Subject();
     this.mostrarTextoOrdenServicio = true;
     this.buttonStyleOrdenServicio = 'default';
     this.ordenServicioScaneada = false;
+    this.puede_crear = false;
     this._headerTextService.setTitulo(this.router);
     /**
      * Aca se declaran los botones que iran en la grilla sobre el apartado de acciones.
@@ -553,13 +583,13 @@ class EntregasComponent {
     this.funcionesObjeto = [{
       nombre_boton: "Editar",
       functionName: 'editar',
-      iconoAccion: entrega => 'jedstion:editar',
+      iconoAccion: entrega => entrega.puede_editar_entrega == 1 ? 'jedstion:editar' : '',
       iconoAccionado: entrega => '',
       iconoDeshabilitado: entrega => ''
     }, {
       nombre_boton: "Eliminar",
       functionName: 'eliminar',
-      iconoAccion: entrega => 'jedstion:eliminar',
+      iconoAccion: entrega => entrega.puede_eliminar == 1 ? 'jedstion:eliminar' : '',
       iconoAccionado: entrega => '',
       iconoDeshabilitado: entrega => ''
     }, {
@@ -568,11 +598,19 @@ class EntregasComponent {
       iconoAccion: entrega => 'jedstion:imprimir',
       iconoAccionado: entrega => '',
       iconoDeshabilitado: entrega => ''
+    }, {
+      nombre_boton: "Entregar",
+      functionName: 'entregar',
+      iconoAccion: entrega => entrega.puede_editar_entrega == 1 && !entrega.fecha_hora_entrega ? 'jedstion:lector_qr' : '',
+      iconoAccionado: entrega => '',
+      iconoDeshabilitado: entrega => '' //'jedstion:lector_qr_disabled',
     }];
   }
+
   ngOnInit() {
+    this.puedeCrearEntrega();
     // Subscribe to empresa data
-    this._empresaService.empresa$.pipe((0,rxjs__WEBPACK_IMPORTED_MODULE_17__.takeUntil)(this._unsubscribeAll)).subscribe(empresa => {
+    this._empresaService.empresa$.pipe((0,rxjs__WEBPACK_IMPORTED_MODULE_18__.takeUntil)(this._unsubscribeAll)).subscribe(empresa => {
       this.color_primario = empresa.color_primario;
       this.color_secundario = empresa.color_secundario;
     });
@@ -580,7 +618,7 @@ class EntregasComponent {
     this._empresaService.getEmpresa();
     this.SearchTextSub$ = this._searchService.getSearchText().pipe(
     //Se obtienen los valores que coinciden con lo ingresado en la barra de busqueda
-    (0,rxjs__WEBPACK_IMPORTED_MODULE_18__.debounceTime)(750), (0,rxjs__WEBPACK_IMPORTED_MODULE_19__.distinctUntilChanged)()).subscribe(value => {
+    (0,rxjs__WEBPACK_IMPORTED_MODULE_19__.debounceTime)(750), (0,rxjs__WEBPACK_IMPORTED_MODULE_20__.distinctUntilChanged)()).subscribe(value => {
       // Esta condicion la hago como parche: cuando se buscaba una orden de servicio por QR se seteaba un determinado query param, 
       // pero sí despues haciamos una busqueda por la barra de navegacion ese valor no se limpiaba, lo que generaba que el filtrado no sea certero. 
       if (this.filter.orden_servicio === 1) {
@@ -595,11 +633,31 @@ class EntregasComponent {
       this.onFilterMenu(this._searchService.getFilterOrigin());
     });
   }
+  puedeCrearEntrega() {
+    var _this = this;
+    return (0,C_work_jeds_jedstion_source_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
+      return new Promise(resolve => {
+        _this._entregasService.puedeCrearEntrega().subscribe({
+          next: data => {
+            // Manejar la respuesta exitosa
+            if (data.success) {
+              _this.puede_crear = data.result;
+              resolve(data);
+            }
+          },
+          error: error => {
+            // Manejar el error
+            console.log('No se pudo obtener puede_crear.');
+          }
+        });
+      });
+    })();
+  }
   /**
   * Se escanea el QR de Orden de Servicio y se toma la idventagenerica.
   */
   ordenServicio() {
-    this.dialogo.open(_shared_components_lector_qr_lector_qr_component__WEBPACK_IMPORTED_MODULE_4__.LectorQrComponent, {
+    this.dialogo.open(_shared_components_lector_qr_lector_qr_component__WEBPACK_IMPORTED_MODULE_5__.LectorQrComponent, {
       panelClass: 'ayuda-dialog'
     }).componentInstance.sendObject.subscribe(code => {
       if (!code || code.length === 0) {
@@ -624,7 +682,7 @@ class EntregasComponent {
   }
 
   onFilterMenu(origin) {
-    this._menuService.open(_filter_menu_filter_menu_component__WEBPACK_IMPORTED_MODULE_3__.FilterMenuComponent, origin._elementRef, {
+    this._menuService.open(_filter_menu_filter_menu_component__WEBPACK_IMPORTED_MODULE_4__.FilterMenuComponent, origin._elementRef, {
       filter: this.filter,
       data: this.tabla.getElementosExistentes()
     }).afterClosed().subscribe({
@@ -657,13 +715,77 @@ class EntregasComponent {
       case 'reporte':
         this.reporteEntrega(event);
         break;
+      case 'entregar':
+        this.entregarEntrega(event);
+        break;
     }
+  }
+  entregarEntrega(event) {
+    let idUsuario = -1;
+    this.dialogo.open(_shared_components_lector_qr_lector_qr_component__WEBPACK_IMPORTED_MODULE_5__.LectorQrComponent, {
+      panelClass: 'ayuda-dialog'
+    }).componentInstance.sendObject.subscribe(code => {
+      if (!code || code.length === 0) {
+        this.alert.error('Código QR vacío o inválido.');
+        return;
+      }
+      // console.log('este es el codee: ', code)
+      const idusuario = parseInt(code, 10);
+      idUsuario = idusuario;
+      this._entregasService.getUsuarioQR(idusuario).subscribe(response => {
+        if (response?.result?.length > 0) {
+          const usuario = response.result[0];
+          this.confirm.open({
+            title: "Asignar Entrega: " + event.params.data.fecha_hora_precarga,
+            message: '¿Asignar entrega al usuario ' + usuario.nombre + ' ' + usuario.apellido + '?',
+            dismissible: false,
+            actions: {
+              confirm: {
+                show: true,
+                color: 'warn',
+                label: 'Si'
+              },
+              cancel: {
+                show: true,
+                label: 'No'
+              }
+            }
+          }).afterClosed().subscribe(res => {
+            if (res === 'confirmed') {
+              //https://divannibackendyii.jeds.com.ar/web/stk_entrega/entregar?identrega=365
+              let payload = {
+                "usuario_entrega": usuario.codigo
+              };
+              this._entregasService.entregarEntrega(event.params.data.identrega, payload).subscribe({
+                next: res => {
+                  // Manejar la respuesta exitosa
+                  this.alert.success("Entrega asignada con éxito.");
+                  if (res) {
+                    this.tabla.renderTabla();
+                  }
+                },
+                error: error => {
+                  // Manejar el error
+                  console.error('Error en el servicio:', error);
+                  this.alert.warning("Esta entrega no puede asignarse.");
+                }
+              });
+            }
+          });
+        } else {
+          //console.log(response)
+          this.alert.error('Usuario no encontrado.');
+        }
+      }, error => {
+        console.error('Error al obtener usuario:', error);
+      });
+    });
   }
   /**
    * Esta funcion guarda un item
    */
   saveEntrega() {
-    this.dialogo.open(_save_save_component__WEBPACK_IMPORTED_MODULE_0__.SaveComponent, {
+    this.dialogo.open(_save_save_component__WEBPACK_IMPORTED_MODULE_1__.SaveComponent, {
       panelClass: 'ayuda-dialog'
     }).componentInstance.creadoExitosamente.subscribe({
       next: () => {
@@ -677,7 +799,7 @@ class EntregasComponent {
    * @param event
    */
   updateEntrega(event) {
-    this.dialogo.open(_save_save_component__WEBPACK_IMPORTED_MODULE_0__.SaveComponent, {
+    this.dialogo.open(_save_save_component__WEBPACK_IMPORTED_MODULE_1__.SaveComponent, {
       data: event.params.data,
       panelClass: 'my-dialog',
       autoFocus: false
@@ -694,7 +816,7 @@ class EntregasComponent {
    */
   deleteEntrega(event) {
     this.confirm.open({
-      title: "Eliminar Entrega: " + event.params.data.fecha,
+      title: "Eliminar Entrega: " + event.params.data.fecha_hora_precarga,
       message: `¿Desea eliminar la entrega realizada el: ${event.params.data.fecha} ${event.params.data.hora}; del depósito: ${event.params.data.descripcion_deposito} ?`,
       dismissible: false,
       actions: {
@@ -738,7 +860,7 @@ class EntregasComponent {
         if (this.pwaService.isPwa()) {
           this.router.navigate(['/reporte', reportePath]);
         } else {
-          const reporteUrl = `${environments_environment__WEBPACK_IMPORTED_MODULE_2__.environment.baseRest}/${reportePath}`;
+          const reporteUrl = `${environments_environment__WEBPACK_IMPORTED_MODULE_3__.environment.baseRest}/${reportePath}`;
           window.open(reporteUrl, '_blank');
         }
       } else {
@@ -754,14 +876,14 @@ class EntregasComponent {
   }
 }
 EntregasComponent.ɵfac = function EntregasComponent_Factory(t) {
-  return new (t || EntregasComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_14__["ɵɵdirectiveInject"](_service_entregas_service__WEBPACK_IMPORTED_MODULE_5__.EntregasService), _angular_core__WEBPACK_IMPORTED_MODULE_14__["ɵɵdirectiveInject"](_shared_service_app_empresa_service__WEBPACK_IMPORTED_MODULE_6__.EmpresaService), _angular_core__WEBPACK_IMPORTED_MODULE_14__["ɵɵdirectiveInject"](_fuse_services_confirmation__WEBPACK_IMPORTED_MODULE_7__.FuseConfirmationService), _angular_core__WEBPACK_IMPORTED_MODULE_14__["ɵɵdirectiveInject"](_shared_service_app_alert_service__WEBPACK_IMPORTED_MODULE_8__.AppAlertService), _angular_core__WEBPACK_IMPORTED_MODULE_14__["ɵɵdirectiveInject"](_angular_material_dialog__WEBPACK_IMPORTED_MODULE_20__.MatDialog), _angular_core__WEBPACK_IMPORTED_MODULE_14__["ɵɵdirectiveInject"](app_layout_common_search_search_service__WEBPACK_IMPORTED_MODULE_9__.SearchService), _angular_core__WEBPACK_IMPORTED_MODULE_14__["ɵɵdirectiveInject"](_shared_service_app_jeds_menu_service__WEBPACK_IMPORTED_MODULE_10__.JedsMenuService), _angular_core__WEBPACK_IMPORTED_MODULE_14__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_21__.Router), _angular_core__WEBPACK_IMPORTED_MODULE_14__["ɵɵdirectiveInject"](_shared_components_header_text_header_text_service__WEBPACK_IMPORTED_MODULE_11__.HeaderTextService), _angular_core__WEBPACK_IMPORTED_MODULE_14__["ɵɵdirectiveInject"](_shared_service_app_pwa_service__WEBPACK_IMPORTED_MODULE_12__.PwaService));
+  return new (t || EntregasComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_14__["ɵɵdirectiveInject"](_service_entregas_service__WEBPACK_IMPORTED_MODULE_6__.EntregasService), _angular_core__WEBPACK_IMPORTED_MODULE_14__["ɵɵdirectiveInject"](_shared_service_app_empresa_service__WEBPACK_IMPORTED_MODULE_7__.EmpresaService), _angular_core__WEBPACK_IMPORTED_MODULE_14__["ɵɵdirectiveInject"](_fuse_services_confirmation__WEBPACK_IMPORTED_MODULE_8__.FuseConfirmationService), _angular_core__WEBPACK_IMPORTED_MODULE_14__["ɵɵdirectiveInject"](_shared_service_app_alert_service__WEBPACK_IMPORTED_MODULE_9__.AppAlertService), _angular_core__WEBPACK_IMPORTED_MODULE_14__["ɵɵdirectiveInject"](_angular_material_dialog__WEBPACK_IMPORTED_MODULE_21__.MatDialog), _angular_core__WEBPACK_IMPORTED_MODULE_14__["ɵɵdirectiveInject"](app_layout_common_search_search_service__WEBPACK_IMPORTED_MODULE_10__.SearchService), _angular_core__WEBPACK_IMPORTED_MODULE_14__["ɵɵdirectiveInject"](_shared_service_app_jeds_menu_service__WEBPACK_IMPORTED_MODULE_11__.JedsMenuService), _angular_core__WEBPACK_IMPORTED_MODULE_14__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_22__.Router), _angular_core__WEBPACK_IMPORTED_MODULE_14__["ɵɵdirectiveInject"](_shared_components_header_text_header_text_service__WEBPACK_IMPORTED_MODULE_12__.HeaderTextService), _angular_core__WEBPACK_IMPORTED_MODULE_14__["ɵɵdirectiveInject"](_shared_service_app_pwa_service__WEBPACK_IMPORTED_MODULE_13__.PwaService));
 };
 EntregasComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_14__["ɵɵdefineComponent"]({
   type: EntregasComponent,
   selectors: [["app-entregas"]],
   viewQuery: function EntregasComponent_Query(rf, ctx) {
     if (rf & 1) {
-      _angular_core__WEBPACK_IMPORTED_MODULE_14__["ɵɵviewQuery"](_shared_components_tabla_dinamica_tabla_dinamica_component__WEBPACK_IMPORTED_MODULE_1__.TablaDinamicaComponent, 5);
+      _angular_core__WEBPACK_IMPORTED_MODULE_14__["ɵɵviewQuery"](_shared_components_tabla_dinamica_tabla_dinamica_component__WEBPACK_IMPORTED_MODULE_2__.TablaDinamicaComponent, 5);
     }
     if (rf & 2) {
       let _t;
@@ -774,9 +896,9 @@ EntregasComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_14
   outputs: {
     parametrosActualizados: "parametrosActualizados"
   },
-  decls: 18,
-  vars: 21,
-  consts: [[1, "w-full", "flex", "flex-col", "relative"], [1, "mb-12", "mt-6"], [1, "fixed", "right-10", "flex", "space-x-4"], ["mat-flat-button", "", 1, "w-full", "px-6", "py-6", "!border", "border-solid", "rounded-lg", "md:w-55", "md:rounded-lg", 3, "click"], [1, "flex", "items-center"], ["width", "22", "height", "22", "viewBox", "0 0 16 16", "fill", "currentColor", "xmlns", "http://www.w3.org/2000/svg"], ["d", "M2.66667 2.66667H6.66667V6.66667H2.66667V2.66667ZM13.3333 2.66667V6.66667H9.33333V2.66667H13.3333ZM9.33333 10H10.6667V8.66667H9.33333V7.33333H10.6667V8.66667H12V7.33333H13.3333V8.66667H12V10H13.3333V12H12V13.3333H10.6667V12H8.66667V13.3333H7.33333V10.6667H9.33333V10ZM10.6667 10V12H12V10H10.6667ZM2.66667 13.3333V9.33333H6.66667V13.3333H2.66667ZM4 4V5.33333H5.33333V4H4ZM10.6667 4V5.33333H12V4H10.6667ZM4 10.6667V12H5.33333V10.6667H4ZM2.66667 7.33333H4V8.66667H2.66667V7.33333ZM6 7.33333H8.66667V10H7.33333V8.66667H6V7.33333ZM7.33333 4H8.66667V6.66667H7.33333V4ZM1.33333 1.33333V4H0V1.33333C0 0.979711 0.140476 0.640573 0.390524 0.390524C0.640573 0.140476 0.979711 0 1.33333 0L4 0V1.33333H1.33333ZM14.6667 0C15.0203 0 15.3594 0.140476 15.6095 0.390524C15.8595 0.640573 16 0.979711 16 1.33333V4H14.6667V1.33333H12V0H14.6667ZM1.33333 12V14.6667H4V16H1.33333C0.979711 16 0.640573 15.8595 0.390524 15.6095C0.140476 15.3594 0 15.0203 0 14.6667V12H1.33333ZM14.6667 14.6667V12H16V14.6667C16 15.0203 15.8595 15.3594 15.6095 15.6095C15.3594 15.8595 15.0203 16 14.6667 16H12V14.6667H14.6667Z", "fill", "currentColor"], [1, "ml-2", "text-lg", "mt-0.5", "hidden", "md:inline"], ["save", ""], ["id", "note_plus", "width", "20", "height", "20", "viewBox", "0 0 20 20", "fill", "currentColor", "xmlns", "http://www.w3.org/2000/svg"], ["d", "M15.8333 10.8333C16.4167 10.8333 16.975 10.9417 17.5 11.125V7.5L12.5 2.5H4.16667C3.24167 2.5 2.5 3.24167 2.5 4.16667V15.8333C2.5 16.7583 3.25 17.5 4.16667 17.5H11.125C10.9417 16.975 10.8333 16.4167 10.8333 15.8333C10.8333 13.075 13.075 10.8333 15.8333 10.8333ZM11.6667 3.75L16.25 8.33333H11.6667V3.75ZM19.1667 15V16.6667H16.6667V19.1667H15V16.6667H12.5V15H15V12.5H16.6667V15H19.1667Z"], [1, "pr-2", "pl-2", "mt-2"], [1, "bottom-10", "sm:bottom-0", "table-fixed", "sm:top-2", "w-full", "m-0", 3, "cache", "columnsNames", "renderType", "columnsParams", "endpoint", "functions", "extraClasses", "FiltersLikes", "extraParams", "functionEmitter"]],
+  decls: 12,
+  vars: 16,
+  consts: [[1, "w-full", "flex", "flex-col", "relative"], [1, "mb-12", "mt-6"], [1, "fixed", "right-10", "flex", "space-x-4"], ["mat-flat-button", "", 1, "w-full", "px-6", "py-6", "!border", "border-solid", "rounded-lg", "md:w-55", "md:rounded-lg", 3, "click"], [1, "flex", "items-center"], ["width", "22", "height", "22", "viewBox", "0 0 16 16", "fill", "currentColor", "xmlns", "http://www.w3.org/2000/svg"], ["d", "M2.66667 2.66667H6.66667V6.66667H2.66667V2.66667ZM13.3333 2.66667V6.66667H9.33333V2.66667H13.3333ZM9.33333 10H10.6667V8.66667H9.33333V7.33333H10.6667V8.66667H12V7.33333H13.3333V8.66667H12V10H13.3333V12H12V13.3333H10.6667V12H8.66667V13.3333H7.33333V10.6667H9.33333V10ZM10.6667 10V12H12V10H10.6667ZM2.66667 13.3333V9.33333H6.66667V13.3333H2.66667ZM4 4V5.33333H5.33333V4H4ZM10.6667 4V5.33333H12V4H10.6667ZM4 10.6667V12H5.33333V10.6667H4ZM2.66667 7.33333H4V8.66667H2.66667V7.33333ZM6 7.33333H8.66667V10H7.33333V8.66667H6V7.33333ZM7.33333 4H8.66667V6.66667H7.33333V4ZM1.33333 1.33333V4H0V1.33333C0 0.979711 0.140476 0.640573 0.390524 0.390524C0.640573 0.140476 0.979711 0 1.33333 0L4 0V1.33333H1.33333ZM14.6667 0C15.0203 0 15.3594 0.140476 15.6095 0.390524C15.8595 0.640573 16 0.979711 16 1.33333V4H14.6667V1.33333H12V0H14.6667ZM1.33333 12V14.6667H4V16H1.33333C0.979711 16 0.640573 15.8595 0.390524 15.6095C0.140476 15.3594 0 15.0203 0 14.6667V12H1.33333ZM14.6667 14.6667V12H16V14.6667C16 15.0203 15.8595 15.3594 15.6095 15.6095C15.3594 15.8595 15.0203 16 14.6667 16H12V14.6667H14.6667Z", "fill", "currentColor"], [1, "ml-2", "text-lg", "mt-0.5", "hidden", "md:inline"], ["mat-flat-button", "", "class", "w-full px-6 py-6 !border border-solid rounded-lg md:w-55 md:rounded-lg", 3, "class", "border", "color", "click", 4, "ngIf"], [1, "pr-2", "pl-2", "mt-2"], [1, "bottom-10", "sm:bottom-0", "table-fixed", "sm:top-2", "w-full", "m-0", 3, "cache", "columnsNames", "renderType", "columnsParams", "endpoint", "functions", "extraClasses", "FiltersLikes", "extraParams", "functionEmitter"], ["save", ""], ["id", "note_plus", "width", "20", "height", "20", "viewBox", "0 0 20 20", "fill", "currentColor", "xmlns", "http://www.w3.org/2000/svg"], ["d", "M15.8333 10.8333C16.4167 10.8333 16.975 10.9417 17.5 11.125V7.5L12.5 2.5H4.16667C3.24167 2.5 2.5 3.24167 2.5 4.16667V15.8333C2.5 16.7583 3.25 17.5 4.16667 17.5H11.125C10.9417 16.975 10.8333 16.4167 10.8333 15.8333C10.8333 13.075 13.075 10.8333 15.8333 10.8333ZM11.6667 3.75L16.25 8.33333H11.6667V3.75ZM19.1667 15V16.6667H16.6667V19.1667H15V16.6667H12.5V15H15V12.5H16.6667V15H19.1667Z"]],
   template: function EntregasComponent_Template(rf, ctx) {
     if (rf & 1) {
       _angular_core__WEBPACK_IMPORTED_MODULE_14__["ɵɵelementStart"](0, "div", 0)(1, "div", 1)(2, "div", 2)(3, "button", 3);
@@ -792,21 +914,10 @@ EntregasComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_14
       _angular_core__WEBPACK_IMPORTED_MODULE_14__["ɵɵelementStart"](7, "span", 7);
       _angular_core__WEBPACK_IMPORTED_MODULE_14__["ɵɵtext"](8, "Buscar OS");
       _angular_core__WEBPACK_IMPORTED_MODULE_14__["ɵɵelementEnd"]()()();
-      _angular_core__WEBPACK_IMPORTED_MODULE_14__["ɵɵelementStart"](9, "button", 3, 8);
-      _angular_core__WEBPACK_IMPORTED_MODULE_14__["ɵɵlistener"]("click", function EntregasComponent_Template_button_click_9_listener() {
-        return ctx.saveEntrega();
-      });
-      _angular_core__WEBPACK_IMPORTED_MODULE_14__["ɵɵelementStart"](11, "div", 4);
-      _angular_core__WEBPACK_IMPORTED_MODULE_14__["ɵɵnamespaceSVG"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_14__["ɵɵelementStart"](12, "svg", 9);
-      _angular_core__WEBPACK_IMPORTED_MODULE_14__["ɵɵelement"](13, "path", 10);
-      _angular_core__WEBPACK_IMPORTED_MODULE_14__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_14__["ɵɵnamespaceHTML"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_14__["ɵɵelementStart"](14, "span", 7);
-      _angular_core__WEBPACK_IMPORTED_MODULE_14__["ɵɵtext"](15, "Nueva Entrega");
-      _angular_core__WEBPACK_IMPORTED_MODULE_14__["ɵɵelementEnd"]()()()()();
-      _angular_core__WEBPACK_IMPORTED_MODULE_14__["ɵɵelementStart"](16, "div", 11)(17, "app-tabla-dinamica", 12);
-      _angular_core__WEBPACK_IMPORTED_MODULE_14__["ɵɵlistener"]("functionEmitter", function EntregasComponent_Template_app_tabla_dinamica_functionEmitter_17_listener($event) {
+      _angular_core__WEBPACK_IMPORTED_MODULE_14__["ɵɵtemplate"](9, EntregasComponent_button_9_Template, 7, 6, "button", 8);
+      _angular_core__WEBPACK_IMPORTED_MODULE_14__["ɵɵelementEnd"]()();
+      _angular_core__WEBPACK_IMPORTED_MODULE_14__["ɵɵelementStart"](10, "div", 9)(11, "app-tabla-dinamica", 10);
+      _angular_core__WEBPACK_IMPORTED_MODULE_14__["ɵɵlistener"]("functionEmitter", function EntregasComponent_Template_app_tabla_dinamica_functionEmitter_11_listener($event) {
         return ctx.generarAcciones($event);
       });
       _angular_core__WEBPACK_IMPORTED_MODULE_14__["ɵɵelementEnd"]()()();
@@ -816,13 +927,12 @@ EntregasComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_14
       _angular_core__WEBPACK_IMPORTED_MODULE_14__["ɵɵclassMap"](ctx.color_primario ? "" : ctx.default_color);
       _angular_core__WEBPACK_IMPORTED_MODULE_14__["ɵɵstyleProp"]("border", ctx.color_primario || "")("color", ctx.color_primario || "");
       _angular_core__WEBPACK_IMPORTED_MODULE_14__["ɵɵadvance"](6);
-      _angular_core__WEBPACK_IMPORTED_MODULE_14__["ɵɵclassMap"](ctx.color_primario ? "" : ctx.default_color);
-      _angular_core__WEBPACK_IMPORTED_MODULE_14__["ɵɵstyleProp"]("border", ctx.color_primario || "")("color", ctx.color_primario || "");
-      _angular_core__WEBPACK_IMPORTED_MODULE_14__["ɵɵadvance"](8);
+      _angular_core__WEBPACK_IMPORTED_MODULE_14__["ɵɵproperty"]("ngIf", ctx.puede_crear);
+      _angular_core__WEBPACK_IMPORTED_MODULE_14__["ɵɵadvance"](2);
       _angular_core__WEBPACK_IMPORTED_MODULE_14__["ɵɵproperty"]("cache", false)("columnsNames", ctx.headers)("renderType", "ssp")("columnsParams", ctx.column_params)("endpoint", ctx.env)("functions", ctx.funcionesObjeto)("extraClasses", "td.mat-cell border,td.mat-cell border-slate-400")("FiltersLikes", ctx.filtersLike)("extraParams", ctx.extraParams);
     }
   },
-  dependencies: [_angular_material_button__WEBPACK_IMPORTED_MODULE_22__.MatButton, _shared_components_tabla_dinamica_tabla_dinamica_component__WEBPACK_IMPORTED_MODULE_1__.TablaDinamicaComponent],
+  dependencies: [_angular_common__WEBPACK_IMPORTED_MODULE_23__.NgIf, _angular_material_button__WEBPACK_IMPORTED_MODULE_24__.MatButton, _shared_components_tabla_dinamica_tabla_dinamica_component__WEBPACK_IMPORTED_MODULE_2__.TablaDinamicaComponent],
   styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJlbnRyZWdhcy5jb21wb25lbnQuc2NzcyJ9 */\n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8uL3NyYy9hcHAvbW9kdWxlcy9zdG9jay9lbnRyZWdhcy9jb21wb25lbnRzL2VudHJlZ2FzLmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7QUFDQSxvS0FBb0siLCJzb3VyY2VSb290IjoiIn0= */"]
 });
 
@@ -2273,6 +2383,15 @@ class EntregasService {
   */
   getOrdenServicio(idventagenerica) {
     return this.http.get(`${environments_environment__WEBPACK_IMPORTED_MODULE_0__.environment.ventas.view_venta_genericas}?filter[idventagenerica]=` + idventagenerica);
+  }
+  getUsuarioQR(codigo) {
+    return this.http.get(`${environments_environment__WEBPACK_IMPORTED_MODULE_0__.environment.login.view_usuarios}?filter[codigo]=` + codigo);
+  }
+  entregarEntrega(idempresa, payload) {
+    return this.http.post(`${environments_environment__WEBPACK_IMPORTED_MODULE_0__.environment.stock.entregar}` + idempresa, payload);
+  }
+  puedeCrearEntrega() {
+    return this.http.post(`${environments_environment__WEBPACK_IMPORTED_MODULE_0__.environment.stock.stk_entrega_puede_crear}`, '');
   }
 }
 EntregasService.ɵfac = function EntregasService_Factory(t) {

@@ -440,7 +440,7 @@ class TablaDinamicaComponent {
         let column = sort.active;
         switch (sort.direction) {
           case "asc":
-            this.sortSSP = `= ${column}`; //simplemente mando la columna y se ordena ascendente
+            this.sortSSP = `=${column}`; //simplemente mando la columna y se ordena ascendente
             break;
           case "desc":
             this.sortSSP = `=-${column}`; // mando signo menos (-) y columna, y se ordena descendente

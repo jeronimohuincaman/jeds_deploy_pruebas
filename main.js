@@ -16978,7 +16978,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 const $BASE_API = "https://divannibackendyii.jeds.ar";
 const $BASE_REST = "https://divannibackendyii.jeds.ar/web";
-// const $BASE_REST = "http://localhost/jeds/divanni_backend_yii/web";
+//const $BASE_REST = "http://localhost/jeds/divanni_backend_yii/web";
 const environment = {
   production: false,
   baseRest: $BASE_REST,
@@ -17030,7 +17030,9 @@ const environment = {
     view_stock_articulo_depositos: `${$BASE_REST}/view_stock_articulo_depositos`,
     view_items_oc_pendientes: `${$BASE_REST}/view_items_oc_pendientes`,
     view_stock_entregas: `${$BASE_REST}/view_stock_entregas`,
-    view_stock_depositos: `${$BASE_REST}/view_stock_depositos`
+    view_stock_depositos: `${$BASE_REST}/view_stock_depositos`,
+    entregar: `${$BASE_REST}/stk_entrega/entregar?identrega=`,
+    stk_entrega_puede_crear: `${$BASE_REST}/stk_entrega/puede_crear`
   },
   ventas: {
     view_venta_selects: `${$BASE_REST}/view_venta_selects`,
