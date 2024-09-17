@@ -568,7 +568,7 @@ class EntregasComponent {
     };
     this.extraParams = '';
     this.parametrosActualizados = new _angular_core__WEBPACK_IMPORTED_MODULE_14__.EventEmitter();
-    this.env = environments_environment__WEBPACK_IMPORTED_MODULE_3__.environment.stock.view_stock_entregas + '?sort=-fecha_hora';
+    this.env = environments_environment__WEBPACK_IMPORTED_MODULE_3__.environment.stock.view_stock_entregas + '?sort=-fecha_hora_precarga';
     this.search = new _angular_forms__WEBPACK_IMPORTED_MODULE_16__.FormControl('');
     this.default_color = 'border-primary text-primary';
     this._unsubscribeAll = new rxjs__WEBPACK_IMPORTED_MODULE_17__.Subject();
@@ -619,13 +619,6 @@ class EntregasComponent {
     this.SearchTextSub$ = this._searchService.getSearchText().pipe(
     //Se obtienen los valores que coinciden con lo ingresado en la barra de busqueda
     (0,rxjs__WEBPACK_IMPORTED_MODULE_19__.debounceTime)(750), (0,rxjs__WEBPACK_IMPORTED_MODULE_20__.distinctUntilChanged)()).subscribe(value => {
-      // Esta condicion la hago como parche: cuando se buscaba una orden de servicio por QR se seteaba un determinado query param, 
-      // pero sí despues haciamos una busqueda por la barra de navegacion ese valor no se limpiaba, lo que generaba que el filtrado no sea certero. 
-      if (this.filter.orden_servicio === 1) {
-        this.extraParams = this.filtroBusqueda.replace(`&filter[idventagenerica]=${this.orden_servicio}`, ""); // Elimino el query params.
-        this.filter.orden_servicio = 0; // Le aviso al resto del sistema que ya no se esta filtrando por OS en los query params.
-      }
-
       this.filtroBusqueda = value;
       this.tabla.filters(this.filtroBusqueda);
     });
@@ -664,20 +657,27 @@ class EntregasComponent {
         this.alert.error('Código QR vacío o inválido.');
         return;
       }
-      const data = this.tabla.getElementosExistentes(); // Utilizo todos los items del servicio
       const idventagenerica = parseInt(code, 10); // ID de la venta
-      let aux = data.filter(items => items.idventagenerica === idventagenerica); // Variable auxiliar para verificar si hay items asociados a la venta
-      if (aux?.length > 0) {
-        // Pregunto si hay items
-        const venta = `Venta N° ${idventagenerica}`; // Texto que aparecera en la barra de busqueda
-        this.orden_servicio = idventagenerica; // Almaceno la OS de manera global
-        this.filter.orden_servicio = 1; // Le aviso al resto del sistema de que en los query params se esta filtrando por esa OS
-        this._searchService.getSearchInput().setValue(venta); // Le seteo el texto a la barra de busqueda
-        this.extraParams = `&filter[idventagenerica]=${idventagenerica}`; // Filtro por el ID concreto que recibo del escanner
-      } else {
-        this.alert.error('No hay items asociados a esa venta.');
-      }
-      this.tabla.filters(this.filtroBusqueda); // Aplico filtro y renderizo la tabla
+      this._entregasService.getOrdenServicio(idventagenerica).subscribe(response => {
+        if (response?.result?.length > 0) {
+          const venta = response.result[0];
+          this.orden_servicio = venta.idventagenerica;
+          this.filter.orden_servicio = {
+            idventagenerica: venta.idventagenerica,
+            cliente: venta.cliente_venta,
+            fecha: venta.fecha_precarga
+          };
+          this.extraParams = `&filter[idventagenerica]=${this.orden_servicio}`;
+          this.tabla.filters(this.filtroBusqueda); // Aplico filtro y renderizo la tabla
+        } else {
+          this.alert.error('No hay items asociados a esa OS.');
+          this.extraParams = this.filtroBusqueda.replace(`&filter[idventagenerica]=${this.orden_servicio}`, ""); // Elimino el query params.
+          this.tabla.filters(this.filtroBusqueda); // Aplico filtro y renderizo la tabla
+        }
+      }, error => {
+        console.error('Error al obtener venta:', error);
+        this.tabla.filters(this.filtroBusqueda); // Aplico filtro y renderizo la tabla
+      });
     });
   }
 
@@ -690,12 +690,12 @@ class EntregasComponent {
         if (filter) {
           this.filter = filter;
           this.extraParams = this.filter.deposito != -1 ? "filter[iddeposito]=" + this.filter.deposito + '&' : '';
+          this.extraParams += this.filter.orden_servicio.idventagenerica ? "filter[idventagenerica]=" + this.filter.orden_servicio?.idventagenerica + '&' : '';
           this.extraParams += this.filter.usuario_responsable != '' ? "filter[nick_usuario]=" + this.filter.usuario_responsable + '&' : '';
           this.extraParams += this.filter.usuario_encargado != '' ? "filter[nick_usuario_entrega]=" + this.filter.usuario_encargado + '&' : '';
-          this.extraParams += this.filter.filtroFechaInicio != null ? "filter[fecha][gte]=" + this.filter.filtroFechaInicio + '&' : '';
-          this.extraParams += this.filter.filtroFechaFin != null ? "filter[fecha][lte]=" + this.filter.filtroFechaFin + '&' : '';
+          this.extraParams += this.filter.filtroFechaInicio != null ? "filter[fecha_precarga][gte]=" + this.filter.filtroFechaInicio + '&' : '';
+          this.extraParams += this.filter.filtroFechaFin != null ? "filter[fecha_precarga][lte]=" + this.filter.filtroFechaFin + '&' : '';
           this.tabla.filters(this.filtroBusqueda);
-          // this._searchService.getSearchInput().setValue(this._tabsServices.getFiltroBuscadorPedido());
         }
       }
     });
@@ -729,7 +729,6 @@ class EntregasComponent {
         this.alert.error('Código QR vacío o inválido.');
         return;
       }
-      // console.log('este es el codee: ', code)
       const idusuario = parseInt(code, 10);
       idUsuario = idusuario;
       this._entregasService.getUsuarioQR(idusuario).subscribe(response => {
@@ -752,7 +751,6 @@ class EntregasComponent {
             }
           }).afterClosed().subscribe(res => {
             if (res === 'confirmed') {
-              //https://divannibackendyii.jeds.com.ar/web/stk_entrega/entregar?identrega=365
               let payload = {
                 "usuario_entrega": usuario.codigo
               };
@@ -773,7 +771,6 @@ class EntregasComponent {
             }
           });
         } else {
-          //console.log(response)
           this.alert.error('Usuario no encontrado.');
         }
       }, error => {
@@ -993,7 +990,7 @@ __webpack_require__.r(__webpack_exports__);
 
 function FilterMenuComponent_mat_datepicker_toggle_18_Template(rf, ctx) {
   if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelement"](0, "mat-datepicker-toggle", 28);
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelement"](0, "mat-datepicker-toggle", 31);
   }
   if (rf & 2) {
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵnextContext"]();
@@ -1003,12 +1000,12 @@ function FilterMenuComponent_mat_datepicker_toggle_18_Template(rf, ctx) {
 }
 function FilterMenuComponent_button_21_Template(rf, ctx) {
   if (rf & 1) {
-    const _r9 = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵgetCurrentView"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](0, "button", 29);
+    const _r11 = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵgetCurrentView"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](0, "button", 32);
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵlistener"]("click", function FilterMenuComponent_button_21_Template_button_click_0_listener() {
-      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵrestoreView"](_r9);
-      const ctx_r8 = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵnextContext"]();
-      return _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵresetView"](ctx_r8.limpiarFechas());
+      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵrestoreView"](_r11);
+      const ctx_r10 = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵnextContext"]();
+      return _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵresetView"](ctx_r10.limpiarFechas());
     });
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](1, "mat-icon");
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](2, "clear");
@@ -1022,10 +1019,10 @@ function FilterMenuComponent_mat_option_28_Template(rf, ctx) {
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
   }
   if (rf & 2) {
-    const deposito_r10 = ctx.$implicit;
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("value", deposito_r10.iddeposito);
+    const deposito_r12 = ctx.$implicit;
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("value", deposito_r12.iddeposito);
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtextInterpolate"](deposito_r10.descripcion);
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtextInterpolate"](deposito_r12.descripcion);
   }
 }
 function FilterMenuComponent_mat_option_38_Template(rf, ctx) {
@@ -1035,10 +1032,10 @@ function FilterMenuComponent_mat_option_38_Template(rf, ctx) {
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
   }
   if (rf & 2) {
-    const usuario_responsable_r11 = ctx.$implicit;
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("value", usuario_responsable_r11.nick);
+    const venta_r13 = ctx.$implicit;
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("value", venta_r13);
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtextInterpolate1"](" ", usuario_responsable_r11.nick, " ");
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtextInterpolate2"](" ", venta_r13.cliente, " ~ ", venta_r13.fecha, " ");
   }
 }
 function FilterMenuComponent_mat_option_49_Template(rf, ctx) {
@@ -1048,10 +1045,23 @@ function FilterMenuComponent_mat_option_49_Template(rf, ctx) {
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
   }
   if (rf & 2) {
-    const usuario_encargado_r12 = ctx.$implicit;
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("value", usuario_encargado_r12.nick);
+    const usuario_responsable_r14 = ctx.$implicit;
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("value", usuario_responsable_r14.nick);
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtextInterpolate1"](" ", usuario_encargado_r12.nick, " ");
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtextInterpolate1"](" ", usuario_responsable_r14.nick, " ");
+  }
+}
+function FilterMenuComponent_mat_option_60_Template(rf, ctx) {
+  if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](0, "mat-option", 16);
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
+  }
+  if (rf & 2) {
+    const usuario_encargado_r15 = ctx.$implicit;
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("value", usuario_encargado_r15.nick);
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtextInterpolate1"](" ", usuario_encargado_r15.nick, " ");
   }
 }
 class FilterMenuComponent {
@@ -1062,6 +1072,7 @@ class FilterMenuComponent {
     this._entregasService = _entregasService;
     this._empresaService = _empresaService;
     this.filterDeposito = [];
+    this.ventas = [];
     this.usuarios = [];
     this.filterFechas = [];
     this.movimientos_internos_list = []; //Se crea por sí hace falta crear una copia de los datos y manipularlos de una forma más personalizada
@@ -1074,7 +1085,8 @@ class FilterMenuComponent {
       filtroFechaFin: new _angular_forms__WEBPACK_IMPORTED_MODULE_8__.FormControl(''),
       usuario_responsable: new _angular_forms__WEBPACK_IMPORTED_MODULE_8__.FormControl(''),
       usuario_encargado: new _angular_forms__WEBPACK_IMPORTED_MODULE_8__.FormControl(''),
-      deposito: new _angular_forms__WEBPACK_IMPORTED_MODULE_8__.FormControl(-1)
+      deposito: new _angular_forms__WEBPACK_IMPORTED_MODULE_8__.FormControl(-1),
+      orden_servicio: new _angular_forms__WEBPACK_IMPORTED_MODULE_8__.FormControl('')
     });
     // Subscribe to empresa data
     this._empresaService.empresa$.pipe((0,rxjs__WEBPACK_IMPORTED_MODULE_9__.takeUntil)(this._unsubscribeAll)).subscribe(empresa => {
@@ -1085,6 +1097,7 @@ class FilterMenuComponent {
     this._empresaService.getEmpresa();
     this.getDepositos();
     this.getUsuarios();
+    this.getVentas();
     this.formFilters.patchValue(this.data.filter);
   }
   resetFilters() {
@@ -1093,7 +1106,8 @@ class FilterMenuComponent {
       filtroFechaFin: '',
       usuario_responsable: '',
       usuario_encargado: '',
-      deposito: -1
+      deposito: -1,
+      orden_servicio: ''
     });
   }
   onCloseMenu(data = null) {
@@ -1141,6 +1155,38 @@ class FilterMenuComponent {
       _this2.filterDeposito = stk_list.list;
     })();
   }
+  /**
+  * Funcion que lista las ventas.
+  */
+  getVentas() {
+    var _this3 = this;
+    return (0,C_work_jeds_jedstion_source_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
+      const ventas = yield (0,rxjs__WEBPACK_IMPORTED_MODULE_10__.firstValueFrom)(_this3._entregasService.getVentas());
+      _this3.ventas = ventas.list;
+      _this3.filteredVentas = _this3.formFilters.get('orden_servicio').valueChanges.pipe((0,rxjs__WEBPACK_IMPORTED_MODULE_11__.startWith)(''), (0,rxjs__WEBPACK_IMPORTED_MODULE_12__.map)(value => _this3._filterVentas(value)));
+    })();
+  }
+  /**
+  * Esta funcion es para filtrar las ventas según el input que se haya ingresado en el buscador de ventas.
+  * @param value
+  * @returns
+  */
+  _filterVentas(value) {
+    const filterValue = value?.idventagenerica ? value.idventagenerica.toString().toLowerCase() : value.toString().toLowerCase(); // PErdon por no ser tan prolijo, es una chanchada esto, no tengo tiempo ;(
+    return this.ventas.filter(venta => {
+      const cliente = venta.cliente.toString().toLowerCase().includes(filterValue);
+      const fecha = venta.fecha.toString().toLowerCase().includes(filterValue);
+      return cliente || fecha;
+    });
+  }
+  /**
+  * Obtenemos el cliente y fecha de dicha venta seleccionada.
+  * @param venta
+  * @returns
+  */
+  getTextVenta(venta) {
+    return venta ? `${venta.cliente} ~ ${venta.fecha}` : '';
+  }
 }
 FilterMenuComponent.ɵfac = function FilterMenuComponent_Factory(t) {
   return new (t || FilterMenuComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdirectiveInject"]('MENU_DATA'), _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdirectiveInject"](_shared_service_app_jeds_menu_service__WEBPACK_IMPORTED_MODULE_3__.JedsMenuService), _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdirectiveInject"](_angular_common__WEBPACK_IMPORTED_MODULE_13__.DatePipe), _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdirectiveInject"](_service_entregas_service__WEBPACK_IMPORTED_MODULE_4__.EntregasService), _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdirectiveInject"](_shared_service_app_empresa_service__WEBPACK_IMPORTED_MODULE_5__.EmpresaService));
@@ -1152,9 +1198,9 @@ FilterMenuComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_
     provide: _angular_material_core__WEBPACK_IMPORTED_MODULE_14__.MAT_DATE_FORMATS,
     useValue: _shared_constants_date_format__WEBPACK_IMPORTED_MODULE_2__.MY_DATE_FORMATS
   }])],
-  decls: 58,
-  vars: 29,
-  consts: [[1, "fixed", "filtroJeds", "inset-0", "sm:static", "max-h-screen", "sm:inset-auto", "flex", "flex-col", "sm:min-w-90", "sm:w-120", "sm:rounded-2xl", "overflow-y-auto", "overflow-hidden", "shadow-lg", "bg-white", "dark:bg-slate-900"], [1, "w-full", "px-4", "py-4", "flex", "justify-between", "items-center"], [1, "text-white", "font-bold", "text-lg"], ["mat-icon-button", "", 1, "md:hidden", 3, "click"], [1, "text-white"], ["mat-icon-button", "", 3, "click"], [1, "flex", "flex-col", "w-full", "h-full", "p-4", "form-menu", 3, "formGroup"], [1, "font-semibold", "text-gray-600", "text-base"], [1, "fuse-mat-dense", "fuse-mat-no-subscript", "fuse-mat-rounded-lg", "min-w-64", "mt-2"], [3, "rangePicker"], ["matStartDate", "", "placeholder", "Desde", "formControlName", "filtroFechaInicio"], ["matEndDate", "", "placeholder", "Hasta", "formControlName", "filtroFechaFin"], ["matIconSuffix", "", 3, "for", 4, "ngIf"], ["picker", ""], ["matSuffix", "", "mat-icon-button", "", 3, "click", 4, "ngIf"], ["formControlName", "deposito"], [3, "value"], [3, "value", 4, "ngFor", "ngForOf"], ["type", "text", "placeholder", "Seleccione Usuario Responsable", "matInput", "", "formControlName", "usuario_responsable", 3, "matAutocomplete"], ["mat-icon-button", "", "matSuffix", ""], ["autoUsuarioResponsable", "matAutocomplete"], ["type", "text", "placeholder", "Seleccione Usuario Encargado", "matInput", "", "formControlName", "usuario_encargado", 3, "matAutocomplete"], ["autoUsuarioEncargado", "matAutocomplete"], [1, "w-full", "md:flex", "md:justify-between", "md:pb-4", "md:px-4"], ["mat-flat-button", "", 1, "w-full", "!border", "border-solid", "rounded-none", "md:w-26", "md:rounded-lg", "hidden", "md:block", 3, "click"], [1, "font-medium", "text-base"], ["mat-raised-button", "", 1, "w-full", "rounded-none", "md:w-26", "md:rounded-lg", "py-8", "md:py-0", 3, "click"], [1, "text-white", "font-bold"], ["matIconSuffix", "", 3, "for"], ["matSuffix", "", "mat-icon-button", "", 3, "click"]],
+  decls: 69,
+  vars: 34,
+  consts: [[1, "fixed", "filtroJeds", "inset-0", "sm:static", "max-h-screen", "sm:inset-auto", "flex", "flex-col", "sm:min-w-90", "sm:w-120", "sm:rounded-2xl", "overflow-y-auto", "overflow-hidden", "shadow-lg", "bg-white", "dark:bg-slate-900"], [1, "w-full", "px-4", "py-4", "flex", "justify-between", "items-center"], [1, "text-white", "font-bold", "text-lg"], ["mat-icon-button", "", 1, "md:hidden", 3, "click"], [1, "text-white"], ["mat-icon-button", "", 3, "click"], [1, "flex", "flex-col", "w-full", "h-full", "p-4", "form-menu", 3, "formGroup"], [1, "font-semibold", "text-gray-600", "text-base"], [1, "fuse-mat-dense", "fuse-mat-no-subscript", "fuse-mat-rounded-lg", "min-w-64", "mt-2"], [3, "rangePicker"], ["matStartDate", "", "placeholder", "Desde", "formControlName", "filtroFechaInicio"], ["matEndDate", "", "placeholder", "Hasta", "formControlName", "filtroFechaFin"], ["matIconSuffix", "", 3, "for", 4, "ngIf"], ["picker", ""], ["matSuffix", "", "mat-icon-button", "", 3, "click", 4, "ngIf"], ["formControlName", "deposito"], [3, "value"], [3, "value", 4, "ngFor", "ngForOf"], ["type", "text", "placeholder", "Seleccione Orden de Servicio", "matInput", "", "formControlName", "orden_servicio", 3, "matAutocomplete"], ["mat-icon-button", "", "matSuffix", ""], ["autoActiveFirstOption", "", 3, "displayWith"], ["autoOrdenServicio", "matAutocomplete"], ["type", "text", "placeholder", "Seleccione Usuario Responsable", "matInput", "", "formControlName", "usuario_responsable", 3, "matAutocomplete"], ["autoUsuarioResponsable", "matAutocomplete"], ["type", "text", "placeholder", "Seleccione Usuario Encargado", "matInput", "", "formControlName", "usuario_encargado", 3, "matAutocomplete"], ["autoUsuarioEncargado", "matAutocomplete"], [1, "w-full", "md:flex", "md:justify-between", "md:pb-4", "md:px-4"], ["mat-flat-button", "", 1, "w-full", "!border", "border-solid", "rounded-none", "md:w-26", "md:rounded-lg", "hidden", "md:block", 3, "click"], [1, "font-medium", "text-base"], ["mat-raised-button", "", 1, "w-full", "rounded-none", "md:w-26", "md:rounded-lg", "py-8", "md:py-0", 3, "click"], [1, "text-white", "font-bold"], ["matIconSuffix", "", 3, "for"], ["matSuffix", "", "mat-icon-button", "", 3, "click"]],
   template: function FilterMenuComponent_Template(rf, ctx) {
     if (rf & 1) {
       _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](0, "div", 0)(1, "div", 1)(2, "span", 2);
@@ -1193,48 +1239,61 @@ FilterMenuComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_
       _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtemplate"](28, FilterMenuComponent_mat_option_28_Template, 2, 2, "mat-option", 17);
       _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]()();
       _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](29, "span", 7);
-      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](30, "Usuario Responsable");
+      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](30, "Orden de servicio");
       _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
       _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](31, "mat-form-field", 8);
       _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelement"](32, "input", 18);
       _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](33, "button", 19)(34, "mat-icon");
       _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](35, "arrow_drop_down");
       _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]()();
-      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](36, "mat-autocomplete", null, 20);
-      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtemplate"](38, FilterMenuComponent_mat_option_38_Template, 2, 2, "mat-option", 17);
+      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](36, "mat-autocomplete", 20, 21);
+      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtemplate"](38, FilterMenuComponent_mat_option_38_Template, 2, 3, "mat-option", 17);
       _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵpipe"](39, "async");
       _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]()();
       _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](40, "span", 7);
-      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](41, "Usuario Encargado");
+      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](41, "Usuario Responsable");
       _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
       _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](42, "mat-form-field", 8);
-      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelement"](43, "input", 21);
+      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelement"](43, "input", 22);
       _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](44, "button", 19)(45, "mat-icon");
       _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](46, "arrow_drop_down");
       _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]()();
-      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](47, "mat-autocomplete", null, 22);
+      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](47, "mat-autocomplete", null, 23);
       _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtemplate"](49, FilterMenuComponent_mat_option_49_Template, 2, 2, "mat-option", 17);
       _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵpipe"](50, "async");
+      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]()();
+      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](51, "span", 7);
+      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](52, "Usuario Encargado");
+      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
+      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](53, "mat-form-field", 8);
+      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelement"](54, "input", 24);
+      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](55, "button", 19)(56, "mat-icon");
+      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](57, "arrow_drop_down");
+      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]()();
+      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](58, "mat-autocomplete", null, 25);
+      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtemplate"](60, FilterMenuComponent_mat_option_60_Template, 2, 2, "mat-option", 17);
+      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵpipe"](61, "async");
       _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]()()();
-      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](51, "div", 23)(52, "button", 24);
-      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵlistener"]("click", function FilterMenuComponent_Template_button_click_52_listener() {
+      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](62, "div", 26)(63, "button", 27);
+      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵlistener"]("click", function FilterMenuComponent_Template_button_click_63_listener() {
         return ctx.resetFilters();
       });
-      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](53, "span", 25);
-      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](54, "Limpiar");
+      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](64, "span", 28);
+      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](65, "Limpiar");
       _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]()();
-      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](55, "button", 26);
-      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵlistener"]("click", function FilterMenuComponent_Template_button_click_55_listener() {
+      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](66, "button", 29);
+      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵlistener"]("click", function FilterMenuComponent_Template_button_click_66_listener() {
         return ctx.onCloseMenu(ctx.formFilters.getRawValue());
       });
-      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](56, "span", 27);
-      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](57, "Filtrar");
+      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](67, "span", 30);
+      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](68, "Filtrar");
       _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]()()()();
     }
     if (rf & 2) {
       const _r1 = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵreference"](20);
       const _r4 = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵreference"](37);
       const _r6 = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵreference"](48);
+      const _r8 = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵreference"](59);
       _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("@expandCollapse", "expanded");
       _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](1);
       _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵclassMap"](ctx.color_primario ? "" : ctx.default_color);
@@ -1253,12 +1312,18 @@ FilterMenuComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_
       _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("ngForOf", ctx.filterDeposito);
       _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](4);
       _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("matAutocomplete", _r4);
-      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](6);
-      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("ngForOf", _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵpipeBind1"](39, 25, ctx.filteredUsuarioResponsable));
+      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](4);
+      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("displayWith", ctx.getTextVenta);
+      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](2);
+      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("ngForOf", _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵpipeBind1"](39, 28, ctx.filteredVentas));
       _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](5);
       _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("matAutocomplete", _r6);
       _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](6);
-      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("ngForOf", _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵpipeBind1"](50, 27, ctx.filteredUsuarioEncargado));
+      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("ngForOf", _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵpipeBind1"](50, 30, ctx.filteredUsuarioResponsable));
+      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](5);
+      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("matAutocomplete", _r8);
+      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](6);
+      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("ngForOf", _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵpipeBind1"](61, 32, ctx.filteredUsuarioEncargado));
       _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](3);
       _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵclassMap"](ctx.color_primario ? "" : ctx.default_color);
       _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵstyleProp"]("color", ctx.color_primario || "")("border", ctx.color_primario || "");
@@ -2382,7 +2447,7 @@ class EntregasService {
   * @returns Verifica si el QR escaneado de la Orden de Servicio es valido.
   */
   getOrdenServicio(idventagenerica) {
-    return this.http.get(`${environments_environment__WEBPACK_IMPORTED_MODULE_0__.environment.ventas.view_venta_genericas}?filter[idventagenerica]=` + idventagenerica);
+    return this.http.get(`${environments_environment__WEBPACK_IMPORTED_MODULE_0__.environment.stock.view_stock_entregas}?filter[idventagenerica]=` + idventagenerica);
   }
   getUsuarioQR(codigo) {
     return this.http.get(`${environments_environment__WEBPACK_IMPORTED_MODULE_0__.environment.login.view_usuarios}?filter[codigo]=` + codigo);

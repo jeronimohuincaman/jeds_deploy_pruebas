@@ -65,7 +65,7 @@ class VentaGenericasComponent {
     this.column_params = ['idventagenerica', 'fecha', 'vendedor', 'cliente', 'obra', 'tratamiento', 'colocacion', 'acarreo', 'bien_cargada', 'acciones'];
     this.funcionesObjeto = null;
     this.filtroBusqueda = '';
-    this.filtersLike = ['nick_usuario', 'descripcion_deposito', 'nick_usuario_entrega'];
+    this.filtersLike = ['cliente', 'vendedor'];
     this.filter = {
       deposito: -1,
       filtroFechaInicio: '',
