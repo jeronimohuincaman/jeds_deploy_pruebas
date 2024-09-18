@@ -1,15 +1,15 @@
 "use strict";
-(self["webpackChunkfuse"] = self["webpackChunkfuse"] || []).push([["src_app_modules_ventas_genericas_venta-generica_module_ts"],{
+(self["webpackChunkfuse"] = self["webpackChunkfuse"] || []).push([["src_app_modules_inmuebles_unidades-funcionales_unidades-funcionales_module_ts"],{
 
-/***/ 12217:
-/*!**********************************************************************************!*\
-  !*** ./src/app/modules/ventas/genericas/components/venta-genericas.component.ts ***!
-  \**********************************************************************************/
+/***/ 61513:
+/*!*****************************************************************************************************!*\
+  !*** ./src/app/modules/inmuebles/unidades-funcionales/components/unidades-funcionales.component.ts ***!
+  \*****************************************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "VentaGenericasComponent": () => (/* binding */ VentaGenericasComponent)
+/* harmony export */   "UnidadesFuncionalesComponent": () => (/* binding */ UnidadesFuncionalesComponent)
 /* harmony export */ });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @angular/core */ 86839);
 /* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! rxjs */ 80228);
@@ -20,7 +20,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @angular/forms */ 69542);
 /* harmony import */ var _shared_components_tabla_dinamica_tabla_dinamica_component__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../shared/components/tabla-dinamica/tabla-dinamica.component */ 71549);
 /* harmony import */ var environments_environment__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! environments/environment */ 92340);
-/* harmony import */ var _service_venta_generica_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../service/venta-generica.service */ 73899);
+/* harmony import */ var _service_unidaes_funcionales_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../service/unidaes-funcionales.service */ 47730);
 /* harmony import */ var _shared_service_app_empresa_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @shared/service/app/empresa.service */ 66270);
 /* harmony import */ var _fuse_services_confirmation__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @fuse/services/confirmation */ 25377);
 /* harmony import */ var _shared_service_app_alert_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @shared/service/app/alert.service */ 26375);
@@ -48,9 +48,9 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-class VentaGenericasComponent {
-  constructor(_ventaGenericasService, _empresaService, confirm, alert, dialogo, _searchService, _menuService, router, _headerTextService, pwaService) {
-    this._ventaGenericasService = _ventaGenericasService;
+class UnidadesFuncionalesComponent {
+  constructor(_UnidadesFuncionalesService, _empresaService, confirm, alert, dialogo, _searchService, _menuService, router, _headerTextService, pwaService) {
+    this._UnidadesFuncionalesService = _UnidadesFuncionalesService;
     this._empresaService = _empresaService;
     this.confirm = confirm;
     this.alert = alert;
@@ -61,11 +61,11 @@ class VentaGenericasComponent {
     this._headerTextService = _headerTextService;
     this.pwaService = pwaService;
     this.dataSource = new _angular_material_table__WEBPACK_IMPORTED_MODULE_10__.MatTableDataSource();
-    this.headers = ['ID', 'Fecha', 'Vendedor', 'Cliente', 'Obra', 'Tratamiento', 'Instalación', 'Acarreo', 'Bien Cargada', 'Acciones'];
-    this.column_params = ['idventagenerica', 'fecha', 'vendedor', 'cliente', 'obra', 'tratamiento', 'colocacion', 'acarreo', 'bien_cargada', 'acciones'];
+    this.headers = ['ID', 'Descripción', 'Complejo', 'Activo', 'Acciones'];
+    this.column_params = ['idunidadfuncional', 'descripcion_unidad_funcional', 'descripcion_complejo', 'activo', 'acciones'];
     this.funcionesObjeto = null;
     this.filtroBusqueda = '';
-    this.filtersLike = ['cliente', 'vendedor'];
+    this.filtersLike = ['descripcion_unidad_funcional', 'descripcion_complejo'];
     this.filter = {
       deposito: -1,
       filtroFechaInicio: '',
@@ -73,7 +73,7 @@ class VentaGenericasComponent {
     };
     this.extraParams = '';
     this.parametrosActualizados = new _angular_core__WEBPACK_IMPORTED_MODULE_11__.EventEmitter();
-    this.env = environments_environment__WEBPACK_IMPORTED_MODULE_1__.environment.ventas.view_venta_genericas + '?';
+    this.env = environments_environment__WEBPACK_IMPORTED_MODULE_1__.environment.inmuebles.unidad_funcional.view_inm_unidad_funcional + '?';
     this.search = new _angular_forms__WEBPACK_IMPORTED_MODULE_12__.FormControl('');
     this.default_color = 'border-primary text-primary';
     this._unsubscribeAll = new rxjs__WEBPACK_IMPORTED_MODULE_13__.Subject();
@@ -84,9 +84,9 @@ class VentaGenericasComponent {
     this.funcionesObjeto = [{
       nombre_boton: "Reporte",
       functionName: 'orden_servicio',
-      iconoAccion: venta_generica => 'jedstion:imprimir',
-      iconoAccionado: venta_generica => '',
-      iconoDeshabilitado: venta_generica => ''
+      iconoAccion: unidad_funcional => 'jedstion:imprimir',
+      iconoAccionado: unidad_funcional => '',
+      iconoDeshabilitado: unidad_funcional => ''
     }];
   }
   ngOnInit() {
@@ -144,8 +144,8 @@ class VentaGenericasComponent {
    * Esta funcion Genera un Reporte y lo muestra en una nueva pestaña
    */
   reporteOrdenServicio(event) {
-    const idVentaGenerica = event.params.data.idventagenerica;
-    this._ventaGenericasService.reporteOrdenServicio(idVentaGenerica).subscribe(data => {
+    const idUnidadFuncional = event.params.data.idunidadfuncional;
+    this._UnidadesFuncionalesService.reporteOrdenServicio(idUnidadFuncional).subscribe(data => {
       if (data.success) {
         const reportePath = data.path;
         if (this.pwaService.isPwa()) {
@@ -166,13 +166,13 @@ class VentaGenericasComponent {
     this.dialogo.closeAll();
   }
 }
-VentaGenericasComponent.ɵfac = function VentaGenericasComponent_Factory(t) {
-  return new (t || VentaGenericasComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵdirectiveInject"](_service_venta_generica_service__WEBPACK_IMPORTED_MODULE_2__.VentaGenericasService), _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵdirectiveInject"](_shared_service_app_empresa_service__WEBPACK_IMPORTED_MODULE_3__.EmpresaService), _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵdirectiveInject"](_fuse_services_confirmation__WEBPACK_IMPORTED_MODULE_4__.FuseConfirmationService), _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵdirectiveInject"](_shared_service_app_alert_service__WEBPACK_IMPORTED_MODULE_5__.AppAlertService), _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵdirectiveInject"](_angular_material_dialog__WEBPACK_IMPORTED_MODULE_17__.MatDialog), _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵdirectiveInject"](app_layout_common_search_search_service__WEBPACK_IMPORTED_MODULE_6__.SearchService), _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵdirectiveInject"](_shared_service_app_jeds_menu_service__WEBPACK_IMPORTED_MODULE_7__.JedsMenuService), _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_18__.Router), _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵdirectiveInject"](_shared_components_header_text_header_text_service__WEBPACK_IMPORTED_MODULE_8__.HeaderTextService), _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵdirectiveInject"](_shared_service_app_pwa_service__WEBPACK_IMPORTED_MODULE_9__.PwaService));
+UnidadesFuncionalesComponent.ɵfac = function UnidadesFuncionalesComponent_Factory(t) {
+  return new (t || UnidadesFuncionalesComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵdirectiveInject"](_service_unidaes_funcionales_service__WEBPACK_IMPORTED_MODULE_2__.UnidadesFuncionalesService), _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵdirectiveInject"](_shared_service_app_empresa_service__WEBPACK_IMPORTED_MODULE_3__.EmpresaService), _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵdirectiveInject"](_fuse_services_confirmation__WEBPACK_IMPORTED_MODULE_4__.FuseConfirmationService), _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵdirectiveInject"](_shared_service_app_alert_service__WEBPACK_IMPORTED_MODULE_5__.AppAlertService), _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵdirectiveInject"](_angular_material_dialog__WEBPACK_IMPORTED_MODULE_17__.MatDialog), _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵdirectiveInject"](app_layout_common_search_search_service__WEBPACK_IMPORTED_MODULE_6__.SearchService), _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵdirectiveInject"](_shared_service_app_jeds_menu_service__WEBPACK_IMPORTED_MODULE_7__.JedsMenuService), _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_18__.Router), _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵdirectiveInject"](_shared_components_header_text_header_text_service__WEBPACK_IMPORTED_MODULE_8__.HeaderTextService), _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵdirectiveInject"](_shared_service_app_pwa_service__WEBPACK_IMPORTED_MODULE_9__.PwaService));
 };
-VentaGenericasComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵdefineComponent"]({
-  type: VentaGenericasComponent,
-  selectors: [["app-venta-generica"]],
-  viewQuery: function VentaGenericasComponent_Query(rf, ctx) {
+UnidadesFuncionalesComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵdefineComponent"]({
+  type: UnidadesFuncionalesComponent,
+  selectors: [["app-unidad-funcional"]],
+  viewQuery: function UnidadesFuncionalesComponent_Query(rf, ctx) {
     if (rf & 1) {
       _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵviewQuery"](_shared_components_tabla_dinamica_tabla_dinamica_component__WEBPACK_IMPORTED_MODULE_0__.TablaDinamicaComponent, 5);
     }
@@ -190,35 +190,35 @@ VentaGenericasComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MOD
   decls: 3,
   vars: 9,
   consts: [[1, "w-full", "flex", "flex-col", "relative"], [1, "pr-2", "pl-2"], [1, "bottom-10", "sm:bottom-0", "table-fixed", "sm:top-2", "w-full", "m-0", 3, "cache", "columnsNames", "renderType", "columnsParams", "endpoint", "functions", "extraClasses", "FiltersLikes", "extraParams", "functionEmitter"]],
-  template: function VentaGenericasComponent_Template(rf, ctx) {
+  template: function UnidadesFuncionalesComponent_Template(rf, ctx) {
     if (rf & 1) {
       _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵelementStart"](0, "div", 0)(1, "div", 1)(2, "app-tabla-dinamica", 2);
-      _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵlistener"]("functionEmitter", function VentaGenericasComponent_Template_app_tabla_dinamica_functionEmitter_2_listener($event) {
+      _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵlistener"]("functionEmitter", function UnidadesFuncionalesComponent_Template_app_tabla_dinamica_functionEmitter_2_listener($event) {
         return ctx.generarAcciones($event);
       });
       _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵelementEnd"]()()();
     }
     if (rf & 2) {
       _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵadvance"](2);
-      _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵproperty"]("cache", false)("columnsNames", ctx.headers)("renderType", "client")("columnsParams", ctx.column_params)("endpoint", ctx.env)("functions", ctx.funcionesObjeto)("extraClasses", "td.mat-cell border,td.mat-cell border-slate-400")("FiltersLikes", ctx.filtersLike)("extraParams", ctx.extraParams);
+      _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵproperty"]("cache", false)("columnsNames", ctx.headers)("renderType", "ssp")("columnsParams", ctx.column_params)("endpoint", ctx.env)("functions", ctx.funcionesObjeto)("extraClasses", "td.mat-cell border,td.mat-cell border-slate-400")("FiltersLikes", ctx.filtersLike)("extraParams", ctx.extraParams);
     }
   },
   dependencies: [_shared_components_tabla_dinamica_tabla_dinamica_component__WEBPACK_IMPORTED_MODULE_0__.TablaDinamicaComponent],
-  styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJ2ZW50YS1nZW5lcmljYXMuY29tcG9uZW50LnNjc3MifQ== */\n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8uL3NyYy9hcHAvbW9kdWxlcy92ZW50YXMvZ2VuZXJpY2FzL2NvbXBvbmVudHMvdmVudGEtZ2VuZXJpY2FzLmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7QUFDQSxnTEFBZ0wiLCJzb3VyY2VSb290IjoiIn0= */"]
+  styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJ1bmlkYWRlcy1mdW5jaW9uYWxlcy5jb21wb25lbnQuc2NzcyJ9 */\n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8uL3NyYy9hcHAvbW9kdWxlcy9pbm11ZWJsZXMvdW5pZGFkZXMtZnVuY2lvbmFsZXMvY29tcG9uZW50cy91bmlkYWRlcy1mdW5jaW9uYWxlcy5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiO0FBQ0Esb0xBQW9MIiwic291cmNlUm9vdCI6IiJ9 */"]
 });
 
 
 /***/ }),
 
-/***/ 73899:
-/*!****************************************************************************!*\
-  !*** ./src/app/modules/ventas/genericas/service/venta-generica.service.ts ***!
-  \****************************************************************************/
+/***/ 47730:
+/*!***********************************************************************************************!*\
+  !*** ./src/app/modules/inmuebles/unidades-funcionales/service/unidaes-funcionales.service.ts ***!
+  \***********************************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "VentaGenericasService": () => (/* binding */ VentaGenericasService)
+/* harmony export */   "UnidadesFuncionalesService": () => (/* binding */ UnidadesFuncionalesService)
 /* harmony export */ });
 /* harmony import */ var environments_environment__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! environments/environment */ 92340);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ 86839);
@@ -228,40 +228,40 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-class VentaGenericasService {
+class UnidadesFuncionalesService {
   constructor(http, _authService) {
     this.http = http;
     this._authService = _authService;
   }
   /**
    *
-   * @param idventagenerica
+   * @param idunidadfuncional
    * @returns
    */
-  reporteOrdenServicio(idventagenerica) {
-    return this.http.get(`${environments_environment__WEBPACK_IMPORTED_MODULE_0__.environment.reporte_orden_servicio}?idventagenerica=` + idventagenerica);
+  reporteOrdenServicio(idunidadfuncional) {
+    return this.http.get(`${environments_environment__WEBPACK_IMPORTED_MODULE_0__.environment.reporte_orden_servicio}?idunidadfuncional=` + idunidadfuncional);
   }
 }
-VentaGenericasService.ɵfac = function VentaGenericasService_Factory(t) {
-  return new (t || VentaGenericasService)(_angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵinject"](_angular_common_http__WEBPACK_IMPORTED_MODULE_3__.HttpClient), _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵinject"](_core_auth_auth_service__WEBPACK_IMPORTED_MODULE_1__.AuthService));
+UnidadesFuncionalesService.ɵfac = function UnidadesFuncionalesService_Factory(t) {
+  return new (t || UnidadesFuncionalesService)(_angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵinject"](_angular_common_http__WEBPACK_IMPORTED_MODULE_3__.HttpClient), _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵinject"](_core_auth_auth_service__WEBPACK_IMPORTED_MODULE_1__.AuthService));
 };
-VentaGenericasService.ɵprov = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdefineInjectable"]({
-  token: VentaGenericasService,
-  factory: VentaGenericasService.ɵfac
+UnidadesFuncionalesService.ɵprov = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdefineInjectable"]({
+  token: UnidadesFuncionalesService,
+  factory: UnidadesFuncionalesService.ɵfac
 });
 
 
 /***/ }),
 
-/***/ 18767:
-/*!*******************************************************************!*\
-  !*** ./src/app/modules/ventas/genericas/venta-generica.module.ts ***!
-  \*******************************************************************/
+/***/ 77907:
+/*!***************************************************************************************!*\
+  !*** ./src/app/modules/inmuebles/unidades-funcionales/unidades-funcionales.module.ts ***!
+  \***************************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "VentaGenericasModule": () => (/* binding */ VentaGenericasModule)
+/* harmony export */   "UnidadesFuncionalesModule": () => (/* binding */ UnidadesFuncionalesModule)
 /* harmony export */ });
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/router */ 86679);
 /* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/common */ 86477);
@@ -283,8 +283,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _shared_components_tabla_dinamica_tabla_dinamica_module__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @shared/components/tabla-dinamica/tabla-dinamica.module */ 11711);
 /* harmony import */ var _angular_material_dialog__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! @angular/material/dialog */ 67486);
 /* harmony import */ var _angular_material_datepicker__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! @angular/material/datepicker */ 76844);
-/* harmony import */ var _service_venta_generica_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./service/venta-generica.service */ 73899);
-/* harmony import */ var _components_venta_genericas_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/venta-genericas.component */ 12217);
+/* harmony import */ var _service_unidaes_funcionales_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./service/unidaes-funcionales.service */ 47730);
+/* harmony import */ var _components_unidades_funcionales_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/unidades-funcionales.component */ 61513);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/core */ 86839);
 
 
@@ -312,23 +312,23 @@ __webpack_require__.r(__webpack_exports__);
 
 const routes = [{
   path: '',
-  component: _components_venta_genericas_component__WEBPACK_IMPORTED_MODULE_5__.VentaGenericasComponent
+  component: _components_unidades_funcionales_component__WEBPACK_IMPORTED_MODULE_5__.UnidadesFuncionalesComponent
 }];
-class VentaGenericasModule {}
-VentaGenericasModule.ɵfac = function VentaGenericasModule_Factory(t) {
-  return new (t || VentaGenericasModule)();
+class UnidadesFuncionalesModule {}
+UnidadesFuncionalesModule.ɵfac = function UnidadesFuncionalesModule_Factory(t) {
+  return new (t || UnidadesFuncionalesModule)();
 };
-VentaGenericasModule.ɵmod = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdefineNgModule"]({
-  type: VentaGenericasModule
+UnidadesFuncionalesModule.ɵmod = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdefineNgModule"]({
+  type: UnidadesFuncionalesModule
 });
-VentaGenericasModule.ɵinj = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdefineInjector"]({
-  providers: [_service_venta_generica_service__WEBPACK_IMPORTED_MODULE_4__.VentaGenericasService, _shared_service_app_jeds_menu_service__WEBPACK_IMPORTED_MODULE_1__.JedsMenuService, _shared_service_app_alert_service__WEBPACK_IMPORTED_MODULE_2__.AppAlertService, _angular_common__WEBPACK_IMPORTED_MODULE_7__.DatePipe],
+UnidadesFuncionalesModule.ɵinj = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdefineInjector"]({
+  providers: [_service_unidaes_funcionales_service__WEBPACK_IMPORTED_MODULE_4__.UnidadesFuncionalesService, _shared_service_app_jeds_menu_service__WEBPACK_IMPORTED_MODULE_1__.JedsMenuService, _shared_service_app_alert_service__WEBPACK_IMPORTED_MODULE_2__.AppAlertService, _angular_common__WEBPACK_IMPORTED_MODULE_7__.DatePipe],
   imports: [_angular_common__WEBPACK_IMPORTED_MODULE_7__.CommonModule, _angular_router__WEBPACK_IMPORTED_MODULE_8__.RouterModule.forChild(routes), _angular_material_table__WEBPACK_IMPORTED_MODULE_9__.MatTableModule, _angular_material_button__WEBPACK_IMPORTED_MODULE_10__.MatButtonModule, _angular_material_select__WEBPACK_IMPORTED_MODULE_11__.MatSelectModule, _angular_material_form_field__WEBPACK_IMPORTED_MODULE_12__.MatFormFieldModule, _angular_forms__WEBPACK_IMPORTED_MODULE_13__.ReactiveFormsModule, _angular_material_input__WEBPACK_IMPORTED_MODULE_14__.MatInputModule, _angular_material_icon__WEBPACK_IMPORTED_MODULE_15__.MatIconModule, _fuse_components_alert__WEBPACK_IMPORTED_MODULE_0__.FuseAlertComponent, _angular_material_tooltip__WEBPACK_IMPORTED_MODULE_16__.MatTooltipModule, _angular_material_autocomplete__WEBPACK_IMPORTED_MODULE_17__.MatAutocompleteModule, _angular_material_toolbar__WEBPACK_IMPORTED_MODULE_18__.MatToolbarModule, _angular_material_checkbox__WEBPACK_IMPORTED_MODULE_19__.MatCheckboxModule, _angular_material_sort__WEBPACK_IMPORTED_MODULE_20__.MatSortModule, _shared_components_tabla_dinamica_tabla_dinamica_module__WEBPACK_IMPORTED_MODULE_3__.TablaDinamicaModule, _angular_material_dialog__WEBPACK_IMPORTED_MODULE_21__.MatDialogModule, _angular_material_datepicker__WEBPACK_IMPORTED_MODULE_22__.MatDatepickerModule, _angular_router__WEBPACK_IMPORTED_MODULE_8__.RouterModule]
 });
 
 (function () {
-  (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵsetNgModuleScope"](VentaGenericasModule, {
-    declarations: [_components_venta_genericas_component__WEBPACK_IMPORTED_MODULE_5__.VentaGenericasComponent],
+  (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵsetNgModuleScope"](UnidadesFuncionalesModule, {
+    declarations: [_components_unidades_funcionales_component__WEBPACK_IMPORTED_MODULE_5__.UnidadesFuncionalesComponent],
     imports: [_angular_common__WEBPACK_IMPORTED_MODULE_7__.CommonModule, _angular_router__WEBPACK_IMPORTED_MODULE_8__.RouterModule, _angular_material_table__WEBPACK_IMPORTED_MODULE_9__.MatTableModule, _angular_material_button__WEBPACK_IMPORTED_MODULE_10__.MatButtonModule, _angular_material_select__WEBPACK_IMPORTED_MODULE_11__.MatSelectModule, _angular_material_form_field__WEBPACK_IMPORTED_MODULE_12__.MatFormFieldModule, _angular_forms__WEBPACK_IMPORTED_MODULE_13__.ReactiveFormsModule, _angular_material_input__WEBPACK_IMPORTED_MODULE_14__.MatInputModule, _angular_material_icon__WEBPACK_IMPORTED_MODULE_15__.MatIconModule, _fuse_components_alert__WEBPACK_IMPORTED_MODULE_0__.FuseAlertComponent, _angular_material_tooltip__WEBPACK_IMPORTED_MODULE_16__.MatTooltipModule, _angular_material_autocomplete__WEBPACK_IMPORTED_MODULE_17__.MatAutocompleteModule, _angular_material_toolbar__WEBPACK_IMPORTED_MODULE_18__.MatToolbarModule, _angular_material_checkbox__WEBPACK_IMPORTED_MODULE_19__.MatCheckboxModule, _angular_material_sort__WEBPACK_IMPORTED_MODULE_20__.MatSortModule, _shared_components_tabla_dinamica_tabla_dinamica_module__WEBPACK_IMPORTED_MODULE_3__.TablaDinamicaModule, _angular_material_dialog__WEBPACK_IMPORTED_MODULE_21__.MatDialogModule, _angular_material_datepicker__WEBPACK_IMPORTED_MODULE_22__.MatDatepickerModule],
     exports: [_angular_router__WEBPACK_IMPORTED_MODULE_8__.RouterModule]
   });
@@ -337,4 +337,4 @@ VentaGenericasModule.ɵinj = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE
 /***/ })
 
 }]);
-//# sourceMappingURL=src_app_modules_ventas_genericas_venta-generica_module_ts.js.map
+//# sourceMappingURL=src_app_modules_inmuebles_unidades-funcionales_unidades-funcionales_module_ts.js.map

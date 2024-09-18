@@ -7904,6 +7904,14 @@ const appRoutes = [
   }, {
     path: 'reporte/:path',
     component: _shared_components_reportes_reporte_component__WEBPACK_IMPORTED_MODULE_5__.ReporteComponent
+  }, {
+    path: 'complejos',
+    canActivate: [_core_auth_guards_permiso_guard__WEBPACK_IMPORTED_MODULE_4__.PermisoGuard],
+    loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-node_modules_angular_material_fesm2022_checkbox_mjs"), __webpack_require__.e("default-src_app_shared_components_tabla-dinamica_tabla-dinamica_module_ts"), __webpack_require__.e("default-node_modules_angular_material_fesm2022_datepicker_mjs"), __webpack_require__.e("common"), __webpack_require__.e("src_app_modules_inmuebles_complejos_complejos_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./modules/inmuebles/complejos/complejos.module */ 91543)).then(m => m.ComplejosModule)
+  }, {
+    path: 'unidades-funcionales',
+    canActivate: [_core_auth_guards_permiso_guard__WEBPACK_IMPORTED_MODULE_4__.PermisoGuard],
+    loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-node_modules_angular_material_fesm2022_checkbox_mjs"), __webpack_require__.e("default-src_app_shared_components_tabla-dinamica_tabla-dinamica_module_ts"), __webpack_require__.e("default-node_modules_angular_material_fesm2022_datepicker_mjs"), __webpack_require__.e("common"), __webpack_require__.e("src_app_modules_inmuebles_unidades-funcionales_unidades-funcionales_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./modules/inmuebles/unidades-funcionales/unidades-funcionales.module */ 77907)).then(m => m.UnidadesFuncionalesModule)
   }]
 }
 // Auth routes for authenticated users
@@ -16272,6 +16280,14 @@ const TitleType = [{
   path: "/ventas"
 }, {
   icon: "",
+  text: "Complejos",
+  path: "/complejos"
+}, {
+  icon: "",
+  text: "Unidades Funcionales",
+  path: "/unidades-funcionales"
+}, {
+  icon: "",
   text: "Entrega QR",
   path: "/entrega_qr"
 }];
@@ -17054,7 +17070,18 @@ const environment = {
   notificaciones: {
     view_notificaciones: `${$BASE_REST}/view_notificacions`,
     view_notificaciones_group: `${$BASE_REST}/view_notificacion_group`
-  }
+  },
+  inmuebles: {
+    complejos: {
+      inm_complejos: `${$BASE_REST}/inm_complejos`,
+      view_inm_complejos: `${$BASE_REST}/view_inm_complejos`
+    },
+    unidad_funcional: {
+      inm_unidad_funcional: `${$BASE_REST}/inm_unidad_funcional`,
+      view_inm_unidad_funcional: `${$BASE_REST}/view_inm_unidad_funcionals`
+    }
+  },
+  reporte_orden_servicio: `${$BASE_REST}/generar_orden_servicio`
 };
 
 /***/ }),
