@@ -16724,7 +16724,8 @@ class EmpresaService {
       articulo_servicio: 0,
       cliente_asociado: 0,
       favicon: null,
-      deposito_default: null
+      deposito_default: null,
+      asignacion_entrega: null
     });
     this._empresa.next({
       idempresa: 0,
@@ -16738,7 +16739,8 @@ class EmpresaService {
       articulo_servicio: 0,
       cliente_asociado: 0,
       favicon: null,
-      deposito_default: null
+      deposito_default: null,
+      asignacion_entrega: null
     });
   }
   get empresa$() {
@@ -16760,7 +16762,8 @@ class EmpresaService {
       articulo_servicio: empresaData.articulo_servicio,
       cliente_asociado: empresaData.cliente_asociado,
       favicon: faviconUrl,
-      deposito_default: empresaData.deposito_default
+      deposito_default: empresaData.deposito_default,
+      asignacion_entrega: empresaData.asignacion_entrega
     });
   }
   get _empresaData() {
@@ -16802,7 +16805,8 @@ class EmpresaService {
       articulo_servicio: empresa.articulo_servicio,
       cliente_asociado: empresa.cliente_asociado,
       favicon: empresa.favicon,
-      deposito_default: empresa.deposito_default
+      deposito_default: empresa.deposito_default,
+      asignacion_entrega: empresa.asignacion_entrega
     };
   }
   getEmpresaX() {
@@ -16834,7 +16838,8 @@ class EmpresaService {
       articulo_servicio: 0,
       cliente_asociado: 0,
       favicon: null,
-      deposito_default: null
+      deposito_default: null,
+      asignacion_entrega: null
     };
     return (0,rxjs__WEBPACK_IMPORTED_MODULE_5__.of)(empresaData);
   }
