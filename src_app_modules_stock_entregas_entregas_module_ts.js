@@ -613,6 +613,7 @@ class EntregasComponent {
     this._empresaService.empresa$.pipe((0,rxjs__WEBPACK_IMPORTED_MODULE_18__.takeUntil)(this._unsubscribeAll)).subscribe(empresa => {
       this.color_primario = empresa.color_primario;
       this.color_secundario = empresa.color_secundario;
+      this.asignacion_entrega = empresa.asignacion_entrega;
     });
     // Load empresa data
     this._empresaService.getEmpresa();
@@ -647,9 +648,11 @@ class EntregasComponent {
     })();
   }
   /**
-  * Se escanea el QR de Orden de Servicio y se toma la idventagenerica.
+  * Se escanea el QR de Orden de Servicio y se toma la idordenservicio.
   */
   ordenServicio() {
+    let idordenservicio;
+    let clave_os;
     this.dialogo.open(_shared_components_lector_qr_lector_qr_component__WEBPACK_IMPORTED_MODULE_5__.LectorQrComponent, {
       panelClass: 'ayuda-dialog'
     }).componentInstance.sendObject.subscribe(code => {
@@ -657,21 +660,40 @@ class EntregasComponent {
         this.alert.error('Código QR vacío o inválido.');
         return;
       }
-      const idventagenerica = parseInt(code, 10); // ID de la venta
-      this._entregasService.getOrdenServicio(idventagenerica).subscribe(response => {
+      let decodedText = JSON.parse(code); // Convierto el string en json
+      for (const clave in decodedText) {
+        clave_os = clave;
+        idordenservicio = decodedText[clave];
+      }
+      let queryParams = `?filter[${clave_os}]=`;
+      this._entregasService.getOrdenServicio(idordenservicio, queryParams).subscribe(response => {
         if (response?.result?.length > 0) {
-          const venta = response.result[0];
-          this.orden_servicio = venta.idventagenerica;
-          this.filter.orden_servicio = {
-            idventagenerica: venta.idventagenerica,
-            cliente: venta.cliente_venta,
-            fecha: venta.fecha_precarga
-          };
-          this.extraParams = `&filter[idventagenerica]=${this.orden_servicio}`;
+          const result = response.result[0];
+          if (this.asignacion_entrega === 0) {
+            this.orden_servicio = result.idventagenerica;
+            this.filter.orden_servicio = {
+              idventagenerica: result.idventagenerica,
+              cliente: result.cliente_venta,
+              fecha: result.fecha_precarga
+            };
+          } else if (this.asignacion_entrega === 1 && clave_os === 'idcomplejo') {
+            this.orden_servicio = result.idcomplejo;
+            this.filter.orden_servicio = {
+              idcomplejo: result.idcomplejo,
+              descripcion_complejo: result.descripcion_complejo
+            };
+          } else if (this.asignacion_entrega === 1 && clave_os === 'idunidadfuncional') {
+            this.orden_servicio = result.idunidadfuncional;
+            this.filter.orden_servicio = {
+              idunidadfuncional: result.idunidadfuncional,
+              descripcion_unidad_funcional: result.descripcion_unidad_funcional
+            };
+          }
+          this.extraParams = `&filter[${clave_os}]=${this.orden_servicio}`;
           this.tabla.filters(this.filtroBusqueda); // Aplico filtro y renderizo la tabla
         } else {
           this.alert.error('No hay items asociados a esa OS.');
-          this.extraParams = this.filtroBusqueda.replace(`&filter[idventagenerica]=${this.orden_servicio}`, ""); // Elimino el query params.
+          this.extraParams = this.filtroBusqueda.replace(`&filter[${clave_os}]=${this.orden_servicio}`, ""); // Elimino el query params.
           this.tabla.filters(this.filtroBusqueda); // Aplico filtro y renderizo la tabla
         }
       }, error => {
@@ -729,7 +751,8 @@ class EntregasComponent {
         this.alert.error('Código QR vacío o inválido.');
         return;
       }
-      const idusuario = parseInt(code, 10);
+      let decodedText = JSON.parse(code); // Convierto el string en json
+      const idusuario = parseInt(decodedText['idusuario'], 10);
       idUsuario = idusuario;
       this._entregasService.getUsuarioQR(idusuario).subscribe(response => {
         if (response?.result?.length > 0) {
@@ -2196,12 +2219,14 @@ class SaveComponent {
     if (!this.form.valid) {
       return this.alert.error('Revise Los Datos Ingresados');
     } else {
-      const existe_complejo_uf = this.form.get('unidad_funcional').value && this.form.get('complejo').value;
-      if (existe_complejo_uf) {
-        const la_uf_no_pertenece_al_complejo = this.form.get('unidad_funcional').value?.idcomplejo != this.form.get('complejo').value?.idcomplejo;
-        if (la_uf_no_pertenece_al_complejo) {
-          this.form.get('complejo').setValue('');
-          return this.alert.error('La unidad Funcional no pertenece a ese complejo');
+      if (this.asignacion_entrega === 1) {
+        const existe_complejo_uf = this.form.get('unidad_funcional').value && this.form.get('complejo').value;
+        if (existe_complejo_uf) {
+          const la_uf_no_pertenece_al_complejo = this.form.get('unidad_funcional').value?.idcomplejo != this.form.get('complejo').value?.idcomplejo;
+          if (la_uf_no_pertenece_al_complejo) {
+            this.form.get('complejo').setValue('');
+            return this.alert.error('La unidad Funcional no pertenece a ese complejo');
+          }
         }
       }
       let movimientos = this.mov_art_list.map(objeto => ({
@@ -2656,11 +2681,12 @@ class EntregasService {
   }
   /**
   *
-  * @param idventagenerica
+  * @param idordenservicio
+  * @param queryParams
   * @returns Verifica si el QR escaneado de la Orden de Servicio es valido.
   */
-  getOrdenServicio(idventagenerica) {
-    return this.http.get(`${environments_environment__WEBPACK_IMPORTED_MODULE_0__.environment.stock.view_stock_entregas}?filter[idventagenerica]=` + idventagenerica);
+  getOrdenServicio(idordenservicio, queryParams) {
+    return this.http.get(`${environments_environment__WEBPACK_IMPORTED_MODULE_0__.environment.stock.view_stock_entregas}${queryParams}` + idordenservicio);
   }
   getUsuarioQR(codigo) {
     return this.http.get(`${environments_environment__WEBPACK_IMPORTED_MODULE_0__.environment.login.view_usuarios}?filter[codigo]=` + codigo);

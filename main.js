@@ -16328,9 +16328,9 @@ class LectorQrComponent {
           fps: 30,
           qrbox: 250 // Ajusta el tamaño del cuadro de escaneo según sea necesario
         }, (decodedText, decodedResult) => {
-          let code = decodedText.split(':')[1].replace('"', '').replace('"', '').replace('}', '');
+          // let code = decodedText.split(':')[1].replace('"', '').replace('"', '').replace('}', '');
           this.stopScanner();
-          this.sendObject.emit(code);
+          this.sendObject.emit(decodedText);
         }, error => {
           console.log(error);
         }).catch(err => {
