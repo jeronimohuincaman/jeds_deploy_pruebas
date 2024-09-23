@@ -498,7 +498,9 @@ class EntregasQRComponent {
    * Resetea todo el Formulario de Entrega con QR
    */
   resetForm() {
-    this.form.get('deposito_entrega').setValue('');
+    // Filtrar y autoasignar el depósito por defecto
+    const depositoPorDefecto = this.depositos.find(deposito => deposito.iddeposito === this.deposito_default);
+    this.form.get('deposito_entrega').setValue(depositoPorDefecto ? depositoPorDefecto : '');
     this.form.get('deposito_entrega').enable();
     this.form.get('deposito_entrega').setErrors(null);
     this.mov_art_list = [];
