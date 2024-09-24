@@ -603,13 +603,13 @@ class SaveComponent {
     this.rubro = this.data ? this.data : null;
     this.title = this.rubro?.idrubro ? 'Editar rubro' : 'Nuevo rubro';
     this.imagen = data?.imagen;
-  }
-  ngOnInit() {
     // Subscribe to empresa data
     this._empresaService.empresa$.pipe((0,rxjs__WEBPACK_IMPORTED_MODULE_8__.takeUntil)(this._unsubscribeAll)).subscribe(empresa => {
       this.color_primario = empresa.color_primario;
       this.color_secundario = empresa.color_secundario;
     });
+  }
+  ngOnInit() {
     // Load empresa data
     this._empresaService.getEmpresa();
     this.newForm();
@@ -810,7 +810,7 @@ class SaveComponent {
       } else {
         this.rubrosService.saveRubro(this.rubro).subscribe({
           next: data => {
-            if (data && this.imagenesNuevas.length > 0) {
+            if (data) {
               this.creadoExitosamente.emit();
               this.onCloseMenu();
             }

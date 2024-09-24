@@ -2188,14 +2188,14 @@ class SaveComponent {
     this.minDate = null;
     // Define maxDate como el dia de hoy
     this.maxDate = new Date();
+    // Subscribe to empresa data
+    this._empresaService.empresa$.pipe((0,rxjs__WEBPACK_IMPORTED_MODULE_10__.takeUntil)(this._unsubscribeAll)).subscribe(empresa => {
+      this.color_primario = empresa.color_primario;
+      this.color_secundario = empresa.color_secundario;
+    });
   }
   ngOnInit() {
     setTimeout(() => {
-      // Subscribe to empresa data
-      this._empresaService.empresa$.pipe((0,rxjs__WEBPACK_IMPORTED_MODULE_10__.takeUntil)(this._unsubscribeAll)).subscribe(empresa => {
-        this.color_primario = empresa.color_primario;
-        this.color_secundario = empresa.color_secundario;
-      });
       // Load empresa data
       this._empresaService.getEmpresa();
       this.getRubros();
@@ -2662,7 +2662,7 @@ class SaveComponent {
         payload['idunidadmedida'] = this.form.get('unidad_medida').value;
         this.articulosService.saveArticulo(payload).subscribe({
           next: data => {
-            if (data && this.imagenesNuevas.length > 0) {
+            if (data) {
               this.creadoExitosamente.emit();
               this.onCloseMenu();
             }

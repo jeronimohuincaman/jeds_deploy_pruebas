@@ -2064,8 +2064,6 @@ class SaveComponent {
     this.minDate = null;
     // Define maxDate como el dia de hoy
     this.maxDate = new Date();
-  }
-  ngOnInit() {
     // Subscribe to empresa data
     this._empresaService.empresa$.pipe((0,rxjs__WEBPACK_IMPORTED_MODULE_10__.takeUntil)(this._unsubscribeAll)).subscribe(empresa => {
       this.color_primario = empresa.color_primario;
@@ -2073,6 +2071,8 @@ class SaveComponent {
       this.deposito_default = empresa.deposito_default;
       this.asignacion_entrega = empresa.asignacion_entrega;
     });
+  }
+  ngOnInit() {
     // Load empresa data
     this._empresaService.getEmpresa();
     this.newForm();
@@ -2179,7 +2179,9 @@ class SaveComponent {
     } else if (this.asignacion_entrega === 1) {
       this.form.addControl('unidad_funcional', new _angular_forms__WEBPACK_IMPORTED_MODULE_15__.FormControl(this.entrega?.idunidadfuncional ? {
         idunidadfuncional: this.entrega.idunidadfuncional,
-        descripcion_complejo_uf: this.entrega.descripcion_unidad_funcional
+        descripcion_complejo_uf: this.entrega.descripcion_unidad_funcional,
+        idcomplejo: this.entrega.idcomplejo,
+        descripcion_complejo: this.entrega.descripcion_complejo
       } : ''));
       this.form.addControl('complejo', new _angular_forms__WEBPACK_IMPORTED_MODULE_15__.FormControl(this.entrega?.idcomplejo ? {
         idcomplejo: this.entrega.idcomplejo,
@@ -2422,6 +2424,9 @@ class SaveComponent {
   limpiarCasillero(input) {
     this.form.get(input).setValue('');
     this.seleccionItem(input, 'reset');
+    if (input === 'complejo' && this.form.get('unidad_funcional').value) {
+      this.form.get('unidad_funcional').setValue('');
+    }
   }
   /**
   * Esta funcion maneja las cambios de seleccion que puedan tener los combos.
