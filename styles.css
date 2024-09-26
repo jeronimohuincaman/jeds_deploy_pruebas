@@ -39217,6 +39217,9 @@ body.light mat-option:nth-child(odd):hover {
 .h-\[150px\] {
     height: 150px !important;
 }
+.h-\[200px\] {
+    height: 200px !important;
+}
 .h-auto {
     height: auto !important;
 }
@@ -39234,6 +39237,9 @@ body.light mat-option:nth-child(odd):hover {
 }
 .max-h-\[170px\] {
     max-height: 170px !important;
+}
+.max-h-\[200px\] {
+    max-height: 200px !important;
 }
 .max-h-\[215px\] {
     max-height: 215px !important;
