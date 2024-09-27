@@ -39521,6 +39521,9 @@ body.light mat-option:nth-child(odd):hover {
 .justify-items-start {
     justify-items: start !important;
 }
+.gap-1 {
+    gap: 0.25rem !important;
+}
 .gap-2 {
     gap: 0.5rem !important;
 }
