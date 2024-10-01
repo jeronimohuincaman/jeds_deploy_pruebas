@@ -38674,7 +38674,8 @@ input::-webkit-inner-spin-button {
 
 /* Firefox */
 input[type=number] {
-  -moz-appearance: textfield;
+  -webkit-appearance: none;
+          appearance: none;
 }
 
 @media screen and (max-width: 960px) {
@@ -39190,9 +39191,6 @@ body.light mat-option:nth-child(odd):hover {
 .h-20 {
     height: 5rem !important;
 }
-.h-200 {
-    height: 50rem !important;
-}
 .h-24 {
     height: 6rem !important;
 }
@@ -39333,9 +39331,6 @@ body.light mat-option:nth-child(odd):hover {
 }
 .w-60 {
     width: 15rem !important;
-}
-.w-64 {
-    width: 16rem !important;
 }
 .w-7 {
     width: 1.75rem !important;
@@ -40858,9 +40853,6 @@ body.light mat-option:nth-child(odd):hover {
     }
     .sm\:min-w-140 {
         min-width: 35rem !important;
-    }
-    .sm\:min-w-30 {
-        min-width: 7.5rem !important;
     }
     .sm\:min-w-80 {
         min-width: 20rem !important;
