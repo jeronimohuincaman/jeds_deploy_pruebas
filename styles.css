@@ -38127,10 +38127,12 @@ textarea [data-autocompleted] {
 /* -------------------------------------------------------------------------- */
 /*  @ Table
 /* -------------------------------------------------------------------------- */
-.mat-mdc-table .mdc-data-table__row:not(.mdc-data-table__row--selected):hover {
-  background: none !important;
-}
+/* .mat-mdc-table {
 
+    .mdc-data-table__row:not(.mdc-data-table__row--selected):hover {
+        background: none !important;
+    }
+} */
 /* -------------------------------------------------------------------------- */
 /*  @ Tabs
 /* -------------------------------------------------------------------------- */
@@ -38676,6 +38678,18 @@ input::-webkit-inner-spin-button {
 input[type=number] {
   -webkit-appearance: none;
           appearance: none;
+}
+
+table {
+  /* tr:nth-child(odd):not(tr.mat-header-row) {
+      background-color: white !important;
+  } */
+}
+table tr:nth-child(even) {
+  background-color: #f6f6f6 !important;
+}
+table tr:nth-child(odd) {
+  background-color: white !important;
 }
 
 @media screen and (max-width: 960px) {

@@ -16999,13 +16999,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 const $BASE_API = "https://divannibackendyii.jeds.ar";
 const $BASE_REST = "https://divannibackendyii.jeds.ar/web";
-//const $BASE_REST = "http://localhost/jeds/divanni_backend_yii/web";
+// const $BASE_REST = "http://localhost/jeds/divanni_backend_yii/web";
 const environment = {
   production: false,
   baseRest: $BASE_REST,
   login: {
     users: `${$BASE_REST}/view_usuario_logins`,
-    //users: `${$CARGA_WEB}/usuarios_login.php`,
     login: `${$BASE_REST}/usuario/login`,
     view_usuarios: `${$BASE_REST}/view_usuarios`,
     credencial_usuario: `${$BASE_REST}/view_usuario/generar_credencial`
@@ -17057,8 +17056,7 @@ const environment = {
   },
   ventas: {
     view_venta_selects: `${$BASE_REST}/view_venta_selects`,
-    view_venta_genericas: `${$BASE_REST}/view_venta_genericas`,
-    reporte_orden_servicio: `${$BASE_REST}/venta_generica_token/generar_orden?idventagenerica=`
+    view_venta_genericas: `${$BASE_REST}/view_venta_genericas`
   },
   compras: {
     pedido_presupuestos: `${$BASE_REST}/egr_pedido_presupuestos`,
@@ -17086,7 +17084,7 @@ const environment = {
       view_inm_unidad_funcional: `${$BASE_REST}/view_inm_unidad_funcionals`
     }
   },
-  reporte_orden_servicio: `${$BASE_REST}/generar_orden_servicio`
+  reporte_orden_servicio: `${$BASE_REST}/generar_orden_servicios`
 };
 
 /***/ }),
