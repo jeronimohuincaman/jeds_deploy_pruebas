@@ -198,6 +198,7 @@ class EntregasComponent {
     this.dialogo.open(_shared_components_lector_qr_lector_qr_component__WEBPACK_IMPORTED_MODULE_5__.LectorQrComponent, {
       panelClass: 'ayuda-dialog'
     }).componentInstance.sendObject.subscribe(code => {
+      return console.log(code);
       if (!code || code.length === 0) {
         this.alert.error('Código QR vacío o inválido.');
         return;

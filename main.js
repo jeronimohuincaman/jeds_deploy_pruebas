@@ -16304,88 +16304,218 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "LectorQrComponent": () => (/* binding */ LectorQrComponent)
 /* harmony export */ });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ 86839);
-/* harmony import */ var html5_qrcode__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! html5-qrcode */ 83421);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ 86839);
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common */ 86477);
+/* harmony import */ var _zxing_ngx_scanner__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @zxing/ngx-scanner */ 41389);
 
 
 
+
+const _c0 = function () {
+  return ["QR_CODE"];
+};
+function LectorQrComponent_zxing_scanner_1_Template(rf, ctx) {
+  if (rf & 1) {
+    const _r5 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "zxing-scanner", 3);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("scanSuccess", function LectorQrComponent_zxing_scanner_1_Template_zxing_scanner_scanSuccess_0_listener($event) {
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r5);
+      const ctx_r4 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
+      return _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵresetView"](ctx_r4.onCodeResult($event));
+    })("camerasFound", function LectorQrComponent_zxing_scanner_1_Template_zxing_scanner_camerasFound_0_listener($event) {
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r5);
+      const ctx_r6 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
+      return _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵresetView"](ctx_r6.onCamerasFound($event));
+    })("permissionResponse", function LectorQrComponent_zxing_scanner_1_Template_zxing_scanner_permissionResponse_0_listener($event) {
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r5);
+      const ctx_r7 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
+      return _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵresetView"](ctx_r7.onHasPermission($event));
+    });
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+  }
+  if (rf & 2) {
+    const ctx_r0 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("start", ctx_r0.scannerEnabled)("device", ctx_r0.selectedDevice)("formats", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction0"](4, _c0))("tryHarder", true);
+  }
+}
+function LectorQrComponent_button_2_Template(rf, ctx) {
+  if (rf & 1) {
+    const _r9 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "button", 4);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function LectorQrComponent_button_2_Template_button_click_0_listener() {
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r9);
+      const ctx_r8 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
+      return _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵresetView"](ctx_r8.stopScanner());
+    });
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1, "Cerrar Esc\u00E1ner");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+  }
+}
+function LectorQrComponent_button_3_Template(rf, ctx) {
+  if (rf & 1) {
+    const _r11 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "button", 4);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function LectorQrComponent_button_3_Template_button_click_0_listener() {
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r11);
+      const ctx_r10 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
+      return _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵresetView"](ctx_r10.switchCamera());
+    });
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1, "Cambiar C\u00E1mara");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+  }
+}
+function LectorQrComponent_button_4_Template(rf, ctx) {
+  if (rf & 1) {
+    const _r13 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "button", 4);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function LectorQrComponent_button_4_Template_button_click_0_listener() {
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r13);
+      const ctx_r12 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
+      return _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵresetView"](ctx_r12.toggleTorch());
+    });
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1, "Flash");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+  }
+}
 class LectorQrComponent {
   constructor() {
-    this.sendObject = new _angular_core__WEBPACK_IMPORTED_MODULE_1__.EventEmitter();
+    this.sendObject = new _angular_core__WEBPACK_IMPORTED_MODULE_0__.EventEmitter();
+    this.scannerEnabled = true; // Control para activar o detener el escáner
+    this.availableDevices = [];
+    this.selectedDevice = null;
+    this.hasDevices = false;
+    this.hasPermission = false;
+    this.currentDeviceIndex = 0; // Índice de la cámara actual
+    this.torchEnabled = false; // Control para la linterna
   }
+
   ngOnDestroy() {
     this.stopScanner();
   }
   ngOnInit() {
-    this.initScanner();
+    // Inicializar el escáner si es necesario
   }
-  initScanner() {
-    html5_qrcode__WEBPACK_IMPORTED_MODULE_0__.Html5Qrcode.getCameras().then(devices => {
-      if (devices && devices.length) {
-        const cameraId = devices[devices.length - 1].id;
-        this.scanner = new html5_qrcode__WEBPACK_IMPORTED_MODULE_0__.Html5Qrcode('reader');
-        this.scanner.start(cameraId, {
-          fps: 30,
-          qrbox: 250 // Ajusta el tamaño del cuadro de escaneo según sea necesario
-        }, (decodedText, decodedResult) => {
-          // let code = decodedText.split(':')[1].replace('"', '').replace('"', '').replace('}', '');
-          this.stopScanner();
-          this.sendObject.emit(decodedText);
-        }, error => {
-          console.log(error);
-        }).catch(err => {
-          console.log(err);
-        });
-      }
-    }).catch(err => {
-      console.log(err);
-    });
+  onCodeResult(resultString) {
+    this.sendObject.emit(resultString);
+    this.stopScanner();
   }
+  onCamerasFound(devices) {
+    this.availableDevices = devices;
+    this.hasDevices = Boolean(devices && devices.length);
+    if (this.hasDevices) {
+      // Seleccionar la primera cámara disponible
+      this.selectedDevice = devices[0];
+      this.currentDeviceIndex = 0; // Inicializar índice de la cámara
+    }
+  }
+
+  onHasPermission(has) {
+    this.hasPermission = has;
+  }
+  // Método para detener el escáner
   stopScanner() {
-    if (this.scanner) {
-      if (this.scanner.getState() == 2) {
-        this.scanner.stop().then(() => {
-          console.log("Escáner detenido.");
-          const overlayBackdrop = document.querySelector('.cdk-overlay-backdrop');
-          if (overlayBackdrop) {
-            // Verifica si hay más de un overlay (es decir, si se está ejecutando dentro de un modal)
-            const overlays = document.querySelectorAll('.cdk-overlay-backdrop');
-            if (overlays.length > 1) {
-              // Elimina el overlay del scanner (el último que se agregó)
-              overlays[overlays.length - 1].remove();
-            } else {
-              // Si solo hay un overlay, elimina ese
-              overlayBackdrop.remove();
-            }
-          }
-          const readerElement = document.getElementById('reader');
-          if (readerElement) {
-            readerElement.remove(); // Elimina el elemento del DOM
-          }
-        }).catch(err => {
-          console.error("Error al detener el escáner: ", err);
-        });
+    if (this.scannerEnabled) {
+      // Verifica si el escáner está habilitado
+      this.scannerEnabled = false; // Desactivar el escáner
+      console.log("Escáner detenido."); // Mensaje de confirmación
+      // Manejo del backdrop overlay si se está ejecutando dentro de un modal
+      const overlayBackdrop = document.querySelector('.cdk-overlay-backdrop');
+      if (overlayBackdrop) {
+        // Verifica si hay más de un overlay
+        const overlays = document.querySelectorAll('.cdk-overlay-backdrop');
+        if (overlays.length > 1) {
+          // Elimina el último overlay
+          overlays[overlays.length - 1].remove();
+        } else {
+          // Si solo hay un overlay, elimina ese
+          overlayBackdrop.remove();
+        }
       }
+    }
+  }
+  startScanner() {
+    this.scannerEnabled = true;
+  }
+  // Método para cambiar entre cámaras
+  switchCamera() {
+    if (this.hasDevices) {
+      this.currentDeviceIndex = (this.currentDeviceIndex + 1) % this.availableDevices.length; // Cambiar al siguiente índice
+      this.selectedDevice = this.availableDevices[this.currentDeviceIndex]; // Actualizar la cámara seleccionada
+      console.log(`Cámara cambiada a: ${this.selectedDevice.label}`); // Mensaje de confirmación
+      // Aquí puedes reiniciar el escáner si es necesario
+    }
+  }
+  // Método para encender y apagar la linterna
+  toggleTorch() {
+    if (this.selectedDevice) {
+      const constraints = {
+        video: {
+          deviceId: {
+            exact: this.selectedDevice.deviceId
+          },
+          facingMode: 'environment' // Asegúrate de usar la cámara trasera
+        }
+      };
+
+      navigator.mediaDevices.getUserMedia(constraints).then(stream => {
+        const videoTrack = stream.getVideoTracks()[0];
+        if (videoTrack) {
+          const capabilities = videoTrack.getCapabilities();
+          if (capabilities['torch']) {
+            // Verifica si el dispositivo tiene linterna
+            this.torchEnabled = !this.torchEnabled; // Cambia el estado de la linterna
+            // Aplicar las restricciones avanzadas
+            let advanced = 'advanced';
+            videoTrack.applyConstraints({
+              [advanced]: [{
+                torch: this.torchEnabled
+              }]
+            }).then(() => {
+              console.log(`Linterna ${this.torchEnabled ? 'encendida' : 'apagada'}.`);
+            }).catch(err => {
+              console.error('Error al cambiar el estado de la linterna:', err);
+            });
+          }
+        }
+      }).catch(err => {
+        console.error('Error al acceder a la cámara:', err);
+      });
     }
   }
 }
 LectorQrComponent.ɵfac = function LectorQrComponent_Factory(t) {
   return new (t || LectorQrComponent)();
 };
-LectorQrComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineComponent"]({
+LectorQrComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
   type: LectorQrComponent,
   selectors: [["app-lector-qr"]],
   outputs: {
     sendObject: "sendObject"
   },
-  decls: 1,
-  vars: 0,
-  consts: [["id", "reader", 1, "fixed", "inset-0", "adaptable-reader"]],
+  decls: 5,
+  vars: 4,
+  consts: [[1, "scanner-container"], [3, "start", "device", "formats", "tryHarder", "scanSuccess", "camerasFound", "permissionResponse", 4, "ngIf"], [3, "click", 4, "ngIf"], [3, "start", "device", "formats", "tryHarder", "scanSuccess", "camerasFound", "permissionResponse"], [3, "click"]],
   template: function LectorQrComponent_Template(rf, ctx) {
     if (rf & 1) {
-      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](0, "div", 0);
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 0);
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](1, LectorQrComponent_zxing_scanner_1_Template, 1, 5, "zxing-scanner", 1);
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](2, LectorQrComponent_button_2_Template, 2, 0, "button", 2);
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](3, LectorQrComponent_button_3_Template, 2, 0, "button", 2);
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](4, LectorQrComponent_button_4_Template, 2, 0, "button", 2);
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+    }
+    if (rf & 2) {
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.scannerEnabled);
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.scannerEnabled);
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.scannerEnabled);
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.scannerEnabled);
     }
   },
+  dependencies: [_angular_common__WEBPACK_IMPORTED_MODULE_1__.NgIf, _zxing_ngx_scanner__WEBPACK_IMPORTED_MODULE_2__.ZXingScannerComponent],
   styles: ["@charset \"UTF-8\";\n.adaptable-reader[_ngcontent-%COMP%] {\n  \n  \n}\n@media (max-width: 768px) {\n  .adaptable-reader[_ngcontent-%COMP%] {\n    width: auto;\n    height: auto;\n  }\n}\n@media (min-width: 769px) {\n  .adaptable-reader[_ngcontent-%COMP%] {\n    position: relative;\n    width: 500px;\n    height: 375px;\n    margin: auto;\n    transform: translateY(-50%);\n  }\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImxlY3Rvci1xci5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQSxnQkFBZ0I7QUFBaEI7RUFDRSw0QkFBQTtFQU1BLHNDQUFBO0FBSEY7QUFGRTtFQUZGO0lBR0ksV0FBQTtJQUNBLFlBQUE7RUFLRjtBQUNGO0FBRkU7RUFSRjtJQVNJLGtCQUFBO0lBQ0EsWUFBQTtJQUNBLGFBQUE7SUFDQSxZQUFBO0lBQ0EsMkJBQUE7RUFLRjtBQUNGIiwiZmlsZSI6ImxlY3Rvci1xci5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIi5hZGFwdGFibGUtcmVhZGVyIHtcclxuICAvKiBQYXJhIHBhbnRhbGxhcyBwZXF1ZcOxYXMgKi9cclxuICBAbWVkaWEgKG1heC13aWR0aDogNzY4cHgpIHsgXHJcbiAgICB3aWR0aDogYXV0bztcclxuICAgIGhlaWdodDogYXV0bztcclxuICB9XHJcblxyXG4gIC8qIFBhcmEgcGFudGFsbGFzIG1lZGlhbmFzIHkgZ3JhbmRlcyAqL1xyXG4gIEBtZWRpYSAobWluLXdpZHRoOiA3NjlweCkgeyBcclxuICAgIHBvc2l0aW9uOiByZWxhdGl2ZTsgXHJcbiAgICB3aWR0aDogNTAwcHg7IFxyXG4gICAgaGVpZ2h0OiAzNzVweDtcclxuICAgIG1hcmdpbjogYXV0bzsgXHJcbiAgICB0cmFuc2Zvcm06IHRyYW5zbGF0ZVkoLTUwJSk7IFxyXG4gIH1cclxufSJdfQ== */\n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8uL3NyYy9hcHAvc2hhcmVkL2NvbXBvbmVudHMvbGVjdG9yLXFyL2xlY3Rvci1xci5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQSxnQkFBZ0I7QUFBaEI7RUFDRSw0QkFBQTtFQU1BLHNDQUFBO0FBSEY7QUFGRTtFQUZGO0lBR0ksV0FBQTtJQUNBLFlBQUE7RUFLRjtBQUNGO0FBRkU7RUFSRjtJQVNJLGtCQUFBO0lBQ0EsWUFBQTtJQUNBLGFBQUE7SUFDQSxZQUFBO0lBQ0EsMkJBQUE7RUFLRjtBQUNGO0FBQ0EsNDVCQUE0NUIiLCJzb3VyY2VzQ29udGVudCI6WyIuYWRhcHRhYmxlLXJlYWRlciB7XHJcbiAgLyogUGFyYSBwYW50YWxsYXMgcGVxdWXDg8KxYXMgKi9cclxuICBAbWVkaWEgKG1heC13aWR0aDogNzY4cHgpIHsgXHJcbiAgICB3aWR0aDogYXV0bztcclxuICAgIGhlaWdodDogYXV0bztcclxuICB9XHJcblxyXG4gIC8qIFBhcmEgcGFudGFsbGFzIG1lZGlhbmFzIHkgZ3JhbmRlcyAqL1xyXG4gIEBtZWRpYSAobWluLXdpZHRoOiA3NjlweCkgeyBcclxuICAgIHBvc2l0aW9uOiByZWxhdGl2ZTsgXHJcbiAgICB3aWR0aDogNTAwcHg7IFxyXG4gICAgaGVpZ2h0OiAzNzVweDtcclxuICAgIG1hcmdpbjogYXV0bzsgXHJcbiAgICB0cmFuc2Zvcm06IHRyYW5zbGF0ZVkoLTUwJSk7IFxyXG4gIH1cclxufSJdLCJzb3VyY2VSb290IjoiIn0= */"]
 });
 
@@ -16493,10 +16623,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "SharedComponentModule": () => (/* binding */ SharedComponentModule)
 /* harmony export */ });
-/* harmony import */ var _angular_cdk_overlay__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @angular/cdk/overlay */ 12778);
-/* harmony import */ var _angular_cdk_portal__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @angular/cdk/portal */ 12035);
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/common */ 86477);
-/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! @angular/forms */ 69542);
+/* harmony import */ var _angular_cdk_overlay__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! @angular/cdk/overlay */ 12778);
+/* harmony import */ var _angular_cdk_portal__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! @angular/cdk/portal */ 12035);
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/common */ 86477);
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/forms */ 69542);
 /* harmony import */ var _angular_material_autocomplete__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! @angular/material/autocomplete */ 42556);
 /* harmony import */ var _angular_material_button__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @angular/material/button */ 83677);
 /* harmony import */ var _angular_material_divider__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! @angular/material/divider */ 20445);
@@ -16504,17 +16634,19 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_material_icon__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @angular/material/icon */ 69941);
 /* harmony import */ var _angular_material_input__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @angular/material/input */ 4322);
 /* harmony import */ var _angular_material_menu__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! @angular/material/menu */ 89314);
-/* harmony import */ var _angular_material_paginator__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/material/paginator */ 86907);
-/* harmony import */ var _angular_material_progress_spinner__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/material/progress-spinner */ 15312);
+/* harmony import */ var _angular_material_paginator__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @angular/material/paginator */ 86907);
+/* harmony import */ var _angular_material_progress_spinner__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @angular/material/progress-spinner */ 15312);
 /* harmony import */ var _angular_material_slide_toggle__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! @angular/material/slide-toggle */ 4291);
-/* harmony import */ var _angular_material_table__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/material/table */ 83348);
+/* harmony import */ var _angular_material_table__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/material/table */ 83348);
 /* harmony import */ var _angular_material_tooltip__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @angular/material/tooltip */ 52423);
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! @angular/router */ 86679);
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/router */ 86679);
 /* harmony import */ var _shared_pipes_safe_url_pipe__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @shared/pipes/safe-url.pipe */ 72129);
 /* harmony import */ var _shared_service_app_jeds_menu_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @shared/service/app/jeds-menu.service */ 92078);
 /* harmony import */ var _shared_service_app_pwa_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @shared/service/app/pwa.service */ 16173);
 /* harmony import */ var _lector_qr_lector_qr_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./lector-qr/lector-qr.component */ 5729);
+/* harmony import */ var _zxing_ngx_scanner__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! @zxing/ngx-scanner */ 41389);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/core */ 86839);
+
 
 
 
@@ -16546,14 +16678,19 @@ SharedComponentModule.ɵmod = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODUL
 });
 SharedComponentModule.ɵinj = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdefineInjector"]({
   providers: [_shared_service_app_jeds_menu_service__WEBPACK_IMPORTED_MODULE_1__.JedsMenuService, _shared_service_app_pwa_service__WEBPACK_IMPORTED_MODULE_2__.PwaService],
-  imports: [_angular_material_table__WEBPACK_IMPORTED_MODULE_5__.MatTableModule, _angular_material_progress_spinner__WEBPACK_IMPORTED_MODULE_6__.MatProgressSpinnerModule, _angular_material_paginator__WEBPACK_IMPORTED_MODULE_7__.MatPaginatorModule, _angular_common__WEBPACK_IMPORTED_MODULE_8__.CommonModule, _angular_cdk_overlay__WEBPACK_IMPORTED_MODULE_9__.OverlayModule, _angular_cdk_portal__WEBPACK_IMPORTED_MODULE_10__.PortalModule, _angular_material_button__WEBPACK_IMPORTED_MODULE_11__.MatButtonModule, _angular_material_icon__WEBPACK_IMPORTED_MODULE_12__.MatIconModule, _angular_material_tooltip__WEBPACK_IMPORTED_MODULE_13__.MatTooltipModule, _angular_material_icon__WEBPACK_IMPORTED_MODULE_12__.MatIconModule, _angular_material_input__WEBPACK_IMPORTED_MODULE_14__.MatInputModule, _angular_material_form_field__WEBPACK_IMPORTED_MODULE_15__.MatFormFieldModule, _angular_material_slide_toggle__WEBPACK_IMPORTED_MODULE_16__.MatSlideToggleModule, _angular_material_menu__WEBPACK_IMPORTED_MODULE_17__.MatMenuModule, _angular_material_divider__WEBPACK_IMPORTED_MODULE_18__.MatDividerModule, _angular_material_autocomplete__WEBPACK_IMPORTED_MODULE_19__.MatAutocompleteModule, _angular_router__WEBPACK_IMPORTED_MODULE_20__.RouterModule, _angular_forms__WEBPACK_IMPORTED_MODULE_21__.ReactiveFormsModule]
+  imports: [_angular_common__WEBPACK_IMPORTED_MODULE_5__.CommonModule, _angular_forms__WEBPACK_IMPORTED_MODULE_6__.ReactiveFormsModule, _angular_router__WEBPACK_IMPORTED_MODULE_7__.RouterModule, _angular_material_table__WEBPACK_IMPORTED_MODULE_8__.MatTableModule, _angular_material_progress_spinner__WEBPACK_IMPORTED_MODULE_9__.MatProgressSpinnerModule, _angular_material_paginator__WEBPACK_IMPORTED_MODULE_10__.MatPaginatorModule, _angular_material_button__WEBPACK_IMPORTED_MODULE_11__.MatButtonModule, _angular_material_icon__WEBPACK_IMPORTED_MODULE_12__.MatIconModule, _angular_material_tooltip__WEBPACK_IMPORTED_MODULE_13__.MatTooltipModule, _angular_material_input__WEBPACK_IMPORTED_MODULE_14__.MatInputModule, _angular_material_form_field__WEBPACK_IMPORTED_MODULE_15__.MatFormFieldModule, _angular_material_slide_toggle__WEBPACK_IMPORTED_MODULE_16__.MatSlideToggleModule, _angular_material_menu__WEBPACK_IMPORTED_MODULE_17__.MatMenuModule, _angular_material_divider__WEBPACK_IMPORTED_MODULE_18__.MatDividerModule, _angular_material_autocomplete__WEBPACK_IMPORTED_MODULE_19__.MatAutocompleteModule, _angular_cdk_overlay__WEBPACK_IMPORTED_MODULE_20__.OverlayModule, _angular_cdk_portal__WEBPACK_IMPORTED_MODULE_21__.PortalModule, _zxing_ngx_scanner__WEBPACK_IMPORTED_MODULE_22__.ZXingScannerModule // Importa ZXingScannerModule aquí
+  ]
 });
+
 
 (function () {
   (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵsetNgModuleScope"](SharedComponentModule, {
-    declarations: [_shared_pipes_safe_url_pipe__WEBPACK_IMPORTED_MODULE_0__.SafeUrlPipe, _lector_qr_lector_qr_component__WEBPACK_IMPORTED_MODULE_3__.LectorQrComponent],
-    imports: [_angular_material_table__WEBPACK_IMPORTED_MODULE_5__.MatTableModule, _angular_material_progress_spinner__WEBPACK_IMPORTED_MODULE_6__.MatProgressSpinnerModule, _angular_material_paginator__WEBPACK_IMPORTED_MODULE_7__.MatPaginatorModule, _angular_common__WEBPACK_IMPORTED_MODULE_8__.CommonModule, _angular_cdk_overlay__WEBPACK_IMPORTED_MODULE_9__.OverlayModule, _angular_cdk_portal__WEBPACK_IMPORTED_MODULE_10__.PortalModule, _angular_material_button__WEBPACK_IMPORTED_MODULE_11__.MatButtonModule, _angular_material_icon__WEBPACK_IMPORTED_MODULE_12__.MatIconModule, _angular_material_tooltip__WEBPACK_IMPORTED_MODULE_13__.MatTooltipModule, _angular_material_icon__WEBPACK_IMPORTED_MODULE_12__.MatIconModule, _angular_material_input__WEBPACK_IMPORTED_MODULE_14__.MatInputModule, _angular_material_form_field__WEBPACK_IMPORTED_MODULE_15__.MatFormFieldModule, _angular_material_slide_toggle__WEBPACK_IMPORTED_MODULE_16__.MatSlideToggleModule, _angular_material_menu__WEBPACK_IMPORTED_MODULE_17__.MatMenuModule, _angular_material_divider__WEBPACK_IMPORTED_MODULE_18__.MatDividerModule, _angular_material_autocomplete__WEBPACK_IMPORTED_MODULE_19__.MatAutocompleteModule, _angular_router__WEBPACK_IMPORTED_MODULE_20__.RouterModule, _angular_forms__WEBPACK_IMPORTED_MODULE_21__.ReactiveFormsModule],
-    exports: [_shared_pipes_safe_url_pipe__WEBPACK_IMPORTED_MODULE_0__.SafeUrlPipe]
+    declarations: [_shared_pipes_safe_url_pipe__WEBPACK_IMPORTED_MODULE_0__.SafeUrlPipe, _lector_qr_lector_qr_component__WEBPACK_IMPORTED_MODULE_3__.LectorQrComponent // Asegúrate de que este componente esté declarado
+    ],
+    imports: [_angular_common__WEBPACK_IMPORTED_MODULE_5__.CommonModule, _angular_forms__WEBPACK_IMPORTED_MODULE_6__.ReactiveFormsModule, _angular_router__WEBPACK_IMPORTED_MODULE_7__.RouterModule, _angular_material_table__WEBPACK_IMPORTED_MODULE_8__.MatTableModule, _angular_material_progress_spinner__WEBPACK_IMPORTED_MODULE_9__.MatProgressSpinnerModule, _angular_material_paginator__WEBPACK_IMPORTED_MODULE_10__.MatPaginatorModule, _angular_material_button__WEBPACK_IMPORTED_MODULE_11__.MatButtonModule, _angular_material_icon__WEBPACK_IMPORTED_MODULE_12__.MatIconModule, _angular_material_tooltip__WEBPACK_IMPORTED_MODULE_13__.MatTooltipModule, _angular_material_input__WEBPACK_IMPORTED_MODULE_14__.MatInputModule, _angular_material_form_field__WEBPACK_IMPORTED_MODULE_15__.MatFormFieldModule, _angular_material_slide_toggle__WEBPACK_IMPORTED_MODULE_16__.MatSlideToggleModule, _angular_material_menu__WEBPACK_IMPORTED_MODULE_17__.MatMenuModule, _angular_material_divider__WEBPACK_IMPORTED_MODULE_18__.MatDividerModule, _angular_material_autocomplete__WEBPACK_IMPORTED_MODULE_19__.MatAutocompleteModule, _angular_cdk_overlay__WEBPACK_IMPORTED_MODULE_20__.OverlayModule, _angular_cdk_portal__WEBPACK_IMPORTED_MODULE_21__.PortalModule, _zxing_ngx_scanner__WEBPACK_IMPORTED_MODULE_22__.ZXingScannerModule // Importa ZXingScannerModule aquí
+    ],
+    exports: [_shared_pipes_safe_url_pipe__WEBPACK_IMPORTED_MODULE_0__.SafeUrlPipe, _lector_qr_lector_qr_component__WEBPACK_IMPORTED_MODULE_3__.LectorQrComponent // Exporta LectorQrComponent para que esté disponible en otros módulos
+    ]
   });
 })();
 
