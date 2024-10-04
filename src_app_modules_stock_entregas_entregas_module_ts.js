@@ -196,14 +196,16 @@ class EntregasComponent {
     let idordenservicio;
     let clave_os;
     this.dialogo.open(_shared_components_lector_qr_lector_qr_component__WEBPACK_IMPORTED_MODULE_5__.LectorQrComponent, {
-      panelClass: 'ayuda-dialog'
+      panelClass: 'ayuda-dialog',
+      width: '70vw',
+      height: '70vh' // Alto fijo
     }).componentInstance.sendObject.subscribe(code => {
-      return console.log(code);
       if (!code || code.length === 0) {
         this.alert.error('Código QR vacío o inválido.');
         return;
       }
       let decodedText = JSON.parse(code); // Convierto el string en json
+      return console.log(decodedText);
       for (const clave in decodedText) {
         clave_os = clave;
         idordenservicio = decodedText[clave];
