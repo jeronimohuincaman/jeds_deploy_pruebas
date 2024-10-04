@@ -816,6 +816,9 @@ class SaveComponent {
     if ($event?.key === 'Enter') {
       $event.preventDefault();
     }
+    if (!this.form_carga_articulos.get('unidadmedida').value || !this.form_carga_articulos.get('articulo').value || !this.form_carga_articulos.get('cantidad').value) {
+      return this.alert.warning('Por favor, complete todos los campos de la carga de articulo');
+    }
     if (!this.form_carga_articulos.valid) {
       return this.alert.error('Debe seleccionar un artículo');
     } else {

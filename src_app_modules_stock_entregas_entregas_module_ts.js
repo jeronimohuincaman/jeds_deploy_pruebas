@@ -1842,6 +1842,7 @@ class SaveComponent {
   * @param $event
   */
   seleccionItem($event, info) {
+    console.log($event);
     if ($event.idcomplejo) {
       this.getUnidadesFuncionales($event.idcomplejo); //...Buscamos las UF que posee ese complejo.
     } else if ($event.idcomplejo === null) {
@@ -1919,6 +1920,9 @@ class SaveComponent {
     if ($event?.key === 'Enter') {
       $event.preventDefault();
     }
+    if (!this.form_carga_articulos.get('unidadmedida').value || !this.form_carga_articulos.get('articulo').value || !this.form_carga_articulos.get('cantidad').value) {
+      return this.alert.warning('Por favor, complete todos los campos de la carga de articulo');
+    }
     if (!this.form_carga_articulos.valid) {
       return this.alert.error('Debe seleccionar un artículo');
     } else {
@@ -1926,13 +1930,13 @@ class SaveComponent {
         if (articulo.idarticulo === this.form_carga_articulos.get('articulo').value.idarticulo && articulo.idunidadmedida === this.form_carga_articulos.get('unidadmedida').value) {
           if (this.form_carga_articulos.get('cantidad').value > articulo.stock) {
             this.form_carga_articulos.get('cantidad').setValue('');
-            return this.alert.warning('No hay stock suficiente!');
+            return this.alert.warning('No hay stock suficiente');
           }
           let existeMovimiento = this.mov_art_list.find(movimiento => movimiento.idarticulo === this.form_carga_articulos.get('articulo').value.idarticulo && movimiento.idunidadmedida === this.form_carga_articulos.get('unidadmedida').value /*  && movimiento.idventa === this.form_carga_articulos.get('venta').value.idventa */);
           if (existeMovimiento) {
             this.form_carga_articulos.get('unidadmedida').setValue('');
             this.form_carga_articulos.get('stock_existente').setValue('');
-            return this.alert.warning('Ya existe un movimiento de ese articulo con esa unidad de medida asociado a esa Orden de Servicio.');
+            return this.alert.warning('Ya existe un movimiento de ese articulo con esa unidad de medida asociado a esa Orden de Servicio');
           }
           if (this.form_carga_articulos.get('cantidad').value <= articulo.stock && this.form_carga_articulos.get('cantidad').value > 0) {
             let unidadmedida = this.unidades_de_medida.find(um => um.idunidadmedida === this.form_carga_articulos.get('unidadmedida').value); //Traigo una UM que coincida con mi seleccion para poder utilizar su descripcion.
