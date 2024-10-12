@@ -1842,7 +1842,6 @@ class SaveComponent {
   * @param $event
   */
   seleccionItem($event, info) {
-    console.log($event);
     if ($event.idcomplejo) {
       this.getUnidadesFuncionales($event.idcomplejo); //...Buscamos las UF que posee ese complejo.
     } else if ($event.idcomplejo === null) {
