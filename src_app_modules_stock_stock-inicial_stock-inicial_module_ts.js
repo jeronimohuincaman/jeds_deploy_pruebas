@@ -1403,6 +1403,11 @@ class StockInicialComponent {
     this.stkMovimientos = [];
     this.default_color = 'border-primary text-primary';
     this._unsubscribeAll = new rxjs__WEBPACK_IMPORTED_MODULE_15__.Subject();
+    // Subscribe to empresa data
+    this._empresaService.empresa$.pipe((0,rxjs__WEBPACK_IMPORTED_MODULE_16__.takeUntil)(this._unsubscribeAll)).subscribe(empresa => {
+      this.color_primario = empresa.color_primario;
+      this.color_secundario = empresa.color_secundario;
+    });
     this._headerTextService.setTitulo(this.router);
     /**
     * Aca se declaran los botones que iran en la grilla sobre el apartado de acciones.
@@ -1410,23 +1415,18 @@ class StockInicialComponent {
     this.funcionesObjeto = [{
       nombre_boton: "Editar",
       functionName: 'editar',
-      iconoAccion: stock_inicial => 'jedstion:editar',
+      iconoAccion: stock_inicial => stock_inicial.puede_modificar === true ? 'jedstion:editar' : '',
       iconoAccionado: stock_inicial => '',
-      iconoDeshabilitado: stock_inicial => ''
+      iconoDeshabilitado: stock_inicial => stock_inicial.puede_modificar === false ? 'jedstion:editar_disabled' : ''
     }, {
       nombre_boton: "Eliminar",
       functionName: 'eliminar',
-      iconoAccion: stock_inicial => 'jedstion:eliminar',
+      iconoAccion: stock_inicial => stock_inicial.puede_eliminar === true ? 'jedstion:eliminar' : '',
       iconoAccionado: stock_inicial => '',
-      iconoDeshabilitado: stock_inicial => ''
+      iconoDeshabilitado: stock_inicial => stock_inicial.puede_eliminar === false ? 'jedstion:eliminar_disabled' : ''
     }];
   }
   ngOnInit() {
-    // Subscribe to empresa data
-    this._empresaService.empresa$.pipe((0,rxjs__WEBPACK_IMPORTED_MODULE_16__.takeUntil)(this._unsubscribeAll)).subscribe(empresa => {
-      this.color_primario = empresa.color_primario;
-      this.color_secundario = empresa.color_secundario;
-    });
     // Load empresa data
     this._empresaService.getEmpresa();
     this.SearchTextSub$ = this._searchService.getSearchText().pipe(
@@ -1469,10 +1469,14 @@ class StockInicialComponent {
   generarAcciones(event) {
     switch (event.name) {
       case 'editar':
-        this.updateStockInicial(event);
+        if (event.params.data.puede_modificar) {
+          this.updateStockInicial(event);
+        }
         break;
       case 'eliminar':
-        this.deleteStockInicial(event);
+        if (event.params.data.puede_eliminar) {
+          this.deleteStockInicial(event);
+        }
         break;
     }
   }
