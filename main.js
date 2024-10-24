@@ -17223,7 +17223,9 @@ const environment = {
     view_stock_entregas: `${$BASE_REST}/view_stock_entregas`,
     view_stock_depositos: `${$BASE_REST}/view_stock_depositos`,
     entregar: `${$BASE_REST}/stk_entrega/entregar?identrega=`,
-    stk_entrega_puede_crear: `${$BASE_REST}/stk_entrega/puede_crear`
+    stk_entrega_puede_crear: `${$BASE_REST}/stk_entrega/puede_crear`,
+    stk_articulo_adjuntos: `${$BASE_REST}/stk_articulo/adjuntos`,
+    stk_articulo_obtener_adjuntos: `${$BASE_REST}/stk_articulo/obtener_adjuntos`
   },
   ventas: {
     view_venta_selects: `${$BASE_REST}/view_venta_selects`,

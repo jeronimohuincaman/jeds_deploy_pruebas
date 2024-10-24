@@ -99,7 +99,7 @@ class EntregasComponent {
     this.pwaService = pwaService;
     this.dataSource = new _angular_material_table__WEBPACK_IMPORTED_MODULE_15__.MatTableDataSource();
     this.headers = ['Fecha Precarga', 'Fecha Entrega', 'Responsable', 'Observaciones', 'Deposito', 'Usuario Encargado', 'Estado', 'Acciones'];
-    this.column_params = ['fecha_hora_precarga', 'fecha_hora_entrega', 'nick_usuario', 'observaciones', 'descripcion_deposito', 'nick_usuario_entrega', 'descripcion_estado', 'acciones'];
+    this.column_params = ['fecha_hora_precarga', 'fecha_hora_entrega', 'nombre_usuario', 'observaciones', 'descripcion_deposito', 'nombre_usuario_entrega', 'descripcion_estado', 'acciones'];
     this.funcionesObjeto = null;
     this.filtroBusqueda = '';
     this.filtersLike = ['nick_usuario', 'descripcion_deposito', 'nick_usuario_entrega', 'numero_venta'];
@@ -1220,7 +1220,7 @@ function SaveComponent_mat_option_37_Template(rf, ctx) {
     const usuario_encargado_r31 = ctx.$implicit;
     _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵproperty"]("value", usuario_encargado_r31);
     _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵtextInterpolate1"](" ", usuario_encargado_r31.nick, " ");
+    _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵtextInterpolate2"](" ", usuario_encargado_r31.nombre, " ", usuario_encargado_r31.apellido, " ");
   }
 }
 function SaveComponent_button_39_Template(rf, ctx) {
@@ -1724,7 +1724,7 @@ class SaveComponent {
       hora: new _angular_forms__WEBPACK_IMPORTED_MODULE_16__.FormControl(this.entrega?.hora_precarga ? this.entrega.hora_precarga : this.datePipe.transform(new Date(), 'HH:mm:ss'), _angular_forms__WEBPACK_IMPORTED_MODULE_16__.Validators.required),
       usuario_entrega: new _angular_forms__WEBPACK_IMPORTED_MODULE_16__.FormControl(this.entrega?.usuario_entrega ? {
         codigo: this.entrega.usuario_entrega,
-        nick: this.entrega.nick_usuario_entrega
+        nombre: this.entrega.nombre_usuario_entrega
       } : ''),
       deposito_entrega: new _angular_forms__WEBPACK_IMPORTED_MODULE_16__.FormControl(this.entrega ? {
         descripcion: this.entrega.descripcion_deposito,
@@ -2316,7 +2316,7 @@ class SaveComponent {
   }
   _filterUsuarios(usuario) {
     const filterValue = usuario.toString().toLowerCase();
-    return this.usuarios.filter(usuario => usuario.nick.toLowerCase().includes(filterValue) && usuario.codigo !== this.user.id);
+    return this.usuarios.filter(usuario => usuario.nombre.toLowerCase().includes(filterValue) && usuario.codigo !== this.user.id);
   }
   /**
   * Esta funcion es para filtrar las ventas según el input que se haya ingresado en el buscador de ventas.
@@ -2354,8 +2354,8 @@ class SaveComponent {
    * @returns
    */
   getTextGenerico(option) {
-    if (option.nick) {
-      return option.nick;
+    if (option.codigo) {
+      return option.apellido ? `${option.nombre} ${option.apellido}` : `${option.nombre}`;
     }
     if (option.usuario) {
       return option.usuario;
@@ -2482,7 +2482,7 @@ SaveComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_8__["�
       _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementEnd"]();
       _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelement"](34, "input", 23);
       _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementStart"](35, "mat-autocomplete", 17, 24);
-      _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵtemplate"](37, SaveComponent_mat_option_37_Template, 2, 2, "mat-option", 19);
+      _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵtemplate"](37, SaveComponent_mat_option_37_Template, 2, 3, "mat-option", 19);
       _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵpipe"](38, "async");
       _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementEnd"]();
       _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵtemplate"](39, SaveComponent_button_39_Template, 3, 0, "button", 20);
