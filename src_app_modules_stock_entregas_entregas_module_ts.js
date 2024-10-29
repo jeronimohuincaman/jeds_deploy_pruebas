@@ -1735,7 +1735,7 @@ class SaveComponent {
     this.form_carga_articulos = new _angular_forms__WEBPACK_IMPORTED_MODULE_16__.FormGroup({
       articulo: new _angular_forms__WEBPACK_IMPORTED_MODULE_16__.FormControl('', _angular_forms__WEBPACK_IMPORTED_MODULE_16__.Validators.required),
       unidadmedida: new _angular_forms__WEBPACK_IMPORTED_MODULE_16__.FormControl('', _angular_forms__WEBPACK_IMPORTED_MODULE_16__.Validators.required),
-      cantidad: new _angular_forms__WEBPACK_IMPORTED_MODULE_16__.FormControl('', _angular_forms__WEBPACK_IMPORTED_MODULE_16__.Validators.required),
+      cantidad: new _angular_forms__WEBPACK_IMPORTED_MODULE_16__.FormControl('', [_angular_forms__WEBPACK_IMPORTED_MODULE_16__.Validators.required, _angular_forms__WEBPACK_IMPORTED_MODULE_16__.Validators.min(1)]),
       stock_existente: new _angular_forms__WEBPACK_IMPORTED_MODULE_16__.FormControl('')
     });
     this.updateFormValidators();
@@ -1862,6 +1862,12 @@ class SaveComponent {
     if ($event.idarticulo) {
       this.form_carga_articulos.get('unidadmedida').enable();
       this.getUnidadesDeMedidaArticulos($event.idarticulo); //...Buscamos las UM que posee ese articulo.
+      // Muevo el foco al campo "cantidad" luego de un pequeño retraso.
+      // Lo encapsulo dentro de `setTimeout` porque espero a que el DOM renderice el input "cantidad".
+      setTimeout(() => {
+        const cantidadField = document.querySelector('[formControlName="cantidad"]');
+        cantidadField?.focus();
+      }, 1);
     }
     // - Mostrar Stock -
     //Al seleccionar la UM...
@@ -1928,6 +1934,9 @@ class SaveComponent {
     if ($event?.key === 'Enter') {
       $event.preventDefault();
     }
+    if (this.form_carga_articulos.get('cantidad').value <= 0) {
+      return this.alert.warning('Por favor, Ingrese una cantidad mayor a cero');
+    }
     if (!this.form_carga_articulos.get('unidadmedida').value || !this.form_carga_articulos.get('articulo').value || !this.form_carga_articulos.get('cantidad').value) {
       return this.alert.warning('Por favor, complete todos los campos de la carga de articulo');
     }
@@ -1960,6 +1969,12 @@ class SaveComponent {
         }
       });
     }
+    // Mueve el foco al campo "articulo" después de la carga
+    this.form_carga_articulos.get('articulo').reset({
+      value: ''
+    });
+    const articuloField = document.querySelector('[formControlName="articulo"]');
+    articuloField?.focus();
   }
   onSubmit() {
     // Verificar la longitud de las observaciones
@@ -2388,7 +2403,7 @@ class SaveComponent {
   * @returns
   */
   getTextArticulo(articulo) {
-    return articulo ? `${articulo.codigo_interno} - ${articulo.descripcion}` : '';
+    return articulo?.idarticulo ? `${articulo.codigo_interno} - ${articulo.descripcion}` : '';
   }
   // ################# Metodos extra #################
   /**
@@ -2411,12 +2426,12 @@ class SaveComponent {
     if (this.mov_art_list.length === 0) {
       // Si la grilla está vacía, hacer que los campos sean requeridos
       this.form_carga_articulos.get('articulo').setValidators(_angular_forms__WEBPACK_IMPORTED_MODULE_16__.Validators.required);
-      this.form_carga_articulos.get('cantidad').setValidators(_angular_forms__WEBPACK_IMPORTED_MODULE_16__.Validators.required);
+      this.form_carga_articulos.get('cantidad').setValidators([_angular_forms__WEBPACK_IMPORTED_MODULE_16__.Validators.required, _angular_forms__WEBPACK_IMPORTED_MODULE_16__.Validators.min(1)]);
       this.form_carga_articulos.get('unidadmedida').setValidators(_angular_forms__WEBPACK_IMPORTED_MODULE_16__.Validators.required);
     } else {
       // Si hay elementos en la grilla, quitar la validación de requerido
       this.form_carga_articulos.get('articulo').clearValidators();
-      this.form_carga_articulos.get('cantidad').clearValidators();
+      this.form_carga_articulos.get('cantidad').setValidators([_angular_forms__WEBPACK_IMPORTED_MODULE_16__.Validators.min(1)]);
       this.form_carga_articulos.get('unidadmedida').clearValidators();
     }
     // Asegurarse de que Angular reevalúe las validaciones

@@ -1023,9 +1023,9 @@ StockDepositoComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODU
   inputs: {
     extraParams: "extraParams"
   },
-  decls: 16,
-  vars: 22,
-  consts: [[1, "w-full", "flex", "flex-col", "relative", "mt-4"], [1, "flex", "justify-start", "sm:mb-0", "mx-4"], ["mat-flat-button", "", 1, "fuse-mat-button-large", "w-full", "!border", "border-solid", "md:w-28", 3, "click"], [1, "icon-size-5", 3, "svgIcon"], [1, "ml-2", "text-lg", "font-normal"], [1, "fixed", "right-10", "flex", "space-x-4"], ["mat-flat-button", "", 1, "w-full", "px-6", "py-6", "!border", "border-solid", "rounded-lg", "md:w-55", "md:rounded-lg"], ["save", ""], [1, "flex", "items-center"], ["width", "38", "height", "38", "viewBox", "0 0 38 38", "fill", "currentColor", "xmlns", "http://www.w3.org/2000/svg"], ["d", "M25.7121 10.7121H15.7121C14.7955 10.7121 14.0455 11.4621 14.0455 12.3788V22.3788C14.0455 23.2955 14.7955 24.0455 15.7121 24.0455H25.7121C26.6288 24.0455 27.3788 23.2955 27.3788 22.3788V12.3788C27.3788 11.4621 26.6288 10.7121 25.7121 10.7121ZM25.7121 22.3788H15.7121V12.3788H25.7121V22.3788ZM12.3788 14.0455H10.7121V25.7121C10.7121 26.6288 11.4621 27.3788 12.3788 27.3788H24.0455V25.7121H12.3788V14.0455ZM22.3788 19.0455V16.5455C22.3788 16.0871 22.0038 15.7121 21.5455 15.7121H19.8788V19.8788H21.5455C22.0038 19.8788 22.3788 19.5038 22.3788 19.0455ZM20.7121 16.5455H21.5455V19.0455H20.7121V16.5455ZM24.0455 18.2121H24.8788V17.3788H24.0455V16.5455H24.8788V15.7121H23.2121V19.8788H24.0455V18.2121ZM17.3788 18.2121H18.2121C18.6705 18.2121 19.0455 17.8371 19.0455 17.3788V16.5455C19.0455 16.0871 18.6705 15.7121 18.2121 15.7121H16.5455V19.8788H17.3788V18.2121ZM17.3788 16.5455H18.2121V17.3788H17.3788V16.5455Z", "fill", "#currentColor"], [1, "ml-2", "text-lg", "mt-0.5", "hidden", "md:inline"], [1, "pr-2", "pl-2"], [1, "bottom-10", "sm:bottom-0", "table-fixed", "sm:top-2", "w-full", "m-0", 3, "cache", "columnsNames", "renderType", "columnsParams", "endpoint", "functions", "extraClasses", "FiltersLikes", "extraParams"]],
+  decls: 8,
+  vars: 16,
+  consts: [[1, "w-full", "flex", "flex-col", "relative", "mt-4"], [1, "flex", "justify-start", "sm:mb-0", "mx-4"], ["mat-flat-button", "", 1, "fuse-mat-button-large", "w-full", "!border", "border-solid", "md:w-28", 3, "click"], [1, "icon-size-5", 3, "svgIcon"], [1, "ml-2", "text-lg", "font-normal"], [1, "pr-2", "pl-2"], [1, "bottom-10", "sm:bottom-0", "table-fixed", "sm:top-2", "w-full", "m-0", 3, "cache", "columnsNames", "renderType", "columnsParams", "endpoint", "functions", "extraClasses", "FiltersLikes", "extraParams"]],
   template: function StockDepositoComponent_Template(rf, ctx) {
     if (rf & 1) {
       _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](0, "div", 0)(1, "div", 1)(2, "button", 2);
@@ -1036,17 +1036,8 @@ StockDepositoComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODU
       _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](4, "span", 4);
       _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtext"](5, "Volver");
       _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementEnd"]()()();
-      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](6, "div", 5)(7, "button", 6, 7)(9, "div", 8);
-      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵnamespaceSVG"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](10, "svg", 9);
-      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelement"](11, "path", 10);
-      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵnamespaceHTML"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](12, "span", 11);
-      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtext"](13, "Exportar Stock");
-      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementEnd"]()()()();
-      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](14, "div", 12);
-      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelement"](15, "app-tabla-dinamica", 13);
+      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](6, "div", 5);
+      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelement"](7, "app-tabla-dinamica", 6);
       _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementEnd"]()();
     }
     if (rf & 2) {
@@ -1056,9 +1047,6 @@ StockDepositoComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODU
       _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵadvance"](1);
       _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵproperty"]("svgIcon", "heroicons_solid:chevron-left");
       _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵadvance"](4);
-      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵclassMap"](ctx.color_primario ? "" : ctx.default_color);
-      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵstyleProp"]("border", ctx.color_primario || "")("color", ctx.color_primario || "");
-      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵadvance"](8);
       _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵproperty"]("cache", false)("columnsNames", ctx.headers)("renderType", "client")("columnsParams", ctx.column_params)("endpoint", ctx.env)("functions", ctx.funcionesObjeto)("extraClasses", "td.mat-cell border,td.mat-cell border-slate-400")("FiltersLikes", ctx.filtersLike)("extraParams", ctx.extraParams);
     }
   },

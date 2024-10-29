@@ -1038,7 +1038,7 @@ class SaveComponent {
     this.form_carga_articulos = new _angular_forms__WEBPACK_IMPORTED_MODULE_18__.FormGroup({
       articulo: new _angular_forms__WEBPACK_IMPORTED_MODULE_18__.FormControl('', _angular_forms__WEBPACK_IMPORTED_MODULE_18__.Validators.required),
       unidadmedida: new _angular_forms__WEBPACK_IMPORTED_MODULE_18__.FormControl('', _angular_forms__WEBPACK_IMPORTED_MODULE_18__.Validators.required),
-      cantidad: new _angular_forms__WEBPACK_IMPORTED_MODULE_18__.FormControl('', _angular_forms__WEBPACK_IMPORTED_MODULE_18__.Validators.required),
+      cantidad: new _angular_forms__WEBPACK_IMPORTED_MODULE_18__.FormControl('', [_angular_forms__WEBPACK_IMPORTED_MODULE_18__.Validators.required, _angular_forms__WEBPACK_IMPORTED_MODULE_18__.Validators.min(1)]),
       importe: new _angular_forms__WEBPACK_IMPORTED_MODULE_18__.FormControl('', _angular_forms__WEBPACK_IMPORTED_MODULE_18__.Validators.required)
     });
     this.updateFormValidators();
@@ -1122,6 +1122,9 @@ class SaveComponent {
   onCargar($event) {
     if ($event?.key === 'Enter') {
       $event.preventDefault();
+    }
+    if (this.form_carga_articulos.get('cantidad').value <= 0) {
+      return this.alert.warning('Por favor, Ingrese una cantidad mayor a cero');
     }
     if (!this.form_carga_articulos.get('unidadmedida').value || !this.form_carga_articulos.get('articulo').value || !this.form_carga_articulos.get('cantidad').value || !this.form_carga_articulos.get('importe').value) {
       return this.alert.warning('Por favor, complete todos los campos de la carga de articulo');
@@ -1397,13 +1400,13 @@ class SaveComponent {
     if (this.mov_art_list.length === 0) {
       // Si la grilla está vacía, hacer que los campos sean requeridos
       this.form_carga_articulos.get('articulo').setValidators(_angular_forms__WEBPACK_IMPORTED_MODULE_18__.Validators.required);
-      this.form_carga_articulos.get('cantidad').setValidators(_angular_forms__WEBPACK_IMPORTED_MODULE_18__.Validators.required);
+      this.form_carga_articulos.get('cantidad').setValidators([_angular_forms__WEBPACK_IMPORTED_MODULE_18__.Validators.required, _angular_forms__WEBPACK_IMPORTED_MODULE_18__.Validators.min(1)]);
       this.form_carga_articulos.get('unidadmedida').setValidators(_angular_forms__WEBPACK_IMPORTED_MODULE_18__.Validators.required);
       this.form_carga_articulos.get('importe').setValidators(_angular_forms__WEBPACK_IMPORTED_MODULE_18__.Validators.required);
     } else {
       // Si hay elementos en la grilla, quitar la validación de requerido
       this.form_carga_articulos.get('articulo').clearValidators();
-      this.form_carga_articulos.get('cantidad').clearValidators();
+      this.form_carga_articulos.get('cantidad').setValidators(_angular_forms__WEBPACK_IMPORTED_MODULE_18__.Validators.min(1));
       this.form_carga_articulos.get('unidadmedida').clearValidators();
       this.form_carga_articulos.get('importe').clearValidators();
     }
