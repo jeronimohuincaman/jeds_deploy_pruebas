@@ -17225,7 +17225,8 @@ const environment = {
     entregar: `${$BASE_REST}/stk_entrega/entregar?identrega=`,
     stk_entrega_puede_crear: `${$BASE_REST}/stk_entrega/puede_crear`,
     stk_articulo_adjuntos: `${$BASE_REST}/stk_articulo/adjuntos`,
-    stk_articulo_obtener_adjuntos: `${$BASE_REST}/stk_articulo/obtener_adjuntos`
+    stk_articulo_obtener_adjuntos: `${$BASE_REST}/stk_articulo/obtener_adjuntos`,
+    stk_articulo_ordenar: `${$BASE_REST}/stk_articulo/ordenar`
   },
   ventas: {
     view_venta_selects: `${$BASE_REST}/view_venta_selects`,
