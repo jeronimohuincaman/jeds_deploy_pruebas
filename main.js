@@ -7889,7 +7889,7 @@ const appRoutes = [
   }, {
     path: 'pedidos-de-presupuesto',
     canActivate: [_core_auth_guards_permiso_guard__WEBPACK_IMPORTED_MODULE_4__.PermisoGuard],
-    loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-node_modules_angular_material_fesm2022_checkbox_mjs"), __webpack_require__.e("default-src_app_shared_components_tabla-dinamica_tabla-dinamica_module_ts"), __webpack_require__.e("common"), __webpack_require__.e("src_app_modules_compras_pedidos-de-presupuesto_pedidos-de-presupuestos_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./modules/compras/pedidos-de-presupuesto/pedidos-de-presupuestos.module */ 22225)).then(m => m.PedidosDePresupuestoModule)
+    loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-node_modules_angular_material_fesm2022_checkbox_mjs"), __webpack_require__.e("default-src_app_shared_components_tabla-dinamica_tabla-dinamica_module_ts"), __webpack_require__.e("default-node_modules_angular_material_fesm2022_datepicker_mjs"), __webpack_require__.e("common"), __webpack_require__.e("src_app_modules_compras_pedidos-de-presupuesto_pedidos-de-presupuestos_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./modules/compras/pedidos-de-presupuesto/pedidos-de-presupuestos.module */ 22225)).then(m => m.PedidosDePresupuestoModule)
   }, {
     path: 'stock-inicial',
     canActivate: [_core_auth_guards_permiso_guard__WEBPACK_IMPORTED_MODULE_4__.PermisoGuard],
@@ -17233,7 +17233,9 @@ const environment = {
     view_venta_genericas: `${$BASE_REST}/view_venta_genericas`
   },
   compras: {
-    pedido_presupuestos: `${$BASE_REST}/egr_pedido_presupuestos`,
+    compras_pedidos: `${$BASE_REST}/compras_pedidos`,
+    view_compras_pedidos: `${$BASE_REST}/view_compras_pedidos`,
+    view_compras_pedido_item: `${$BASE_REST}/view_compras_pedido_item`,
     orden_compra: `${$BASE_REST}/compras_orden_compras`,
     orden_compra_items: `${$BASE_REST}/compras_orden_compra_items`
   },

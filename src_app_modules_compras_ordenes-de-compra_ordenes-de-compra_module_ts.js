@@ -1096,6 +1096,21 @@ class SaveComponent {
     if ($event.idarticulo) {
       this.form_carga_articulos.get('unidadmedida').enable();
       this.getUnidadesDeMedidaArticulos($event.idarticulo);
+      // Muevo el foco al campo "cantidad" luego de un pequeño retraso.
+      // Lo encapsulo dentro de `setTimeout` porque espero a que el DOM renderice el input "cantidad".
+      setTimeout(() => {
+        const cantidadField = document.querySelector('[formControlName="cantidad"]');
+        cantidadField?.focus();
+      }, 1);
+    }
+    if ($event && info === 'cambio_de_foco') {
+      $event.preventDefault();
+      // Muevo el foco al campo "importe" luego de un pequeño retraso.
+      // Lo encapsulo dentro de `setTimeout` porque espero a que el DOM renderice el input "importe".
+      setTimeout(() => {
+        const importeField = document.querySelector('[formControlName="importe"]');
+        importeField?.focus();
+      }, 1);
     }
   }
   /**
@@ -1147,6 +1162,12 @@ class SaveComponent {
       };
       this.addMovimiento(articulo);
     }
+    // Mueve el foco al campo "articulo" después de la carga
+    this.form_carga_articulos.get('articulo').reset({
+      value: ''
+    });
+    const articuloField = document.querySelector('[formControlName="articulo"]');
+    articuloField?.focus();
   }
   onSubmit() {
     // Verificar la longitud de las observaciones
@@ -1363,7 +1384,7 @@ class SaveComponent {
   * @returns
   */
   getTextArticulo(articulo) {
-    return articulo ? `${articulo.codigo_interno} - ${articulo.descripcion}` : '';
+    return articulo?.idarticulo ? `${articulo.codigo_interno} - ${articulo.descripcion}` : '';
   }
   // ################# Metodos extra #################
   /**
@@ -1520,7 +1541,7 @@ SaveComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_7__["�
       _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]()();
       _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](67, "mat-form-field", 39);
       _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵlistener"]("keydown.enter", function SaveComponent_Template_mat_form_field_keydown_enter_67_listener($event) {
-        return ctx.onCargar($event);
+        return ctx.seleccionItem($event, "cambio_de_foco");
       });
       _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](68, "mat-label");
       _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtext"](69, "Cantidad");

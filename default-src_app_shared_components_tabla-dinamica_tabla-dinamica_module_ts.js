@@ -550,6 +550,9 @@ class TablaDinamicaComponent {
             if (item.hora_entrega) {
               item.hora_entrega = this.cambiarformatoHora(item.hora_entrega);
             }
+            if (item.cotizado) {
+              item.cotizado = item.cotizado === 1 ? 'Si' : '';
+            }
             if (item.activo) {
               item.activo = item.activo === 1 ? 'Si' : '';
             }
@@ -600,6 +603,9 @@ class TablaDinamicaComponent {
             }
             if (item.hora) {
               item.hora = this.cambiarformatoHora(item.hora);
+            }
+            if (item.cotizado) {
+              item.cotizado = item.cotizado === 1 ? 'Si' : '';
             }
             if (item.activo) {
               item.activo = item.activo === 1 ? 'Si' : '';
