@@ -17233,7 +17233,10 @@ const environment = {
     view_venta_genericas: `${$BASE_REST}/view_venta_genericas`
   },
   compras: {
+    compras_cotizacion: `${$BASE_REST}/compras_cotizacion`,
     compras_pedidos: `${$BASE_REST}/compras_pedidos`,
+    view_compras_cotizacion: `${$BASE_REST}/view_compras_cotizacion`,
+    view_compras_cotizacion_item: `${$BASE_REST}/view_compras_cotizacion_item`,
     view_compras_pedidos: `${$BASE_REST}/view_compras_pedidos`,
     view_compras_pedido_item: `${$BASE_REST}/view_compras_pedido_item`,
     orden_compra: `${$BASE_REST}/compras_orden_compras`,

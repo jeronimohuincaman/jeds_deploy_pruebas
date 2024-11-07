@@ -39232,6 +39232,9 @@ body.light mat-option:nth-child(odd):hover {
 .h-\[200px\] {
     height: 200px !important;
 }
+.h-\[450px\] {
+    height: 450px !important;
+}
 .h-auto {
     height: auto !important;
 }
@@ -39255,6 +39258,9 @@ body.light mat-option:nth-child(odd):hover {
 }
 .max-h-\[215px\] {
     max-height: 215px !important;
+}
+.max-h-\[450px\] {
+    max-height: 450px !important;
 }
 .max-h-\[75vh\] {
     max-height: 75vh !important;
@@ -40803,8 +40809,14 @@ body.light mat-option:nth-child(odd):hover {
     .sm\:h-20 {
         height: 5rem !important;
     }
+    .sm\:h-\[200px\] {
+        height: 200px !important;
+    }
     .sm\:max-h-120 {
         max-height: 30rem !important;
+    }
+    .sm\:max-h-\[200px\] {
+        max-height: 200px !important;
     }
     .sm\:w-1\/2 {
         width: 50% !important;
