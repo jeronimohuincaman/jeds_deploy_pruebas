@@ -2032,7 +2032,6 @@ class VerCotizacionComponent {
   }
   newForm() {
     const [dia, mes, anio] = this.pedido_de_presupuesto.fecha.split('/'); //Se hace esto para poder manejar el formato que se cambio en el render del componente de tabla dinamica.
-    console.log(dia, mes, anio);
     this.getItemsPedido(this.pedido_de_presupuesto.idpedido).then(res => {
       this.mov_art_list = res.map(m => {
         return {
@@ -2453,7 +2452,7 @@ class PedidoDePresupuestoService {
   getCotizacionesPedido(idpedido) {
     let f = `?filter[idpedido]=${idpedido}`;
     let subject = new rxjs__WEBPACK_IMPORTED_MODULE_2__.Subject();
-    this.http.get(`${environments_environment__WEBPACK_IMPORTED_MODULE_0__.environment.compras.view_compras_pedido_item}${f}`).subscribe(resp => {
+    this.http.get(`${environments_environment__WEBPACK_IMPORTED_MODULE_0__.environment.compras.view_compras_cotizacion}${f}`).subscribe(resp => {
       this._authService.accessToken = resp.token;
       subject.next({
         list: resp.result
