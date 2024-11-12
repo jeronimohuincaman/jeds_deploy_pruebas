@@ -39088,6 +39088,9 @@ body.light mat-option:nth-child(odd):hover {
 .mr-6 {
     margin-right: 1.5rem !important;
 }
+.mr-7 {
+    margin-right: 1.75rem !important;
+}
 .mr-px {
     margin-right: 1px !important;
 }
@@ -39232,6 +39235,9 @@ body.light mat-option:nth-child(odd):hover {
 .h-\[200px\] {
     height: 200px !important;
 }
+.h-\[400px\] {
+    height: 400px !important;
+}
 .h-\[450px\] {
     height: 450px !important;
 }
@@ -39258,6 +39264,9 @@ body.light mat-option:nth-child(odd):hover {
 }
 .max-h-\[215px\] {
     max-height: 215px !important;
+}
+.max-h-\[400px\] {
+    max-height: 400px !important;
 }
 .max-h-\[450px\] {
     max-height: 450px !important;
