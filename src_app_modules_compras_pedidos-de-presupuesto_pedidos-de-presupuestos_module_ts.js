@@ -2210,7 +2210,7 @@ class PedidoDePresupuestoComponent {
       icono: 'send',
       nombre_boton: "Enviar Pedido",
       functionName: 'enviar_pedido',
-      iconoAccion: pedido => 'jedstion:enviar',
+      iconoAccion: pedido => 'jedstion:enviar_disabled',
       iconoAccionado: pedido => '',
       iconoDeshabilitado: pedido => ''
     }];
@@ -2265,7 +2265,7 @@ class PedidoDePresupuestoComponent {
       case 'ver':
         this.verPedidoDePresupuesto(event);
         break;
-      case 'enviar':
+      case 'enviar_pedido':
         // this.enviarPedidoDePresupuesto(event);
         break;
     }
