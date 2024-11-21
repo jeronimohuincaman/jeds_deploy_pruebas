@@ -327,7 +327,7 @@ class OrdenesDeCompraComponent {
     this._headerTextService = _headerTextService;
     this.dataSource = new _angular_material_table__WEBPACK_IMPORTED_MODULE_11__.MatTableDataSource();
     this.headers = ['N°', 'Fecha', 'Observaciones', 'Proveedor', 'Presupuesto', 'Acciones'];
-    this.column_params = ['numero', 'fecha', 'observaciones', 'proveedor_descripcion', 'presupuesto', 'acciones'];
+    this.column_params = ['numero', 'fecha', 'observaciones', 'proveedor_descripcion', 'pedido', 'acciones'];
     this.funcionesObjeto = null;
     this.filtroBusqueda = '';
     this.filtersLike = ['observaciones', 'proveedor_descripcion', 'numero'];
@@ -336,7 +336,7 @@ class OrdenesDeCompraComponent {
     };
     this.extraParams = '';
     this.parametrosActualizados = new _angular_core__WEBPACK_IMPORTED_MODULE_12__.EventEmitter();
-    this.env = environments_environment__WEBPACK_IMPORTED_MODULE_2__.environment.compras.orden_compra + '?sort=-codigo';
+    this.env = environments_environment__WEBPACK_IMPORTED_MODULE_2__.environment.compras.compras_orden_compra + '?sort=-codigo';
     this.search = new _angular_forms__WEBPACK_IMPORTED_MODULE_13__.FormControl('');
     this.default_color = 'border-primary text-primary';
     this._unsubscribeAll = new rxjs__WEBPACK_IMPORTED_MODULE_14__.Subject();
@@ -1835,7 +1835,7 @@ class OrdenesDeCompraService {
    * @returns Crea un item nuevo
    */
   saveOrdenDeCompra(orden_de_compra) {
-    return this.http.post(`${environments_environment__WEBPACK_IMPORTED_MODULE_0__.environment.compras.orden_compra}`, orden_de_compra);
+    return this.http.post(`${environments_environment__WEBPACK_IMPORTED_MODULE_0__.environment.compras.compras_orden_compra}`, orden_de_compra);
   }
   /**
    * Funcion en el servicio
@@ -1843,7 +1843,7 @@ class OrdenesDeCompraService {
    * @returns Item actualizado actualizado
    */
   updateOrdenDeCompra(orden_de_compra, idordencompra) {
-    return this.http.put(`${environments_environment__WEBPACK_IMPORTED_MODULE_0__.environment.compras.orden_compra}` + '/' + idordencompra, orden_de_compra);
+    return this.http.put(`${environments_environment__WEBPACK_IMPORTED_MODULE_0__.environment.compras.compras_orden_compra}` + '/' + idordencompra, orden_de_compra);
   }
   /**
    * Funcion en el servicio
@@ -1851,7 +1851,7 @@ class OrdenesDeCompraService {
    * @returns Elimina un item
    */
   deleteOrdenDeCompra(codigo) {
-    return this.http.delete(`${environments_environment__WEBPACK_IMPORTED_MODULE_0__.environment.compras.orden_compra}` + '/' + codigo);
+    return this.http.delete(`${environments_environment__WEBPACK_IMPORTED_MODULE_0__.environment.compras.compras_orden_compra}` + '/' + codigo);
   }
   getProveedores(option) {
     let f = '?sort=RazonSocial';
@@ -1895,7 +1895,7 @@ class OrdenesDeCompraService {
   getItems(idordencompra) {
     let f = `?filter[ordenCompra]=${idordencompra}`;
     let subject = new rxjs__WEBPACK_IMPORTED_MODULE_2__.Subject();
-    this.http.get(`${environments_environment__WEBPACK_IMPORTED_MODULE_0__.environment.compras.orden_compra_items}${f}`).subscribe(resp => {
+    this.http.get(`${environments_environment__WEBPACK_IMPORTED_MODULE_0__.environment.compras.compras_orden_compra_items}${f}`).subscribe(resp => {
       this._authService.accessToken = resp.token;
       subject.next({
         list: resp.result

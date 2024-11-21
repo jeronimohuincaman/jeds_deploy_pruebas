@@ -17239,8 +17239,9 @@ const environment = {
     view_compras_cotizacion_item: `${$BASE_REST}/view_compras_cotizacion_item`,
     view_compras_pedidos: `${$BASE_REST}/view_compras_pedidos`,
     view_compras_pedido_item: `${$BASE_REST}/view_compras_pedido_item`,
-    orden_compra: `${$BASE_REST}/compras_orden_compras`,
-    orden_compra_items: `${$BASE_REST}/compras_orden_compra_items`
+    compras_orden_compra: `${$BASE_REST}/compras_orden_compras`,
+    compras_orden_compra_cotizacion: `${$BASE_REST}/compras_orden_compra/cotizacion`,
+    compras_orden_compra_items: `${$BASE_REST}/compras_orden_compra_items`
   },
   localidades: `${$BASE_REST}/select?modelo=localidad&campo_id=codigo&campo_descripcion=descripcion&campo_activo=`,
   controlador: `${$BASE_API}/controlador`,
