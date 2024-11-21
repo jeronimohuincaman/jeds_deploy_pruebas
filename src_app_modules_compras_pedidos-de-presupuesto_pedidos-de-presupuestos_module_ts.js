@@ -1800,8 +1800,8 @@ class NuevaCotizacionComponent {
         return {
           ...i,
           codigo_interno: i.codigo_articulo ? i.codigo_articulo : i.codigo_interno,
-          oc: _this.cotizacion?.idcotizacion ? i.oc : false,
-          cotiza: _this.cotizacion?.idcotizacion ? i.cotiza : true,
+          oc: _this.cotizacion?.idcotizacion ? i.oc === 1 ? true : false : false,
+          cotiza: _this.cotizacion?.idcotizacion ? i.cotiza === 1 ? true : false : true,
           cantidad: Number(i.cantidad),
           unitario: Number(i.unitario),
           subtotal: Number(i.subtotal)
