@@ -17235,6 +17235,8 @@ const environment = {
   compras: {
     compras_cotizacion: `${$BASE_REST}/compras_cotizacion`,
     compras_pedidos: `${$BASE_REST}/compras_pedidos`,
+    generar_reporte_pedido: `${$BASE_REST}/compras_pedido/generar_reporte_pedido?idpedido=`,
+    view_orden_compras: `${$BASE_REST}/view_orden_compras`,
     view_compras_cotizacion: `${$BASE_REST}/view_compras_cotizacion`,
     view_compras_cotizacion_item: `${$BASE_REST}/view_compras_cotizacion_item`,
     view_compras_pedidos: `${$BASE_REST}/view_compras_pedidos`,

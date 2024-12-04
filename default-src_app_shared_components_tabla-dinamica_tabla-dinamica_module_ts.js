@@ -1044,6 +1044,10 @@ class TablaDinamicaComponent {
               item.total_stock = parseFloat(item.total_stock).toFixed(0);
               item.cantidad_pendiente = parseFloat(item.cantidad_pendiente).toFixed(0);
             }
+            // ITems pendiente de entrega
+            if (item.estado) {
+              item.estado = item.estado === 1 ? 'Si' : 'No';
+            }
           });
         } else {
           r.data.forEach(item => {
@@ -1097,6 +1101,10 @@ class TablaDinamicaComponent {
             if (item.total_stock && item.cantidad_pendiente) {
               item.total_stock = parseFloat(item.total_stock).toFixed(0);
               item.cantidad_pendiente = parseFloat(item.cantidad_pendiente).toFixed(0);
+            }
+            // ITems pendiente de entrega
+            if (item.estado) {
+              item.estado = item.estado === 1 ? 'Si' : 'No';
             }
           });
         }
