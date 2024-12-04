@@ -1826,6 +1826,11 @@ class NuevaCotizacionComponent {
       if (existe_item_cotizado_con_valor_cero) {
         return this.alert.error('Error al cargar cotizacion. No se puede cotizar un item con valor menor o igual a cero.');
       }
+      ;
+      const existe_cantidad_item_mayor_a_la_solicitada = this.items_formulario.find(item => item.cantidad_recibida['value'] > item.cantidad);
+      if (existe_cantidad_item_mayor_a_la_solicitada) {
+        return this.alert.error('Error al cargar cotizacion. No se puede cotizar una cantidad mayor a la pedida');
+      }
       const payload = {
         cotizacion: {
           idpedido: this.pedido_de_presupuesto.idpedido,
