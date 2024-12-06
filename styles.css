@@ -40281,9 +40281,6 @@ body.light mat-option:nth-child(odd):hover {
     --tw-text-opacity: 1 !important;
     color: rgb(238 242 255 / var(--tw-text-opacity)) !important;
 }
-.text-inherit {
-    color: inherit !important;
-}
 .text-on-accent {
     --tw-text-opacity: 1 !important;
     color: rgba(var(--fuse-on-accent-rgb), var(--tw-text-opacity)) !important;
