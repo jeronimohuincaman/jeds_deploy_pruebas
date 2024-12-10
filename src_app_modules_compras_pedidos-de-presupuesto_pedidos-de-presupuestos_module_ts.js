@@ -2302,7 +2302,7 @@ class PedidoDePresupuestoComponent {
       icono: 'edit',
       nombre_boton: "Editar",
       functionName: 'editar',
-      iconoAccion: pedido => 'jedstion:editar',
+      iconoAccion: pedido => pedido.cotizado === 0 ? 'jedstion:editar' : 'jedstion:editar_disabled',
       iconoAccionado: pedido => '',
       iconoDeshabilitado: pedido => ''
     }, {
@@ -2374,7 +2374,11 @@ class PedidoDePresupuestoComponent {
   generarAcciones(event) {
     switch (event.name) {
       case 'editar':
-        this.updatePedidoDePresupuesto(event);
+        if (event.params.data.cotizado === 0) {
+          this.updatePedidoDePresupuesto(event);
+        } else {
+          this.alert.warning('Este pedido no puede editarse. Tiene una cotización asociada');
+        }
         break;
       case 'eliminar':
         this.deletePedidoDePresupuesto(event);

@@ -389,6 +389,13 @@ class OrdenesDeCompraComponent {
       iconoAccion: orden_compra => 'jedstion:imprimir',
       iconoAccionado: orden_compra => '',
       iconoDeshabilitado: orden_compra => ''
+    }, {
+      icono: 'send',
+      nombre_boton: "Enviar Orden De Compra",
+      functionName: 'enviar_orden',
+      iconoAccion: orden_compra => 'jedstion:enviar_disabled',
+      iconoAccionado: orden_compra => '',
+      iconoDeshabilitado: orden_compra => ''
     }];
   }
   ngOnInit() {
@@ -448,6 +455,10 @@ class OrdenesDeCompraComponent {
         break;
       case 'reporte_orden_de_compra':
         this.reporteOrdenDeCompra(event);
+        break;
+      case 'enviar_orden':
+        this.alert.info('Esta función estará disponible proximamente');
+        // this.enviarOrdenDeCompra(event);
         break;
     }
   }
