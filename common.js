@@ -1,39 +1,6 @@
 "use strict";
 (self["webpackChunkfuse"] = self["webpackChunkfuse"] || []).push([["common"],{
 
-/***/ 93611:
-/*!*************************************************!*\
-  !*** ./src/app/shared/constants/date-format.ts ***!
-  \*************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "MY_DATE_FORMATS": () => (/* binding */ MY_DATE_FORMATS)
-/* harmony export */ });
-// @Component({
-//     selector: 'app-save-stock-inicial',
-//     templateUrl: './save.component.html',
-//     styleUrls: ['./save.component.scss'],
-//     providers: [{ provide: MAT_DATE_FORMATS, useValue: MY_DATE_FORMATS }]
-// })
-/**
- * Formateo de fecha
- */
-const MY_DATE_FORMATS = {
-  parse: {
-    dateInput: 'mm/dd/yyyy'
-  },
-  display: {
-    dateInput: 'dd/MM/yyyy',
-    monthYearLabel: 'MMM yyyy',
-    dateA11yLabel: 'LL',
-    monthYearA11yLabel: 'MMMM yyyy'
-  }
-};
-
-/***/ }),
-
 /***/ 46322:
 /*!*************************************************************!*\
   !*** ./node_modules/@angular/material/fesm2022/toolbar.mjs ***!

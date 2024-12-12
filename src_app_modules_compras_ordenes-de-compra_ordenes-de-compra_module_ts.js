@@ -362,7 +362,7 @@ class OrdenesDeCompraComponent {
     };
     this.extraParams = '';
     this.parametrosActualizados = new _angular_core__WEBPACK_IMPORTED_MODULE_13__.EventEmitter();
-    this.env = environments_environment__WEBPACK_IMPORTED_MODULE_2__.environment.compras.view_orden_compras + '?sort=-codigo';
+    this.env = environments_environment__WEBPACK_IMPORTED_MODULE_2__.environment.compras.view_orden_compras + '?sort=-codigo&pagination=1';
     this.search = new _angular_forms__WEBPACK_IMPORTED_MODULE_14__.FormControl('');
     this.default_color = 'border-primary text-primary';
     this._unsubscribeAll = new rxjs__WEBPACK_IMPORTED_MODULE_15__.Subject();
@@ -1010,18 +1010,20 @@ class SaveComponent {
     this.alert = alert;
     this.dialogRef = dialogRef;
     this.dialogo = dialogo;
+    this.dataSource = new _angular_material_table__WEBPACK_IMPORTED_MODULE_8__.MatTableDataSource();
+    this.showAlert = false;
+    this.default_color = 'bg-primary';
+    this._unsubscribeAll = new rxjs__WEBPACK_IMPORTED_MODULE_9__.Subject();
+    this.maxPalabras = 150;
+    this.deposito_default = 0;
+    this.creadoExitosamente = new _angular_core__WEBPACK_IMPORTED_MODULE_7__.EventEmitter();
+    this.editadoExitosamente = new _angular_core__WEBPACK_IMPORTED_MODULE_7__.EventEmitter();
+    // Particulares del modulo
     this.columns = ['codigointerno', 'articulo', 'unidadmedida', 'cantidad', 'importe', 'acciones'];
     this.articulos_list = [];
     this.unidades_de_medida = [];
     this.mov_art_list = [];
     this.mov_art_list_deleted = [];
-    this.maxPalabras = 50;
-    this.dataSource = new _angular_material_table__WEBPACK_IMPORTED_MODULE_8__.MatTableDataSource();
-    this.showAlert = false;
-    this.default_color = 'bg-primary';
-    this._unsubscribeAll = new rxjs__WEBPACK_IMPORTED_MODULE_9__.Subject();
-    this.creadoExitosamente = new _angular_core__WEBPACK_IMPORTED_MODULE_7__.EventEmitter();
-    this.editadoExitosamente = new _angular_core__WEBPACK_IMPORTED_MODULE_7__.EventEmitter();
     this.orden_de_compra = this.data ? this.data : null;
     this.title = this.orden_de_compra?.codigo ? 'Editar orden de compra' : 'Nuevo orden de compra';
     this.user = JSON.parse(localStorage.getItem('user'));
