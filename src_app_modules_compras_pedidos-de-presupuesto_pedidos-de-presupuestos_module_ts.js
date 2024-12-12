@@ -2522,8 +2522,12 @@ class PedidoDePresupuestoComponent {
       panelClass: 'my-dialog',
       autoFocus: false
     }).componentInstance.enviadoExitosamente.subscribe({
-      next: () => {
-        this.alert.success('Email enviado con éxito');
+      next: data => {
+        if (data['success'] === true) {
+          this.alert.success('Email enviado con éxito');
+        } else {
+          this.alert.error(data['error']);
+        }
         this.tabla.filters(this.filtroBusqueda);
       }
     });

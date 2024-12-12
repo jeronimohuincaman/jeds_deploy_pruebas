@@ -16351,10 +16351,11 @@ class EnviarEmailModalComponent {
     });
   }
   ngOnInit() {
+    this.subscribeAlert();
     this.newForm();
     this.getProveedores(); // Método que carga proveedores
-    this.subscribeAlert();
   }
+
   newForm() {
     this.form = new _angular_forms__WEBPACK_IMPORTED_MODULE_12__.FormGroup({
       proveedor: new _angular_forms__WEBPACK_IMPORTED_MODULE_12__.FormControl(''),
@@ -16376,12 +16377,12 @@ class EnviarEmailModalComponent {
   }
   onSubmit() {
     if (!this.form.valid) {
-      return this.alert.warning('Revise Los Datos Ingresados');
+      return this.alert.info('Revise Los Datos Ingresados');
     } else {
       const proveedores_emails = this.selectedProveedores.map(p => {
         return p.Mail;
       });
-      const payload /* : ICreatePedidoPresupuesto  */ = {
+      const payload = {
         idpedido: this.data.model.idpedido,
         destinatarios: proveedores_emails,
         asunto: this.form.get('asunto').value,
@@ -16390,7 +16391,7 @@ class EnviarEmailModalComponent {
       this._enviarEmailModalService.enviarEmail(payload, this._endpointService).subscribe({
         next: data => {
           if (data) {
-            this.enviadoExitosamente.emit();
+            this.enviadoExitosamente.emit(data);
             this.onCloseMenu(data);
           }
         }
