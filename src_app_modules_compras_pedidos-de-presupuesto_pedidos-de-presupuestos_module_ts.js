@@ -94,23 +94,23 @@ class CotizarComponent {
       icono: 'edit',
       nombre_boton: "Editar",
       functionName: 'editar',
-      iconoAccion: pedido => 'jedstion:editar',
-      iconoAccionado: pedido => '',
-      iconoDeshabilitado: pedido => ''
+      iconoAccion: cotizacion => cotizacion.orden_compra ? 'jedstion:editar_disabled' : 'jedstion:editar',
+      iconoAccionado: cotizacion => '',
+      iconoDeshabilitado: cotizacion => ''
     }, {
       icono: 'delete',
       nombre_boton: "Eliminar",
       functionName: 'eliminar',
-      iconoAccion: pedido => 'jedstion:eliminar',
-      iconoAccionado: pedido => '',
-      iconoDeshabilitado: pedido => ''
+      iconoAccion: cotizacion => cotizacion.orden_compra ? 'jedstion:eliminar_disabled' : 'jedstion:eliminar',
+      iconoAccionado: cotizacion => '',
+      iconoDeshabilitado: cotizacion => ''
     }, {
       icono: 'orden_de_compra',
       nombre_boton: "Generar Orden de Compra",
       functionName: 'orden_de_compra',
-      iconoAccion: pedido => 'jedstion:orden_de_produccion',
-      iconoAccionado: pedido => '',
-      iconoDeshabilitado: pedido => ''
+      iconoAccion: cotizacion => cotizacion.orden_compra ? 'jedstion:orden_de_produccion_disabled' : 'jedstion:orden_de_produccion',
+      iconoAccionado: cotizacion => '',
+      iconoDeshabilitado: cotizacion => ''
     }];
     // Subscribe to empresa data
     this._empresaService.empresa$.pipe((0,rxjs__WEBPACK_IMPORTED_MODULE_12__.takeUntil)(this._unsubscribeAll)).subscribe(empresa => {
@@ -134,7 +134,7 @@ class CotizarComponent {
           appearance: 'border'
         };
         let time = 2;
-        (0,rxjs__WEBPACK_IMPORTED_MODULE_13__.timer)(100, 1500).pipe((0,rxjs__WEBPACK_IMPORTED_MODULE_14__.finalize)(() => {
+        (0,rxjs__WEBPACK_IMPORTED_MODULE_13__.timer)(100, 1700).pipe((0,rxjs__WEBPACK_IMPORTED_MODULE_14__.finalize)(() => {
           this.showAlert = false;
           this._alertConfig = null;
         }), (0,rxjs__WEBPACK_IMPORTED_MODULE_15__.takeWhile)(() => time > 0), (0,rxjs__WEBPACK_IMPORTED_MODULE_12__.takeUntil)(this._unsubscribeAll), (0,rxjs__WEBPACK_IMPORTED_MODULE_16__.tap)(() => time -= 1)).subscribe();
@@ -151,13 +151,25 @@ class CotizarComponent {
   generarAcciones(event) {
     switch (event.name) {
       case 'editar':
-        this.updateCotizacion(event);
+        if (event.params.data.orden_compra != null) {
+          this.alert.warning('No puedes editar esta cotización. Tiene una orden de compra asociada. Eliminela antes de continuar.');
+        } else {
+          this.updateCotizacion(event);
+        }
         break;
       case 'eliminar':
-        this.deleteCotizacion(event);
+        if (event.params.data.orden_compra != null) {
+          this.alert.warning('No puedes eliminar esta cotización. Tiene una orden de compra asociada. Eliminela antes de continuar.');
+        } else {
+          this.deleteCotizacion(event);
+        }
         break;
       case 'orden_de_compra':
-        this.generarOrdenDeCompra(event);
+        if (event.params.data.orden_compra != null) {
+          this.alert.warning(' Ya haz generado una orden de compra para esta cotización.');
+        } else {
+          this.generarOrdenDeCompra(event);
+        }
         break;
     }
   }

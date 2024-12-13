@@ -524,7 +524,7 @@ class OrdenesDeCompraComponent {
           error: error => {
             // Manejar el error
             console.error('Error en el servicio:', error);
-            this.alert.warning("Esta orden de compra no puede eliminarse. Tiene elementos asociados.");
+            this.alert.error("Esta orden de compra no puede eliminarse. Tiene elementos asociados.");
           }
         });
       }
