@@ -38892,9 +38892,6 @@ body.light mat-option:nth-child(odd):hover {
 .z-49 {
     z-index: 49 !important;
 }
-.z-50 {
-    z-index: 50 !important;
-}
 .z-90 {
     z-index: 90 !important;
 }
@@ -39013,9 +39010,6 @@ body.light mat-option:nth-child(odd):hover {
 }
 .mb-12 {
     margin-bottom: 3rem !important;
-}
-.mb-18 {
-    margin-bottom: 4.5rem !important;
 }
 .mb-2 {
     margin-bottom: 0.5rem !important;
@@ -39281,11 +39275,11 @@ body.light mat-option:nth-child(odd):hover {
 .max-h-\[170px\] {
     max-height: 170px !important;
 }
+.max-h-\[175px\] {
+    max-height: 175px !important;
+}
 .max-h-\[200px\] {
     max-height: 200px !important;
-}
-.max-h-\[215px\] {
-    max-height: 215px !important;
 }
 .max-h-\[400px\] {
     max-height: 400px !important;
@@ -39962,10 +39956,6 @@ body.light mat-option:nth-child(odd):hover {
     --tw-bg-opacity: 1 !important;
     background-color: rgb(226 232 240 / var(--tw-bg-opacity)) !important;
 }
-.bg-slate-300 {
-    --tw-bg-opacity: 1 !important;
-    background-color: rgb(203 213 225 / var(--tw-bg-opacity)) !important;
-}
 .bg-slate-50 {
     --tw-bg-opacity: 1 !important;
     background-color: rgb(248 250 252 / var(--tw-bg-opacity)) !important;
@@ -40240,10 +40230,6 @@ body.light mat-option:nth-child(odd):hover {
     --tw-text-opacity: 1 !important;
     color: rgb(245 158 11 / var(--tw-text-opacity)) !important;
 }
-.text-black {
-    --tw-text-opacity: 1 !important;
-    color: rgb(0 0 0 / var(--tw-text-opacity)) !important;
-}
 .text-blue-50 {
     --tw-text-opacity: 1 !important;
     color: rgb(239 246 255 / var(--tw-text-opacity)) !important;
@@ -40258,10 +40244,6 @@ body.light mat-option:nth-child(odd):hover {
 }
 .text-current {
     color: currentColor !important;
-}
-.text-cyan-700 {
-    --tw-text-opacity: 1 !important;
-    color: rgb(14 116 144 / var(--tw-text-opacity)) !important;
 }
 .text-gray-100 {
     --tw-text-opacity: 1 !important;
@@ -41338,8 +41320,14 @@ body.light mat-option:nth-child(odd):hover {
     .xl\:max-h-\[200px\] {
         max-height: 200px !important;
     }
+    .xl\:max-h-\[700px\] {
+        max-height: 700px !important;
+    }
     .xl\:max-h-\[950px\] {
         max-height: 950px !important;
+    }
+    .xl\:min-h-\[630px\] {
+        min-height: 630px !important;
     }
     .xl\:min-h-\[850px\] {
         min-height: 850px !important;

@@ -17358,7 +17358,7 @@ __webpack_require__.r(__webpack_exports__);
 
 class SpinnerComponent {
   constructor() {
-    this.message = 'Cargando';
+    this.message = 'Cargando...';
     this.imagen_src = '/assets/icons/jeds/apple-icon.png';
   }
   ngOnInit() {}
