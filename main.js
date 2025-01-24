@@ -7853,15 +7853,15 @@ const appRoutes = [
   }, {
     path: 'tipo-de-movimientos',
     canActivate: [_core_auth_guards_permiso_guard__WEBPACK_IMPORTED_MODULE_4__.PermisoGuard],
-    loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-node_modules_angular_material_fesm2022_checkbox_mjs"), __webpack_require__.e("default-src_app_shared_components_tabla-dinamica_tabla-dinamica_module_ts"), __webpack_require__.e("common"), __webpack_require__.e("src_app_modules_fondos_tipo-movimientos_tipo-movimientos_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./modules/fondos/tipo-movimientos/tipo-movimientos.module */ 30332)).then(m => m.TipoMovimientosModule)
+    loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-node_modules_angular_material_fesm2022_checkbox_mjs"), __webpack_require__.e("default-src_app_shared_components_tabla-dinamica_tabla-dinamica_module_ts"), __webpack_require__.e("src_app_modules_fondos_tipo-movimientos_tipo-movimientos_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./modules/fondos/tipo-movimientos/tipo-movimientos.module */ 30332)).then(m => m.TipoMovimientosModule)
   }, {
     path: 'movimientos',
     canActivate: [_core_auth_guards_permiso_guard__WEBPACK_IMPORTED_MODULE_4__.PermisoGuard],
-    loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-node_modules_angular_material_fesm2022_checkbox_mjs"), __webpack_require__.e("default-src_app_shared_components_tabla-dinamica_tabla-dinamica_module_ts"), __webpack_require__.e("default-node_modules_angular_material_fesm2022_datepicker_mjs"), __webpack_require__.e("common"), __webpack_require__.e("src_app_modules_fondos_movimientos_movimientos_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./modules/fondos/movimientos/movimientos.module */ 18229)).then(m => m.MovimientosModule)
+    loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-node_modules_angular_material_fesm2022_checkbox_mjs"), __webpack_require__.e("default-src_app_shared_components_tabla-dinamica_tabla-dinamica_module_ts"), __webpack_require__.e("default-node_modules_angular_material_fesm2022_datepicker_mjs"), __webpack_require__.e("src_app_modules_fondos_movimientos_movimientos_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./modules/fondos/movimientos/movimientos.module */ 18229)).then(m => m.MovimientosModule)
   }, {
     path: 'medios-de-cobro',
     canActivate: [_core_auth_guards_permiso_guard__WEBPACK_IMPORTED_MODULE_4__.PermisoGuard],
-    loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-node_modules_angular_material_fesm2022_checkbox_mjs"), __webpack_require__.e("default-src_app_shared_components_tabla-dinamica_tabla-dinamica_module_ts"), __webpack_require__.e("default-node_modules_angular_material_fesm2022_datepicker_mjs"), __webpack_require__.e("common"), __webpack_require__.e("src_app_modules_administracion_medios-de-cobro_medios-de-cobro_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./modules/administracion/medios-de-cobro/medios-de-cobro.module */ 71993)).then(m => m.MediosDeCobroModule)
+    loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-node_modules_angular_material_fesm2022_checkbox_mjs"), __webpack_require__.e("default-src_app_shared_components_tabla-dinamica_tabla-dinamica_module_ts"), __webpack_require__.e("default-node_modules_angular_material_fesm2022_datepicker_mjs"), __webpack_require__.e("src_app_modules_administracion_medios-de-cobro_medios-de-cobro_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./modules/administracion/medios-de-cobro/medios-de-cobro.module */ 71993)).then(m => m.MediosDeCobroModule)
   }, {
     path: 'unidades-de-medida',
     canActivate: [_core_auth_guards_permiso_guard__WEBPACK_IMPORTED_MODULE_4__.PermisoGuard],
@@ -7869,27 +7869,27 @@ const appRoutes = [
   }, {
     path: 'depositos',
     canActivate: [_core_auth_guards_permiso_guard__WEBPACK_IMPORTED_MODULE_4__.PermisoGuard],
-    loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-node_modules_angular_material_fesm2022_checkbox_mjs"), __webpack_require__.e("default-src_app_shared_components_tabla-dinamica_tabla-dinamica_module_ts"), __webpack_require__.e("common"), __webpack_require__.e("src_app_modules_stock_depositos_depositos_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./modules/stock/depositos/depositos.module */ 32556)).then(m => m.DepositosModule)
+    loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-node_modules_angular_material_fesm2022_checkbox_mjs"), __webpack_require__.e("default-src_app_shared_components_tabla-dinamica_tabla-dinamica_module_ts"), __webpack_require__.e("src_app_modules_stock_depositos_depositos_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./modules/stock/depositos/depositos.module */ 32556)).then(m => m.DepositosModule)
   }, {
     path: 'rubros',
     canActivate: [_core_auth_guards_permiso_guard__WEBPACK_IMPORTED_MODULE_4__.PermisoGuard],
-    loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-node_modules_angular_material_fesm2022_checkbox_mjs"), __webpack_require__.e("default-src_app_shared_components_tabla-dinamica_tabla-dinamica_module_ts"), __webpack_require__.e("common"), __webpack_require__.e("src_app_modules_stock_rubros_rubros_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./modules/stock/rubros/rubros.module */ 12101)).then(m => m.RubrosModule)
+    loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-node_modules_angular_material_fesm2022_checkbox_mjs"), __webpack_require__.e("default-src_app_shared_components_tabla-dinamica_tabla-dinamica_module_ts"), __webpack_require__.e("src_app_modules_stock_rubros_rubros_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./modules/stock/rubros/rubros.module */ 12101)).then(m => m.RubrosModule)
   }, {
     path: 'articulos',
     canActivate: [_core_auth_guards_permiso_guard__WEBPACK_IMPORTED_MODULE_4__.PermisoGuard],
-    loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-node_modules_angular_material_fesm2022_checkbox_mjs"), __webpack_require__.e("default-src_app_shared_components_tabla-dinamica_tabla-dinamica_module_ts"), __webpack_require__.e("default-node_modules_angular_material_fesm2022_datepicker_mjs"), __webpack_require__.e("common"), __webpack_require__.e("src_app_modules_stock_articulos_articulos_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./modules/stock/articulos/articulos.module */ 76270)).then(m => m.ArticulosModule)
+    loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-node_modules_angular_material_fesm2022_checkbox_mjs"), __webpack_require__.e("default-src_app_shared_components_tabla-dinamica_tabla-dinamica_module_ts"), __webpack_require__.e("default-node_modules_angular_material_fesm2022_datepicker_mjs"), __webpack_require__.e("src_app_modules_stock_articulos_articulos_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./modules/stock/articulos/articulos.module */ 76270)).then(m => m.ArticulosModule)
   }, {
     path: 'clientes',
     canActivate: [_core_auth_guards_permiso_guard__WEBPACK_IMPORTED_MODULE_4__.PermisoGuard],
-    loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-node_modules_angular_material_fesm2022_checkbox_mjs"), __webpack_require__.e("default-src_app_shared_components_tabla-dinamica_tabla-dinamica_module_ts"), __webpack_require__.e("common"), __webpack_require__.e("src_app_modules_administracion_clientes_clientes_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./modules/administracion/clientes/clientes.module */ 53438)).then(m => m.ClientesModule)
+    loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-node_modules_angular_material_fesm2022_checkbox_mjs"), __webpack_require__.e("default-src_app_shared_components_tabla-dinamica_tabla-dinamica_module_ts"), __webpack_require__.e("default-src_app_modules_administracion_clientes_components_save_save_component_ts-node_module-47c1fd"), __webpack_require__.e("src_app_modules_administracion_clientes_clientes_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./modules/administracion/clientes/clientes.module */ 53438)).then(m => m.ClientesModule)
   }, {
     path: 'medios-de-pago',
     canActivate: [_core_auth_guards_permiso_guard__WEBPACK_IMPORTED_MODULE_4__.PermisoGuard],
-    loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-node_modules_angular_material_fesm2022_checkbox_mjs"), __webpack_require__.e("default-src_app_shared_components_tabla-dinamica_tabla-dinamica_module_ts"), __webpack_require__.e("common"), __webpack_require__.e("src_app_modules_administracion_medios-de-pago_medios-de-pago_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./modules/administracion/medios-de-pago/medios-de-pago.module */ 38971)).then(m => m.MediosDePagoModule)
+    loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-node_modules_angular_material_fesm2022_checkbox_mjs"), __webpack_require__.e("default-src_app_shared_components_tabla-dinamica_tabla-dinamica_module_ts"), __webpack_require__.e("src_app_modules_administracion_medios-de-pago_medios-de-pago_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./modules/administracion/medios-de-pago/medios-de-pago.module */ 38971)).then(m => m.MediosDePagoModule)
   }, {
     path: 'pedidos-de-presupuesto',
     canActivate: [_core_auth_guards_permiso_guard__WEBPACK_IMPORTED_MODULE_4__.PermisoGuard],
-    loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-node_modules_angular_material_fesm2022_checkbox_mjs"), __webpack_require__.e("default-src_app_shared_components_tabla-dinamica_tabla-dinamica_module_ts"), __webpack_require__.e("default-node_modules_angular_material_fesm2022_datepicker_mjs"), __webpack_require__.e("common"), __webpack_require__.e("src_app_modules_compras_pedidos-de-presupuesto_pedidos-de-presupuestos_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./modules/compras/pedidos-de-presupuesto/pedidos-de-presupuestos.module */ 22225)).then(m => m.PedidosDePresupuestoModule)
+    loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-node_modules_angular_material_fesm2022_checkbox_mjs"), __webpack_require__.e("default-src_app_shared_components_tabla-dinamica_tabla-dinamica_module_ts"), __webpack_require__.e("default-node_modules_angular_material_fesm2022_datepicker_mjs"), __webpack_require__.e("src_app_modules_compras_pedidos-de-presupuesto_pedidos-de-presupuestos_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./modules/compras/pedidos-de-presupuesto/pedidos-de-presupuestos.module */ 22225)).then(m => m.PedidosDePresupuestoModule)
   }, {
     path: 'stock-inicial',
     canActivate: [_core_auth_guards_permiso_guard__WEBPACK_IMPORTED_MODULE_4__.PermisoGuard],
@@ -7897,46 +7897,46 @@ const appRoutes = [
   }, {
     path: 'ordenes-de-compra',
     canActivate: [_core_auth_guards_permiso_guard__WEBPACK_IMPORTED_MODULE_4__.PermisoGuard],
-    loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-node_modules_angular_material_fesm2022_checkbox_mjs"), __webpack_require__.e("default-src_app_shared_components_tabla-dinamica_tabla-dinamica_module_ts"), __webpack_require__.e("default-node_modules_angular_material_fesm2022_datepicker_mjs"), __webpack_require__.e("common"), __webpack_require__.e("src_app_modules_compras_ordenes-de-compra_ordenes-de-compra_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./modules/compras/ordenes-de-compra/ordenes-de-compra.module */ 37318)).then(m => m.OrdenesDeCompraModule)
+    loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-node_modules_angular_material_fesm2022_checkbox_mjs"), __webpack_require__.e("default-src_app_shared_components_tabla-dinamica_tabla-dinamica_module_ts"), __webpack_require__.e("default-node_modules_angular_material_fesm2022_datepicker_mjs"), __webpack_require__.e("src_app_modules_compras_ordenes-de-compra_ordenes-de-compra_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./modules/compras/ordenes-de-compra/ordenes-de-compra.module */ 37318)).then(m => m.OrdenesDeCompraModule)
   }, {
     path: 'movimientos-internos',
     canActivate: [_core_auth_guards_permiso_guard__WEBPACK_IMPORTED_MODULE_4__.PermisoGuard],
-    loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-node_modules_angular_material_fesm2022_checkbox_mjs"), __webpack_require__.e("default-src_app_shared_components_tabla-dinamica_tabla-dinamica_module_ts"), __webpack_require__.e("default-node_modules_angular_material_fesm2022_datepicker_mjs"), __webpack_require__.e("common"), __webpack_require__.e("src_app_modules_stock_movimientos-internos_movimientos-internos_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./modules/stock/movimientos-internos/movimientos-internos.module */ 66422)).then(m => m.MovimientosInternosModule)
+    loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-node_modules_angular_material_fesm2022_checkbox_mjs"), __webpack_require__.e("default-src_app_shared_components_tabla-dinamica_tabla-dinamica_module_ts"), __webpack_require__.e("default-node_modules_angular_material_fesm2022_datepicker_mjs"), __webpack_require__.e("src_app_modules_stock_movimientos-internos_movimientos-internos_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./modules/stock/movimientos-internos/movimientos-internos.module */ 66422)).then(m => m.MovimientosInternosModule)
   }, {
     path: 'movimiento-conversion',
     canActivate: [_core_auth_guards_permiso_guard__WEBPACK_IMPORTED_MODULE_4__.PermisoGuard],
-    loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-node_modules_angular_material_fesm2022_checkbox_mjs"), __webpack_require__.e("default-src_app_shared_components_tabla-dinamica_tabla-dinamica_module_ts"), __webpack_require__.e("default-node_modules_angular_material_fesm2022_datepicker_mjs"), __webpack_require__.e("common"), __webpack_require__.e("src_app_modules_stock_movimiento-conversion_movimiento-conversion_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./modules/stock/movimiento-conversion/movimiento-conversion.module */ 71194)).then(m => m.MovimientoConversionModule)
+    loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-node_modules_angular_material_fesm2022_checkbox_mjs"), __webpack_require__.e("default-src_app_shared_components_tabla-dinamica_tabla-dinamica_module_ts"), __webpack_require__.e("default-node_modules_angular_material_fesm2022_datepicker_mjs"), __webpack_require__.e("src_app_modules_stock_movimiento-conversion_movimiento-conversion_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./modules/stock/movimiento-conversion/movimiento-conversion.module */ 71194)).then(m => m.MovimientoConversionModule)
   }, {
     path: 'remitos',
     canActivate: [_core_auth_guards_permiso_guard__WEBPACK_IMPORTED_MODULE_4__.PermisoGuard],
-    loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-node_modules_angular_material_fesm2022_checkbox_mjs"), __webpack_require__.e("default-src_app_shared_components_tabla-dinamica_tabla-dinamica_module_ts"), __webpack_require__.e("default-node_modules_angular_material_fesm2022_datepicker_mjs"), __webpack_require__.e("common"), __webpack_require__.e("src_app_modules_stock_remitos_remitos_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./modules/stock/remitos/remitos.module */ 35119)).then(m => m.RemitosModule)
+    loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-node_modules_angular_material_fesm2022_checkbox_mjs"), __webpack_require__.e("default-src_app_shared_components_tabla-dinamica_tabla-dinamica_module_ts"), __webpack_require__.e("default-node_modules_angular_material_fesm2022_datepicker_mjs"), __webpack_require__.e("src_app_modules_stock_remitos_remitos_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./modules/stock/remitos/remitos.module */ 35119)).then(m => m.RemitosModule)
   }, {
     path: 'entregas',
     canActivate: [_core_auth_guards_permiso_guard__WEBPACK_IMPORTED_MODULE_4__.PermisoGuard],
-    loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-node_modules_angular_material_fesm2022_checkbox_mjs"), __webpack_require__.e("default-src_app_shared_components_tabla-dinamica_tabla-dinamica_module_ts"), __webpack_require__.e("default-node_modules_angular_material_fesm2022_datepicker_mjs"), __webpack_require__.e("common"), __webpack_require__.e("src_app_modules_stock_entregas_entregas_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./modules/stock/entregas/entregas.module */ 55526)).then(m => m.EntregasModule)
+    loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-node_modules_angular_material_fesm2022_checkbox_mjs"), __webpack_require__.e("default-src_app_shared_components_tabla-dinamica_tabla-dinamica_module_ts"), __webpack_require__.e("default-node_modules_angular_material_fesm2022_datepicker_mjs"), __webpack_require__.e("src_app_modules_stock_entregas_entregas_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./modules/stock/entregas/entregas.module */ 55526)).then(m => m.EntregasModule)
   }, {
     path: 'usuarios',
     canActivate: [_core_auth_guards_permiso_guard__WEBPACK_IMPORTED_MODULE_4__.PermisoGuard],
-    loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-node_modules_angular_material_fesm2022_checkbox_mjs"), __webpack_require__.e("default-src_app_shared_components_tabla-dinamica_tabla-dinamica_module_ts"), __webpack_require__.e("default-node_modules_angular_material_fesm2022_datepicker_mjs"), __webpack_require__.e("common"), __webpack_require__.e("src_app_modules_seguridad_usuarios_usuarios_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./modules/seguridad/usuarios/usuarios.module */ 89472)).then(m => m.UsuariosModule)
+    loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-node_modules_angular_material_fesm2022_checkbox_mjs"), __webpack_require__.e("default-src_app_shared_components_tabla-dinamica_tabla-dinamica_module_ts"), __webpack_require__.e("default-node_modules_angular_material_fesm2022_datepicker_mjs"), __webpack_require__.e("src_app_modules_seguridad_usuarios_usuarios_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./modules/seguridad/usuarios/usuarios.module */ 89472)).then(m => m.UsuariosModule)
   }, {
     path: 'ventas',
     canActivate: [_core_auth_guards_permiso_guard__WEBPACK_IMPORTED_MODULE_4__.PermisoGuard],
-    loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-node_modules_angular_material_fesm2022_checkbox_mjs"), __webpack_require__.e("default-src_app_shared_components_tabla-dinamica_tabla-dinamica_module_ts"), __webpack_require__.e("default-node_modules_angular_material_fesm2022_datepicker_mjs"), __webpack_require__.e("common"), __webpack_require__.e("src_app_modules_ventas_genericas_venta-generica_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./modules/ventas/genericas/venta-generica.module */ 18767)).then(m => m.VentaGenericasModule)
+    loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-node_modules_angular_material_fesm2022_checkbox_mjs"), __webpack_require__.e("default-src_app_shared_components_tabla-dinamica_tabla-dinamica_module_ts"), __webpack_require__.e("default-node_modules_angular_material_fesm2022_datepicker_mjs"), __webpack_require__.e("default-src_app_modules_administracion_clientes_components_save_save_component_ts-node_module-47c1fd"), __webpack_require__.e("src_app_modules_ventas_genericas_venta-generica_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./modules/ventas/genericas/venta-generica.module */ 18767)).then(m => m.VentaGenericasModule)
   }, {
     path: 'entrega_qr',
     canActivate: [_core_auth_guards_permiso_guard__WEBPACK_IMPORTED_MODULE_4__.PermisoGuard],
-    loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-node_modules_angular_material_fesm2022_checkbox_mjs"), __webpack_require__.e("default-src_app_shared_components_tabla-dinamica_tabla-dinamica_module_ts"), __webpack_require__.e("default-node_modules_angular_material_fesm2022_datepicker_mjs"), __webpack_require__.e("common"), __webpack_require__.e("src_app_modules_stock_entregas-qr_entregas-qr_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./modules/stock/entregas-qr/entregas-qr.module */ 1453)).then(m => m.EntregasQRModule)
+    loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-node_modules_angular_material_fesm2022_checkbox_mjs"), __webpack_require__.e("default-src_app_shared_components_tabla-dinamica_tabla-dinamica_module_ts"), __webpack_require__.e("default-node_modules_angular_material_fesm2022_datepicker_mjs"), __webpack_require__.e("src_app_modules_stock_entregas-qr_entregas-qr_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./modules/stock/entregas-qr/entregas-qr.module */ 1453)).then(m => m.EntregasQRModule)
   }, {
     path: 'reporte/:path',
     component: _shared_components_reportes_reporte_component__WEBPACK_IMPORTED_MODULE_5__.ReporteComponent
   }, {
     path: 'complejos',
     canActivate: [_core_auth_guards_permiso_guard__WEBPACK_IMPORTED_MODULE_4__.PermisoGuard],
-    loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-node_modules_angular_material_fesm2022_checkbox_mjs"), __webpack_require__.e("default-src_app_shared_components_tabla-dinamica_tabla-dinamica_module_ts"), __webpack_require__.e("default-node_modules_angular_material_fesm2022_datepicker_mjs"), __webpack_require__.e("common"), __webpack_require__.e("src_app_modules_inmuebles_complejos_complejos_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./modules/inmuebles/complejos/complejos.module */ 91543)).then(m => m.ComplejosModule)
+    loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-node_modules_angular_material_fesm2022_checkbox_mjs"), __webpack_require__.e("default-src_app_shared_components_tabla-dinamica_tabla-dinamica_module_ts"), __webpack_require__.e("default-node_modules_angular_material_fesm2022_datepicker_mjs"), __webpack_require__.e("src_app_modules_inmuebles_complejos_complejos_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./modules/inmuebles/complejos/complejos.module */ 91543)).then(m => m.ComplejosModule)
   }, {
     path: 'unidades-funcionales',
     canActivate: [_core_auth_guards_permiso_guard__WEBPACK_IMPORTED_MODULE_4__.PermisoGuard],
-    loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-node_modules_angular_material_fesm2022_checkbox_mjs"), __webpack_require__.e("default-src_app_shared_components_tabla-dinamica_tabla-dinamica_module_ts"), __webpack_require__.e("default-node_modules_angular_material_fesm2022_datepicker_mjs"), __webpack_require__.e("common"), __webpack_require__.e("src_app_modules_inmuebles_unidades-funcionales_unidades-funcionales_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./modules/inmuebles/unidades-funcionales/unidades-funcionales.module */ 77907)).then(m => m.UnidadesFuncionalesModule)
+    loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-node_modules_angular_material_fesm2022_checkbox_mjs"), __webpack_require__.e("default-src_app_shared_components_tabla-dinamica_tabla-dinamica_module_ts"), __webpack_require__.e("default-node_modules_angular_material_fesm2022_datepicker_mjs"), __webpack_require__.e("src_app_modules_inmuebles_unidades-funcionales_unidades-funcionales_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./modules/inmuebles/unidades-funcionales/unidades-funcionales.module */ 77907)).then(m => m.UnidadesFuncionalesModule)
   }]
 }
 // Auth routes for authenticated users
@@ -16719,6 +16719,9 @@ class HeaderTextComponent {
   ngOnInit() {}
   getTitulo() {
     let titulo = this._headerTextService.getTitulo();
+    if (titulo['custom_title']) {
+      return titulo['titulo'];
+    }
     return _header_text_types__WEBPACK_IMPORTED_MODULE_0__.TitleType.find(title => title.path === titulo)?.text;
   }
   getPath() {
@@ -16755,7 +16758,7 @@ HeaderTextComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_
     }
     if (rf & 2) {
       _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵadvance"](3);
-      _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtextInterpolate"](ctx.getTitulo());
+      _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtextInterpolate1"]("", ctx.getTitulo(), " ");
     }
   },
   encapsulation: 2
@@ -16785,6 +16788,9 @@ class HeaderTextService {
   }
   setTitulo(route) {
     this.titulo = route.url;
+  }
+  setCustomTitle(title) {
+    this.titulo = title;
   }
 }
 HeaderTextService.ɵfac = function HeaderTextService_Factory(t) {
@@ -17596,7 +17602,13 @@ class EmpresaService {
       cliente_asociado: 0,
       favicon: null,
       deposito_default: null,
-      asignacion_entrega: null
+      asignacion_entrega: null,
+      cuit: null,
+      email: null,
+      direccion: null,
+      numero_telefono: null,
+      web: null,
+      configura_obra: 1
     });
     this._empresa.next({
       idempresa: 0,
@@ -17611,7 +17623,13 @@ class EmpresaService {
       cliente_asociado: 0,
       favicon: null,
       deposito_default: null,
-      asignacion_entrega: null
+      asignacion_entrega: null,
+      cuit: null,
+      email: null,
+      direccion: null,
+      numero_telefono: null,
+      web: null,
+      configura_obra: 1
     });
   }
   get empresa$() {
@@ -17634,7 +17652,13 @@ class EmpresaService {
       cliente_asociado: empresaData.cliente_asociado,
       favicon: faviconUrl,
       deposito_default: empresaData.deposito_default,
-      asignacion_entrega: empresaData.asignacion_entrega
+      asignacion_entrega: empresaData.asignacion_entrega,
+      cuit: empresaData.cuit,
+      email: empresaData.email,
+      direccion: empresaData.direccion,
+      numero_telefono: empresaData.numero_telefono,
+      web: empresaData.web,
+      configura_obra: empresaData.configura_obra
     });
   }
   get _empresaData() {
@@ -17677,7 +17701,13 @@ class EmpresaService {
       cliente_asociado: empresa.cliente_asociado,
       favicon: empresa.favicon,
       deposito_default: empresa.deposito_default,
-      asignacion_entrega: empresa.asignacion_entrega
+      asignacion_entrega: empresa.asignacion_entrega,
+      cuit: empresa.cuit,
+      email: empresa.email,
+      direccion: empresa.direccion,
+      numero_telefono: empresa.numero_telefono,
+      web: empresa.web,
+      configura_obra: empresa.configura_obra
     };
   }
   getEmpresaX() {
@@ -17710,7 +17740,13 @@ class EmpresaService {
       cliente_asociado: 0,
       favicon: null,
       deposito_default: null,
-      asignacion_entrega: null
+      asignacion_entrega: null,
+      cuit: null,
+      email: null,
+      direccion: null,
+      numero_telefono: null,
+      web: null,
+      configura_obra: 1
     };
     return (0,rxjs__WEBPACK_IMPORTED_MODULE_5__.of)(empresaData);
   }
@@ -17882,6 +17918,7 @@ const environment = {
   },
   administracion: {
     tratamientos: `${$BASE_REST}/tratamientos`,
+    select_tratamientos: `${$BASE_REST}/select?modelo=Tratamiento&campo_id=idtratamiento&campo_descripcion=descripcion&campo_activo=activo`,
     bancos: `${$BASE_REST}/fondos_bancos`,
     proveedores: `${$BASE_REST}/proveedors`,
     view_proveedores: `${$BASE_REST}/view_proveedors`,
@@ -17889,6 +17926,7 @@ const environment = {
     ven_pago_tipos: `${$BASE_REST}/ven_pago_tipos`,
     clientes: `${$BASE_REST}/adm_clientes`,
     view_clientes: `${$BASE_REST}/view_clientes`,
+    select_clientes: `${$BASE_REST}/select?modelo=Cliente&campo_id=codigo&campo_descripcion=razonSocial&campo_activo=activo`,
     egr_tipo_pagos: `${$BASE_REST}/egr_tipo_pagos`,
     condicion_iva: `${$BASE_REST}/select?modelo=condicioniva&campo_id=codigo&campo_descripcion=descripcion&campo_activo=activo`
   },
@@ -17929,6 +17967,11 @@ const environment = {
     stk_articulo_ordenar: `${$BASE_REST}/stk_articulo/ordenar`
   },
   ventas: {
+    vta_ventas: `${$BASE_REST}/vta_ventas`,
+    vta_venta_calcular_item: `${$BASE_REST}/vta_venta/calcular_item`,
+    vta_venta_calcular_unitario: `${$BASE_REST}/vta_venta/calcular_unitario`,
+    vta_venta_get_datos: `${$BASE_REST}/vta_venta/get_datos`,
+    view_vta_ventas: `${$BASE_REST}/view_vta_ventas`,
     view_venta_selects: `${$BASE_REST}/view_venta_selects`,
     view_venta_genericas: `${$BASE_REST}/view_venta_genericas`
   },
