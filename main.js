@@ -7923,6 +7923,14 @@ const appRoutes = [
     canActivate: [_core_auth_guards_permiso_guard__WEBPACK_IMPORTED_MODULE_4__.PermisoGuard],
     loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-node_modules_angular_material_fesm2022_checkbox_mjs"), __webpack_require__.e("default-src_app_shared_components_tabla-dinamica_tabla-dinamica_module_ts"), __webpack_require__.e("default-node_modules_angular_material_fesm2022_datepicker_mjs"), __webpack_require__.e("default-src_app_modules_administracion_clientes_components_save_save_component_ts-node_module-47c1fd"), __webpack_require__.e("src_app_modules_ventas_genericas_venta-generica_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./modules/ventas/genericas/venta-generica.module */ 18767)).then(m => m.VentaGenericasModule)
   }, {
+    path: 'calculadora-de-cobros',
+    canActivate: [_core_auth_guards_permiso_guard__WEBPACK_IMPORTED_MODULE_4__.PermisoGuard],
+    loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-node_modules_angular_material_fesm2022_checkbox_mjs"), __webpack_require__.e("default-src_app_shared_components_tabla-dinamica_tabla-dinamica_module_ts"), __webpack_require__.e("default-node_modules_angular_material_fesm2022_datepicker_mjs"), __webpack_require__.e("common"), __webpack_require__.e("src_app_modules_ventas_cobranzas_components_calculadora-de-cobros_calculadora-cobros_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./modules/ventas/cobranzas/components/calculadora-de-cobros/calculadora-cobros.module */ 2915)).then(m => m.CalculadoraCobrosModule)
+  }, {
+    path: 'cobranzas',
+    canActivate: [_core_auth_guards_permiso_guard__WEBPACK_IMPORTED_MODULE_4__.PermisoGuard],
+    loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-node_modules_angular_material_fesm2022_checkbox_mjs"), __webpack_require__.e("default-src_app_shared_components_tabla-dinamica_tabla-dinamica_module_ts"), __webpack_require__.e("default-node_modules_angular_material_fesm2022_datepicker_mjs"), __webpack_require__.e("common"), __webpack_require__.e("src_app_modules_ventas_cobranzas_cobranzas_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./modules/ventas/cobranzas/cobranzas.module */ 57750)).then(m => m.CobranzasModule)
+  }, {
     path: 'entrega_qr',
     canActivate: [_core_auth_guards_permiso_guard__WEBPACK_IMPORTED_MODULE_4__.PermisoGuard],
     loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-node_modules_angular_material_fesm2022_checkbox_mjs"), __webpack_require__.e("default-src_app_shared_components_tabla-dinamica_tabla-dinamica_module_ts"), __webpack_require__.e("default-node_modules_angular_material_fesm2022_datepicker_mjs"), __webpack_require__.e("src_app_modules_stock_entregas-qr_entregas-qr_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./modules/stock/entregas-qr/entregas-qr.module */ 1453)).then(m => m.EntregasQRModule)
@@ -16909,6 +16917,26 @@ const TitleType = [{
   path: "/ventas"
 }, {
   icon: "",
+  text: "Simulador de Cobro",
+  path: "/calculadora-de-cobros"
+}, {
+  icon: "",
+  text: "Cobranzas",
+  path: "/cobranzas"
+}, {
+  icon: "",
+  text: "Nueva Cobranza",
+  path: "/cobranzas/alta-cobro"
+}, {
+  icon: "",
+  text: "Editar Cobranza",
+  path: "/cobranzas/edicion-cobro"
+}, {
+  icon: "",
+  text: "Guardar Factura",
+  path: "/cobranzas/guardar-factura"
+}, {
+  icon: "",
   text: "Complejos",
   path: "/complejos"
 }, {
@@ -17973,7 +18001,21 @@ const environment = {
     vta_venta_get_datos: `${$BASE_REST}/vta_venta/get_datos`,
     view_vta_ventas: `${$BASE_REST}/view_vta_ventas`,
     view_venta_selects: `${$BASE_REST}/view_venta_selects`,
-    view_venta_genericas: `${$BASE_REST}/view_venta_genericas`
+    view_venta_genericas: `${$BASE_REST}/view_venta_genericas`,
+    vta_cobro_tipo: `${$BASE_REST}/vta_cobro_tipo`,
+    calcular_importe: `${$BASE_REST}/vta_cobro/calcular_importe`,
+    cargar_item_cobro_calculadora: `${$BASE_REST}/vta_cobro/cargar_item_cobro_calculadora`,
+    generar_reporte_calculadora: `${$BASE_REST}/vta_cobro/generar_reporte_calculadora`,
+    generar_reporte_cobro: `${$BASE_REST}/vta_cobro/generar_reporte_cobro`,
+    view_vta_cobros: `${$BASE_REST}/view_vta_cobro`,
+    view_cliente: `${$BASE_REST}/view_cliente`,
+    view_vta_venta_pendiente: `${$BASE_REST}/view_vta_venta_pendiente`,
+    fondos_bancos: `${$BASE_REST}/fondos_bancos`,
+    calcular_interes: `${$BASE_REST}/vta_cobro/calcular_interes`,
+    cargar_item_cobro: `${$BASE_REST}/vta_cobro/cargar_item_cobro`,
+    cargar_forma_cobro: `${$BASE_REST}/vta_cobro/cargar_forma_cobro`,
+    vta_cobros: `${$BASE_REST}/vta_cobros`,
+    get_datos: `${$BASE_REST}/vta_cobro/get_datos`
   },
   compras: {
     compras_cotizacion: `${$BASE_REST}/compras_cotizacion`,
