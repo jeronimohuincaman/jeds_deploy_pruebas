@@ -3377,7 +3377,7 @@ class SaveComponent {
     this.form = new _angular_forms__WEBPACK_IMPORTED_MODULE_19__.FormGroup({
       fecha: new _angular_forms__WEBPACK_IMPORTED_MODULE_19__.FormControl(this.pedido_de_presupuesto?.fecha ? this.datePipe.transform(new Date(`${mes}/${dia}/${anio}`), 'yyyy-MM-dd') : this.datePipe.transform(new Date(), 'YYYY-MM-dd'), [_angular_forms__WEBPACK_IMPORTED_MODULE_19__.Validators.required]),
       proveedor: new _angular_forms__WEBPACK_IMPORTED_MODULE_19__.FormControl(''),
-      observaciones: new _angular_forms__WEBPACK_IMPORTED_MODULE_19__.FormControl(this.pedido_de_presupuesto?.observaciones ? this.pedido_de_presupuesto?.observaciones : '')
+      observaciones: new _angular_forms__WEBPACK_IMPORTED_MODULE_19__.FormControl(this.pedido_de_presupuesto?.observaciones ? this.pedido_de_presupuesto?.observaciones : '', [_angular_forms__WEBPACK_IMPORTED_MODULE_19__.Validators.required])
     });
     this.form_carga_articulos = new _angular_forms__WEBPACK_IMPORTED_MODULE_19__.FormGroup({
       articulo: new _angular_forms__WEBPACK_IMPORTED_MODULE_19__.FormControl('', _angular_forms__WEBPACK_IMPORTED_MODULE_19__.Validators.required),
