@@ -788,7 +788,7 @@ class FondosService {
    * @returns Un fondo nuevo
    */
   saveFondo(fondo) {
-    return this.http.post(`${environments_environment__WEBPACK_IMPORTED_MODULE_0__.environment.fondos.fondos}`, fondo);
+    return this.http.post(`${environments_environment__WEBPACK_IMPORTED_MODULE_0__.environment.fondos.fondos_token}`, fondo);
   }
   /**
    * Funcion en el servicio
@@ -796,7 +796,7 @@ class FondosService {
    * @returns fondo actualizado
    */
   updateFondo(fondo) {
-    return this.http.put(`${environments_environment__WEBPACK_IMPORTED_MODULE_0__.environment.fondos.fondos}` + '/' + fondo.idfondo, fondo);
+    return this.http.put(`${environments_environment__WEBPACK_IMPORTED_MODULE_0__.environment.fondos.fondos_token}` + '/' + fondo.idfondo, fondo);
   }
   /**
    * Funcion en el servicio
@@ -804,7 +804,7 @@ class FondosService {
    * @returns Elimina el fondo
    */
   deleteFondo(idfondo) {
-    return this.http.delete(environments_environment__WEBPACK_IMPORTED_MODULE_0__.environment.fondos.fondos + '/' + idfondo);
+    return this.http.delete(environments_environment__WEBPACK_IMPORTED_MODULE_0__.environment.fondos.fondos_token + '/' + idfondo);
   }
 }
 FondosService.ɵfac = function FondosService_Factory(t) {

@@ -482,7 +482,7 @@ class MediosDeCobroComponent {
       }
     }).afterClosed().subscribe(res => {
       if (res === 'confirmed') {
-        this._mediosDeCobroService.deleteMedioDeCobro(event.params.data.idpagotipo).subscribe({
+        this._mediosDeCobroService.deleteMedioDeCobro(event.params.data.idcobrotipo).subscribe({
           next: data => {
             // Manejar la respuesta exitosa
             this.alert.success("Medio de cobro eliminado con éxito.");
@@ -717,7 +717,7 @@ class SaveComponent {
    */
   getFondos(option) {
     const fondos = this._mediosDeCobroService.getFondos(option).subscribe(fondos => {
-      this.fondos = fondos;
+      this.fondos = fondos['result'];
     });
     return fondos;
   }
@@ -1019,11 +1019,11 @@ class MediosDeCobroService {
   }
   /**
    * Funcion en el servicio
-   * @param idpagotipo
+   * @param idcobrotipo
    * @returns Elimina el medio de cobro
   */
-  deleteMedioDeCobro(idpagotipo) {
-    return this.http.delete(environments_environment__WEBPACK_IMPORTED_MODULE_0__.environment.administracion.vta_cobro_tipos + '/' + idpagotipo);
+  deleteMedioDeCobro(idcobrotipo) {
+    return this.http.delete(environments_environment__WEBPACK_IMPORTED_MODULE_0__.environment.administracion.vta_cobro_tipos + '/' + idcobrotipo);
   }
   /**
    *
@@ -1033,7 +1033,7 @@ class MediosDeCobroService {
   getFondos(option) {
     let f = '?';
     f += !option ? 'filter[activo]=1' : '';
-    return this.http.get(`${environments_environment__WEBPACK_IMPORTED_MODULE_0__.environment.fondos.fondos}${f}`);
+    return this.http.get(`${environments_environment__WEBPACK_IMPORTED_MODULE_0__.environment.fondos.fondos_token}${f}`);
   }
 }
 MediosDeCobroService.ɵfac = function MediosDeCobroService_Factory(t) {

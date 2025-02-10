@@ -17963,6 +17963,7 @@ const environment = {
   },
   fondos: {
     fondos: `${$BASE_REST}/fondos_fondos`,
+    fondos_token: `${$BASE_REST}/fondos_fondo_tokens`,
     view_fondos: `${$BASE_REST}/view_fondos`,
     fondos_tipo: `${$BASE_REST}/fondos_tipos`,
     movimientos: `${$BASE_REST}/fondos_movimientos`,
