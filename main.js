@@ -17933,8 +17933,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "environment": () => (/* binding */ environment)
 /* harmony export */ });
 const $BASE_API = "https://divannibackendyii.jeds.ar";
-const $BASE_REST = "https://divannibackendyii.jeds.ar/web";
-// const $BASE_REST = "http://localhost/jeds/divanni_backend_yii/web";
+const $BASE_REST = "https://divannibackendyii.jeds.ar/web"; // Desarrollo
+// const $BASE_REST = "https://apijedstion.jeds.com.ar/web"; // Produccion
+// const $BASE_REST = "http://localhost/jeds/divanni_backend_yii/web"; // Local
 const environment = {
   production: false,
   baseRest: $BASE_REST,
@@ -17956,7 +17957,9 @@ const environment = {
     view_clientes: `${$BASE_REST}/view_clientes`,
     select_clientes: `${$BASE_REST}/select?modelo=Cliente&campo_id=codigo&campo_descripcion=razonSocial&campo_activo=activo`,
     egr_tipo_pagos: `${$BASE_REST}/egr_tipo_pagos`,
-    condicion_iva: `${$BASE_REST}/select?modelo=condicioniva&campo_id=codigo&campo_descripcion=descripcion&campo_activo=activo`
+    condicion_iva: `${$BASE_REST}/select?modelo=condicioniva&campo_id=codigo&campo_descripcion=descripcion&campo_activo=activo`,
+    vta_cobro_tipos: `${$BASE_REST}/vta_cobro_tipos`,
+    view_vta_cobro_tipos: `${$BASE_REST}/view_vta_cobro_tipos`
   },
   fondos: {
     fondos: `${$BASE_REST}/fondos_fondos`,

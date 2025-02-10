@@ -338,7 +338,7 @@ class MediosDeCobroComponent {
     this._headerTextService = _headerTextService;
     this.dataSource = new _angular_material_table__WEBPACK_IMPORTED_MODULE_11__.MatTableDataSource();
     this.headers = ['Descripción', 'Descuento / Recargo', 'Lleva Número', 'Lleva Vencimiento', 'Fecha de emision', 'Fecha de cobro', 'Duplica número', 'Lleva banco', 'Activo', 'Fondo', 'Acciones'];
-    this.column_params = ['descripcion', 'porcentaje', 'lleva_numero', 'lleva_vencimiento', 'lleva_fecha_emision', 'lleva_fecha_cobro', 'duplica_numero', 'lleva_banco', 'activo', 'fondo', 'acciones'];
+    this.column_params = ['descripcion', 'porcentaje', 'lleva_numero', 'lleva_vencimiento', 'lleva_fecha_emision', 'lleva_fecha_cobro', 'duplica_numero', 'lleva_banco', 'activo', 'descripcion_fondo', 'acciones'];
     this.funcionesObjeto = null;
     this.filtroBusqueda = '';
     this.filtersLike = ['descripcion'];
@@ -353,7 +353,7 @@ class MediosDeCobroComponent {
     };
     this.extraParams = '';
     this.parametrosActualizados = new _angular_core__WEBPACK_IMPORTED_MODULE_12__.EventEmitter();
-    this.env = environments_environment__WEBPACK_IMPORTED_MODULE_1__.environment.administracion.view_ven_pago_tipos + '?';
+    this.env = environments_environment__WEBPACK_IMPORTED_MODULE_1__.environment.administracion.view_vta_cobro_tipos + '?';
     this.search = new _angular_forms__WEBPACK_IMPORTED_MODULE_13__.FormControl('');
     this.default_color = 'border-primary text-primary';
     this._unsubscribeAll = new rxjs__WEBPACK_IMPORTED_MODULE_14__.Subject();
@@ -615,7 +615,7 @@ __webpack_require__.r(__webpack_exports__);
 
 function SaveComponent_fuse_alert_8_Template(rf, ctx) {
   if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](0, "fuse-alert", 29);
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](0, "fuse-alert", 30);
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](1);
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
   }
@@ -628,7 +628,7 @@ function SaveComponent_fuse_alert_8_Template(rf, ctx) {
 }
 function SaveComponent_mat_option_20_Template(rf, ctx) {
   if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](0, "mat-option", 30);
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](0, "mat-option", 31);
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](1);
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
   }
@@ -654,8 +654,8 @@ class SaveComponent {
     this._unsubscribeAll = new rxjs__WEBPACK_IMPORTED_MODULE_5__.Subject();
     this.creadoExitosamente = new _angular_core__WEBPACK_IMPORTED_MODULE_4__.EventEmitter();
     this.editadoExitosamente = new _angular_core__WEBPACK_IMPORTED_MODULE_4__.EventEmitter();
-    this.medio_de_pago = this.data ? this.data : null;
-    this.title = this.medio_de_pago?.idpagotipo ? 'Editar Medio de cobro' : 'Nuevo Medio de cobro';
+    this.medio_de_cobro = this.data ? this.data : null;
+    this.title = this.medio_de_cobro?.idcobrotipo ? 'Editar Medio de cobro' : 'Nuevo Medio de cobro';
   }
   ngOnInit() {
     // Subscribe to empresa data
@@ -688,16 +688,17 @@ class SaveComponent {
   }
   newForm() {
     this.form = this.fb.group({
-      descripcion: new _angular_forms__WEBPACK_IMPORTED_MODULE_11__.FormControl(this.medio_de_pago ? this.medio_de_pago.descripcion : '', [_angular_forms__WEBPACK_IMPORTED_MODULE_11__.Validators.required]),
-      porcentaje: new _angular_forms__WEBPACK_IMPORTED_MODULE_11__.FormControl(this.medio_de_pago ? this.medio_de_pago.porcentaje : '', [_angular_forms__WEBPACK_IMPORTED_MODULE_11__.Validators.required]),
-      idfondo: new _angular_forms__WEBPACK_IMPORTED_MODULE_11__.FormControl(this.medio_de_pago ? this.medio_de_pago.idfondo : '', [_angular_forms__WEBPACK_IMPORTED_MODULE_11__.Validators.required]),
-      activo: new _angular_forms__WEBPACK_IMPORTED_MODULE_11__.FormControl(this.medio_de_pago ? this.medio_de_pago.activo : ''),
-      duplica_numero: new _angular_forms__WEBPACK_IMPORTED_MODULE_11__.FormControl(this.medio_de_pago ? this.medio_de_pago.duplica_numero : ''),
-      lleva_banco: new _angular_forms__WEBPACK_IMPORTED_MODULE_11__.FormControl(this.medio_de_pago ? this.medio_de_pago.lleva_banco : ''),
-      lleva_numero: new _angular_forms__WEBPACK_IMPORTED_MODULE_11__.FormControl(this.medio_de_pago ? this.medio_de_pago.lleva_numero : ''),
-      lleva_vencimiento: new _angular_forms__WEBPACK_IMPORTED_MODULE_11__.FormControl(this.medio_de_pago ? this.medio_de_pago.lleva_vencimiento : ''),
-      lleva_fecha_emision: new _angular_forms__WEBPACK_IMPORTED_MODULE_11__.FormControl(this.medio_de_pago ? this.medio_de_pago.lleva_fecha_emision : ''),
-      lleva_fecha_cobro: new _angular_forms__WEBPACK_IMPORTED_MODULE_11__.FormControl(this.medio_de_pago ? this.medio_de_pago.lleva_fecha_cobro : '')
+      descripcion: new _angular_forms__WEBPACK_IMPORTED_MODULE_11__.FormControl(this.medio_de_cobro ? this.medio_de_cobro.descripcion : '', [_angular_forms__WEBPACK_IMPORTED_MODULE_11__.Validators.required]),
+      porcentaje: new _angular_forms__WEBPACK_IMPORTED_MODULE_11__.FormControl(this.medio_de_cobro ? this.medio_de_cobro.porcentaje : '', [_angular_forms__WEBPACK_IMPORTED_MODULE_11__.Validators.required]),
+      idfondo: new _angular_forms__WEBPACK_IMPORTED_MODULE_11__.FormControl(this.medio_de_cobro ? this.medio_de_cobro.idfondo : '', [_angular_forms__WEBPACK_IMPORTED_MODULE_11__.Validators.required]),
+      activo: new _angular_forms__WEBPACK_IMPORTED_MODULE_11__.FormControl(this.medio_de_cobro ? this.medio_de_cobro.activo : ''),
+      duplica_numero: new _angular_forms__WEBPACK_IMPORTED_MODULE_11__.FormControl(this.medio_de_cobro ? this.medio_de_cobro.duplica_numero : ''),
+      lleva_banco: new _angular_forms__WEBPACK_IMPORTED_MODULE_11__.FormControl(this.medio_de_cobro ? this.medio_de_cobro.lleva_banco : ''),
+      lleva_numero: new _angular_forms__WEBPACK_IMPORTED_MODULE_11__.FormControl(this.medio_de_cobro ? this.medio_de_cobro.lleva_numero : ''),
+      lleva_vencimiento: new _angular_forms__WEBPACK_IMPORTED_MODULE_11__.FormControl(this.medio_de_cobro ? this.medio_de_cobro.lleva_vencimiento : ''),
+      lleva_fecha_emision: new _angular_forms__WEBPACK_IMPORTED_MODULE_11__.FormControl(this.medio_de_cobro ? this.medio_de_cobro.lleva_fecha_emision : ''),
+      lleva_fecha_cobro: new _angular_forms__WEBPACK_IMPORTED_MODULE_11__.FormControl(this.medio_de_cobro ? this.medio_de_cobro.lleva_fecha_cobro : ''),
+      es_pagare: new _angular_forms__WEBPACK_IMPORTED_MODULE_11__.FormControl(this.medio_de_cobro ? this.medio_de_cobro.es_pagare : '')
     });
   }
   /**
@@ -705,7 +706,7 @@ class SaveComponent {
   * Caso contrario, si se va a crear un nuevo item, llamo a los fondos sin enviarle un parametro asi me trae solo los activos.
   */
   exist() {
-    if (this.medio_de_pago?.idpagotipo) {
+    if (this.medio_de_cobro?.idcobrotipo) {
       this.getFondos(true);
     } else {
       this.getFondos();
@@ -724,12 +725,12 @@ class SaveComponent {
     if (!this.form.valid) {
       return this.alert.error('Revise Los Datos Ingresados');
     } else {
-      this.medio_de_pago = {
-        ...this.medio_de_pago,
+      let payload = {
         lleva_numero: this.form.get('lleva_numero').value ? 1 : 0,
         lleva_vencimiento: this.form.get('lleva_vencimiento').value ? 1 : 0,
         lleva_fecha_emision: this.form.get('lleva_fecha_emision').value ? 1 : 0,
         lleva_fecha_cobro: this.form.get('lleva_fecha_cobro').value ? 1 : 0,
+        es_pagare: this.form.get('es_pagare').value ? 1 : 0,
         duplica_numero: this.form.get('duplica_numero').value ? 1 : 0,
         lleva_banco: this.form.get('lleva_banco').value ? 1 : 0,
         activo: this.form.get('activo').value ? 1 : 0,
@@ -737,8 +738,8 @@ class SaveComponent {
         porcentaje: this.form.get('porcentaje').value,
         idfondo: this.form.get('idfondo').value
       };
-      if (this.medio_de_pago.idpagotipo) {
-        this._mediosDeCobroService.updateMedioDeCobro(this.medio_de_pago).subscribe({
+      if (this.medio_de_cobro?.idcobrotipo) {
+        this._mediosDeCobroService.updateMedioDeCobro(this.medio_de_cobro.idcobrotipo, payload).subscribe({
           next: data => {
             if (data) {
               this.editadoExitosamente.emit();
@@ -747,7 +748,7 @@ class SaveComponent {
           }
         });
       } else {
-        this._mediosDeCobroService.saveMedioDeCobro(this.medio_de_pago).subscribe({
+        this._mediosDeCobroService.saveMedioDeCobro(payload).subscribe({
           next: data => {
             if (data) {
               this.creadoExitosamente.emit();
@@ -772,9 +773,9 @@ SaveComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_4__["�
     creadoExitosamente: "creadoExitosamente",
     editadoExitosamente: "editadoExitosamente"
   },
-  decls: 46,
+  decls: 48,
   vars: 12,
-  consts: [[1, "fixed", "inset-0", "bg-white", "dark:bg-slate-900", "shadow-lg", "overflow-hidden", "overflow-y-auto", "sm:rounded-2xl", "md:min-w-auto", "sm:w-auto", "sm:min-w-90", "flex-col", "flex", "sm:inset-auto", "max-h-screen", "sm:static"], [1, "w-full", "px-4", "py-4", "flex", "justify-between", "items-center"], [1, "text-white", "font-bold", "text-lg"], ["mat-icon-button", "", 3, "click"], [1, "text-white"], ["class", "fixed top-0 left-0 w-full flex justify-center items-center mt-8 alert-main z-99999", 3, "type", "appearance", 4, "ngIf"], [1, "form-menu", "p-4", 3, "formGroup"], [1, "flex", "flex-col", "w-full", "h-full", "p-4"], [1, "flex", "gap-4", "flex-col", "sm:flex-row"], ["appearance", "outline", 1, "w-full", "sm:w-1/2"], ["matInput", "", "formControlName", "descripcion"], ["appearance", "outline", 1, "w-full", "sm:w-1/3"], ["formControlName", "idfondo"], [3, "value", 4, "ngFor", "ngForOf"], ["appearance", "outline", 1, "w-full", "sm:w-1/5"], ["matInput", "", "formControlName", "porcentaje"], [1, "p-2", "m-2"], [1, "flex", "flex-wrap", "justify-between", "gap-2"], ["formControlName", "lleva_numero", 1, "flex-1", "min-w-[45%]", "md:min-w-[20%]"], ["formControlName", "lleva_vencimiento", 1, "flex-1", "min-w-[45%]", "md:min-w-[20%]"], ["formControlName", "lleva_banco", 1, "flex-1", "min-w-[45%]", "md:min-w-[20%]"], ["formControlName", "activo", 1, "flex-1", "min-w-[45%]", "md:min-w-[20%]"], [1, "flex", "flex-wrap", "justify-between", "gap-2", "mt-2"], ["formControlName", "lleva_fecha_cobro", 1, "flex-1", "min-w-[45%]", "md:min-w-[30%]"], ["formControlName", "lleva_fecha_emision", 1, "flex-1", "min-w-[45%]", "md:min-w-[30%]", "ml-5", "pl-1"], ["formControlName", "duplica_numero", 1, "flex-1", "min-w-[45%]", "md:min-w-[30%]"], [1, "w-full", "md:flex", "md:justify-center", "md:pb-6", "md:px-6", "mt-auto"], ["mat-raised-button", "", 1, "w-full", "rounded-none", "md:w-36", "md:rounded-lg", "py-8", "md:py-0", 3, "click"], [1, "text-white", "font-medium", "text-base"], [1, "fixed", "top-0", "left-0", "w-full", "flex", "justify-center", "items-center", "mt-8", "alert-main", "z-99999", 3, "type", "appearance"], [3, "value"]],
+  consts: [[1, "fixed", "inset-0", "bg-white", "dark:bg-slate-900", "shadow-lg", "overflow-hidden", "overflow-y-auto", "sm:rounded-2xl", "md:min-w-auto", "sm:w-auto", "sm:min-w-90", "flex-col", "flex", "sm:inset-auto", "max-h-screen", "sm:static"], [1, "w-full", "px-4", "py-4", "flex", "justify-between", "items-center"], [1, "text-white", "font-bold", "text-lg"], ["mat-icon-button", "", 3, "click"], [1, "text-white"], ["class", "fixed top-0 left-0 w-full flex justify-center items-center mt-8 alert-main z-99999", 3, "type", "appearance", 4, "ngIf"], [1, "form-menu", "p-4", 3, "formGroup"], [1, "flex", "flex-col", "w-full", "h-full", "p-4"], [1, "flex", "gap-4", "flex-col", "sm:flex-row"], ["appearance", "outline", 1, "w-full", "sm:w-1/2"], ["matInput", "", "formControlName", "descripcion"], ["appearance", "outline", 1, "w-full", "sm:w-1/3"], ["formControlName", "idfondo"], [3, "value", 4, "ngFor", "ngForOf"], ["appearance", "outline", 1, "w-full", "sm:w-1/5"], ["matInput", "", "formControlName", "porcentaje"], [1, "p-2", "m-2"], [1, "flex", "flex-wrap", "justify-between", "gap-2"], ["formControlName", "lleva_numero", 1, "flex-1", "min-w-[45%]", "md:min-w-[20%]"], ["formControlName", "lleva_vencimiento", 1, "flex-1", "min-w-[45%]", "md:min-w-[20%]"], ["formControlName", "lleva_banco", 1, "flex-1", "min-w-[45%]", "md:min-w-[20%]"], ["formControlName", "activo", 1, "flex-1", "min-w-[45%]", "md:min-w-[20%]"], [1, "flex", "flex-wrap", "justify-between", "gap-2", "mt-2"], ["formControlName", "lleva_fecha_cobro", 1, "flex-1", "min-w-[45%]", "md:min-w-[30%]"], ["formControlName", "lleva_fecha_emision", 1, "flex-1", "min-w-[45%]", "md:min-w-[30%]", "ml-5", "pl-1"], ["formControlName", "duplica_numero", 1, "flex-1", "min-w-[45%]", "md:min-w-[30%]"], ["formControlName", "es_pagare", 1, "flex-1", "min-w-[45%]", "md:min-w-[30%]"], [1, "w-full", "md:flex", "md:justify-center", "md:pb-6", "md:px-6", "mt-auto"], ["mat-raised-button", "", 1, "w-full", "rounded-none", "md:w-36", "md:rounded-lg", "py-8", "md:py-0", 3, "click"], [1, "text-white", "font-medium", "text-base"], [1, "fixed", "top-0", "left-0", "w-full", "flex", "justify-center", "items-center", "mt-8", "alert-main", "z-99999", 3, "type", "appearance"], [3, "value"]],
   template: function SaveComponent_Template(rf, ctx) {
     if (rf & 1) {
       _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](0, "div", 0)(1, "div", 1)(2, "span", 2);
@@ -824,13 +825,16 @@ SaveComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_4__["�
       _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
       _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](40, "mat-checkbox", 25);
       _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](41, "Duplica numero");
+      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
+      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](42, "mat-checkbox", 26);
+      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](43, "Es Pagar\u00E9");
       _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]()()()()();
-      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](42, "div", 26)(43, "button", 27);
-      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵlistener"]("click", function SaveComponent_Template_button_click_43_listener() {
+      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](44, "div", 27)(45, "button", 28);
+      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵlistener"]("click", function SaveComponent_Template_button_click_45_listener() {
         return ctx.onSubmit();
       });
-      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](44, "span", 28);
-      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](45, "Guardar");
+      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](46, "span", 29);
+      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](47, "Guardar");
       _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]()()()();
     }
     if (rf & 2) {
@@ -845,7 +849,7 @@ SaveComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_4__["�
       _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵproperty"]("formGroup", ctx.form);
       _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](11);
       _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵproperty"]("ngForOf", ctx.fondos);
-      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](23);
+      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](25);
       _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵclassMap"](ctx.color_primario ? "" : ctx.default_color);
       _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵstyleProp"]("background-color", ctx.color_primario || "");
     }
@@ -988,7 +992,7 @@ class MediosDeCobroService {
     f += filter?.filter?.duplica_numero ? `&filter[duplica_numero]=` + (filter.filter.duplica_numero == 1 ? '1' : '0') : '';
     f += filter?.filter?.activo ? `&filter[activo]=` + (filter.filter.activo == 1 ? '1' : '0') : '';
     var subject = new rxjs__WEBPACK_IMPORTED_MODULE_1__.Subject();
-    this.http.get(`${environments_environment__WEBPACK_IMPORTED_MODULE_0__.environment.administracion.view_ven_pago_tipos}${f}`, {
+    this.http.get(`${environments_environment__WEBPACK_IMPORTED_MODULE_0__.environment.administracion.view_vta_cobro_tipos}${f}`, {
       observe: 'response'
     }).subscribe(resp => {
       subject.next({
@@ -1003,15 +1007,15 @@ class MediosDeCobroService {
    * @returns Un medio de cobro nuevo
    */
   saveMedioDeCobro(medio_de_cobro) {
-    return this.http.post(`${environments_environment__WEBPACK_IMPORTED_MODULE_0__.environment.administracion.ven_pago_tipos}`, medio_de_cobro);
+    return this.http.post(`${environments_environment__WEBPACK_IMPORTED_MODULE_0__.environment.administracion.vta_cobro_tipos}`, medio_de_cobro);
   }
   /**
    * Funcion en el servicio
    * @param medio_de_cobro
    * @returns medio de cobro actualizado
    */
-  updateMedioDeCobro(medio_de_cobro) {
-    return this.http.put(`${environments_environment__WEBPACK_IMPORTED_MODULE_0__.environment.administracion.ven_pago_tipos}` + '/' + medio_de_cobro.idpagotipo, medio_de_cobro);
+  updateMedioDeCobro(idcobrotipo, medio_de_cobro) {
+    return this.http.put(`${environments_environment__WEBPACK_IMPORTED_MODULE_0__.environment.administracion.vta_cobro_tipos}` + '/' + idcobrotipo, medio_de_cobro);
   }
   /**
    * Funcion en el servicio
@@ -1019,7 +1023,7 @@ class MediosDeCobroService {
    * @returns Elimina el medio de cobro
   */
   deleteMedioDeCobro(idpagotipo) {
-    return this.http.delete(environments_environment__WEBPACK_IMPORTED_MODULE_0__.environment.administracion.ven_pago_tipos + '/' + idpagotipo);
+    return this.http.delete(environments_environment__WEBPACK_IMPORTED_MODULE_0__.environment.administracion.vta_cobro_tipos + '/' + idpagotipo);
   }
   /**
    *
