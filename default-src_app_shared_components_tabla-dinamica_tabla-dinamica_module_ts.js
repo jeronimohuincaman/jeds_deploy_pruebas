@@ -1021,7 +1021,7 @@ class TablaDinamicaComponent {
           this.mostrarSpinner = false;
           this.checkAndInitializeSort();
         }, 2000);
-        const existingData = Array.isArray(r.data.result) ? r.data.result : Array.isArray(r.data.result.items) ? r.data.result.items : [];
+        const existingData = Array.isArray(r.data.result) ? r.data.result : Array.isArray(r.data /* .result.items */) ? r.data /* .result.items */ : [];
         existingData.length === 0 ? this.mostrar_mensaje = true : this.mostrar_mensaje = false;
         /**
          * Grilla con valores booleanos

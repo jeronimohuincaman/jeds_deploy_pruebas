@@ -372,8 +372,12 @@ class EntregasQRComponent {
         this.asignacion_tipo = clave;
       }
       // Defino el endpoint segun cada asignacion
-      if (this.asignacion_entrega === 0 && clave_os === 'idventagenerica') {
-        endpoint = `${environments_environment__WEBPACK_IMPORTED_MODULE_4__.environment.ventas.view_venta_genericas}`;
+      if (this.asignacion_entrega === 0) {
+        if (clave_os === 'idventagenerica') {
+          endpoint = `${environments_environment__WEBPACK_IMPORTED_MODULE_4__.environment.ventas.view_venta_genericas}`;
+        } else if (clave_os === 'idventa') {
+          endpoint = `${environments_environment__WEBPACK_IMPORTED_MODULE_4__.environment.ventas.view_vta_ventas}`;
+        }
       } else if (this.asignacion_entrega === 1 && clave_os === 'idcomplejo') {
         endpoint = `${environments_environment__WEBPACK_IMPORTED_MODULE_4__.environment.inmuebles.complejos.view_inm_complejos}`;
       } else if (this.asignacion_entrega === 1 && clave_os === 'idunidadfuncional') {
@@ -388,7 +392,7 @@ class EntregasQRComponent {
           const result = response.result[0];
           // Aplico el valor de la orden de servicio segun la asignacion que se haya escaneado
           if (this.asignacion_entrega === 0) {
-            this.orden_servicio = result.idventagenerica;
+            this.orden_servicio = result.idventagenerica ?? result.idventa;
           } else if (this.asignacion_entrega === 1 && clave_os === 'idcomplejo') {
             this.orden_servicio = result.idcomplejo;
           } else if (this.asignacion_entrega === 1 && clave_os === 'idunidadfuncional') {
@@ -552,6 +556,7 @@ class EntregasQRComponent {
           iddeposito: this.form.get('deposito_entrega').value.iddeposito,
           usuario_entrega: this.idUsuario ? this.idUsuario : null,
           observaciones: `Entrega QR - Órden N°${this.orden_servicio}`,
+          idventa: this.asignacion_tipo === 'idventa' ? this.orden_servicio : null,
           idventagenerica: this.asignacion_tipo === 'idventagenerica' ? this.orden_servicio : null,
           idunidadfuncional: this.asignacion_tipo === 'idunidadfuncional' ? this.orden_servicio : null,
           idcomplejo: this.asignacion_tipo === 'idcomplejo' ? this.orden_servicio : null
