@@ -1312,7 +1312,9 @@ const _c1 = function () {
   return {
     cliente: "",
     fecha: "",
-    idventagenerica: null
+    idventagenerica: null,
+    idventa: null,
+    numero_venta: null
   };
 };
 function SaveComponent_mat_form_field_46_Template(rf, ctx) {
@@ -1822,14 +1824,12 @@ class SaveComponent {
       this.form.get('venta').valueChanges.pipe((0,rxjs__WEBPACK_IMPORTED_MODULE_18__.debounceTime)(300),
       // Evita demasiadas llamadas consecutivas
       (0,rxjs__WEBPACK_IMPORTED_MODULE_19__.distinctUntilChanged)(), (0,rxjs__WEBPACK_IMPORTED_MODULE_20__.switchMap)(value => {
-        const idventagenerica = typeof value === 'object' ? value.idventagenerica : null;
-        const filterLike = typeof value === 'string' ? value : null;
-        return this._entregasService.getVentas(idventagenerica, filterLike).pipe((0,rxjs__WEBPACK_IMPORTED_MODULE_21__.catchError)(() => (0,rxjs__WEBPACK_IMPORTED_MODULE_22__.of)({
+        return this._entregasService.getVentas(value).pipe((0,rxjs__WEBPACK_IMPORTED_MODULE_21__.catchError)(() => (0,rxjs__WEBPACK_IMPORTED_MODULE_22__.of)({
           list: []
         })) // Manejo de errores
         );
       })).subscribe(response => {
-        this.filteredVentas.next(response.list.sort((a, b) => b.idventagenerica - a.idventagenerica) || []); // Actualizar el BehaviorSubject
+        this.filteredVentas.next(response.list.sort((a, b) => b.numero_venta - a.numero_venta) || []); // Actualizar el BehaviorSubject
       });
     } else if (this.asignacion_entrega === 1) {
       this.form.addControl('unidad_funcional', new _angular_forms__WEBPACK_IMPORTED_MODULE_17__.FormControl(this.entrega?.idunidadfuncional ? {
@@ -2188,8 +2188,8 @@ class SaveComponent {
         idordenservicio = decodedText[clave];
       }
       // Defino el endpoint segun cada asignacion
-      if (this.asignacion_entrega === 0 && clave_os === 'idventagenerica') {
-        endpoint = `${environments_environment__WEBPACK_IMPORTED_MODULE_3__.environment.ventas.view_venta_genericas}`;
+      if (this.asignacion_entrega === 0) {
+        endpoint = `${environments_environment__WEBPACK_IMPORTED_MODULE_3__.environment.ventas.view_vta_venta_selects}`;
       } else if (this.asignacion_entrega === 1 && clave_os === 'idcomplejo') {
         endpoint = `${environments_environment__WEBPACK_IMPORTED_MODULE_3__.environment.inmuebles.complejos.view_inm_complejos}`;
       } else if (this.asignacion_entrega === 1 && clave_os === 'idunidadfuncional') {
@@ -2202,7 +2202,7 @@ class SaveComponent {
         if (response?.result?.length > 0) {
           const result = response.result[0];
           if (this.asignacion_entrega === 0) {
-            this.orden_servicio = result.idventagenerica;
+            this.orden_servicio = result.idventagenerica ?? result.idventa;
             this.form.get('venta').setValue(result);
           } else if (this.asignacion_entrega === 1 && clave_os === 'idcomplejo') {
             this.form.get('complejo').setValue(result);
@@ -2287,7 +2287,7 @@ class SaveComponent {
     return (0,C_work_jeds_jedstion_source_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
       try {
         const ventas = yield (0,rxjs__WEBPACK_IMPORTED_MODULE_23__.firstValueFrom)(_this5._entregasService.getVentas());
-        _this5.ventas = ventas.list.sort((a, b) => b.idventagenerica - a.idventagenerica) || [];
+        _this5.ventas = ventas.list.sort((a, b) => b.numero_venta - a.numero_venta) || [];
         _this5.filteredVentas.next(_this5.ventas); // Inicializar con todas las ventas
       } catch (error) {
         console.error('Error obteniendo ventas:', error);
@@ -2453,9 +2453,10 @@ class SaveComponent {
     if (option.idcomplejo) {
       return option.descripcion_complejo;
     }
-    if (option.idventagenerica) {
+    if (option.numero_venta) {
       return `N° ${option.numero_venta} | ${option.cliente} ~ ${option.fecha}`;
-    } else if (option.idventagenerica === null) {
+    }
+    if (option.numero_venta === null) {
       return `Sin Asignación`;
     }
     return option;
@@ -2995,15 +2996,13 @@ class EntregasService {
     });
     return subject.asObservable();
   }
-  getVentas(idventagenerica, filterLike) {
-    let f = `?&pagination=1&per-page=10&page=1`;
-    if (idventagenerica) {
-      f += `&filter[idventagenerica]=${idventagenerica}`;
-    } else if (filterLike) {
-      f += `&filter[or][0][numero_venta][like]=${filterLike}&filter[or][1][cliente][like]=${filterLike}`;
+  getVentas(value) {
+    let f = `?&pagination=1&per-page=10&page=1&sort=-fecha`;
+    if (value) {
+      f += `&filter[descripcion_venta][like]=${value}`;
     }
     let subject = new rxjs__WEBPACK_IMPORTED_MODULE_2__.Subject();
-    this.http.get(`${environments_environment__WEBPACK_IMPORTED_MODULE_0__.environment.ventas.view_venta_genericas}${f}`).subscribe(resp => {
+    this.http.get(`${environments_environment__WEBPACK_IMPORTED_MODULE_0__.environment.ventas.view_vta_venta_selects}${f}`).subscribe(resp => {
       this._authService.accessToken = resp.token;
       subject.next({
         list: resp.result

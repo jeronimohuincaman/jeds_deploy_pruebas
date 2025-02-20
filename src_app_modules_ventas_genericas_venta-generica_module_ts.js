@@ -2464,7 +2464,7 @@ function FilterMenuComponent_button_21_Template(rf, ctx) {
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵlistener"]("click", function FilterMenuComponent_button_21_Template_button_click_0_listener() {
       _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵrestoreView"](_r8);
       const ctx_r7 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵnextContext"]();
-      return _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵresetView"](ctx_r7.limpiarFechas());
+      return _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵresetView"](ctx_r7.limpiarCasillero("fecha"));
     });
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](1, "mat-icon");
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](2, "clear");
@@ -2690,6 +2690,10 @@ class FilterMenuComponent {
   * Funcion para limpiar campos
   */
   limpiarCasillero(input) {
+    if (input === 'fecha') {
+      this.formFilters.get('filtroFechaInicio').setValue('');
+      this.formFilters.get('filtroFechaFin').setValue('');
+    }
     if (this.formFilters.get(input)) {
       this.formFilters.get(input).setValue(-1);
     }
@@ -2861,8 +2865,8 @@ class VentaGenericasComponent {
     this.default_color = 'border-primary text-primary';
     this._unsubscribeAll = new rxjs__WEBPACK_IMPORTED_MODULE_12__.Subject();
     // Particulares del modulo
-    this.headers = ['', 'Numero', 'Fecha', 'Cliente', 'Vendedor', 'Total', 'Acciones'];
-    this.column_params = ['seleccion', 'idventa', 'fecha', 'cliente', 'usuario', 'importe_total', 'acciones'];
+    this.headers = ['', 'Origen', 'Numero', 'Fecha', 'Cliente', 'Vendedor', 'Total', 'Acciones'];
+    this.column_params = ['seleccion', 'origen', 'numero_venta', 'fecha', 'cliente', 'vendedor', 'importe_total', 'acciones'];
     this.selectedItems = [];
     this.dataSource = new _angular_material_table__WEBPACK_IMPORTED_MODULE_13__.MatTableDataSource();
     this.funcionesObjeto = null;
@@ -2876,7 +2880,7 @@ class VentaGenericasComponent {
     };
     this.extraParams = '';
     this.parametrosActualizados = new _angular_core__WEBPACK_IMPORTED_MODULE_14__.EventEmitter();
-    this.env = environments_environment__WEBPACK_IMPORTED_MODULE_1__.environment.ventas.view_vta_ventas + '?';
+    this.env = environments_environment__WEBPACK_IMPORTED_MODULE_1__.environment.ventas.view_vta_venta_selects + '?pagination=true&per-page=10&sort=-fecha';
     this._headerTextService.setTitulo(this.router);
     /**
      * Aca se declaran los botones que iran en la grilla sobre el apartado de acciones.
@@ -2884,21 +2888,21 @@ class VentaGenericasComponent {
     this.funcionesObjeto = [{
       nombre_boton: "editar",
       functionName: 'editar',
-      iconoAccion: venta_generica => 'jedstion:editar',
-      iconoAccionado: venta_generica => '',
-      iconoDeshabilitado: venta_generica => ''
+      iconoAccion: venta => venta.puede_modificar === true ? 'jedstion:editar' : '',
+      iconoAccionado: venta => '',
+      iconoDeshabilitado: venta => venta.puede_modificar === false ? 'jedstion:editar_disabled' : ''
     }, {
       nombre_boton: "eliminar",
       functionName: 'eliminar',
-      iconoAccion: venta_generica => 'jedstion:eliminar',
-      iconoAccionado: venta_generica => '',
-      iconoDeshabilitado: venta_generica => ''
+      iconoAccion: venta => venta.puede_eliminar === true ? 'jedstion:eliminar' : '',
+      iconoAccionado: venta => '',
+      iconoDeshabilitado: venta => venta.puede_eliminar === false ? 'jedstion:eliminar_disabled' : ''
     }, {
       nombre_boton: "Reporte",
       functionName: 'orden_servicio',
-      iconoAccion: venta_generica => 'jedstion:imprimir',
-      iconoAccionado: venta_generica => '',
-      iconoDeshabilitado: venta_generica => ''
+      iconoAccion: venta => 'jedstion:imprimir',
+      iconoAccionado: venta => '',
+      iconoDeshabilitado: venta => ''
     }];
     // Subscribe to empresa data
     this._empresaService.empresa$.pipe((0,rxjs__WEBPACK_IMPORTED_MODULE_15__.takeUntil)(this._unsubscribeAll)).subscribe(empresa => {
@@ -2978,7 +2982,6 @@ class VentaGenericasComponent {
           this.extraParams += this.filter.filtroFechaInicio != null ? "filter[fecha][gte]=" + this.filter.filtroFechaInicio + '&' : '';
           this.extraParams += this.filter.filtroFechaFin != null ? "filter[fecha][lte]=" + this.filter.filtroFechaFin + '&' : '';
           this.tabla.filters(this.filtroBusqueda);
-          // this._searchService.getSearchInput().setValue(this._tabsServices.getFiltroBuscadorPedido());
         }
       }
     });
@@ -2990,10 +2993,26 @@ class VentaGenericasComponent {
   generarAcciones(event) {
     switch (event.name) {
       case 'editar':
-        this.updateVenta(event);
+        if (event.params.data.puede_modificar === false) {
+          if (event.params.data.tipo_venta === 1) {
+            return this.alert.warning('No se puede editar la venta.');
+          } else {
+            return this.alert.warning('No se puede editar una venta del sistema anterior.');
+          }
+        } else {
+          this.updateVenta(event);
+        }
         break;
       case 'eliminar':
-        this.deleteVenta(event);
+        if (event.params.data.puede_eliminar === false) {
+          if (event.params.data.tipo_venta === 1) {
+            return this.alert.warning('No se puede eliminar la venta.');
+          } else {
+            return this.alert.warning('No se puede eliminar una venta del sistema anterior.');
+          }
+        } else {
+          this.deleteVenta(event);
+        }
         break;
       case 'orden_servicio':
         this.reporteOrdenServicio(event);
@@ -3011,12 +3030,9 @@ class VentaGenericasComponent {
    * Esta funcion Genera un Reporte y lo muestra en una nueva pestaña
    */
   reporteOrdenServicio(event) {
-    let idordenservicio = '';
     let payload = null;
     // Si es atraves de presionar el boton de un item
     if (event) {
-      // Encapsulamos el nombre de la clave del objeto
-      idordenservicio = Object.keys(event.params.data)[0];
       // Selecciono el item
       this.selectedItems.push(event.params.data);
     }
@@ -3024,14 +3040,15 @@ class VentaGenericasComponent {
     if (!event && (!this.selectedItems || this.selectedItems.length === 0)) {
       return this.alert.error('Debe seleccionar al menos un Item.');
     } else {
-      // Encapsulamos el nombre de la clave del objeto
-      idordenservicio = Object.keys(this.selectedItems[0])[0];
       // Armo el payload para llamar al servicio
       payload = {
         // Creo un objeto con el valor del nombre de la clave y con el valor item con esa clave
-        ordenes_de_servicio: this.selectedItems.map(element => ({
-          [idordenservicio]: element[`${idordenservicio}`]
-        }))
+        ordenes_de_servicio: this.selectedItems.map(element => {
+          let clave = element.tipo_venta === 1 ? 'idventa' : 'idventagenerica';
+          return {
+            [clave]: element[`${clave}`]
+          };
+        })
       };
       this._ventaGenericasService.reporteOrdenServicio(payload).subscribe({
         next: data => {
