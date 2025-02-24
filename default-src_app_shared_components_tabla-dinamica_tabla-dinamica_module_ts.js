@@ -42,7 +42,9 @@ class TablaDinamicaService {
       subject.next({
         'data': resp.body,
         'totalPages': resp.headers.get('X-Pagination-Page-Count'),
-        'totalCount': resp.headers.get('X-Pagination-Total-Count')
+        'totalCount': resp.headers.get('X-Pagination-Total-Count'),
+        'currentPage': resp.headers.get('X-Pagination-Current-Page'),
+        'perPage': resp.headers.get('X-Pagination-Per-Page')
       });
     });
     return subject.asObservable();

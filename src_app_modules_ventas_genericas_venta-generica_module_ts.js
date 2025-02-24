@@ -2196,6 +2196,148 @@ AltaEdicionVentaComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_M
 
 /***/ }),
 
+/***/ 3201:
+/*!********************************************************************************************************!*\
+  !*** ./src/app/modules/ventas/genericas/components/bonificado-detalle/bonificado-detalle.component.ts ***!
+  \********************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "BonificadoDetalleComponent": () => (/* binding */ BonificadoDetalleComponent)
+/* harmony export */ });
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! rxjs */ 80228);
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! rxjs */ 68951);
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! rxjs */ 71989);
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! rxjs */ 98977);
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/forms */ 69542);
+/* harmony import */ var environments_environment__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! environments/environment */ 92340);
+/* harmony import */ var _shared_components_tabla_dinamica_tabla_dinamica_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../../shared/components/tabla-dinamica/tabla-dinamica.component */ 71549);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @angular/core */ 86839);
+/* harmony import */ var _shared_service_app_empresa_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @shared/service/app/empresa.service */ 66270);
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @angular/router */ 86679);
+/* harmony import */ var _shared_components_header_text_header_text_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @shared/components/header-text/header-text.service */ 78978);
+/* harmony import */ var app_layout_common_search_search_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! app/layout/common/search/search.service */ 77374);
+/* harmony import */ var _shared_service_app_jeds_menu_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @shared/service/app/jeds-menu.service */ 92078);
+/* harmony import */ var _angular_material_dialog__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @angular/material/dialog */ 67486);
+/* harmony import */ var _angular_material_button__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @angular/material/button */ 83677);
+/* harmony import */ var _angular_material_icon__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! @angular/material/icon */ 69941);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+class BonificadoDetalleComponent {
+  constructor(_empresaService, router, _headerTextService, _searchService, _menuService, dialogo, route) {
+    this._empresaService = _empresaService;
+    this.router = router;
+    this._headerTextService = _headerTextService;
+    this._searchService = _searchService;
+    this._menuService = _menuService;
+    this.dialogo = dialogo;
+    this.route = route;
+    this.venta_bonificadas = [];
+    this.headers = ['Venta', 'Bonificado', 'Fecha', 'Importe Neto', 'Importe Iva', 'Importe Descuento', 'Importe Total'];
+    this.columns = ['idventa', 'bonificado', 'fecha', 'importe_neto', 'importe_iva', 'importe_descuento', 'importe_total'];
+    this.column_params = ['idventa', 'bonificado', 'fecha', 'importe_neto', 'importe_iva', 'importe_descuento', 'importe_total'];
+    this.filtersLike = ['fecha'];
+    this.funcionesObjeto = null;
+    this.extraParams = '';
+    this.env = environments_environment__WEBPACK_IMPORTED_MODULE_0__.environment.ventas.view_vta_venta_bonificado_detalles + '?filter[idventa]=' + +this.route.snapshot.paramMap.get('idventa');
+    this.default_color = 'border-primary text-primary';
+    this.search = new _angular_forms__WEBPACK_IMPORTED_MODULE_6__.FormControl('');
+    this.filtroBusqueda = '';
+    this._unsubscribeAll = new rxjs__WEBPACK_IMPORTED_MODULE_7__.Subject();
+    let titulo = {
+      custom_title: true,
+      titulo: `Venta N°${this.route.snapshot.paramMap.get('idventa')} detalle bonificado `
+    };
+    this._headerTextService.setCustomTitle(titulo);
+  }
+  ngOnInit() {
+    // Subscribe to empresa data
+    this._empresaService.empresa$.pipe((0,rxjs__WEBPACK_IMPORTED_MODULE_8__.takeUntil)(this._unsubscribeAll)).subscribe(empresa => {
+      this.color_primario = empresa.color_primario;
+      this.color_secundario = empresa.color_secundario;
+    });
+    // Load empresa data
+    this._empresaService.getEmpresa();
+    this.SearchTextSub$ = this._searchService.getSearchText().pipe(
+    //Se obtienen los valores que coinciden con lo ingresado en la barra de busqueda
+    (0,rxjs__WEBPACK_IMPORTED_MODULE_9__.debounceTime)(250), (0,rxjs__WEBPACK_IMPORTED_MODULE_10__.distinctUntilChanged)()).subscribe(value => {
+      this.filtroBusqueda = value;
+      this.tabla.filters(this.filtroBusqueda);
+    });
+  }
+  volverPaginaAnterior() {
+    this.router.navigate(['/ventas']);
+  }
+  // Este método es llamado cuando el componente es destruido
+  ngOnDestroy() {
+    this._searchService.unsubscribe();
+  }
+}
+BonificadoDetalleComponent.ɵfac = function BonificadoDetalleComponent_Factory(t) {
+  return new (t || BonificadoDetalleComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵdirectiveInject"](_shared_service_app_empresa_service__WEBPACK_IMPORTED_MODULE_2__.EmpresaService), _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_12__.Router), _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵdirectiveInject"](_shared_components_header_text_header_text_service__WEBPACK_IMPORTED_MODULE_3__.HeaderTextService), _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵdirectiveInject"](app_layout_common_search_search_service__WEBPACK_IMPORTED_MODULE_4__.SearchService), _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵdirectiveInject"](_shared_service_app_jeds_menu_service__WEBPACK_IMPORTED_MODULE_5__.JedsMenuService), _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵdirectiveInject"](_angular_material_dialog__WEBPACK_IMPORTED_MODULE_13__.MatDialog), _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_12__.ActivatedRoute));
+};
+BonificadoDetalleComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵdefineComponent"]({
+  type: BonificadoDetalleComponent,
+  selectors: [["app-bonificado-detalle"]],
+  viewQuery: function BonificadoDetalleComponent_Query(rf, ctx) {
+    if (rf & 1) {
+      _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵviewQuery"](_shared_components_tabla_dinamica_tabla_dinamica_component__WEBPACK_IMPORTED_MODULE_1__.TablaDinamicaComponent, 5);
+    }
+    if (rf & 2) {
+      let _t;
+      _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵqueryRefresh"](_t = _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵloadQuery"]()) && (ctx.tabla = _t.first);
+    }
+  },
+  inputs: {
+    extraParams: "extraParams"
+  },
+  decls: 8,
+  vars: 16,
+  consts: [[1, "w-full", "flex", "flex-col", "relative", "mt-4"], [1, "flex", "justify-start", "sm:mb-0", "mx-4"], ["mat-flat-button", "", 1, "fuse-mat-button-large", "w-full", "!border", "border-solid", "md:w-28", 3, "click"], [1, "icon-size-5", 3, "svgIcon"], [1, "ml-2", "text-lg", "font-normal"], [1, "pr-2", "pl-2"], [1, "bottom-10", "sm:bottom-0", "table-fixed", "sm:top-2", "w-full", "m-0", 3, "cache", "columnsNames", "renderType", "columnsParams", "endpoint", "functions", "extraClasses", "FiltersLikes", "extraParams"]],
+  template: function BonificadoDetalleComponent_Template(rf, ctx) {
+    if (rf & 1) {
+      _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵelementStart"](0, "div", 0)(1, "div", 1)(2, "button", 2);
+      _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵlistener"]("click", function BonificadoDetalleComponent_Template_button_click_2_listener() {
+        return ctx.volverPaginaAnterior();
+      });
+      _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵelement"](3, "mat-icon", 3);
+      _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵelementStart"](4, "span", 4);
+      _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵtext"](5, "Volver");
+      _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵelementEnd"]()()();
+      _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵelementStart"](6, "div", 5);
+      _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵelement"](7, "app-tabla-dinamica", 6);
+      _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵelementEnd"]()();
+    }
+    if (rf & 2) {
+      _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵadvance"](2);
+      _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵclassMap"](ctx.color_primario ? "" : ctx.default_color);
+      _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵstyleProp"]("border", ctx.color_primario || "")("color", ctx.color_primario || "");
+      _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵadvance"](1);
+      _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵproperty"]("svgIcon", "heroicons_solid:chevron-left");
+      _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵadvance"](4);
+      _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵproperty"]("cache", false)("columnsNames", ctx.headers)("renderType", "client")("columnsParams", ctx.column_params)("endpoint", ctx.env)("functions", ctx.funcionesObjeto)("extraClasses", "td.mat-cell border,td.mat-cell border-slate-400")("FiltersLikes", ctx.filtersLike)("extraParams", ctx.extraParams);
+    }
+  },
+  dependencies: [_angular_material_button__WEBPACK_IMPORTED_MODULE_14__.MatButton, _angular_material_icon__WEBPACK_IMPORTED_MODULE_15__.MatIcon, _shared_components_tabla_dinamica_tabla_dinamica_component__WEBPACK_IMPORTED_MODULE_1__.TablaDinamicaComponent],
+  styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJib25pZmljYWRvLWRldGFsbGUuY29tcG9uZW50LnNjc3MifQ== */\n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8uL3NyYy9hcHAvbW9kdWxlcy92ZW50YXMvZ2VuZXJpY2FzL2NvbXBvbmVudHMvYm9uaWZpY2Fkby1kZXRhbGxlL2JvbmlmaWNhZG8tZGV0YWxsZS5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiO0FBQ0Esb0xBQW9MIiwic291cmNlUm9vdCI6IiJ9 */"]
+});
+
+
+/***/ }),
+
 /***/ 36005:
 /*!******************************************************************************************************!*\
   !*** ./src/app/modules/ventas/genericas/components/calcular-unitario/calcular-unitario.component.ts ***!
@@ -2880,7 +3022,7 @@ class VentaGenericasComponent {
     };
     this.extraParams = '';
     this.parametrosActualizados = new _angular_core__WEBPACK_IMPORTED_MODULE_14__.EventEmitter();
-    this.env = environments_environment__WEBPACK_IMPORTED_MODULE_1__.environment.ventas.view_vta_venta_selects + '?pagination=true&per-page=10&sort=-fecha';
+    this.env = environments_environment__WEBPACK_IMPORTED_MODULE_1__.environment.ventas.view_vta_venta_selects + '?sort=-fecha';
     this._headerTextService.setTitulo(this.router);
     /**
      * Aca se declaran los botones que iran en la grilla sobre el apartado de acciones.
@@ -2903,6 +3045,12 @@ class VentaGenericasComponent {
       iconoAccion: venta => 'jedstion:imprimir',
       iconoAccionado: venta => '',
       iconoDeshabilitado: venta => ''
+    }, {
+      nombre_boton: "Detalle Bonificado",
+      functionName: 'ventas_bonificadas_detalle',
+      iconoAccion: venta => venta.tipo_venta === 1 ? 'jedstion:vista_lista' : '',
+      iconoAccionado: venta => '',
+      iconoDeshabilitado: venta => venta.tipo_venta === 0 ? 'jedstion:vista_lista_disabled' : ''
     }];
     // Subscribe to empresa data
     this._empresaService.empresa$.pipe((0,rxjs__WEBPACK_IMPORTED_MODULE_15__.takeUntil)(this._unsubscribeAll)).subscribe(empresa => {
@@ -2929,6 +3077,10 @@ class VentaGenericasComponent {
   updateVenta(event) {
     const id = event.params.data.idventa;
     this.router.navigate(['/ventas/edicion/', id]);
+  }
+  listadoVentasBonificadas(event) {
+    const id = event.params.data.idventa;
+    this.router.navigate(['/ventas/venta-detalle/', id]);
   }
   /**
   * Esta funcion elimina un item
@@ -3016,6 +3168,13 @@ class VentaGenericasComponent {
         break;
       case 'orden_servicio':
         this.reporteOrdenServicio(event);
+        break;
+      case 'ventas_bonificadas_detalle':
+        if (event.params.data.puede_eliminar === false) {
+          return this.alert.warning('No se puede ver las ventas bonificadas del sistema anterior.');
+        } else {
+          this.listadoVentasBonificadas(event);
+        }
         break;
     }
   }
@@ -3311,26 +3470,26 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "VentaGenericasModule": () => (/* binding */ VentaGenericasModule)
 /* harmony export */ });
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @angular/router */ 86679);
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @angular/common */ 86477);
-/* harmony import */ var _angular_material_toolbar__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! @angular/material/toolbar */ 46322);
-/* harmony import */ var _angular_material_table__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @angular/material/table */ 83348);
-/* harmony import */ var _angular_material_button__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! @angular/material/button */ 83677);
-/* harmony import */ var _angular_material_select__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! @angular/material/select */ 56508);
-/* harmony import */ var _angular_material_form_field__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! @angular/material/form-field */ 98750);
-/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! @angular/forms */ 69542);
-/* harmony import */ var _angular_material_input__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! @angular/material/input */ 4322);
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @angular/router */ 86679);
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @angular/common */ 86477);
+/* harmony import */ var _angular_material_toolbar__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! @angular/material/toolbar */ 46322);
+/* harmony import */ var _angular_material_table__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! @angular/material/table */ 83348);
+/* harmony import */ var _angular_material_button__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! @angular/material/button */ 83677);
+/* harmony import */ var _angular_material_select__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! @angular/material/select */ 56508);
+/* harmony import */ var _angular_material_form_field__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! @angular/material/form-field */ 98750);
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! @angular/forms */ 69542);
+/* harmony import */ var _angular_material_input__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! @angular/material/input */ 4322);
 /* harmony import */ var _fuse_components_alert__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @fuse/components/alert */ 17483);
 /* harmony import */ var _shared_service_app_jeds_menu_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @shared/service/app/jeds-menu.service */ 92078);
-/* harmony import */ var _angular_material_icon__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! @angular/material/icon */ 69941);
+/* harmony import */ var _angular_material_icon__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! @angular/material/icon */ 69941);
 /* harmony import */ var _shared_service_app_alert_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @shared/service/app/alert.service */ 26375);
-/* harmony import */ var _angular_material_tooltip__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! @angular/material/tooltip */ 52423);
-/* harmony import */ var _angular_material_autocomplete__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! @angular/material/autocomplete */ 42556);
-/* harmony import */ var _angular_material_checkbox__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! @angular/material/checkbox */ 7672);
-/* harmony import */ var _angular_material_sort__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! @angular/material/sort */ 95096);
+/* harmony import */ var _angular_material_tooltip__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! @angular/material/tooltip */ 52423);
+/* harmony import */ var _angular_material_autocomplete__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! @angular/material/autocomplete */ 42556);
+/* harmony import */ var _angular_material_checkbox__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! @angular/material/checkbox */ 7672);
+/* harmony import */ var _angular_material_sort__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! @angular/material/sort */ 95096);
 /* harmony import */ var _shared_components_tabla_dinamica_tabla_dinamica_module__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @shared/components/tabla-dinamica/tabla-dinamica.module */ 11711);
-/* harmony import */ var _angular_material_dialog__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! @angular/material/dialog */ 67486);
-/* harmony import */ var _angular_material_datepicker__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! @angular/material/datepicker */ 76844);
+/* harmony import */ var _angular_material_dialog__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! @angular/material/dialog */ 67486);
+/* harmony import */ var _angular_material_datepicker__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! @angular/material/datepicker */ 76844);
 /* harmony import */ var _service_venta_generica_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./service/venta-generica.service */ 73899);
 /* harmony import */ var _components_venta_genericas_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/venta-genericas.component */ 12217);
 /* harmony import */ var _components_alta_edicion_alta_edicion_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./components/alta-edicion/alta-edicion.component */ 43857);
@@ -3338,7 +3497,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var app_modules_administracion_clientes_service_clientes_service__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! app/modules/administracion/clientes/service/clientes.service */ 12254);
 /* harmony import */ var _shared_components_shared_component_module__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @shared/components/shared-component.module */ 46288);
 /* harmony import */ var _components_filter_menu_filter_menu_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./components/filter-menu/filter-menu.component */ 34071);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @angular/core */ 86839);
+/* harmony import */ var _components_bonificado_detalle_bonificado_detalle_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./components/bonificado-detalle/bonificado-detalle.component */ 3201);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @angular/core */ 86839);
+
 
 
 
@@ -3377,24 +3538,27 @@ const routes = [{
 }, {
   path: 'edicion/:idventa',
   component: _components_alta_edicion_alta_edicion_component__WEBPACK_IMPORTED_MODULE_6__.AltaEdicionVentaComponent
+}, {
+  path: 'venta-detalle/:idventa',
+  component: _components_bonificado_detalle_bonificado_detalle_component__WEBPACK_IMPORTED_MODULE_11__.BonificadoDetalleComponent
 }];
 class VentaGenericasModule {}
 VentaGenericasModule.ɵfac = function VentaGenericasModule_Factory(t) {
   return new (t || VentaGenericasModule)();
 };
-VentaGenericasModule.ɵmod = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵdefineNgModule"]({
+VentaGenericasModule.ɵmod = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵdefineNgModule"]({
   type: VentaGenericasModule
 });
-VentaGenericasModule.ɵinj = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵdefineInjector"]({
-  providers: [_service_venta_generica_service__WEBPACK_IMPORTED_MODULE_4__.VentaGenericasService, _shared_service_app_jeds_menu_service__WEBPACK_IMPORTED_MODULE_1__.JedsMenuService, _shared_service_app_alert_service__WEBPACK_IMPORTED_MODULE_2__.AppAlertService, _angular_common__WEBPACK_IMPORTED_MODULE_12__.DatePipe, app_modules_administracion_clientes_service_clientes_service__WEBPACK_IMPORTED_MODULE_8__.ClientesService],
-  imports: [_angular_common__WEBPACK_IMPORTED_MODULE_12__.CommonModule, _angular_router__WEBPACK_IMPORTED_MODULE_13__.RouterModule.forChild(routes), _angular_material_table__WEBPACK_IMPORTED_MODULE_14__.MatTableModule, _angular_material_button__WEBPACK_IMPORTED_MODULE_15__.MatButtonModule, _angular_material_select__WEBPACK_IMPORTED_MODULE_16__.MatSelectModule, _angular_material_form_field__WEBPACK_IMPORTED_MODULE_17__.MatFormFieldModule, _angular_forms__WEBPACK_IMPORTED_MODULE_18__.ReactiveFormsModule, _angular_material_input__WEBPACK_IMPORTED_MODULE_19__.MatInputModule, _angular_material_icon__WEBPACK_IMPORTED_MODULE_20__.MatIconModule, _fuse_components_alert__WEBPACK_IMPORTED_MODULE_0__.FuseAlertComponent, _angular_material_tooltip__WEBPACK_IMPORTED_MODULE_21__.MatTooltipModule, _angular_material_autocomplete__WEBPACK_IMPORTED_MODULE_22__.MatAutocompleteModule, _angular_material_toolbar__WEBPACK_IMPORTED_MODULE_23__.MatToolbarModule, _angular_material_checkbox__WEBPACK_IMPORTED_MODULE_24__.MatCheckboxModule, _angular_material_sort__WEBPACK_IMPORTED_MODULE_25__.MatSortModule, _shared_components_tabla_dinamica_tabla_dinamica_module__WEBPACK_IMPORTED_MODULE_3__.TablaDinamicaModule, _angular_material_dialog__WEBPACK_IMPORTED_MODULE_26__.MatDialogModule, _angular_material_datepicker__WEBPACK_IMPORTED_MODULE_27__.MatDatepickerModule, _shared_components_shared_component_module__WEBPACK_IMPORTED_MODULE_9__.SharedComponentModule, _angular_router__WEBPACK_IMPORTED_MODULE_13__.RouterModule]
+VentaGenericasModule.ɵinj = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵdefineInjector"]({
+  providers: [_service_venta_generica_service__WEBPACK_IMPORTED_MODULE_4__.VentaGenericasService, _shared_service_app_jeds_menu_service__WEBPACK_IMPORTED_MODULE_1__.JedsMenuService, _shared_service_app_alert_service__WEBPACK_IMPORTED_MODULE_2__.AppAlertService, _angular_common__WEBPACK_IMPORTED_MODULE_13__.DatePipe, app_modules_administracion_clientes_service_clientes_service__WEBPACK_IMPORTED_MODULE_8__.ClientesService],
+  imports: [_angular_common__WEBPACK_IMPORTED_MODULE_13__.CommonModule, _angular_router__WEBPACK_IMPORTED_MODULE_14__.RouterModule.forChild(routes), _angular_material_table__WEBPACK_IMPORTED_MODULE_15__.MatTableModule, _angular_material_button__WEBPACK_IMPORTED_MODULE_16__.MatButtonModule, _angular_material_select__WEBPACK_IMPORTED_MODULE_17__.MatSelectModule, _angular_material_form_field__WEBPACK_IMPORTED_MODULE_18__.MatFormFieldModule, _angular_forms__WEBPACK_IMPORTED_MODULE_19__.ReactiveFormsModule, _angular_material_input__WEBPACK_IMPORTED_MODULE_20__.MatInputModule, _angular_material_icon__WEBPACK_IMPORTED_MODULE_21__.MatIconModule, _fuse_components_alert__WEBPACK_IMPORTED_MODULE_0__.FuseAlertComponent, _angular_material_tooltip__WEBPACK_IMPORTED_MODULE_22__.MatTooltipModule, _angular_material_autocomplete__WEBPACK_IMPORTED_MODULE_23__.MatAutocompleteModule, _angular_material_toolbar__WEBPACK_IMPORTED_MODULE_24__.MatToolbarModule, _angular_material_checkbox__WEBPACK_IMPORTED_MODULE_25__.MatCheckboxModule, _angular_material_sort__WEBPACK_IMPORTED_MODULE_26__.MatSortModule, _shared_components_tabla_dinamica_tabla_dinamica_module__WEBPACK_IMPORTED_MODULE_3__.TablaDinamicaModule, _angular_material_dialog__WEBPACK_IMPORTED_MODULE_27__.MatDialogModule, _angular_material_datepicker__WEBPACK_IMPORTED_MODULE_28__.MatDatepickerModule, _shared_components_shared_component_module__WEBPACK_IMPORTED_MODULE_9__.SharedComponentModule, _angular_router__WEBPACK_IMPORTED_MODULE_14__.RouterModule]
 });
 
 (function () {
-  (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵsetNgModuleScope"](VentaGenericasModule, {
-    declarations: [_components_venta_genericas_component__WEBPACK_IMPORTED_MODULE_5__.VentaGenericasComponent, _components_alta_edicion_alta_edicion_component__WEBPACK_IMPORTED_MODULE_6__.AltaEdicionVentaComponent, _components_filter_menu_filter_menu_component__WEBPACK_IMPORTED_MODULE_10__.FilterMenuComponent, _components_calcular_unitario_calcular_unitario_component__WEBPACK_IMPORTED_MODULE_7__.CalcularUnitarioComponent],
-    imports: [_angular_common__WEBPACK_IMPORTED_MODULE_12__.CommonModule, _angular_router__WEBPACK_IMPORTED_MODULE_13__.RouterModule, _angular_material_table__WEBPACK_IMPORTED_MODULE_14__.MatTableModule, _angular_material_button__WEBPACK_IMPORTED_MODULE_15__.MatButtonModule, _angular_material_select__WEBPACK_IMPORTED_MODULE_16__.MatSelectModule, _angular_material_form_field__WEBPACK_IMPORTED_MODULE_17__.MatFormFieldModule, _angular_forms__WEBPACK_IMPORTED_MODULE_18__.ReactiveFormsModule, _angular_material_input__WEBPACK_IMPORTED_MODULE_19__.MatInputModule, _angular_material_icon__WEBPACK_IMPORTED_MODULE_20__.MatIconModule, _fuse_components_alert__WEBPACK_IMPORTED_MODULE_0__.FuseAlertComponent, _angular_material_tooltip__WEBPACK_IMPORTED_MODULE_21__.MatTooltipModule, _angular_material_autocomplete__WEBPACK_IMPORTED_MODULE_22__.MatAutocompleteModule, _angular_material_toolbar__WEBPACK_IMPORTED_MODULE_23__.MatToolbarModule, _angular_material_checkbox__WEBPACK_IMPORTED_MODULE_24__.MatCheckboxModule, _angular_material_sort__WEBPACK_IMPORTED_MODULE_25__.MatSortModule, _shared_components_tabla_dinamica_tabla_dinamica_module__WEBPACK_IMPORTED_MODULE_3__.TablaDinamicaModule, _angular_material_dialog__WEBPACK_IMPORTED_MODULE_26__.MatDialogModule, _angular_material_datepicker__WEBPACK_IMPORTED_MODULE_27__.MatDatepickerModule, _shared_components_shared_component_module__WEBPACK_IMPORTED_MODULE_9__.SharedComponentModule],
-    exports: [_angular_router__WEBPACK_IMPORTED_MODULE_13__.RouterModule]
+  (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵsetNgModuleScope"](VentaGenericasModule, {
+    declarations: [_components_venta_genericas_component__WEBPACK_IMPORTED_MODULE_5__.VentaGenericasComponent, _components_alta_edicion_alta_edicion_component__WEBPACK_IMPORTED_MODULE_6__.AltaEdicionVentaComponent, _components_filter_menu_filter_menu_component__WEBPACK_IMPORTED_MODULE_10__.FilterMenuComponent, _components_calcular_unitario_calcular_unitario_component__WEBPACK_IMPORTED_MODULE_7__.CalcularUnitarioComponent, _components_bonificado_detalle_bonificado_detalle_component__WEBPACK_IMPORTED_MODULE_11__.BonificadoDetalleComponent],
+    imports: [_angular_common__WEBPACK_IMPORTED_MODULE_13__.CommonModule, _angular_router__WEBPACK_IMPORTED_MODULE_14__.RouterModule, _angular_material_table__WEBPACK_IMPORTED_MODULE_15__.MatTableModule, _angular_material_button__WEBPACK_IMPORTED_MODULE_16__.MatButtonModule, _angular_material_select__WEBPACK_IMPORTED_MODULE_17__.MatSelectModule, _angular_material_form_field__WEBPACK_IMPORTED_MODULE_18__.MatFormFieldModule, _angular_forms__WEBPACK_IMPORTED_MODULE_19__.ReactiveFormsModule, _angular_material_input__WEBPACK_IMPORTED_MODULE_20__.MatInputModule, _angular_material_icon__WEBPACK_IMPORTED_MODULE_21__.MatIconModule, _fuse_components_alert__WEBPACK_IMPORTED_MODULE_0__.FuseAlertComponent, _angular_material_tooltip__WEBPACK_IMPORTED_MODULE_22__.MatTooltipModule, _angular_material_autocomplete__WEBPACK_IMPORTED_MODULE_23__.MatAutocompleteModule, _angular_material_toolbar__WEBPACK_IMPORTED_MODULE_24__.MatToolbarModule, _angular_material_checkbox__WEBPACK_IMPORTED_MODULE_25__.MatCheckboxModule, _angular_material_sort__WEBPACK_IMPORTED_MODULE_26__.MatSortModule, _shared_components_tabla_dinamica_tabla_dinamica_module__WEBPACK_IMPORTED_MODULE_3__.TablaDinamicaModule, _angular_material_dialog__WEBPACK_IMPORTED_MODULE_27__.MatDialogModule, _angular_material_datepicker__WEBPACK_IMPORTED_MODULE_28__.MatDatepickerModule, _shared_components_shared_component_module__WEBPACK_IMPORTED_MODULE_9__.SharedComponentModule],
+    exports: [_angular_router__WEBPACK_IMPORTED_MODULE_14__.RouterModule]
   });
 })();
 

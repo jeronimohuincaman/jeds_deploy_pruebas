@@ -16913,7 +16913,7 @@ const TitleType = [{
   path: "/usuarios"
 }, {
   icon: "",
-  text: "Ventas Genéricas",
+  text: "Ventas",
   path: "/ventas"
 }, {
   icon: "",
@@ -18008,6 +18008,7 @@ const environment = {
     vta_venta_calcular_unitario: `${$BASE_REST}/vta_venta/calcular_unitario`,
     vta_venta_get_datos: `${$BASE_REST}/vta_venta/get_datos`,
     view_vta_ventas: `${$BASE_REST}/view_vta_ventas`,
+    view_vta_venta_bonificado_detalles: `${$BASE_REST}/view_vta_venta_bonificado_detalles`,
     view_vta_venta_selects: `${$BASE_REST}/view_vta_venta_selects`,
     view_venta_selects: `${$BASE_REST}/view_venta_selects`,
     view_venta_genericas: `${$BASE_REST}/view_venta_genericas`,
