@@ -71,77 +71,63 @@ function SaveComponent_fuse_alert_8_Template(rf, ctx) {
 }
 function SaveComponent_form_14_div_1_mat_option_18_Template(rf, ctx) {
   if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](0, "mat-option", 30);
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](0, "mat-option", 33);
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](1);
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
   }
   if (rf & 2) {
-    const condicion_r9 = ctx.$implicit;
+    const condicion_r8 = ctx.$implicit;
     const ctx_r5 = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵnextContext"](3);
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("value", condicion_r9.id)("disabled", ctx_r5.modoVisualizacion);
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("value", condicion_r8.id)("disabled", ctx_r5.modoVisualizacion);
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtextInterpolate"](condicion_r9.descripcion);
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtextInterpolate"](condicion_r8.descripcion);
   }
 }
 function SaveComponent_form_14_div_1_mat_option_28_Template(rf, ctx) {
   if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](0, "mat-option", 30);
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](0, "mat-option", 33);
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](1);
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
   }
   if (rf & 2) {
-    const localidad_r10 = ctx.$implicit;
+    const localidad_r9 = ctx.$implicit;
     const ctx_r6 = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵnextContext"](3);
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("value", localidad_r10.id)("disabled", ctx_r6.modoVisualizacion);
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("value", localidad_r9.id)("disabled", ctx_r6.modoVisualizacion);
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtextInterpolate1"](" ", localidad_r10.descripcion, " ");
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtextInterpolate1"](" ", localidad_r9.descripcion, " ");
   }
 }
-function SaveComponent_form_14_div_1_mat_form_field_42_Template(rf, ctx) {
+function SaveComponent_form_14_div_1_mat_form_field_46_mat_option_6_Template(rf, ctx) {
   if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](0, "mat-form-field", 21)(1, "mat-label");
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](2, "Contacto de Referencia");
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelement"](3, "input", 31);
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
-  }
-  if (rf & 2) {
-    const ctx_r7 = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵnextContext"](3);
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](3);
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("readonly", ctx_r7.modoVisualizacion);
-  }
-}
-function SaveComponent_form_14_div_1_mat_form_field_43_mat_option_6_Template(rf, ctx) {
-  if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](0, "mat-option", 30);
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](0, "mat-option", 33);
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](1);
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
   }
   if (rf & 2) {
-    const cliente_r12 = ctx.$implicit;
-    const ctx_r11 = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵnextContext"](4);
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("value", cliente_r12.codigo)("disabled", ctx_r11.modoVisualizacion);
+    const cliente_r11 = ctx.$implicit;
+    const ctx_r10 = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵnextContext"](4);
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("value", cliente_r11.codigo)("disabled", ctx_r10.modoVisualizacion);
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtextInterpolate"](cliente_r12.razonSocial);
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtextInterpolate"](cliente_r11.razonSocial);
   }
 }
-function SaveComponent_form_14_div_1_mat_form_field_43_Template(rf, ctx) {
+function SaveComponent_form_14_div_1_mat_form_field_46_Template(rf, ctx) {
   if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](0, "mat-form-field", 21)(1, "mat-label");
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](2, "Cliente Asociado");
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](3, "mat-select", 32)(4, "mat-option", 33);
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](3, "mat-select", 34)(4, "mat-option", 35);
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](5, "Sin Cliente Asociado");
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtemplate"](6, SaveComponent_form_14_div_1_mat_form_field_43_mat_option_6_Template, 2, 3, "mat-option", 23);
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtemplate"](6, SaveComponent_form_14_div_1_mat_form_field_46_mat_option_6_Template, 2, 3, "mat-option", 23);
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]()();
   }
   if (rf & 2) {
-    const ctx_r8 = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵnextContext"](3);
+    const ctx_r7 = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵnextContext"](3);
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](4);
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("disabled", ctx_r8.modoVisualizacion);
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("disabled", ctx_r7.modoVisualizacion);
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("ngForOf", ctx_r8.clientes);
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("ngForOf", ctx_r7.clientes);
   }
 }
 function SaveComponent_form_14_div_1_Template(rf, ctx) {
@@ -184,18 +170,32 @@ function SaveComponent_form_14_div_1_Template(rf, ctx) {
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelement"](32, "input", 26);
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]()();
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](33, "div", 17)(34, "mat-form-field", 18)(35, "mat-label");
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](36, "Tel\u00E9fono Adicional");
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](36, "E-mail");
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelement"](37, "input", 27);
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](38, "mat-form-field", 18)(39, "mat-label");
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](40, "E-mail");
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](40, "Tel\u00E9fono Adicional");
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelement"](41, "input", 28);
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtemplate"](42, SaveComponent_form_14_div_1_mat_form_field_42_Template, 4, 1, "mat-form-field", 29);
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtemplate"](43, SaveComponent_form_14_div_1_mat_form_field_43_Template, 7, 2, "mat-form-field", 29);
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]()();
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](42, "mat-form-field", 21)(43, "mat-label");
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](44, "Contacto de Referencia");
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelement"](45, "input", 29);
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtemplate"](46, SaveComponent_form_14_div_1_mat_form_field_46_Template, 7, 2, "mat-form-field", 30);
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](47, "div", 17)(48, "mat-form-field", 18)(49, "mat-label");
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](50, "Tel\u00E9fono Arquitecto");
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelement"](51, "input", 31);
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](52, "mat-form-field", 18)(53, "mat-label");
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](54, "Arquitecto");
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelement"](55, "input", 32);
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]()()();
   }
   if (rf & 2) {
     const ctx_r3 = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵnextContext"](2);
@@ -217,38 +217,42 @@ function SaveComponent_form_14_div_1_Template(rf, ctx) {
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("readonly", ctx_r3.modoVisualizacion);
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](4);
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("readonly", ctx_r3.modoVisualizacion);
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("ngIf", !ctx_r3.tieneClienteAsociado);
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](4);
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("readonly", ctx_r3.modoVisualizacion);
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](1);
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("ngIf", ctx_r3.tieneClienteAsociado);
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](5);
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("readonly", ctx_r3.modoVisualizacion);
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](4);
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("readonly", ctx_r3.modoVisualizacion);
   }
 }
 function SaveComponent_form_14_div_2_mat_option_18_Template(rf, ctx) {
   if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](0, "mat-option", 30);
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](0, "mat-option", 33);
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](1);
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
   }
   if (rf & 2) {
-    const condicion_r17 = ctx.$implicit;
-    const ctx_r13 = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵnextContext"](3);
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("value", condicion_r17.id)("disabled", ctx_r13.modoVisualizacion);
+    const condicion_r16 = ctx.$implicit;
+    const ctx_r12 = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵnextContext"](3);
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("value", condicion_r16.id)("disabled", ctx_r12.modoVisualizacion);
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtextInterpolate"](condicion_r17.descripcion);
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtextInterpolate"](condicion_r16.descripcion);
   }
 }
 function SaveComponent_form_14_div_2_mat_option_28_Template(rf, ctx) {
   if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](0, "mat-option", 30);
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](0, "mat-option", 33);
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](1);
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
   }
   if (rf & 2) {
-    const localidad_r18 = ctx.$implicit;
-    const ctx_r14 = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵnextContext"](3);
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("value", localidad_r18.id)("disabled", ctx_r14.modoVisualizacion);
+    const localidad_r17 = ctx.$implicit;
+    const ctx_r13 = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵnextContext"](3);
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("value", localidad_r17.id)("disabled", ctx_r13.modoVisualizacion);
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtextInterpolate1"](" ", localidad_r18.descripcion, " ");
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtextInterpolate1"](" ", localidad_r17.descripcion, " ");
   }
 }
 function SaveComponent_form_14_div_2_mat_form_field_42_Template(rf, ctx) {
@@ -256,27 +260,27 @@ function SaveComponent_form_14_div_2_mat_form_field_42_Template(rf, ctx) {
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](0, "mat-form-field", 21)(1, "mat-label");
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](2, "Contacto de Referencia");
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelement"](3, "input", 31);
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelement"](3, "input", 29);
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
   }
   if (rf & 2) {
-    const ctx_r15 = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵnextContext"](3);
+    const ctx_r14 = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵnextContext"](3);
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](3);
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("readonly", ctx_r15.modoVisualizacion);
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("readonly", ctx_r14.modoVisualizacion);
   }
 }
 function SaveComponent_form_14_div_2_mat_form_field_43_mat_option_6_Template(rf, ctx) {
   if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](0, "mat-option", 30);
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](0, "mat-option", 33);
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](1);
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
   }
   if (rf & 2) {
-    const cliente_r20 = ctx.$implicit;
-    const ctx_r19 = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵnextContext"](4);
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("value", cliente_r20.codigo)("disabled", ctx_r19.modoVisualizacion);
+    const cliente_r19 = ctx.$implicit;
+    const ctx_r18 = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵnextContext"](4);
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("value", cliente_r19.codigo)("disabled", ctx_r18.modoVisualizacion);
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtextInterpolate"](cliente_r20.razonSocial);
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtextInterpolate"](cliente_r19.razonSocial);
   }
 }
 function SaveComponent_form_14_div_2_mat_form_field_43_Template(rf, ctx) {
@@ -284,18 +288,18 @@ function SaveComponent_form_14_div_2_mat_form_field_43_Template(rf, ctx) {
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](0, "mat-form-field", 21)(1, "mat-label");
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](2, "Cliente Asociado");
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](3, "mat-select", 32)(4, "mat-option", 33);
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](3, "mat-select", 34)(4, "mat-option", 35);
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](5, "Sin Cliente Asociado");
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtemplate"](6, SaveComponent_form_14_div_2_mat_form_field_43_mat_option_6_Template, 2, 3, "mat-option", 23);
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]()();
   }
   if (rf & 2) {
-    const ctx_r16 = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵnextContext"](3);
+    const ctx_r15 = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵnextContext"](3);
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](4);
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("disabled", ctx_r16.modoVisualizacion);
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("disabled", ctx_r15.modoVisualizacion);
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("ngForOf", ctx_r16.clientes);
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("ngForOf", ctx_r15.clientes);
   }
 }
 function SaveComponent_form_14_div_2_Template(rf, ctx) {
@@ -338,18 +342,28 @@ function SaveComponent_form_14_div_2_Template(rf, ctx) {
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelement"](32, "input", 26);
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]()();
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](33, "div", 17)(34, "mat-form-field", 18)(35, "mat-label");
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](36, "Tel\u00E9fono Adicional");
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](36, "E-mail");
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelement"](37, "input", 27);
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](38, "mat-form-field", 18)(39, "mat-label");
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](40, "E-mail");
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](40, "Tel\u00E9fono Referencia");
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelement"](41, "input", 28);
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtemplate"](42, SaveComponent_form_14_div_2_mat_form_field_42_Template, 4, 1, "mat-form-field", 29);
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtemplate"](43, SaveComponent_form_14_div_2_mat_form_field_43_Template, 7, 2, "mat-form-field", 29);
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]()();
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtemplate"](42, SaveComponent_form_14_div_2_mat_form_field_42_Template, 4, 1, "mat-form-field", 30);
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtemplate"](43, SaveComponent_form_14_div_2_mat_form_field_43_Template, 7, 2, "mat-form-field", 30);
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](44, "div", 17)(45, "mat-form-field", 18)(46, "mat-label");
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](47, "Tel\u00E9fono Arquitecto");
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelement"](48, "input", 31);
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](49, "mat-form-field", 18)(50, "mat-label");
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](51, "Arquitecto");
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelement"](52, "input", 32);
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]()()();
   }
   if (rf & 2) {
     const ctx_r4 = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵnextContext"](2);
@@ -375,13 +389,17 @@ function SaveComponent_form_14_div_2_Template(rf, ctx) {
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("ngIf", !ctx_r4.tieneClienteAsociado);
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](1);
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("ngIf", ctx_r4.tieneClienteAsociado);
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](5);
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("readonly", ctx_r4.modoVisualizacion);
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](4);
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("readonly", ctx_r4.modoVisualizacion);
   }
 }
 function SaveComponent_form_14_Template(rf, ctx) {
   if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](0, "form", 12);
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtemplate"](1, SaveComponent_form_14_div_1_Template, 44, 11, "div", 13);
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtemplate"](2, SaveComponent_form_14_div_2_Template, 44, 11, "div", 13);
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtemplate"](1, SaveComponent_form_14_div_1_Template, 56, 13, "div", 13);
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtemplate"](2, SaveComponent_form_14_div_2_Template, 53, 13, "div", 13);
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
   }
   if (rf & 2) {
@@ -395,14 +413,14 @@ function SaveComponent_form_14_Template(rf, ctx) {
 }
 function SaveComponent_button_16_Template(rf, ctx) {
   if (rf & 1) {
-    const _r22 = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵgetCurrentView"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](0, "button", 34);
+    const _r21 = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵgetCurrentView"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](0, "button", 36);
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵlistener"]("click", function SaveComponent_button_16_Template_button_click_0_listener() {
-      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵrestoreView"](_r22);
-      const ctx_r21 = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵnextContext"]();
-      return _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵresetView"](ctx_r21.onSubmit());
+      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵrestoreView"](_r21);
+      const ctx_r20 = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵnextContext"]();
+      return _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵresetView"](ctx_r20.onSubmit());
     });
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](1, "span", 35);
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](1, "span", 37);
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](2, "Guardar");
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]()();
   }
@@ -513,7 +531,9 @@ class SaveComponent {
         localidad: new _angular_forms__WEBPACK_IMPORTED_MODULE_13__.FormControl(this.cliente ? this.cliente.localidad : '', _angular_forms__WEBPACK_IMPORTED_MODULE_13__.Validators.required),
         telefonoParticular: new _angular_forms__WEBPACK_IMPORTED_MODULE_13__.FormControl(this.cliente ? this.cliente.telefonoParticular : '', _angular_forms__WEBPACK_IMPORTED_MODULE_13__.Validators.required),
         telefonoMovil: new _angular_forms__WEBPACK_IMPORTED_MODULE_13__.FormControl(this.cliente ? this.cliente.telefonoMovil : '', _angular_forms__WEBPACK_IMPORTED_MODULE_13__.Validators.required),
-        correoElectronico: new _angular_forms__WEBPACK_IMPORTED_MODULE_13__.FormControl(this.cliente ? this.cliente.correoElectronico : '', [_angular_forms__WEBPACK_IMPORTED_MODULE_13__.Validators.required, _angular_forms__WEBPACK_IMPORTED_MODULE_13__.Validators.email])
+        correoElectronico: new _angular_forms__WEBPACK_IMPORTED_MODULE_13__.FormControl(this.cliente ? this.cliente.correoElectronico : '', [_angular_forms__WEBPACK_IMPORTED_MODULE_13__.Validators.required, _angular_forms__WEBPACK_IMPORTED_MODULE_13__.Validators.email]),
+        arquitecto: new _angular_forms__WEBPACK_IMPORTED_MODULE_13__.FormControl(this.cliente ? this.cliente.arquitecto : ''),
+        telefonoArquitecto: new _angular_forms__WEBPACK_IMPORTED_MODULE_13__.FormControl(this.cliente ? this.cliente.telefonoArquitecto : '')
       });
       this.form.get('DNI').disable();
       if (!this.tieneClienteAsociado) {
@@ -531,7 +551,9 @@ class SaveComponent {
         localidad: new _angular_forms__WEBPACK_IMPORTED_MODULE_13__.FormControl(this.cliente ? this.cliente.localidad : '', _angular_forms__WEBPACK_IMPORTED_MODULE_13__.Validators.required),
         telefonoParticular: new _angular_forms__WEBPACK_IMPORTED_MODULE_13__.FormControl(this.cliente ? this.cliente.telefonoParticular : '', _angular_forms__WEBPACK_IMPORTED_MODULE_13__.Validators.required),
         telefonoMovil: new _angular_forms__WEBPACK_IMPORTED_MODULE_13__.FormControl(this.cliente ? this.cliente.telefonoMovil : '', _angular_forms__WEBPACK_IMPORTED_MODULE_13__.Validators.required),
-        correoElectronico: new _angular_forms__WEBPACK_IMPORTED_MODULE_13__.FormControl(this.cliente ? this.cliente.correoElectronico : '', [_angular_forms__WEBPACK_IMPORTED_MODULE_13__.Validators.required, _angular_forms__WEBPACK_IMPORTED_MODULE_13__.Validators.email])
+        correoElectronico: new _angular_forms__WEBPACK_IMPORTED_MODULE_13__.FormControl(this.cliente ? this.cliente.correoElectronico : '', [_angular_forms__WEBPACK_IMPORTED_MODULE_13__.Validators.required, _angular_forms__WEBPACK_IMPORTED_MODULE_13__.Validators.email]),
+        arquitecto: new _angular_forms__WEBPACK_IMPORTED_MODULE_13__.FormControl(this.cliente ? this.cliente.arquitecto : ''),
+        telefonoArquitecto: new _angular_forms__WEBPACK_IMPORTED_MODULE_13__.FormControl(this.cliente ? this.cliente.telefonoArquitecto : '')
       });
       this.form.get('DNI').enable();
       if (!this.tieneClienteAsociado) {
@@ -611,7 +633,9 @@ class SaveComponent {
           telefonoParticular: this.form.get('telefonoParticular').value,
           telefonoMovil: this.form.get('telefonoMovil').value,
           correoElectronico: this.form.get('correoElectronico').value,
-          tipoCliente: 0
+          tipoCliente: 0,
+          arquitecto: this.form.get('arquitecto').value ? this.form.get('arquitecto').value : null,
+          telefonoArquitecto: this.form.get('telefonoArquitecto').value ? this.form.get('telefonoArquitecto').value : null
         };
         if (!this.tieneClienteAsociado) {
           payload['contacto_referencia'] = this.form.get('contacto_referencia').value;
@@ -634,7 +658,9 @@ class SaveComponent {
           telefonoParticular: this.form.get('telefonoParticular').value,
           telefonoMovil: this.form.get('telefonoMovil').value,
           correoElectronico: this.form.get('correoElectronico').value,
-          tipoCliente: 1
+          tipoCliente: 1,
+          arquitecto: this.form.get('arquitecto').value ? this.form.get('arquitecto').value : null,
+          telefonoArquitecto: this.form.get('telefonoArquitecto').value ? this.form.get('telefonoArquitecto').value : null
         };
         if (!this.tieneClienteAsociado) {
           payload['contacto_referencia'] = this.form.get('contacto_referencia').value;
@@ -683,7 +709,7 @@ SaveComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_6__["�
   },
   decls: 17,
   vars: 12,
-  consts: [[1, "fixed", "inset-0", "bg-white", "dark:bg-slate-900", "shadow-lg", "overflow-hidden", "overflow-y-auto", "sm:rounded-2xl", "md:min-w-auto", "sm:w-auto", "sm:min-w-90", "flex-col", "flex", "sm:inset-auto", "max-h-screen", "sm:static"], [1, "w-full", "px-4", "py-4", "flex", "justify-between", "items-center"], [1, "text-white", "font-bold", "text-lg"], ["mat-icon-button", "", 3, "click"], [1, "text-white"], ["class", "fixed top-0 left-0 w-full flex justify-center items-center mt-8 alert-main z-99999", 3, "type", "appearance", 4, "ngIf"], [1, "flex", "flex-row", "w-full", "h-full", "p-5"], [3, "checked", "disabled", "change"], ["class", "form-menu mt-[-30px] p-4", 3, "formGroup", 4, "ngIf"], [1, "w-full", "md:flex", "md:justify-center", "md:pb-6", "md:px-6", "mt-auto"], ["mat-raised-button", "", "class", "w-full rounded-none md:w-36 md:rounded-lg py-8 md:py-0", 3, "class", "background-color", "click", 4, "ngIf"], [1, "fixed", "top-0", "left-0", "w-full", "flex", "justify-center", "items-center", "mt-8", "alert-main", "z-99999", 3, "type", "appearance"], [1, "form-menu", "mt-[-30px]", "p-4", 3, "formGroup"], ["class", "flex flex-col w-full h-full p-4", 4, "ngIf"], [1, "flex", "flex-col", "w-full", "h-full", "p-4"], ["appearance", "outline", 1, "w-full"], ["matInput", "", "formControlName", "razonSocial", 3, "readonly"], [1, "flex", "gap-4", "flex-col", "sm:flex-row"], ["appearance", "outline", 1, "w-full", "sm:w-1/2"], ["matInput", "", "formControlName", "DNI", 3, "readonly"], ["matInput", "", "formControlName", "Cuit", 3, "readonly"], ["appearance", "outline", 1, "w-full", "sm:w-1/3"], ["formControlName", "condicionIva"], [3, "value", "disabled", 4, "ngFor", "ngForOf"], ["matInput", "", "formControlName", "direccion", 3, "readonly"], ["formControlName", "localidad"], ["matInput", "", "formControlName", "telefonoParticular", 3, "readonly"], ["matInput", "", "formControlName", "telefonoMovil", 3, "readonly"], ["matInput", "", "formControlName", "correoElectronico", 3, "readonly"], ["appearance", "outline", "class", "w-full sm:w-1/3", 4, "ngIf"], [3, "value", "disabled"], ["matInput", "", "formControlName", "contacto_referencia", 3, "readonly"], ["formControlName", "cliente"], ["value", "sin_asociado", 3, "disabled"], ["mat-raised-button", "", 1, "w-full", "rounded-none", "md:w-36", "md:rounded-lg", "py-8", "md:py-0", 3, "click"], [1, "text-white", "font-medium", "text-base"]],
+  consts: [[1, "fixed", "inset-0", "bg-white", "dark:bg-slate-900", "shadow-lg", "overflow-hidden", "overflow-y-auto", "sm:rounded-2xl", "md:min-w-auto", "sm:w-auto", "sm:min-w-90", "flex-col", "flex", "sm:inset-auto", "max-h-screen", "sm:static"], [1, "w-full", "px-4", "py-4", "flex", "justify-between", "items-center"], [1, "text-white", "font-bold", "text-lg"], ["mat-icon-button", "", 3, "click"], [1, "text-white"], ["class", "fixed top-0 left-0 w-full flex justify-center items-center mt-8 alert-main z-99999", 3, "type", "appearance", 4, "ngIf"], [1, "flex", "flex-row", "w-full", "h-full", "p-5"], [3, "checked", "disabled", "change"], ["class", "form-menu mt-[-30px] p-4", 3, "formGroup", 4, "ngIf"], [1, "w-full", "md:flex", "md:justify-center", "md:pb-6", "md:px-6", "mt-auto"], ["mat-raised-button", "", "class", "w-full rounded-none md:w-36 md:rounded-lg py-8 md:py-0", 3, "class", "background-color", "click", 4, "ngIf"], [1, "fixed", "top-0", "left-0", "w-full", "flex", "justify-center", "items-center", "mt-8", "alert-main", "z-99999", 3, "type", "appearance"], [1, "form-menu", "mt-[-30px]", "p-4", 3, "formGroup"], ["class", "flex flex-col w-full h-full p-4", 4, "ngIf"], [1, "flex", "flex-col", "w-full", "h-full", "p-4"], ["appearance", "outline", 1, "w-full"], ["matInput", "", "formControlName", "razonSocial", 3, "readonly"], [1, "flex", "gap-4", "flex-col", "sm:flex-row"], ["appearance", "outline", 1, "w-full", "sm:w-1/2"], ["matInput", "", "formControlName", "DNI", 3, "readonly"], ["matInput", "", "formControlName", "Cuit", 3, "readonly"], ["appearance", "outline", 1, "w-full", "sm:w-1/3"], ["formControlName", "condicionIva"], [3, "value", "disabled", 4, "ngFor", "ngForOf"], ["matInput", "", "formControlName", "direccion", 3, "readonly"], ["formControlName", "localidad"], ["matInput", "", "formControlName", "telefonoParticular", 3, "readonly"], ["matInput", "", "formControlName", "correoElectronico", 3, "readonly"], ["matInput", "", "formControlName", "telefonoMovil", 3, "readonly"], ["matInput", "", "formControlName", "contacto_referencia", 3, "readonly"], ["appearance", "outline", "class", "w-full sm:w-1/3", 4, "ngIf"], ["matInput", "", "formControlName", "telefonoArquitecto", 3, "readonly"], ["matInput", "", "formControlName", "arquitecto", 3, "readonly"], [3, "value", "disabled"], ["formControlName", "cliente"], ["value", "sin_asociado", 3, "disabled"], ["mat-raised-button", "", 1, "w-full", "rounded-none", "md:w-36", "md:rounded-lg", "py-8", "md:py-0", 3, "click"], [1, "text-white", "font-medium", "text-base"]],
   template: function SaveComponent_Template(rf, ctx) {
     if (rf & 1) {
       _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](0, "div", 0)(1, "div", 1)(2, "span", 2);

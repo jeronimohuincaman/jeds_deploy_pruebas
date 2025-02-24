@@ -1568,7 +1568,7 @@ class AltaEdicionVentaComponent {
       var obra = {
         descripcion: this.form_obra.get('descripcion_obra').value,
         direccion: this.form_obra.get('direccion_obra').value,
-        idlocalidad: parseInt(this.form_obra.get('localidad').value.id),
+        idlocalidad: parseInt(this.form_obra.get('localidad').value.idlocalidad),
         idtratamiento: parseInt(this.form_obra.get('tratamiento').value.id),
         fecha_medicion: fecha_medicion_formateada,
         fecha_entrega: fecha_entrega_formateada,
@@ -1749,7 +1749,7 @@ class AltaEdicionVentaComponent {
               descripcion_obra: _this3.obra?.descripcion ?? '',
               direccion_obra: _this3.obra?.direccion ?? '',
               localidad: {
-                id: _this3.obra.idlocalidad,
+                idlocalidad: _this3.obra.idlocalidad,
                 descripcion: _this3.obra.descripcion_localidad
               },
               tratamiento: {

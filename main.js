@@ -16361,7 +16361,7 @@ class EnviarEmailModalComponent {
   ngOnInit() {
     this.subscribeAlert();
     this.newForm();
-    this.getProveedores(); // Método que carga proveedores
+    this.getProveedores(null, true); // Método que carga proveedores
   }
 
   newForm() {
@@ -16370,12 +16370,13 @@ class EnviarEmailModalComponent {
       asunto: new _angular_forms__WEBPACK_IMPORTED_MODULE_12__.FormControl('')
     });
   }
-  selectProveedor($event) {
+  selectProveedor($event, input) {
     const selected = $event.option.value;
     if (selected && !this.selectedProveedores.includes(selected)) {
       this.selectedProveedores.push(selected);
     }
     this.form.get('proveedor').setValue('');
+    input.value = "";
   }
   removeProveedor(proveedor) {
     const index = this.selectedProveedores.indexOf(proveedor);
@@ -16410,7 +16411,7 @@ class EnviarEmailModalComponent {
     this.dialogRef.close(data);
   }
   // ################# Metodos de comunicacion con el service #################
-  getProveedores(option) {
+  getProveedores(option, addAll = false) {
     var _this = this;
     return (0,C_work_jeds_jedstion_source_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
       const Proveedores = yield (0,rxjs__WEBPACK_IMPORTED_MODULE_13__.firstValueFrom)(_this._enviarEmailModalService.getProveedores(option));
@@ -16419,6 +16420,11 @@ class EnviarEmailModalComponent {
         var _ref = (0,C_work_jeds_jedstion_source_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* (resolve) {
           _this.proveedores = Proveedores.list.filter(p => proveedores_del_pedido.includes(p.Codigo));
           _this.filteredProveedores = _this.form.get('proveedor').valueChanges.pipe((0,rxjs__WEBPACK_IMPORTED_MODULE_14__.startWith)(''), (0,rxjs__WEBPACK_IMPORTED_MODULE_15__.map)(value => _this._filterProveedores(value)));
+          if (addAll) {
+            _this.proveedores.forEach(e => {
+              _this.selectedProveedores.push(e);
+            });
+          }
           resolve(true);
         });
         return function (_x) {
@@ -16555,6 +16561,7 @@ EnviarEmailModalComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_M
   consts: [[1, "fixed", "inset-0", "sm:static", "max-h-screen", "sm:inset-auto", "flex", "flex-col", "max-w-[1280px]", "xl:max-w-[1280px]", "xl:min-w-[950px]", "sm:max-w-[950px]", "sm:min-w-[800px]", "sm:rounded-2xl", "overflow-y-auto", "xl:max-h-[950px]", "xl:min-h-[850px]", "sm:max-h-[630px]", "sm:min-h-[500px]", "overflow-hidden", "shadow-lg", "bg-white", "dark:bg-slate-900"], [1, "w-full", "px-4", "py-4", "flex", "justify-between", "items-center"], [1, "text-white", "font-bold", "text-lg"], ["mat-icon-button", "", 3, "click"], [1, "text-white"], ["class", "fixed top-0 left-0 w-full flex justify-center items-center mt-8 alert-main z-99999", 3, "type", "appearance", 4, "ngIf"], [1, "flex", "flex-col", "w-full", "h-full", "px-6", "py-2"], [1, "form-menu", 3, "formGroup"], ["appearance", "outline", 1, "w-full", "sm:w-full", "min-h-2"], ["aria-label", "Seleccione Proveedor", 1, "sm:max-h-[50px]", "xl:max-h-[200px]", "max-h-[100px]", "overflow-y-auto", "flex", "flex-wrap", "gap-2", "p-2"], ["chipgrid", ""], [3, "value", "removed", 4, "ngFor", "ngForOf"], ["formControlName", "proveedor", 3, "placeholder", "matChipInputFor", "matAutocomplete"], ["proveedorInput", ""], [3, "optionSelected"], ["auto", "matAutocomplete"], [3, "value", 4, "ngFor", "ngForOf"], ["appearance", "outline", 1, "w-full", "sm:w-full"], ["matInput", "", "type", "text", "formControlName", "asunto"], [1, "w-full", "sm:w-full"], [3, "ngModel", "modules", "placeholder", "ngModelChange"], ["class", "mt-2 w-full", 4, "ngIf"], [1, "w-full", "md:flex", "md:justify-center", "md:pb-6", "md:px-6", "mt-auto"], ["mat-raised-button", "", 1, "w-full", "rounded-none", "md:w-36", "md:rounded-lg", "py-8", "md:py-0", 3, "click"], [1, "text-white", "font-medium", "text-base"], [1, "fixed", "top-0", "left-0", "w-full", "flex", "justify-center", "items-center", "mt-8", "alert-main", "z-99999", 3, "type", "appearance"], [3, "value", "removed"], ["matChipRemove", ""], [3, "value"], [1, "mt-2", "w-full"], [1, "flex", "items-center", "gap-2"], ["mat-icon-button", "", "type", "button", "matTooltip", "A\u00F1adir Imagen", 3, "click"], [1, "text-white", "transform", "-rotate-45"], ["id", "fileToUploadImagen", "type", "file", 1, "hidden", 3, "accept", "change"], ["fileInput", ""], ["class", "text-muted text-lg cursor-pointer", 3, "click", 4, "ngIf"], ["class", "mt-4 grid gap-2 p-2 bg-slate-200 rounded-lg max-w-full max-h-56 xl:max-h-56 sm:max-h-18 overflow-y-auto", "style", "grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));", 4, "ngIf"], [1, "text-muted", "text-lg", "cursor-pointer", 3, "click"], [1, "mt-4", "grid", "gap-2", "p-2", "bg-slate-200", "rounded-lg", "max-w-full", "max-h-56", "xl:max-h-56", "sm:max-h-18", "overflow-y-auto", 2, "grid-template-columns", "repeat(auto-fill, minmax(200px, 1fr))"], [4, "ngFor", "ngForOf"], [1, "flex", "items-center", "gap-2", "px-4", "py-2", "rounded-lg", "text-white"], [1, "truncate", "max-w-xs"]],
   template: function EnviarEmailModalComponent_Template(rf, ctx) {
     if (rf & 1) {
+      const _r23 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵgetCurrentView"]();
       _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "div", 0)(1, "div", 1)(2, "span", 2);
       _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](3);
       _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
@@ -16575,7 +16582,9 @@ EnviarEmailModalComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_M
       _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
       _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](19, "mat-autocomplete", 14, 15);
       _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵlistener"]("optionSelected", function EnviarEmailModalComponent_Template_mat_autocomplete_optionSelected_19_listener($event) {
-        return ctx.selectProveedor($event);
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵrestoreView"](_r23);
+        const _r3 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵreference"](18);
+        return _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵresetView"](ctx.selectProveedor($event, _r3));
       });
       _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](21, EnviarEmailModalComponent_mat_option_21_Template, 2, 2, "mat-option", 16);
       _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵpipe"](22, "async");
@@ -16923,14 +16932,6 @@ const TitleType = [{
   icon: "",
   text: "Cobranzas",
   path: "/cobranzas"
-}, {
-  icon: "",
-  text: "Nueva Cobranza",
-  path: "/cobranzas/alta-cobro"
-}, {
-  icon: "",
-  text: "Editar Cobranza",
-  path: "/cobranzas/edicion-cobro"
 }, {
   icon: "",
   text: "Guardar Factura",
@@ -18042,7 +18043,7 @@ const environment = {
     view_compras_cotizacion: `${$BASE_REST}/view_compras_cotizacion`,
     view_compras_cotizacion_item: `${$BASE_REST}/view_compras_cotizacion_item`
   },
-  localidades: `${$BASE_REST}/select?modelo=localidad&campo_id=codigo&campo_descripcion=descripcion&campo_activo=`,
+  localidades: `${$BASE_REST}/com_localidads`,
   controlador: `${$BASE_API}/controlador`,
   menu: `${$BASE_REST}/com_menus`,
   empresa: {
