@@ -3040,17 +3040,17 @@ class VentaGenericasComponent {
       iconoAccionado: venta => '',
       iconoDeshabilitado: venta => venta.puede_eliminar === false ? 'jedstion:eliminar_disabled' : ''
     }, {
-      nombre_boton: "Reporte",
+      nombre_boton: "Generar Orden de servicio",
       functionName: 'orden_servicio',
-      iconoAccion: venta => 'jedstion:imprimir',
+      iconoAccion: venta => 'jedstion:orden_de_produccion',
       iconoAccionado: venta => '',
       iconoDeshabilitado: venta => ''
     }, {
       nombre_boton: "Detalle Bonificado",
       functionName: 'ventas_bonificadas_detalle',
-      iconoAccion: venta => venta.tipo_venta === 1 ? 'jedstion:vista_lista' : '',
+      iconoAccion: venta => venta.tipo_venta === 1 ? 'jedstion:informacion' : '',
       iconoAccionado: venta => '',
-      iconoDeshabilitado: venta => venta.tipo_venta === 0 ? 'jedstion:vista_lista_disabled' : ''
+      iconoDeshabilitado: venta => venta.tipo_venta === 0 ? 'jedstion:informacion_disabled' : ''
     }];
     // Subscribe to empresa data
     this._empresaService.empresa$.pipe((0,rxjs__WEBPACK_IMPORTED_MODULE_15__.takeUntil)(this._unsubscribeAll)).subscribe(empresa => {
