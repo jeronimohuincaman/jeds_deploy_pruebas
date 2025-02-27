@@ -1741,8 +1741,7 @@ class SaveComponent {
   newForm() {
     const [dia, mes, anio] = this.entrega ? this.entrega.fecha_precarga.split('/') : ''; //Se hace esto para poder manejar el formato que se cambio en el render del componente de tabla dinamica.
     if (this.entrega) {
-      Promise.all([/* this.getVentas(),  */this.getItems(this.entrega.identrega)]).then(([/* ventas,  */items]) => {
-        // this.ventas = ventas;
+      Promise.all([this.getItems(this.entrega.identrega)]).then(([items]) => {
         this.mov_art_list = items.map(m => {
           return {
             idarticulo: m.idarticulo,
@@ -2403,7 +2402,7 @@ class SaveComponent {
   }
   _filterUsuarios(usuario) {
     const filterValue = usuario.toString().toLowerCase();
-    return this.usuarios.filter(usuario => usuario.nombre.toLowerCase().includes(filterValue) && usuario.codigo !== this.user.id);
+    return this.usuarios.filter(usuario => usuario.nombre.toLowerCase().includes(filterValue));
   }
   /**
   * Esta funcion es para filtrar las ventas según el input que se haya ingresado en el buscador de ventas.

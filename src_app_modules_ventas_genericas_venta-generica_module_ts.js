@@ -104,7 +104,7 @@ function AltaEdicionVentaComponent_fuse_alert_7_Template(rf, ctx) {
 }
 function AltaEdicionVentaComponent_form_8_button_15_Template(rf, ctx) {
   if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](0, "button", 75)(1, "mat-icon");
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](0, "button", 74)(1, "mat-icon");
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtext"](2, "arrow_drop_down");
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementEnd"]()();
   }
@@ -112,7 +112,7 @@ function AltaEdicionVentaComponent_form_8_button_15_Template(rf, ctx) {
 function AltaEdicionVentaComponent_form_8_mat_option_18_Template(rf, ctx) {
   if (rf & 1) {
     const _r28 = _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵgetCurrentView"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](0, "mat-option", 76);
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](0, "mat-option", 75);
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵlistener"]("click", function AltaEdicionVentaComponent_form_8_mat_option_18_Template_mat_option_click_0_listener($event) {
       _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵrestoreView"](_r28);
       const ctx_r27 = _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵnextContext"](2);
@@ -131,7 +131,7 @@ function AltaEdicionVentaComponent_form_8_mat_option_18_Template(rf, ctx) {
 function AltaEdicionVentaComponent_form_8_button_20_Template(rf, ctx) {
   if (rf & 1) {
     const _r30 = _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵgetCurrentView"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](0, "button", 77);
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](0, "button", 76);
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵlistener"]("click", function AltaEdicionVentaComponent_form_8_button_20_Template_button_click_0_listener() {
       _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵrestoreView"](_r30);
       const ctx_r29 = _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵnextContext"](2);
@@ -144,7 +144,7 @@ function AltaEdicionVentaComponent_form_8_button_20_Template(rf, ctx) {
 }
 function AltaEdicionVentaComponent_form_8_button_29_Template(rf, ctx) {
   if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](0, "button", 75)(1, "mat-icon");
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](0, "button", 74)(1, "mat-icon");
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtext"](2, "arrow_drop_down");
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementEnd"]()();
   }
@@ -152,7 +152,7 @@ function AltaEdicionVentaComponent_form_8_button_29_Template(rf, ctx) {
 function AltaEdicionVentaComponent_form_8_mat_option_32_Template(rf, ctx) {
   if (rf & 1) {
     const _r33 = _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵgetCurrentView"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](0, "mat-option", 76);
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](0, "mat-option", 75);
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵlistener"]("click", function AltaEdicionVentaComponent_form_8_mat_option_32_Template_mat_option_click_0_listener($event) {
       _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵrestoreView"](_r33);
       const ctx_r32 = _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵnextContext"](2);
@@ -171,7 +171,7 @@ function AltaEdicionVentaComponent_form_8_mat_option_32_Template(rf, ctx) {
 function AltaEdicionVentaComponent_form_8_button_34_Template(rf, ctx) {
   if (rf & 1) {
     const _r35 = _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵgetCurrentView"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](0, "button", 77);
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](0, "button", 76);
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵlistener"]("click", function AltaEdicionVentaComponent_form_8_button_34_Template_button_click_0_listener() {
       _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵrestoreView"](_r35);
       const ctx_r34 = _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵnextContext"](2);
@@ -184,12 +184,12 @@ function AltaEdicionVentaComponent_form_8_button_34_Template(rf, ctx) {
 }
 function AltaEdicionVentaComponent_form_8_form_35_button_6_Template(rf, ctx) {
   if (rf & 1) {
-    const _r49 = _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵgetCurrentView"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](0, "button", 77);
+    const _r48 = _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵgetCurrentView"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](0, "button", 76);
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵlistener"]("click", function AltaEdicionVentaComponent_form_8_form_35_button_6_Template_button_click_0_listener() {
-      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵrestoreView"](_r49);
-      const ctx_r48 = _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵnextContext"](3);
-      return _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵresetView"](ctx_r48.limpiarCasillero("descripcion_obra"));
+      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵrestoreView"](_r48);
+      const ctx_r47 = _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵnextContext"](3);
+      return _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵresetView"](ctx_r47.limpiarCasillero("descripcion_obra"));
     });
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](1, "mat-icon");
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtext"](2, "clear");
@@ -198,12 +198,12 @@ function AltaEdicionVentaComponent_form_8_form_35_button_6_Template(rf, ctx) {
 }
 function AltaEdicionVentaComponent_form_8_form_35_button_11_Template(rf, ctx) {
   if (rf & 1) {
-    const _r51 = _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵgetCurrentView"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](0, "button", 77);
+    const _r50 = _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵgetCurrentView"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](0, "button", 76);
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵlistener"]("click", function AltaEdicionVentaComponent_form_8_form_35_button_11_Template_button_click_0_listener() {
-      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵrestoreView"](_r51);
-      const ctx_r50 = _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵnextContext"](3);
-      return _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵresetView"](ctx_r50.limpiarCasillero("direccion_obra"));
+      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵrestoreView"](_r50);
+      const ctx_r49 = _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵnextContext"](3);
+      return _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵresetView"](ctx_r49.limpiarCasillero("direccion_obra"));
     });
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](1, "mat-icon");
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtext"](2, "clear");
@@ -212,38 +212,38 @@ function AltaEdicionVentaComponent_form_8_form_35_button_11_Template(rf, ctx) {
 }
 function AltaEdicionVentaComponent_form_8_form_35_button_16_Template(rf, ctx) {
   if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](0, "button", 75)(1, "mat-icon");
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](0, "button", 74)(1, "mat-icon");
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtext"](2, "arrow_drop_down");
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementEnd"]()();
   }
 }
 function AltaEdicionVentaComponent_form_8_form_35_mat_option_19_Template(rf, ctx) {
   if (rf & 1) {
-    const _r54 = _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵgetCurrentView"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](0, "mat-option", 76);
+    const _r53 = _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵgetCurrentView"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](0, "mat-option", 75);
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵlistener"]("click", function AltaEdicionVentaComponent_form_8_form_35_mat_option_19_Template_mat_option_click_0_listener($event) {
-      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵrestoreView"](_r54);
-      const ctx_r53 = _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵnextContext"](3);
-      return _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵresetView"](ctx_r53.seleccionItem($event, true, "tratamiento"));
+      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵrestoreView"](_r53);
+      const ctx_r52 = _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵnextContext"](3);
+      return _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵresetView"](ctx_r52.seleccionItem($event, true, "tratamiento"));
     });
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtext"](1);
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementEnd"]();
   }
   if (rf & 2) {
-    const localidad_r52 = ctx.$implicit;
-    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵproperty"]("value", localidad_r52);
+    const localidad_r51 = ctx.$implicit;
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵproperty"]("value", localidad_r51);
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtextInterpolate1"](" ", localidad_r52.descripcion, " ");
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtextInterpolate1"](" ", localidad_r51.descripcion, " ");
   }
 }
 function AltaEdicionVentaComponent_form_8_form_35_button_21_Template(rf, ctx) {
   if (rf & 1) {
-    const _r56 = _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵgetCurrentView"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](0, "button", 77);
+    const _r55 = _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵgetCurrentView"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](0, "button", 76);
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵlistener"]("click", function AltaEdicionVentaComponent_form_8_form_35_button_21_Template_button_click_0_listener() {
-      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵrestoreView"](_r56);
-      const ctx_r55 = _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵnextContext"](3);
-      return _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵresetView"](ctx_r55.limpiarCasillero("localidad"));
+      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵrestoreView"](_r55);
+      const ctx_r54 = _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵnextContext"](3);
+      return _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵresetView"](ctx_r54.limpiarCasillero("localidad"));
     });
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](1, "mat-icon");
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtext"](2, "clear");
@@ -252,38 +252,38 @@ function AltaEdicionVentaComponent_form_8_form_35_button_21_Template(rf, ctx) {
 }
 function AltaEdicionVentaComponent_form_8_form_35_button_27_Template(rf, ctx) {
   if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](0, "button", 75)(1, "mat-icon");
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](0, "button", 74)(1, "mat-icon");
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtext"](2, "arrow_drop_down");
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementEnd"]()();
   }
 }
 function AltaEdicionVentaComponent_form_8_form_35_mat_option_30_Template(rf, ctx) {
   if (rf & 1) {
-    const _r59 = _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵgetCurrentView"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](0, "mat-option", 76);
+    const _r58 = _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵgetCurrentView"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](0, "mat-option", 75);
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵlistener"]("click", function AltaEdicionVentaComponent_form_8_form_35_mat_option_30_Template_mat_option_click_0_listener($event) {
-      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵrestoreView"](_r59);
-      const ctx_r58 = _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵnextContext"](3);
-      return _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵresetView"](ctx_r58.seleccionItem($event, true, "articulo"));
+      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵrestoreView"](_r58);
+      const ctx_r57 = _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵnextContext"](3);
+      return _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵresetView"](ctx_r57.seleccionItem($event, true, "articulo"));
     });
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtext"](1);
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementEnd"]();
   }
   if (rf & 2) {
-    const tratamiento_r57 = ctx.$implicit;
-    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵproperty"]("value", tratamiento_r57);
+    const tratamiento_r56 = ctx.$implicit;
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵproperty"]("value", tratamiento_r56);
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtextInterpolate1"](" ", tratamiento_r57.descripcion, " ");
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtextInterpolate1"](" ", tratamiento_r56.descripcion, " ");
   }
 }
 function AltaEdicionVentaComponent_form_8_form_35_button_32_Template(rf, ctx) {
   if (rf & 1) {
-    const _r61 = _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵgetCurrentView"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](0, "button", 77);
+    const _r60 = _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵgetCurrentView"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](0, "button", 76);
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵlistener"]("click", function AltaEdicionVentaComponent_form_8_form_35_button_32_Template_button_click_0_listener() {
-      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵrestoreView"](_r61);
-      const ctx_r60 = _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵnextContext"](3);
-      return _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵresetView"](ctx_r60.limpiarCasillero("tratamiento"));
+      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵrestoreView"](_r60);
+      const ctx_r59 = _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵnextContext"](3);
+      return _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵresetView"](ctx_r59.limpiarCasillero("tratamiento"));
     });
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](1, "mat-icon");
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtext"](2, "clear");
@@ -292,15 +292,15 @@ function AltaEdicionVentaComponent_form_8_form_35_button_32_Template(rf, ctx) {
 }
 function AltaEdicionVentaComponent_form_8_form_35_Template(rf, ctx) {
   if (rf & 1) {
-    const _r63 = _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵgetCurrentView"]();
+    const _r62 = _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵgetCurrentView"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](0, "form", 41)(1, "div", 12)(2, "mat-form-field", 43)(3, "mat-label");
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtext"](4, "Obra");
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](5, "input", 78);
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](5, "input", 77);
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵlistener"]("keydown.enter", function AltaEdicionVentaComponent_form_8_form_35_Template_input_keydown_enter_5_listener($event) {
-      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵrestoreView"](_r63);
-      const ctx_r62 = _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵnextContext"](2);
-      return _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵresetView"](ctx_r62.seleccionItem($event, true, "direccion_obra"));
+      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵrestoreView"](_r62);
+      const ctx_r61 = _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵnextContext"](2);
+      return _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵresetView"](ctx_r61.seleccionItem($event, true, "direccion_obra"));
     });
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtemplate"](6, AltaEdicionVentaComponent_form_8_form_35_button_6_Template, 3, 0, "button", 24);
@@ -308,40 +308,40 @@ function AltaEdicionVentaComponent_form_8_form_35_Template(rf, ctx) {
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](7, "mat-form-field", 43)(8, "mat-label");
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtext"](9, "Direcci\u00F3n Obra");
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](10, "input", 79);
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](10, "input", 78);
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵlistener"]("keydown.enter", function AltaEdicionVentaComponent_form_8_form_35_Template_input_keydown_enter_10_listener($event) {
-      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵrestoreView"](_r63);
-      const ctx_r64 = _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵnextContext"](2);
-      return _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵresetView"](ctx_r64.seleccionItem($event, true, "localidad"));
+      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵrestoreView"](_r62);
+      const ctx_r63 = _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵnextContext"](2);
+      return _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵresetView"](ctx_r63.seleccionItem($event, true, "localidad"));
     });
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtemplate"](11, AltaEdicionVentaComponent_form_8_form_35_button_11_Template, 3, 0, "button", 24);
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](12, "mat-form-field", 80)(13, "mat-label");
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](12, "mat-form-field", 79)(13, "mat-label");
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtext"](14, "Localidad - Provincia");
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](15, "input", 81);
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](15, "input", 80);
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵlistener"]("keydown.enter", function AltaEdicionVentaComponent_form_8_form_35_Template_input_keydown_enter_15_listener($event) {
-      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵrestoreView"](_r63);
-      const ctx_r65 = _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵnextContext"](2);
-      return _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵresetView"](ctx_r65.seleccionItem($event, true, "tratamiento"));
+      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵrestoreView"](_r62);
+      const ctx_r64 = _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵnextContext"](2);
+      return _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵresetView"](ctx_r64.seleccionItem($event, true, "tratamiento"));
     });
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtemplate"](16, AltaEdicionVentaComponent_form_8_form_35_button_16_Template, 3, 0, "button", 20);
-    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](17, "mat-autocomplete", 21, 82);
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](17, "mat-autocomplete", 21, 81);
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtemplate"](19, AltaEdicionVentaComponent_form_8_form_35_mat_option_19_Template, 2, 2, "mat-option", 23);
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵpipe"](20, "async");
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtemplate"](21, AltaEdicionVentaComponent_form_8_form_35_button_21_Template, 3, 0, "button", 24);
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementEnd"]()();
-    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](22, "div", 12)(23, "mat-form-field", 80)(24, "mat-label");
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](22, "div", 12)(23, "mat-form-field", 82)(24, "mat-label");
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtext"](25, "Tratamiento");
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](26, "input", 83);
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵlistener"]("keydown.enter", function AltaEdicionVentaComponent_form_8_form_35_Template_input_keydown_enter_26_listener($event) {
-      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵrestoreView"](_r63);
-      const ctx_r66 = _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵnextContext"](2);
-      return _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵresetView"](ctx_r66.seleccionItem($event, true, "articulo"));
+      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵrestoreView"](_r62);
+      const ctx_r65 = _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵnextContext"](2);
+      return _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵresetView"](ctx_r65.seleccionItem($event, true, "articulo"));
     });
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtemplate"](27, AltaEdicionVentaComponent_form_8_form_35_button_27_Template, 3, 0, "button", 20);
@@ -360,23 +360,22 @@ function AltaEdicionVentaComponent_form_8_form_35_Template(rf, ctx) {
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelement"](39, "mat-checkbox", 88);
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](40, "mat-label");
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtext"](41, "Colocaci\u00F3n");
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementEnd"]()();
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](42, "div", 86);
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelement"](43, "mat-checkbox", 89);
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](44, "mat-label");
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtext"](45, "Retiro en F\u00E1brica");
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementEnd"]()()();
-    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](42, "mat-form-field", 13)(43, "mat-label");
-    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtext"](44, "Fecha de Medici\u00F3n");
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](46, "mat-form-field", 90)(47, "mat-label");
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtext"](48, "Fecha de Entrega");
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelement"](45, "input", 89)(46, "mat-datepicker-toggle", 15)(47, "mat-datepicker", null, 90);
-    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](49, "mat-form-field", 13)(50, "mat-label");
-    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtext"](51, "Fecha de Entrega");
-    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelement"](52, "input", 91)(53, "mat-datepicker-toggle", 15)(54, "mat-datepicker", null, 92);
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelement"](49, "input", 91)(50, "mat-datepicker-toggle", 15)(51, "mat-datepicker", null, 92);
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementEnd"]()()();
   }
   if (rf & 2) {
     const _r39 = _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵreference"](18);
     const _r43 = _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵreference"](29);
-    const _r46 = _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵreference"](48);
-    const _r47 = _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵreference"](55);
+    const _r46 = _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵreference"](52);
     const ctx_r13 = _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵnextContext"](2);
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵproperty"]("formGroup", ctx_r13.form_obra);
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵadvance"](6);
@@ -390,7 +389,7 @@ function AltaEdicionVentaComponent_form_8_form_35_Template(rf, ctx) {
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵadvance"](1);
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵproperty"]("displayWith", ctx_r13.getTextGenerico);
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵadvance"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵproperty"]("ngForOf", _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵpipeBind1"](20, 19, ctx_r13.filteredLocalidades));
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵproperty"]("ngForOf", _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵpipeBind1"](20, 16, ctx_r13.filteredLocalidades));
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵadvance"](2);
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵproperty"]("ngIf", ctx_r13.form_obra.get("localidad").value);
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵadvance"](5);
@@ -400,25 +399,21 @@ function AltaEdicionVentaComponent_form_8_form_35_Template(rf, ctx) {
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵadvance"](1);
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵproperty"]("displayWith", ctx_r13.getTextGenerico);
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵadvance"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵproperty"]("ngForOf", _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵpipeBind1"](31, 21, ctx_r13.filteredTratamientos));
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵproperty"]("ngForOf", _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵpipeBind1"](31, 18, ctx_r13.filteredTratamientos));
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵadvance"](2);
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵproperty"]("ngIf", ctx_r13.form_obra.get("tratamiento").value);
-    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵadvance"](13);
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵadvance"](17);
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵproperty"]("matDatepicker", _r46)("min", ctx_r13.maxDate);
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵadvance"](1);
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵproperty"]("for", _r46);
-    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵadvance"](6);
-    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵproperty"]("matDatepicker", _r47)("min", ctx_r13.maxDate);
-    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵproperty"]("for", _r47);
   }
 }
 function AltaEdicionVentaComponent_form_8_small_43_Template(rf, ctx) {
   if (rf & 1) {
-    const _r68 = _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵgetCurrentView"]();
+    const _r67 = _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵgetCurrentView"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](0, "small", 93);
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵlistener"]("click", function AltaEdicionVentaComponent_form_8_small_43_Template_small_click_0_listener() {
-      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵrestoreView"](_r68);
+      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵrestoreView"](_r67);
       _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵnextContext"]();
       const _r14 = _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵreference"](42);
       return _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵresetView"](_r14.click());
@@ -441,10 +436,10 @@ function AltaEdicionVentaComponent_form_8_div_44_ng_container_1_span_2_Template(
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementEnd"]();
   }
   if (rf & 2) {
-    const imagen_r70 = _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵnextContext"]().$implicit;
-    const ctx_r71 = _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵnextContext"](3);
+    const imagen_r69 = _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵnextContext"]().$implicit;
+    const ctx_r70 = _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵnextContext"](3);
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtextInterpolate2"]("", imagen_r70.path, " (", ctx_r71.getFileSize(imagen_r70.size), ")");
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtextInterpolate2"]("", imagen_r69.path, " (", ctx_r70.getFileSize(imagen_r69.size), ")");
   }
 }
 function AltaEdicionVentaComponent_form_8_div_44_ng_container_1_a_3_Template(rf, ctx) {
@@ -456,26 +451,26 @@ function AltaEdicionVentaComponent_form_8_div_44_ng_container_1_a_3_Template(rf,
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementEnd"]()();
   }
   if (rf & 2) {
-    const imagen_r70 = _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵnextContext"]().$implicit;
-    const ctx_r72 = _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵnextContext"](3);
-    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵpropertyInterpolate"]("href", ctx_r72.urlBase + imagen_r70.path, _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵsanitizeUrl"]);
+    const imagen_r69 = _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵnextContext"]().$implicit;
+    const ctx_r71 = _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵnextContext"](3);
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵpropertyInterpolate"]("href", ctx_r71.urlBase + imagen_r69.path, _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵsanitizeUrl"]);
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtextInterpolate1"](" ", ctx_r72.getFileNameFromUrl(imagen_r70.path), " ");
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtextInterpolate1"](" ", ctx_r71.getFileNameFromUrl(imagen_r69.path), " ");
   }
 }
 function AltaEdicionVentaComponent_form_8_div_44_ng_container_1_Template(rf, ctx) {
   if (rf & 1) {
-    const _r76 = _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵgetCurrentView"]();
+    const _r75 = _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵgetCurrentView"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementContainerStart"](0);
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](1, "div", 96);
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtemplate"](2, AltaEdicionVentaComponent_form_8_div_44_ng_container_1_span_2_Template, 2, 2, "span", 97);
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtemplate"](3, AltaEdicionVentaComponent_form_8_div_44_ng_container_1_a_3_Template, 4, 2, "a", 98);
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](4, "button", 99);
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵlistener"]("click", function AltaEdicionVentaComponent_form_8_div_44_ng_container_1_Template_button_click_4_listener() {
-      const restoredCtx = _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵrestoreView"](_r76);
-      const imagen_r70 = restoredCtx.$implicit;
-      const ctx_r75 = _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵnextContext"](3);
-      return _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵresetView"](ctx_r75.removeFile("adjuntos", imagen_r70));
+      const restoredCtx = _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵrestoreView"](_r75);
+      const imagen_r69 = restoredCtx.$implicit;
+      const ctx_r74 = _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵnextContext"](3);
+      return _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵresetView"](ctx_r74.removeFile("adjuntos", imagen_r69));
     });
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](5, "mat-icon", 100);
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtext"](6, "close");
@@ -483,15 +478,15 @@ function AltaEdicionVentaComponent_form_8_div_44_ng_container_1_Template(rf, ctx
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementContainerEnd"]();
   }
   if (rf & 2) {
-    const imagen_r70 = ctx.$implicit;
-    const ctx_r69 = _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵnextContext"](3);
+    const imagen_r69 = ctx.$implicit;
+    const ctx_r68 = _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵnextContext"](3);
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵclassMap"](ctx_r69.color_primario ? "" : ctx_r69.default_color);
-    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵstyleProp"]("background-color", ctx_r69.color_primario || "");
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵclassMap"](ctx_r68.color_primario ? "" : ctx_r68.default_color);
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵstyleProp"]("background-color", ctx_r68.color_primario || "");
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵproperty"]("ngIf", !imagen_r70.idventaadjunto);
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵproperty"]("ngIf", !imagen_r69.idventaadjunto);
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵproperty"]("ngIf", imagen_r70.idventaadjunto);
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵproperty"]("ngIf", imagen_r69.idventaadjunto);
   }
 }
 function AltaEdicionVentaComponent_form_8_div_44_Template(rf, ctx) {
@@ -513,20 +508,20 @@ function AltaEdicionVentaComponent_form_8_mat_option_54_Template(rf, ctx) {
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementEnd"]();
   }
   if (rf & 2) {
-    const articulo_r77 = ctx.$implicit;
-    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵproperty"]("value", articulo_r77);
+    const articulo_r76 = ctx.$implicit;
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵproperty"]("value", articulo_r76);
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtextInterpolate2"](" ", articulo_r77.codigo_interno, " - ", articulo_r77.descripcion, " ");
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtextInterpolate2"](" ", articulo_r76.codigo_interno, " - ", articulo_r76.descripcion, " ");
   }
 }
 function AltaEdicionVentaComponent_form_8_button_55_Template(rf, ctx) {
   if (rf & 1) {
-    const _r79 = _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵgetCurrentView"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](0, "button", 77);
+    const _r78 = _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵgetCurrentView"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](0, "button", 76);
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵlistener"]("click", function AltaEdicionVentaComponent_form_8_button_55_Template_button_click_0_listener() {
-      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵrestoreView"](_r79);
-      const ctx_r78 = _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵnextContext"](2);
-      return _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵresetView"](ctx_r78.limpiarCasillero("articulo"));
+      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵrestoreView"](_r78);
+      const ctx_r77 = _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵnextContext"](2);
+      return _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵresetView"](ctx_r77.limpiarCasillero("articulo"));
     });
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](1, "mat-icon");
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtext"](2, "clear");
@@ -540,9 +535,9 @@ function AltaEdicionVentaComponent_form_8_mat_option_60_i_2_Template(rf, ctx) {
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementEnd"]();
   }
   if (rf & 2) {
-    const um_r80 = _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵnextContext"]().$implicit;
+    const um_r79 = _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵnextContext"]().$implicit;
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtextInterpolate2"]("(x", um_r80.factor_um, " ", um_r80.um_base, ")");
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtextInterpolate2"]("(x", um_r79.factor_um, " ", um_r79.um_base, ")");
   }
 }
 function AltaEdicionVentaComponent_form_8_mat_option_60_Template(rf, ctx) {
@@ -553,22 +548,22 @@ function AltaEdicionVentaComponent_form_8_mat_option_60_Template(rf, ctx) {
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementEnd"]();
   }
   if (rf & 2) {
-    const um_r80 = ctx.$implicit;
-    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵproperty"]("value", um_r80.idarticulounidadmedida);
+    const um_r79 = ctx.$implicit;
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵproperty"]("value", um_r79.idarticulounidadmedida);
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtextInterpolate1"](" ", um_r80.descripcion_um, " ");
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtextInterpolate1"](" ", um_r79.descripcion_um, " ");
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵproperty"]("ngIf", um_r80.factor_um != 1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵproperty"]("ngIf", um_r79.factor_um != 1);
   }
 }
 function AltaEdicionVentaComponent_form_8_button_65_Template(rf, ctx) {
   if (rf & 1) {
-    const _r84 = _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵgetCurrentView"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](0, "button", 77);
+    const _r83 = _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵgetCurrentView"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](0, "button", 76);
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵlistener"]("click", function AltaEdicionVentaComponent_form_8_button_65_Template_button_click_0_listener() {
-      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵrestoreView"](_r84);
-      const ctx_r83 = _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵnextContext"](2);
-      return _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵresetView"](ctx_r83.limpiarCasillero("detalle"));
+      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵrestoreView"](_r83);
+      const ctx_r82 = _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵnextContext"](2);
+      return _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵresetView"](ctx_r82.limpiarCasillero("detalle"));
     });
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](1, "mat-icon");
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtext"](2, "clear");
@@ -577,12 +572,12 @@ function AltaEdicionVentaComponent_form_8_button_65_Template(rf, ctx) {
 }
 function AltaEdicionVentaComponent_form_8_button_76_Template(rf, ctx) {
   if (rf & 1) {
-    const _r86 = _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵgetCurrentView"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](0, "button", 77);
+    const _r85 = _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵgetCurrentView"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](0, "button", 76);
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵlistener"]("click", function AltaEdicionVentaComponent_form_8_button_76_Template_button_click_0_listener() {
-      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵrestoreView"](_r86);
-      const ctx_r85 = _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵnextContext"](2);
-      return _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵresetView"](ctx_r85.limpiarCasillero("importe_unitario"));
+      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵrestoreView"](_r85);
+      const ctx_r84 = _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵnextContext"](2);
+      return _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵresetView"](ctx_r84.limpiarCasillero("importe_unitario"));
     });
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](1, "mat-icon");
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtext"](2, "clear");
@@ -591,12 +586,12 @@ function AltaEdicionVentaComponent_form_8_button_76_Template(rf, ctx) {
 }
 function AltaEdicionVentaComponent_form_8_button_89_Template(rf, ctx) {
   if (rf & 1) {
-    const _r88 = _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵgetCurrentView"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](0, "button", 77);
+    const _r87 = _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵgetCurrentView"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](0, "button", 76);
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵlistener"]("click", function AltaEdicionVentaComponent_form_8_button_89_Template_button_click_0_listener() {
-      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵrestoreView"](_r88);
-      const ctx_r87 = _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵnextContext"](2);
-      return _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵresetView"](ctx_r87.limpiarCasillero("porcentaje_bonificado"));
+      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵrestoreView"](_r87);
+      const ctx_r86 = _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵnextContext"](2);
+      return _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵresetView"](ctx_r86.limpiarCasillero("porcentaje_bonificado"));
     });
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](1, "mat-icon");
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtext"](2, "clear");
@@ -610,9 +605,9 @@ function AltaEdicionVentaComponent_form_8_table_101_th_2_Template(rf, ctx) {
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementEnd"]();
   }
   if (rf & 2) {
-    const ctx_r89 = _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵnextContext"](3);
-    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵclassMap"](ctx_r89.color_primario ? "" : ctx_r89.default_color);
-    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵstyleProp"]("background", ctx_r89.color_primario || "");
+    const ctx_r88 = _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵnextContext"](3);
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵclassMap"](ctx_r88.color_primario ? "" : ctx_r88.default_color);
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵstyleProp"]("background", ctx_r88.color_primario || "");
   }
 }
 function AltaEdicionVentaComponent_form_8_table_101_td_3_Template(rf, ctx) {
@@ -622,9 +617,9 @@ function AltaEdicionVentaComponent_form_8_table_101_td_3_Template(rf, ctx) {
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementEnd"]();
   }
   if (rf & 2) {
-    const item_r119 = ctx.$implicit;
+    const item_r118 = ctx.$implicit;
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtextInterpolate1"](" ", item_r119.descripcion, " ");
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtextInterpolate1"](" ", item_r118.descripcion, " ");
   }
 }
 function AltaEdicionVentaComponent_form_8_table_101_td_4_Template(rf, ctx) {
@@ -639,9 +634,9 @@ function AltaEdicionVentaComponent_form_8_table_101_th_6_Template(rf, ctx) {
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementEnd"]();
   }
   if (rf & 2) {
-    const ctx_r92 = _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵnextContext"](3);
-    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵclassMap"](ctx_r92.color_primario ? "" : ctx_r92.default_color);
-    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵstyleProp"]("background", ctx_r92.color_primario || "");
+    const ctx_r91 = _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵnextContext"](3);
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵclassMap"](ctx_r91.color_primario ? "" : ctx_r91.default_color);
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵstyleProp"]("background", ctx_r91.color_primario || "");
   }
 }
 function AltaEdicionVentaComponent_form_8_table_101_td_7_Template(rf, ctx) {
@@ -651,9 +646,9 @@ function AltaEdicionVentaComponent_form_8_table_101_td_7_Template(rf, ctx) {
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementEnd"]();
   }
   if (rf & 2) {
-    const item_r120 = ctx.$implicit;
+    const item_r119 = ctx.$implicit;
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtextInterpolate1"](" ", item_r120.descripcion_um, " ");
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtextInterpolate1"](" ", item_r119.descripcion_um, " ");
   }
 }
 function AltaEdicionVentaComponent_form_8_table_101_td_8_Template(rf, ctx) {
@@ -668,9 +663,9 @@ function AltaEdicionVentaComponent_form_8_table_101_th_10_Template(rf, ctx) {
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementEnd"]();
   }
   if (rf & 2) {
-    const ctx_r95 = _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵnextContext"](3);
-    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵclassMap"](ctx_r95.color_primario ? "" : ctx_r95.default_color);
-    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵstyleProp"]("background", ctx_r95.color_primario || "");
+    const ctx_r94 = _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵnextContext"](3);
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵclassMap"](ctx_r94.color_primario ? "" : ctx_r94.default_color);
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵstyleProp"]("background", ctx_r94.color_primario || "");
   }
 }
 function AltaEdicionVentaComponent_form_8_table_101_td_11_Template(rf, ctx) {
@@ -680,9 +675,9 @@ function AltaEdicionVentaComponent_form_8_table_101_td_11_Template(rf, ctx) {
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementEnd"]();
   }
   if (rf & 2) {
-    const item_r121 = ctx.$implicit;
+    const item_r120 = ctx.$implicit;
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtextInterpolate1"](" ", item_r121.cantidad, " ");
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtextInterpolate1"](" ", item_r120.cantidad, " ");
   }
 }
 function AltaEdicionVentaComponent_form_8_table_101_td_12_Template(rf, ctx) {
@@ -697,9 +692,9 @@ function AltaEdicionVentaComponent_form_8_table_101_th_14_Template(rf, ctx) {
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementEnd"]();
   }
   if (rf & 2) {
-    const ctx_r98 = _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵnextContext"](3);
-    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵclassMap"](ctx_r98.color_primario ? "" : ctx_r98.default_color);
-    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵstyleProp"]("background", ctx_r98.color_primario || "");
+    const ctx_r97 = _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵnextContext"](3);
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵclassMap"](ctx_r97.color_primario ? "" : ctx_r97.default_color);
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵstyleProp"]("background", ctx_r97.color_primario || "");
   }
 }
 function AltaEdicionVentaComponent_form_8_table_101_td_15_Template(rf, ctx) {
@@ -709,9 +704,9 @@ function AltaEdicionVentaComponent_form_8_table_101_td_15_Template(rf, ctx) {
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementEnd"]()();
   }
   if (rf & 2) {
-    const item_r122 = ctx.$implicit;
+    const item_r121 = ctx.$implicit;
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵadvance"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtextInterpolate1"](" $", item_r122.importe_unitario, " ");
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtextInterpolate1"](" $", item_r121.importe_unitario, " ");
   }
 }
 function AltaEdicionVentaComponent_form_8_table_101_td_16_Template(rf, ctx) {
@@ -728,9 +723,9 @@ function AltaEdicionVentaComponent_form_8_table_101_th_18_Template(rf, ctx) {
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementEnd"]();
   }
   if (rf & 2) {
-    const ctx_r101 = _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵnextContext"](3);
-    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵclassMap"](ctx_r101.color_primario ? "" : ctx_r101.default_color);
-    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵstyleProp"]("background", ctx_r101.color_primario || "");
+    const ctx_r100 = _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵnextContext"](3);
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵclassMap"](ctx_r100.color_primario ? "" : ctx_r100.default_color);
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵstyleProp"]("background", ctx_r100.color_primario || "");
   }
 }
 function AltaEdicionVentaComponent_form_8_table_101_td_19_Template(rf, ctx) {
@@ -742,11 +737,11 @@ function AltaEdicionVentaComponent_form_8_table_101_td_19_Template(rf, ctx) {
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementEnd"]();
   }
   if (rf & 2) {
-    const item_r123 = ctx.$implicit;
+    const item_r122 = ctx.$implicit;
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵadvance"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtextInterpolate1"]("$", item_r123.importe_bonificado, " ");
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtextInterpolate1"]("$", item_r122.importe_bonificado, " ");
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtextInterpolate1"](" (", item_r123.porcentaje_bonificado, "%) ");
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtextInterpolate1"](" (", item_r122.porcentaje_bonificado, "%) ");
   }
 }
 function AltaEdicionVentaComponent_form_8_table_101_td_20_Template(rf, ctx) {
@@ -756,9 +751,9 @@ function AltaEdicionVentaComponent_form_8_table_101_td_20_Template(rf, ctx) {
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementEnd"]();
   }
   if (rf & 2) {
-    const ctx_r103 = _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵnextContext"](3);
+    const ctx_r102 = _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵnextContext"](3);
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtextInterpolate1"](" $", ctx_r103.totales.importe_bonificado, "");
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtextInterpolate1"](" $", ctx_r102.totales.importe_bonificado, "");
   }
 }
 function AltaEdicionVentaComponent_form_8_table_101_th_22_Template(rf, ctx) {
@@ -768,9 +763,9 @@ function AltaEdicionVentaComponent_form_8_table_101_th_22_Template(rf, ctx) {
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementEnd"]();
   }
   if (rf & 2) {
-    const ctx_r104 = _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵnextContext"](3);
-    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵclassMap"](ctx_r104.color_primario ? "" : ctx_r104.default_color);
-    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵstyleProp"]("background", ctx_r104.color_primario || "");
+    const ctx_r103 = _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵnextContext"](3);
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵclassMap"](ctx_r103.color_primario ? "" : ctx_r103.default_color);
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵstyleProp"]("background", ctx_r103.color_primario || "");
   }
 }
 function AltaEdicionVentaComponent_form_8_table_101_td_23_Template(rf, ctx) {
@@ -782,11 +777,11 @@ function AltaEdicionVentaComponent_form_8_table_101_td_23_Template(rf, ctx) {
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementEnd"]();
   }
   if (rf & 2) {
-    const item_r124 = ctx.$implicit;
+    const item_r123 = ctx.$implicit;
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵadvance"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtextInterpolate1"](" $", item_r124.importe_no_bonificado, " ");
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtextInterpolate1"](" $", item_r123.importe_no_bonificado, " ");
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtextInterpolate1"](" (", 100 - item_r124.porcentaje_bonificado, "%) ");
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtextInterpolate1"](" (", 100 - item_r123.porcentaje_bonificado, "%) ");
   }
 }
 function AltaEdicionVentaComponent_form_8_table_101_td_24_Template(rf, ctx) {
@@ -796,9 +791,9 @@ function AltaEdicionVentaComponent_form_8_table_101_td_24_Template(rf, ctx) {
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementEnd"]();
   }
   if (rf & 2) {
-    const ctx_r106 = _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵnextContext"](3);
+    const ctx_r105 = _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵnextContext"](3);
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtextInterpolate1"](" $", ctx_r106.totales.importe_no_bonificado, " ");
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtextInterpolate1"](" $", ctx_r105.totales.importe_no_bonificado, " ");
   }
 }
 function AltaEdicionVentaComponent_form_8_table_101_th_26_Template(rf, ctx) {
@@ -808,9 +803,9 @@ function AltaEdicionVentaComponent_form_8_table_101_th_26_Template(rf, ctx) {
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementEnd"]();
   }
   if (rf & 2) {
-    const ctx_r107 = _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵnextContext"](3);
-    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵclassMap"](ctx_r107.color_primario ? "" : ctx_r107.default_color);
-    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵstyleProp"]("background", ctx_r107.color_primario || "");
+    const ctx_r106 = _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵnextContext"](3);
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵclassMap"](ctx_r106.color_primario ? "" : ctx_r106.default_color);
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵstyleProp"]("background", ctx_r106.color_primario || "");
   }
 }
 function AltaEdicionVentaComponent_form_8_table_101_td_27_Template(rf, ctx) {
@@ -820,9 +815,9 @@ function AltaEdicionVentaComponent_form_8_table_101_td_27_Template(rf, ctx) {
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementEnd"]()();
   }
   if (rf & 2) {
-    const item_r125 = ctx.$implicit;
+    const item_r124 = ctx.$implicit;
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵadvance"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtextInterpolate1"](" $", item_r125.importe_iva, " ");
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtextInterpolate1"](" $", item_r124.importe_iva, " ");
   }
 }
 function AltaEdicionVentaComponent_form_8_table_101_td_28_Template(rf, ctx) {
@@ -832,9 +827,9 @@ function AltaEdicionVentaComponent_form_8_table_101_td_28_Template(rf, ctx) {
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementEnd"]();
   }
   if (rf & 2) {
-    const ctx_r109 = _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵnextContext"](3);
+    const ctx_r108 = _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵnextContext"](3);
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtextInterpolate1"](" $", ctx_r109.totales.importe_iva, "");
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtextInterpolate1"](" $", ctx_r108.totales.importe_iva, "");
   }
 }
 function AltaEdicionVentaComponent_form_8_table_101_th_30_Template(rf, ctx) {
@@ -844,9 +839,9 @@ function AltaEdicionVentaComponent_form_8_table_101_th_30_Template(rf, ctx) {
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementEnd"]();
   }
   if (rf & 2) {
-    const ctx_r110 = _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵnextContext"](3);
-    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵclassMap"](ctx_r110.color_primario ? "" : ctx_r110.default_color);
-    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵstyleProp"]("background", ctx_r110.color_primario || "");
+    const ctx_r109 = _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵnextContext"](3);
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵclassMap"](ctx_r109.color_primario ? "" : ctx_r109.default_color);
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵstyleProp"]("background", ctx_r109.color_primario || "");
   }
 }
 function AltaEdicionVentaComponent_form_8_table_101_td_31_Template(rf, ctx) {
@@ -856,9 +851,9 @@ function AltaEdicionVentaComponent_form_8_table_101_td_31_Template(rf, ctx) {
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementEnd"]()();
   }
   if (rf & 2) {
-    const item_r126 = ctx.$implicit;
+    const item_r125 = ctx.$implicit;
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵadvance"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtextInterpolate1"](" $", item_r126.importe_subtotal, " ");
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtextInterpolate1"](" $", item_r125.importe_subtotal, " ");
   }
 }
 function AltaEdicionVentaComponent_form_8_table_101_td_32_Template(rf, ctx) {
@@ -868,9 +863,9 @@ function AltaEdicionVentaComponent_form_8_table_101_td_32_Template(rf, ctx) {
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementEnd"]();
   }
   if (rf & 2) {
-    const ctx_r112 = _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵnextContext"](3);
+    const ctx_r111 = _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵnextContext"](3);
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtextInterpolate1"](" $", ctx_r112.totales.importe_subtotal, "");
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtextInterpolate1"](" $", ctx_r111.totales.importe_subtotal, "");
   }
 }
 function AltaEdicionVentaComponent_form_8_table_101_th_34_Template(rf, ctx) {
@@ -878,20 +873,20 @@ function AltaEdicionVentaComponent_form_8_table_101_th_34_Template(rf, ctx) {
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelement"](0, "th", 135);
   }
   if (rf & 2) {
-    const ctx_r113 = _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵnextContext"](3);
-    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵclassMap"](ctx_r113.color_primario ? "" : ctx_r113.default_color);
-    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵstyleProp"]("background", ctx_r113.color_primario || "");
+    const ctx_r112 = _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵnextContext"](3);
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵclassMap"](ctx_r112.color_primario ? "" : ctx_r112.default_color);
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵstyleProp"]("background", ctx_r112.color_primario || "");
   }
 }
 function AltaEdicionVentaComponent_form_8_table_101_td_35_Template(rf, ctx) {
   if (rf & 1) {
-    const _r130 = _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵgetCurrentView"]();
+    const _r129 = _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵgetCurrentView"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](0, "td", 133)(1, "button", 99, 136);
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵlistener"]("click", function AltaEdicionVentaComponent_form_8_table_101_td_35_Template_button_click_1_listener() {
-      const restoredCtx = _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵrestoreView"](_r130);
-      const movimiento_r127 = restoredCtx.$implicit;
-      const ctx_r129 = _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵnextContext"](3);
-      return _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵresetView"](ctx_r129.deleteMovimiento(movimiento_r127));
+      const restoredCtx = _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵrestoreView"](_r129);
+      const movimiento_r126 = restoredCtx.$implicit;
+      const ctx_r128 = _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵnextContext"](3);
+      return _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵresetView"](ctx_r128.deleteMovimiento(movimiento_r126));
     });
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](3, "mat-icon", 137);
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtext"](4, "delete");
@@ -991,7 +986,7 @@ function AltaEdicionVentaComponent_form_8_div_102_Template(rf, ctx) {
 }
 function AltaEdicionVentaComponent_form_8_Template(rf, ctx) {
   if (rf & 1) {
-    const _r133 = _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵgetCurrentView"]();
+    const _r132 = _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵgetCurrentView"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](0, "form", 10)(1, "div", 11)(2, "div", 12)(3, "mat-form-field", 13)(4, "mat-label");
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtext"](5, "Fecha de Venta");
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementEnd"]();
@@ -1002,9 +997,9 @@ function AltaEdicionVentaComponent_form_8_Template(rf, ctx) {
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](14, "input", 19);
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵlistener"]("keydown.enter", function AltaEdicionVentaComponent_form_8_Template_input_keydown_enter_14_listener($event) {
-      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵrestoreView"](_r133);
-      const ctx_r132 = _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵnextContext"]();
-      return _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵresetView"](ctx_r132.seleccionItem($event, true, "vendedor"));
+      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵrestoreView"](_r132);
+      const ctx_r131 = _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵnextContext"]();
+      return _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵresetView"](ctx_r131.seleccionItem($event, true, "vendedor"));
     });
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtemplate"](15, AltaEdicionVentaComponent_form_8_button_15_Template, 3, 0, "button", 20);
@@ -1016,9 +1011,9 @@ function AltaEdicionVentaComponent_form_8_Template(rf, ctx) {
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](21, "div", 25)(22, "button", 26);
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵlistener"]("click", function AltaEdicionVentaComponent_form_8_Template_button_click_22_listener() {
-      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵrestoreView"](_r133);
-      const ctx_r134 = _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵnextContext"]();
-      return _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵresetView"](ctx_r134.cargarNuevoCliente());
+      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵrestoreView"](_r132);
+      const ctx_r133 = _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵnextContext"]();
+      return _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵresetView"](ctx_r133.cargarNuevoCliente());
     });
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵnamespaceSVG"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](23, "svg", 27);
@@ -1030,9 +1025,9 @@ function AltaEdicionVentaComponent_form_8_Template(rf, ctx) {
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](28, "input", 30);
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵlistener"]("keydown.enter", function AltaEdicionVentaComponent_form_8_Template_input_keydown_enter_28_listener($event) {
-      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵrestoreView"](_r133);
-      const ctx_r135 = _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵnextContext"]();
-      return _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵresetView"](ctx_r135.seleccionItem($event, true, "descripcion_obra"));
+      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵrestoreView"](_r132);
+      const ctx_r134 = _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵnextContext"]();
+      return _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵresetView"](ctx_r134.seleccionItem($event, true, "descripcion_obra"));
     });
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtemplate"](29, AltaEdicionVentaComponent_form_8_button_29_Template, 3, 0, "button", 20);
@@ -1042,10 +1037,10 @@ function AltaEdicionVentaComponent_form_8_Template(rf, ctx) {
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtemplate"](34, AltaEdicionVentaComponent_form_8_button_34_Template, 3, 0, "button", 24);
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementEnd"]()();
-    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtemplate"](35, AltaEdicionVentaComponent_form_8_form_35_Template, 56, 23, "form", 32);
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtemplate"](35, AltaEdicionVentaComponent_form_8_form_35_Template, 53, 20, "form", 32);
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](36, "div", 33)(37, "div", 34)(38, "button", 35);
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵlistener"]("click", function AltaEdicionVentaComponent_form_8_Template_button_click_38_listener() {
-      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵrestoreView"](_r133);
+      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵrestoreView"](_r132);
       const _r14 = _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵreference"](42);
       return _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵresetView"](_r14.click());
     });
@@ -1054,9 +1049,9 @@ function AltaEdicionVentaComponent_form_8_Template(rf, ctx) {
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementEnd"]()();
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](41, "input", 37, 38);
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵlistener"]("change", function AltaEdicionVentaComponent_form_8_Template_input_change_41_listener($event) {
-      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵrestoreView"](_r133);
-      const ctx_r137 = _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵnextContext"]();
-      return _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵresetView"](ctx_r137.setImagen($event, 0));
+      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵrestoreView"](_r132);
+      const ctx_r136 = _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵnextContext"]();
+      return _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵresetView"](ctx_r136.setImagen($event, 0));
     });
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtemplate"](43, AltaEdicionVentaComponent_form_8_small_43_Template, 4, 1, "small", 39);
@@ -1067,9 +1062,9 @@ function AltaEdicionVentaComponent_form_8_Template(rf, ctx) {
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](51, "input", 44);
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵlistener"]("ngModelChange", function AltaEdicionVentaComponent_form_8_Template_input_ngModelChange_51_listener($event) {
-      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵrestoreView"](_r133);
-      const ctx_r138 = _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵnextContext"]();
-      return _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵresetView"](ctx_r138.seleccionItem($event));
+      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵrestoreView"](_r132);
+      const ctx_r137 = _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵnextContext"]();
+      return _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵresetView"](ctx_r137.seleccionItem($event));
     });
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](52, "mat-autocomplete", 21, 45);
@@ -1082,9 +1077,9 @@ function AltaEdicionVentaComponent_form_8_Template(rf, ctx) {
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](59, "mat-select", 47);
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵlistener"]("ngModelChange", function AltaEdicionVentaComponent_form_8_Template_mat_select_ngModelChange_59_listener($event) {
-      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵrestoreView"](_r133);
-      const ctx_r139 = _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵnextContext"]();
-      return _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵresetView"](ctx_r139.seleccionItem({
+      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵrestoreView"](_r132);
+      const ctx_r138 = _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵnextContext"]();
+      return _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵresetView"](ctx_r138.seleccionItem({
         um: $event
       }));
     });
@@ -1095,18 +1090,18 @@ function AltaEdicionVentaComponent_form_8_Template(rf, ctx) {
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](64, "input", 48);
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵlistener"]("keydown.enter", function AltaEdicionVentaComponent_form_8_Template_input_keydown_enter_64_listener($event) {
-      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵrestoreView"](_r133);
-      const ctx_r140 = _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵnextContext"]();
-      return _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵresetView"](ctx_r140.seleccionItem($event, true, "cantidad"));
+      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵrestoreView"](_r132);
+      const ctx_r139 = _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵnextContext"]();
+      return _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵresetView"](ctx_r139.seleccionItem($event, true, "cantidad"));
     });
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtemplate"](65, AltaEdicionVentaComponent_form_8_button_65_Template, 3, 0, "button", 24);
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](66, "mat-form-field", 49);
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵlistener"]("keydown.enter", function AltaEdicionVentaComponent_form_8_Template_mat_form_field_keydown_enter_66_listener($event) {
-      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵrestoreView"](_r133);
-      const ctx_r141 = _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵnextContext"]();
-      return _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵresetView"](ctx_r141.seleccionItem($event, true, "importe_unitario"));
+      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵrestoreView"](_r132);
+      const ctx_r140 = _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵnextContext"]();
+      return _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵresetView"](ctx_r140.seleccionItem($event, true, "importe_unitario"));
     });
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](67, "mat-label");
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtext"](68, "Cantidad");
@@ -1118,9 +1113,9 @@ function AltaEdicionVentaComponent_form_8_Template(rf, ctx) {
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](74, "div", 53)(75, "input", 54);
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵlistener"]("keydown.enter", function AltaEdicionVentaComponent_form_8_Template_input_keydown_enter_75_listener($event) {
-      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵrestoreView"](_r133);
-      const ctx_r142 = _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵnextContext"]();
-      return _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵresetView"](ctx_r142.seleccionItem($event, true, "porcentaje_bonificado"));
+      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵrestoreView"](_r132);
+      const ctx_r141 = _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵnextContext"]();
+      return _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵresetView"](ctx_r141.seleccionItem($event, true, "porcentaje_bonificado"));
     });
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtemplate"](76, AltaEdicionVentaComponent_form_8_button_76_Template, 3, 0, "button", 24);
@@ -1130,9 +1125,9 @@ function AltaEdicionVentaComponent_form_8_Template(rf, ctx) {
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementEnd"]()();
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](79, "div", 56)(80, "button", 57);
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵlistener"]("click", function AltaEdicionVentaComponent_form_8_Template_button_click_80_listener() {
-      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵrestoreView"](_r133);
-      const ctx_r143 = _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵnextContext"]();
-      return _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵresetView"](ctx_r143.calcularPrecioUnitario());
+      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵrestoreView"](_r132);
+      const ctx_r142 = _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵnextContext"]();
+      return _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵresetView"](ctx_r142.calcularPrecioUnitario());
     });
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵnamespaceSVG"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](81, "svg", 58);
@@ -1144,18 +1139,18 @@ function AltaEdicionVentaComponent_form_8_Template(rf, ctx) {
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](87, "div", 53)(88, "input", 60);
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵlistener"]("keydown.enter", function AltaEdicionVentaComponent_form_8_Template_input_keydown_enter_88_listener($event) {
-      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵrestoreView"](_r133);
-      const ctx_r144 = _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵnextContext"]();
-      return _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵresetView"](ctx_r144.onCargar($event));
+      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵrestoreView"](_r132);
+      const ctx_r143 = _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵnextContext"]();
+      return _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵresetView"](ctx_r143.onCargar($event));
     });
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtemplate"](89, AltaEdicionVentaComponent_form_8_button_89_Template, 3, 0, "button", 24);
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementEnd"]()();
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](90, "div", 56)(91, "button", 61);
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵlistener"]("click", function AltaEdicionVentaComponent_form_8_Template_button_click_91_listener() {
-      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵrestoreView"](_r133);
-      const ctx_r145 = _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵnextContext"]();
-      return _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵresetView"](ctx_r145.onCargar());
+      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵrestoreView"](_r132);
+      const ctx_r144 = _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵnextContext"]();
+      return _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵresetView"](ctx_r144.onCargar());
     });
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵnamespaceSVG"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](92, "svg", 27);
@@ -1164,9 +1159,9 @@ function AltaEdicionVentaComponent_form_8_Template(rf, ctx) {
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵnamespaceHTML"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](94, "div", 62)(95, "div", 63)(96, "input", 64);
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵlistener"]("keyup", function AltaEdicionVentaComponent_form_8_Template_input_keyup_96_listener($event) {
-      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵrestoreView"](_r133);
-      const ctx_r146 = _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵnextContext"]();
-      return _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵresetView"](ctx_r146.applyFilter($event.target.value));
+      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵrestoreView"](_r132);
+      const ctx_r145 = _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵnextContext"]();
+      return _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵresetView"](ctx_r145.applyFilter($event.target.value));
     });
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](97, "span", 65);
@@ -1181,30 +1176,14 @@ function AltaEdicionVentaComponent_form_8_Template(rf, ctx) {
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](103, "form", 41)(104, "div", 71)(105, "mat-form-field", 72);
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵlistener"]("keydown.enter", function AltaEdicionVentaComponent_form_8_Template_mat_form_field_keydown_enter_105_listener($event) {
-      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵrestoreView"](_r133);
-      const ctx_r147 = _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵnextContext"]();
-      return _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵresetView"](ctx_r147.seleccionItem($event, true));
+      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵrestoreView"](_r132);
+      const ctx_r146 = _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵnextContext"]();
+      return _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵresetView"](ctx_r146.seleccionItem($event, true));
     });
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](106, "mat-label");
-    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtext"](107, "Descuento Efectivo");
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtext"](107, "TOTAL VENTA");
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](108, "input", 73);
-    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵlistener"]("blur", function AltaEdicionVentaComponent_form_8_Template_input_blur_108_listener($event) {
-      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵrestoreView"](_r133);
-      const ctx_r148 = _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵnextContext"]();
-      return _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵresetView"](ctx_r148.onBlurInput($event));
-    });
-    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementEnd"]()();
-    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](109, "mat-form-field", 72);
-    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵlistener"]("keydown.enter", function AltaEdicionVentaComponent_form_8_Template_mat_form_field_keydown_enter_109_listener($event) {
-      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵrestoreView"](_r133);
-      const ctx_r149 = _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵnextContext"]();
-      return _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵresetView"](ctx_r149.seleccionItem($event, true));
-    });
-    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](110, "mat-label");
-    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtext"](111, "TOTAL VENTA");
-    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelement"](112, "input", 74);
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelement"](108, "input", 73);
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementEnd"]()()()()();
   }
   if (rf & 2) {
@@ -1286,12 +1265,12 @@ function AltaEdicionVentaComponent_form_8_Template(rf, ctx) {
 }
 function AltaEdicionVentaComponent_div_9_Template(rf, ctx) {
   if (rf & 1) {
-    const _r151 = _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵgetCurrentView"]();
+    const _r148 = _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵgetCurrentView"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](0, "div", 143)(1, "button", 144);
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵlistener"]("click", function AltaEdicionVentaComponent_div_9_Template_button_click_1_listener() {
-      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵrestoreView"](_r151);
-      const ctx_r150 = _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵnextContext"]();
-      return _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵresetView"](ctx_r150.onSubmit());
+      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵrestoreView"](_r148);
+      const ctx_r147 = _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵnextContext"]();
+      return _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵresetView"](ctx_r147.onSubmit());
     });
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](2, "span", 145);
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtext"](3, "Guardar");
@@ -1429,10 +1408,12 @@ class AltaEdicionVentaComponent {
         tratamiento: new _angular_forms__WEBPACK_IMPORTED_MODULE_23__.FormControl('', _angular_forms__WEBPACK_IMPORTED_MODULE_23__.Validators.required),
         colocacion: new _angular_forms__WEBPACK_IMPORTED_MODULE_23__.FormControl(false, _angular_forms__WEBPACK_IMPORTED_MODULE_23__.Validators.required),
         acarreo: new _angular_forms__WEBPACK_IMPORTED_MODULE_23__.FormControl(false, _angular_forms__WEBPACK_IMPORTED_MODULE_23__.Validators.required),
-        fecha_entrega: new _angular_forms__WEBPACK_IMPORTED_MODULE_23__.FormControl(this.datePipe.transform(new Date(), 'yyyy-MM-dd'), [_angular_forms__WEBPACK_IMPORTED_MODULE_23__.Validators.required]),
-        fecha_medicion: new _angular_forms__WEBPACK_IMPORTED_MODULE_23__.FormControl(this.datePipe.transform(new Date(), 'yyyy-MM-dd'), [_angular_forms__WEBPACK_IMPORTED_MODULE_23__.Validators.required])
+        retiro_fabrica: new _angular_forms__WEBPACK_IMPORTED_MODULE_23__.FormControl(false, _angular_forms__WEBPACK_IMPORTED_MODULE_23__.Validators.required),
+        fecha_entrega: new _angular_forms__WEBPACK_IMPORTED_MODULE_23__.FormControl(this.datePipe.transform(new Date(), 'yyyy-MM-dd'), [_angular_forms__WEBPACK_IMPORTED_MODULE_23__.Validators.required])
+        // fecha_medicion: new FormControl((this.datePipe.transform(new Date(), 'yyyy-MM-dd')), [Validators.required]),
       });
     }
+
     this.form_carga_articulos = new _angular_forms__WEBPACK_IMPORTED_MODULE_23__.FormGroup({
       articulo: new _angular_forms__WEBPACK_IMPORTED_MODULE_23__.FormControl('', _angular_forms__WEBPACK_IMPORTED_MODULE_23__.Validators.required),
       unidadmedida: new _angular_forms__WEBPACK_IMPORTED_MODULE_23__.FormControl('', _angular_forms__WEBPACK_IMPORTED_MODULE_23__.Validators.required),
@@ -1563,17 +1544,18 @@ class AltaEdicionVentaComponent {
     // Se formatea la fecha nuevamente al formato deseado (YYYY-MM-DD)
     const fecha_venta_formateada = this.datePipe.transform(this.form.get('fecha').value, 'yyyy-MM-dd');
     if (this.configura_obra) {
-      const fecha_medicion_formateada = this.datePipe.transform(this.form_obra.get('fecha_medicion').value, 'yyyy-MM-dd');
+      // const fecha_medicion_formateada = this.datePipe.transform(this.form_obra.get('fecha_medicion').value, 'yyyy-MM-dd');
       const fecha_entrega_formateada = this.datePipe.transform(this.form_obra.get('fecha_entrega').value, 'yyyy-MM-dd');
       var obra = {
         descripcion: this.form_obra.get('descripcion_obra').value,
         direccion: this.form_obra.get('direccion_obra').value,
         idlocalidad: parseInt(this.form_obra.get('localidad').value.idlocalidad),
         idtratamiento: parseInt(this.form_obra.get('tratamiento').value.id),
-        fecha_medicion: fecha_medicion_formateada,
+        // fecha_medicion: fecha_medicion_formateada,
         fecha_entrega: fecha_entrega_formateada,
         colocacion: this.form_obra.get('colocacion').value ? 1 : 0,
-        acarreo: this.form_obra.get('acarreo').value ? 1 : 0
+        acarreo: this.form_obra.get('acarreo').value ? 1 : 0,
+        retiro_fabrica: this.form_obra.get('retiro_fabrica').value ? 1 : 0
       };
     }
     // Se crea el payload con los datos necesarios para crear una venta
@@ -1758,10 +1740,12 @@ class AltaEdicionVentaComponent {
               },
               colocacion: _this3.obra?.colocacion ? true : false,
               acarreo: _this3.obra?.acarreo ? true : false,
-              fecha_entrega: _this3.datePipe.transform(_this3.obra?.fecha_entrega, 'yyyy-MM-dd'),
-              fecha_medicion: _this3.datePipe.transform(_this3.obra?.fecha_medicion, 'yyyy-MM-dd')
+              retiro_fabrica: _this3.obra?.retiro_fabrica ? true : false,
+              fecha_entrega: _this3.datePipe.transform(_this3.obra?.fecha_entrega, 'yyyy-MM-dd')
+              // fecha_medicion: this.datePipe.transform(this.obra?.fecha_medicion, 'yyyy-MM-dd'),
             });
           }
+
           _this3.updateTotal();
           // Oculto el spinner
           _this3.mostrarSpinner = false;
@@ -1812,7 +1796,7 @@ class AltaEdicionVentaComponent {
   getTratamientos(option) {
     var _this6 = this;
     return (0,C_work_jeds_jedstion_source_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
-      const Tratamientos = yield (0,rxjs__WEBPACK_IMPORTED_MODULE_24__.firstValueFrom)(_this6._ventaGenericasService.getTratamiendos());
+      const Tratamientos = yield (0,rxjs__WEBPACK_IMPORTED_MODULE_24__.firstValueFrom)(_this6._ventaGenericasService.getTratamientos());
       new Promise( /*#__PURE__*/function () {
         var _ref4 = (0,C_work_jeds_jedstion_source_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* (resolve) {
           _this6.tratamientos = Tratamientos.list;
@@ -2156,7 +2140,7 @@ AltaEdicionVentaComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_M
   }])],
   decls: 10,
   vars: 11,
-  consts: [[1, "w-full", "flex", "flex-col", "relative", "mt-4", "overflow-y-auto", "h-full"], [1, "flex", "justify-start", "sm:mb-0", "mx-4"], ["mat-flat-button", "", 1, "fuse-mat-button-large", "w-full", "!border", "border-solid", "xl:w-28", "md:w-20", 3, "click"], [1, "xl:icon-size-5", "icon-size-3", 3, "svgIcon"], [1, "ml-2", "xl:text-xl", "text-sm", "font-normal"], [4, "ngIf"], ["class", "fixed top-0 left-0 w-full flex justify-center items-center mt-8 alert-main z-99999", 3, "type", "appearance", 4, "ngIf"], ["class", "form-menu p-4", 3, "formGroup", 4, "ngIf"], ["class", "w-full md:flex justify-end md:pb-6 md:px-6 mt-auto", 4, "ngIf"], [1, "fixed", "top-0", "left-0", "w-full", "flex", "justify-center", "items-center", "mt-8", "alert-main", "z-99999", 3, "type", "appearance"], [1, "form-menu", "p-4", 3, "formGroup"], [1, "flex", "flex-col", "w-full", "h-full", "p-4"], [1, "flex", "gap-2", "flex-col", "sm:flex-row"], ["appearance", "fill", 1, "w-full", "sm:w-2/3"], ["matInput", "", "formControlName", "fecha", "readonly", "true", 3, "matDatepicker", "min", "max"], ["matSuffix", "", 3, "for"], ["picker", ""], [1, "w-full", "flex"], ["apparance", "fill", 1, "w-3/4"], ["type", "text", "matInput", "", "formControlName", "cliente", 3, "matAutocomplete", "keydown.enter"], ["mat-icon-button", "", "matSuffix", "", "type", "button", "class", "mr-2", 4, "ngIf"], ["autoActiveFirstOption", "", 3, "displayWith"], ["auto_cliente", "matAutocomplete"], [3, "value", "click", 4, "ngFor", "ngForOf"], ["matSuffix", "", "mat-icon-button", "", "class", "mr-2", 3, "click", 4, "ngIf"], [1, "flex", "w-1/4", "justify-center", "items-center"], ["matTooltip", "A\u00F1adir", 1, "flex", "items-center", "justify-center", "w-10", "h-10", "rounded-full", "mt-2", "ml-2", "sm:ml-4", "transition-transform", "transform", "active:scale-95", 3, "click"], ["width", "16", "height", "16", "viewBox", "0 0 16 16", "fill", "none", "xmlns", "http://www.w3.org/2000/svg"], ["d", "M16 10H10V16H6V10H0V6H6V0H10V6H16V10Z", "fill", "white"], ["apparance", "fill", 1, "w-full", "sm:w-2/3"], ["type", "text", "matInput", "", "formControlName", "vendedor", 3, "matAutocomplete", "keydown.enter"], ["auto_vendedor", "matAutocomplete"], [3, "formGroup", 4, "ngIf"], [1, "mb-3", "w-full"], [1, "flex", "items-center", "gap-2"], ["mat-icon-button", "", "type", "button", "matTooltip", "A\u00F1adir Imagen", 3, "click"], [1, "text-white", "transform", "-rotate-45"], ["id", "fileToUploadImagen", "type", "file", 1, "hidden", 3, "accept", "change"], ["fileInput", ""], ["class", "text-muted text-lg cursor-pointer", 3, "click", 4, "ngIf"], ["class", "mt-4 grid gap-2 p-2 bg-slate-200 rounded-lg max-w-full max-h-56 xl:max-h-56 sm:max-h-18 overflow-y-auto", "style", "grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));", 4, "ngIf"], [3, "formGroup"], [1, "flex", "w-full", "gap-1"], ["apparance", "fill", 1, "w-full", "sm:w-full"], ["type", "text", "matInput", "", "formControlName", "articulo", 3, "matAutocomplete", "ngModelChange"], ["art_carga", "matAutocomplete"], [3, "value", 4, "ngFor", "ngForOf"], ["formControlName", "unidadmedida", 3, "ngModelChange"], ["type", "text", "matInput", "", "formControlName", "detalle", 3, "keydown.enter"], ["apparance", "fill", 1, "w-full", "sm:w-full", 3, "keydown.enter"], ["matInput", "", "type", "number", "formControlName", "cantidad"], [1, "flex", "w-full", "sm:w-1/2", "justify-center", "items-center"], ["appearance", "fill", 1, "w-full", "sm:w-full"], [1, "flex", "items-center"], ["type", "text", "matInput", "", "formControlName", "importe_unitario", "placeholder", "$", 3, "keydown.enter"], [1, "text-xs", "text-gray-500", "italic"], [1, "flex"], ["matTooltip", "Calcular Precio Unitario", 1, "flex", "items-center", "justify-center", "w-10", "h-10", "rounded-full", "mt-2", "ml-2", "sm:ml-4", "transition-transform", "transform", "active:scale-95", 3, "click"], ["width", "25", "height", "24", "viewBox", "0 0 25 24", "fill", "none", "xmlns", "http://www.w3.org/2000/svg"], ["d", "M22.0104 0H2.96439C1.46792 0 0.24353 1.2 0.24353 2.66667V21.3333C0.24353 22.8 1.46792 24 2.96439 24H22.0104C23.5069 24 24.7312 22.8 24.7312 21.3333V2.66667C24.7312 1.2 23.5069 0 22.0104 0ZM13.8886 5.41333L15.3307 4L17.2489 5.88L19.1671 4L20.6091 5.41333L18.6909 7.29333L20.6091 9.17333L19.1671 10.5867L17.2489 8.72L15.3307 10.6L13.8886 9.18667L15.8068 7.30667L13.8886 5.41333ZM4.66492 6.29333H11.4671V8.29333H4.66492V6.29333ZM11.8072 17.3333H9.08632V20H7.04567V17.3333H4.32482V15.3333H7.04567V12.6667H9.08632V15.3333H11.8072V17.3333ZM20.65 19H13.8478V17H20.65V19ZM20.65 15.6667H13.8478V13.6667H20.65V15.6667Z", "fill", "white"], ["type", "text", "matInput", "", "formControlName", "porcentaje_bonificado", "placeholder", "%", 3, "keydown.enter"], ["matTooltip", "Agregar", 1, "flex", "items-center", "justify-center", "w-10", "h-10", "rounded-full", "mt-2", "ml-2", "sm:ml-4", "transition-transform", "transform", "active:scale-95", 3, "click"], [1, "search-container", "mt-2", "mb-2", "flex"], [1, "relative", "w-full", "md:w-1/3"], ["matInput", "", "placeholder", "Buscar art\u00EDculo", 1, "w-full", "bg-slate-50", "border", "border-gray-200", "rounded-lg", "shadow-md", "py-2", "px-4", "text-sm", "placeholder-gray-500", "text-gray-700", "transition", "duration-300", 3, "keyup"], [1, "absolute", "inset-y-0", "right-4", "flex", "items-center", "text-gray-400"], ["xmlns", "http://www.w3.org/2000/svg", "viewBox", "0 0 20 20", "fill", "currentColor", 1, "h-5", "w-5"], ["fill-rule", "evenodd", "d", "M12.9 14.32a8 8 0 111.42-1.42l4.39 4.4a1 1 0 11-1.42 1.41l-4.4-4.39zM8 14a6 6 0 100-12 6 6 0 000 12z", "clip-rule", "evenodd"], [1, "overflow-y-auto", "max-h-[300px]", "h-[300px]", "shadow-md", "rounded-lg", "bg-white"], ["mat-table", "", "class", " w-full mt-1 min-h-full", 3, "dataSource", 4, "ngIf"], ["class", "flex justify-center items-center h-full mt-0 bg-white ", 4, "ngIf"], [1, "flex", "w-full", "gap-1", "justify-end", "mt-2"], ["apparance", "fill", 1, "w-1/3", "md:w-1/4", 3, "keydown.enter"], ["matInput", "", "type", "number", "formControlName", "porcentaje_descuento_efectivo", "placeholder", "%", 3, "blur"], ["matInput", "", "type", "number", "formControlName", "total_venta", "readonly", "true"], ["mat-icon-button", "", "matSuffix", "", "type", "button", 1, "mr-2"], [3, "value", "click"], ["matSuffix", "", "mat-icon-button", "", 1, "mr-2", 3, "click"], ["type", "text", "matInput", "", "formControlName", "descripcion_obra", 3, "keydown.enter"], ["type", "text", "matInput", "", "formControlName", "direccion_obra", 3, "keydown.enter"], ["apparance", "fill", 1, "w-full", "sm:w-3/4"], ["type", "text", "matInput", "", "formControlName", "localidad", 3, "matAutocomplete", "keydown.enter"], ["auto_localidad", "matAutocomplete"], ["type", "text", "matInput", "", "formControlName", "tratamiento", 3, "matAutocomplete", "keydown.enter"], ["auto_tratamiento", "matAutocomplete"], [1, "flex", "justify-between", "items-center", "gap-2"], [1, "flex", "items-center", "space-x-2"], ["formControlName", "acarreo"], ["formControlName", "colocacion"], ["matInput", "", "formControlName", "fecha_medicion", "readonly", "true", 3, "matDatepicker", "min"], ["picker_medicion", ""], ["matInput", "", "formControlName", "fecha_entrega", "readonly", "true", 3, "matDatepicker", "min"], ["picker_entrega", ""], [1, "text-muted", "text-lg", "cursor-pointer", 3, "click"], [1, "mt-4", "grid", "gap-2", "p-2", "bg-slate-200", "rounded-lg", "max-w-full", "max-h-56", "xl:max-h-56", "sm:max-h-18", "overflow-y-auto", 2, "grid-template-columns", "repeat(auto-fill, minmax(200px, 1fr))"], [4, "ngFor", "ngForOf"], [1, "flex", "items-center", "gap-2", "px-4", "py-2", "rounded-lg", "text-white"], ["class", "truncate max-w-xs", 4, "ngIf"], ["target", "_blank", "class", "flex items-center truncate max-w-xs", 3, "href", 4, "ngIf"], ["mat-icon-button", "", 3, "click"], [1, "text-white"], [1, "truncate", "max-w-xs"], ["target", "_blank", 1, "flex", "items-center", "truncate", "max-w-xs", 3, "href"], [1, "ml-2", "text-white"], [3, "value"], ["class", "font-light", 4, "ngIf"], [1, "font-light"], ["mat-table", "", 1, "w-full", "mt-1", "min-h-full", 3, "dataSource"], ["matColumnDef", "articulo"], ["mat-header-cell", "", "class", "rounded-tl-lg text-white w-auto", 3, "class", "background", 4, "matHeaderCellDef"], ["mat-cell", "", "class", "w-auto", 4, "matCellDef"], ["mat-footer-cell", "", "class", "bg-slate-200", 4, "matFooterCellDef"], ["matColumnDef", "unidadmedida"], ["mat-header-cell", "", "class", "text-white w-auto", 3, "class", "background", 4, "matHeaderCellDef"], ["mat-cell", "", "class", "text-center", 4, "matCellDef"], ["matColumnDef", "cantidad"], ["mat-cell", "", 4, "matCellDef"], ["matColumnDef", "importe_unitario", 1, "content-end"], ["mat-footer-cell", "", "class", "text-lg font-bold bg-slate-200", 4, "matFooterCellDef"], ["matColumnDef", "importe_bonificado"], ["matColumnDef", "importe_no_bonificado"], ["matColumnDef", "importe_iva"], ["matColumnDef", "importe_subtotal"], ["matColumnDef", "acciones"], ["mat-header-cell", "", "class", "rounded-tr-lg text-white w-auto", 3, "class", "background", 4, "matHeaderCellDef"], ["mat-header-row", "", 4, "matHeaderRowDef", "matHeaderRowDefSticky"], ["mat-row", "", 4, "matRowDef", "matRowDefColumns"], ["mat-footer-row", "", 4, "matFooterRowDef", "matFooterRowDefSticky"], ["mat-header-cell", "", 1, "rounded-tl-lg", "text-white", "w-auto"], ["mat-cell", "", 1, "w-auto"], ["mat-footer-cell", "", 1, "bg-slate-200"], ["mat-header-cell", "", 1, "text-white", "w-auto"], ["mat-cell", "", 1, "text-center"], ["mat-cell", ""], ["mat-footer-cell", "", 1, "text-lg", "font-bold", "bg-slate-200"], ["mat-header-cell", "", 1, "rounded-tr-lg", "text-white", "w-auto"], ["delete", ""], ["color", "warn"], ["mat-header-row", ""], ["mat-row", ""], ["mat-footer-row", ""], [1, "flex", "justify-center", "items-center", "h-full", "mt-0", "bg-white"], [1, "text-gray-600", "text-lg"], [1, "w-full", "md:flex", "justify-end", "md:pb-6", "md:px-6", "mt-auto"], ["mat-raised-button", "", 1, "w-full", "rounded-none", "md:w-36", "md:rounded-lg", "py-8", "md:py-0", 3, "click"], [1, "text-white", "font-medium", "text-base"]],
+  consts: [[1, "w-full", "flex", "flex-col", "relative", "mt-4", "overflow-y-auto", "h-full"], [1, "flex", "justify-start", "sm:mb-0", "mx-4"], ["mat-flat-button", "", 1, "fuse-mat-button-large", "w-full", "!border", "border-solid", "xl:w-28", "md:w-20", 3, "click"], [1, "xl:icon-size-5", "icon-size-3", 3, "svgIcon"], [1, "ml-2", "xl:text-xl", "text-sm", "font-normal"], [4, "ngIf"], ["class", "fixed top-0 left-0 w-full flex justify-center items-center mt-8 alert-main z-99999", 3, "type", "appearance", 4, "ngIf"], ["class", "form-menu p-4", 3, "formGroup", 4, "ngIf"], ["class", "w-full md:flex justify-end md:pb-6 md:px-6 mt-auto", 4, "ngIf"], [1, "fixed", "top-0", "left-0", "w-full", "flex", "justify-center", "items-center", "mt-8", "alert-main", "z-99999", 3, "type", "appearance"], [1, "form-menu", "p-4", 3, "formGroup"], [1, "flex", "flex-col", "w-full", "h-full", "p-4"], [1, "flex", "gap-2", "flex-col", "sm:flex-row"], ["appearance", "fill", 1, "w-full", "sm:w-2/3"], ["matInput", "", "formControlName", "fecha", "readonly", "true", 3, "matDatepicker", "min", "max"], ["matSuffix", "", 3, "for"], ["picker", ""], [1, "w-full", "flex"], ["apparance", "fill", 1, "w-3/4"], ["type", "text", "matInput", "", "formControlName", "cliente", 3, "matAutocomplete", "keydown.enter"], ["mat-icon-button", "", "matSuffix", "", "type", "button", "class", "mr-2", 4, "ngIf"], ["autoActiveFirstOption", "", 3, "displayWith"], ["auto_cliente", "matAutocomplete"], [3, "value", "click", 4, "ngFor", "ngForOf"], ["matSuffix", "", "mat-icon-button", "", "class", "mr-2", 3, "click", 4, "ngIf"], [1, "flex", "w-1/4", "justify-center", "items-center"], ["matTooltip", "A\u00F1adir", 1, "flex", "items-center", "justify-center", "w-10", "h-10", "rounded-full", "mt-2", "ml-2", "sm:ml-4", "transition-transform", "transform", "active:scale-95", 3, "click"], ["width", "16", "height", "16", "viewBox", "0 0 16 16", "fill", "none", "xmlns", "http://www.w3.org/2000/svg"], ["d", "M16 10H10V16H6V10H0V6H6V0H10V6H16V10Z", "fill", "white"], ["apparance", "fill", 1, "w-full", "sm:w-2/3"], ["type", "text", "matInput", "", "formControlName", "vendedor", 3, "matAutocomplete", "keydown.enter"], ["auto_vendedor", "matAutocomplete"], [3, "formGroup", 4, "ngIf"], [1, "mb-3", "w-full"], [1, "flex", "items-center", "gap-2"], ["mat-icon-button", "", "type", "button", "matTooltip", "A\u00F1adir Imagen", 3, "click"], [1, "text-white", "transform", "-rotate-45"], ["id", "fileToUploadImagen", "type", "file", 1, "hidden", 3, "accept", "change"], ["fileInput", ""], ["class", "text-muted text-lg cursor-pointer", 3, "click", 4, "ngIf"], ["class", "mt-4 grid gap-2 p-2 bg-slate-200 rounded-lg max-w-full max-h-56 xl:max-h-56 sm:max-h-18 overflow-y-auto", "style", "grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));", 4, "ngIf"], [3, "formGroup"], [1, "flex", "w-full", "gap-1"], ["apparance", "fill", 1, "w-full", "sm:w-full"], ["type", "text", "matInput", "", "formControlName", "articulo", 3, "matAutocomplete", "ngModelChange"], ["art_carga", "matAutocomplete"], [3, "value", 4, "ngFor", "ngForOf"], ["formControlName", "unidadmedida", 3, "ngModelChange"], ["type", "text", "matInput", "", "formControlName", "detalle", 3, "keydown.enter"], ["apparance", "fill", 1, "w-full", "sm:w-full", 3, "keydown.enter"], ["matInput", "", "type", "number", "formControlName", "cantidad"], [1, "flex", "w-full", "sm:w-1/2", "justify-center", "items-center"], ["appearance", "fill", 1, "w-full", "sm:w-full"], [1, "flex", "items-center"], ["type", "text", "matInput", "", "formControlName", "importe_unitario", "placeholder", "$", 3, "keydown.enter"], [1, "text-xs", "text-gray-500", "italic"], [1, "flex"], ["matTooltip", "Calcular Precio Unitario", 1, "flex", "items-center", "justify-center", "w-10", "h-10", "rounded-full", "mt-2", "ml-2", "sm:ml-4", "transition-transform", "transform", "active:scale-95", 3, "click"], ["width", "25", "height", "24", "viewBox", "0 0 25 24", "fill", "none", "xmlns", "http://www.w3.org/2000/svg"], ["d", "M22.0104 0H2.96439C1.46792 0 0.24353 1.2 0.24353 2.66667V21.3333C0.24353 22.8 1.46792 24 2.96439 24H22.0104C23.5069 24 24.7312 22.8 24.7312 21.3333V2.66667C24.7312 1.2 23.5069 0 22.0104 0ZM13.8886 5.41333L15.3307 4L17.2489 5.88L19.1671 4L20.6091 5.41333L18.6909 7.29333L20.6091 9.17333L19.1671 10.5867L17.2489 8.72L15.3307 10.6L13.8886 9.18667L15.8068 7.30667L13.8886 5.41333ZM4.66492 6.29333H11.4671V8.29333H4.66492V6.29333ZM11.8072 17.3333H9.08632V20H7.04567V17.3333H4.32482V15.3333H7.04567V12.6667H9.08632V15.3333H11.8072V17.3333ZM20.65 19H13.8478V17H20.65V19ZM20.65 15.6667H13.8478V13.6667H20.65V15.6667Z", "fill", "white"], ["type", "text", "matInput", "", "formControlName", "porcentaje_bonificado", "placeholder", "%", 3, "keydown.enter"], ["matTooltip", "Agregar", 1, "flex", "items-center", "justify-center", "w-10", "h-10", "rounded-full", "mt-2", "ml-2", "sm:ml-4", "transition-transform", "transform", "active:scale-95", 3, "click"], [1, "search-container", "mt-2", "mb-2", "flex"], [1, "relative", "w-full", "md:w-1/3"], ["matInput", "", "placeholder", "Buscar art\u00EDculo", 1, "w-full", "bg-slate-50", "border", "border-gray-200", "rounded-lg", "shadow-md", "py-2", "px-4", "text-sm", "placeholder-gray-500", "text-gray-700", "transition", "duration-300", 3, "keyup"], [1, "absolute", "inset-y-0", "right-4", "flex", "items-center", "text-gray-400"], ["xmlns", "http://www.w3.org/2000/svg", "viewBox", "0 0 20 20", "fill", "currentColor", 1, "h-5", "w-5"], ["fill-rule", "evenodd", "d", "M12.9 14.32a8 8 0 111.42-1.42l4.39 4.4a1 1 0 11-1.42 1.41l-4.4-4.39zM8 14a6 6 0 100-12 6 6 0 000 12z", "clip-rule", "evenodd"], [1, "overflow-y-auto", "max-h-[300px]", "h-[300px]", "shadow-md", "rounded-lg", "bg-white"], ["mat-table", "", "class", " w-full mt-1 min-h-full", 3, "dataSource", 4, "ngIf"], ["class", "flex justify-center items-center h-full mt-0 bg-white ", 4, "ngIf"], [1, "flex", "w-full", "gap-1", "justify-end", "mt-2"], ["apparance", "fill", 1, "w-1/3", "md:w-1/4", 3, "keydown.enter"], ["matInput", "", "type", "number", "formControlName", "total_venta", "readonly", "true"], ["mat-icon-button", "", "matSuffix", "", "type", "button", 1, "mr-2"], [3, "value", "click"], ["matSuffix", "", "mat-icon-button", "", 1, "mr-2", 3, "click"], ["type", "text", "matInput", "", "formControlName", "descripcion_obra", 3, "keydown.enter"], ["type", "text", "matInput", "", "formControlName", "direccion_obra", 3, "keydown.enter"], ["apparance", "fill", 1, "w-full", "sm:w-3/4"], ["type", "text", "matInput", "", "formControlName", "localidad", 3, "matAutocomplete", "keydown.enter"], ["auto_localidad", "matAutocomplete"], ["apparance", "fill", 1, "w-full", "sm:w-1/3"], ["type", "text", "matInput", "", "formControlName", "tratamiento", 3, "matAutocomplete", "keydown.enter"], ["auto_tratamiento", "matAutocomplete"], [1, "flex", "justify-between", "items-center", "gap-2", "w-1/3"], [1, "flex", "items-center", "space-x-2"], ["formControlName", "acarreo"], ["formControlName", "colocacion"], ["formControlName", "retiro_fabrica"], ["appearance", "fill", 1, "w-full", "sm:w-1/3"], ["matInput", "", "formControlName", "fecha_entrega", "readonly", "true", 3, "matDatepicker", "min"], ["picker_entrega", ""], [1, "text-muted", "text-lg", "cursor-pointer", 3, "click"], [1, "mt-4", "grid", "gap-2", "p-2", "bg-slate-200", "rounded-lg", "max-w-full", "max-h-56", "xl:max-h-56", "sm:max-h-18", "overflow-y-auto", 2, "grid-template-columns", "repeat(auto-fill, minmax(200px, 1fr))"], [4, "ngFor", "ngForOf"], [1, "flex", "items-center", "gap-2", "px-4", "py-2", "rounded-lg", "text-white"], ["class", "truncate max-w-xs", 4, "ngIf"], ["target", "_blank", "class", "flex items-center truncate max-w-xs", 3, "href", 4, "ngIf"], ["mat-icon-button", "", 3, "click"], [1, "text-white"], [1, "truncate", "max-w-xs"], ["target", "_blank", 1, "flex", "items-center", "truncate", "max-w-xs", 3, "href"], [1, "ml-2", "text-white"], [3, "value"], ["class", "font-light", 4, "ngIf"], [1, "font-light"], ["mat-table", "", 1, "w-full", "mt-1", "min-h-full", 3, "dataSource"], ["matColumnDef", "articulo"], ["mat-header-cell", "", "class", "rounded-tl-lg text-white w-auto", 3, "class", "background", 4, "matHeaderCellDef"], ["mat-cell", "", "class", "w-auto", 4, "matCellDef"], ["mat-footer-cell", "", "class", "bg-slate-200", 4, "matFooterCellDef"], ["matColumnDef", "unidadmedida"], ["mat-header-cell", "", "class", "text-white w-auto", 3, "class", "background", 4, "matHeaderCellDef"], ["mat-cell", "", "class", "text-center", 4, "matCellDef"], ["matColumnDef", "cantidad"], ["mat-cell", "", 4, "matCellDef"], ["matColumnDef", "importe_unitario", 1, "content-end"], ["mat-footer-cell", "", "class", "text-lg font-bold bg-slate-200", 4, "matFooterCellDef"], ["matColumnDef", "importe_bonificado"], ["matColumnDef", "importe_no_bonificado"], ["matColumnDef", "importe_iva"], ["matColumnDef", "importe_subtotal"], ["matColumnDef", "acciones"], ["mat-header-cell", "", "class", "rounded-tr-lg text-white w-auto", 3, "class", "background", 4, "matHeaderCellDef"], ["mat-header-row", "", 4, "matHeaderRowDef", "matHeaderRowDefSticky"], ["mat-row", "", 4, "matRowDef", "matRowDefColumns"], ["mat-footer-row", "", 4, "matFooterRowDef", "matFooterRowDefSticky"], ["mat-header-cell", "", 1, "rounded-tl-lg", "text-white", "w-auto"], ["mat-cell", "", 1, "w-auto"], ["mat-footer-cell", "", 1, "bg-slate-200"], ["mat-header-cell", "", 1, "text-white", "w-auto"], ["mat-cell", "", 1, "text-center"], ["mat-cell", ""], ["mat-footer-cell", "", 1, "text-lg", "font-bold", "bg-slate-200"], ["mat-header-cell", "", 1, "rounded-tr-lg", "text-white", "w-auto"], ["delete", ""], ["color", "warn"], ["mat-header-row", ""], ["mat-row", ""], ["mat-footer-row", ""], [1, "flex", "justify-center", "items-center", "h-full", "mt-0", "bg-white"], [1, "text-gray-600", "text-lg"], [1, "w-full", "md:flex", "justify-end", "md:pb-6", "md:px-6", "mt-auto"], ["mat-raised-button", "", 1, "w-full", "rounded-none", "md:w-36", "md:rounded-lg", "py-8", "md:py-0", 3, "click"], [1, "text-white", "font-medium", "text-base"]],
   template: function AltaEdicionVentaComponent_Template(rf, ctx) {
     if (rf & 1) {
       _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](0, "div", 0)(1, "div", 1)(2, "button", 2);
@@ -2169,7 +2153,7 @@ AltaEdicionVentaComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_M
       _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementEnd"]()()();
       _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtemplate"](6, AltaEdicionVentaComponent_spinner_component_6_Template, 1, 0, "spinner-component", 5);
       _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtemplate"](7, AltaEdicionVentaComponent_fuse_alert_7_Template, 2, 4, "fuse-alert", 6);
-      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtemplate"](8, AltaEdicionVentaComponent_form_8_Template, 113, 51, "form", 7);
+      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtemplate"](8, AltaEdicionVentaComponent_form_8_Template, 109, 51, "form", 7);
       _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtemplate"](9, AltaEdicionVentaComponent_div_9_Template, 4, 4, "div", 8);
       _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementEnd"]();
     }
@@ -2601,12 +2585,12 @@ function FilterMenuComponent_mat_datepicker_toggle_18_Template(rf, ctx) {
 }
 function FilterMenuComponent_button_21_Template(rf, ctx) {
   if (rf & 1) {
-    const _r8 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵgetCurrentView"]();
+    const _r10 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵgetCurrentView"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "button", 23);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵlistener"]("click", function FilterMenuComponent_button_21_Template_button_click_0_listener() {
-      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵrestoreView"](_r8);
-      const ctx_r7 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵnextContext"]();
-      return _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵresetView"](ctx_r7.limpiarCasillero("fecha"));
+      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵrestoreView"](_r10);
+      const ctx_r9 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵnextContext"]();
+      return _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵresetView"](ctx_r9.limpiarCasillero("fecha"));
     });
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](1, "mat-icon");
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](2, "clear");
@@ -2622,12 +2606,12 @@ function FilterMenuComponent_span_22_Template(rf, ctx) {
 }
 function FilterMenuComponent_mat_form_field_23_button_2_Template(rf, ctx) {
   if (rf & 1) {
-    const _r13 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵgetCurrentView"]();
+    const _r15 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵgetCurrentView"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "button", 30);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵlistener"]("click", function FilterMenuComponent_mat_form_field_23_button_2_Template_button_click_0_listener() {
-      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵrestoreView"](_r13);
-      const ctx_r12 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵnextContext"](2);
-      return _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵresetView"](ctx_r12.limpiarCasillero("cliente"));
+      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵrestoreView"](_r15);
+      const ctx_r14 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵnextContext"](2);
+      return _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵresetView"](ctx_r14.limpiarCasillero("cliente"));
     });
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](1, "mat-icon");
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](2, "clear");
@@ -2641,10 +2625,10 @@ function FilterMenuComponent_mat_form_field_23_mat_option_8_Template(rf, ctx) {
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
   }
   if (rf & 2) {
-    const cliente_r14 = ctx.$implicit;
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("value", cliente_r14);
+    const cliente_r16 = ctx.$implicit;
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("value", cliente_r16);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtextInterpolate1"](" ", cliente_r14.descripcion, " ");
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtextInterpolate1"](" ", cliente_r16.descripcion, " ");
   }
 }
 function FilterMenuComponent_mat_form_field_23_Template(rf, ctx) {
@@ -2661,10 +2645,10 @@ function FilterMenuComponent_mat_form_field_23_Template(rf, ctx) {
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]()();
   }
   if (rf & 2) {
-    const _r10 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵreference"](7);
+    const _r12 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵreference"](7);
     const ctx_r4 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵnextContext"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("matAutocomplete", _r10);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("matAutocomplete", _r12);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](1);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("ngIf", ctx_r4.formFilters.get("cliente").value != -1);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](4);
@@ -2682,12 +2666,12 @@ function FilterMenuComponent_span_24_Template(rf, ctx) {
 }
 function FilterMenuComponent_mat_form_field_25_button_2_Template(rf, ctx) {
   if (rf & 1) {
-    const _r19 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵgetCurrentView"]();
+    const _r21 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵgetCurrentView"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "button", 30);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵlistener"]("click", function FilterMenuComponent_mat_form_field_25_button_2_Template_button_click_0_listener() {
-      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵrestoreView"](_r19);
-      const ctx_r18 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵnextContext"](2);
-      return _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵresetView"](ctx_r18.limpiarCasillero("vendedor"));
+      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵrestoreView"](_r21);
+      const ctx_r20 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵnextContext"](2);
+      return _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵresetView"](ctx_r20.limpiarCasillero("vendedor"));
     });
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](1, "mat-icon");
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](2, "clear");
@@ -2701,10 +2685,10 @@ function FilterMenuComponent_mat_form_field_25_mat_option_8_Template(rf, ctx) {
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
   }
   if (rf & 2) {
-    const vendedor_r20 = ctx.$implicit;
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("value", vendedor_r20);
+    const vendedor_r22 = ctx.$implicit;
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("value", vendedor_r22);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtextInterpolate2"](" ", vendedor_r20.nombre, " ", vendedor_r20.apellido, " ");
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtextInterpolate2"](" ", vendedor_r22.nombre, " ", vendedor_r22.apellido, " ");
   }
 }
 function FilterMenuComponent_mat_form_field_25_Template(rf, ctx) {
@@ -2721,16 +2705,76 @@ function FilterMenuComponent_mat_form_field_25_Template(rf, ctx) {
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]()();
   }
   if (rf & 2) {
-    const _r16 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵreference"](7);
+    const _r18 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵreference"](7);
     const ctx_r6 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵnextContext"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("matAutocomplete", _r16);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("matAutocomplete", _r18);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](1);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("ngIf", ctx_r6.formFilters.get("vendedor").value != -1);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](4);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("displayWith", ctx_r6.getTextGenerico);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](2);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("ngForOf", _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵpipeBind1"](9, 4, ctx_r6.filteredVendedores));
+  }
+}
+function FilterMenuComponent_span_26_Template(rf, ctx) {
+  if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "span", 7);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](1, "Tratamiento");
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+  }
+}
+function FilterMenuComponent_mat_form_field_27_button_2_Template(rf, ctx) {
+  if (rf & 1) {
+    const _r27 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵgetCurrentView"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "button", 30);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵlistener"]("click", function FilterMenuComponent_mat_form_field_27_button_2_Template_button_click_0_listener() {
+      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵrestoreView"](_r27);
+      const ctx_r26 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵnextContext"](2);
+      return _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵresetView"](ctx_r26.limpiarCasillero("tratamiento"));
+    });
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](1, "mat-icon");
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](2, "clear");
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]()();
+  }
+}
+function FilterMenuComponent_mat_form_field_27_mat_option_8_Template(rf, ctx) {
+  if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "mat-option", 31);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+  }
+  if (rf & 2) {
+    const tratamiento_r28 = ctx.$implicit;
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("value", tratamiento_r28);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtextInterpolate1"](" ", tratamiento_r28.descripcion, " ");
+  }
+}
+function FilterMenuComponent_mat_form_field_27_Template(rf, ctx) {
+  if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "mat-form-field", 8);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelement"](1, "input", 34);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](2, FilterMenuComponent_mat_form_field_27_button_2_Template, 3, 0, "button", 25);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](3, "button", 26)(4, "mat-icon");
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](5, "arrow_drop_down");
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]()();
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](6, "mat-autocomplete", 27, 35);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](8, FilterMenuComponent_mat_form_field_27_mat_option_8_Template, 2, 2, "mat-option", 29);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵpipe"](9, "async");
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]()();
+  }
+  if (rf & 2) {
+    const _r24 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵreference"](7);
+    const ctx_r8 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵnextContext"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("matAutocomplete", _r24);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("ngIf", ctx_r8.formFilters.get("tratamiento").value != -1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](4);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("displayWith", ctx_r8.getTextGenerico);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("ngForOf", _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵpipeBind1"](9, 4, ctx_r8.filteredTratamientos));
   }
 }
 class FilterMenuComponent {
@@ -2753,19 +2797,33 @@ class FilterMenuComponent {
     this.formFilters = new _angular_forms__WEBPACK_IMPORTED_MODULE_8__.FormGroup({
       filtroFechaInicio: new _angular_forms__WEBPACK_IMPORTED_MODULE_8__.FormControl(''),
       filtroFechaFin: new _angular_forms__WEBPACK_IMPORTED_MODULE_8__.FormControl(''),
+      tratamiento: new _angular_forms__WEBPACK_IMPORTED_MODULE_8__.FormControl(''),
       cliente: new _angular_forms__WEBPACK_IMPORTED_MODULE_8__.FormControl(''),
       vendedor: new _angular_forms__WEBPACK_IMPORTED_MODULE_8__.FormControl('')
     });
     // Load empresa data
     this._empresaService.getEmpresa();
     this.formFilters.patchValue(this.data.filter);
-    this.getClientes();
-    this.getVendedores();
+    this.loadServices();
+  }
+  ngOnDestroy() {
+    this._unsubscribeAll.next(null);
+    this._unsubscribeAll.complete();
+  }
+  /**
+  * Este metodo ejecuta todas las peticiones asincronas al mismo tiempo
+  */
+  loadServices() {
+    var _this = this;
+    return (0,C_work_jeds_jedstion_source_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
+      yield Promise.all([_this.getClientes(), _this.getVendedores(), _this.getTratamiento()]).then(() => {});
+    })();
   }
   resetFilters() {
     this.formFilters.reset({
       filtroFechaInicio: '',
       filtroFechaFin: '',
+      tratamiento: -1,
       cliente: -1,
       vendedor: -1
     });
@@ -2778,13 +2836,13 @@ class FilterMenuComponent {
     this.menuService.close(data);
   }
   getClientes(option) {
-    var _this = this;
+    var _this2 = this;
     return (0,C_work_jeds_jedstion_source_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
-      const Clientes = yield (0,rxjs__WEBPACK_IMPORTED_MODULE_9__.firstValueFrom)(_this._ventaGenericaService.getClientes(option));
+      const Clientes = yield (0,rxjs__WEBPACK_IMPORTED_MODULE_9__.firstValueFrom)(_this2._ventaGenericaService.getClientes(option));
       new Promise( /*#__PURE__*/function () {
         var _ref = (0,C_work_jeds_jedstion_source_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* (resolve) {
-          _this.clientes = Clientes.list;
-          _this.filteredClientes = _this.formFilters.get('cliente').valueChanges.pipe((0,rxjs__WEBPACK_IMPORTED_MODULE_10__.startWith)(''), (0,rxjs__WEBPACK_IMPORTED_MODULE_11__.map)(value => _this._filterSelect(value, 'clientes')));
+          _this2.clientes = Clientes.list;
+          _this2.filteredClientes = _this2.formFilters.get('cliente').valueChanges.pipe((0,rxjs__WEBPACK_IMPORTED_MODULE_10__.startWith)(''), (0,rxjs__WEBPACK_IMPORTED_MODULE_11__.map)(value => _this2._filterSelect(value, 'clientes')));
           resolve(true);
         });
         return function (_x) {
@@ -2794,17 +2852,33 @@ class FilterMenuComponent {
     })();
   }
   getVendedores(option) {
-    var _this2 = this;
+    var _this3 = this;
     return (0,C_work_jeds_jedstion_source_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
-      const Vendedores = yield (0,rxjs__WEBPACK_IMPORTED_MODULE_9__.firstValueFrom)(_this2._ventaGenericaService.getVendedores(option));
+      const Vendedores = yield (0,rxjs__WEBPACK_IMPORTED_MODULE_9__.firstValueFrom)(_this3._ventaGenericaService.getVendedores(option));
       new Promise( /*#__PURE__*/function () {
         var _ref2 = (0,C_work_jeds_jedstion_source_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* (resolve) {
-          _this2.vendedores = Vendedores['list'];
-          _this2.filteredVendedores = _this2.formFilters.get('vendedor').valueChanges.pipe((0,rxjs__WEBPACK_IMPORTED_MODULE_10__.startWith)(''), (0,rxjs__WEBPACK_IMPORTED_MODULE_11__.map)(value => _this2._filterVendodres(value)));
+          _this3.vendedores = Vendedores['list'];
+          _this3.filteredVendedores = _this3.formFilters.get('vendedor').valueChanges.pipe((0,rxjs__WEBPACK_IMPORTED_MODULE_10__.startWith)(''), (0,rxjs__WEBPACK_IMPORTED_MODULE_11__.map)(value => _this3._filterVendodres(value)));
           resolve(true);
         });
         return function (_x2) {
           return _ref2.apply(this, arguments);
+        };
+      }());
+    })();
+  }
+  getTratamiento() {
+    var _this4 = this;
+    return (0,C_work_jeds_jedstion_source_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
+      const Tratamientos = yield (0,rxjs__WEBPACK_IMPORTED_MODULE_9__.firstValueFrom)(_this4._ventaGenericaService.getTratamientos());
+      new Promise( /*#__PURE__*/function () {
+        var _ref3 = (0,C_work_jeds_jedstion_source_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* (resolve) {
+          _this4.tratamientos = Tratamientos['list'];
+          _this4.filteredTratamientos = _this4.formFilters.get('tratamiento').valueChanges.pipe((0,rxjs__WEBPACK_IMPORTED_MODULE_10__.startWith)(''), (0,rxjs__WEBPACK_IMPORTED_MODULE_11__.map)(value => _this4._filterSelect(value, 'tratamientos')));
+          resolve(true);
+        });
+        return function (_x3) {
+          return _ref3.apply(this, arguments);
         };
       }());
     })();
@@ -2847,9 +2921,9 @@ FilterMenuComponent.ɵfac = function FilterMenuComponent_Factory(t) {
 FilterMenuComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdefineComponent"]({
   type: FilterMenuComponent,
   selectors: [["app-filter-menu-ventas"]],
-  decls: 33,
-  vars: 23,
-  consts: [[1, "fixed", "filtroJeds", "inset-0", "sm:static", "max-h-screen", "sm:inset-auto", "flex", "flex-col", "sm:min-w-90", "sm:w-90", "sm:rounded-2xl", "overflow-y-auto", "overflow-hidden", "shadow-lg", "bg-white", "dark:bg-slate-900"], [1, "w-full", "px-4", "py-4", "flex", "justify-between", "items-center"], [1, "text-white", "font-bold", "text-lg"], ["mat-icon-button", "", 1, "md:hidden", 3, "click"], [1, "text-white"], ["mat-icon-button", "", 3, "click"], [1, "flex", "flex-col", "w-full", "h-full", "p-4", "form-menu", 3, "formGroup"], [1, "font-semibold", "text-gray-600", "text-base"], [1, "fuse-mat-dense", "fuse-mat-no-subscript", "fuse-mat-rounded-lg", "min-w-64", "mt-2"], [3, "rangePicker"], ["matStartDate", "", "placeholder", "Desde", "formControlName", "filtroFechaInicio"], ["matEndDate", "", "placeholder", "Hasta", "formControlName", "filtroFechaFin"], ["matIconSuffix", "", 3, "for", 4, "ngIf"], ["picker", ""], ["matSuffix", "", "mat-icon-button", "", 3, "click", 4, "ngIf"], ["class", "font-semibold text-gray-600 text-base", 4, "ngIf"], ["class", "fuse-mat-dense fuse-mat-no-subscript fuse-mat-rounded-lg min-w-64 mt-2", 4, "ngIf"], [1, "w-full", "md:flex", "md:justify-between", "md:pb-4", "md:px-4"], ["mat-flat-button", "", 1, "w-full", "!border", "border-solid", "rounded-none", "md:w-26", "md:rounded-lg", "hidden", "md:block", 3, "click"], [1, "font-medium", "text-base"], ["mat-raised-button", "", 1, "w-full", "rounded-none", "md:w-26", "md:rounded-lg", "py-8", "md:py-0", 3, "click"], [1, "text-white", "font-bold"], ["matIconSuffix", "", 3, "for"], ["matSuffix", "", "mat-icon-button", "", 3, "click"], ["type", "text", "placeholder", "Seleccione Cliente", "matInput", "", "formControlName", "cliente", 3, "matAutocomplete"], ["matSuffix", "", "mat-icon-button", "", "class", "mr-2", 3, "click", 4, "ngIf"], ["mat-icon-button", "", "matSuffix", ""], ["autoActiveFirstOption", "", 3, "displayWith"], ["auto_cliente", "matAutocomplete"], [3, "value", 4, "ngFor", "ngForOf"], ["matSuffix", "", "mat-icon-button", "", 1, "mr-2", 3, "click"], [3, "value"], ["type", "text", "placeholder", "Seleccione Vendedor", "matInput", "", "formControlName", "vendedor", 3, "matAutocomplete"], ["auto_vendedor", "matAutocomplete"]],
+  decls: 35,
+  vars: 25,
+  consts: [[1, "fixed", "filtroJeds", "inset-0", "sm:static", "max-h-screen", "sm:inset-auto", "flex", "flex-col", "sm:min-w-90", "sm:w-90", "sm:rounded-2xl", "overflow-y-auto", "overflow-hidden", "shadow-lg", "bg-white", "dark:bg-slate-900"], [1, "w-full", "px-4", "py-4", "flex", "justify-between", "items-center"], [1, "text-white", "font-bold", "text-lg"], ["mat-icon-button", "", 1, "md:hidden", 3, "click"], [1, "text-white"], ["mat-icon-button", "", 3, "click"], [1, "flex", "flex-col", "w-full", "h-full", "p-4", "form-menu", 3, "formGroup"], [1, "font-semibold", "text-gray-600", "text-base"], [1, "fuse-mat-dense", "fuse-mat-no-subscript", "fuse-mat-rounded-lg", "min-w-64", "mt-2"], [3, "rangePicker"], ["matStartDate", "", "placeholder", "Desde", "formControlName", "filtroFechaInicio"], ["matEndDate", "", "placeholder", "Hasta", "formControlName", "filtroFechaFin"], ["matIconSuffix", "", 3, "for", 4, "ngIf"], ["picker", ""], ["matSuffix", "", "mat-icon-button", "", 3, "click", 4, "ngIf"], ["class", "font-semibold text-gray-600 text-base", 4, "ngIf"], ["class", "fuse-mat-dense fuse-mat-no-subscript fuse-mat-rounded-lg min-w-64 mt-2", 4, "ngIf"], [1, "w-full", "md:flex", "md:justify-between", "md:pb-4", "md:px-4"], ["mat-flat-button", "", 1, "w-full", "!border", "border-solid", "rounded-none", "md:w-26", "md:rounded-lg", "hidden", "md:block", 3, "click"], [1, "font-medium", "text-base"], ["mat-raised-button", "", 1, "w-full", "rounded-none", "md:w-26", "md:rounded-lg", "py-8", "md:py-0", 3, "click"], [1, "text-white", "font-bold"], ["matIconSuffix", "", 3, "for"], ["matSuffix", "", "mat-icon-button", "", 3, "click"], ["type", "text", "placeholder", "Seleccione Cliente", "matInput", "", "formControlName", "cliente", 3, "matAutocomplete"], ["matSuffix", "", "mat-icon-button", "", "class", "mr-2", 3, "click", 4, "ngIf"], ["mat-icon-button", "", "matSuffix", ""], ["autoActiveFirstOption", "", 3, "displayWith"], ["auto_cliente", "matAutocomplete"], [3, "value", 4, "ngFor", "ngForOf"], ["matSuffix", "", "mat-icon-button", "", 1, "mr-2", 3, "click"], [3, "value"], ["type", "text", "placeholder", "Seleccione Vendedor", "matInput", "", "formControlName", "vendedor", 3, "matAutocomplete"], ["auto_vendedor", "matAutocomplete"], ["type", "text", "placeholder", "Seleccione Tratamiento", "matInput", "", "formControlName", "tratamiento", 3, "matAutocomplete"], ["auto_tratamiento", "matAutocomplete"]],
   template: function FilterMenuComponent_Template(rf, ctx) {
     if (rf & 1) {
       _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "div", 0)(1, "div", 1)(2, "span", 2);
@@ -2883,20 +2957,22 @@ FilterMenuComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_
       _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](23, FilterMenuComponent_mat_form_field_23_Template, 10, 6, "mat-form-field", 16);
       _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](24, FilterMenuComponent_span_24_Template, 2, 0, "span", 15);
       _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](25, FilterMenuComponent_mat_form_field_25_Template, 10, 6, "mat-form-field", 16);
+      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](26, FilterMenuComponent_span_26_Template, 2, 0, "span", 15);
+      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](27, FilterMenuComponent_mat_form_field_27_Template, 10, 6, "mat-form-field", 16);
       _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](26, "div", 17)(27, "button", 18);
-      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵlistener"]("click", function FilterMenuComponent_Template_button_click_27_listener() {
+      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](28, "div", 17)(29, "button", 18);
+      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵlistener"]("click", function FilterMenuComponent_Template_button_click_29_listener() {
         return ctx.resetFilters();
       });
-      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](28, "span", 19);
-      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](29, "Limpiar");
+      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](30, "span", 19);
+      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](31, "Limpiar");
       _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]()();
-      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](30, "button", 20);
-      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵlistener"]("click", function FilterMenuComponent_Template_button_click_30_listener() {
+      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](32, "button", 20);
+      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵlistener"]("click", function FilterMenuComponent_Template_button_click_32_listener() {
         return ctx.onCloseMenu(ctx.formFilters.getRawValue());
       });
-      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](31, "span", 21);
-      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](32, "Filtrar");
+      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](33, "span", 21);
+      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](34, "Filtrar");
       _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]()()()();
     }
     if (rf & 2) {
@@ -2921,6 +2997,10 @@ FilterMenuComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_
       _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("ngIf", ctx.formFilters.get("vendedor"));
       _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](1);
       _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("ngIf", ctx.formFilters.get("vendedor"));
+      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](1);
+      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("ngIf", ctx.formFilters.get("tratamiento"));
+      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](1);
+      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("ngIf", ctx.formFilters.get("tratamiento"));
       _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](2);
       _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵclassMap"](ctx.color_primario ? "" : ctx.default_color);
       _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵstyleProp"]("color", ctx.color_primario || "")("border", ctx.color_primario || "");
@@ -3007,8 +3087,8 @@ class VentaGenericasComponent {
     this.default_color = 'border-primary text-primary';
     this._unsubscribeAll = new rxjs__WEBPACK_IMPORTED_MODULE_12__.Subject();
     // Particulares del modulo
-    this.headers = ['', 'Origen', 'Numero', 'Fecha', 'Cliente', 'Vendedor', 'Total', 'Acciones'];
-    this.column_params = ['seleccion', 'origen', 'numero_venta', 'fecha', 'cliente', 'vendedor', 'importe_total', 'acciones'];
+    this.headers = ['', 'Origen', 'Numero', 'Fecha', 'Cliente', 'Vendedor', 'Tratamiento', 'Total', 'Acciones'];
+    this.column_params = ['seleccion', 'origen', 'numero_venta', 'fecha', 'cliente', 'vendedor', 'tratamiento', 'importe_total', 'acciones'];
     this.selectedItems = [];
     this.dataSource = new _angular_material_table__WEBPACK_IMPORTED_MODULE_13__.MatTableDataSource();
     this.funcionesObjeto = null;
@@ -3017,6 +3097,7 @@ class VentaGenericasComponent {
     this.filter = {
       vendedor: -1,
       cliente: -1,
+      tratamiento: -1,
       filtroFechaInicio: '',
       filtroFechaFin: ''
     };
@@ -3048,9 +3129,9 @@ class VentaGenericasComponent {
     }, {
       nombre_boton: "Detalle Bonificado",
       functionName: 'ventas_bonificadas_detalle',
-      iconoAccion: venta => venta.tipo_venta === 1 ? 'jedstion:informacion' : '',
+      iconoAccion: venta => venta.puede_modificar === true && venta.tipo_venta === 1 ? 'jedstion:informacion' : '',
       iconoAccionado: venta => '',
-      iconoDeshabilitado: venta => venta.tipo_venta === 0 ? 'jedstion:informacion_disabled' : ''
+      iconoDeshabilitado: venta => venta.puede_modificar === false || venta.tipo_venta === 0 ? 'jedstion:informacion_disabled' : ''
     }];
     // Subscribe to empresa data
     this._empresaService.empresa$.pipe((0,rxjs__WEBPACK_IMPORTED_MODULE_15__.takeUntil)(this._unsubscribeAll)).subscribe(empresa => {
@@ -3131,6 +3212,7 @@ class VentaGenericasComponent {
           this.filter = filter;
           this.extraParams = this.filter.vendedor != -1 ? "filter[idusuario]=" + this.filter.vendedor['codigo'] + '&' : '';
           this.extraParams += this.filter.cliente != -1 ? "filter[idcliente]=" + this.filter.cliente['id'] + '&' : '';
+          this.extraParams += this.filter.tratamiento != -1 ? "filter[idtratamiento]=" + this.filter.tratamiento['idtratamiento'] + '&' : '';
           this.extraParams += this.filter.filtroFechaInicio != null ? "filter[fecha][gte]=" + this.filter.filtroFechaInicio + '&' : '';
           this.extraParams += this.filter.filtroFechaFin != null ? "filter[fecha][lte]=" + this.filter.filtroFechaFin + '&' : '';
           this.tabla.filters(this.filtroBusqueda);
@@ -3170,8 +3252,10 @@ class VentaGenericasComponent {
         this.reporteOrdenServicio(event);
         break;
       case 'ventas_bonificadas_detalle':
-        if (event.params.data.puede_eliminar === false) {
+        if (event.params.data.tipo_venta === 0) {
           return this.alert.warning('No se puede ver las ventas bonificadas del sistema anterior.');
+        } else if (event.params.data.puede_eliminar === false) {
+          return this.alert.warning('No tiene permiso para ver el detalle bonificado de una venta.');
         } else {
           this.listadoVentasBonificadas(event);
         }
@@ -3398,7 +3482,7 @@ class VentaGenericasService {
     return subject.asObservable();
   }
   getArticulos(idarticulo, filterLike) {
-    let f = `?filter[activo]=1&pagination=1&per-page=10&page=1`;
+    let f = `?filter[activo]=1&pagination=1&per-page=10&page=1&filter[tipo]=2`;
     if (idarticulo) {
       f += `&filter[idarticulo]=${idarticulo}`;
     } else if (filterLike) {
@@ -3433,9 +3517,9 @@ class VentaGenericasService {
     });
     return subject.asObservable();
   }
-  getTratamiendos() {
+  getTratamientos() {
     let subject = new rxjs__WEBPACK_IMPORTED_MODULE_2__.Subject();
-    this.http.get(`${environments_environment__WEBPACK_IMPORTED_MODULE_0__.environment.administracion.select_tratamientos}`).pipe((0,rxjs__WEBPACK_IMPORTED_MODULE_3__.map)(resp => resp)).subscribe(resp => {
+    this.http.get(`${environments_environment__WEBPACK_IMPORTED_MODULE_0__.environment.administracion.tratamiento_token}`).pipe((0,rxjs__WEBPACK_IMPORTED_MODULE_3__.map)(resp => resp)).subscribe(resp => {
       this._authService.accessToken = resp.token, subject.next({
         list: resp.result
       });
