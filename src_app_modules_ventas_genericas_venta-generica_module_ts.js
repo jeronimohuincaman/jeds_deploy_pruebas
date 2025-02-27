@@ -3153,6 +3153,7 @@ class VentaGenericasComponent {
     });
   }
   saveVenta() {
+    return this.alert.info('Esta función estrá disponible proximamente.');
     this.router.navigate(['/ventas/alta']);
   }
   updateVenta(event) {
