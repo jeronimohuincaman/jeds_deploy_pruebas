@@ -1336,7 +1336,7 @@ function SaveComponent_mat_form_field_46_Template(rf, ctx) {
     const _r34 = _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵreference"](5);
     const ctx_r8 = _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵnextContext"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵadvance"](3);
-    _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵproperty"]("matAutocomplete", _r34)("ngClass", _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵpureFunction1"](8, _c0, (ctx_r8.form.get("venta").value == null ? null : ctx_r8.form.get("venta").value.idventagenerica) === null));
+    _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵproperty"]("matAutocomplete", _r34)("ngClass", _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵpureFunction1"](8, _c0, (ctx_r8.form.get("venta").value == null ? null : ctx_r8.form.get("venta").value.idventagenerica) === null && (ctx_r8.form.get("venta").value == null ? null : ctx_r8.form.get("venta").value.idventa) === null));
     _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵadvance"](1);
     _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵproperty"]("displayWith", ctx_r8.getTextGenerico);
     _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵadvance"](2);

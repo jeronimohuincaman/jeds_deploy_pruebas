@@ -901,6 +901,7 @@ class TablaDinamicaComponent {
     this.mostrarSpinner = true;
     this.messageSpinner = 'Cargando...';
     this.mostrar_mensaje = false;
+    this.puedeCrearEmitter = new _angular_core__WEBPACK_IMPORTED_MODULE_7__.EventEmitter();
     if (data) {
       // * caso en el que los parametros para renderizar no vengan desde una llamada al componente con su etiqueta, sino desde un dialog.
       this.endpoint = data.endpoint;
@@ -959,6 +960,7 @@ class TablaDinamicaComponent {
       this.color_primario = empresa.color_primario;
       this.color_secundario = empresa.color_secundario;
       this.articulo_producto = empresa.articulo_producto;
+      this.configura_obra = empresa.configura_obra === 1 ? true : false;
     });
     // Load empresa data
     this._empresaService.getEmpresa();
@@ -1023,7 +1025,7 @@ class TablaDinamicaComponent {
           this.mostrarSpinner = false;
           this.checkAndInitializeSort();
         }, 2000);
-        const existingData = Array.isArray(r.data.result) ? r.data.result : Array.isArray(r.data /* .result.items */) ? r.data /* .result.items */ : [];
+        const existingData = Array.isArray(r.data.result) ? r.data.result : Array.isArray(r.data) ? r.data : [];
         existingData.length === 0 ? this.mostrar_mensaje = true : this.mostrar_mensaje = false;
         /**
          * Grilla con valores booleanos
@@ -1155,6 +1157,22 @@ class TablaDinamicaComponent {
         }
         if (this.endpoint.toString().includes('view_stock_articulo_deposito')) {
           r.data.result = this.quitarRepetidos(r.data.result);
+        }
+        if (this.endpoint.toString().includes('view_vta_venta_select')) {
+          if (this.configura_obra === false) {
+            this.columnsNames = this.columnsNames.filter(column => column !== 'Tratamiento');
+            this.columnsParams = this.columnsParams.filter(column => column !== 'tratamiento');
+            r.data.result = r.data.result.map(({
+              idtratamiento,
+              tratamiento,
+              ...rest
+            }) => ({
+              ...rest
+            }));
+          }
+          if (r.data.puede_crear !== undefined) {
+            this.puedeCrearEmitter.emit(r.data.puede_crear);
+          }
         }
         this.filterDataSource = r.data.result ? r.data.result : r.data;
         this.dataSource = new _angular_material_table__WEBPACK_IMPORTED_MODULE_8__.MatTableDataSource(r.data.result ? r.data.result : r.data);
@@ -1523,7 +1541,8 @@ TablaDinamicaComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODU
   },
   outputs: {
     selectionChange: "selectionChange",
-    functionEmitter: "functionEmitter"
+    functionEmitter: "functionEmitter",
+    puedeCrearEmitter: "puedeCrearEmitter"
   },
   decls: 5,
   vars: 5,
