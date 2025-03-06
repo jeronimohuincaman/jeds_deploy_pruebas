@@ -7863,6 +7863,10 @@ const appRoutes = [
     canActivate: [_core_auth_guards_permiso_guard__WEBPACK_IMPORTED_MODULE_4__.PermisoGuard],
     loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-node_modules_angular_material_fesm2022_checkbox_mjs"), __webpack_require__.e("default-src_app_shared_components_tabla-dinamica_tabla-dinamica_module_ts"), __webpack_require__.e("default-node_modules_angular_material_fesm2022_datepicker_mjs"), __webpack_require__.e("src_app_modules_administracion_medios-de-cobro_medios-de-cobro_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./modules/administracion/medios-de-cobro/medios-de-cobro.module */ 71993)).then(m => m.MediosDeCobroModule)
   }, {
+    path: 'estados',
+    canActivate: [_core_auth_guards_permiso_guard__WEBPACK_IMPORTED_MODULE_4__.PermisoGuard],
+    loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-node_modules_angular_material_fesm2022_checkbox_mjs"), __webpack_require__.e("default-src_app_shared_components_tabla-dinamica_tabla-dinamica_module_ts"), __webpack_require__.e("src_app_modules_administracion_estados-ventas_estados-ventas_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./modules/administracion/estados-ventas/estados-ventas.module */ 58993)).then(m => m.EstadosVentasModule)
+  }, {
     path: 'unidades-de-medida',
     canActivate: [_core_auth_guards_permiso_guard__WEBPACK_IMPORTED_MODULE_4__.PermisoGuard],
     loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-node_modules_angular_material_fesm2022_checkbox_mjs"), __webpack_require__.e("default-src_app_shared_components_tabla-dinamica_tabla-dinamica_module_ts"), __webpack_require__.e("src_app_modules_stock_unidades-de-medida_unidades-de-medida_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./modules/stock/unidades-de-medida/unidades-de-medida.module */ 35220)).then(m => m.UnidadesDeMedidaModule)
@@ -16866,6 +16870,10 @@ const TitleType = [{
   path: "/medios-de-cobro"
 }, {
   icon: "",
+  text: "Estados de Ventas",
+  path: "/estados"
+}, {
+  icon: "",
   text: "Medios de pago",
   path: "/medios-de-pago"
 }, {
@@ -17964,7 +17972,8 @@ const environment = {
     egr_tipo_pagos: `${$BASE_REST}/egr_tipo_pagos`,
     condicion_iva: `${$BASE_REST}/select?modelo=condicioniva&campo_id=codigo&campo_descripcion=descripcion&campo_activo=activo`,
     vta_cobro_tipos: `${$BASE_REST}/vta_cobro_tipos`,
-    view_vta_cobro_tipos: `${$BASE_REST}/view_vta_cobro_tipos`
+    view_vta_cobro_tipos: `${$BASE_REST}/view_vta_cobro_tipos`,
+    estados_ventas: `${$BASE_REST}/com_estados`
   },
   fondos: {
     fondos: `${$BASE_REST}/fondos_fondos`,
