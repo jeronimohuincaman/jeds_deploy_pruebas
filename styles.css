@@ -40163,6 +40163,9 @@ body.light mat-option:nth-child(odd):hover {
 .pb-6 {
     padding-bottom: 1.5rem !important;
 }
+.pb-8 {
+    padding-bottom: 2rem !important;
+}
 .pl-1 {
     padding-left: 0.25rem !important;
 }
@@ -40689,6 +40692,18 @@ body.light mat-option:nth-child(odd):hover {
     width: 1.75rem !important;
     height: 1.75rem !important;
 }
+.icon-size-8 {
+    width: 2rem !important;
+    height: 2rem !important;
+    min-width: 2rem !important;
+    min-height: 2rem !important;
+    font-size: 2rem !important;
+    line-height: 2rem !important;
+}
+.icon-size-8 svg {
+    width: 2rem !important;
+    height: 2rem !important;
+}
 .icon-size-\[32px\] {
     width: 32px !important;
     height: 32px !important;
@@ -41105,6 +41120,9 @@ body.light mat-option:nth-child(odd):hover {
     }
     .sm\:w-\[800px\] {
         width: 800px !important;
+    }
+    .sm\:w-\[900px\] {
+        width: 900px !important;
     }
     .sm\:w-auto {
         width: auto !important;

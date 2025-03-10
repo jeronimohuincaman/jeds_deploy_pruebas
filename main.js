@@ -18035,7 +18035,9 @@ const environment = {
     cargar_item_cobro: `${$BASE_REST}/vta_cobro/cargar_item_cobro`,
     cargar_forma_cobro: `${$BASE_REST}/vta_cobro/cargar_forma_cobro`,
     vta_cobros: `${$BASE_REST}/vta_cobros`,
-    get_datos: `${$BASE_REST}/vta_cobro/get_datos`
+    get_datos: `${$BASE_REST}/vta_cobro/get_datos`,
+    view_vta_venta_estados: `${$BASE_REST}/view_vta_venta_estados`,
+    vta_venta_estados: `${$BASE_REST}/vta_venta_estados`
   },
   compras: {
     compras_cotizacion: `${$BASE_REST}/compras_cotizacion`,
