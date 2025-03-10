@@ -92,7 +92,7 @@ function SaveComponent_form_14_div_1_mat_option_28_Template(rf, ctx) {
   if (rf & 2) {
     const localidad_r9 = ctx.$implicit;
     const ctx_r6 = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵnextContext"](3);
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("value", localidad_r9.id)("disabled", ctx_r6.modoVisualizacion);
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("value", localidad_r9.idlocalidad)("disabled", ctx_r6.modoVisualizacion);
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](1);
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtextInterpolate1"](" ", localidad_r9.descripcion, " ");
   }
@@ -250,7 +250,7 @@ function SaveComponent_form_14_div_2_mat_option_28_Template(rf, ctx) {
   if (rf & 2) {
     const localidad_r17 = ctx.$implicit;
     const ctx_r13 = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵnextContext"](3);
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("value", localidad_r17.id)("disabled", ctx_r13.modoVisualizacion);
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("value", localidad_r17.idlocalidad)("disabled", ctx_r13.modoVisualizacion);
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](1);
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtextInterpolate1"](" ", localidad_r17.descripcion, " ");
   }

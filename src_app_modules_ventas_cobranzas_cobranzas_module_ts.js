@@ -1428,7 +1428,6 @@ class AltaEdicionCobroComponent {
         this.alert.warning("No puede agregar una Venta/Pagaré más de una vez");
       } else {
         let operacion = this.formAsignacion.get('venta').value;
-        console.log(operacion);
         if (operacion.esEdicion) {
           let item_cobro = {
             id: operacion.id,

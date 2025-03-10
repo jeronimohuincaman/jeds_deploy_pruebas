@@ -41088,6 +41088,9 @@ body.light mat-option:nth-child(odd):hover {
     .sm\:w-4\/12 {
         width: 33.333333% !important;
     }
+    .sm\:w-4\/6 {
+        width: 66.666667% !important;
+    }
     .sm\:w-40 {
         width: 10rem !important;
     }
