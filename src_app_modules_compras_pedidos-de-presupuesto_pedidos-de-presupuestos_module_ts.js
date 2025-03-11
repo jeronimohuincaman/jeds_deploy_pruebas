@@ -2015,9 +2015,9 @@ class NuevaCotizacionComponent {
           oc: item.oc.value === true ? 1 : 0
         };
       });
-      const existe_item_cotizado_con_valor_cero = items_cotizacion.find(i => i.cotiza === 1 && i.unitario <= 0);
+      const existe_item_cotizado_con_valor_cero = items_cotizacion.find(i => i.cotiza === 1 && i.unitario < 0);
       if (existe_item_cotizado_con_valor_cero) {
-        return this.alert.error('Error al cargar cotizacion. No se puede cotizar un item con valor menor o igual a cero.');
+        return this.alert.error('Error al cargar cotizacion. No se puede cotizar un item con valor menor a cero.');
       }
       ;
       const existe_cantidad_item_mayor_a_la_solicitada = this.items_formulario.find(item => item.cantidad_recibida['value'] > item.cantidad);

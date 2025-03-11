@@ -17941,10 +17941,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "environment": () => (/* binding */ environment)
 /* harmony export */ });
-const $BASE_API = "https://divannibackendyii.jeds.ar";
+const $BASE_API = "https://apijedstion.desajeds.com.ar";
 const $BASE_REST = "https://divannibackendyii.jeds.ar/web"; // Desarrollo
-// const $BASE_REST = "https://apijedstion.jeds.com.ar/web"; // Produccion
-// const $BASE_REST = "http://localhost/jeds/divanni_backend_yii/web"; // Local
+// const $BASE_REST = "https://https://apijedstion.projeds.com"; // Produccion
+// const $BASE_REST = "http://localhost/jedstion_backend/web"; // Local
 const environment = {
   production: false,
   baseRest: $BASE_REST,
