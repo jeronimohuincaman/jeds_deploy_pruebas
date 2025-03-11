@@ -17945,6 +17945,7 @@ const $BASE_API = "https://apijedstion.desajeds.com.ar";
 const $BASE_REST = "https://divannibackendyii.jeds.ar/web"; // Desarrollo
 // const $BASE_REST = "https://https://apijedstion.projeds.com"; // Produccion
 // const $BASE_REST = "http://localhost/jedstion_backend/web"; // Local
+// dale gato
 const environment = {
   production: false,
   baseRest: $BASE_REST,
