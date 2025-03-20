@@ -39530,6 +39530,9 @@ body.light mat-option:nth-child(odd):hover {
 .shrink-0 {
     flex-shrink: 0 !important;
 }
+.flex-grow {
+    flex-grow: 1 !important;
+}
 .table-fixed {
     table-layout: fixed !important;
 }
@@ -40749,6 +40752,10 @@ body.light mat-option:nth-child(odd):hover {
 .hover\:bg-white:hover {
     --tw-bg-opacity: 1 !important;
     background-color: rgb(255 255 255 / var(--tw-bg-opacity)) !important;
+}
+.hover\:text-gray-700:hover {
+    --tw-text-opacity: 1 !important;
+    color: rgb(51 65 85 / var(--tw-text-opacity)) !important;
 }
 .hover\:underline:hover {
     text-decoration-line: underline !important;
