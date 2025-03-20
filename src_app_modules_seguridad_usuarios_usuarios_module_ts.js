@@ -85,7 +85,8 @@ class UsuariosComponent {
       functionName: 'credencial',
       iconoAccion: usuario => 'jedstion:credencial_usuario',
       iconoAccionado: usuario => '',
-      iconoDeshabilitado: usuario => ''
+      iconoDeshabilitado: usuario => '',
+      visible: usuario => true
     }];
   }
   ngOnInit() {

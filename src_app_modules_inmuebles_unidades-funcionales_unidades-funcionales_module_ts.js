@@ -89,7 +89,8 @@ class UnidadesFuncionalesComponent {
       functionName: 'orden_servicio',
       iconoAccion: unidad_funcional => 'jedstion:imprimir',
       iconoAccionado: unidad_funcional => '',
-      iconoDeshabilitado: unidad_funcional => ''
+      iconoDeshabilitado: unidad_funcional => '',
+      visible: unidad_funcional => true
     }];
   }
   ngOnInit() {

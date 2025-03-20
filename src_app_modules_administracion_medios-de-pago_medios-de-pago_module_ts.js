@@ -237,13 +237,15 @@ class MediosDePagoComponent {
       functionName: 'editar',
       iconoAccion: medio_pago => 'jedstion:editar',
       iconoAccionado: medio_pago => '',
-      iconoDeshabilitado: medio_pago => ''
+      iconoDeshabilitado: medio_pago => '',
+      visible: medio_pago => true
     }, {
       nombre_boton: "Eliminar",
       functionName: 'eliminar',
       iconoAccion: medio_pago => 'jedstion:eliminar',
       iconoAccionado: medio_pago => '',
-      iconoDeshabilitado: medio_pago => ''
+      iconoDeshabilitado: medio_pago => '',
+      visible: medio_pago => true
     }];
   }
   ngOnInit() {

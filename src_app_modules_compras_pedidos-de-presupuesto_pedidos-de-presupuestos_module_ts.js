@@ -2418,6 +2418,7 @@ class PedidoDePresupuestoComponent {
     this.dataSource = new _angular_material_table__WEBPACK_IMPORTED_MODULE_15__.MatTableDataSource();
     this.headers = ['Numero', 'Fecha', 'Contestado', 'Proveedores', 'Acciones'];
     this.column_params = ['idpedido', 'fecha', 'cotizado', 'proveedores_descripcion', 'acciones'];
+    this.accionesObjeto = null;
     this.funcionesObjeto = null;
     this.filtroBusqueda = '';
     this.filtersLike = ['proveedores_descripcion'];
@@ -2437,47 +2438,61 @@ class PedidoDePresupuestoComponent {
      * Aca se declaran los botones que iran en la grilla sobre el apartado de acciones.
      */
     this.funcionesObjeto = [{
-      icono: 'view',
+      iconoAccion: pedido => '',
+      iconoAccionado: pedido => '',
+      iconoDeshabilitado: pedido => '',
+      visible: pedido => false
+    }];
+    this.showMenu = pedido => true;
+    /**
+     * Aca se declaran los botones que van a ir en la botonera de la grilla dependiendo si showMenu es true o false
+     */
+    this.accionesObjeto = [{
       nombre_boton: "Ver pedido",
       functionName: 'ver',
       iconoAccion: pedido => 'jedstion:ver',
       iconoAccionado: pedido => '',
-      iconoDeshabilitado: pedido => ''
+      iconoDeshabilitado: pedido => '',
+      visible: pedido => true
     }, {
-      icono: 'edit',
       nombre_boton: "Editar",
       functionName: 'editar',
       iconoAccion: pedido => pedido.cotizado === 0 ? 'jedstion:editar' : 'jedstion:editar_disabled',
       iconoAccionado: pedido => '',
-      iconoDeshabilitado: pedido => ''
+      iconoDeshabilitado: pedido => '',
+      visible: pedido => true
     }, {
       icono: 'delete',
       nombre_boton: "Eliminar",
       functionName: 'eliminar',
       iconoAccion: pedido => 'jedstion:eliminar',
       iconoAccionado: pedido => '',
-      iconoDeshabilitado: pedido => ''
+      iconoDeshabilitado: pedido => '',
+      visible: pedido => true
     }, {
       icono: 'comment',
       nombre_boton: "Cotizaciones",
       functionName: 'cotizaciones',
       iconoAccion: pedido => 'jedstion:cotizar',
       iconoAccionado: pedido => '',
-      iconoDeshabilitado: pedido => '' /* 'jedstion:cotizar_disabled' */
+      iconoDeshabilitado: pedido => '' /* 'jedstion:cotizar_disabled' */,
+      visible: pedido => true
     }, {
       icono: 'impresora',
       nombre_boton: "Reporte de Pedido",
       functionName: 'reporte_pedido',
       iconoAccion: pedido => 'jedstion:imprimir',
       iconoAccionado: pedido => '',
-      iconoDeshabilitado: pedido => ''
+      iconoDeshabilitado: pedido => '',
+      visible: pedido => true
     }, {
       icono: 'send',
       nombre_boton: "Enviar Pedido",
       functionName: 'enviar_pedido',
       iconoAccion: pedido => 'jedstion:enviar',
       iconoAccionado: pedido => '',
-      iconoDeshabilitado: pedido => ''
+      iconoDeshabilitado: pedido => '',
+      visible: pedido => true
     }];
     // Subscribe to empresa data
     this._empresaService.empresa$.pipe((0,rxjs__WEBPACK_IMPORTED_MODULE_19__.takeUntil)(this._unsubscribeAll)).subscribe(empresa => {
@@ -2576,8 +2591,8 @@ class PedidoDePresupuestoComponent {
    */
   deletePedidoDePresupuesto(event) {
     this.confirm.open({
-      title: "Eliminar pedido de presupuesto N° " + event.params.data.idpedido,
-      message: "¿Desea eliminar el pedido de presupuesto: N° " + event.params.data.idpedido + "?",
+      title: "Eliminar pedido de presupuesto " + event.params.data.observaciones,
+      message: "¿Desea eliminar el pedido de presupuesto: " + event.params.data.observaciones + "?",
       dismissible: false,
       actions: {
         confirm: {
@@ -2701,8 +2716,8 @@ PedidoDePresupuestoComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTE
     enviadoExitosamente: "enviadoExitosamente"
   },
   decls: 12,
-  vars: 15,
-  consts: [[1, "w-full", "flex", "flex-col", "relative"], [1, "mb-12", "mt-6"], [1, "absolute", "right-10"], ["mat-flat-button", "", 1, "w-full", "px-6", "py-6", "!border", "border-solid", "rounded-lg", "md:w-55", "md:rounded-lg", 3, "click"], ["save", ""], [1, "flex", "item-center"], ["id", "note_plus", "width", "20", "height", "20", "viewBox", "0 0 20 20", "fill", "currentColor", "xmlns", "http://www.w3.org/2000/svg"], ["d", "M15.8333 10.8333C16.4167 10.8333 16.975 10.9417 17.5 11.125V7.5L12.5 2.5H4.16667C3.24167 2.5 2.5 3.24167 2.5 4.16667V15.8333C2.5 16.7583 3.25 17.5 4.16667 17.5H11.125C10.9417 16.975 10.8333 16.4167 10.8333 15.8333C10.8333 13.075 13.075 10.8333 15.8333 10.8333ZM11.6667 3.75L16.25 8.33333H11.6667V3.75ZM19.1667 15V16.6667H16.6667V19.1667H15V16.6667H12.5V15H15V12.5H16.6667V15H19.1667Z"], [1, "ml-2", "text-lg", "mt-0.5"], [1, "pr-2", "pl-2"], [1, "bottom-10", "sm:bottom-0", "table-fixed", "sm:top-2", "w-full", "m-0", 3, "cache", "columnsNames", "renderType", "columnsParams", "endpoint", "functions", "extraClasses", "FiltersLikes", "extraParams", "functionEmitter"]],
+  vars: 17,
+  consts: [[1, "w-full", "flex", "flex-col", "relative"], [1, "mb-12", "mt-6"], [1, "absolute", "right-10"], ["mat-flat-button", "", 1, "w-full", "px-6", "py-6", "!border", "border-solid", "rounded-lg", "md:w-55", "md:rounded-lg", 3, "click"], ["save", ""], [1, "flex", "item-center"], ["id", "note_plus", "width", "20", "height", "20", "viewBox", "0 0 20 20", "fill", "currentColor", "xmlns", "http://www.w3.org/2000/svg"], ["d", "M15.8333 10.8333C16.4167 10.8333 16.975 10.9417 17.5 11.125V7.5L12.5 2.5H4.16667C3.24167 2.5 2.5 3.24167 2.5 4.16667V15.8333C2.5 16.7583 3.25 17.5 4.16667 17.5H11.125C10.9417 16.975 10.8333 16.4167 10.8333 15.8333C10.8333 13.075 13.075 10.8333 15.8333 10.8333ZM11.6667 3.75L16.25 8.33333H11.6667V3.75ZM19.1667 15V16.6667H16.6667V19.1667H15V16.6667H12.5V15H15V12.5H16.6667V15H19.1667Z"], [1, "ml-2", "text-lg", "mt-0.5"], [1, "pr-2", "pl-2"], [1, "bottom-10", "sm:bottom-0", "table-fixed", "sm:top-2", "w-full", "m-0", 3, "cache", "columnsNames", "renderType", "columnsParams", "endpoint", "functions", "extraClasses", "FiltersLikes", "extraParams", "acciones", "showMenu", "functionEmitter"]],
   template: function PedidoDePresupuestoComponent_Template(rf, ctx) {
     if (rf & 1) {
       _angular_core__WEBPACK_IMPORTED_MODULE_16__["ɵɵelementStart"](0, "div", 0)(1, "div", 1)(2, "div", 2)(3, "button", 3, 4);
@@ -2729,7 +2744,7 @@ PedidoDePresupuestoComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTE
       _angular_core__WEBPACK_IMPORTED_MODULE_16__["ɵɵclassMap"](ctx.color_primario ? "" : ctx.default_color);
       _angular_core__WEBPACK_IMPORTED_MODULE_16__["ɵɵstyleProp"]("border", ctx.color_primario || "")("color", ctx.color_primario || "");
       _angular_core__WEBPACK_IMPORTED_MODULE_16__["ɵɵadvance"](8);
-      _angular_core__WEBPACK_IMPORTED_MODULE_16__["ɵɵproperty"]("cache", false)("columnsNames", ctx.headers)("renderType", "ssp")("columnsParams", ctx.column_params)("endpoint", ctx.env)("functions", ctx.funcionesObjeto)("extraClasses", "td.mat-cell border,td.mat-cell border-slate-400")("FiltersLikes", ctx.filtersLike)("extraParams", ctx.extraParams);
+      _angular_core__WEBPACK_IMPORTED_MODULE_16__["ɵɵproperty"]("cache", false)("columnsNames", ctx.headers)("renderType", "ssp")("columnsParams", ctx.column_params)("endpoint", ctx.env)("functions", ctx.funcionesObjeto)("extraClasses", "td.mat-cell border,td.mat-cell border-slate-400")("FiltersLikes", ctx.filtersLike)("extraParams", ctx.extraParams)("acciones", ctx.accionesObjeto)("showMenu", ctx.showMenu);
     }
   },
   dependencies: [_angular_material_button__WEBPACK_IMPORTED_MODULE_24__.MatButton, _shared_components_tabla_dinamica_tabla_dinamica_component__WEBPACK_IMPORTED_MODULE_1__.TablaDinamicaComponent],

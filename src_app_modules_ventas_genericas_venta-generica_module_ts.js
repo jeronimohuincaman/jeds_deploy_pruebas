@@ -3739,6 +3739,7 @@ class VentaGenericasComponent {
     this.selectedItems = [];
     this.dataSource = new _angular_material_table__WEBPACK_IMPORTED_MODULE_15__.MatTableDataSource();
     this.funcionesObjeto = null;
+    this.accionesObjeto = null;
     this.filtroBusqueda = '';
     this.filtersLike = ['cliente'];
     this.filter = {
@@ -3757,35 +3758,47 @@ class VentaGenericasComponent {
      * Aca se declaran los botones que iran en la grilla sobre el apartado de acciones.
      */
     this.funcionesObjeto = [{
-      nombre_boton: "editar",
+      iconoAccion: venta => '',
+      iconoAccionado: venta => '',
+      iconoDeshabilitado: venta => '',
+      visible: venta => false
+    }];
+    this.showMenu = venta => true;
+    this.accionesObjeto = [{
+      nombre_boton: "Editar",
       functionName: 'editar',
       iconoAccion: venta => venta.puede_modificar === true ? 'jedstion:editar' : '',
       iconoAccionado: venta => '',
-      iconoDeshabilitado: venta => venta.puede_modificar === false ? 'jedstion:editar_disabled' : ''
+      iconoDeshabilitado: venta => venta.puede_modificar === false ? 'jedstion:editar_disabled' : '',
+      visible: venta => true
     }, {
-      nombre_boton: "eliminar",
+      nombre_boton: "Eliminar",
       functionName: 'eliminar',
       iconoAccion: venta => venta.puede_eliminar === true ? 'jedstion:eliminar' : '',
       iconoAccionado: venta => '',
-      iconoDeshabilitado: venta => venta.puede_eliminar === false ? 'jedstion:eliminar_disabled' : ''
+      iconoDeshabilitado: venta => venta.puede_eliminar === false ? 'jedstion:eliminar_disabled' : '',
+      visible: venta => true
     }, {
       nombre_boton: "Generar Orden de servicio",
       functionName: 'orden_servicio',
       iconoAccion: venta => 'jedstion:orden_de_produccion',
       iconoAccionado: venta => '',
-      iconoDeshabilitado: venta => ''
+      iconoDeshabilitado: venta => '',
+      visible: venta => true
     }, {
       nombre_boton: "Detalle Bonificado",
       functionName: 'ventas_bonificadas_detalle',
       iconoAccion: venta => venta.puede_modificar === true && venta.tipo_venta === 1 ? 'jedstion:informacion' : '',
       iconoAccionado: venta => '',
-      iconoDeshabilitado: venta => venta.puede_modificar === false || venta.tipo_venta === 0 ? 'jedstion:informacion_disabled' : ''
+      iconoDeshabilitado: venta => venta.puede_modificar === false || venta.tipo_venta === 0 ? 'jedstion:informacion_disabled' : '',
+      visible: venta => true
     }, {
       nombre_boton: "Estados de Ventas",
       functionName: 'estados_ventas',
       iconoAccion: venta => 'jedstion:vista_lista',
       iconoAccionado: venta => '',
-      iconoDeshabilitado: venta => ''
+      iconoDeshabilitado: venta => '',
+      visible: venta => true
     }];
     // Subscribe to empresa data
     this._empresaService.empresa$.pipe((0,rxjs__WEBPACK_IMPORTED_MODULE_16__.takeUntil)(this._unsubscribeAll)).subscribe(empresa => {
@@ -4017,8 +4030,8 @@ VentaGenericasComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MOD
     parametrosActualizados: "parametrosActualizados"
   },
   decls: 17,
-  vars: 16,
-  consts: [[1, "w-full", "flex", "flex-col", "relative"], [1, "mb-12", "mt-6"], [1, "absolute", "right-10", "flex", "space-x-4"], ["mat-flat-button", "", "class", "w-full px-6 py-6 !border border-solid rounded-lg md:w-55 md:rounded-lg", 3, "class", "border", "color", "click", 4, "ngIf"], ["mat-flat-button", "", 1, "w-full", "px-6", "py-6", "!border", "border-solid", "rounded-lg", "md:w-55", "md:rounded-lg", 3, "click"], [1, "flex", "items-center"], ["width", "22", "height", "22", "viewBox", "0 0 26 26", "fill", "currentColor", "xmlns", "http://www.w3.org/2000/svg"], ["clip-path", "url(#clip0_535_423)"], ["d", "M20.5568 8.68182H19.4773V3.28409H6.52274V8.68182H5.4432C3.65115 8.68182 2.20456 10.1284 2.20456 11.9205V18.3977H6.52274V22.7159H19.4773V18.3977H23.7955V11.9205C23.7955 10.1284 22.3489 8.68182 20.5568 8.68182ZM8.68183 5.44318H17.3182V8.68182H8.68183V5.44318ZM17.3182 18.3977V20.5568H8.68183V16.2386H17.3182V18.3977ZM19.4773 16.2386V14.0795H6.52274V16.2386H4.36365V11.9205C4.36365 11.3267 4.84945 10.8409 5.4432 10.8409H20.5568C21.1506 10.8409 21.6364 11.3267 21.6364 11.9205V16.2386H19.4773Z"], ["d", "M19.4773 13.5398C20.0735 13.5398 20.5568 13.0564 20.5568 12.4602C20.5568 11.864 20.0735 11.3807 19.4773 11.3807C18.8811 11.3807 18.3977 11.864 18.3977 12.4602C18.3977 13.0564 18.8811 13.5398 19.4773 13.5398Z"], ["id", "clip0_535_423"], ["width", "25.9091", "height", "25.9091", "fill", "currentColor", "transform", "translate(0.0454712 0.0454559)"], [1, "ml-2", "text-lg", "mt-0.5", "hidden", "md:inline"], [1, "pr-2", "pl-2"], [1, "bottom-10", "sm:bottom-0", "table-fixed", "sm:top-2", "w-full", "m-0", 3, "cache", "columnsNames", "renderType", "columnsParams", "endpoint", "functions", "extraClasses", "FiltersLikes", "extraParams", "selectionChange", "functionEmitter", "puedeCrearEmitter"], ["save", ""], ["id", "note_plus", "width", "20", "height", "20", "viewBox", "0 0 20 20", "fill", "currentColor", "xmlns", "http://www.w3.org/2000/svg"], ["d", "M15.8333 10.8333C16.4167 10.8333 16.975 10.9417 17.5 11.125V7.5L12.5 2.5H4.16667C3.24167 2.5 2.5 3.24167 2.5 4.16667V15.8333C2.5 16.7583 3.25 17.5 4.16667 17.5H11.125C10.9417 16.975 10.8333 16.4167 10.8333 15.8333C10.8333 13.075 13.075 10.8333 15.8333 10.8333ZM11.6667 3.75L16.25 8.33333H11.6667V3.75ZM19.1667 15V16.6667H16.6667V19.1667H15V16.6667H12.5V15H15V12.5H16.6667V15H19.1667Z"]],
+  vars: 18,
+  consts: [[1, "w-full", "flex", "flex-col", "relative"], [1, "mb-12", "mt-6"], [1, "absolute", "right-10", "flex", "space-x-4"], ["mat-flat-button", "", "class", "w-full px-6 py-6 !border border-solid rounded-lg md:w-55 md:rounded-lg", 3, "class", "border", "color", "click", 4, "ngIf"], ["mat-flat-button", "", 1, "w-full", "px-6", "py-6", "!border", "border-solid", "rounded-lg", "md:w-55", "md:rounded-lg", 3, "click"], [1, "flex", "items-center"], ["width", "22", "height", "22", "viewBox", "0 0 26 26", "fill", "currentColor", "xmlns", "http://www.w3.org/2000/svg"], ["clip-path", "url(#clip0_535_423)"], ["d", "M20.5568 8.68182H19.4773V3.28409H6.52274V8.68182H5.4432C3.65115 8.68182 2.20456 10.1284 2.20456 11.9205V18.3977H6.52274V22.7159H19.4773V18.3977H23.7955V11.9205C23.7955 10.1284 22.3489 8.68182 20.5568 8.68182ZM8.68183 5.44318H17.3182V8.68182H8.68183V5.44318ZM17.3182 18.3977V20.5568H8.68183V16.2386H17.3182V18.3977ZM19.4773 16.2386V14.0795H6.52274V16.2386H4.36365V11.9205C4.36365 11.3267 4.84945 10.8409 5.4432 10.8409H20.5568C21.1506 10.8409 21.6364 11.3267 21.6364 11.9205V16.2386H19.4773Z"], ["d", "M19.4773 13.5398C20.0735 13.5398 20.5568 13.0564 20.5568 12.4602C20.5568 11.864 20.0735 11.3807 19.4773 11.3807C18.8811 11.3807 18.3977 11.864 18.3977 12.4602C18.3977 13.0564 18.8811 13.5398 19.4773 13.5398Z"], ["id", "clip0_535_423"], ["width", "25.9091", "height", "25.9091", "fill", "currentColor", "transform", "translate(0.0454712 0.0454559)"], [1, "ml-2", "text-lg", "mt-0.5", "hidden", "md:inline"], [1, "pr-2", "pl-2"], [1, "bottom-10", "sm:bottom-0", "table-fixed", "sm:top-2", "w-full", "m-0", 3, "cache", "columnsNames", "renderType", "columnsParams", "endpoint", "functions", "extraClasses", "FiltersLikes", "extraParams", "acciones", "showMenu", "selectionChange", "functionEmitter", "puedeCrearEmitter"], ["save", ""], ["id", "note_plus", "width", "20", "height", "20", "viewBox", "0 0 20 20", "fill", "currentColor", "xmlns", "http://www.w3.org/2000/svg"], ["d", "M15.8333 10.8333C16.4167 10.8333 16.975 10.9417 17.5 11.125V7.5L12.5 2.5H4.16667C3.24167 2.5 2.5 3.24167 2.5 4.16667V15.8333C2.5 16.7583 3.25 17.5 4.16667 17.5H11.125C10.9417 16.975 10.8333 16.4167 10.8333 15.8333C10.8333 13.075 13.075 10.8333 15.8333 10.8333ZM11.6667 3.75L16.25 8.33333H11.6667V3.75ZM19.1667 15V16.6667H16.6667V19.1667H15V16.6667H12.5V15H15V12.5H16.6667V15H19.1667Z"]],
   template: function VentaGenericasComponent_Template(rf, ctx) {
     if (rf & 1) {
       _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](0, "div", 0)(1, "div", 1)(2, "div", 2);
@@ -4056,7 +4069,7 @@ VentaGenericasComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MOD
       _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵclassMap"](ctx.color_primario ? "" : ctx.default_color);
       _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵstyleProp"]("border", ctx.color_primario || "")("color", ctx.color_primario || "");
       _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵadvance"](12);
-      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵproperty"]("cache", false)("columnsNames", ctx.headers)("renderType", "client")("columnsParams", ctx.column_params)("endpoint", ctx.env)("functions", ctx.funcionesObjeto)("extraClasses", "td.mat-cell border,td.mat-cell border-slate-400")("FiltersLikes", ctx.filtersLike)("extraParams", ctx.extraParams);
+      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵproperty"]("cache", false)("columnsNames", ctx.headers)("renderType", "client")("columnsParams", ctx.column_params)("endpoint", ctx.env)("functions", ctx.funcionesObjeto)("extraClasses", "td.mat-cell border,td.mat-cell border-slate-400")("FiltersLikes", ctx.filtersLike)("extraParams", ctx.extraParams)("acciones", ctx.accionesObjeto)("showMenu", ctx.showMenu);
     }
   },
   dependencies: [_angular_common__WEBPACK_IMPORTED_MODULE_21__.NgIf, _angular_material_button__WEBPACK_IMPORTED_MODULE_22__.MatButton, _shared_components_tabla_dinamica_tabla_dinamica_component__WEBPACK_IMPORTED_MODULE_0__.TablaDinamicaComponent],

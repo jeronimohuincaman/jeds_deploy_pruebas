@@ -101,6 +101,7 @@ class EntregasComponent {
     this.headers = ['Fecha Precarga', 'Fecha Entrega', 'Responsable', 'Observaciones', 'Deposito', 'Usuario Encargado', 'Estado', 'Acciones'];
     this.column_params = ['fecha_hora_precarga', 'fecha_hora_entrega', 'nombre_usuario', 'observaciones', 'descripcion_deposito', 'nombre_usuario_entrega', 'descripcion_estado', 'acciones'];
     this.funcionesObjeto = null;
+    this.accionesObjeto = null;
     this.filtroBusqueda = '';
     this.filtersLike = ['nick_usuario', 'descripcion_deposito', 'nick_usuario_entrega', 'numero_venta'];
     this.filter = {
@@ -123,32 +124,42 @@ class EntregasComponent {
      * Aca se declaran los botones que iran en la grilla sobre el apartado de acciones.
      */
     this.funcionesObjeto = [{
+      iconoAccion: entrega => '',
+      iconoAccionado: entrega => '',
+      iconoDeshabilitado: entrega => '',
+      visible: entrega => false
+    }];
+    this.showMenu = entrega => true;
+    this.accionesObjeto = [{
       nombre_boton: "Editar",
       functionName: 'editar',
       iconoAccion: entrega => entrega.puede_editar_entrega == 1 ? 'jedstion:editar' : '',
       iconoAccionado: entrega => '',
-      iconoDeshabilitado: entrega => ''
+      iconoDeshabilitado: entrega => '',
+      visible: entrega => true
     }, {
       nombre_boton: "Eliminar",
       functionName: 'eliminar',
       iconoAccion: entrega => entrega.puede_eliminar == 1 ? 'jedstion:eliminar' : '',
       iconoAccionado: entrega => '',
-      iconoDeshabilitado: entrega => ''
+      iconoDeshabilitado: entrega => '',
+      visible: entrega => true
     }, {
       nombre_boton: "Reporte",
       functionName: 'reporte',
       iconoAccion: entrega => 'jedstion:imprimir',
       iconoAccionado: entrega => '',
-      iconoDeshabilitado: entrega => ''
+      iconoDeshabilitado: entrega => '',
+      visible: entrega => true
     }, {
       nombre_boton: "Entregar",
       functionName: 'entregar',
       iconoAccion: entrega => entrega.puede_editar_entrega == 1 && !entrega.fecha_hora_entrega ? 'jedstion:lector_qr' : '',
       iconoAccionado: entrega => '',
-      iconoDeshabilitado: entrega => '' //'jedstion:lector_qr_disabled',
+      iconoDeshabilitado: entrega => '',
+      visible: entrega => true
     }];
   }
-
   ngOnInit() {
     this.puedeCrearEntrega();
     // Subscribe to empresa data
@@ -461,8 +472,8 @@ EntregasComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_14
     parametrosActualizados: "parametrosActualizados"
   },
   decls: 12,
-  vars: 16,
-  consts: [[1, "w-full", "flex", "flex-col", "relative"], [1, "mb-12", "mt-6"], [1, "absolute", "right-10", "flex", "space-x-4"], ["mat-flat-button", "", 1, "w-full", "px-6", "py-6", "!border", "border-solid", "rounded-lg", "md:w-55", "md:rounded-lg", 3, "click"], [1, "flex", "items-center"], ["width", "22", "height", "22", "viewBox", "0 0 16 16", "fill", "currentColor", "xmlns", "http://www.w3.org/2000/svg"], ["d", "M2.66667 2.66667H6.66667V6.66667H2.66667V2.66667ZM13.3333 2.66667V6.66667H9.33333V2.66667H13.3333ZM9.33333 10H10.6667V8.66667H9.33333V7.33333H10.6667V8.66667H12V7.33333H13.3333V8.66667H12V10H13.3333V12H12V13.3333H10.6667V12H8.66667V13.3333H7.33333V10.6667H9.33333V10ZM10.6667 10V12H12V10H10.6667ZM2.66667 13.3333V9.33333H6.66667V13.3333H2.66667ZM4 4V5.33333H5.33333V4H4ZM10.6667 4V5.33333H12V4H10.6667ZM4 10.6667V12H5.33333V10.6667H4ZM2.66667 7.33333H4V8.66667H2.66667V7.33333ZM6 7.33333H8.66667V10H7.33333V8.66667H6V7.33333ZM7.33333 4H8.66667V6.66667H7.33333V4ZM1.33333 1.33333V4H0V1.33333C0 0.979711 0.140476 0.640573 0.390524 0.390524C0.640573 0.140476 0.979711 0 1.33333 0L4 0V1.33333H1.33333ZM14.6667 0C15.0203 0 15.3594 0.140476 15.6095 0.390524C15.8595 0.640573 16 0.979711 16 1.33333V4H14.6667V1.33333H12V0H14.6667ZM1.33333 12V14.6667H4V16H1.33333C0.979711 16 0.640573 15.8595 0.390524 15.6095C0.140476 15.3594 0 15.0203 0 14.6667V12H1.33333ZM14.6667 14.6667V12H16V14.6667C16 15.0203 15.8595 15.3594 15.6095 15.6095C15.3594 15.8595 15.0203 16 14.6667 16H12V14.6667H14.6667Z", "fill", "currentColor"], [1, "ml-2", "text-lg", "mt-0.5", "hidden", "md:inline"], ["mat-flat-button", "", "class", "w-full px-6 py-6 !border border-solid rounded-lg md:w-55 md:rounded-lg", 3, "class", "border", "color", "click", 4, "ngIf"], [1, "pr-2", "pl-2", "mt-2"], [1, "bottom-10", "sm:bottom-0", "table-fixed", "sm:top-2", "w-full", "m-0", 3, "cache", "columnsNames", "renderType", "columnsParams", "endpoint", "functions", "extraClasses", "FiltersLikes", "extraParams", "functionEmitter"], ["save", ""], ["id", "note_plus", "width", "20", "height", "20", "viewBox", "0 0 20 20", "fill", "currentColor", "xmlns", "http://www.w3.org/2000/svg"], ["d", "M15.8333 10.8333C16.4167 10.8333 16.975 10.9417 17.5 11.125V7.5L12.5 2.5H4.16667C3.24167 2.5 2.5 3.24167 2.5 4.16667V15.8333C2.5 16.7583 3.25 17.5 4.16667 17.5H11.125C10.9417 16.975 10.8333 16.4167 10.8333 15.8333C10.8333 13.075 13.075 10.8333 15.8333 10.8333ZM11.6667 3.75L16.25 8.33333H11.6667V3.75ZM19.1667 15V16.6667H16.6667V19.1667H15V16.6667H12.5V15H15V12.5H16.6667V15H19.1667Z"]],
+  vars: 18,
+  consts: [[1, "w-full", "flex", "flex-col", "relative"], [1, "mb-12", "mt-6"], [1, "absolute", "right-10", "flex", "space-x-4"], ["mat-flat-button", "", 1, "w-full", "px-6", "py-6", "!border", "border-solid", "rounded-lg", "md:w-55", "md:rounded-lg", 3, "click"], [1, "flex", "items-center"], ["width", "22", "height", "22", "viewBox", "0 0 16 16", "fill", "currentColor", "xmlns", "http://www.w3.org/2000/svg"], ["d", "M2.66667 2.66667H6.66667V6.66667H2.66667V2.66667ZM13.3333 2.66667V6.66667H9.33333V2.66667H13.3333ZM9.33333 10H10.6667V8.66667H9.33333V7.33333H10.6667V8.66667H12V7.33333H13.3333V8.66667H12V10H13.3333V12H12V13.3333H10.6667V12H8.66667V13.3333H7.33333V10.6667H9.33333V10ZM10.6667 10V12H12V10H10.6667ZM2.66667 13.3333V9.33333H6.66667V13.3333H2.66667ZM4 4V5.33333H5.33333V4H4ZM10.6667 4V5.33333H12V4H10.6667ZM4 10.6667V12H5.33333V10.6667H4ZM2.66667 7.33333H4V8.66667H2.66667V7.33333ZM6 7.33333H8.66667V10H7.33333V8.66667H6V7.33333ZM7.33333 4H8.66667V6.66667H7.33333V4ZM1.33333 1.33333V4H0V1.33333C0 0.979711 0.140476 0.640573 0.390524 0.390524C0.640573 0.140476 0.979711 0 1.33333 0L4 0V1.33333H1.33333ZM14.6667 0C15.0203 0 15.3594 0.140476 15.6095 0.390524C15.8595 0.640573 16 0.979711 16 1.33333V4H14.6667V1.33333H12V0H14.6667ZM1.33333 12V14.6667H4V16H1.33333C0.979711 16 0.640573 15.8595 0.390524 15.6095C0.140476 15.3594 0 15.0203 0 14.6667V12H1.33333ZM14.6667 14.6667V12H16V14.6667C16 15.0203 15.8595 15.3594 15.6095 15.6095C15.3594 15.8595 15.0203 16 14.6667 16H12V14.6667H14.6667Z", "fill", "currentColor"], [1, "ml-2", "text-lg", "mt-0.5", "hidden", "md:inline"], ["mat-flat-button", "", "class", "w-full px-6 py-6 !border border-solid rounded-lg md:w-55 md:rounded-lg", 3, "class", "border", "color", "click", 4, "ngIf"], [1, "pr-2", "pl-2", "mt-2"], [1, "bottom-10", "sm:bottom-0", "table-fixed", "sm:top-2", "w-full", "m-0", 3, "cache", "columnsNames", "renderType", "columnsParams", "endpoint", "functions", "extraClasses", "FiltersLikes", "extraParams", "acciones", "showMenu", "functionEmitter"], ["save", ""], ["id", "note_plus", "width", "20", "height", "20", "viewBox", "0 0 20 20", "fill", "currentColor", "xmlns", "http://www.w3.org/2000/svg"], ["d", "M15.8333 10.8333C16.4167 10.8333 16.975 10.9417 17.5 11.125V7.5L12.5 2.5H4.16667C3.24167 2.5 2.5 3.24167 2.5 4.16667V15.8333C2.5 16.7583 3.25 17.5 4.16667 17.5H11.125C10.9417 16.975 10.8333 16.4167 10.8333 15.8333C10.8333 13.075 13.075 10.8333 15.8333 10.8333ZM11.6667 3.75L16.25 8.33333H11.6667V3.75ZM19.1667 15V16.6667H16.6667V19.1667H15V16.6667H12.5V15H15V12.5H16.6667V15H19.1667Z"]],
   template: function EntregasComponent_Template(rf, ctx) {
     if (rf & 1) {
       _angular_core__WEBPACK_IMPORTED_MODULE_14__["ɵɵelementStart"](0, "div", 0)(1, "div", 1)(2, "div", 2)(3, "button", 3);
@@ -493,7 +504,7 @@ EntregasComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_14
       _angular_core__WEBPACK_IMPORTED_MODULE_14__["ɵɵadvance"](6);
       _angular_core__WEBPACK_IMPORTED_MODULE_14__["ɵɵproperty"]("ngIf", ctx.puede_crear);
       _angular_core__WEBPACK_IMPORTED_MODULE_14__["ɵɵadvance"](2);
-      _angular_core__WEBPACK_IMPORTED_MODULE_14__["ɵɵproperty"]("cache", false)("columnsNames", ctx.headers)("renderType", "ssp")("columnsParams", ctx.column_params)("endpoint", ctx.env)("functions", ctx.funcionesObjeto)("extraClasses", "td.mat-cell border,td.mat-cell border-slate-400")("FiltersLikes", ctx.filtersLike)("extraParams", ctx.extraParams);
+      _angular_core__WEBPACK_IMPORTED_MODULE_14__["ɵɵproperty"]("cache", false)("columnsNames", ctx.headers)("renderType", "ssp")("columnsParams", ctx.column_params)("endpoint", ctx.env)("functions", ctx.funcionesObjeto)("extraClasses", "td.mat-cell border,td.mat-cell border-slate-400")("FiltersLikes", ctx.filtersLike)("extraParams", ctx.extraParams)("acciones", ctx.accionesObjeto)("showMenu", ctx.showMenu);
     }
   },
   dependencies: [_angular_common__WEBPACK_IMPORTED_MODULE_23__.NgIf, _angular_material_button__WEBPACK_IMPORTED_MODULE_24__.MatButton, _shared_components_tabla_dinamica_tabla_dinamica_component__WEBPACK_IMPORTED_MODULE_2__.TablaDinamicaComponent],

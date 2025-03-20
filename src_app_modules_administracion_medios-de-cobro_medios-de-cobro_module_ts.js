@@ -366,13 +366,15 @@ class MediosDeCobroComponent {
       functionName: 'editar',
       iconoAccion: medio_cobro => 'jedstion:editar',
       iconoAccionado: medio_cobro => '',
-      iconoDeshabilitado: medio_cobro => ''
+      iconoDeshabilitado: medio_cobro => '',
+      visible: medio_cobro => true
     }, {
       nombre_boton: "Eliminar",
       functionName: 'eliminar',
       iconoAccion: medio_cobro => 'jedstion:eliminar',
       iconoAccionado: medio_cobro => '',
-      iconoDeshabilitado: medio_cobro => ''
+      iconoDeshabilitado: medio_cobro => '',
+      visible: medio_cobro => true
     }];
   }
   ngOnInit() {

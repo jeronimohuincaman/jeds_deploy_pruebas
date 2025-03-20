@@ -1514,13 +1514,15 @@ class StockInicialComponent {
       functionName: 'editar',
       iconoAccion: stock_inicial => stock_inicial.puede_modificar === true ? 'jedstion:editar' : '',
       iconoAccionado: stock_inicial => '',
-      iconoDeshabilitado: stock_inicial => stock_inicial.puede_modificar === false ? 'jedstion:editar_disabled' : ''
+      iconoDeshabilitado: stock_inicial => stock_inicial.puede_modificar === false ? 'jedstion:editar_disabled' : '',
+      visible: stock_inicial => true
     }, {
       nombre_boton: "Eliminar",
       functionName: 'eliminar',
       iconoAccion: stock_inicial => stock_inicial.puede_eliminar === true ? 'jedstion:eliminar' : '',
       iconoAccionado: stock_inicial => '',
-      iconoDeshabilitado: stock_inicial => stock_inicial.puede_eliminar === false ? 'jedstion:eliminar_disabled' : ''
+      iconoDeshabilitado: stock_inicial => stock_inicial.puede_eliminar === false ? 'jedstion:eliminar_disabled' : '',
+      visible: stock_inicial => true
     }];
   }
   ngOnInit() {

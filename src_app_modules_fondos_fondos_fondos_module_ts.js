@@ -240,13 +240,15 @@ class FondosComponent {
       functionName: 'editar',
       iconoAccion: fondo => 'jedstion:editar',
       iconoAccionado: fondo => '',
-      iconoDeshabilitado: fondo => ''
+      iconoDeshabilitado: fondo => '',
+      visible: fondo => true
     }, {
       nombre_boton: "Eliminar",
       functionName: 'eliminar',
       iconoAccion: fondo => 'jedstion:eliminar',
       iconoAccionado: fondo => '',
-      iconoDeshabilitado: fondo => ''
+      iconoDeshabilitado: fondo => '',
+      visible: fondo => true
     }];
   }
   ngOnInit() {

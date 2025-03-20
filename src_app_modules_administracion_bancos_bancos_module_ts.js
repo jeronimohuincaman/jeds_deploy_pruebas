@@ -166,13 +166,15 @@ class BancosComponent {
       functionName: 'editar',
       iconoAccion: banco => 'jedstion:editar',
       iconoAccionado: banco => '',
-      iconoDeshabilitado: banco => ''
+      iconoDeshabilitado: banco => '',
+      visible: banco => true
     }, {
       nombre_boton: "Eliminar",
       functionName: 'eliminar',
       iconoAccion: banco => 'jedstion:eliminar',
       iconoAccionado: banco => '',
-      iconoDeshabilitado: banco => ''
+      iconoDeshabilitado: banco => '',
+      visible: banco => true
     }];
   }
   ngOnInit() {

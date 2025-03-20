@@ -39603,6 +39603,9 @@ body.light mat-option:nth-child(odd):hover {
 .flex-wrap {
     flex-wrap: wrap !important;
 }
+.flex-nowrap {
+    flex-wrap: nowrap !important;
+}
 .content-end {
     align-content: flex-end !important;
 }
@@ -40121,6 +40124,10 @@ body.light mat-option:nth-child(odd):hover {
 .py-0 {
     padding-top: 0px !important;
     padding-bottom: 0px !important;
+}
+.py-0\.5 {
+    padding-top: 0.125rem !important;
+    padding-bottom: 0.125rem !important;
 }
 .py-1 {
     padding-top: 0.25rem !important;

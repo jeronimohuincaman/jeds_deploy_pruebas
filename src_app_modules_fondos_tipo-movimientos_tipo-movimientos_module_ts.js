@@ -462,13 +462,15 @@ class TiposMovimientosComponent {
       functionName: 'editar',
       iconoAccion: tipo_movimiento => 'jedstion:editar',
       iconoAccionado: tipo_movimiento => '',
-      iconoDeshabilitado: tipo_movimiento => ''
+      iconoDeshabilitado: tipo_movimiento => '',
+      visible: tipo_movimiento => true
     }, {
       nombre_boton: "Eliminar",
       functionName: 'eliminar',
       iconoAccion: tipo_movimiento => 'jedstion:eliminar',
       iconoAccionado: tipo_movimiento => '',
-      iconoDeshabilitado: tipo_movimiento => ''
+      iconoDeshabilitado: tipo_movimiento => '',
+      visible: tipo_movimiento => true
     }];
   }
   ngOnInit() {

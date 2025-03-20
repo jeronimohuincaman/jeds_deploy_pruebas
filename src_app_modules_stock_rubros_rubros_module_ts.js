@@ -237,13 +237,15 @@ class RubrosComponent {
       functionName: 'editar',
       iconoAccion: rubro => 'jedstion:editar',
       iconoAccionado: rubro => '',
-      iconoDeshabilitado: rubro => ''
+      iconoDeshabilitado: rubro => '',
+      visible: rubro => true
     }, {
       nombre_boton: "Eliminar",
       functionName: 'eliminar',
       iconoAccion: rubro => 'jedstion:eliminar',
       iconoAccionado: rubro => '',
-      iconoDeshabilitado: rubro => ''
+      iconoDeshabilitado: rubro => '',
+      visible: rubro => true
     }];
   }
   ngOnInit() {

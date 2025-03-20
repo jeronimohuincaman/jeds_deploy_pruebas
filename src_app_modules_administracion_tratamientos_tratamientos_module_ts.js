@@ -459,13 +459,15 @@ class TratamientosComponent {
       functionName: 'editar',
       iconoAccion: tratamiento => 'jedstion:editar',
       iconoAccionado: tratamiento => '',
-      iconoDeshabilitado: tratamiento => ''
+      iconoDeshabilitado: tratamiento => '',
+      visible: tratamiento => true
     }, {
       nombre_boton: "Eliminar",
       functionName: 'eliminar',
       iconoAccion: tratamiento => 'jedstion:eliminar',
       iconoAccionado: tratamiento => '',
-      iconoDeshabilitado: tratamiento => ''
+      iconoDeshabilitado: tratamiento => '',
+      visible: tratamiento => true
     }];
   }
   ngOnInit() {

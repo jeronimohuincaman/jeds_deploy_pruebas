@@ -172,7 +172,8 @@ class ComplejosComponent {
       functionName: 'orden_servicio',
       iconoAccion: complejo => 'jedstion:imprimir',
       iconoAccionado: complejo => '',
-      iconoDeshabilitado: complejo => ''
+      iconoDeshabilitado: complejo => '',
+      visible: complejo => true
     }];
   }
   ngOnInit() {

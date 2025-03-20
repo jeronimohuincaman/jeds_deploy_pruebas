@@ -456,13 +456,15 @@ class UnidadesDeMedidaComponent {
       functionName: 'editar',
       iconoAccion: um => 'jedstion:editar',
       iconoAccionado: um => '',
-      iconoDeshabilitado: um => ''
+      iconoDeshabilitado: um => '',
+      visible: um => true
     }, {
       nombre_boton: "Eliminar",
       functionName: 'eliminar',
       iconoAccion: um => 'jedstion:eliminar',
       iconoAccionado: um => '',
-      iconoDeshabilitado: um => ''
+      iconoDeshabilitado: um => '',
+      visible: um => true
     }];
   }
   ngOnInit() {

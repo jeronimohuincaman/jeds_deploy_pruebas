@@ -353,13 +353,15 @@ class MovimientosComponent {
       functionName: 'editar',
       iconoAccion: movimiento => 'jedstion:editar',
       iconoAccionado: movimiento => '',
-      iconoDeshabilitado: movimiento => ''
+      iconoDeshabilitado: movimiento => '',
+      visible: movimiento => true
     }, {
       nombre_boton: "Eliminar",
       functionName: 'eliminar',
       iconoAccion: movimiento => 'jedstion:eliminar',
       iconoAccionado: movimiento => '',
-      iconoDeshabilitado: movimiento => ''
+      iconoDeshabilitado: movimiento => '',
+      visible: movimiento => true
     }];
   }
   ngOnInit() {

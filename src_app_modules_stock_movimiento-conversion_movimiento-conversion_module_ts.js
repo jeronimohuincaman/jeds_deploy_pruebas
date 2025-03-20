@@ -394,13 +394,15 @@ class MovimientoConversionComponent {
       functionName: 'ver',
       iconoAccion: movimiento_conversion => 'jedstion:ver',
       iconoAccionado: movimiento_conversion => '',
-      iconoDeshabilitado: movimiento_conversion => ''
+      iconoDeshabilitado: movimiento_conversion => '',
+      visible: movimiento_conversion => true
     }, {
       nombre_boton: "Eliminar",
       functionName: 'eliminar',
       iconoAccion: movimiento_conversion => 'jedstion:eliminar',
       iconoAccionado: movimiento_conversion => '',
-      iconoDeshabilitado: movimiento_conversion => ''
+      iconoDeshabilitado: movimiento_conversion => '',
+      visible: movimiento_conversion => true
     }];
   }
   ngOnInit() {

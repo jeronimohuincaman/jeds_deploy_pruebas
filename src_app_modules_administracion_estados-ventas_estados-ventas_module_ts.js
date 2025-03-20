@@ -87,13 +87,15 @@ class EstadosVentasComponent {
       functionName: 'editar',
       iconoAccion: estado => 'jedstion:editar',
       iconoAccionado: estado => '',
-      iconoDeshabilitado: estado => ''
+      iconoDeshabilitado: estado => '',
+      visible: estado => true
     }, {
       nombre_boton: "Eliminar",
       functionName: 'eliminar',
       iconoAccion: estado => 'jedstion:eliminar',
       iconoAccionado: estado => '',
-      iconoDeshabilitado: estado => ''
+      iconoDeshabilitado: estado => '',
+      visible: estado => true
     }];
   }
   ngOnInit() {

@@ -82,13 +82,15 @@ class ProveedoresComponent {
       functionName: 'editar',
       iconoAccion: proveedor => 'jedstion:editar',
       iconoAccionado: proveedor => '',
-      iconoDeshabilitado: proveedor => ''
+      iconoDeshabilitado: proveedor => '',
+      visible: proveedor => true
     }, {
       nombre_boton: "Eliminar",
       functionName: 'eliminar',
       iconoAccion: proveedor => 'jedstion:eliminar',
       iconoAccionado: proveedor => '',
-      iconoDeshabilitado: proveedor => ''
+      iconoDeshabilitado: proveedor => '',
+      visible: proveedor => true
     }];
   }
   ngOnInit() {
