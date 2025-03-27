@@ -39269,6 +39269,9 @@ body.light mat-option:nth-child(odd):hover {
 .h-full {
     height: 100% !important;
 }
+.h-screen {
+    height: 100vh !important;
+}
 .\!max-h-7 {
     max-height: 1.75rem !important;
 }
