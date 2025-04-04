@@ -2094,11 +2094,14 @@ class NuevaCotizacionComponent {
       // Se formatea la fecha nuevamente al formato deseado (YYYY-MM-DD)
       const fecha_formateada = this.datePipe.transform(fecha, 'yyyy-MM-dd');
       const items_cotizacion = this.items_formulario.map(item => {
+        // Parseo el valor unitario a numero para poder persistr
+        let valor_unitario = item.unitario['value'] ? item.unitario['value'] : 0;
+        valor_unitario = this.formateador.parseCurrency(valor_unitario);
         return {
           idpedidoitem: item.idpedidoitem,
           cotiza: item.cotiza.value === true ? 1 : 0,
           cantidad: item.cantidad_recibida['value'] ? item.cantidad_recibida['value'] : 0,
-          unitario: item.unitario['value'] ? item.unitario['value'] : 0,
+          unitario: valor_unitario,
           oc: item.oc.value === true ? 1 : 0
         };
       });
