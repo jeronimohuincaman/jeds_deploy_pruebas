@@ -18079,6 +18079,8 @@ class FormateadorService {
   }
   parseCurrency(value) {
     if (!value) return null;
+    // Si el valor ya es un número, simplemente lo devolvemos
+    if (typeof value === 'number') return Number(value);
     // Reemplazar todos los caracteres que no son dígitos, comas o puntos
     const cleanValue = value.replace(/[^\d,]/g, '');
     // Si hay una coma, la reemplazamos por un punto para el parseo
