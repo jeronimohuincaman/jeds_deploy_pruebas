@@ -7478,15 +7478,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "AppComponent": () => (/* binding */ AppComponent)
 /* harmony export */ });
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ 86679);
-/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! rxjs */ 60116);
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/router */ 86679);
 /* harmony import */ var _shared_components_custom_snackbar_custom_component__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @shared/components/custom-snackbar/custom.component */ 74763);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/core */ 86839);
-/* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/platform-browser */ 42512);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ 86839);
+/* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/platform-browser */ 42512);
 /* harmony import */ var _shared_service_app_empresa_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @shared/service/app/empresa.service */ 66270);
-/* harmony import */ var _angular_service_worker__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/service-worker */ 64413);
-
-
 
 
 
@@ -7497,45 +7493,33 @@ class AppComponent {
   /**
    * Constructor
    */
-  constructor(titulo, _empresaService, swUpdate, resolver, viewContainerRef, router) {
+  constructor(titulo, _empresaService, resolver, viewContainerRef, router) {
     this.titulo = titulo;
     this._empresaService = _empresaService;
-    this.swUpdate = swUpdate;
     this.resolver = resolver;
     this.viewContainerRef = viewContainerRef;
     this.router = router;
     this.originalTitle = 'Sistema';
     this.defaultFavicon = './favicon-32x32.png';
     this.forceReload = false;
-    if (this.swUpdate.isEnabled) {
-      this.router.events.pipe((0,rxjs__WEBPACK_IMPORTED_MODULE_2__.filter)(event => event instanceof _angular_router__WEBPACK_IMPORTED_MODULE_3__.NavigationEnd)).subscribe(() => {
-        setTimeout(() => {
-          /*Por si alguien reporta problemas de caché (suele pasar de que se vuelve a versiones viejas del service-worker).
-          * Se cambia a true el valor inicial de forceReload
-          */
-          if (this.forceReload) {
-            window.location.reload();
-            this.forceReload = false;
-          }
-          this.swUpdate.checkForUpdate().then(() => {
-            this.swUpdate.versionUpdates.subscribe(event => {
-              if (event.type === 'VERSION_READY') {
-                this.swUpdate.activateUpdate().then(() => {
-                  localStorage.setItem('app-updated', 'true');
-                  window.location.reload();
-                });
-              }
-            });
-          }).catch(err => {
-            console.error('Error al verificar actualizaciones:', err);
-          });
-        }, 2000);
-      });
-    }
   }
   ngOnInit() {
     // Obtén los datos de la empresa al inicializar el componente
     this.obtenerDatosEmpresa();
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.getRegistrations().then(registrations => {
+        registrations.forEach(reg => {
+          const scriptUrl = reg.active?.scriptURL || '';
+          if (scriptUrl.includes('ngsw-worker.js')) {
+            reg.unregister().then(() => {
+              console.log('Service Worker de Angular eliminado:', scriptUrl);
+            });
+          } else {
+            console.log('SW no eliminado (se mantiene):', scriptUrl);
+          }
+        });
+      });
+    }
   }
   ngAfterViewInit() {
     if (localStorage.getItem('app-updated')) {
@@ -7587,21 +7571,21 @@ class AppComponent {
   }
 }
 AppComponent.ɵfac = function AppComponent_Factory(t) {
-  return new (t || AppComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdirectiveInject"](_angular_platform_browser__WEBPACK_IMPORTED_MODULE_5__.Title), _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdirectiveInject"](_shared_service_app_empresa_service__WEBPACK_IMPORTED_MODULE_1__.EmpresaService), _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdirectiveInject"](_angular_service_worker__WEBPACK_IMPORTED_MODULE_6__.SwUpdate), _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_4__.ComponentFactoryResolver), _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_4__.ViewContainerRef), _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_3__.Router));
+  return new (t || AppComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdirectiveInject"](_angular_platform_browser__WEBPACK_IMPORTED_MODULE_3__.Title), _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdirectiveInject"](_shared_service_app_empresa_service__WEBPACK_IMPORTED_MODULE_1__.EmpresaService), _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_2__.ComponentFactoryResolver), _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_2__.ViewContainerRef), _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_4__.Router));
 };
-AppComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdefineComponent"]({
+AppComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdefineComponent"]({
   type: AppComponent,
   selectors: [["app-root"]],
   standalone: true,
-  features: [_angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵStandaloneFeature"]],
+  features: [_angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵStandaloneFeature"]],
   decls: 1,
   vars: 0,
   template: function AppComponent_Template(rf, ctx) {
     if (rf & 1) {
-      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelement"](0, "router-outlet");
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelement"](0, "router-outlet");
     }
   },
-  dependencies: [_angular_router__WEBPACK_IMPORTED_MODULE_3__.RouterOutlet],
+  dependencies: [_angular_router__WEBPACK_IMPORTED_MODULE_4__.RouterOutlet],
   styles: ["[_nghost-%COMP%] {\n  display: flex;\n  flex: 1 1 auto;\n  width: 100%;\n  height: 100%;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImFwcC5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNJLGFBQUE7RUFDQSxjQUFBO0VBQ0EsV0FBQTtFQUNBLFlBQUE7QUFDSiIsImZpbGUiOiJhcHAuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyI6aG9zdCB7XHJcbiAgICBkaXNwbGF5OiBmbGV4O1xyXG4gICAgZmxleDogMSAxIGF1dG87XHJcbiAgICB3aWR0aDogMTAwJTtcclxuICAgIGhlaWdodDogMTAwJTtcclxufVxyXG4iXX0= */\n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8uL3NyYy9hcHAvYXBwLmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0ksYUFBQTtFQUNBLGNBQUE7RUFDQSxXQUFBO0VBQ0EsWUFBQTtBQUNKO0FBQ0EsZ2FBQWdhIiwic291cmNlc0NvbnRlbnQiOlsiOmhvc3Qge1xyXG4gICAgZGlzcGxheTogZmxleDtcclxuICAgIGZsZXg6IDEgMSBhdXRvO1xyXG4gICAgd2lkdGg6IDEwMCU7XHJcbiAgICBoZWlnaHQ6IDEwMCU7XHJcbn1cclxuIl0sInNvdXJjZVJvb3QiOiIifQ== */"]
 });
 
@@ -7619,7 +7603,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "appConfig": () => (/* binding */ appConfig)
 /* harmony export */ });
 /* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/common/http */ 33765);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @angular/core */ 86839);
 /* harmony import */ var _angular_material_luxon_adapter__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @angular/material-luxon-adapter */ 76077);
 /* harmony import */ var _angular_material_core__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/material/core */ 443);
 /* harmony import */ var _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/platform-browser/animations */ 79240);
@@ -7629,9 +7612,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var app_core_auth_auth_provider__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! app/core/auth/auth.provider */ 39280);
 /* harmony import */ var app_core_icons_icons_provider__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! app/core/icons/icons.provider */ 76385);
 /* harmony import */ var app_core_transloco_transloco_provider__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! app/core/transloco/transloco.provider */ 2972);
-/* harmony import */ var _angular_service_worker__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @angular/service-worker */ 64413);
-
-
 
 
 
@@ -7698,9 +7678,6 @@ const appConfig = {
         name: 'Amber'
       }]
     }
-  }), (0,_angular_service_worker__WEBPACK_IMPORTED_MODULE_10__.provideServiceWorker)('ngsw-worker.js', {
-    enabled: !(0,_angular_core__WEBPACK_IMPORTED_MODULE_11__.isDevMode)(),
-    registrationStrategy: 'registerImmediately'
   })]
 };
 
