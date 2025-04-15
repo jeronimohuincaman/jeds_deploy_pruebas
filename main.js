@@ -16326,6 +16326,7 @@ class EnviarEmailModalComponent {
     this._endpointService = data._endpointService;
     this.title = data.title;
     this.permiteAdjunto = data.permiteAdjunto;
+    this.model = data.model;
     // Subscribe to empresa data
     this._empresaService.empresa$.pipe((0,rxjs__WEBPACK_IMPORTED_MODULE_7__.takeUntil)(this._unsubscribeAll)).subscribe(empresa => {
       this.color_primario = empresa.color_primario;
@@ -16367,7 +16368,7 @@ class EnviarEmailModalComponent {
   ngOnInit() {
     this.subscribeAlert();
     this.newForm();
-    this.getProveedores(null, true); // Método que carga proveedores
+    this.getProveedores(this.model.proveedor ?? null, true); // Método que carga proveedores
   }
 
   newForm() {
@@ -16397,12 +16398,13 @@ class EnviarEmailModalComponent {
       const proveedores_emails = this.selectedProveedores.map(p => {
         return p.Mail;
       });
-      const payload = {
-        idpedido: this.data.model.idpedido,
+      let payload = {
         destinatarios: proveedores_emails,
         asunto: this.form.get('asunto').value,
         contenido: this.editorContent
       };
+      if (this.model.idpedido) payload['idpedido'] = this.model.idpedido;
+      if (this.model.codigo) payload['idordencompra'] = this.model.codigo;
       this._enviarEmailModalService.enviarEmail(payload, this._endpointService).subscribe({
         next: data => {
           if (data) {
@@ -16421,10 +16423,10 @@ class EnviarEmailModalComponent {
     var _this = this;
     return (0,C_work_jeds_jedstion_source_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
       const Proveedores = yield (0,rxjs__WEBPACK_IMPORTED_MODULE_13__.firstValueFrom)(_this._enviarEmailModalService.getProveedores(option));
-      const proveedores_del_pedido = _this.data.model.proveedores.split(',').map(num => parseInt(num));
+      const proveedores_aux = _this.model.idpedido ? _this.data.model.proveedores.split(',').map(num => parseInt(num)) : [_this.model.proveedor];
       new Promise( /*#__PURE__*/function () {
         var _ref = (0,C_work_jeds_jedstion_source_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* (resolve) {
-          _this.proveedores = Proveedores.list.filter(p => proveedores_del_pedido.includes(p.Codigo));
+          _this.proveedores = Proveedores.list.filter(p => proveedores_aux.includes(p.Codigo));
           _this.filteredProveedores = _this.form.get('proveedor').valueChanges.pipe((0,rxjs__WEBPACK_IMPORTED_MODULE_14__.startWith)(''), (0,rxjs__WEBPACK_IMPORTED_MODULE_15__.map)(value => _this._filterProveedores(value)));
           if (addAll) {
             _this.proveedores.forEach(e => {
@@ -18340,6 +18342,7 @@ const environment = {
     generar_reporte_orden_compra: `${$BASE_REST}/compras_orden_compra/generar_reporte_orden_compra?idordencompra=`,
     compras_orden_compra_items: `${$BASE_REST}/compras_orden_compra_items`,
     compras_orden_compra_cotizacion: `${$BASE_REST}/compras_orden_compra/cotizacion`,
+    compras_orden_compra_enviar_orden_compra: `${$BASE_REST}/compras_orden_compra/enviar_orden_compra`,
     view_orden_compras: `${$BASE_REST}/view_orden_compras`,
     view_compras_cotizacion: `${$BASE_REST}/view_compras_cotizacion`,
     view_compras_cotizacion_item: `${$BASE_REST}/view_compras_cotizacion_item`

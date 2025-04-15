@@ -1126,6 +1126,7 @@ class AltaEdicionCobroComponent {
           };
         });
         this.totalPagar = this.dataSourceAsignacion.data.reduce((acum, item) => acum + item.importe_total, 0);
+        this.itemEdicion = data.result;
         this.formFormaCobro.get('netoDescontar').setValue(this.totalPagar);
         this.formFormaCobro.get('netoDescontar').setValidators([_angular_forms__WEBPACK_IMPORTED_MODULE_13__.Validators.required, _angular_forms__WEBPACK_IMPORTED_MODULE_13__.Validators.max(this.totalPagar)]);
         this.formFormaCobro.get('netoDescontar').updateValueAndValidity({
@@ -1154,13 +1155,13 @@ class AltaEdicionCobroComponent {
         codigo: this.itemEdicion.cobro.idcliente
       } : '', [_angular_forms__WEBPACK_IMPORTED_MODULE_13__.Validators.required]),
       bonificada: new _angular_forms__WEBPACK_IMPORTED_MODULE_13__.FormControl(false, [_angular_forms__WEBPACK_IMPORTED_MODULE_13__.Validators.required]),
-      venta: new _angular_forms__WEBPACK_IMPORTED_MODULE_13__.FormControl('', [_angular_forms__WEBPACK_IMPORTED_MODULE_13__.Validators.required]),
-      pagoParcial: new _angular_forms__WEBPACK_IMPORTED_MODULE_13__.FormControl(false, [_angular_forms__WEBPACK_IMPORTED_MODULE_13__.Validators.required]),
-      asignacion: new _angular_forms__WEBPACK_IMPORTED_MODULE_13__.FormControl('', [_angular_forms__WEBPACK_IMPORTED_MODULE_13__.Validators.required]),
+      venta: new _angular_forms__WEBPACK_IMPORTED_MODULE_13__.FormControl(''),
+      pagoParcial: new _angular_forms__WEBPACK_IMPORTED_MODULE_13__.FormControl(false),
+      asignacion: new _angular_forms__WEBPACK_IMPORTED_MODULE_13__.FormControl(null),
       interesMora: new _angular_forms__WEBPACK_IMPORTED_MODULE_13__.FormControl({
         value: 0,
         disabled: true
-      }, [_angular_forms__WEBPACK_IMPORTED_MODULE_13__.Validators.required])
+      })
     });
   }
   newFormFormaCobro() {
@@ -1238,8 +1239,8 @@ class AltaEdicionCobroComponent {
     this._cobranzasService.getVentaPendiente(this.token, filter).subscribe({
       next: data => {
         this.ventasPendientes = data.result;
-        this.ventas_con_saldo = this.ventasPendientes.filter(elemento => elemento.saldo > 0);
-        this.ventas_con_saldo_cero = this.ventasPendientes.filter(elemento => elemento.saldo === 0);
+        this.ventas_con_saldo = this.ventasPendientes.filter(elemento => parseFloat(elemento.saldo) > 0);
+        this.ventas_con_saldo.sort((a, b) => b.id - a.id);
       },
       error: err => {
         console.error('Error al obtener ventas pendientes:', err);
@@ -1281,7 +1282,7 @@ class AltaEdicionCobroComponent {
         this.formAsignacion.get('interesMora').setValue(0, {
           emitEvent: false
         });
-        this.formAsignacion.get('asignacion').setValidators([_angular_forms__WEBPACK_IMPORTED_MODULE_13__.Validators.required, _angular_forms__WEBPACK_IMPORTED_MODULE_13__.Validators.max(venta.saldo)]);
+        this.formAsignacion.get('asignacion').setValidators([_angular_forms__WEBPACK_IMPORTED_MODULE_13__.Validators.max(venta.saldo)]);
         this.formAsignacion.get('asignacion').updateValueAndValidity({
           emitEvent: false
         });
@@ -1297,7 +1298,7 @@ class AltaEdicionCobroComponent {
         this.formAsignacion.get('asignacion').setValue(venta.saldo, {
           emitEvent: false
         });
-        this.formAsignacion.get('asignacion').setValidators([_angular_forms__WEBPACK_IMPORTED_MODULE_13__.Validators.required, _angular_forms__WEBPACK_IMPORTED_MODULE_13__.Validators.max(venta.saldo)]);
+        this.formAsignacion.get('asignacion').setValidators([_angular_forms__WEBPACK_IMPORTED_MODULE_13__.Validators.max(venta.saldo)]);
         this.formAsignacion.get('asignacion').updateValueAndValidity({
           emitEvent: false
         });
@@ -1312,7 +1313,7 @@ class AltaEdicionCobroComponent {
         this.formAsignacion.get('asignacion').enable({
           emitEvent: false
         });
-        this.formAsignacion.get('asignacion').setValidators([_angular_forms__WEBPACK_IMPORTED_MODULE_13__.Validators.required, _angular_forms__WEBPACK_IMPORTED_MODULE_13__.Validators.max(venta.saldo)]);
+        this.formAsignacion.get('asignacion').setValidators([_angular_forms__WEBPACK_IMPORTED_MODULE_13__.Validators.max(venta.saldo)]);
         this.formAsignacion.get('asignacion').updateValueAndValidity({
           emitEvent: false
         });
@@ -1328,7 +1329,7 @@ class AltaEdicionCobroComponent {
         this.formAsignacion.get('asignacion').setValue(venta.saldo, {
           emitEvent: true
         });
-        this.formAsignacion.get('asignacion').setValidators([_angular_forms__WEBPACK_IMPORTED_MODULE_13__.Validators.required, _angular_forms__WEBPACK_IMPORTED_MODULE_13__.Validators.max(venta.saldo)]);
+        this.formAsignacion.get('asignacion').setValidators([_angular_forms__WEBPACK_IMPORTED_MODULE_13__.Validators.max(venta.saldo)]);
         this.formAsignacion.get('asignacion').updateValueAndValidity({
           emitEvent: false
         });
@@ -1422,69 +1423,55 @@ class AltaEdicionCobroComponent {
       });
     })();
   }
+  /**
+   * Metodo que agrega asignacion a grilla
+   */
   addAsignacion() {
+    if (this.formAsignacion.get('asignacion').value === null || this.formAsignacion.get('asignacion').value === 0 || this.formAsignacion.get('venta').value === "" || this.formAsignacion.get('venta').value === null) {
+      return this.alert.warning("Complete los campos venta y asignación");
+    }
     if (this.formAsignacion.valid) {
       if (this.dataSourceAsignacion.data.find(e => e.id === this.formAsignacion.get('venta').value.id)) {
         this.alert.warning("No puede agregar una Venta/Pagaré más de una vez");
       } else {
+        // Encapsulo la operacion
         let operacion = this.formAsignacion.get('venta').value;
-        if (operacion.esEdicion) {
-          let item_cobro = {
-            id: operacion.id,
-            descripcion: operacion.descripcion,
-            importe_neto: operacion.importe,
-            saldo: (0,lodash__WEBPACK_IMPORTED_MODULE_2__.round)(operacion.importe - this.formAsignacion.get('asignacion').value, 2),
-            importe_total: this.formAsignacion.get('asignacion').value + this.formAsignacion.get('interesMora').value,
-            interes: this.formAsignacion.get('interesMora').value,
-            asignacion: this.formAsignacion.get('asignacion').value,
-            operacion_tipo: operacion.asignacion,
-            bonificado: operacion.bonificado,
-            esEdicion: operacion.esEdicion
-          };
-          // if(item_cobro.saldo > 0) {
-          let op_aux = this.ventasPendientes.find(e => e.id === operacion.id);
-          op_aux.pagado = op_aux.pagado - item_cobro.asignacion;
-          op_aux.saldo = item_cobro.saldo;
-          this.ventasPendientes = this.ventasPendientes.filter(e => e.id != op_aux.id);
-          this.ventasPendientes.push(op_aux);
-          // } else if(item_cobro.saldo )
-          this.dataSourceAsignacion.data = [item_cobro, ...this.dataSourceAsignacion.data];
-          this.ventas_con_saldo = this.ventasPendientes.filter(e => e.saldo > 0);
-        } else {
-          let payload = {
-            id: this.formAsignacion.get('venta').value.id,
-            es_pago_parcial: this.formAsignacion.get('pagoParcial').value ? 1 : 0,
-            asignacion: this.formAsignacion.get('asignacion').value,
-            interes: this.formAsignacion.get('interesMora').value,
-            operacion_tipo: this.formAsignacion.get('venta').value.asignacion
-          };
-          this._cobranzasService.cargarItemCobro(this.token, payload).subscribe({
-            next: data => {
-              this.dataSourceAsignacion.data = [data.result, ...this.dataSourceAsignacion.data];
-              this.totalPagar = this.dataSourceAsignacion.data.reduce((acum, item) => acum + item.importe_total, 0);
-              // Bloque para recalcular operaciones pendientes
-              let item = data.result; // Encapsulo el item agregado
-              let item_aux = this.ventas_con_saldo.find(elemento => elemento.id === item.id); // Verifico si el item tiene saldo
-              // Actualizo valores de saldo y pagado
-              item_aux.saldo = item_aux.saldo - item.asignacion;
-              item_aux.pagado = item_aux.pagado + item.asignacion;
-              // Elimino el item del arreglo de ventas con saldo
-              this.ventas_con_saldo = this.ventas_con_saldo.filter(elemento => elemento.id != item.id);
-              if (item_aux.saldo > 0) {
-                this.ventas_con_saldo.push(item_aux);
-              }
-              this.formFormaCobro.get('netoDescontar').setValue(this.totalPagar);
-              this.formFormaCobro.get('netoDescontar').setValidators([_angular_forms__WEBPACK_IMPORTED_MODULE_13__.Validators.required, _angular_forms__WEBPACK_IMPORTED_MODULE_13__.Validators.max(this.totalPagar)]);
-              this.formFormaCobro.get('netoDescontar').updateValueAndValidity({
-                emitEvent: false
-              });
-              this.resetFormsValues('asignacion');
-            },
-            error: err => {
-              console.error('Error al cargar asignacion:', err);
-            }
-          });
-        }
+        // Encapsulo los valores que me serviran para los calculos
+        let saldo = parseFloat(operacion.saldo);
+        let asignacion = parseFloat(this.formAsignacion.get('asignacion').value);
+        let interes = this.formAsignacion.get('interesMora').value;
+        let importe_neto = parseFloat(operacion.importe);
+        // Validaciones
+        if (asignacion > saldo) return this.alert.warning('No puede pagar mas del saldo pendiente');
+        if (asignacion < 0) return this.alert.warning('Ingrese un importe mayor a cero');
+        // Calculo el nuevo valor del saldo
+        let nuevo_saldo = (0,lodash__WEBPACK_IMPORTED_MODULE_2__.round)(saldo - asignacion, 2);
+        // Armo el item que se agregara a la grilla
+        let item_cobro = {
+          id: operacion.id,
+          descripcion: operacion.descripcion,
+          importe_neto: importe_neto,
+          saldo: nuevo_saldo,
+          importe_total: asignacion + interes,
+          interes: interes,
+          asignacion: asignacion,
+          operacion_tipo: operacion.asignacion,
+          bonificado: operacion.bonificado
+        };
+        // Agrego el item al inicio de la grilla
+        this.dataSourceAsignacion.data = [item_cobro, ...this.dataSourceAsignacion.data];
+        // Busco la operacion en listado de ventas
+        let venta = this.ventasPendientes.find(item => item.id === item_cobro.id && item.asignacion === item_cobro.operacion_tipo);
+        let pagado = parseFloat(venta.pagado) + asignacion;
+        // Aplico los calculos
+        venta.saldo = nuevo_saldo.toString();
+        venta.pagado = pagado.toString();
+        // Actualizo el array de ventas con saldo (es el que se muestra en el combo del formulario)
+        this.ventas_con_saldo = this.ventasPendientes.filter(item => parseFloat(item.saldo) > 0);
+        // Ordeno el array de ventas con saldo por la operacion mas reciente
+        this.ventas_con_saldo.sort((a, b) => b.id - a.id);
+        // limpio el formulario para dejarlo listo para una nueva asignacion
+        this.resetFormsValues('asignacion');
       }
     } else {
       this.alert.warning('Revise los campos y vuelva a intentar');
@@ -1542,25 +1529,30 @@ class AltaEdicionCobroComponent {
     this.dataSourceFormaCobro.data = this.dataSourceFormaCobro.data.filter(e => e.idcobrotipo !== item.idcobrotipo);
   }
   /**
-  * Metodo para quitar item de una grilla
-  * @param item item seleccionado que se desea quitar
-  * @param dataSource dataSource al cual hace referencia
-  * @param tipo 0: asignacion, 1: forma de cobro.
-  */
+   * Este metodo quita el item de la grilla y vuelve a actualizar el combo de ventas pendientes con saldo
+   * @param item
+   * @param dataSource
+   * @param tipo
+   */
   removeItem(item, dataSource, tipo) {
+    // Quito de la grilla
     dataSource.data = dataSource.data.filter(elemento => elemento.id != item.id);
-    if (tipo === 0) {
-      let operacion = this.ventasPendientes.find(operacion => operacion.id === item.id);
-      operacion.esEdicion = item.esEdicion === true ? true : false;
-      if (operacion.esEdicion) {
-        operacion.pagado = operacion.pagado - item.asignacion;
-        operacion.saldo = operacion.saldo + item.asignacion;
-      }
-      this.ventasPendientes = this.ventasPendientes.filter(elemento => elemento.id != item.id);
-      this.ventasPendientes.push(operacion);
-      this.ventas_con_saldo = this.ventasPendientes.filter(elemento => elemento.saldo > 0);
-      this.ventas_con_saldo.sort((a, b) => a.id - b.id);
-    }
+    // Busco la operacion: venta / pagare
+    let operacion = this.ventasPendientes.find(operacion => operacion.id === item.id && operacion.asignacion === item.operacion_tipo);
+    // Encapsulo los valores que me serviran para los calculos
+    let saldo = parseFloat(operacion.saldo);
+    let pagado = parseFloat(operacion.pagado);
+    let importe_neto = parseFloat(operacion.importe);
+    // Calculo el nuevo valor del saldo
+    let nuevo_saldo = (0,lodash__WEBPACK_IMPORTED_MODULE_2__.round)(saldo + pagado, 2);
+    operacion.saldo = nuevo_saldo.toString();
+    // Calculo el nuevo valor pagado
+    let nuevo_pagado = (0,lodash__WEBPACK_IMPORTED_MODULE_2__.round)(importe_neto - pagado, 2);
+    operacion.pagado = nuevo_pagado.toString();
+    // Actualizo el array de ventas con saldo (es el que se muestra en el combo del formulario)
+    this.ventas_con_saldo = this.ventasPendientes.filter(item => parseFloat(item.saldo) > 0);
+    // Ordeno el array de ventas con saldo por la operacion mas reciente
+    this.ventas_con_saldo.sort((a, b) => b.id - a.id);
   }
   onSubmit() {
     let fechaCobro = this.formAsignacion.get('fecha').value ? new Date(this.formAsignacion.get('fecha').value) : null;
@@ -1569,10 +1561,7 @@ class AltaEdicionCobroComponent {
       cobro: {
         fecha: fechaCobroFormat,
         idcliente: this.formAsignacion.get('cliente').value.codigo,
-        bonificado: this.formAsignacion.get('bonificada').value === true ? 1 : 0,
-        importe_neto: this.formFormaCobro.get('netoDescontar').value,
-        importe_real: this.formFormaCobro.get('pagoReal').value,
-        intereses: this.formAsignacion.get('interesMora').value
+        bonificado: this.formAsignacion.get('bonificada').value === true ? 1 : 0
       },
       items_cobro_asignacion: this.dataSourceAsignacion.data.map(({
         id,
@@ -1586,7 +1575,6 @@ class AltaEdicionCobroComponent {
         interes,
         asignacion,
         operacion_tipo,
-        saldo,
         bonificado: bonificado === true ? 1 : 0
       })),
       items_forma_pago: this.dataSourceFormaCobro.data.map(({
