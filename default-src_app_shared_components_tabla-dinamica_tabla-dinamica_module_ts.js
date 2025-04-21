@@ -1310,9 +1310,12 @@ class TablaDinamicaComponent {
               ...rest
             }));
           }
-          if (r.data.puede_crear !== undefined) {
-            this.puedeCrearEmitter.emit(r.data.puede_crear);
+          if (r.data.puede_crear !== undefined || r.data.permisos.puede_crear !== undefined) {
+            this.puedeCrearEmitter.emit(r.data.puede_crear ?? r.data.permisos.puede_crear);
           }
+        }
+        if (r.data.puede_crear !== undefined || r.data.permisos?.puede_crear !== undefined) {
+          this.puedeCrearEmitter.emit(r.data.puede_crear ?? r.data.permisos.puede_crear);
         }
         this.filterDataSource = r.data.result ? r.data.result : r.data;
         this.dataSource = new _angular_material_table__WEBPACK_IMPORTED_MODULE_8__.MatTableDataSource(r.data.result ? r.data.result : r.data);

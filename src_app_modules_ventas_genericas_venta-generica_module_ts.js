@@ -3767,14 +3767,14 @@ class VentaGenericasComponent {
     this.accionesObjeto = [{
       nombre_boton: "Editar",
       functionName: 'editar',
-      iconoAccion: venta => venta.puede_modificar === true ? 'jedstion:editar' : '',
+      iconoAccion: venta => venta.puede_modificar === true ? 'jedstion:editar' : 'jedstion:editar_disabled',
       iconoAccionado: venta => '',
       iconoDeshabilitado: venta => venta.puede_modificar === false ? 'jedstion:editar_disabled' : '',
       visible: venta => true
     }, {
       nombre_boton: "Eliminar",
       functionName: 'eliminar',
-      iconoAccion: venta => venta.puede_eliminar === true ? 'jedstion:eliminar' : '',
+      iconoAccion: venta => venta.puede_eliminar === true ? 'jedstion:eliminar' : 'jedstion:eliminar_disabled',
       iconoAccionado: venta => '',
       iconoDeshabilitado: venta => venta.puede_eliminar === false ? 'jedstion:eliminar_disabled' : '',
       visible: venta => true
@@ -3788,14 +3788,14 @@ class VentaGenericasComponent {
     }, {
       nombre_boton: "Detalle Bonificado",
       functionName: 'ventas_bonificadas_detalle',
-      iconoAccion: venta => venta.puede_modificar === true && venta.tipo_venta === 1 ? 'jedstion:informacion' : '',
+      iconoAccion: venta => this.puedeCrear && venta.tipo_venta === 1 ? 'jedstion:informacion' : 'jedstion:informacion_disabled',
       iconoAccionado: venta => '',
-      iconoDeshabilitado: venta => venta.puede_modificar === false || venta.tipo_venta === 0 ? 'jedstion:informacion_disabled' : '',
+      iconoDeshabilitado: venta => '',
       visible: venta => true
     }, {
       nombre_boton: "Estados de Ventas",
       functionName: 'estados_ventas',
-      iconoAccion: venta => 'jedstion:vista_lista',
+      iconoAccion: venta => venta.tipo_venta === 1 ? 'jedstion:vista_lista' : 'jedstion:vista_lista_disabled',
       iconoAccionado: venta => '',
       iconoDeshabilitado: venta => '',
       visible: venta => true
@@ -3908,7 +3908,11 @@ class VentaGenericasComponent {
       case 'editar':
         if (event.params.data.puede_modificar === false) {
           if (event.params.data.tipo_venta === 1) {
-            return this.alert.warning('No se puede editar la venta.');
+            if (this.puedeCrear === true) {
+              return this.alert.warning('No se puede editar la venta porque esta asociada a una cobranza o a una factura.');
+            } else {
+              return this.alert.warning('No tiene permisos para editar la venta.');
+            }
           } else {
             return this.alert.warning('No se puede editar una venta del sistema anterior.');
           }
@@ -3919,7 +3923,11 @@ class VentaGenericasComponent {
       case 'eliminar':
         if (event.params.data.puede_eliminar === false) {
           if (event.params.data.tipo_venta === 1) {
-            return this.alert.warning('No se puede eliminar la venta.');
+            if (this.puedeCrear === true) {
+              return this.alert.warning('No se puede eliminar la venta porque esta asociada a una cobranza o a una factura.');
+            } else {
+              return this.alert.warning('No tiene permisos para eliminar la venta.');
+            }
           } else {
             return this.alert.warning('No se puede eliminar una venta del sistema anterior.');
           }
@@ -3933,13 +3941,14 @@ class VentaGenericasComponent {
       case 'ventas_bonificadas_detalle':
         if (event.params.data.tipo_venta === 0) {
           return this.alert.warning('No se puede ver las ventas bonificadas del sistema anterior.');
-        } else if (event.params.data.puede_eliminar === false) {
-          return this.alert.warning('No tiene permiso para ver el detalle bonificado de una venta.');
+        } else if (this.puedeCrear === false && event.params.data.puede_modificar === false) {
+          return this.alert.warning('No tiene permiso para ver el detalle bonificado.');
         } else {
           this.listadoVentasBonificadas(event);
         }
         break;
       case 'estados_ventas':
+        if (event.params.data.tipo_venta === 0) return this.alert.info('No se pueden ver los estados de venta del sistema anterior.');
         this.estadosVentas(event);
         break;
     }

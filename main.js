@@ -18298,6 +18298,7 @@ const environment = {
     view_items_oc_pendientes: `${$BASE_REST}/view_items_oc_pendientes`,
     view_stock_entregas: `${$BASE_REST}/view_stock_entregas`,
     view_stock_depositos: `${$BASE_REST}/view_stock_depositos`,
+    view_stock_remitos: `${$BASE_REST}/view_stock_remitos`,
     entregar: `${$BASE_REST}/stk_entrega/entregar?identrega=`,
     stk_entrega_puede_crear: `${$BASE_REST}/stk_entrega/puede_crear`,
     stk_articulo_adjuntos: `${$BASE_REST}/stk_articulo/adjuntos`,
