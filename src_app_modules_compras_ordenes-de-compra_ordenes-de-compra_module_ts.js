@@ -570,7 +570,9 @@ class OrdenesDeCompraComponent {
       _endpointService: environments_environment__WEBPACK_IMPORTED_MODULE_2__.environment.compras.compras_orden_compra_enviar_orden_compra,
       title: `Enviar Orden de Compra N°${event.params.data.codigo}`,
       permiteAdjunto: false
+      // defaultMessage: 'Hola gato' // opcional
     };
+
     this.dialogo.open(_shared_components_enviar_email_modal_enviar_email_component__WEBPACK_IMPORTED_MODULE_4__.EnviarEmailModalComponent, {
       data: modal_data,
       panelClass: 'my-dialog',
