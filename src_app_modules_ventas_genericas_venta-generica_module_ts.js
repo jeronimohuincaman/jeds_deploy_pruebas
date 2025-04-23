@@ -1743,7 +1743,7 @@ class AltaEdicionVentaComponent {
                 descripcion: _this3.obra.descripcion_localidad
               },
               tratamiento: {
-                id: _this3.obra.idtratamiento,
+                idtratamiento: _this3.obra.idtratamiento,
                 descripcion: _this3.obra.descripcion_tratamiento
               },
               colocacion: _this3.obra?.colocacion ? true : false,
