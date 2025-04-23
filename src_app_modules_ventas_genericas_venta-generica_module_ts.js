@@ -2237,9 +2237,9 @@ class BonificadoDetalleComponent {
     this.dialogo = dialogo;
     this.route = route;
     this.venta_bonificadas = [];
-    this.headers = ['Venta', 'Bonificado', 'Fecha', 'Importe Neto', 'Importe Iva', 'Importe Descuento', 'Importe Total'];
-    this.columns = ['idventa', 'bonificado', 'fecha', 'importe_neto', 'importe_iva', 'importe_descuento', 'importe_total'];
-    this.column_params = ['idventa', 'bonificado', 'fecha', 'importe_neto', 'importe_iva', 'importe_descuento', 'importe_total'];
+    this.headers = ['Venta', 'Bonificado', 'Fecha', 'Importe Neto', 'Importe Iva', 'Importe Total'];
+    this.columns = ['idventa', 'bonificado', 'fecha', 'importe_neto', 'importe_iva', 'importe_total'];
+    this.column_params = ['idventa', 'bonificado', 'fecha', 'importe_neto', 'importe_iva', 'importe_total'];
     this.filtersLike = ['fecha'];
     this.funcionesObjeto = null;
     this.extraParams = '';
