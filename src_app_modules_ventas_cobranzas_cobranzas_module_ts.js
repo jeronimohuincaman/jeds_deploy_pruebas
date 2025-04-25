@@ -1137,6 +1137,7 @@ class AltaEdicionCobroComponent {
           razonSocial: this.itemEdicion.cobro.descripcion_cliente
         });
         this.formAsignacion.get('cliente').disable();
+        this.formAsignacion.get('bonificada').setValue(this.itemEdicion.cobro.bonificado === 1 ? true : false);
         this.formAsignacion.get('bonificada').disable();
         this.getVentaPendiente();
         this.dataSourceFormaCobro.data = data.result.items_forma_pago;
