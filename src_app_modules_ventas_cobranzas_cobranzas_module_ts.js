@@ -1575,7 +1575,7 @@ class AltaEdicionCobroComponent {
         interes,
         asignacion,
         operacion_tipo,
-        bonificado: bonificado === true ? 1 : 0
+        bonificado: bonificado
       })),
       items_forma_pago: this.dataSourceFormaCobro.data.map(({
         idcobrotipo,
