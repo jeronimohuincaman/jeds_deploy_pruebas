@@ -18332,6 +18332,7 @@ const environment = {
     vta_venta_calcular_item: `${$BASE_REST}/vta_venta/calcular_item`,
     vta_venta_calcular_unitario: `${$BASE_REST}/vta_venta/calcular_unitario`,
     vta_venta_get_datos: `${$BASE_REST}/vta_venta/get_datos`,
+    generar_reporte_venta: `${$BASE_REST}/vta_venta/generar_reporte_venta`,
     view_vta_ventas: `${$BASE_REST}/view_vta_ventas`,
     view_vta_venta_bonificado_detalles: `${$BASE_REST}/view_vta_venta_bonificado_detalles`,
     view_vta_venta_selects: `${$BASE_REST}/view_vta_venta_selects`,
