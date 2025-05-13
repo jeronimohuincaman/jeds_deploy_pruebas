@@ -41540,6 +41540,9 @@ body.light mat-option:nth-child(odd):hover {
     .xl\:max-h-\[200px\] {
         max-height: 200px !important;
     }
+    .xl\:max-h-\[630px\] {
+        max-height: 630px !important;
+    }
     .xl\:max-h-\[700px\] {
         max-height: 700px !important;
     }

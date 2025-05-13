@@ -1620,7 +1620,7 @@ class TablaDinamicaComponent {
       temp = temp[propiedad];
       if (!temp) {
         err = true;
-        temp = temp === 0 ? 'No' : '-'; //Parseo valor booleano manejado como numero para que me muestre un 'No'.
+        if (propiedad != 'cantidad_remitos_oc') temp = temp === 0 ? 'No' : '-'; //Parseo valor booleano manejado como numero para que me muestre un 'No'.
       }
     }
 
