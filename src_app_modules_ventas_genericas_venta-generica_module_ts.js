@@ -2400,7 +2400,7 @@ class CalcularUnitarioComponent {
     this.creadoExitosamente = new _angular_core__WEBPACK_IMPORTED_MODULE_4__.EventEmitter();
     this.editadoExitosamente = new _angular_core__WEBPACK_IMPORTED_MODULE_4__.EventEmitter();
     this.deposito_default = 0;
-    this.title = `Calcular Precio Unitario ${this.data.descripcion}`;
+    this.title = `Calcular Precio Unitario `; /* ${this.data.descripcion} */
     // Subscribe to empresa data
     this._empresaService.empresa$.pipe((0,rxjs__WEBPACK_IMPORTED_MODULE_6__.takeUntil)(this._unsubscribeAll)).subscribe(empresa => {
       this.color_primario = empresa.color_primario;

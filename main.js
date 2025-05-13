@@ -7910,7 +7910,11 @@ const appRoutes = [
   }, {
     path: 'cobranzas',
     canActivate: [_core_auth_guards_permiso_guard__WEBPACK_IMPORTED_MODULE_4__.PermisoGuard],
-    loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-node_modules_angular_material_fesm2022_checkbox_mjs"), __webpack_require__.e("default-src_app_shared_components_tabla-dinamica_tabla-dinamica_module_ts"), __webpack_require__.e("default-node_modules_angular_material_fesm2022_datepicker_mjs"), __webpack_require__.e("common"), __webpack_require__.e("src_app_modules_ventas_cobranzas_cobranzas_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./modules/ventas/cobranzas/cobranzas.module */ 57750)).then(m => m.CobranzasModule)
+    loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-node_modules_angular_material_fesm2022_checkbox_mjs"), __webpack_require__.e("default-src_app_shared_components_tabla-dinamica_tabla-dinamica_module_ts"), __webpack_require__.e("default-node_modules_angular_material_fesm2022_datepicker_mjs"), __webpack_require__.e("default-node_modules_angular_material_fesm2022_radio_mjs-node_modules_angular_material_fesm20-5f235d"), __webpack_require__.e("common"), __webpack_require__.e("src_app_modules_ventas_cobranzas_cobranzas_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./modules/ventas/cobranzas/cobranzas.module */ 57750)).then(m => m.CobranzasModule)
+  }, {
+    path: 'facturas',
+    canActivate: [_core_auth_guards_permiso_guard__WEBPACK_IMPORTED_MODULE_4__.PermisoGuard],
+    loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-node_modules_angular_material_fesm2022_checkbox_mjs"), __webpack_require__.e("default-src_app_shared_components_tabla-dinamica_tabla-dinamica_module_ts"), __webpack_require__.e("default-node_modules_angular_material_fesm2022_datepicker_mjs"), __webpack_require__.e("default-node_modules_angular_material_fesm2022_radio_mjs-node_modules_angular_material_fesm20-5f235d"), __webpack_require__.e("src_app_modules_ventas_facturacion_facturacion_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./modules/ventas/facturacion/facturacion.module */ 74642)).then(m => m.FacturacionModule)
   }, {
     path: 'entrega_qr',
     canActivate: [_core_auth_guards_permiso_guard__WEBPACK_IMPORTED_MODULE_4__.PermisoGuard],
@@ -17080,6 +17084,14 @@ const TitleType = [{
   icon: "",
   text: "Entrega QR",
   path: "/entrega_qr"
+}, {
+  icon: "",
+  text: "Facturas",
+  path: "/facturas"
+}, {
+  icon: "",
+  text: "Guardar Factura",
+  path: "/facturas/guardar-factura"
 }];
 
 /***/ }),
@@ -18353,7 +18365,11 @@ const environment = {
     vta_cobros: `${$BASE_REST}/vta_cobros`,
     get_datos: `${$BASE_REST}/vta_cobro/get_datos`,
     view_vta_venta_estados: `${$BASE_REST}/view_vta_venta_estados`,
-    vta_venta_estados: `${$BASE_REST}/vta_venta_estados`
+    vta_venta_estados: `${$BASE_REST}/vta_venta_estados`,
+    get_datos_empresa: `${$BASE_REST}/fe_factura/get_datos_empresa`,
+    view_fe_facturas: `${$BASE_REST}/view_fe_facturas`,
+    fe_facturas: `${$BASE_REST}/fe_facturas`,
+    reporte_comprobante_pdf: `${$BASE_REST}/fe_factura/reporte_comprobante_pdf`
   },
   compras: {
     compras_cotizacion: `${$BASE_REST}/compras_cotizacion`,
