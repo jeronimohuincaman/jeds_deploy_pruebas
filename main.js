@@ -18369,7 +18369,10 @@ const environment = {
     get_datos_empresa: `${$BASE_REST}/fe_factura/get_datos_empresa`,
     view_fe_facturas: `${$BASE_REST}/view_fe_facturas`,
     fe_facturas: `${$BASE_REST}/fe_facturas`,
-    reporte_comprobante_pdf: `${$BASE_REST}/fe_factura/reporte_comprobante_pdf`
+    reporte_comprobante_pdf: `${$BASE_REST}/fe_factura/reporte_comprobante_pdf`,
+    asociar_cobro: `${$BASE_REST}/fe_factura/asociar_cobro`,
+    generar_comprobante_factura: `${$BASE_REST}/fe_factura/generar_comprobante`,
+    get_datos_factura: `${$BASE_REST}/fe_factura/get_datos`
   },
   compras: {
     compras_cotizacion: `${$BASE_REST}/compras_cotizacion`,
