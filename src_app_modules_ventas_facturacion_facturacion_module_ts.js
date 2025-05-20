@@ -527,7 +527,8 @@ class DialogAccionesComponent {
         });
         break;
       case 'generar':
-        this.facturacionService.generarFactura(this.idFactura).subscribe({
+        let filter = `?idfactura=${this.idFactura}`;
+        this.facturacionService.generarComprobanteFactura(filter).subscribe({
           next: res => {
             if (res.success == true) {
               this.alert.success(res.message);
@@ -740,7 +741,7 @@ class FacturasComponent {
     }];
     this.showMenu = () => true;
     this.accionesObjeto = [{
-      nombre_boton: "Editar",
+      nombre_boton: 'Editar',
       functionName: 'editar',
       iconoAccion: factura => factura.generada == 'Si' ? 'jedstion:editar_disabled' : 'jedstion:editar',
       iconoAccionado: () => '',
@@ -749,7 +750,7 @@ class FacturasComponent {
     }, {
       nombre_boton: 'Imprimir Factura',
       functionName: 'imprimir_factura',
-      iconoAccion: () => 'jedstion:imprimir',
+      iconoAccion: factura => factura.generada != 'Si' ? 'jedstion:imprimir_disabled' : 'jedstion:imprimir',
       iconoAccionado: () => '',
       iconoDeshabilitado: () => '',
       visible: () => true
@@ -786,7 +787,11 @@ class FacturasComponent {
         }
         break;
       case 'imprimir_factura':
-        this.imprimirFactura(event);
+        if (event.params.data.generada != 'Si') {
+          this.alert.error('La factura no puede imprimirse porque no ha sido generada');
+        } else {
+          this.imprimirFactura(event);
+        }
         break;
       case 'asociar_cobro':
         if (event.params.data.idcobro) {
@@ -799,7 +804,7 @@ class FacturasComponent {
         if (event.params.data.generada == 'Si') {
           this.alert.error('La factura ya fue generada');
         } else {
-          this.generarFactura(event);
+          this.generarComprobanteFactura(event);
         }
         break;
       case 'eliminar':
@@ -835,7 +840,7 @@ class FacturasComponent {
       }
     });
   }
-  generarFactura(event) {
+  generarComprobanteFactura(event) {
     let codigoFactura = event.params.data.codigo;
     this.dialog.open(_dialog_acciones_factura_dialog_acciones_dialog_acciones_component__WEBPACK_IMPORTED_MODULE_2__.DialogAccionesComponent, {
       panelClass: 'ayuda-dialog',
@@ -1017,7 +1022,7 @@ function GuardarFacturaComponent_div_1_mat_option_69_Template(rf, ctx) {
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtextInterpolate1"](" ", comprobante_r33.Desc, " ");
   }
 }
-function GuardarFacturaComponent_div_1_mat_option_80_Template(rf, ctx) {
+function GuardarFacturaComponent_div_1_mat_option_75_Template(rf, ctx) {
   if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](0, "mat-option", 42);
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](1);
@@ -1069,9 +1074,9 @@ function GuardarFacturaComponent_div_1_mat_option_108_Template(rf, ctx) {
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtextInterpolate1"](" ", articulo_r37.descripcion, " ");
   }
 }
-function GuardarFacturaComponent_div_1_th_150_Template(rf, ctx) {
+function GuardarFacturaComponent_div_1_th_144_Template(rf, ctx) {
   if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](0, "th", 87);
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](0, "th", 88);
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](1, " Detalle ");
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
   }
@@ -1080,9 +1085,9 @@ function GuardarFacturaComponent_div_1_th_150_Template(rf, ctx) {
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵstyleProp"]("background-color", ctx_r15.color_primario || "");
   }
 }
-function GuardarFacturaComponent_div_1_td_151_Template(rf, ctx) {
+function GuardarFacturaComponent_div_1_td_145_Template(rf, ctx) {
   if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](0, "td", 88);
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](0, "td", 89);
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](1);
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
   }
@@ -1092,9 +1097,9 @@ function GuardarFacturaComponent_div_1_td_151_Template(rf, ctx) {
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtextInterpolate1"](" ", element_r38.detalle, " ");
   }
 }
-function GuardarFacturaComponent_div_1_th_153_Template(rf, ctx) {
+function GuardarFacturaComponent_div_1_th_147_Template(rf, ctx) {
   if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](0, "th", 89);
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](0, "th", 90);
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](1, " Cantidad ");
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
   }
@@ -1103,9 +1108,9 @@ function GuardarFacturaComponent_div_1_th_153_Template(rf, ctx) {
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵstyleProp"]("background-color", ctx_r17.color_primario || "");
   }
 }
-function GuardarFacturaComponent_div_1_td_154_Template(rf, ctx) {
+function GuardarFacturaComponent_div_1_td_148_Template(rf, ctx) {
   if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](0, "td", 88);
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](0, "td", 89);
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](1);
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
   }
@@ -1115,9 +1120,9 @@ function GuardarFacturaComponent_div_1_td_154_Template(rf, ctx) {
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtextInterpolate1"](" ", element_r39.cantidad, " ");
   }
 }
-function GuardarFacturaComponent_div_1_th_156_Template(rf, ctx) {
+function GuardarFacturaComponent_div_1_th_150_Template(rf, ctx) {
   if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](0, "th", 89);
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](0, "th", 90);
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](1, " Precio Unitario ");
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
   }
@@ -1126,9 +1131,9 @@ function GuardarFacturaComponent_div_1_th_156_Template(rf, ctx) {
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵstyleProp"]("background-color", ctx_r19.color_primario || "");
   }
 }
-function GuardarFacturaComponent_div_1_td_157_Template(rf, ctx) {
+function GuardarFacturaComponent_div_1_td_151_Template(rf, ctx) {
   if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](0, "td", 88);
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](0, "td", 89);
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](1);
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵpipe"](2, "number");
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
@@ -1139,9 +1144,9 @@ function GuardarFacturaComponent_div_1_td_157_Template(rf, ctx) {
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtextInterpolate1"](" ", _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵpipeBind2"](2, 1, element_r40.importe_unitario, "1.2-2"), " ");
   }
 }
-function GuardarFacturaComponent_div_1_th_159_Template(rf, ctx) {
+function GuardarFacturaComponent_div_1_th_153_Template(rf, ctx) {
   if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](0, "th", 89);
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](0, "th", 90);
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](1, " Subtotal ");
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
   }
@@ -1150,9 +1155,9 @@ function GuardarFacturaComponent_div_1_th_159_Template(rf, ctx) {
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵstyleProp"]("background-color", ctx_r21.color_primario || "");
   }
 }
-function GuardarFacturaComponent_div_1_td_160_Template(rf, ctx) {
+function GuardarFacturaComponent_div_1_td_154_Template(rf, ctx) {
   if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](0, "td", 88);
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](0, "td", 89);
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](1);
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵpipe"](2, "number");
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
@@ -1163,9 +1168,9 @@ function GuardarFacturaComponent_div_1_td_160_Template(rf, ctx) {
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtextInterpolate1"](" ", _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵpipeBind2"](2, 1, element_r41.subtotal, "1.2-2"), " ");
   }
 }
-function GuardarFacturaComponent_div_1_th_162_Template(rf, ctx) {
+function GuardarFacturaComponent_div_1_th_156_Template(rf, ctx) {
   if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](0, "th", 89);
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](0, "th", 90);
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](1, " IVA ");
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
   }
@@ -1174,9 +1179,9 @@ function GuardarFacturaComponent_div_1_th_162_Template(rf, ctx) {
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵstyleProp"]("background-color", ctx_r23.color_primario || "");
   }
 }
-function GuardarFacturaComponent_div_1_td_163_Template(rf, ctx) {
+function GuardarFacturaComponent_div_1_td_157_Template(rf, ctx) {
   if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](0, "td", 88);
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](0, "td", 89);
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](1);
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵpipe"](2, "number");
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵpipe"](3, "number");
@@ -1185,12 +1190,12 @@ function GuardarFacturaComponent_div_1_td_163_Template(rf, ctx) {
   if (rf & 2) {
     const element_r42 = ctx.$implicit;
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtextInterpolate2"](" ", element_r42.importeIVA > 0 ? "$" + _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵpipeBind2"](2, 2, element_r42.importeIVA, "1.2-2") : "", " ", element_r42.importeIVA > 0 && element_r42.porcentajeIVA ? "(" + _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵpipeBind2"](3, 5, element_r42.porcentajeIVA, "1.2-2") + "%" + ")" : "", " ");
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtextInterpolate2"](" ", element_r42.subtotal_iva > 0 ? "$" + _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵpipeBind2"](2, 2, element_r42.subtotal_iva, "1.2-2") : "", " ", element_r42.importeIVA > 0 && element_r42.porcentajeIVA ? "(" + _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵpipeBind2"](3, 5, element_r42.porcentajeIVA, "1.2-2") + "%" + ")" : "", " ");
   }
 }
-function GuardarFacturaComponent_div_1_th_165_Template(rf, ctx) {
+function GuardarFacturaComponent_div_1_th_159_Template(rf, ctx) {
   if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](0, "th", 89);
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](0, "th", 90);
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](1, " Total ");
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
   }
@@ -1199,9 +1204,9 @@ function GuardarFacturaComponent_div_1_th_165_Template(rf, ctx) {
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵstyleProp"]("background-color", ctx_r25.color_primario || "");
   }
 }
-function GuardarFacturaComponent_div_1_td_166_Template(rf, ctx) {
+function GuardarFacturaComponent_div_1_td_160_Template(rf, ctx) {
   if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](0, "td", 88);
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](0, "td", 89);
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](1);
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵpipe"](2, "number");
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
@@ -1212,20 +1217,20 @@ function GuardarFacturaComponent_div_1_td_166_Template(rf, ctx) {
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtextInterpolate1"](" ", _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵpipeBind2"](2, 1, element_r43.total, "1.2-2"), " ");
   }
 }
-function GuardarFacturaComponent_div_1_th_168_Template(rf, ctx) {
+function GuardarFacturaComponent_div_1_th_162_Template(rf, ctx) {
   if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelement"](0, "th", 90);
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelement"](0, "th", 91);
   }
   if (rf & 2) {
     const ctx_r27 = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵnextContext"](2);
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵstyleProp"]("background-color", ctx_r27.color_primario || "");
   }
 }
-function GuardarFacturaComponent_div_1_td_169_div_1_Template(rf, ctx) {
+function GuardarFacturaComponent_div_1_td_163_div_1_Template(rf, ctx) {
   if (rf & 1) {
     const _r48 = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵgetCurrentView"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](0, "div", 92)(1, "mat-icon", 93);
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵlistener"]("click", function GuardarFacturaComponent_div_1_td_169_div_1_Template_mat_icon_click_1_listener() {
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](0, "div", 93)(1, "mat-icon", 94);
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵlistener"]("click", function GuardarFacturaComponent_div_1_td_163_div_1_Template_mat_icon_click_1_listener() {
       _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵrestoreView"](_r48);
       const element_r44 = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵnextContext"]().$implicit;
       const ctx_r46 = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵnextContext"](2);
@@ -1240,10 +1245,10 @@ function GuardarFacturaComponent_div_1_td_169_div_1_Template(rf, ctx) {
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵstyleProp"]("color", ctx_r45.color_primario || "");
   }
 }
-function GuardarFacturaComponent_div_1_td_169_Template(rf, ctx) {
+function GuardarFacturaComponent_div_1_td_163_Template(rf, ctx) {
   if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](0, "td", 88);
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtemplate"](1, GuardarFacturaComponent_div_1_td_169_div_1_Template, 3, 2, "div", 91);
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](0, "td", 89);
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtemplate"](1, GuardarFacturaComponent_div_1_td_163_div_1_Template, 3, 2, "div", 92);
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
   }
   if (rf & 2) {
@@ -1252,14 +1257,14 @@ function GuardarFacturaComponent_div_1_td_169_Template(rf, ctx) {
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("ngIf", element_r44.acciones != "");
   }
 }
-function GuardarFacturaComponent_div_1_tr_170_Template(rf, ctx) {
-  if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelement"](0, "tr", 94);
-  }
-}
-function GuardarFacturaComponent_div_1_tr_171_Template(rf, ctx) {
+function GuardarFacturaComponent_div_1_tr_164_Template(rf, ctx) {
   if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelement"](0, "tr", 95);
+  }
+}
+function GuardarFacturaComponent_div_1_tr_165_Template(rf, ctx) {
+  if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelement"](0, "tr", 96);
   }
 }
 function GuardarFacturaComponent_div_1_span_183_Template(rf, ctx) {
@@ -1350,17 +1355,17 @@ function GuardarFacturaComponent_div_1_Template(rf, ctx) {
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtemplate"](69, GuardarFacturaComponent_div_1_mat_option_69_Template, 2, 2, "mat-option", 28);
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]()()();
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](70, "div", 36)(71, "span", 12);
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](72, "N\u00FAmero");
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](72, "Pto. de Venta");
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](73, "mat-form-field");
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelement"](74, "input", 37);
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]()();
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](75, "div", 38)(76, "span", 12);
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](77, "Pto. de Venta");
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](78, "mat-form-field")(79, "mat-select", 39);
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtemplate"](80, GuardarFacturaComponent_div_1_mat_option_80_Template, 2, 2, "mat-option", 28);
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](73, "mat-form-field")(74, "mat-select", 37);
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtemplate"](75, GuardarFacturaComponent_div_1_mat_option_75_Template, 2, 2, "mat-option", 28);
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]()()();
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](76, "div", 38)(77, "span", 12);
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](78, "N\u00FAmero");
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](79, "mat-form-field");
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelement"](80, "input", 39);
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]()();
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](81, "div", 40)(82, "mat-radio-group", 41)(83, "mat-radio-button", 42);
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](84, "Contado");
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
@@ -1430,46 +1435,46 @@ function GuardarFacturaComponent_div_1_Template(rf, ctx) {
       return _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵresetView"](ctx_r54.addArticulo());
     });
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelement"](140, "mat-icon", 65);
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]()()();
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](141, "div", 10)(142, "div", 23)(143, "span", 12);
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](144, "Observaciones");
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](145, "mat-form-field");
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelement"](146, "input", 66);
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]()()()();
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](147, "div", 67)(148, "table", 68);
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementContainerStart"](149, 69);
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtemplate"](150, GuardarFacturaComponent_div_1_th_150_Template, 2, 2, "th", 70);
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtemplate"](151, GuardarFacturaComponent_div_1_td_151_Template, 2, 1, "td", 71);
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](141, "div", 66)(142, "table", 67);
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementContainerStart"](143, 68);
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtemplate"](144, GuardarFacturaComponent_div_1_th_144_Template, 2, 2, "th", 69);
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtemplate"](145, GuardarFacturaComponent_div_1_td_145_Template, 2, 1, "td", 70);
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementContainerEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementContainerStart"](152, 72);
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtemplate"](153, GuardarFacturaComponent_div_1_th_153_Template, 2, 2, "th", 73);
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtemplate"](154, GuardarFacturaComponent_div_1_td_154_Template, 2, 1, "td", 71);
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementContainerStart"](146, 71);
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtemplate"](147, GuardarFacturaComponent_div_1_th_147_Template, 2, 2, "th", 72);
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtemplate"](148, GuardarFacturaComponent_div_1_td_148_Template, 2, 1, "td", 70);
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementContainerEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementContainerStart"](155, 74);
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtemplate"](156, GuardarFacturaComponent_div_1_th_156_Template, 2, 2, "th", 73);
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtemplate"](157, GuardarFacturaComponent_div_1_td_157_Template, 3, 4, "td", 71);
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementContainerStart"](149, 73);
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtemplate"](150, GuardarFacturaComponent_div_1_th_150_Template, 2, 2, "th", 72);
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtemplate"](151, GuardarFacturaComponent_div_1_td_151_Template, 3, 4, "td", 70);
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementContainerEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementContainerStart"](158, 75);
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtemplate"](159, GuardarFacturaComponent_div_1_th_159_Template, 2, 2, "th", 73);
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtemplate"](160, GuardarFacturaComponent_div_1_td_160_Template, 3, 4, "td", 71);
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementContainerStart"](152, 74);
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtemplate"](153, GuardarFacturaComponent_div_1_th_153_Template, 2, 2, "th", 72);
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtemplate"](154, GuardarFacturaComponent_div_1_td_154_Template, 3, 4, "td", 70);
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementContainerEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementContainerStart"](161, 76);
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtemplate"](162, GuardarFacturaComponent_div_1_th_162_Template, 2, 2, "th", 73);
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtemplate"](163, GuardarFacturaComponent_div_1_td_163_Template, 4, 8, "td", 71);
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementContainerStart"](155, 75);
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtemplate"](156, GuardarFacturaComponent_div_1_th_156_Template, 2, 2, "th", 72);
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtemplate"](157, GuardarFacturaComponent_div_1_td_157_Template, 4, 8, "td", 70);
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementContainerEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementContainerStart"](164, 77);
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtemplate"](165, GuardarFacturaComponent_div_1_th_165_Template, 2, 2, "th", 73);
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtemplate"](166, GuardarFacturaComponent_div_1_td_166_Template, 3, 4, "td", 71);
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementContainerStart"](158, 76);
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtemplate"](159, GuardarFacturaComponent_div_1_th_159_Template, 2, 2, "th", 72);
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtemplate"](160, GuardarFacturaComponent_div_1_td_160_Template, 3, 4, "td", 70);
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementContainerEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementContainerStart"](167, 78);
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtemplate"](168, GuardarFacturaComponent_div_1_th_168_Template, 1, 2, "th", 79);
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtemplate"](169, GuardarFacturaComponent_div_1_td_169_Template, 2, 1, "td", 71);
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementContainerStart"](161, 77);
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtemplate"](162, GuardarFacturaComponent_div_1_th_162_Template, 1, 2, "th", 78);
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtemplate"](163, GuardarFacturaComponent_div_1_td_163_Template, 2, 1, "td", 70);
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementContainerEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtemplate"](170, GuardarFacturaComponent_div_1_tr_170_Template, 1, 0, "tr", 80);
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtemplate"](171, GuardarFacturaComponent_div_1_tr_171_Template, 1, 0, "tr", 81);
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtemplate"](164, GuardarFacturaComponent_div_1_tr_164_Template, 1, 0, "tr", 79);
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtemplate"](165, GuardarFacturaComponent_div_1_tr_165_Template, 1, 0, "tr", 80);
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]()();
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](172, "div", 82)(173, "div", 83)(174, "span", 31);
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](166, "div", 81)(167, "div", 23)(168, "span", 12);
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](169, "Observaciones");
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](170, "mat-form-field");
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelement"](171, "input", 82);
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]()()();
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](172, "div", 83)(173, "div", 84)(174, "span", 31);
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](175);
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵpipe"](176, "number");
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
@@ -1481,9 +1486,9 @@ function GuardarFacturaComponent_div_1_Template(rf, ctx) {
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](181);
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵpipe"](182, "number");
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtemplate"](183, GuardarFacturaComponent_div_1_span_183_Template, 3, 5, "span", 84);
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtemplate"](183, GuardarFacturaComponent_div_1_span_183_Template, 3, 5, "span", 85);
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]()();
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](184, "div", 85)(185, "button", 86);
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](184, "div", 86)(185, "button", 87);
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵlistener"]("click", function GuardarFacturaComponent_div_1_Template_button_click_185_listener() {
       _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵrestoreView"](_r51);
       const ctx_r55 = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵnextContext"]();
@@ -1534,9 +1539,9 @@ function GuardarFacturaComponent_div_1_Template(rf, ctx) {
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtextInterpolate1"]("IVA: ", ctx_r1.facturaForm.get("cliente").value.condicioniva_descripcion, "");
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](7);
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("ngForOf", ctx_r1.comprobantes);
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](11);
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](6);
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("ngForOf", ctx_r1.puntosVenta);
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](3);
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](8);
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("value", 1);
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](2);
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("value", 0);
@@ -1554,23 +1559,25 @@ function GuardarFacturaComponent_div_1_Template(rf, ctx) {
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵstyleProp"]("background-color", ctx_r1.color_primario || "");
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](16);
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵstyleProp"]("background-color", ctx_r1.color_primario || "");
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](9);
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](3);
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("dataSource", ctx_r1.facturaDataSource);
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](22);
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("matHeaderRowDef", ctx_r1.columns);
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](1);
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("matRowDefColumns", ctx_r1.columns);
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](6);
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("formControl", ctx_r1.observaciones);
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](4);
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtextInterpolate2"](" Subtotal: ", ctx_r1.subtotal != 0 && ctx_r1.subtotal != undefined ? "$" : "", "", ctx_r1.subtotal != 0 ? _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵpipeBind2"](176, 43, ctx_r1.subtotal, "1.2-2") : "", " ");
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtextInterpolate2"](" Subtotal: ", ctx_r1.subtotal != 0 && ctx_r1.subtotal != undefined ? "$" : "", "", ctx_r1.subtotal != 0 ? _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵpipeBind2"](176, 44, ctx_r1.subtotal, "1.2-2") : "", " ");
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](3);
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtextInterpolate2"]("IVA: ", ctx_r1.totalIVA > 0 ? "$" : "", "", _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵpipeBind2"](179, 46, ctx_r1.totalIVA, "1.2-2"), "");
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtextInterpolate2"]("IVA: ", ctx_r1.totalIVA > 0 ? "$" : "", "", _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵpipeBind2"](179, 47, ctx_r1.totalIVA, "1.2-2"), "");
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](3);
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtextInterpolate2"]("Bruto:", ctx_r1.bruto > 0 ? "$" : "", " ", ctx_r1.bruto != 0 ? _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵpipeBind2"](182, 49, ctx_r1.bruto, "1.2-2") : "", "");
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtextInterpolate2"]("Bruto:", ctx_r1.bruto > 0 ? "$" : "", " ", ctx_r1.bruto != 0 ? _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵpipeBind2"](182, 50, ctx_r1.bruto, "1.2-2") : "", "");
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](2);
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("ngIf", ctx_r1.cobro);
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](2);
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵstyleProp"]("background-color", ctx_r1.color_primario || "");
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("disabled", ctx_r1.faltaFacturarVista != 0 && ctx_r1.cobro || ctx_r1.bruto == 0)("ngClass", _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵpureFunction1"](52, _c0, ctx_r1.faltaFacturarVista != 0 && ctx_r1.cobro || ctx_r1.bruto == 0));
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("disabled", ctx_r1.faltaFacturarVista > 10 || ctx_r1.bruto == 0 && ctx_r1.cobro)("ngClass", _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵpureFunction1"](53, _c0, ctx_r1.faltaFacturarVista > 10 || ctx_r1.bruto == 0 && ctx_r1.cobro));
   }
 }
 const MY_DATE_FORMATS = {
@@ -1602,28 +1609,7 @@ class GuardarFacturaComponent {
     this.comprobantesAsociados = [];
     this.ventasAsociadas = [];
     this.articulos = [];
-    this.facturaDataSource = new _angular_material_table__WEBPACK_IMPORTED_MODULE_8__.MatTableDataSource([{
-      idarticulo: '',
-      cantidad: '',
-      subtotal: '',
-      iva: '',
-      importe_unitario: '',
-      detalle: ''
-    }, {
-      idarticulo: '',
-      cantidad: '',
-      subtotal: '',
-      iva: '',
-      importe_unitario: '',
-      detalle: ''
-    }, {
-      idarticulo: '',
-      cantidad: '',
-      subtotal: '',
-      iva: '',
-      importe_unitario: '',
-      detalle: ''
-    }]);
+    this.facturaDataSource = new _angular_material_table__WEBPACK_IMPORTED_MODULE_8__.MatTableDataSource([]);
     this.isEdicion = false;
     this.cobro = null;
     this.columns = ['detalle', 'cantidad', 'precio_unitario', 'subtotal', 'iva', 'total', 'acciones'];
@@ -1698,6 +1684,9 @@ class GuardarFacturaComponent {
       }
     });
     this.comprobanteComboSub = this.facturaForm.get('comprobante').valueChanges.subscribe(value => {
+      if (value != String) {
+        this.getUltimoComprobanteAurorizado();
+      }
       let isFactura = value.Desc.toLowerCase().split(' ').includes('factura');
       if (isFactura == true) {
         this.facturaForm.get('comprobanteAsociado').setValue('');
@@ -1717,12 +1706,17 @@ class GuardarFacturaComponent {
         this.facturaForm.get('comprobanteAsociado').enable();
       }
     });
+    this.puntoVentaSub = this.facturaForm.get('puntoVenta').valueChanges.subscribe(value => {
+      if (value) {
+        this.getUltimoComprobanteAurorizado();
+      }
+    });
   }
   getData() {
     var _this = this;
     return (0,C_work_jeds_jedstion_source_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
       try {
-        const resultados = yield Promise.all([_this.getClientes(), _this.getDatosEmpresa(), _this.getArticulos()]);
+        const resultados = yield Promise.all([_this.getClientes(), _this.getDatosEmpresa(), _this.getArticulos(" ")]);
       } catch (error) {
         _this.alert.error('Ocurrió un error al cargar los datos');
       }
@@ -1756,7 +1750,10 @@ class GuardarFacturaComponent {
         fechaHasta: new _angular_forms__WEBPACK_IMPORTED_MODULE_13__.FormControl(this.factura ? this.factura.fechaServicioHasta : this.fechaActual, _angular_forms__WEBPACK_IMPORTED_MODULE_13__.Validators.required),
         cliente: new _angular_forms__WEBPACK_IMPORTED_MODULE_13__.FormControl(''),
         comprobante: new _angular_forms__WEBPACK_IMPORTED_MODULE_13__.FormControl(this.factura ? this.factura.tipoComprobante : '', _angular_forms__WEBPACK_IMPORTED_MODULE_13__.Validators.required),
-        numero: new _angular_forms__WEBPACK_IMPORTED_MODULE_13__.FormControl(this.factura ? this.factura.numero : '', _angular_forms__WEBPACK_IMPORTED_MODULE_13__.Validators.required),
+        numero: new _angular_forms__WEBPACK_IMPORTED_MODULE_13__.FormControl({
+          value: this.factura ? this.factura.numero : '',
+          disabled: true
+        }, _angular_forms__WEBPACK_IMPORTED_MODULE_13__.Validators.required),
         puntoVenta: new _angular_forms__WEBPACK_IMPORTED_MODULE_13__.FormControl(this.factura ? Number(this.factura.puntoVenta) : '', _angular_forms__WEBPACK_IMPORTED_MODULE_13__.Validators.required),
         tipoPago: new _angular_forms__WEBPACK_IMPORTED_MODULE_13__.FormControl(this.factura ? this.factura.contado : 0, _angular_forms__WEBPACK_IMPORTED_MODULE_13__.Validators.required),
         comprobanteAsociado: new _angular_forms__WEBPACK_IMPORTED_MODULE_13__.FormControl({
@@ -1771,12 +1768,27 @@ class GuardarFacturaComponent {
           value: '',
           disabled: true
         }),
-        detalle: new _angular_forms__WEBPACK_IMPORTED_MODULE_13__.FormControl(''),
-        observaciones: new _angular_forms__WEBPACK_IMPORTED_MODULE_13__.FormControl(this.factura ? this.factura.observaciones : '')
+        detalle: new _angular_forms__WEBPACK_IMPORTED_MODULE_13__.FormControl('')
       });
-      this.initObservadores();
+      this.observaciones = new _angular_forms__WEBPACK_IMPORTED_MODULE_13__.FormControl(this.factura ? this.factura.observaciones : ''), this.initObservadores();
       resolve();
     });
+  }
+  getUltimoComprobanteAurorizado() {
+    let tipoComprobante = this.facturaForm.get('comprobante').value.Id;
+    let puntoVenta = this.facturaForm.get('puntoVenta').value.toString();
+    if (tipoComprobante && puntoVenta) {
+      let payload = {
+        puntoVenta: puntoVenta,
+        tipoComprobante: tipoComprobante
+      };
+      this.facturacionService.getUltimoComprobanteAutorizado(payload).subscribe({
+        next: res => {
+          this.ultimoComprobanteAutorizado = res.result.comprobanteNro;
+          this.facturaForm.get('numero').setValue(this.ultimoComprobanteAutorizado);
+        }
+      });
+    }
   }
   calcularImportes() {
     let cantidad = this.facturaForm.get('cantidad').value;
@@ -1788,8 +1800,8 @@ class GuardarFacturaComponent {
         item.subtotal = item.cantidad * item.importe_unitario;
       });
       this.subtotal = Number(this.facturaDataSource.data.reduce((acc, item) => acc + Number(item.subtotal), 0));
-      this.totalIVA = this.facturaDataSource.data.reduce((acc, item) => acc + Number(item.importeIVA), 0);
-      this.bruto = this.facturaDataSource.data.reduce((acc, item) => acc + Number(item.total), 0);
+      this.totalIVA = this.facturaDataSource.data.reduce((acc, item) => acc + Number(item.subtotal_iva), 0);
+      this.bruto = this.facturaDataSource.data.reduce((acc, item) => acc + Number(item.total), 0) + this.totalIVA;
     }
   }
   calcularPrecioUnitario() {
@@ -1815,9 +1827,9 @@ class GuardarFacturaComponent {
     return articulo && articulo.descripcion ? articulo.descripcion : '';
   }
   getArticulos(value) {
-    let filter = `?sort=descripcion&pagination=1&sort=-total_stock&per-page=10&page=0&filter[tipo][in][]=1&filter[tipo][in][]=2`;
-    let filterBusqueda = `&filter[descripcion][like]=${value}`;
-    this.facturacionService.getArticulos(filter, filterBusqueda).subscribe({
+    let filter = `?sort=descripcion&pagination=1&sort=-total_stock&per-page=10&page=0&filter[tipo][in][]=1&filter[tipo][in][]=2` + `&filter[descripcion][like]=${value}`;
+    //let filterBusqueda: string = `&filter[descripcion][like]=${value}`;
+    this.facturacionService.getArticulos(filter).subscribe({
       next: res => {
         this.articulos = res.result;
       }
@@ -1871,8 +1883,8 @@ class GuardarFacturaComponent {
     });
   }
   getComprobantesAsociados(value) {
-    let filter = value;
-    this.facturacionService.getComprobantesAsociados(filter).subscribe({
+    let filterUltimoComprobante = value + `?filter[numero]=${this.ultimoComprobanteAutorizado}`;
+    this.facturacionService.getComprobantesAsociados(filterUltimoComprobante).subscribe({
       next: res => {
         this.comprobantesAsociados = res.result;
         if (this.isEdicion == true && this.factura.comprobante_asociado) {
@@ -1932,24 +1944,6 @@ class GuardarFacturaComponent {
         }
       }
       _this2.facturaDataSource.data = _this2.facturaDataSource.data.filter(item => item.idarticulo != articulo.idarticulo);
-      if (_this2.facturaDataSource.data.length == 0) {
-        _this2.facturaDataSource.data = [{
-          idarticulo: '',
-          cantidad: '',
-          importe_unitario: '',
-          detalle: ''
-        }, {
-          idarticulo: '',
-          cantidad: '',
-          importe_unitario: '',
-          detalle: ''
-        }, {
-          idarticulo: '',
-          cantidad: '',
-          importe_unitario: '',
-          detalle: ''
-        }];
-      }
     })();
   }
   addArticulo() {
@@ -1958,69 +1952,55 @@ class GuardarFacturaComponent {
     let precioUnitario = this.facturaForm.get('precioUnitario').value;
     let subtotal = cantidad * precioUnitario;
     let porcentajeIVA = Number(articulo.iva_porcentaje);
-    let importeIVA = porcentajeIVA / 100 * subtotal;
+    let subtotal_iva = porcentajeIVA / 100 * subtotal;
     let detalle = `${articulo.codigo_interno} - ${this.facturaForm.get('detalle').value || articulo.descripcion}`;
     // Se formatean los numeros a 2 decimales (como dice el backendista que hace el back)
-    let totalArticulo = Number((subtotal + importeIVA).toFixed(2));
-    let diferencia = Number(Math.abs(totalArticulo - this.faltaFacturarVista).toFixed(2));
-    if (this.isEdicion == true || !this.cobro) {
-      /**
-       * Al editar la factura no se contempla el monto que falta
-       * facturar por lo que no se deberían realizar estas validaciones.
-       * Se setea la diferencia en 0 para que esquive la validación
-       */
-      diferencia = 0;
+    let totalArticulo = Number((subtotal + subtotal_iva).toFixed(2));
+    if (this.cobro && totalArticulo > Number(this.faltaFacturarVista.toFixed(2))) {
+      this.alert.error('El monto total del artículo excede el monto total a facturar.');
+      return;
     }
-    if (diferencia <= 10) {
-      if (this.facturaDataSource.data.some(itemTabla => itemTabla.idarticulo == articulo.idarticulo)) {
-        this.alert.error('No puede agregar el mismo artículo');
+    if (this.facturaDataSource.data.some(itemTabla => itemTabla.idarticulo == articulo.idarticulo)) {
+      this.alert.error('No puede agregar el mismo artículo');
+      return;
+    }
+    if (!articulo || !cantidad || !precioUnitario || !subtotal_iva || !porcentajeIVA || !subtotal || !detalle || !totalArticulo) {
+      this.alert.error('Revise los campos del artículo');
+      return;
+    }
+    let itemTabla = {
+      idarticulo: articulo.idarticulo,
+      cantidad: cantidad,
+      importe_unitario: precioUnitario,
+      subtotal: subtotal,
+      porcentajeIVA: porcentajeIVA,
+      subtotal_iva: subtotal_iva,
+      detalle: detalle,
+      total: totalArticulo
+    };
+    this.facturaDataSource.data = [...this.facturaDataSource.data, itemTabla];
+    this.subtotal = this.facturaDataSource.data.reduce((acc, item) => acc + item.subtotal, 0);
+    this.totalIVA = this.facturaDataSource.data.reduce((acc, item) => acc + item.subtotal_iva, 0);
+    this.bruto = this.facturaDataSource.data.reduce((acc, item) => acc + item.total, 0);
+    this.facturaForm.get('total').setValue('');
+    this.facturaForm.get('articulo').setValue('');
+    this.facturaForm.get('cantidad').setValue('');
+    this.facturaForm.get('precioUnitario').setValue('');
+    this.facturaForm.get('detalle').setValue('');
+    if (this.cobro) {
+      this.montoFaltaFacturar = this.montoFaltaFacturar - totalArticulo;
+      this.faltaFacturarVista = this.montoFaltaFacturar;
+      if (this.faltaFacturarVista == 0) {
+        this.facturaForm.get('articulo').disable();
+        this.facturaForm.get('cantidad').disable();
+        this.facturaForm.get('precioUnitario').disable();
+        this.facturaForm.get('detalle').disable();
       } else {
-        if (this.cobro && totalArticulo > Number(this.faltaFacturarVista.toFixed(2))) {
-          this.alert.error('El monto total del artículo excede el monto total a facturar.');
-        } else {
-          if (articulo && cantidad && precioUnitario && importeIVA && porcentajeIVA && subtotal && detalle && totalArticulo) {
-            this.facturaDataSource.data = this.facturaDataSource.data.filter(articulo => articulo.idarticulo != '');
-            let itemTabla = {
-              idarticulo: articulo.idarticulo,
-              cantidad: cantidad,
-              importe_unitario: precioUnitario,
-              subtotal: subtotal,
-              porcentajeIVA: porcentajeIVA,
-              importeIVA: importeIVA,
-              detalle: detalle,
-              total: totalArticulo
-            };
-            this.facturaDataSource.data = [...this.facturaDataSource.data, itemTabla];
-            this.subtotal = this.facturaDataSource.data.reduce((acc, item) => acc + item.subtotal, 0);
-            this.totalIVA = this.facturaDataSource.data.reduce((acc, item) => acc + item.importeIVA, 0);
-            this.bruto = this.facturaDataSource.data.reduce((acc, item) => acc + item.total, 0);
-            this.facturaForm.get('total').setValue('');
-            this.facturaForm.get('articulo').setValue('');
-            this.facturaForm.get('cantidad').setValue('');
-            this.facturaForm.get('precioUnitario').setValue('');
-            this.facturaForm.get('detalle').setValue('');
-            if (this.cobro) {
-              this.montoFaltaFacturar = this.montoFaltaFacturar - totalArticulo;
-              this.faltaFacturarVista = this.montoFaltaFacturar;
-              if (this.faltaFacturarVista == 0) {
-                this.facturaForm.get('articulo').disable();
-                this.facturaForm.get('cantidad').disable();
-                this.facturaForm.get('precioUnitario').disable();
-                this.facturaForm.get('detalle').disable();
-              } else {
-                this.facturaForm.get('articulo').enable();
-                this.facturaForm.get('cantidad').enable();
-                this.facturaForm.get('precioUnitario').enable();
-                this.facturaForm.get('detalle').enable();
-              }
-            }
-          } else {
-            this.alert.error('Revise los campos del artículo');
-          }
-        }
+        this.facturaForm.get('articulo').enable();
+        this.facturaForm.get('cantidad').enable();
+        this.facturaForm.get('precioUnitario').enable();
+        this.facturaForm.get('detalle').enable();
       }
-    } else {
-      this.alert.error('El monto total del articulo no puede exceder el monto total a facturar');
     }
   }
   onSubmit() {
@@ -2028,70 +2008,82 @@ class GuardarFacturaComponent {
     let fechaVencimientoPago = this.formatDate(this.facturaForm.get('vencimientoPago').value);
     let fechaDesde = this.formatDate(this.facturaForm.get('fechaDesde').value);
     let fechaHasta = this.formatDate(this.facturaForm.get('fechaHasta').value);
-    if (this.facturaForm.valid == true) {
-      if (this.bruto != this.faltaFacturarVista && this.cobro) {
-        this.alert.error('El Importe Bruto debe ser igual al Importe Total del Cobro');
-      }
-      let payload = {
-        factura: {
-          fechaEmision: fechaEmision,
-          fechaVencimientoPago: fechaVencimientoPago,
-          cliente: this.facturaForm.get('cliente').value.codigo,
-          tipoComprobante: this.facturaForm.get('comprobante').value.Id,
-          puntoVenta: this.facturaForm.get('puntoVenta').value.toString(),
-          fechaServicioDesde: fechaDesde,
-          fechaServicioHasta: fechaHasta,
-          contado: this.facturaForm.get('tipoPago').value,
-          comprobante_asociado: this.facturaForm.get('comprobanteAsociado').value.codigo || null,
-          observaciones: this.facturaForm.get('observaciones').value || null,
-          idventa: this.facturaForm.get('ventaAsociada').value || null // opcional
-          //venta: null, // opcional
-          //idventapago: null, // opcional
-          //idcobroformapago: null, // opcional
-        },
+    if (this.faltaFacturarVista > 10) {
+      this.alert.error('La diferencia está fuera del rango permitido');
+      return;
+    }
+    if (this.facturaForm.valid == false) {
+      this.alert.error('Verifique los campos del formulario');
+      return;
+    }
+    let payload = {
+      factura: {
+        fechaEmision: fechaEmision,
+        fechaVencimientoPago: fechaVencimientoPago,
+        cliente: this.facturaForm.get('cliente').value.codigo,
+        tipoComprobante: this.facturaForm.get('comprobante').value.Id,
+        puntoVenta: this.facturaForm.get('puntoVenta').value.toString(),
+        fechaServicioDesde: fechaDesde,
+        fechaServicioHasta: fechaHasta,
+        contado: this.facturaForm.get('tipoPago').value,
+        comprobante_asociado: this.facturaForm.get('comprobanteAsociado').value.codigo || null,
+        observaciones: this.observaciones.value || null,
+        idventa: this.facturaForm.get('ventaAsociada').value || null,
+        idcobro: this.idCobro || null
+        //venta: null, // opcional
+        //idventapago: null, // opcional
+        //idcobroformapago: null, // opcional
+      },
 
-        items: this.facturaDataSource.data
-      };
+      items: this.facturaDataSource.data
+    };
+    payload.items.forEach(item => {
+      delete item.total;
+      delete item.importe_bonificado;
+      delete item.importe_total;
+      delete item.factura;
+      delete item.porcentaje_bonificado;
+      delete item.porcentajeIVA;
+      delete item.importeIVA;
+      delete item.subtotal;
+      delete item.idstkarticulo;
+      delete item.subtotal_iva;
+    });
+    if (this.isEdicion == true) {
       payload.items.forEach(item => {
         delete item.total;
+        item.idstkarticulo != undefined ? item.idarticulo = item.idstkarticulo : '';
+        delete item.importe_bonificado;
+        delete item.importe_total;
+        delete item.factura;
+        delete item.porcentaje_bonificado;
+        delete item.porcentajeIVA;
+        delete item.importeIVA;
+        delete item.subtotal;
+        delete item.idstkarticulo;
+        delete item.subtotal_iva;
       });
-      if (this.isEdicion == true) {
-        payload.items.forEach(item => {
-          delete item.total;
-          item.idstkarticulo != undefined ? item.idarticulo = item.idstkarticulo : '';
-          delete item.importe_bonificado;
-          delete item.importe_total;
-          delete item.factura;
-          delete item.porcentaje_bonificado;
-          delete item.porcentajeIVA;
-          delete item.importeIVA;
-          delete item.subtotal;
-          delete item.idstkarticulo;
-        });
-        this.facturacionService.editarFactura(payload, this.idFactura).subscribe({
-          next: res => {
-            if (res.success = true) {
-              this.alert.success(res.mensaje);
-              this.router.navigate(['/facturas']);
-            } else {
-              this.alert.error(res.mensaje);
-            }
+      this.facturacionService.editarFactura(payload, this.idFactura).subscribe({
+        next: res => {
+          if (res.success = true) {
+            this.alert.success(res.mensaje);
+            this.router.navigate(['/facturas']);
+          } else {
+            this.alert.error(res.mensaje);
           }
-        });
-      } else {
-        this.facturacionService.createFactura(payload).subscribe({
-          next: res => {
-            if (res.success = true) {
-              this.alert.success(res.mensaje);
-              this.router.navigate(['/facturas']);
-            } else {
-              this.alert.error(res.mensaje);
-            }
-          }
-        });
-      }
+        }
+      });
     } else {
-      this.alert.error("Verifique los campos del formulario");
+      this.facturacionService.createFactura(payload).subscribe({
+        next: res => {
+          if (res.success = true) {
+            this.alert.success(res.mensaje);
+            this.router.navigate(['/facturas']);
+          } else {
+            this.alert.error(res.mensaje);
+          }
+        }
+      });
     }
   }
   ngOnDestroy() {}
@@ -2108,11 +2100,11 @@ GuardarFacturaComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MOD
   }])],
   decls: 2,
   vars: 2,
-  consts: [["class", "w-full h-full flex justify-center items-center", 4, "ngIf"], ["class", "w-full h-full flex flex-col px-4 py-2 overflow-y-auto inset-0 absolute", 4, "ngIf"], [1, "w-full", "h-full", "flex", "justify-center", "items-center"], [4, "ngIf"], [1, "w-full", "h-full", "flex", "flex-col", "px-4", "py-2", "overflow-y-auto", "inset-0", "absolute"], [1, "w-full", "flex", "justify-start", "items-center", "py-2"], [1, "flex", "items-center"], [1, "cursor-pointer", 3, "click"], [1, "font-semibold", "text-[#65758c]", "cursor-pointer", 3, "click"], [1, "w-full", "flex", "flex-col", "gap-2", 3, "formGroup"], [1, "w-full", "flex", "items-center", "gap-4"], [1, "flex", "flex-col", "w-2/12"], [1, "font-semibold", "text-[#323639]", "ml-1"], ["matInput", "", "formControlName", "fecha", "placeholder", "DD/MM/AAAA", 3, "matDatepicker"], ["matIconSuffix", "", 3, "for"], ["pickerFecha", ""], ["matInput", "", "formControlName", "vencimientoPago", "placeholder", "DD/MM/AAAA", 3, "matDatepicker"], ["pickerPago", ""], ["matInput", "", "formControlName", "fechaDesde", "placeholder", "DD/MM/AAAA", 3, "matDatepicker"], ["pickerDesde", ""], ["matInput", "", "formControlName", "fechaHasta", "placeholder", "DD/MM/AAAA", 3, "matDatepicker"], ["pickerHasta", ""], [1, "flex", "items-center", "w-4/12"], [1, "flex", "flex-col", "w-full"], [1, "w-full"], ["type", "text", "placeholder", "Seleccionar cliente", "matInput", "", "formControlName", "cliente", 3, "matAutocomplete"], [3, "displayWith"], ["auto", "matAutocomplete"], [3, "value", 4, "ngFor", "ngForOf"], [1, "w-full", "items-center", "flex", "gap-4", "pb-2"], [1, "w-4/12"], [1, "font-semibold", "text-lg"], [1, "w-2/12"], [1, "w-full", "flex", "gap-4", "mt-2"], [1, "w-4/12", "flex", "flex-col"], ["formControlName", "comprobante", "placeholder", "Seleccionar comprobante"], [1, "w-3/12", "flex", "flex-col"], ["matInput", "", "type", "number", "formControlName", "numero"], [1, "w-2/12", "flex", "flex-col"], ["formControlName", "puntoVenta", "placeholder", "Seleccionar punto de venta"], [1, "w-3/12", "flex", "justify-center", "items-center", "px-3"], ["formControlName", "tipoPago", 1, "w-full", "flex", "items-center", "gap-2"], [3, "value"], [1, "w-2/3", "flex", "gap-4"], [1, "w-1/2", "flex", "flex-col"], [1, "font-semibold", "text-[#323639]"], ["formControlName", "comprobanteAsociado"], ["formControlName", "ventaAsociada"], [1, "w-full", "flex", "gap-4"], ["type", "text", "placeholder", "Seleccionar art\u00EDculo", "matInput", "", "formControlName", "articulo", 3, "matAutocomplete"], ["autoArticulo", "matAutocomplete"], ["matInput", "", "type", "number", "formControlName", "cantidad", "placeholder", "Ingresar cantidad"], [1, "w-3/12", "flex", "gap-3"], [1, "w-10/12", "flex", "flex-col"], ["matInput", "", "type", "number", "formControlName", "precioUnitario", "placeholder", "Ingresar precio unitario"], [1, "ml-2"], [1, "w-2/12", "flex", "justify-center", "items-center"], ["mat-icon-button", "", 3, "click"], ["svgIcon", "jedstion:cotizar", 1, "icon-size-[40px]"], ["matInput", "", "type", "number", "formControlName", "total"], ["matTextPrefix", ""], [1, "w-full", "flex", "items-center"], [1, "w-11/12", "flex", "flex-col"], ["matInput", "", "formControlName", "detalle", "placeholder", "Ingresar detalle"], [1, "w-1/12", "flex", "justify-center", "items-center"], ["svgIcon", "jedstion:agregar", 1, "icon-size-[40px]"], ["matInput", "", "formControlName", "observaciones", "placeholder", "Ingresar observaciones"], [1, "w-full", "rounded-br-md"], ["mat-table", "", 1, "w-full", 3, "dataSource"], ["matColumnDef", "detalle"], ["mat-header-cell", "", "class", "text-white rounded-tl-md", 3, "background-color", 4, "matHeaderCellDef"], ["mat-cell", "", 4, "matCellDef"], ["matColumnDef", "cantidad"], ["mat-header-cell", "", "class", "text-white", 3, "background-color", 4, "matHeaderCellDef"], ["matColumnDef", "precio_unitario"], ["matColumnDef", "subtotal"], ["matColumnDef", "iva"], ["matColumnDef", "total"], ["matColumnDef", "acciones"], ["mat-header-cell", "", "class", "text-white rounded-tr-md", 3, "background-color", 4, "matHeaderCellDef"], ["mat-header-row", "", 4, "matHeaderRowDef"], ["mat-row", "", 4, "matRowDef", "matRowDefColumns"], [1, "w-full", "flex", "justify-end", "items-center"], [1, "w-1/3", "flex", "flex-col", "p-2", "gap-1"], ["class", "font-semibold text-lg", 4, "ngIf"], [1, "w-full", "flex", "justify-end", "items-center", "pt-4"], ["mat-flat-button", "", 1, "rounded-md", "text-white", 3, "disabled", "ngClass", "click"], ["mat-header-cell", "", 1, "text-white", "rounded-tl-md"], ["mat-cell", ""], ["mat-header-cell", "", 1, "text-white"], ["mat-header-cell", "", 1, "text-white", "rounded-tr-md"], ["class", "flex justify-center", 4, "ngIf"], [1, "flex", "justify-center"], [1, "cursor-pointer", "hover:bg-gray-200", "p-5", "rounded-full", 3, "click"], ["mat-header-row", ""], ["mat-row", ""]],
+  consts: [["class", "w-full h-full flex justify-center items-center", 4, "ngIf"], ["class", "w-full h-full flex flex-col px-4 py-2 overflow-y-auto inset-0 absolute", 4, "ngIf"], [1, "w-full", "h-full", "flex", "justify-center", "items-center"], [4, "ngIf"], [1, "w-full", "h-full", "flex", "flex-col", "px-4", "py-2", "overflow-y-auto", "inset-0", "absolute"], [1, "w-full", "flex", "justify-start", "items-center", "py-2"], [1, "flex", "items-center"], [1, "cursor-pointer", 3, "click"], [1, "font-semibold", "text-[#65758c]", "cursor-pointer", 3, "click"], [1, "w-full", "flex", "flex-col", "gap-2", 3, "formGroup"], [1, "w-full", "flex", "items-center", "gap-4"], [1, "flex", "flex-col", "w-2/12"], [1, "font-semibold", "text-[#323639]", "ml-1"], ["matInput", "", "formControlName", "fecha", "placeholder", "DD/MM/AAAA", 3, "matDatepicker"], ["matIconSuffix", "", 3, "for"], ["pickerFecha", ""], ["matInput", "", "formControlName", "vencimientoPago", "placeholder", "DD/MM/AAAA", 3, "matDatepicker"], ["pickerPago", ""], ["matInput", "", "formControlName", "fechaDesde", "placeholder", "DD/MM/AAAA", 3, "matDatepicker"], ["pickerDesde", ""], ["matInput", "", "formControlName", "fechaHasta", "placeholder", "DD/MM/AAAA", 3, "matDatepicker"], ["pickerHasta", ""], [1, "flex", "items-center", "w-4/12"], [1, "flex", "flex-col", "w-full"], [1, "w-full"], ["type", "text", "placeholder", "Seleccionar cliente", "matInput", "", "formControlName", "cliente", 3, "matAutocomplete"], [3, "displayWith"], ["auto", "matAutocomplete"], [3, "value", 4, "ngFor", "ngForOf"], [1, "w-full", "items-center", "flex", "gap-4", "pb-2"], [1, "w-4/12"], [1, "font-semibold", "text-lg"], [1, "w-2/12"], [1, "w-full", "flex", "gap-4", "mt-2"], [1, "w-4/12", "flex", "flex-col"], ["formControlName", "comprobante", "placeholder", "Seleccionar comprobante"], [1, "w-3/12", "flex", "flex-col"], ["formControlName", "puntoVenta", "placeholder", "Seleccionar punto de venta"], [1, "w-2/12", "flex", "flex-col"], ["matInput", "", "type", "number", "formControlName", "numero"], [1, "w-3/12", "flex", "justify-center", "items-center", "px-3"], ["formControlName", "tipoPago", 1, "w-full", "flex", "items-center", "gap-2"], [3, "value"], [1, "w-2/3", "flex", "gap-4"], [1, "w-1/2", "flex", "flex-col"], [1, "font-semibold", "text-[#323639]"], ["formControlName", "comprobanteAsociado"], ["formControlName", "ventaAsociada"], [1, "w-full", "flex", "gap-4"], ["type", "text", "placeholder", "Seleccionar art\u00EDculo", "matInput", "", "formControlName", "articulo", 3, "matAutocomplete"], ["autoArticulo", "matAutocomplete"], ["matInput", "", "type", "number", "formControlName", "cantidad", "placeholder", "Ingresar cantidad"], [1, "w-3/12", "flex", "gap-3"], [1, "w-10/12", "flex", "flex-col"], ["matInput", "", "type", "number", "formControlName", "precioUnitario", "placeholder", "Ingresar precio unitario"], [1, "ml-2"], [1, "w-2/12", "flex", "justify-center", "items-center"], ["mat-icon-button", "", 3, "click"], ["svgIcon", "jedstion:cotizar", 1, "icon-size-[40px]"], ["matInput", "", "type", "number", "formControlName", "total"], ["matTextPrefix", ""], [1, "w-full", "flex", "items-center"], [1, "w-11/12", "flex", "flex-col"], ["matInput", "", "formControlName", "detalle", "placeholder", "Ingresar detalle"], [1, "w-1/12", "flex", "justify-center", "items-center"], ["svgIcon", "jedstion:agregar", 1, "icon-size-[40px]"], [1, "w-full", "rounded-br-md", "drop-shadow-lg"], ["mat-table", "", 1, "w-full", 3, "dataSource"], ["matColumnDef", "detalle"], ["mat-header-cell", "", "class", "text-white rounded-tl-md", 3, "background-color", 4, "matHeaderCellDef"], ["mat-cell", "", 4, "matCellDef"], ["matColumnDef", "cantidad"], ["mat-header-cell", "", "class", "text-white", 3, "background-color", 4, "matHeaderCellDef"], ["matColumnDef", "precio_unitario"], ["matColumnDef", "subtotal"], ["matColumnDef", "iva"], ["matColumnDef", "total"], ["matColumnDef", "acciones"], ["mat-header-cell", "", "class", "text-white rounded-tr-md", 3, "background-color", 4, "matHeaderCellDef"], ["mat-header-row", "", 4, "matHeaderRowDef"], ["mat-row", "", 4, "matRowDef", "matRowDefColumns"], [1, "w-full", "flex", "items-center", "gap-4", "pt-4"], ["matInput", "", "placeholder", "Ingresar observaciones", 3, "formControl"], [1, "w-full", "flex", "justify-end", "items-center"], [1, "w-1/3", "flex", "flex-col", "p-2", "gap-1"], ["class", "font-semibold text-lg", 4, "ngIf"], [1, "w-full", "flex", "justify-end", "items-center", "pt-4"], ["mat-flat-button", "", 1, "rounded-md", "text-white", 3, "disabled", "ngClass", "click"], ["mat-header-cell", "", 1, "text-white", "rounded-tl-md"], ["mat-cell", ""], ["mat-header-cell", "", 1, "text-white"], ["mat-header-cell", "", 1, "text-white", "rounded-tr-md"], ["class", "flex justify-center", 4, "ngIf"], [1, "flex", "justify-center"], [1, "cursor-pointer", "hover:bg-gray-200", "p-5", "rounded-full", 3, "click"], ["mat-header-row", ""], ["mat-row", ""]],
   template: function GuardarFacturaComponent_Template(rf, ctx) {
     if (rf & 1) {
       _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtemplate"](0, GuardarFacturaComponent_div_0_Template, 2, 1, "div", 0);
-      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtemplate"](1, GuardarFacturaComponent_div_1_Template, 187, 54, "div", 1);
+      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtemplate"](1, GuardarFacturaComponent_div_1_Template, 187, 55, "div", 1);
     }
     if (rf & 2) {
       _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("ngIf", ctx.spinner);
@@ -2120,7 +2112,7 @@ GuardarFacturaComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MOD
       _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("ngIf", !ctx.spinner);
     }
   },
-  dependencies: [_angular_common__WEBPACK_IMPORTED_MODULE_17__.NgClass, _angular_common__WEBPACK_IMPORTED_MODULE_17__.NgForOf, _angular_common__WEBPACK_IMPORTED_MODULE_17__.NgIf, _angular_material_table__WEBPACK_IMPORTED_MODULE_8__.MatTable, _angular_material_table__WEBPACK_IMPORTED_MODULE_8__.MatHeaderCellDef, _angular_material_table__WEBPACK_IMPORTED_MODULE_8__.MatHeaderRowDef, _angular_material_table__WEBPACK_IMPORTED_MODULE_8__.MatColumnDef, _angular_material_table__WEBPACK_IMPORTED_MODULE_8__.MatCellDef, _angular_material_table__WEBPACK_IMPORTED_MODULE_8__.MatRowDef, _angular_material_table__WEBPACK_IMPORTED_MODULE_8__.MatHeaderCell, _angular_material_table__WEBPACK_IMPORTED_MODULE_8__.MatCell, _angular_material_table__WEBPACK_IMPORTED_MODULE_8__.MatHeaderRow, _angular_material_table__WEBPACK_IMPORTED_MODULE_8__.MatRow, _angular_material_button__WEBPACK_IMPORTED_MODULE_18__.MatButton, _angular_material_button__WEBPACK_IMPORTED_MODULE_18__.MatIconButton, _angular_material_form_field__WEBPACK_IMPORTED_MODULE_19__.MatFormField, _angular_material_form_field__WEBPACK_IMPORTED_MODULE_19__.MatHint, _angular_material_form_field__WEBPACK_IMPORTED_MODULE_19__.MatPrefix, _angular_material_form_field__WEBPACK_IMPORTED_MODULE_19__.MatSuffix, _angular_material_select__WEBPACK_IMPORTED_MODULE_20__.MatSelect, _angular_material_core__WEBPACK_IMPORTED_MODULE_16__.MatOption, _angular_forms__WEBPACK_IMPORTED_MODULE_13__["ɵNgNoValidate"], _angular_forms__WEBPACK_IMPORTED_MODULE_13__.DefaultValueAccessor, _angular_forms__WEBPACK_IMPORTED_MODULE_13__.NumberValueAccessor, _angular_forms__WEBPACK_IMPORTED_MODULE_13__.NgControlStatus, _angular_forms__WEBPACK_IMPORTED_MODULE_13__.NgControlStatusGroup, _angular_forms__WEBPACK_IMPORTED_MODULE_13__.FormGroupDirective, _angular_forms__WEBPACK_IMPORTED_MODULE_13__.FormControlName, _angular_material_input__WEBPACK_IMPORTED_MODULE_21__.MatInput, _angular_material_icon__WEBPACK_IMPORTED_MODULE_22__.MatIcon, _angular_material_autocomplete__WEBPACK_IMPORTED_MODULE_23__.MatAutocomplete, _angular_material_autocomplete__WEBPACK_IMPORTED_MODULE_23__.MatAutocompleteTrigger, _angular_material_radio__WEBPACK_IMPORTED_MODULE_24__.MatRadioGroup, _angular_material_radio__WEBPACK_IMPORTED_MODULE_24__.MatRadioButton, _angular_material_datepicker__WEBPACK_IMPORTED_MODULE_25__.MatDatepicker, _angular_material_datepicker__WEBPACK_IMPORTED_MODULE_25__.MatDatepickerInput, _angular_material_datepicker__WEBPACK_IMPORTED_MODULE_25__.MatDatepickerToggle, _angular_common__WEBPACK_IMPORTED_MODULE_17__.DecimalPipe],
+  dependencies: [_angular_common__WEBPACK_IMPORTED_MODULE_17__.NgClass, _angular_common__WEBPACK_IMPORTED_MODULE_17__.NgForOf, _angular_common__WEBPACK_IMPORTED_MODULE_17__.NgIf, _angular_material_table__WEBPACK_IMPORTED_MODULE_8__.MatTable, _angular_material_table__WEBPACK_IMPORTED_MODULE_8__.MatHeaderCellDef, _angular_material_table__WEBPACK_IMPORTED_MODULE_8__.MatHeaderRowDef, _angular_material_table__WEBPACK_IMPORTED_MODULE_8__.MatColumnDef, _angular_material_table__WEBPACK_IMPORTED_MODULE_8__.MatCellDef, _angular_material_table__WEBPACK_IMPORTED_MODULE_8__.MatRowDef, _angular_material_table__WEBPACK_IMPORTED_MODULE_8__.MatHeaderCell, _angular_material_table__WEBPACK_IMPORTED_MODULE_8__.MatCell, _angular_material_table__WEBPACK_IMPORTED_MODULE_8__.MatHeaderRow, _angular_material_table__WEBPACK_IMPORTED_MODULE_8__.MatRow, _angular_material_button__WEBPACK_IMPORTED_MODULE_18__.MatButton, _angular_material_button__WEBPACK_IMPORTED_MODULE_18__.MatIconButton, _angular_material_form_field__WEBPACK_IMPORTED_MODULE_19__.MatFormField, _angular_material_form_field__WEBPACK_IMPORTED_MODULE_19__.MatHint, _angular_material_form_field__WEBPACK_IMPORTED_MODULE_19__.MatPrefix, _angular_material_form_field__WEBPACK_IMPORTED_MODULE_19__.MatSuffix, _angular_material_select__WEBPACK_IMPORTED_MODULE_20__.MatSelect, _angular_material_core__WEBPACK_IMPORTED_MODULE_16__.MatOption, _angular_forms__WEBPACK_IMPORTED_MODULE_13__["ɵNgNoValidate"], _angular_forms__WEBPACK_IMPORTED_MODULE_13__.DefaultValueAccessor, _angular_forms__WEBPACK_IMPORTED_MODULE_13__.NumberValueAccessor, _angular_forms__WEBPACK_IMPORTED_MODULE_13__.NgControlStatus, _angular_forms__WEBPACK_IMPORTED_MODULE_13__.NgControlStatusGroup, _angular_forms__WEBPACK_IMPORTED_MODULE_13__.FormControlDirective, _angular_forms__WEBPACK_IMPORTED_MODULE_13__.FormGroupDirective, _angular_forms__WEBPACK_IMPORTED_MODULE_13__.FormControlName, _angular_material_input__WEBPACK_IMPORTED_MODULE_21__.MatInput, _angular_material_icon__WEBPACK_IMPORTED_MODULE_22__.MatIcon, _angular_material_autocomplete__WEBPACK_IMPORTED_MODULE_23__.MatAutocomplete, _angular_material_autocomplete__WEBPACK_IMPORTED_MODULE_23__.MatAutocompleteTrigger, _angular_material_radio__WEBPACK_IMPORTED_MODULE_24__.MatRadioGroup, _angular_material_radio__WEBPACK_IMPORTED_MODULE_24__.MatRadioButton, _angular_material_datepicker__WEBPACK_IMPORTED_MODULE_25__.MatDatepicker, _angular_material_datepicker__WEBPACK_IMPORTED_MODULE_25__.MatDatepickerInput, _angular_material_datepicker__WEBPACK_IMPORTED_MODULE_25__.MatDatepickerToggle, _angular_common__WEBPACK_IMPORTED_MODULE_17__.DecimalPipe],
   styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJndWFyZGFyLWZhY3R1cmEuY29tcG9uZW50LnNjc3MifQ== */\n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8uL3NyYy9hcHAvbW9kdWxlcy92ZW50YXMvZmFjdHVyYWNpb24vY29tcG9uZW50cy9ndWFyZGFyLWZhY3R1cmEvZ3VhcmRhci1mYWN0dXJhLmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7QUFDQSxnTEFBZ0wiLCJzb3VyY2VSb290IjoiIn0= */"]
 });
 
@@ -2263,11 +2255,14 @@ class FacturacionService {
   getVentasAsociadas(filter) {
     return this.http.get(environments_environment__WEBPACK_IMPORTED_MODULE_0__.environment.ventas.view_vta_ventas + filter);
   }
-  getArticulos(filter, filterBusqueda) {
-    return this.http.get(environments_environment__WEBPACK_IMPORTED_MODULE_0__.environment.stock.view_articulos + filter + filterBusqueda);
+  getArticulos(filter) {
+    return this.http.get(environments_environment__WEBPACK_IMPORTED_MODULE_0__.environment.stock.view_articulos + filter);
   }
   getComprobantesAsociados(filter) {
     return this.http.get(environments_environment__WEBPACK_IMPORTED_MODULE_0__.environment.ventas.view_fe_facturas + filter);
+  }
+  getUltimoComprobanteAutorizado(payload) {
+    return this.http.post(environments_environment__WEBPACK_IMPORTED_MODULE_0__.environment.ventas.ultimo_comprobante_autorizado, payload);
   }
   getFacturas(filter) {
     return this.http.get(environments_environment__WEBPACK_IMPORTED_MODULE_0__.environment.ventas.view_fe_facturas + filter);
@@ -2279,13 +2274,13 @@ class FacturacionService {
     return this.http.post(environments_environment__WEBPACK_IMPORTED_MODULE_0__.environment.ventas.fe_facturas, payload);
   }
   editarFactura(payload, idFactura) {
-    return this.http.put(environments_environment__WEBPACK_IMPORTED_MODULE_0__.environment.ventas.fe_facturas + "/" + idFactura, payload);
+    return this.http.put(environments_environment__WEBPACK_IMPORTED_MODULE_0__.environment.ventas.fe_facturas + '/' + idFactura, payload);
   }
   deleteFactura(codigoFactura) {
-    return this.http.delete(environments_environment__WEBPACK_IMPORTED_MODULE_0__.environment.ventas.fe_facturas + "/" + codigoFactura);
+    return this.http.delete(environments_environment__WEBPACK_IMPORTED_MODULE_0__.environment.ventas.fe_facturas + '/' + codigoFactura);
   }
-  generarFactura(codigoFactura) {
-    return this.http.get(environments_environment__WEBPACK_IMPORTED_MODULE_0__.environment.ventas.generar_comprobante_factura + "/" + codigoFactura);
+  generarComprobanteFactura(filter) {
+    return this.http.get(environments_environment__WEBPACK_IMPORTED_MODULE_0__.environment.ventas.generar_comprobante_factura + filter);
   }
   imprimirFactura(filter) {
     return this.http.get(environments_environment__WEBPACK_IMPORTED_MODULE_0__.environment.ventas.reporte_comprobante_pdf + filter);

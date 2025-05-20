@@ -18372,7 +18372,8 @@ const environment = {
     reporte_comprobante_pdf: `${$BASE_REST}/fe_factura/reporte_comprobante_pdf`,
     asociar_cobro: `${$BASE_REST}/fe_factura/asociar_cobro`,
     generar_comprobante_factura: `${$BASE_REST}/fe_factura/generar_comprobante`,
-    get_datos_factura: `${$BASE_REST}/fe_factura/get_datos`
+    get_datos_factura: `${$BASE_REST}/fe_factura/get_datos`,
+    ultimo_comprobante_autorizado: `${$BASE_REST}/fe_factura/ultimo_comprobante_autorizado`
   },
   compras: {
     compras_cotizacion: `${$BASE_REST}/compras_cotizacion`,

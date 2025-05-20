@@ -40608,6 +40608,10 @@ body.light mat-option:nth-child(odd):hover {
     --tw-blur: blur(8px) !important;
     filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow) !important;
 }
+.drop-shadow-lg {
+    --tw-drop-shadow: drop-shadow(0 10px 8px rgb(0 0 0 / 0.04)) drop-shadow(0 4px 3px rgb(0 0 0 / 0.1)) !important;
+    filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow) !important;
+}
 .drop-shadow-md {
     --tw-drop-shadow: drop-shadow(0 4px 3px rgb(0 0 0 / 0.07)) drop-shadow(0 2px 2px rgb(0 0 0 / 0.06)) !important;
     filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow) !important;
@@ -41132,9 +41136,6 @@ body.light mat-option:nth-child(odd):hover {
     .sm\:w-2\/6 {
         width: 33.333333% !important;
     }
-    .sm\:w-3\/12 {
-        width: 25% !important;
-    }
     .sm\:w-3\/4 {
         width: 75% !important;
     }
@@ -41304,9 +41305,6 @@ body.light mat-option:nth-child(odd):hover {
     }
     .sm\:pb-8 {
         padding-bottom: 2rem !important;
-    }
-    .sm\:pl-4 {
-        padding-left: 1rem !important;
     }
     .sm\:pl-8 {
         padding-left: 2rem !important;
