@@ -1217,7 +1217,8 @@ class TablaDinamicaComponent {
          */
         if (r.data.result) {
           r.data.result.forEach(item => {
-            if (item.fecha) {
+            if (this.endpoint.toString().includes('view_vta_cobro')) {}
+            if (item.fecha && !this.endpoint.toString().includes('view_vta_cobro')) {
               item.fecha = this.cambiarFormatoFecha(item.fecha);
             }
             if (item.hora) {
@@ -1284,7 +1285,7 @@ class TablaDinamicaComponent {
           });
         } else {
           r.data.forEach(item => {
-            if (item.fecha) {
+            if (item.fecha && !this.endpoint.toString().includes('view_vta_cobro')) {
               item.fecha = this.cambiarFormatoFecha(item.fecha);
             }
             if (item.hora) {

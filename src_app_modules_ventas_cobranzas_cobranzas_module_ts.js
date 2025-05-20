@@ -1535,14 +1535,15 @@ class AltaEdicionCobroComponent {
     // Busco la operacion: venta / pagare
     let operacion = this.ventasPendientes.find(operacion => operacion.id === item.id && operacion.asignacion === item.operacion_tipo);
     // Encapsulo los valores que me serviran para los calculos
-    let saldo = parseFloat(operacion.saldo);
-    let pagado = parseFloat(operacion.pagado);
-    let importe_neto = parseFloat(operacion.importe);
+    let op_saldo = parseFloat(operacion.saldo);
+    let op_importe_neto = parseFloat(operacion.importe);
+    // Encapsulo el importe total del item
+    let item_importe_total = parseFloat(item.importe_total);
     // Calculo el nuevo valor del saldo
-    let nuevo_saldo = (0,lodash__WEBPACK_IMPORTED_MODULE_2__.round)(saldo + pagado, 2);
+    let nuevo_saldo = (0,lodash__WEBPACK_IMPORTED_MODULE_2__.round)(op_saldo + item_importe_total, 2);
     operacion.saldo = nuevo_saldo.toString();
     // Calculo el nuevo valor pagado
-    let nuevo_pagado = (0,lodash__WEBPACK_IMPORTED_MODULE_2__.round)(importe_neto - pagado, 2);
+    let nuevo_pagado = (0,lodash__WEBPACK_IMPORTED_MODULE_2__.round)(op_importe_neto - nuevo_saldo, 2);
     operacion.pagado = nuevo_pagado.toString();
     // Actualizo el array de ventas con saldo (es el que se muestra en el combo del formulario)
     this.ventas_con_saldo = this.ventasPendientes.filter(item => parseFloat(item.saldo) > 0);
@@ -1947,9 +1948,9 @@ class CobranzasComponent {
       iconoDeshabilitado: () => '' /* 'jedstion:imprimir_disabled' */,
       visible: () => true
     }, {
-      nombre_boton: "Guardar Factura",
+      nombre_boton: "Facturar",
       functionName: 'guardar_factura',
-      iconoAccion: cobro => cobro.bonificado == 0 ? 'jedstion:reporte_de_venta' : 'jedstion:reporte_de_venta_disabled',
+      iconoAccion: cobro => cobro.bonificado == 0 && cobro.puede_modificar == 1 && cobro.puede_eliminar == 1 ? 'jedstion:reporte_de_venta' : 'jedstion:reporte_de_venta_disabled',
       iconoAccionado: () => 'jedstion:reporte_de_venta_accionado',
       iconoDeshabilitado: () => 'jedstion:reporte_de_venta_disabled',
       visible: () => true
@@ -1968,9 +1969,10 @@ class CobranzasComponent {
         break;
       case 'guardar_factura':
         if (event.params.data.bonificado === 0) {
+          if (event.params.data.puede_modificar == 0 || event.params.data.puede_eliminar == 0) return this.alert.warning('El cobro ya tiene una factura asociada, no se puede modificar ni eliminar');
           this.guardarFactura(event);
         } else {
-          this.alert.warning('No se puede guardar la factura de un cobro bonificado');
+          this.alert.warning('No se puede crear una factura sobre un cobro bonificado');
         }
         break;
     }

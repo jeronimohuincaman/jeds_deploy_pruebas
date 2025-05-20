@@ -7858,7 +7858,7 @@ const appRoutes = [
   }, {
     path: 'articulos',
     canActivate: [_core_auth_guards_permiso_guard__WEBPACK_IMPORTED_MODULE_4__.PermisoGuard],
-    loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-node_modules_angular_material_fesm2022_checkbox_mjs"), __webpack_require__.e("default-src_app_shared_components_tabla-dinamica_tabla-dinamica_module_ts"), __webpack_require__.e("default-node_modules_angular_material_fesm2022_datepicker_mjs"), __webpack_require__.e("default-src_app_modules_compras_ordenes-de-compra_components_save_save_component_ts-node_modu-858a85"), __webpack_require__.e("src_app_modules_stock_articulos_articulos_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./modules/stock/articulos/articulos.module */ 76270)).then(m => m.ArticulosModule)
+    loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-node_modules_angular_material_fesm2022_checkbox_mjs"), __webpack_require__.e("default-src_app_shared_components_tabla-dinamica_tabla-dinamica_module_ts"), __webpack_require__.e("default-node_modules_angular_material_fesm2022_datepicker_mjs"), __webpack_require__.e("default-node_modules_angular_material_fesm2022_radio_mjs-node_modules_angular_material_fesm20-5f235d"), __webpack_require__.e("default-src_app_modules_compras_ordenes-de-compra_components_save_save_component_ts"), __webpack_require__.e("src_app_modules_stock_articulos_articulos_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./modules/stock/articulos/articulos.module */ 76270)).then(m => m.ArticulosModule)
   }, {
     path: 'clientes',
     canActivate: [_core_auth_guards_permiso_guard__WEBPACK_IMPORTED_MODULE_4__.PermisoGuard],
@@ -7878,7 +7878,7 @@ const appRoutes = [
   }, {
     path: 'ordenes-de-compra',
     canActivate: [_core_auth_guards_permiso_guard__WEBPACK_IMPORTED_MODULE_4__.PermisoGuard],
-    loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-node_modules_angular_material_fesm2022_checkbox_mjs"), __webpack_require__.e("default-src_app_shared_components_tabla-dinamica_tabla-dinamica_module_ts"), __webpack_require__.e("default-node_modules_angular_material_fesm2022_datepicker_mjs"), __webpack_require__.e("default-src_app_modules_compras_ordenes-de-compra_components_save_save_component_ts-node_modu-858a85"), __webpack_require__.e("src_app_modules_compras_ordenes-de-compra_ordenes-de-compra_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./modules/compras/ordenes-de-compra/ordenes-de-compra.module */ 37318)).then(m => m.OrdenesDeCompraModule)
+    loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-node_modules_angular_material_fesm2022_checkbox_mjs"), __webpack_require__.e("default-src_app_shared_components_tabla-dinamica_tabla-dinamica_module_ts"), __webpack_require__.e("default-node_modules_angular_material_fesm2022_datepicker_mjs"), __webpack_require__.e("default-src_app_modules_compras_ordenes-de-compra_components_save_save_component_ts"), __webpack_require__.e("src_app_modules_compras_ordenes-de-compra_ordenes-de-compra_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./modules/compras/ordenes-de-compra/ordenes-de-compra.module */ 37318)).then(m => m.OrdenesDeCompraModule)
   }, {
     path: 'movimientos-internos',
     canActivate: [_core_auth_guards_permiso_guard__WEBPACK_IMPORTED_MODULE_4__.PermisoGuard],
