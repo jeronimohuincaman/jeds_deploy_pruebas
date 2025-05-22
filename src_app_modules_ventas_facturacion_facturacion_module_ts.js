@@ -1716,7 +1716,7 @@ class GuardarFacturaComponent {
     var _this = this;
     return (0,C_work_jeds_jedstion_source_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
       try {
-        const resultados = yield Promise.all([_this.getClientes(), _this.getDatosEmpresa(), _this.getArticulos(" ")]);
+        const resultados = yield Promise.all([_this.getClientes(), _this.getDatosEmpresa(), _this.getArticulos(' ')]);
       } catch (error) {
         _this.alert.error('Ocurrió un error al cargar los datos');
       }
@@ -1956,7 +1956,8 @@ class GuardarFacturaComponent {
     let detalle = `${articulo.codigo_interno} - ${this.facturaForm.get('detalle').value || articulo.descripcion}`;
     // Se formatean los numeros a 2 decimales (como dice el backendista que hace el back)
     let totalArticulo = Number((subtotal + subtotal_iva).toFixed(2));
-    if (this.cobro && totalArticulo > Number(this.faltaFacturarVista.toFixed(2))) {
+    let diferencia = Number(Math.abs(this.faltaFacturarVista - totalArticulo).toFixed(2));
+    if (this.cobro && diferencia > 10 && totalArticulo > this.faltaFacturarVista) {
       this.alert.error('El monto total del artículo excede el monto total a facturar.');
       return;
     }
