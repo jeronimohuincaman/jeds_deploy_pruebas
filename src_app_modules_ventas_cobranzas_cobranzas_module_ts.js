@@ -212,8 +212,8 @@ function AltaEdicionCobroComponent_div_57_Template(rf, ctx) {
 }
 function AltaEdicionCobroComponent_div_58_th_3_Template(rf, ctx) {
   if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](0, "th", 92);
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtext"](1, " Ventas Pendientes");
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](0, "th", 95);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtext"](1, " Ventas Pendientes ");
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]();
   }
   if (rf & 2) {
@@ -224,68 +224,56 @@ function AltaEdicionCobroComponent_div_58_th_3_Template(rf, ctx) {
 }
 function AltaEdicionCobroComponent_div_58_td_4_Template(rf, ctx) {
   if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](0, "td", 93);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](0, "td", 96);
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtext"](1);
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]();
   }
   if (rf & 2) {
-    const item_r36 = ctx.$implicit;
+    const item_r44 = ctx.$implicit;
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtextInterpolate1"](" ", item_r36.descripcion ? item_r36.descripcion : "-", " ");
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtextInterpolate"](item_r44.descripcion || "-");
   }
 }
-function AltaEdicionCobroComponent_div_58_th_6_Template(rf, ctx) {
+function AltaEdicionCobroComponent_div_58_td_5_Template(rf, ctx) {
   if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](0, "th", 94);
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtext"](1, " Importe");
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](0, "td", 97);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtext"](1, "TOTAL");
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]();
+  }
+}
+function AltaEdicionCobroComponent_div_58_th_7_Template(rf, ctx) {
+  if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](0, "th", 98);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtext"](1, " Importe ");
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]();
   }
   if (rf & 2) {
-    const ctx_r22 = _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵnextContext"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵclassMap"](ctx_r22.color_primario ? "" : ctx_r22.default_color);
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵstyleProp"]("background-color", ctx_r22.color_primario || "");
+    const ctx_r23 = _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵnextContext"](2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵclassMap"](ctx_r23.color_primario ? "" : ctx_r23.default_color);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵstyleProp"]("background-color", ctx_r23.color_primario || "");
   }
 }
-function AltaEdicionCobroComponent_div_58_td_7_Template(rf, ctx) {
+function AltaEdicionCobroComponent_div_58_td_8_Template(rf, ctx) {
   if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](0, "td", 93);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](0, "td", 96);
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtext"](1);
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]();
   }
   if (rf & 2) {
-    const item_r37 = ctx.$implicit;
+    const item_r45 = ctx.$implicit;
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtextInterpolate1"](" ", "$" + item_r37.importe_neto, " ");
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtextInterpolate"]("$" + item_r45.importe_neto);
   }
 }
-function AltaEdicionCobroComponent_div_58_th_9_Template(rf, ctx) {
+function AltaEdicionCobroComponent_div_58_td_9_Template(rf, ctx) {
   if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](0, "th", 94);
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtext"](1, " Saldo");
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]();
-  }
-  if (rf & 2) {
-    const ctx_r24 = _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵnextContext"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵclassMap"](ctx_r24.color_primario ? "" : ctx_r24.default_color);
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵstyleProp"]("background-color", ctx_r24.color_primario || "");
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelement"](0, "td", 99);
   }
 }
-function AltaEdicionCobroComponent_div_58_td_10_Template(rf, ctx) {
+function AltaEdicionCobroComponent_div_58_th_11_Template(rf, ctx) {
   if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](0, "td", 93);
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtext"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]();
-  }
-  if (rf & 2) {
-    const item_r38 = ctx.$implicit;
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtextInterpolate1"](" ", "$" + item_r38.saldo, " ");
-  }
-}
-function AltaEdicionCobroComponent_div_58_th_12_Template(rf, ctx) {
-  if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](0, "th", 94);
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtext"](1, " Intereses por Mora");
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](0, "th", 98);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtext"](1, " Saldo ");
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]();
   }
   if (rf & 2) {
@@ -294,69 +282,71 @@ function AltaEdicionCobroComponent_div_58_th_12_Template(rf, ctx) {
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵstyleProp"]("background-color", ctx_r26.color_primario || "");
   }
 }
-function AltaEdicionCobroComponent_div_58_td_13_Template(rf, ctx) {
+function AltaEdicionCobroComponent_div_58_td_12_Template(rf, ctx) {
   if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](0, "td", 93);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](0, "td", 96);
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtext"](1);
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]();
   }
   if (rf & 2) {
-    const item_r39 = ctx.$implicit;
+    const item_r46 = ctx.$implicit;
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtextInterpolate1"](" ", "$" + item_r39.interes, " ");
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtextInterpolate"]("$" + item_r46.saldo);
   }
 }
-function AltaEdicionCobroComponent_div_58_th_15_Template(rf, ctx) {
+function AltaEdicionCobroComponent_div_58_td_13_Template(rf, ctx) {
   if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](0, "th", 94);
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtext"](1, " Asignaci\u00F3n");
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](0, "td", 97);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtext"](1);
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]();
   }
   if (rf & 2) {
     const ctx_r28 = _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵnextContext"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵclassMap"](ctx_r28.color_primario ? "" : ctx_r28.default_color);
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵstyleProp"]("background-color", ctx_r28.color_primario || "");
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtextInterpolate"]("$" + ctx_r28.totales.saldo);
+  }
+}
+function AltaEdicionCobroComponent_div_58_th_15_Template(rf, ctx) {
+  if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](0, "th", 98);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtext"](1, " Intereses por Mora ");
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]();
+  }
+  if (rf & 2) {
+    const ctx_r29 = _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵnextContext"](2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵclassMap"](ctx_r29.color_primario ? "" : ctx_r29.default_color);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵstyleProp"]("background-color", ctx_r29.color_primario || "");
   }
 }
 function AltaEdicionCobroComponent_div_58_td_16_Template(rf, ctx) {
   if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](0, "td", 93);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](0, "td", 96);
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtext"](1);
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]();
   }
   if (rf & 2) {
-    const item_r40 = ctx.$implicit;
+    const item_r47 = ctx.$implicit;
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtextInterpolate1"](" ", "$" + item_r40.asignacion, " ");
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtextInterpolate"]("$" + item_r47.interes);
   }
 }
-function AltaEdicionCobroComponent_div_58_th_18_Template(rf, ctx) {
+function AltaEdicionCobroComponent_div_58_td_17_Template(rf, ctx) {
   if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](0, "th", 94);
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtext"](1, " Total a Pagar");
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]();
-  }
-  if (rf & 2) {
-    const ctx_r30 = _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵnextContext"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵclassMap"](ctx_r30.color_primario ? "" : ctx_r30.default_color);
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵstyleProp"]("background-color", ctx_r30.color_primario || "");
-  }
-}
-function AltaEdicionCobroComponent_div_58_td_19_Template(rf, ctx) {
-  if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](0, "td", 93);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](0, "td", 97);
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtext"](1);
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]();
   }
   if (rf & 2) {
-    const item_r41 = ctx.$implicit;
+    const ctx_r31 = _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵnextContext"](2);
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtextInterpolate1"](" ", "$" + item_r41.importe_total, " ");
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtextInterpolate1"]("", "$" + ctx_r31.totales.interes, " ");
   }
 }
-function AltaEdicionCobroComponent_div_58_th_21_Template(rf, ctx) {
+function AltaEdicionCobroComponent_div_58_th_19_Template(rf, ctx) {
   if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelement"](0, "th", 95);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](0, "th", 98);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtext"](1, " Asignaci\u00F3n ");
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]();
   }
   if (rf & 2) {
     const ctx_r32 = _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵnextContext"](2);
@@ -364,35 +354,122 @@ function AltaEdicionCobroComponent_div_58_th_21_Template(rf, ctx) {
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵstyleProp"]("background-color", ctx_r32.color_primario || "");
   }
 }
-function AltaEdicionCobroComponent_div_58_td_22_Template(rf, ctx) {
+function AltaEdicionCobroComponent_div_58_td_20_Template(rf, ctx) {
   if (rf & 1) {
-    const _r44 = _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵgetCurrentView"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](0, "td", 93)(1, "button", 39);
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵlistener"]("click", function AltaEdicionCobroComponent_div_58_td_22_Template_button_click_1_listener() {
-      const restoredCtx = _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵrestoreView"](_r44);
-      const item_r42 = restoredCtx.$implicit;
-      const ctx_r43 = _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵnextContext"](2);
-      return _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵresetView"](ctx_r43.removeItem(item_r42, ctx_r43.dataSourceAsignacion, 0));
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](0, "td", 96);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtext"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]();
+  }
+  if (rf & 2) {
+    const item_r48 = ctx.$implicit;
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtextInterpolate"]("$" + item_r48.asignacion);
+  }
+}
+function AltaEdicionCobroComponent_div_58_td_21_Template(rf, ctx) {
+  if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](0, "td", 97);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtext"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]();
+  }
+  if (rf & 2) {
+    const ctx_r34 = _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵnextContext"](2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtextInterpolate1"]("", "$" + ctx_r34.totales.asignacion, " ");
+  }
+}
+function AltaEdicionCobroComponent_div_58_th_23_Template(rf, ctx) {
+  if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](0, "th", 98);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtext"](1, " Total a Pagar ");
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]();
+  }
+  if (rf & 2) {
+    const ctx_r35 = _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵnextContext"](2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵclassMap"](ctx_r35.color_primario ? "" : ctx_r35.default_color);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵstyleProp"]("background-color", ctx_r35.color_primario || "");
+  }
+}
+function AltaEdicionCobroComponent_div_58_td_24_Template(rf, ctx) {
+  if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](0, "td", 96);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtext"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]();
+  }
+  if (rf & 2) {
+    const item_r49 = ctx.$implicit;
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtextInterpolate"]("$" + item_r49.importe_total);
+  }
+}
+function AltaEdicionCobroComponent_div_58_td_25_Template(rf, ctx) {
+  if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](0, "td", 97);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtext"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]();
+  }
+  if (rf & 2) {
+    const ctx_r37 = _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵnextContext"](2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtextInterpolate"]("$" + ctx_r37.totales.importe_total);
+  }
+}
+function AltaEdicionCobroComponent_div_58_th_27_Template(rf, ctx) {
+  if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelement"](0, "th", 100);
+  }
+  if (rf & 2) {
+    const ctx_r38 = _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵnextContext"](2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵclassMap"](ctx_r38.color_primario ? "" : ctx_r38.default_color);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵstyleProp"]("background-color", ctx_r38.color_primario || "");
+  }
+}
+const _c0 = function (a0, a1) {
+  return {
+    "background-color": a0,
+    "border": a1
+  };
+};
+function AltaEdicionCobroComponent_div_58_td_28_Template(rf, ctx) {
+  if (rf & 1) {
+    const _r52 = _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵgetCurrentView"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](0, "td", 96)(1, "button", 101);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵlistener"]("click", function AltaEdicionCobroComponent_div_58_td_28_Template_button_click_1_listener() {
+      const restoredCtx = _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵrestoreView"](_r52);
+      const item_r50 = restoredCtx.$implicit;
+      const ctx_r51 = _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵnextContext"](2);
+      return _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵresetView"](ctx_r51.removeItem(item_r50, ctx_r51.dataSourceAsignacion, 0));
     });
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](2, "mat-icon", 96);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](2, "mat-icon", 102);
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtext"](3, "delete");
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]()()();
   }
   if (rf & 2) {
-    const ctx_r33 = _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵnextContext"](2);
+    const ctx_r39 = _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵnextContext"](2);
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵclassMap"](ctx_r33.color_primario ? "" : ctx_r33.default_color);
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵstyleProp"]("background-color", ctx_r33.color_primario || "");
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵproperty"]("ngStyle", _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵpureFunction2"](2, _c0, ctx_r39.dataSourceFormaCobro.data.length === 0 ? ctx_r39.color_primario || "" : "white", ctx_r39.dataSourceFormaCobro.data.length === 0 ? "none" : "1px solid grey"));
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵproperty"]("ngClass", ctx_r39.dataSourceFormaCobro.data.length === 0 ? "text-white" : "text-gray-600");
   }
 }
-function AltaEdicionCobroComponent_div_58_tr_23_Template(rf, ctx) {
+function AltaEdicionCobroComponent_div_58_td_29_Template(rf, ctx) {
   if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelement"](0, "tr", 97);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelement"](0, "td", 99);
   }
 }
-function AltaEdicionCobroComponent_div_58_tr_24_Template(rf, ctx) {
+function AltaEdicionCobroComponent_div_58_tr_30_Template(rf, ctx) {
   if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelement"](0, "tr", 98);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelement"](0, "tr", 103);
+  }
+}
+function AltaEdicionCobroComponent_div_58_tr_31_Template(rf, ctx) {
+  if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelement"](0, "tr", 104);
+  }
+}
+function AltaEdicionCobroComponent_div_58_tr_32_Template(rf, ctx) {
+  if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelement"](0, "tr", 105);
   }
 }
 function AltaEdicionCobroComponent_div_58_Template(rf, ctx) {
@@ -401,111 +478,121 @@ function AltaEdicionCobroComponent_div_58_Template(rf, ctx) {
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementContainerStart"](2, 79);
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtemplate"](3, AltaEdicionCobroComponent_div_58_th_3_Template, 2, 4, "th", 80);
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtemplate"](4, AltaEdicionCobroComponent_div_58_td_4_Template, 2, 1, "td", 81);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtemplate"](5, AltaEdicionCobroComponent_div_58_td_5_Template, 2, 0, "td", 82);
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementContainerEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementContainerStart"](5, 82);
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtemplate"](6, AltaEdicionCobroComponent_div_58_th_6_Template, 2, 4, "th", 83);
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtemplate"](7, AltaEdicionCobroComponent_div_58_td_7_Template, 2, 1, "td", 81);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementContainerStart"](6, 83);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtemplate"](7, AltaEdicionCobroComponent_div_58_th_7_Template, 2, 4, "th", 84);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtemplate"](8, AltaEdicionCobroComponent_div_58_td_8_Template, 2, 1, "td", 81);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtemplate"](9, AltaEdicionCobroComponent_div_58_td_9_Template, 1, 0, "td", 85);
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementContainerEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementContainerStart"](8, 84);
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtemplate"](9, AltaEdicionCobroComponent_div_58_th_9_Template, 2, 4, "th", 83);
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtemplate"](10, AltaEdicionCobroComponent_div_58_td_10_Template, 2, 1, "td", 81);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementContainerStart"](10, 86);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtemplate"](11, AltaEdicionCobroComponent_div_58_th_11_Template, 2, 4, "th", 84);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtemplate"](12, AltaEdicionCobroComponent_div_58_td_12_Template, 2, 1, "td", 81);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtemplate"](13, AltaEdicionCobroComponent_div_58_td_13_Template, 2, 1, "td", 82);
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementContainerEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementContainerStart"](11, 85);
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtemplate"](12, AltaEdicionCobroComponent_div_58_th_12_Template, 2, 4, "th", 83);
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtemplate"](13, AltaEdicionCobroComponent_div_58_td_13_Template, 2, 1, "td", 81);
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementContainerEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementContainerStart"](14, 86);
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtemplate"](15, AltaEdicionCobroComponent_div_58_th_15_Template, 2, 4, "th", 83);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementContainerStart"](14, 87);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtemplate"](15, AltaEdicionCobroComponent_div_58_th_15_Template, 2, 4, "th", 84);
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtemplate"](16, AltaEdicionCobroComponent_div_58_td_16_Template, 2, 1, "td", 81);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtemplate"](17, AltaEdicionCobroComponent_div_58_td_17_Template, 2, 1, "td", 82);
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementContainerEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementContainerStart"](17, 87);
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtemplate"](18, AltaEdicionCobroComponent_div_58_th_18_Template, 2, 4, "th", 83);
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtemplate"](19, AltaEdicionCobroComponent_div_58_td_19_Template, 2, 1, "td", 81);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementContainerStart"](18, 88);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtemplate"](19, AltaEdicionCobroComponent_div_58_th_19_Template, 2, 4, "th", 84);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtemplate"](20, AltaEdicionCobroComponent_div_58_td_20_Template, 2, 1, "td", 81);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtemplate"](21, AltaEdicionCobroComponent_div_58_td_21_Template, 2, 1, "td", 82);
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementContainerEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementContainerStart"](20, 88);
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtemplate"](21, AltaEdicionCobroComponent_div_58_th_21_Template, 1, 4, "th", 89);
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtemplate"](22, AltaEdicionCobroComponent_div_58_td_22_Template, 4, 4, "td", 81);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementContainerStart"](22, 89);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtemplate"](23, AltaEdicionCobroComponent_div_58_th_23_Template, 2, 4, "th", 84);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtemplate"](24, AltaEdicionCobroComponent_div_58_td_24_Template, 2, 1, "td", 81);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtemplate"](25, AltaEdicionCobroComponent_div_58_td_25_Template, 2, 1, "td", 82);
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementContainerEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtemplate"](23, AltaEdicionCobroComponent_div_58_tr_23_Template, 1, 0, "tr", 90);
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtemplate"](24, AltaEdicionCobroComponent_div_58_tr_24_Template, 1, 0, "tr", 91);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementContainerStart"](26, 90);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtemplate"](27, AltaEdicionCobroComponent_div_58_th_27_Template, 1, 4, "th", 91);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtemplate"](28, AltaEdicionCobroComponent_div_58_td_28_Template, 4, 5, "td", 81);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtemplate"](29, AltaEdicionCobroComponent_div_58_td_29_Template, 1, 0, "td", 85);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementContainerEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtemplate"](30, AltaEdicionCobroComponent_div_58_tr_30_Template, 1, 0, "tr", 92);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtemplate"](31, AltaEdicionCobroComponent_div_58_tr_31_Template, 1, 0, "tr", 93);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtemplate"](32, AltaEdicionCobroComponent_div_58_tr_32_Template, 1, 0, "tr", 94);
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]()();
   }
   if (rf & 2) {
     const ctx_r6 = _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵnextContext"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵadvance"](1);
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵproperty"]("dataSource", ctx_r6.dataSourceAsignacion);
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵadvance"](22);
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵproperty"]("matHeaderRowDef", ctx_r6.asignacionColumns);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵadvance"](29);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵproperty"]("matHeaderRowDef", ctx_r6.asignacionColumns)("matHeaderRowDefSticky", true);
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵadvance"](1);
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵproperty"]("matRowDefColumns", ctx_r6.asignacionColumns);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵproperty"]("matFooterRowDef", ctx_r6.asignacionColumns)("matFooterRowDefSticky", true);
   }
 }
 function AltaEdicionCobroComponent_div_59_div_1_Template(rf, ctx) {
   if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](0, "div", 101)(1, "div", 102)(2, "div", 103)(3, "div", 104)(4, "span", 25);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](0, "div", 108)(1, "div", 109)(2, "div", 110)(3, "div", 111)(4, "span", 25);
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtext"](5, "Venta:");
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]()();
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](6, "div", 105)(7, "span", 106);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](6, "div", 112)(7, "span", 113);
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtext"](8);
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]()()();
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](9, "div", 103)(10, "div", 107)(11, "span", 25);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](9, "div", 110)(10, "div", 114)(11, "span", 25);
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtext"](12, "Importe:");
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]()();
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](13, "div", 108)(14, "span", 109);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](13, "div", 115)(14, "span", 116);
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtext"](15);
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]()()();
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](16, "div", 103)(17, "div", 107)(18, "span", 25);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](16, "div", 110)(17, "div", 114)(18, "span", 25);
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtext"](19, "Saldo:");
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]()();
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](20, "div", 108)(21, "span", 109);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](20, "div", 115)(21, "span", 116);
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtext"](22);
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]()()();
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](23, "div", 103)(24, "div", 107)(25, "span", 25);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](23, "div", 110)(24, "div", 114)(25, "span", 25);
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtext"](26, "Inter\u00E9s por Mora:");
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]()();
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](27, "div", 108)(28, "span", 109);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](27, "div", 115)(28, "span", 116);
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtext"](29);
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]()()();
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](30, "div", 103)(31, "div", 107)(32, "span", 25);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](30, "div", 110)(31, "div", 114)(32, "span", 25);
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtext"](33, "Asignaci\u00F3n");
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]()();
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](34, "div", 108)(35, "span", 109);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](34, "div", 115)(35, "span", 116);
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtext"](36);
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]()()();
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](37, "div", 103)(38, "div", 107)(39, "span", 25);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](37, "div", 110)(38, "div", 114)(39, "span", 25);
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtext"](40, "Total a Pagar:");
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]()();
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](41, "div", 108)(42, "span", 109);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](41, "div", 115)(42, "span", 116);
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtext"](43);
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]()()()();
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](44, "div", 110, 111)(46, "button", 112)(47, "mat-icon", 96);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](44, "div", 117, 118)(46, "button", 119)(47, "mat-icon", 120);
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtext"](48, "delete");
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]()()()();
   }
   if (rf & 2) {
-    const item_r47 = ctx.$implicit;
-    const ctx_r46 = _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵnextContext"](2);
+    const item_r55 = ctx.$implicit;
+    const ctx_r54 = _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵnextContext"](2);
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵadvance"](8);
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtextInterpolate"](item_r47.descripcion);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtextInterpolate"](item_r55.descripcion);
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵadvance"](7);
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtextInterpolate"]("$" + item_r47.importe_neto);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtextInterpolate"]("$" + item_r55.importe_neto);
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵadvance"](7);
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtextInterpolate"]("$" + item_r47.saldo);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtextInterpolate"]("$" + item_r55.saldo);
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵadvance"](7);
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtextInterpolate"]("$" + item_r47.interes);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtextInterpolate"]("$" + item_r55.interes);
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵadvance"](7);
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtextInterpolate"]("$" + item_r47.asignacion);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtextInterpolate"]("$" + item_r55.asignacion);
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵadvance"](7);
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtextInterpolate"]("$" + item_r47.importe_total);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtextInterpolate"]("$" + item_r55.importe_total);
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵadvance"](3);
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵclassMap"](ctx_r46.color_primario ? "" : ctx_r46.default_color);
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵstyleProp"]("background-color", ctx_r46.color_primario || "");
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵclassMap"](ctx_r54.color_primario ? "" : ctx_r54.default_color);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵstyleProp"]("background-color", ctx_r54.color_primario || "");
   }
 }
 function AltaEdicionCobroComponent_div_59_Template(rf, ctx) {
   if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](0, "div", 99);
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtemplate"](1, AltaEdicionCobroComponent_div_59_div_1_Template, 49, 10, "div", 100);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](0, "div", 106);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtemplate"](1, AltaEdicionCobroComponent_div_59_div_1_Template, 49, 10, "div", 107);
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]();
   }
   if (rf & 2) {
@@ -516,21 +603,21 @@ function AltaEdicionCobroComponent_div_59_Template(rf, ctx) {
 }
 function AltaEdicionCobroComponent_mat_option_67_Template(rf, ctx) {
   if (rf & 1) {
-    const _r51 = _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵgetCurrentView"]();
+    const _r59 = _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵgetCurrentView"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](0, "mat-option", 74);
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵlistener"]("click", function AltaEdicionCobroComponent_mat_option_67_Template_mat_option_click_0_listener() {
-      _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵrestoreView"](_r51);
-      const ctx_r50 = _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵnextContext"]();
-      return _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵresetView"](ctx_r50.calcularValores());
+      _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵrestoreView"](_r59);
+      const ctx_r58 = _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵnextContext"]();
+      return _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵresetView"](ctx_r58.calcularValores());
     });
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtext"](1);
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]();
   }
   if (rf & 2) {
-    const metodo_r49 = ctx.$implicit;
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵproperty"]("value", metodo_r49);
+    const metodo_r57 = ctx.$implicit;
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵproperty"]("value", metodo_r57);
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtextInterpolate1"](" ", metodo_r49.descripcion, " ");
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtextInterpolate1"](" ", metodo_r57.descripcion, " ");
   }
 }
 function AltaEdicionCobroComponent_mat_option_114_Template(rf, ctx) {
@@ -540,10 +627,10 @@ function AltaEdicionCobroComponent_mat_option_114_Template(rf, ctx) {
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]();
   }
   if (rf & 2) {
-    const banco_r52 = ctx.$implicit;
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵproperty"]("value", banco_r52.idbanco);
+    const banco_r60 = ctx.$implicit;
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵproperty"]("value", banco_r60.idbanco);
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtextInterpolate1"](" ", banco_r52.descripcion, " ");
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtextInterpolate1"](" ", banco_r60.descripcion, " ");
   }
 }
 function AltaEdicionCobroComponent_div_118_Template(rf, ctx) {
@@ -555,104 +642,8 @@ function AltaEdicionCobroComponent_div_118_Template(rf, ctx) {
 }
 function AltaEdicionCobroComponent_div_119_th_3_Template(rf, ctx) {
   if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](0, "th", 92);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](0, "th", 95);
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtext"](1, " Forma de Cobro");
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]();
-  }
-  if (rf & 2) {
-    const ctx_r53 = _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵnextContext"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵclassMap"](ctx_r53.color_primario ? "" : ctx_r53.default_color);
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵstyleProp"]("background-color", ctx_r53.color_primario || "");
-  }
-}
-function AltaEdicionCobroComponent_div_119_td_4_Template(rf, ctx) {
-  if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](0, "td", 93);
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtext"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]();
-  }
-  if (rf & 2) {
-    const item_r75 = ctx.$implicit;
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtextInterpolate1"](" ", item_r75.descripcion, " ");
-  }
-}
-function AltaEdicionCobroComponent_div_119_th_6_Template(rf, ctx) {
-  if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](0, "th", 94);
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtext"](1, " N\u00FAmero");
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]();
-  }
-  if (rf & 2) {
-    const ctx_r55 = _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵnextContext"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵclassMap"](ctx_r55.color_primario ? "" : ctx_r55.default_color);
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵstyleProp"]("background-color", ctx_r55.color_primario || "");
-  }
-}
-function AltaEdicionCobroComponent_div_119_td_7_Template(rf, ctx) {
-  if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](0, "td", 93);
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtext"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]();
-  }
-  if (rf & 2) {
-    const item_r76 = ctx.$implicit;
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtextInterpolate2"](" ", item_r76.numero_comprobante ? "#" : "", "", item_r76.numero_comprobante ? item_r76.numero_comprobante : "-", " ");
-  }
-}
-function AltaEdicionCobroComponent_div_119_th_9_Template(rf, ctx) {
-  if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](0, "th", 94);
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtext"](1, " Emisi\u00F3n");
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]();
-  }
-  if (rf & 2) {
-    const ctx_r57 = _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵnextContext"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵclassMap"](ctx_r57.color_primario ? "" : ctx_r57.default_color);
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵstyleProp"]("background-color", ctx_r57.color_primario || "");
-  }
-}
-function AltaEdicionCobroComponent_div_119_td_10_Template(rf, ctx) {
-  if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](0, "td", 93);
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtext"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]();
-  }
-  if (rf & 2) {
-    const item_r77 = ctx.$implicit;
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtextInterpolate1"](" ", item_r77.fecha_emision ? item_r77.fecha_emision : "-", " ");
-  }
-}
-function AltaEdicionCobroComponent_div_119_th_12_Template(rf, ctx) {
-  if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](0, "th", 94);
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtext"](1, " Cobro");
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]();
-  }
-  if (rf & 2) {
-    const ctx_r59 = _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵnextContext"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵclassMap"](ctx_r59.color_primario ? "" : ctx_r59.default_color);
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵstyleProp"]("background-color", ctx_r59.color_primario || "");
-  }
-}
-function AltaEdicionCobroComponent_div_119_td_13_Template(rf, ctx) {
-  if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](0, "td", 93);
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtext"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]();
-  }
-  if (rf & 2) {
-    const item_r78 = ctx.$implicit;
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtextInterpolate1"](" ", item_r78.fecha_cobro ? item_r78.fecha_cobro : "-", " ");
-  }
-}
-function AltaEdicionCobroComponent_div_119_th_15_Template(rf, ctx) {
-  if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](0, "th", 94);
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtext"](1, " Vto.");
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]();
   }
   if (rf & 2) {
@@ -661,70 +652,58 @@ function AltaEdicionCobroComponent_div_119_th_15_Template(rf, ctx) {
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵstyleProp"]("background-color", ctx_r61.color_primario || "");
   }
 }
-function AltaEdicionCobroComponent_div_119_td_16_Template(rf, ctx) {
+function AltaEdicionCobroComponent_div_119_td_4_Template(rf, ctx) {
   if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](0, "td", 93);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](0, "td", 132);
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtext"](1);
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]();
   }
   if (rf & 2) {
-    const item_r79 = ctx.$implicit;
+    const item_r94 = ctx.$implicit;
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtextInterpolate1"](" ", item_r79.fecha_vencimiento ? item_r79.fecha_vencimiento : "-", " ");
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtextInterpolate"](item_r94.descripcion);
   }
 }
-function AltaEdicionCobroComponent_div_119_th_18_Template(rf, ctx) {
+function AltaEdicionCobroComponent_div_119_td_5_Template(rf, ctx) {
   if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](0, "th", 94);
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtext"](1, " Banco");
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](0, "td", 97);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtext"](1, "TOTAL");
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]();
+  }
+}
+function AltaEdicionCobroComponent_div_119_th_7_Template(rf, ctx) {
+  if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](0, "th", 98);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtext"](1, " N\u00FAmero");
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]();
   }
   if (rf & 2) {
-    const ctx_r63 = _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵnextContext"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵclassMap"](ctx_r63.color_primario ? "" : ctx_r63.default_color);
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵstyleProp"]("background-color", ctx_r63.color_primario || "");
+    const ctx_r64 = _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵnextContext"](2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵclassMap"](ctx_r64.color_primario ? "" : ctx_r64.default_color);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵstyleProp"]("background-color", ctx_r64.color_primario || "");
   }
 }
-function AltaEdicionCobroComponent_div_119_td_19_Template(rf, ctx) {
+function AltaEdicionCobroComponent_div_119_td_8_Template(rf, ctx) {
   if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](0, "td", 93);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](0, "td", 132);
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtext"](1);
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]();
   }
   if (rf & 2) {
-    const item_r80 = ctx.$implicit;
+    const item_r95 = ctx.$implicit;
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtextInterpolate1"](" ", item_r80.banco ? item_r80.banco : "-", " ");
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtextInterpolate1"](" ", item_r95.numero_comprobante ? "#" + item_r95.numero_comprobante : "-", " ");
   }
 }
-function AltaEdicionCobroComponent_div_119_th_21_Template(rf, ctx) {
+function AltaEdicionCobroComponent_div_119_td_9_Template(rf, ctx) {
   if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](0, "th", 94);
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtext"](1, " Neto a Descontar");
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]();
-  }
-  if (rf & 2) {
-    const ctx_r65 = _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵnextContext"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵclassMap"](ctx_r65.color_primario ? "" : ctx_r65.default_color);
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵstyleProp"]("background-color", ctx_r65.color_primario || "");
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelement"](0, "td", 99);
   }
 }
-function AltaEdicionCobroComponent_div_119_td_22_Template(rf, ctx) {
+function AltaEdicionCobroComponent_div_119_th_11_Template(rf, ctx) {
   if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](0, "td", 93);
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtext"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]();
-  }
-  if (rf & 2) {
-    const item_r81 = ctx.$implicit;
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtextInterpolate1"](" ", "$" + item_r81.importe_neto, " ");
-  }
-}
-function AltaEdicionCobroComponent_div_119_th_24_Template(rf, ctx) {
-  if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](0, "th", 94);
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtext"](1, " Inter\u00E9s/Descuento");
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](0, "th", 98);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtext"](1, " Emisi\u00F3n");
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]();
   }
   if (rf & 2) {
@@ -733,238 +712,437 @@ function AltaEdicionCobroComponent_div_119_th_24_Template(rf, ctx) {
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵstyleProp"]("background-color", ctx_r67.color_primario || "");
   }
 }
-function AltaEdicionCobroComponent_div_119_td_25_Template(rf, ctx) {
+function AltaEdicionCobroComponent_div_119_td_12_Template(rf, ctx) {
   if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](0, "td", 93);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](0, "td", 132);
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtext"](1);
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]();
   }
   if (rf & 2) {
-    const item_r82 = ctx.$implicit;
+    const item_r96 = ctx.$implicit;
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtextInterpolate1"](" ", "$" + item_r82.importe_interes_descuento, " ");
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtextInterpolate1"](" ", item_r96.fecha_emision || "-", " ");
+  }
+}
+function AltaEdicionCobroComponent_div_119_td_13_Template(rf, ctx) {
+  if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelement"](0, "td", 99);
+  }
+}
+function AltaEdicionCobroComponent_div_119_th_15_Template(rf, ctx) {
+  if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](0, "th", 98);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtext"](1, " Cobro");
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]();
+  }
+  if (rf & 2) {
+    const ctx_r70 = _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵnextContext"](2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵclassMap"](ctx_r70.color_primario ? "" : ctx_r70.default_color);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵstyleProp"]("background-color", ctx_r70.color_primario || "");
+  }
+}
+function AltaEdicionCobroComponent_div_119_td_16_Template(rf, ctx) {
+  if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](0, "td", 132);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtext"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]();
+  }
+  if (rf & 2) {
+    const item_r97 = ctx.$implicit;
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtextInterpolate1"](" ", item_r97.fecha_cobro || "-", " ");
+  }
+}
+function AltaEdicionCobroComponent_div_119_td_17_Template(rf, ctx) {
+  if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelement"](0, "td", 99);
+  }
+}
+function AltaEdicionCobroComponent_div_119_th_19_Template(rf, ctx) {
+  if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](0, "th", 98);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtext"](1, " Vto.");
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]();
+  }
+  if (rf & 2) {
+    const ctx_r73 = _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵnextContext"](2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵclassMap"](ctx_r73.color_primario ? "" : ctx_r73.default_color);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵstyleProp"]("background-color", ctx_r73.color_primario || "");
+  }
+}
+function AltaEdicionCobroComponent_div_119_td_20_Template(rf, ctx) {
+  if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](0, "td", 132);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtext"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]();
+  }
+  if (rf & 2) {
+    const item_r98 = ctx.$implicit;
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtextInterpolate1"](" ", item_r98.fecha_vencimiento || "-", " ");
+  }
+}
+function AltaEdicionCobroComponent_div_119_td_21_Template(rf, ctx) {
+  if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelement"](0, "td", 99);
+  }
+}
+function AltaEdicionCobroComponent_div_119_th_23_Template(rf, ctx) {
+  if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](0, "th", 98);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtext"](1, " Banco");
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]();
+  }
+  if (rf & 2) {
+    const ctx_r76 = _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵnextContext"](2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵclassMap"](ctx_r76.color_primario ? "" : ctx_r76.default_color);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵstyleProp"]("background-color", ctx_r76.color_primario || "");
+  }
+}
+function AltaEdicionCobroComponent_div_119_td_24_Template(rf, ctx) {
+  if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](0, "td", 132);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtext"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]();
+  }
+  if (rf & 2) {
+    const item_r99 = ctx.$implicit;
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtextInterpolate1"](" ", item_r99.banco || "-", " ");
+  }
+}
+function AltaEdicionCobroComponent_div_119_td_25_Template(rf, ctx) {
+  if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelement"](0, "td", 99);
   }
 }
 function AltaEdicionCobroComponent_div_119_th_27_Template(rf, ctx) {
   if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](0, "th", 94);
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtext"](1, " Pago Real (Bruto)");
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](0, "th", 98);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtext"](1, " Neto a Descontar");
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]();
   }
   if (rf & 2) {
-    const ctx_r69 = _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵnextContext"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵclassMap"](ctx_r69.color_primario ? "" : ctx_r69.default_color);
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵstyleProp"]("background-color", ctx_r69.color_primario || "");
+    const ctx_r79 = _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵnextContext"](2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵclassMap"](ctx_r79.color_primario ? "" : ctx_r79.default_color);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵstyleProp"]("background-color", ctx_r79.color_primario || "");
   }
 }
 function AltaEdicionCobroComponent_div_119_td_28_Template(rf, ctx) {
   if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](0, "td", 93);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](0, "td", 132);
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtext"](1);
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]();
   }
   if (rf & 2) {
-    const item_r83 = ctx.$implicit;
+    const item_r100 = ctx.$implicit;
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtextInterpolate1"](" ", "$" + item_r83.importe_real, " ");
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtextInterpolate1"](" ", "$" + item_r100.importe_neto, " ");
   }
 }
-function AltaEdicionCobroComponent_div_119_th_30_Template(rf, ctx) {
+function AltaEdicionCobroComponent_div_119_td_29_Template(rf, ctx) {
   if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelement"](0, "th", 95);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](0, "td", 97);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtext"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]();
   }
   if (rf & 2) {
-    const ctx_r71 = _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵnextContext"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵclassMap"](ctx_r71.color_primario ? "" : ctx_r71.default_color);
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵstyleProp"]("background-color", ctx_r71.color_primario || "");
+    const ctx_r81 = _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵnextContext"](2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtextInterpolate1"](" ", "$" + ctx_r81.totales_forma_cobro.importe_neto, " ");
   }
 }
-function AltaEdicionCobroComponent_div_119_td_31_Template(rf, ctx) {
+function AltaEdicionCobroComponent_div_119_th_31_Template(rf, ctx) {
   if (rf & 1) {
-    const _r86 = _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵgetCurrentView"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](0, "td", 93)(1, "button", 39);
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵlistener"]("click", function AltaEdicionCobroComponent_div_119_td_31_Template_button_click_1_listener() {
-      const restoredCtx = _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵrestoreView"](_r86);
-      const item_r84 = restoredCtx.$implicit;
-      const ctx_r85 = _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵnextContext"](2);
-      return _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵresetView"](ctx_r85.removeFormaCobro(item_r84));
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](0, "th", 98);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtext"](1, " Inter\u00E9s/Descuento");
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]();
+  }
+  if (rf & 2) {
+    const ctx_r82 = _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵnextContext"](2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵclassMap"](ctx_r82.color_primario ? "" : ctx_r82.default_color);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵstyleProp"]("background-color", ctx_r82.color_primario || "");
+  }
+}
+function AltaEdicionCobroComponent_div_119_td_32_Template(rf, ctx) {
+  if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](0, "td", 132);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtext"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]();
+  }
+  if (rf & 2) {
+    const item_r101 = ctx.$implicit;
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtextInterpolate1"](" ", "$" + item_r101.importe_interes_descuento, " ");
+  }
+}
+function AltaEdicionCobroComponent_div_119_td_33_Template(rf, ctx) {
+  if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](0, "td", 97);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtext"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]();
+  }
+  if (rf & 2) {
+    const ctx_r84 = _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵnextContext"](2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtextInterpolate1"](" ", "$" + ctx_r84.totales_forma_cobro.importe_interes_descuento, " ");
+  }
+}
+function AltaEdicionCobroComponent_div_119_th_35_Template(rf, ctx) {
+  if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](0, "th", 98);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtext"](1, " Pago Real (Bruto)");
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]();
+  }
+  if (rf & 2) {
+    const ctx_r85 = _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵnextContext"](2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵclassMap"](ctx_r85.color_primario ? "" : ctx_r85.default_color);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵstyleProp"]("background-color", ctx_r85.color_primario || "");
+  }
+}
+function AltaEdicionCobroComponent_div_119_td_36_Template(rf, ctx) {
+  if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](0, "td", 132);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtext"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]();
+  }
+  if (rf & 2) {
+    const item_r102 = ctx.$implicit;
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtextInterpolate1"](" ", "$" + item_r102.importe_real, " ");
+  }
+}
+function AltaEdicionCobroComponent_div_119_td_37_Template(rf, ctx) {
+  if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](0, "td", 97);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtext"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]();
+  }
+  if (rf & 2) {
+    const ctx_r87 = _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵnextContext"](2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtextInterpolate1"](" ", "$" + ctx_r87.totales_forma_cobro.importe_real, " ");
+  }
+}
+function AltaEdicionCobroComponent_div_119_th_39_Template(rf, ctx) {
+  if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelement"](0, "th", 100);
+  }
+  if (rf & 2) {
+    const ctx_r88 = _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵnextContext"](2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵclassMap"](ctx_r88.color_primario ? "" : ctx_r88.default_color);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵstyleProp"]("background-color", ctx_r88.color_primario || "");
+  }
+}
+function AltaEdicionCobroComponent_div_119_td_40_Template(rf, ctx) {
+  if (rf & 1) {
+    const _r105 = _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵgetCurrentView"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](0, "td", 132)(1, "button", 39);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵlistener"]("click", function AltaEdicionCobroComponent_div_119_td_40_Template_button_click_1_listener() {
+      const restoredCtx = _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵrestoreView"](_r105);
+      const item_r103 = restoredCtx.$implicit;
+      const ctx_r104 = _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵnextContext"](2);
+      return _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵresetView"](ctx_r104.removeFormaCobro(item_r103));
     });
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](2, "mat-icon", 96);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](2, "mat-icon", 120);
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtext"](3, "delete");
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]()()();
   }
   if (rf & 2) {
-    const ctx_r72 = _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵnextContext"](2);
+    const ctx_r89 = _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵnextContext"](2);
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵclassMap"](ctx_r72.color_primario ? "" : ctx_r72.default_color);
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵstyleProp"]("background-color", ctx_r72.color_primario || "");
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵclassMap"](ctx_r89.color_primario ? "" : ctx_r89.default_color);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵstyleProp"]("background-color", ctx_r89.color_primario || "");
   }
 }
-function AltaEdicionCobroComponent_div_119_tr_32_Template(rf, ctx) {
+function AltaEdicionCobroComponent_div_119_td_41_Template(rf, ctx) {
   if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelement"](0, "tr", 97);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelement"](0, "td", 99);
   }
 }
-function AltaEdicionCobroComponent_div_119_tr_33_Template(rf, ctx) {
+function AltaEdicionCobroComponent_div_119_tr_42_Template(rf, ctx) {
   if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelement"](0, "tr", 98);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelement"](0, "tr", 103);
+  }
+}
+function AltaEdicionCobroComponent_div_119_tr_43_Template(rf, ctx) {
+  if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelement"](0, "tr", 104);
+  }
+}
+function AltaEdicionCobroComponent_div_119_tr_44_Template(rf, ctx) {
+  if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelement"](0, "tr", 105);
   }
 }
 function AltaEdicionCobroComponent_div_119_Template(rf, ctx) {
   if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](0, "div", 113)(1, "table", 114);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](0, "div", 121)(1, "table", 122);
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementContainerStart"](2, 79);
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtemplate"](3, AltaEdicionCobroComponent_div_119_th_3_Template, 2, 4, "th", 80);
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtemplate"](4, AltaEdicionCobroComponent_div_119_td_4_Template, 2, 1, "td", 81);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtemplate"](4, AltaEdicionCobroComponent_div_119_td_4_Template, 2, 1, "td", 123);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtemplate"](5, AltaEdicionCobroComponent_div_119_td_5_Template, 2, 0, "td", 82);
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementContainerEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementContainerStart"](5, 115);
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtemplate"](6, AltaEdicionCobroComponent_div_119_th_6_Template, 2, 4, "th", 83);
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtemplate"](7, AltaEdicionCobroComponent_div_119_td_7_Template, 2, 2, "td", 81);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementContainerStart"](6, 124);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtemplate"](7, AltaEdicionCobroComponent_div_119_th_7_Template, 2, 4, "th", 84);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtemplate"](8, AltaEdicionCobroComponent_div_119_td_8_Template, 2, 1, "td", 123);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtemplate"](9, AltaEdicionCobroComponent_div_119_td_9_Template, 1, 0, "td", 85);
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementContainerEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementContainerStart"](8, 116);
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtemplate"](9, AltaEdicionCobroComponent_div_119_th_9_Template, 2, 4, "th", 83);
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtemplate"](10, AltaEdicionCobroComponent_div_119_td_10_Template, 2, 1, "td", 81);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementContainerStart"](10, 125);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtemplate"](11, AltaEdicionCobroComponent_div_119_th_11_Template, 2, 4, "th", 84);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtemplate"](12, AltaEdicionCobroComponent_div_119_td_12_Template, 2, 1, "td", 123);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtemplate"](13, AltaEdicionCobroComponent_div_119_td_13_Template, 1, 0, "td", 85);
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementContainerEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementContainerStart"](11, 117);
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtemplate"](12, AltaEdicionCobroComponent_div_119_th_12_Template, 2, 4, "th", 83);
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtemplate"](13, AltaEdicionCobroComponent_div_119_td_13_Template, 2, 1, "td", 81);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementContainerStart"](14, 126);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtemplate"](15, AltaEdicionCobroComponent_div_119_th_15_Template, 2, 4, "th", 84);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtemplate"](16, AltaEdicionCobroComponent_div_119_td_16_Template, 2, 1, "td", 123);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtemplate"](17, AltaEdicionCobroComponent_div_119_td_17_Template, 1, 0, "td", 85);
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementContainerEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementContainerStart"](14, 118);
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtemplate"](15, AltaEdicionCobroComponent_div_119_th_15_Template, 2, 4, "th", 83);
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtemplate"](16, AltaEdicionCobroComponent_div_119_td_16_Template, 2, 1, "td", 81);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementContainerStart"](18, 127);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtemplate"](19, AltaEdicionCobroComponent_div_119_th_19_Template, 2, 4, "th", 84);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtemplate"](20, AltaEdicionCobroComponent_div_119_td_20_Template, 2, 1, "td", 123);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtemplate"](21, AltaEdicionCobroComponent_div_119_td_21_Template, 1, 0, "td", 85);
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementContainerEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementContainerStart"](17, 119);
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtemplate"](18, AltaEdicionCobroComponent_div_119_th_18_Template, 2, 4, "th", 83);
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtemplate"](19, AltaEdicionCobroComponent_div_119_td_19_Template, 2, 1, "td", 81);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementContainerStart"](22, 128);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtemplate"](23, AltaEdicionCobroComponent_div_119_th_23_Template, 2, 4, "th", 84);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtemplate"](24, AltaEdicionCobroComponent_div_119_td_24_Template, 2, 1, "td", 123);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtemplate"](25, AltaEdicionCobroComponent_div_119_td_25_Template, 1, 0, "td", 85);
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementContainerEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementContainerStart"](20, 82);
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtemplate"](21, AltaEdicionCobroComponent_div_119_th_21_Template, 2, 4, "th", 83);
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtemplate"](22, AltaEdicionCobroComponent_div_119_td_22_Template, 2, 1, "td", 81);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementContainerStart"](26, 83);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtemplate"](27, AltaEdicionCobroComponent_div_119_th_27_Template, 2, 4, "th", 84);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtemplate"](28, AltaEdicionCobroComponent_div_119_td_28_Template, 2, 1, "td", 123);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtemplate"](29, AltaEdicionCobroComponent_div_119_td_29_Template, 2, 1, "td", 82);
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementContainerEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementContainerStart"](23, 120);
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtemplate"](24, AltaEdicionCobroComponent_div_119_th_24_Template, 2, 4, "th", 83);
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtemplate"](25, AltaEdicionCobroComponent_div_119_td_25_Template, 2, 1, "td", 81);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementContainerStart"](30, 129);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtemplate"](31, AltaEdicionCobroComponent_div_119_th_31_Template, 2, 4, "th", 84);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtemplate"](32, AltaEdicionCobroComponent_div_119_td_32_Template, 2, 1, "td", 123);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtemplate"](33, AltaEdicionCobroComponent_div_119_td_33_Template, 2, 1, "td", 82);
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementContainerEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementContainerStart"](26, 121);
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtemplate"](27, AltaEdicionCobroComponent_div_119_th_27_Template, 2, 4, "th", 83);
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtemplate"](28, AltaEdicionCobroComponent_div_119_td_28_Template, 2, 1, "td", 81);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementContainerStart"](34, 130);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtemplate"](35, AltaEdicionCobroComponent_div_119_th_35_Template, 2, 4, "th", 84);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtemplate"](36, AltaEdicionCobroComponent_div_119_td_36_Template, 2, 1, "td", 123);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtemplate"](37, AltaEdicionCobroComponent_div_119_td_37_Template, 2, 1, "td", 82);
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementContainerEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementContainerStart"](29, 88);
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtemplate"](30, AltaEdicionCobroComponent_div_119_th_30_Template, 1, 4, "th", 89);
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtemplate"](31, AltaEdicionCobroComponent_div_119_td_31_Template, 4, 4, "td", 81);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementContainerStart"](38, 90);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtemplate"](39, AltaEdicionCobroComponent_div_119_th_39_Template, 1, 4, "th", 91);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtemplate"](40, AltaEdicionCobroComponent_div_119_td_40_Template, 4, 4, "td", 123);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtemplate"](41, AltaEdicionCobroComponent_div_119_td_41_Template, 1, 0, "td", 85);
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementContainerEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtemplate"](32, AltaEdicionCobroComponent_div_119_tr_32_Template, 1, 0, "tr", 90);
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtemplate"](33, AltaEdicionCobroComponent_div_119_tr_33_Template, 1, 0, "tr", 91);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtemplate"](42, AltaEdicionCobroComponent_div_119_tr_42_Template, 1, 0, "tr", 131);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtemplate"](43, AltaEdicionCobroComponent_div_119_tr_43_Template, 1, 0, "tr", 93);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtemplate"](44, AltaEdicionCobroComponent_div_119_tr_44_Template, 1, 0, "tr", 94);
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]()();
   }
   if (rf & 2) {
     const ctx_r14 = _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵnextContext"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵadvance"](1);
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵproperty"]("dataSource", ctx_r14.dataSourceFormaCobro);
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵadvance"](31);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵadvance"](41);
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵproperty"]("matHeaderRowDef", ctx_r14.formaCobroColumns);
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵadvance"](1);
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵproperty"]("matRowDefColumns", ctx_r14.formaCobroColumns);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵproperty"]("matFooterRowDef", ctx_r14.formaCobroColumns)("matFooterRowDefSticky", true);
   }
 }
 function AltaEdicionCobroComponent_div_120_div_1_Template(rf, ctx) {
   if (rf & 1) {
-    const _r92 = _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵgetCurrentView"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](0, "div", 101)(1, "div", 102)(2, "div", 103)(3, "div", 104)(4, "span", 25);
+    const _r111 = _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵgetCurrentView"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](0, "div", 108)(1, "div", 109)(2, "div", 110)(3, "div", 111)(4, "span", 25);
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtext"](5, "Forma Cobro:");
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]()();
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](6, "div", 105)(7, "span", 106);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](6, "div", 112)(7, "span", 113);
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtext"](8);
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]()()();
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](9, "div", 103)(10, "div", 107)(11, "span", 25);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](9, "div", 110)(10, "div", 114)(11, "span", 25);
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtext"](12, "N\u00FAmero:");
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]()();
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](13, "div", 108)(14, "span", 109);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](13, "div", 115)(14, "span", 116);
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtext"](15);
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]()()();
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](16, "div", 103)(17, "div", 107)(18, "span", 25);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](16, "div", 110)(17, "div", 114)(18, "span", 25);
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtext"](19, "Emisi\u00F3n:");
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]()();
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](20, "div", 108)(21, "span", 109);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](20, "div", 115)(21, "span", 116);
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtext"](22);
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]()()();
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](23, "div", 103)(24, "div", 107)(25, "span", 25);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](23, "div", 110)(24, "div", 114)(25, "span", 25);
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtext"](26, "Cobro:");
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]()();
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](27, "div", 108)(28, "span", 109);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](27, "div", 115)(28, "span", 116);
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtext"](29);
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]()()();
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](30, "div", 103)(31, "div", 107)(32, "span", 25);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](30, "div", 110)(31, "div", 114)(32, "span", 25);
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtext"](33, "Vencimiento");
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]()();
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](34, "div", 108)(35, "span", 109);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](34, "div", 115)(35, "span", 116);
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtext"](36);
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]()()();
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](37, "div", 103)(38, "div", 107)(39, "span", 25);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](37, "div", 110)(38, "div", 114)(39, "span", 25);
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtext"](40, "Banco:");
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]()();
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](41, "div", 108)(42, "span", 109);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](41, "div", 115)(42, "span", 116);
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtext"](43);
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]()()();
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](44, "div", 103)(45, "div", 107)(46, "span", 25);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](44, "div", 110)(45, "div", 114)(46, "span", 25);
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtext"](47, "Neto a Descontar:");
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]()();
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](48, "div", 108)(49, "span", 109);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](48, "div", 115)(49, "span", 116);
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtext"](50);
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]()()();
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](51, "div", 103)(52, "div", 107)(53, "span", 25);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](51, "div", 110)(52, "div", 114)(53, "span", 25);
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtext"](54, "Inter\u00E9s/Descuento:");
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]()();
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](55, "div", 108)(56, "span", 109);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](55, "div", 115)(56, "span", 116);
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtext"](57);
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]()()();
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](58, "div", 103)(59, "div", 107)(60, "span", 25);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](58, "div", 110)(59, "div", 114)(60, "span", 25);
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtext"](61, "Pago Real (Bruto):");
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]()();
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](62, "div", 108)(63, "span", 109);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](62, "div", 115)(63, "span", 116);
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtext"](64);
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]()()()();
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](65, "div", 110, 111)(67, "button", 39);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](65, "div", 117, 118)(67, "button", 39);
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵlistener"]("click", function AltaEdicionCobroComponent_div_120_div_1_Template_button_click_67_listener() {
-      const restoredCtx = _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵrestoreView"](_r92);
-      const item_r89 = restoredCtx.$implicit;
-      const ctx_r91 = _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵnextContext"](2);
-      return _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵresetView"](ctx_r91.removeFormaCobro(item_r89));
+      const restoredCtx = _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵrestoreView"](_r111);
+      const item_r108 = restoredCtx.$implicit;
+      const ctx_r110 = _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵnextContext"](2);
+      return _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵresetView"](ctx_r110.removeFormaCobro(item_r108));
     });
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](68, "mat-icon", 96);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](68, "mat-icon", 120);
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtext"](69, "delete");
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]()()()();
   }
   if (rf & 2) {
-    const item_r89 = ctx.$implicit;
-    const ctx_r88 = _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵnextContext"](2);
+    const item_r108 = ctx.$implicit;
+    const ctx_r107 = _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵnextContext"](2);
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵadvance"](8);
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtextInterpolate"](item_r89.descripcion);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtextInterpolate"](item_r108.descripcion);
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵadvance"](7);
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtextInterpolate2"]("", item_r89.numero_comprobante ? "#" : "", "", item_r89.numero_comprobante ? item_r89.numero_comprobante : "-", "");
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtextInterpolate2"]("", item_r108.numero_comprobante ? "#" : "", "", item_r108.numero_comprobante ? item_r108.numero_comprobante : "-", "");
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵadvance"](7);
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtextInterpolate"](item_r89.fecha_emision ? item_r89.fecha_emision : "-");
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtextInterpolate"](item_r108.fecha_emision ? item_r108.fecha_emision : "-");
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵadvance"](7);
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtextInterpolate"](item_r89.fecha_cobro ? item_r89.fecha_cobro : "-");
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtextInterpolate"](item_r108.fecha_cobro ? item_r108.fecha_cobro : "-");
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵadvance"](7);
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtextInterpolate"](item_r89.fecha_vencimiento ? item_r89.fecha_vencimiento : "-");
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtextInterpolate"](item_r108.fecha_vencimiento ? item_r108.fecha_vencimiento : "-");
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵadvance"](7);
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtextInterpolate"](item_r89.banco ? item_r89.banco : "-");
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtextInterpolate"](item_r108.banco ? item_r108.banco : "-");
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵadvance"](7);
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtextInterpolate"]("$" + item_r89.importe_neto);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtextInterpolate"]("$" + item_r108.importe_neto);
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵadvance"](7);
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtextInterpolate"]("$" + item_r89.importe_interes_descuento);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtextInterpolate"]("$" + item_r108.importe_interes_descuento);
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵadvance"](7);
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtextInterpolate"]("$" + item_r89.importe_real);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtextInterpolate"]("$" + item_r108.importe_real);
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵadvance"](3);
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵclassMap"](ctx_r88.color_primario ? "" : ctx_r88.default_color);
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵstyleProp"]("background-color", ctx_r88.color_primario || "");
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵclassMap"](ctx_r107.color_primario ? "" : ctx_r107.default_color);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵstyleProp"]("background-color", ctx_r107.color_primario || "");
   }
 }
 function AltaEdicionCobroComponent_div_120_Template(rf, ctx) {
   if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](0, "div", 99);
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtemplate"](1, AltaEdicionCobroComponent_div_120_div_1_Template, 70, 14, "div", 100);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](0, "div", 106);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtemplate"](1, AltaEdicionCobroComponent_div_120_div_1_Template, 70, 14, "div", 107);
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]();
   }
   if (rf & 2) {
@@ -973,7 +1151,7 @@ function AltaEdicionCobroComponent_div_120_Template(rf, ctx) {
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵproperty"]("ngForOf", ctx_r15.dataSourceFormaCobro.data);
   }
 }
-const _c0 = function (a0) {
+const _c1 = function (a0) {
   return {
     "bg-gray-300": a0
   };
@@ -988,14 +1166,27 @@ class AltaEdicionCobroComponent {
     this._empresaService = _empresaService;
     this._unsubscribeAll = new rxjs__WEBPACK_IMPORTED_MODULE_8__.Subject();
     this.token = localStorage.getItem('accessToken');
+    this.totales = {
+      saldo: 0,
+      interes: 0,
+      asignacion: 0,
+      importe_total: 0
+    };
+    this.totales_forma_cobro = {
+      importe_neto: 0,
+      importe_interes_descuento: 0,
+      importe_real: 0
+    };
     this.esEdicion = this.route.snapshot.paramMap.get('idcobro') ? true : false;
     this.idcobro = Number(this.route.snapshot.paramMap.get('idcobro')) ?? null;
     this.itemEdicion = null;
     this.ventas_edicion = [];
     this.default_color = 'bg-primary';
     this.dataSourceAsignacion = new _angular_material_table__WEBPACK_IMPORTED_MODULE_9__.MatTableDataSource();
+    this.listado_asignacion = [];
     this.asignacionColumns = ['descripcion', 'importe_neto', 'saldo', 'interes', 'asignacion', 'importe_total', 'acciones'];
     this.dataSourceFormaCobro = new _angular_material_table__WEBPACK_IMPORTED_MODULE_9__.MatTableDataSource();
+    this.listado_forma_cobro = [];
     this.formaCobroColumns = ['descripcion', 'numero_comprobante', 'fecha_emision', 'fecha_cobro', 'fecha_vencimiento', 'banco', 'importe_neto', 'banco', 'importe_interes_descuento', 'importe_real', 'acciones'];
     let titulo = this.esEdicion ? {
       custom_title: true,
@@ -1107,6 +1298,9 @@ class AltaEdicionCobroComponent {
         this.dataSourceFormaCobro.data = data.result.items_forma_pago;
         this.totalPagado = this.dataSourceFormaCobro.data.reduce((acum, item) => acum + item.importe_neto, 0);
         this.montoFaltaPagar = this.totalPagar - this.totalPagado;
+        // Actualizamos el valor total de la carga
+        this.updateTotal();
+        this.updateTotalFormaCobro();
       },
       error: err => {
         console.error('Error al obtener item de edicion:', err);
@@ -1399,6 +1593,8 @@ class AltaEdicionCobroComponent {
     if (this.formAsignacion.valid) {
       if (this.dataSourceAsignacion.data.find(e => e.id === this.formAsignacion.get('venta').value.id)) {
         this.alert.warning('No puede agregar una Venta/Pagaré más de una vez');
+      } else if (this.dataSourceFormaCobro.data.length > 0) {
+        return this.alert.warning('No puede agregar una asignación si ya tiene una forma de cobro. Elimine primero la forma de cobro');
       } else {
         // Encapsulo la operacion
         let operacion = this.formAsignacion.get('venta').value;
@@ -1440,6 +1636,8 @@ class AltaEdicionCobroComponent {
         this.ventas_con_saldo.sort((a, b) => b.id - a.id);
         // limpio el formulario para dejarlo listo para una nueva asignacion
         this.resetFormsValues('asignacion');
+        this.updateTotal();
+        this.updateTotalFormaCobro();
       }
     } else {
       this.alert.warning('Revise los campos y vuelva a intentar');
@@ -1493,6 +1691,8 @@ class AltaEdicionCobroComponent {
       }
       this._cobranzasService.cargarItemFormaCobro(this.token, payload).subscribe({
         next: data => {
+          this.updateTotal();
+          this.updateTotalFormaCobro();
           this.dataSourceFormaCobro.data = [data.result, ...this.dataSourceFormaCobro.data];
           this.totalPagado = this.dataSourceFormaCobro.data.reduce((acum, item) => acum + item.importe_neto, 0);
           this.montoFaltaPagar = this.totalPagar - this.totalPagado;
@@ -1509,6 +1709,9 @@ class AltaEdicionCobroComponent {
   removeFormaCobro(item) {
     this.dataSourceFormaCobro.data = this.dataSourceFormaCobro.data.filter(e => e.idcobrotipo !== item.idcobrotipo);
     this.totalPagado = this.dataSourceFormaCobro.data.reduce((acum, item) => acum - item.importe_neto, 0);
+    this.resetFormsValues('formaCobro');
+    this.updateTotal();
+    this.updateTotalFormaCobro();
     this.montoFaltaPagar = this.totalPagar - this.totalPagado;
   }
   /**
@@ -1518,6 +1721,11 @@ class AltaEdicionCobroComponent {
    * @param tipo
    */
   removeItem(item, dataSource, tipo) {
+    if (dataSource.data && tipo === 0) {
+      if (this.dataSourceFormaCobro.data.length > 0) {
+        return this.alert.warning('No puede eliminar una asignación si ya tiene una forma de cobro. Elimine primero la forma de cobro');
+      }
+    }
     // Quito de la grilla
     dataSource.data = dataSource.data.filter(elemento => elemento.id != item.id);
     // Busco la operacion: venta / pagare
@@ -1538,6 +1746,9 @@ class AltaEdicionCobroComponent {
     // Ordeno el array de ventas con saldo por la operacion mas reciente
     this.ventas_con_saldo.sort((a, b) => b.id - a.id);
     this.totalPagar = this.dataSourceAsignacion.data.reduce((acc, item) => acc - item.importe_total, 0);
+    // Actualizamos el valor total de la carga
+    this.updateTotal();
+    this.updateTotalFormaCobro();
   }
   onSubmit() {
     let fechaCobro = this.formAsignacion.get('fecha').value ? new Date(this.formAsignacion.get('fecha').value) : null;
@@ -1608,6 +1819,60 @@ class AltaEdicionCobroComponent {
     }
   }
   ngOnDestroy() {}
+  /**
+  * Metodo para calcular el valor total entre todos los subtotales de una grilla
+  */
+  updateTotal() {
+    this.listado_asignacion = this.dataSourceAsignacion.data;
+    const saldo = this.listado_asignacion.reduce((sum, item) => {
+      const saldo = Number(item.saldo) || 0;
+      return sum + saldo;
+    }, 0);
+    const interes = this.listado_asignacion.reduce((sum, item) => {
+      const interes = Number(item.interes) || 0;
+      return sum + interes;
+    }, 0);
+    const asignacion = this.listado_asignacion.reduce((sum, item) => {
+      const asignacion = Number(item.asignacion) || 0;
+      return sum + asignacion;
+    }, 0);
+    const total_cobro = this.listado_asignacion.reduce((sum, item) => {
+      const total = Number(item.importe_total) || 0;
+      return sum + total;
+    }, 0);
+    this.totales = {
+      saldo: parseFloat(saldo.toFixed(2)),
+      interes: parseFloat(interes.toFixed(2)),
+      asignacion: parseFloat(asignacion.toFixed(2)),
+      importe_total: parseFloat(total_cobro.toFixed(2))
+    };
+  }
+  /**
+  * Metodo para calcular el valor total entre todos los subtotales de una grilla
+  */
+  updateTotalFormaCobro() {
+    this.listado_forma_cobro = this.dataSourceFormaCobro.data;
+    const importe_neto = this.listado_forma_cobro.reduce((sum, item) => {
+      const importe_neto = Number(item.importe_neto) || 0;
+      return sum + importe_neto;
+    }, 0);
+    const importe_interes_descuento = this.listado_forma_cobro.reduce((sum, item) => {
+      const importe_interes_descuento = Number(item.importe_interes_descuento) || 0;
+      return sum + importe_interes_descuento;
+    }, 0);
+    const importe_real = this.listado_forma_cobro.reduce((sum, item) => {
+      const importe_real = Number(item.importe_real) || 0;
+      return sum + importe_real;
+    }, 0);
+    this.totales_forma_cobro = {
+      importe_neto: parseFloat(importe_neto.toFixed(2)),
+      importe_interes_descuento: parseFloat(importe_interes_descuento.toFixed(2)),
+      importe_real: parseFloat(importe_real.toFixed(2))
+    };
+    this.totalPagado = this.totales_forma_cobro.importe_neto;
+    this.totalPagar = this.totales.importe_total;
+    this.montoFaltaPagar = this.totalPagar - this.totalPagado;
+  }
 }
 AltaEdicionCobroComponent.ɵfac = function AltaEdicionCobroComponent_Factory(t) {
   return new (t || AltaEdicionCobroComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵdirectiveInject"](_shared_service_app_alert_service__WEBPACK_IMPORTED_MODULE_3__.AppAlertService), _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_15__.Router), _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_15__.ActivatedRoute), _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵdirectiveInject"](_services_cobranzas_service__WEBPACK_IMPORTED_MODULE_4__.CobranzasService), _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵdirectiveInject"](_shared_components_header_text_header_text_service__WEBPACK_IMPORTED_MODULE_5__.HeaderTextService), _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵdirectiveInject"](_shared_service_app_empresa_service__WEBPACK_IMPORTED_MODULE_6__.EmpresaService));
@@ -1621,7 +1886,7 @@ AltaEdicionCobroComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_M
   }])],
   decls: 135,
   vars: 47,
-  consts: [[1, "w-full", "flex", "flex-col", "relative"], [1, "flex", "justify-start", "sm:mb-0", "mx-4", "mt-4"], ["mat-flat-button", "", 1, "fuse-mat-button-large", "w-full", "!border", "border-solid", "xl:w-28", "md:w-20", 3, "click"], [1, "xl:icon-size-5", "icon-size-3", 3, "svgIcon"], [1, "ml-2", "xl:text-xl", "text-sm", "font-normal"], [1, "flex", "flex-col", "w-full", "h-full", "py-4", "px-6"], [1, "flex", "flex-col", "w-full", "items-center", 3, "formGroup"], [1, "flex", "flex-col", "sm:flex-row", "w-full", "items-center", "sm:gap-2"], ["class", "flex justify-left item-center w-full sm:w-5/12 sm:pl-8", 4, "ngIf"], [1, "flex", "flex-col", "sm:flex-row", "sm:gap-3", "w-full", "sm:w-7/12"], [1, "flex", "flex-col", "w-full", "sm:w-6/12"], [1, "font-medium", "text-lg", "ml-1"], ["appearance", "fill", 1, "w-full"], ["matInput", "", "formControlName", "fecha", 3, "matDatepicker", "change"], ["matSuffix", "", 3, "for"], ["picker", ""], [1, "flex", "flex-col", "w-full", "sm:w-4/12"], ["matInput", "", "formControlName", "cliente", 3, "matAutocomplete"], [3, "displayWith", "optionSelected"], ["auto", "matAutocomplete"], [3, "value", 4, "ngFor", "ngForOf"], [1, "flex", "justify-left", "item-center", "w-full", "sm:w-2/12"], ["formControlName", "bonificada", 3, "change"], [1, "flex", "flex-col", "sm:flex-row", "w-full", "items-center", "sm:gap-4"], [1, "flex", "flex-col", "justify-center", "w-full", "sm:w-4/12"], [1, "font-medium", "text-lg"], ["appearance", "fill"], ["matInput", "", "formControlName", "venta"], [3, "value", "click", 4, "ngFor", "ngForOf"], [1, "flex", "flex-col", "sm:flex-row", "items-center", "w-full", "sm:w-4/12", "gap-2"], [1, "w-full", "sm:w-1/3"], ["formControlName", "pagoParcial", 3, "change"], [1, "flex", "flex-col", "justify-center", "w-full", "sm:w-2/3"], ["matInput", "", "formControlName", "asignacion", "type", "number"], ["matPrefix", "", 1, "ml-2"], [1, "flex", "items-center", "w-full", "sm:w-4/12", "gap-6", "sm:gap-4"], [1, "flex", "flex-col", "justify-center", "w-10/12"], ["matInput", "", "formControlName", "interesMora"], [1, "flex", "flex-col", "justify-center", "w-2/12"], ["mat-icon-button", "", 3, "click"], ["svgIcon", "jedstion:agregar", 1, "icon-size-[38px]"], ["class", "flex justify-center items-center h-full w-full rounded-md drop-shadow-md bg-white mt-2 min-h-[300px]", 4, "ngIf"], ["class", "w-full flex justify-center mt-2", 4, "ngIf"], ["class", "w-full", 4, "ngIf"], [1, "w-full", "mt-6", 3, "formGroup"], [1, "flex", "flex-col", "sm:flex-row", "w-full", "sm:gap-3"], ["matInput", "", "formControlName", "formaCobro"], [1, "flex", "flex-col", "w-full", "sm:w-2/12"], ["matInput", "", "formControlName", "netoDescontar", "type", "number"], ["matInput", "", "formControlName", "pagoReal", "type", "number"], [1, "flex", "flex-col", "sm:flex-row", "w-full", "sm:items-center", "justify-center", "sm:gap-3"], [1, "flex", "flex-col", "w-full", "sm:w-1/6"], ["matInput", "", "formControlName", "numero", "type", "number"], ["matInput", "", "formControlName", "emision", 3, "matDatepicker"], ["pickerEmision", ""], ["matInput", "", "formControlName", "cobro", 3, "matDatepicker"], ["pickerCobro", ""], ["matInput", "", "formControlName", "vencimiento", 3, "matDatepicker"], ["pickerVencimiento", ""], [1, "flex", "w-full", "md:flex-row", "sm:w-2/6", "gap-4"], [1, "flex", "flex-col", "w-10/12"], ["matInput", "", "formControlName", "banco"], [1, "flex", "items-center", "justify-center", "w-2/12"], ["class", "w-full flex justify-center items-center mt-2 min-h-[300px]", 4, "ngIf"], [1, "flex", "justify-end", "item-center", "w-full", "sm:w-full", "pr-6", "mt-2"], [1, "font-semibold", "text-2xl"], [1, "flex", "justify-end", "items-center", "w-full", "sm:w-full", "pr-6"], [1, "flex", "justify-end", "items-center", "mb-4", "w-full", "sm:w-full", "pr-6"], [1, "w-full", "flex", "justify-end", "items-end", "mt-4"], ["mat-flat-button", "", 1, "w-1/7", "px-6", "py-6", "rounded-lg", "md:w-55", "md:rounded-lg", 3, "disabled", "ngClass", "click"], [1, "flex", "justify-center", "items-center"], [1, "text-white", "text-lg"], [1, "flex", "justify-left", "item-center", "w-full", "sm:w-5/12", "sm:pl-8"], [3, "value"], [3, "value", "click"], [1, "flex", "justify-center", "items-center", "h-full", "w-full", "rounded-md", "drop-shadow-md", "bg-white", "mt-2", "min-h-[300px]"], [1, "text-gray-600", "text-lg"], [1, "w-full", "flex", "justify-center", "mt-2"], ["mat-table", "", 1, "w-full", "my-1", 3, "dataSource"], ["matColumnDef", "descripcion"], ["mat-header-cell", "", "class", "w-auto text-white rounded-tl-lg", 3, "class", "background-color", 4, "matHeaderCellDef"], ["mat-cell", "", "class", "w-auto", 4, "matCellDef"], ["matColumnDef", "importe_neto"], ["mat-header-cell", "", "class", "w-auto text-white", 3, "class", "background-color", 4, "matHeaderCellDef"], ["matColumnDef", "saldo"], ["matColumnDef", "interes"], ["matColumnDef", "asignacion"], ["matColumnDef", "importe_total"], ["matColumnDef", "acciones"], ["mat-header-cell", "", "class", "w-auto text-white rounded-tr-lg", 3, "class", "background-color", 4, "matHeaderCellDef"], ["mat-header-row", "", 4, "matHeaderRowDef"], ["mat-row", "", 4, "matRowDef", "matRowDefColumns"], ["mat-header-cell", "", 1, "w-auto", "text-white", "rounded-tl-lg"], ["mat-cell", "", 1, "w-auto"], ["mat-header-cell", "", 1, "w-auto", "text-white"], ["mat-header-cell", "", 1, "w-auto", "text-white", "rounded-tr-lg"], [1, "text-white"], ["mat-header-row", ""], ["mat-row", ""], [1, "w-full"], ["class", "flex flex-col w-full h-auto bg-white rounded-md drop-shadow-md", 4, "ngFor", "ngForOf"], [1, "flex", "flex-col", "w-full", "h-auto", "bg-white", "rounded-md", "drop-shadow-md"], [1, "w-full", "h-[85%]", "flex", "flex-col", "gap-4", "p-6"], [1, "flex", "w-full", "h-auto"], [1, "w-1/3"], [1, "w-2/3", "flex", "justify-end"], [1, "text-normal"], [1, "w-1/2"], [1, "w-1/2", "text-right"], [1, "text-lg"], [1, "flex", "w-full", "justify-end", "h-[15%]", "bg-[#f7fafc]", "p-2"], ["acciones", ""], ["mat-icon-button", ""], [1, "w-full", "flex", "justify-center", "items-center", "mt-2", "min-h-[300px]"], ["mat-table", "", 1, "w-full", "mt-1", 3, "dataSource"], ["matColumnDef", "numero_comprobante"], ["matColumnDef", "fecha_emision"], ["matColumnDef", "fecha_cobro"], ["matColumnDef", "fecha_vencimiento"], ["matColumnDef", "banco"], ["matColumnDef", "importe_interes_descuento"], ["matColumnDef", "importe_real"]],
+  consts: [[1, "w-full", "flex", "flex-col", "relative"], [1, "flex", "justify-start", "sm:mb-0", "mx-4", "mt-4"], ["mat-flat-button", "", 1, "fuse-mat-button-large", "w-full", "!border", "border-solid", "xl:w-28", "md:w-20", 3, "click"], [1, "xl:icon-size-5", "icon-size-3", 3, "svgIcon"], [1, "ml-2", "xl:text-xl", "text-sm", "font-normal"], [1, "flex", "flex-col", "w-full", "h-full", "py-4", "px-6"], [1, "flex", "flex-col", "w-full", "items-center", 3, "formGroup"], [1, "flex", "flex-col", "sm:flex-row", "w-full", "items-center", "sm:gap-2"], ["class", "flex justify-left item-center w-full sm:w-5/12 sm:pl-8", 4, "ngIf"], [1, "flex", "flex-col", "sm:flex-row", "sm:gap-3", "w-full", "sm:w-7/12"], [1, "flex", "flex-col", "w-full", "sm:w-6/12"], [1, "font-medium", "text-lg", "ml-1"], ["appearance", "fill", 1, "w-full"], ["matInput", "", "formControlName", "fecha", 3, "matDatepicker", "change"], ["matSuffix", "", 3, "for"], ["picker", ""], [1, "flex", "flex-col", "w-full", "sm:w-4/12"], ["matInput", "", "formControlName", "cliente", 3, "matAutocomplete"], [3, "displayWith", "optionSelected"], ["auto", "matAutocomplete"], [3, "value", 4, "ngFor", "ngForOf"], [1, "flex", "justify-left", "item-center", "w-full", "sm:w-2/12"], ["formControlName", "bonificada", 3, "change"], [1, "flex", "flex-col", "sm:flex-row", "w-full", "items-center", "sm:gap-4"], [1, "flex", "flex-col", "justify-center", "w-full", "sm:w-4/12"], [1, "font-medium", "text-lg"], ["appearance", "fill"], ["matInput", "", "formControlName", "venta"], [3, "value", "click", 4, "ngFor", "ngForOf"], [1, "flex", "flex-col", "sm:flex-row", "items-center", "w-full", "sm:w-4/12", "gap-2"], [1, "w-full", "sm:w-1/3"], ["formControlName", "pagoParcial", 3, "change"], [1, "flex", "flex-col", "justify-center", "w-full", "sm:w-2/3"], ["matInput", "", "formControlName", "asignacion", "type", "number"], ["matPrefix", "", 1, "ml-2"], [1, "flex", "items-center", "w-full", "sm:w-4/12", "gap-6", "sm:gap-4"], [1, "flex", "flex-col", "justify-center", "w-10/12"], ["matInput", "", "formControlName", "interesMora"], [1, "flex", "flex-col", "justify-center", "w-2/12"], ["mat-icon-button", "", 3, "click"], ["svgIcon", "jedstion:agregar", 1, "icon-size-[38px]"], ["class", "flex justify-center items-center h-full w-full rounded-md drop-shadow-md bg-white mt-2 min-h-[300px]", 4, "ngIf"], ["class", "w-full flex justify-center mt-2", 4, "ngIf"], ["class", "w-full", 4, "ngIf"], [1, "w-full", "mt-6", 3, "formGroup"], [1, "flex", "flex-col", "sm:flex-row", "w-full", "sm:gap-3"], ["matInput", "", "formControlName", "formaCobro"], [1, "flex", "flex-col", "w-full", "sm:w-2/12"], ["matInput", "", "formControlName", "netoDescontar", "type", "number"], ["matInput", "", "formControlName", "pagoReal", "type", "number"], [1, "flex", "flex-col", "sm:flex-row", "w-full", "sm:items-center", "justify-center", "sm:gap-3"], [1, "flex", "flex-col", "w-full", "sm:w-1/6"], ["matInput", "", "formControlName", "numero", "type", "number"], ["matInput", "", "formControlName", "emision", 3, "matDatepicker"], ["pickerEmision", ""], ["matInput", "", "formControlName", "cobro", 3, "matDatepicker"], ["pickerCobro", ""], ["matInput", "", "formControlName", "vencimiento", 3, "matDatepicker"], ["pickerVencimiento", ""], [1, "flex", "w-full", "md:flex-row", "sm:w-2/6", "gap-4"], [1, "flex", "flex-col", "w-10/12"], ["matInput", "", "formControlName", "banco"], [1, "flex", "items-center", "justify-center", "w-2/12"], ["class", "w-full flex justify-center items-center mt-2 min-h-[300px]", 4, "ngIf"], [1, "flex", "justify-end", "item-center", "w-full", "sm:w-full", "pr-6", "mt-2"], [1, "font-semibold", "text-2xl"], [1, "flex", "justify-end", "items-center", "w-full", "sm:w-full", "pr-6"], [1, "flex", "justify-end", "items-center", "mb-4", "w-full", "sm:w-full", "pr-6"], [1, "w-full", "flex", "justify-end", "items-end", "mt-4"], ["mat-flat-button", "", 1, "w-1/7", "px-6", "py-6", "rounded-lg", "md:w-55", "md:rounded-lg", 3, "disabled", "ngClass", "click"], [1, "flex", "justify-center", "items-center"], [1, "text-white", "text-lg"], [1, "flex", "justify-left", "item-center", "w-full", "sm:w-5/12", "sm:pl-8"], [3, "value"], [3, "value", "click"], [1, "flex", "justify-center", "items-center", "h-full", "w-full", "rounded-md", "drop-shadow-md", "bg-white", "mt-2", "min-h-[300px]"], [1, "text-gray-600", "text-lg"], [1, "w-full", "flex", "justify-center", "mt-2"], ["mat-table", "", 1, "w-full", "my-1", 3, "dataSource"], ["matColumnDef", "descripcion"], ["mat-header-cell", "", "class", "w-auto text-white rounded-tl-lg", 3, "class", "background-color", 4, "matHeaderCellDef"], ["mat-cell", "", 4, "matCellDef"], ["mat-footer-cell", "", "class", "bg-slate-200 font-bold", 4, "matFooterCellDef"], ["matColumnDef", "importe_neto"], ["mat-header-cell", "", "class", "w-auto text-white", 3, "class", "background-color", 4, "matHeaderCellDef"], ["mat-footer-cell", "", "class", "bg-slate-200", 4, "matFooterCellDef"], ["matColumnDef", "saldo"], ["matColumnDef", "interes"], ["matColumnDef", "asignacion"], ["matColumnDef", "importe_total"], ["matColumnDef", "acciones"], ["mat-header-cell", "", "class", "w-auto text-white rounded-tr-lg", 3, "class", "background-color", 4, "matHeaderCellDef"], ["mat-header-row", "", 4, "matHeaderRowDef", "matHeaderRowDefSticky"], ["mat-row", "", 4, "matRowDef", "matRowDefColumns"], ["mat-footer-row", "", 4, "matFooterRowDef", "matFooterRowDefSticky"], ["mat-header-cell", "", 1, "w-auto", "text-white", "rounded-tl-lg"], ["mat-cell", ""], ["mat-footer-cell", "", 1, "bg-slate-200", "font-bold"], ["mat-header-cell", "", 1, "w-auto", "text-white"], ["mat-footer-cell", "", 1, "bg-slate-200"], ["mat-header-cell", "", 1, "w-auto", "text-white", "rounded-tr-lg"], ["mat-icon-button", "", 3, "ngStyle", "click"], [3, "ngClass"], ["mat-header-row", ""], ["mat-row", ""], ["mat-footer-row", ""], [1, "w-full"], ["class", "flex flex-col w-full h-auto bg-white rounded-md drop-shadow-md", 4, "ngFor", "ngForOf"], [1, "flex", "flex-col", "w-full", "h-auto", "bg-white", "rounded-md", "drop-shadow-md"], [1, "w-full", "h-[85%]", "flex", "flex-col", "gap-4", "p-6"], [1, "flex", "w-full", "h-auto"], [1, "w-1/3"], [1, "w-2/3", "flex", "justify-end"], [1, "text-normal"], [1, "w-1/2"], [1, "w-1/2", "text-right"], [1, "text-lg"], [1, "flex", "w-full", "justify-end", "h-[15%]", "bg-[#f7fafc]", "p-2"], ["acciones", ""], ["mat-icon-button", ""], [1, "text-white"], [1, "w-full", "flex", "justify-center", "items-center", "mt-2", "min-h-[300px]"], ["mat-table", "", 1, "w-full", "mt-1", 3, "dataSource"], ["mat-cell", "", "class", "w-auto", 4, "matCellDef"], ["matColumnDef", "numero_comprobante"], ["matColumnDef", "fecha_emision"], ["matColumnDef", "fecha_cobro"], ["matColumnDef", "fecha_vencimiento"], ["matColumnDef", "banco"], ["matColumnDef", "importe_interes_descuento"], ["matColumnDef", "importe_real"], ["mat-header-row", "", 4, "matHeaderRowDef"], ["mat-cell", "", 1, "w-auto"]],
   template: function AltaEdicionCobroComponent_Template(rf, ctx) {
     if (rf & 1) {
       _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](0, "div", 0)(1, "div", 1)(2, "button", 2);
@@ -1694,7 +1959,7 @@ AltaEdicionCobroComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_M
       _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelement"](56, "mat-icon", 40);
       _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]()()()()();
       _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtemplate"](57, AltaEdicionCobroComponent_div_57_Template, 3, 0, "div", 41);
-      _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtemplate"](58, AltaEdicionCobroComponent_div_58_Template, 25, 3, "div", 42);
+      _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtemplate"](58, AltaEdicionCobroComponent_div_58_Template, 33, 6, "div", 42);
       _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtemplate"](59, AltaEdicionCobroComponent_div_59_Template, 2, 1, "div", 43);
       _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](60, "form", 44)(61, "div", 45)(62, "div", 16)(63, "span", 25);
       _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtext"](64, "Forma de Cobro");
@@ -1751,7 +2016,7 @@ AltaEdicionCobroComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_M
       _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelement"](117, "mat-icon", 40);
       _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]()()()()();
       _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtemplate"](118, AltaEdicionCobroComponent_div_118_Template, 3, 0, "div", 41);
-      _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtemplate"](119, AltaEdicionCobroComponent_div_119_Template, 34, 3, "div", 63);
+      _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtemplate"](119, AltaEdicionCobroComponent_div_119_Template, 45, 5, "div", 63);
       _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtemplate"](120, AltaEdicionCobroComponent_div_120_Template, 2, 1, "div", 43);
       _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](121, "div", 64)(122, "span", 65);
       _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtext"](123);
@@ -1841,10 +2106,10 @@ AltaEdicionCobroComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_M
       _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵadvance"](2);
       _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵclassMap"](ctx.color_primario ? "" : ctx.default_color);
       _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵstyleProp"]("background-color", ctx.color_primario || "");
-      _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵproperty"]("disabled", ctx.montoFaltaPagar != 0)("ngClass", _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵpureFunction1"](45, _c0, ctx.montoFaltaPagar != 0));
+      _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵproperty"]("disabled", ctx.montoFaltaPagar != 0)("ngClass", _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵpureFunction1"](45, _c1, ctx.montoFaltaPagar != 0));
     }
   },
-  dependencies: [_angular_common__WEBPACK_IMPORTED_MODULE_17__.NgClass, _angular_common__WEBPACK_IMPORTED_MODULE_17__.NgForOf, _angular_common__WEBPACK_IMPORTED_MODULE_17__.NgIf, _angular_material_table__WEBPACK_IMPORTED_MODULE_9__.MatTable, _angular_material_table__WEBPACK_IMPORTED_MODULE_9__.MatHeaderCellDef, _angular_material_table__WEBPACK_IMPORTED_MODULE_9__.MatHeaderRowDef, _angular_material_table__WEBPACK_IMPORTED_MODULE_9__.MatColumnDef, _angular_material_table__WEBPACK_IMPORTED_MODULE_9__.MatCellDef, _angular_material_table__WEBPACK_IMPORTED_MODULE_9__.MatRowDef, _angular_material_table__WEBPACK_IMPORTED_MODULE_9__.MatHeaderCell, _angular_material_table__WEBPACK_IMPORTED_MODULE_9__.MatCell, _angular_material_table__WEBPACK_IMPORTED_MODULE_9__.MatHeaderRow, _angular_material_table__WEBPACK_IMPORTED_MODULE_9__.MatRow, _angular_material_button__WEBPACK_IMPORTED_MODULE_18__.MatButton, _angular_material_button__WEBPACK_IMPORTED_MODULE_18__.MatIconButton, _angular_material_form_field__WEBPACK_IMPORTED_MODULE_19__.MatFormField, _angular_material_form_field__WEBPACK_IMPORTED_MODULE_19__.MatPrefix, _angular_material_form_field__WEBPACK_IMPORTED_MODULE_19__.MatSuffix, _angular_material_select__WEBPACK_IMPORTED_MODULE_20__.MatSelect, _angular_material_core__WEBPACK_IMPORTED_MODULE_16__.MatOption, _angular_forms__WEBPACK_IMPORTED_MODULE_14__["ɵNgNoValidate"], _angular_forms__WEBPACK_IMPORTED_MODULE_14__.DefaultValueAccessor, _angular_forms__WEBPACK_IMPORTED_MODULE_14__.NumberValueAccessor, _angular_forms__WEBPACK_IMPORTED_MODULE_14__.NgControlStatus, _angular_forms__WEBPACK_IMPORTED_MODULE_14__.NgControlStatusGroup, _angular_forms__WEBPACK_IMPORTED_MODULE_14__.FormGroupDirective, _angular_forms__WEBPACK_IMPORTED_MODULE_14__.FormControlName, _angular_material_input__WEBPACK_IMPORTED_MODULE_21__.MatInput, _angular_material_icon__WEBPACK_IMPORTED_MODULE_22__.MatIcon, _angular_material_autocomplete__WEBPACK_IMPORTED_MODULE_23__.MatAutocomplete, _angular_material_autocomplete__WEBPACK_IMPORTED_MODULE_23__.MatAutocompleteTrigger, _angular_material_checkbox__WEBPACK_IMPORTED_MODULE_24__.MatCheckbox, _angular_material_datepicker__WEBPACK_IMPORTED_MODULE_25__.MatDatepicker, _angular_material_datepicker__WEBPACK_IMPORTED_MODULE_25__.MatDatepickerInput, _angular_material_datepicker__WEBPACK_IMPORTED_MODULE_25__.MatDatepickerToggle],
+  dependencies: [_angular_common__WEBPACK_IMPORTED_MODULE_17__.NgClass, _angular_common__WEBPACK_IMPORTED_MODULE_17__.NgForOf, _angular_common__WEBPACK_IMPORTED_MODULE_17__.NgIf, _angular_common__WEBPACK_IMPORTED_MODULE_17__.NgStyle, _angular_material_table__WEBPACK_IMPORTED_MODULE_9__.MatTable, _angular_material_table__WEBPACK_IMPORTED_MODULE_9__.MatHeaderCellDef, _angular_material_table__WEBPACK_IMPORTED_MODULE_9__.MatHeaderRowDef, _angular_material_table__WEBPACK_IMPORTED_MODULE_9__.MatColumnDef, _angular_material_table__WEBPACK_IMPORTED_MODULE_9__.MatCellDef, _angular_material_table__WEBPACK_IMPORTED_MODULE_9__.MatRowDef, _angular_material_table__WEBPACK_IMPORTED_MODULE_9__.MatFooterCellDef, _angular_material_table__WEBPACK_IMPORTED_MODULE_9__.MatFooterRowDef, _angular_material_table__WEBPACK_IMPORTED_MODULE_9__.MatHeaderCell, _angular_material_table__WEBPACK_IMPORTED_MODULE_9__.MatCell, _angular_material_table__WEBPACK_IMPORTED_MODULE_9__.MatFooterCell, _angular_material_table__WEBPACK_IMPORTED_MODULE_9__.MatHeaderRow, _angular_material_table__WEBPACK_IMPORTED_MODULE_9__.MatRow, _angular_material_table__WEBPACK_IMPORTED_MODULE_9__.MatFooterRow, _angular_material_button__WEBPACK_IMPORTED_MODULE_18__.MatButton, _angular_material_button__WEBPACK_IMPORTED_MODULE_18__.MatIconButton, _angular_material_form_field__WEBPACK_IMPORTED_MODULE_19__.MatFormField, _angular_material_form_field__WEBPACK_IMPORTED_MODULE_19__.MatPrefix, _angular_material_form_field__WEBPACK_IMPORTED_MODULE_19__.MatSuffix, _angular_material_select__WEBPACK_IMPORTED_MODULE_20__.MatSelect, _angular_material_core__WEBPACK_IMPORTED_MODULE_16__.MatOption, _angular_forms__WEBPACK_IMPORTED_MODULE_14__["ɵNgNoValidate"], _angular_forms__WEBPACK_IMPORTED_MODULE_14__.DefaultValueAccessor, _angular_forms__WEBPACK_IMPORTED_MODULE_14__.NumberValueAccessor, _angular_forms__WEBPACK_IMPORTED_MODULE_14__.NgControlStatus, _angular_forms__WEBPACK_IMPORTED_MODULE_14__.NgControlStatusGroup, _angular_forms__WEBPACK_IMPORTED_MODULE_14__.FormGroupDirective, _angular_forms__WEBPACK_IMPORTED_MODULE_14__.FormControlName, _angular_material_input__WEBPACK_IMPORTED_MODULE_21__.MatInput, _angular_material_icon__WEBPACK_IMPORTED_MODULE_22__.MatIcon, _angular_material_autocomplete__WEBPACK_IMPORTED_MODULE_23__.MatAutocomplete, _angular_material_autocomplete__WEBPACK_IMPORTED_MODULE_23__.MatAutocompleteTrigger, _angular_material_checkbox__WEBPACK_IMPORTED_MODULE_24__.MatCheckbox, _angular_material_datepicker__WEBPACK_IMPORTED_MODULE_25__.MatDatepicker, _angular_material_datepicker__WEBPACK_IMPORTED_MODULE_25__.MatDatepickerInput, _angular_material_datepicker__WEBPACK_IMPORTED_MODULE_25__.MatDatepickerToggle],
   encapsulation: 2
 });
 
