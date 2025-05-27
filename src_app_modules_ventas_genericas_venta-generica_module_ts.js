@@ -11,7 +11,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "AltaEdicionVentaComponent": () => (/* binding */ AltaEdicionVentaComponent)
 /* harmony export */ });
-/* harmony import */ var C_work_jeds_jedstion_source_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js */ 71670);
+/* harmony import */ var _app_source_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js */ 71670);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @angular/core */ 86839);
 /* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! rxjs */ 80228);
 /* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! rxjs */ 76317);
@@ -1656,7 +1656,7 @@ class AltaEdicionVentaComponent {
    */
   addMovimiento(item) {
     var _this = this;
-    return (0,C_work_jeds_jedstion_source_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
+    return (0,_app_source_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
       // Obtengo el arituclo calculado
       const ItemVenta = yield (0,rxjs__WEBPACK_IMPORTED_MODULE_27__.firstValueFrom)(_this._ventaGenericasService.calcularItem(item));
       // Si la operacion fue exitosa...
@@ -1698,7 +1698,7 @@ class AltaEdicionVentaComponent {
   */
   loadServices() {
     var _this2 = this;
-    return (0,C_work_jeds_jedstion_source_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
+    return (0,_app_source_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
       yield Promise.all([_this2.getArticulos(), _this2.getClientes(), _this2.getVendedores(), _this2.configura_obra ? _this2.getLocalidades() : Promise.resolve(), _this2.configura_obra ? _this2.getTratamientos() : Promise.resolve(), _this2.esEdicion ? _this2.getDatosVenta() : Promise.resolve()]).then(() => {
         _this2.mostrarSpinner = false;
       });
@@ -1706,10 +1706,10 @@ class AltaEdicionVentaComponent {
   }
   getDatosVenta() {
     var _this3 = this;
-    return (0,C_work_jeds_jedstion_source_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
+    return (0,_app_source_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
       const Venta = yield (0,rxjs__WEBPACK_IMPORTED_MODULE_27__.firstValueFrom)(_this3._ventaGenericasService.getDatosVenta(_this3.idventa));
       new Promise( /*#__PURE__*/function () {
-        var _ref = (0,C_work_jeds_jedstion_source_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* (resolve) {
+        var _ref = (0,_app_source_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* (resolve) {
           _this3.venta = Venta.list.venta;
           _this3.lista_de_articulos = Venta.list.items.map(item => {
             item.importe_subtotal = item.importe_total;
@@ -1767,10 +1767,10 @@ class AltaEdicionVentaComponent {
   }
   getClientes(option) {
     var _this4 = this;
-    return (0,C_work_jeds_jedstion_source_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
+    return (0,_app_source_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
       const Clientes = yield (0,rxjs__WEBPACK_IMPORTED_MODULE_27__.firstValueFrom)(_this4._ventaGenericasService.getClientes(option));
       new Promise( /*#__PURE__*/function () {
-        var _ref2 = (0,C_work_jeds_jedstion_source_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* (resolve) {
+        var _ref2 = (0,_app_source_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* (resolve) {
           _this4.clientes = Clientes.list;
           _this4.filteredClientes = _this4.form.get('cliente').valueChanges.pipe((0,rxjs__WEBPACK_IMPORTED_MODULE_28__.startWith)(''), (0,rxjs__WEBPACK_IMPORTED_MODULE_29__.map)(value => _this4._filterSelect(value, 'clientes')));
           // Oculto el spinner
@@ -1785,10 +1785,10 @@ class AltaEdicionVentaComponent {
   }
   getLocalidades(option) {
     var _this5 = this;
-    return (0,C_work_jeds_jedstion_source_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
+    return (0,_app_source_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
       const Localidades = yield (0,rxjs__WEBPACK_IMPORTED_MODULE_27__.firstValueFrom)(_this5._ventaGenericasService.getLocalidades());
       new Promise( /*#__PURE__*/function () {
-        var _ref3 = (0,C_work_jeds_jedstion_source_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* (resolve) {
+        var _ref3 = (0,_app_source_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* (resolve) {
           _this5.localidades = Localidades.list;
           _this5.filteredLocalidades = _this5.form_obra.get('localidad').valueChanges.pipe((0,rxjs__WEBPACK_IMPORTED_MODULE_28__.startWith)(''), (0,rxjs__WEBPACK_IMPORTED_MODULE_29__.map)(value => _this5._filterSelect(value, 'localidades')));
           // Oculto el spinner
@@ -1803,10 +1803,10 @@ class AltaEdicionVentaComponent {
   }
   getTratamientos(option) {
     var _this6 = this;
-    return (0,C_work_jeds_jedstion_source_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
+    return (0,_app_source_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
       const Tratamientos = yield (0,rxjs__WEBPACK_IMPORTED_MODULE_27__.firstValueFrom)(_this6._ventaGenericasService.getTratamientos());
       new Promise( /*#__PURE__*/function () {
-        var _ref4 = (0,C_work_jeds_jedstion_source_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* (resolve) {
+        var _ref4 = (0,_app_source_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* (resolve) {
           _this6.tratamientos = Tratamientos.list;
           _this6.filteredTratamientos = _this6.form_obra.get('tratamiento').valueChanges.pipe((0,rxjs__WEBPACK_IMPORTED_MODULE_28__.startWith)(''), (0,rxjs__WEBPACK_IMPORTED_MODULE_29__.map)(value => _this6._filterSelect(value, 'tratamientos')));
           // Oculto el spinner
@@ -1821,10 +1821,10 @@ class AltaEdicionVentaComponent {
   }
   getVendedores(option) {
     var _this7 = this;
-    return (0,C_work_jeds_jedstion_source_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
+    return (0,_app_source_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
       const Vendedores = yield (0,rxjs__WEBPACK_IMPORTED_MODULE_27__.firstValueFrom)(_this7._ventaGenericasService.getVendedores(option));
       new Promise( /*#__PURE__*/function () {
-        var _ref5 = (0,C_work_jeds_jedstion_source_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* (resolve) {
+        var _ref5 = (0,_app_source_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* (resolve) {
           _this7.vendedores = Vendedores['list'];
           _this7.filteredVendedores = _this7.form.get('vendedor').valueChanges.pipe((0,rxjs__WEBPACK_IMPORTED_MODULE_28__.startWith)(''), (0,rxjs__WEBPACK_IMPORTED_MODULE_29__.map)(value => _this7._filterVendodres(value)));
           // Oculto el spinner
@@ -1839,7 +1839,7 @@ class AltaEdicionVentaComponent {
   }
   getArticulos() {
     var _this8 = this;
-    return (0,C_work_jeds_jedstion_source_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
+    return (0,_app_source_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
       try {
         const articulos = yield (0,rxjs__WEBPACK_IMPORTED_MODULE_27__.firstValueFrom)(_this8._ventaGenericasService.getArticulos());
         _this8.articulos = articulos.list;
@@ -1855,10 +1855,10 @@ class AltaEdicionVentaComponent {
   }
   getUnidadesDeMedidaArticulos(idarticulo) {
     var _this9 = this;
-    return (0,C_work_jeds_jedstion_source_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
+    return (0,_app_source_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
       const unidadesDeMedida = yield (0,rxjs__WEBPACK_IMPORTED_MODULE_27__.firstValueFrom)(_this9._ventaGenericasService.getUnidadesDeMedidaArticulos(idarticulo));
       new Promise( /*#__PURE__*/function () {
-        var _ref6 = (0,C_work_jeds_jedstion_source_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* (resolve) {
+        var _ref6 = (0,_app_source_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* (resolve) {
           let um_base; // Asigno una variable global para que cada UM sepa cual es la um base (factor = '1.00')
           _this9.unidades_de_medida = unidadesDeMedida.list.sort((a, b) => a.factor - b.factor).map(unidad => {
             //Convierto en numero
@@ -2070,7 +2070,7 @@ class AltaEdicionVentaComponent {
     });
   }
   getBase64(file) {
-    return (0,C_work_jeds_jedstion_source_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
+    return (0,_app_source_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
       return new Promise((resolve, reject) => {
         const reader = new FileReader();
         reader.readAsDataURL(file);
@@ -2181,7 +2181,7 @@ AltaEdicionVentaComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_M
     }
   },
   dependencies: [_angular_common__WEBPACK_IMPORTED_MODULE_31__.NgForOf, _angular_common__WEBPACK_IMPORTED_MODULE_31__.NgIf, _angular_material_table__WEBPACK_IMPORTED_MODULE_13__.MatTable, _angular_material_table__WEBPACK_IMPORTED_MODULE_13__.MatHeaderCellDef, _angular_material_table__WEBPACK_IMPORTED_MODULE_13__.MatHeaderRowDef, _angular_material_table__WEBPACK_IMPORTED_MODULE_13__.MatColumnDef, _angular_material_table__WEBPACK_IMPORTED_MODULE_13__.MatCellDef, _angular_material_table__WEBPACK_IMPORTED_MODULE_13__.MatRowDef, _angular_material_table__WEBPACK_IMPORTED_MODULE_13__.MatFooterCellDef, _angular_material_table__WEBPACK_IMPORTED_MODULE_13__.MatFooterRowDef, _angular_material_table__WEBPACK_IMPORTED_MODULE_13__.MatHeaderCell, _angular_material_table__WEBPACK_IMPORTED_MODULE_13__.MatCell, _angular_material_table__WEBPACK_IMPORTED_MODULE_13__.MatFooterCell, _angular_material_table__WEBPACK_IMPORTED_MODULE_13__.MatHeaderRow, _angular_material_table__WEBPACK_IMPORTED_MODULE_13__.MatRow, _angular_material_table__WEBPACK_IMPORTED_MODULE_13__.MatFooterRow, _angular_material_button__WEBPACK_IMPORTED_MODULE_34__.MatButton, _angular_material_button__WEBPACK_IMPORTED_MODULE_34__.MatIconButton, _angular_material_form_field__WEBPACK_IMPORTED_MODULE_35__.MatFormField, _angular_material_form_field__WEBPACK_IMPORTED_MODULE_35__.MatLabel, _angular_material_form_field__WEBPACK_IMPORTED_MODULE_35__.MatHint, _angular_material_form_field__WEBPACK_IMPORTED_MODULE_35__.MatSuffix, _angular_material_select__WEBPACK_IMPORTED_MODULE_36__.MatSelect, _angular_material_core__WEBPACK_IMPORTED_MODULE_33__.MatOption, _angular_forms__WEBPACK_IMPORTED_MODULE_26__["ɵNgNoValidate"], _angular_forms__WEBPACK_IMPORTED_MODULE_26__.DefaultValueAccessor, _angular_forms__WEBPACK_IMPORTED_MODULE_26__.NumberValueAccessor, _angular_forms__WEBPACK_IMPORTED_MODULE_26__.NgControlStatus, _angular_forms__WEBPACK_IMPORTED_MODULE_26__.NgControlStatusGroup, _angular_forms__WEBPACK_IMPORTED_MODULE_26__.FormGroupDirective, _angular_forms__WEBPACK_IMPORTED_MODULE_26__.FormControlName, _angular_material_input__WEBPACK_IMPORTED_MODULE_37__.MatInput, _angular_material_icon__WEBPACK_IMPORTED_MODULE_38__.MatIcon, _fuse_components_alert_alert_component__WEBPACK_IMPORTED_MODULE_10__.FuseAlertComponent, _angular_material_tooltip__WEBPACK_IMPORTED_MODULE_39__.MatTooltip, _angular_material_autocomplete__WEBPACK_IMPORTED_MODULE_40__.MatAutocomplete, _angular_material_autocomplete__WEBPACK_IMPORTED_MODULE_40__.MatAutocompleteTrigger, _angular_material_checkbox__WEBPACK_IMPORTED_MODULE_41__.MatCheckbox, _angular_material_datepicker__WEBPACK_IMPORTED_MODULE_42__.MatDatepicker, _angular_material_datepicker__WEBPACK_IMPORTED_MODULE_42__.MatDatepickerInput, _angular_material_datepicker__WEBPACK_IMPORTED_MODULE_42__.MatDatepickerToggle, _shared_components_spinner_spinner_component__WEBPACK_IMPORTED_MODULE_11__.SpinnerComponent, _angular_common__WEBPACK_IMPORTED_MODULE_31__.AsyncPipe],
-  styles: [".mat-column-cantidad[_ngcontent-%COMP%], .mat-column-importe_unitario[_ngcontent-%COMP%], .mat-column-importe_bonificado[_ngcontent-%COMP%], .mat-column-importe_no_bonificado[_ngcontent-%COMP%], .mat-column-importe_iva[_ngcontent-%COMP%], .mat-column-importe_subtotal[_ngcontent-%COMP%] {\n  text-align: end;\n  \n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImFsdGEtZWRpY2lvbi5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTs7Ozs7O0VBTUksZUFBQTtFQUNBLDZDQUFBO0FBQ0oiLCJmaWxlIjoiYWx0YS1lZGljaW9uLmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLm1hdC1jb2x1bW4tY2FudGlkYWQsXHJcbi5tYXQtY29sdW1uLWltcG9ydGVfdW5pdGFyaW8sXHJcbi5tYXQtY29sdW1uLWltcG9ydGVfYm9uaWZpY2FkbyxcclxuLm1hdC1jb2x1bW4taW1wb3J0ZV9ub19ib25pZmljYWRvLFxyXG4ubWF0LWNvbHVtbi1pbXBvcnRlX2l2YSxcclxuLm1hdC1jb2x1bW4taW1wb3J0ZV9zdWJ0b3RhbCB7XHJcbiAgICB0ZXh0LWFsaWduOiBlbmQ7XHJcbiAgICAvKiBBcGxpY2Egc29sbyBhIGxhcyBjb2x1bW5hcyBlc3BlY2lmaWNhZGFzICovXHJcbn0iXX0= */\n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8uL3NyYy9hcHAvbW9kdWxlcy92ZW50YXMvZ2VuZXJpY2FzL2NvbXBvbmVudHMvYWx0YS1lZGljaW9uL2FsdGEtZWRpY2lvbi5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTs7Ozs7O0VBTUksZUFBQTtFQUNBLDZDQUFBO0FBQ0o7QUFDQSx3b0JBQXdvQiIsInNvdXJjZXNDb250ZW50IjpbIi5tYXQtY29sdW1uLWNhbnRpZGFkLFxyXG4ubWF0LWNvbHVtbi1pbXBvcnRlX3VuaXRhcmlvLFxyXG4ubWF0LWNvbHVtbi1pbXBvcnRlX2JvbmlmaWNhZG8sXHJcbi5tYXQtY29sdW1uLWltcG9ydGVfbm9fYm9uaWZpY2FkbyxcclxuLm1hdC1jb2x1bW4taW1wb3J0ZV9pdmEsXHJcbi5tYXQtY29sdW1uLWltcG9ydGVfc3VidG90YWwge1xyXG4gICAgdGV4dC1hbGlnbjogZW5kO1xyXG4gICAgLyogQXBsaWNhIHNvbG8gYSBsYXMgY29sdW1uYXMgZXNwZWNpZmljYWRhcyAqL1xyXG59Il0sInNvdXJjZVJvb3QiOiIifQ== */"]
+  styles: [".mat-column-cantidad[_ngcontent-%COMP%], .mat-column-importe_unitario[_ngcontent-%COMP%], .mat-column-importe_bonificado[_ngcontent-%COMP%], .mat-column-importe_no_bonificado[_ngcontent-%COMP%], .mat-column-importe_iva[_ngcontent-%COMP%], .mat-column-importe_subtotal[_ngcontent-%COMP%] {\n  text-align: end;\n  \n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImFsdGEtZWRpY2lvbi5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTs7Ozs7O0VBTUksZUFBQTtFQUNBLDZDQUFBO0FBQ0oiLCJmaWxlIjoiYWx0YS1lZGljaW9uLmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLm1hdC1jb2x1bW4tY2FudGlkYWQsXG4ubWF0LWNvbHVtbi1pbXBvcnRlX3VuaXRhcmlvLFxuLm1hdC1jb2x1bW4taW1wb3J0ZV9ib25pZmljYWRvLFxuLm1hdC1jb2x1bW4taW1wb3J0ZV9ub19ib25pZmljYWRvLFxuLm1hdC1jb2x1bW4taW1wb3J0ZV9pdmEsXG4ubWF0LWNvbHVtbi1pbXBvcnRlX3N1YnRvdGFsIHtcbiAgICB0ZXh0LWFsaWduOiBlbmQ7XG4gICAgLyogQXBsaWNhIHNvbG8gYSBsYXMgY29sdW1uYXMgZXNwZWNpZmljYWRhcyAqL1xufSJdfQ== */\n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8uL3NyYy9hcHAvbW9kdWxlcy92ZW50YXMvZ2VuZXJpY2FzL2NvbXBvbmVudHMvYWx0YS1lZGljaW9uL2FsdGEtZWRpY2lvbi5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTs7Ozs7O0VBTUksZUFBQTtFQUNBLDZDQUFBO0FBQ0o7QUFDQSxvbkJBQW9uQiIsInNvdXJjZXNDb250ZW50IjpbIi5tYXQtY29sdW1uLWNhbnRpZGFkLFxuLm1hdC1jb2x1bW4taW1wb3J0ZV91bml0YXJpbyxcbi5tYXQtY29sdW1uLWltcG9ydGVfYm9uaWZpY2Fkbyxcbi5tYXQtY29sdW1uLWltcG9ydGVfbm9fYm9uaWZpY2Fkbyxcbi5tYXQtY29sdW1uLWltcG9ydGVfaXZhLFxuLm1hdC1jb2x1bW4taW1wb3J0ZV9zdWJ0b3RhbCB7XG4gICAgdGV4dC1hbGlnbjogZW5kO1xuICAgIC8qIEFwbGljYSBzb2xvIGEgbGFzIGNvbHVtbmFzIGVzcGVjaWZpY2FkYXMgKi9cbn0iXSwic291cmNlUm9vdCI6IiJ9 */"]
 });
 
 
@@ -2543,7 +2543,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "VentasEstadosComponent": () => (/* binding */ VentasEstadosComponent)
 /* harmony export */ });
-/* harmony import */ var C_work_jeds_jedstion_source_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js */ 71670);
+/* harmony import */ var _app_source_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js */ 71670);
 /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! @angular/forms */ 69542);
 /* harmony import */ var _angular_material_dialog__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! @angular/material/dialog */ 67486);
 /* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! rxjs */ 80228);
@@ -2960,7 +2960,7 @@ class VentasEstadosComponent {
   }
   getViewEstados() {
     var _this = this;
-    return (0,C_work_jeds_jedstion_source_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
+    return (0,_app_source_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
       const view_estados = yield (0,rxjs__WEBPACK_IMPORTED_MODULE_17__.firstValueFrom)(_this._ventaGenericaService.getViewEstados(_this.ventas.idventa));
       _this.mostrar_tabla = view_estados.success;
       _this.puede_crear = view_estados.puede_crear;
@@ -2975,10 +2975,10 @@ class VentasEstadosComponent {
   }
   getEstados(option) {
     var _this2 = this;
-    return (0,C_work_jeds_jedstion_source_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
+    return (0,_app_source_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
       const Estados = yield (0,rxjs__WEBPACK_IMPORTED_MODULE_17__.firstValueFrom)(_this2._ventaGenericaService.getEstados(option));
       new Promise( /*#__PURE__*/function () {
-        var _ref = (0,C_work_jeds_jedstion_source_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* (resolve) {
+        var _ref = (0,_app_source_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* (resolve) {
           _this2.estados = Estados.list;
           // // Filtrar y autoasignar el depósito por defecto
           // const depositoPorDefecto = this.depositos.find(deposito => deposito.iddeposito === this.deposito_default);
@@ -3136,7 +3136,7 @@ VentasEstadosComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODU
     }
   },
   dependencies: [_angular_common__WEBPACK_IMPORTED_MODULE_21__.NgClass, _angular_common__WEBPACK_IMPORTED_MODULE_21__.NgForOf, _angular_common__WEBPACK_IMPORTED_MODULE_21__.NgIf, _angular_material_table__WEBPACK_IMPORTED_MODULE_9__.MatTable, _angular_material_table__WEBPACK_IMPORTED_MODULE_9__.MatHeaderCellDef, _angular_material_table__WEBPACK_IMPORTED_MODULE_9__.MatHeaderRowDef, _angular_material_table__WEBPACK_IMPORTED_MODULE_9__.MatColumnDef, _angular_material_table__WEBPACK_IMPORTED_MODULE_9__.MatCellDef, _angular_material_table__WEBPACK_IMPORTED_MODULE_9__.MatRowDef, _angular_material_table__WEBPACK_IMPORTED_MODULE_9__.MatHeaderCell, _angular_material_table__WEBPACK_IMPORTED_MODULE_9__.MatCell, _angular_material_table__WEBPACK_IMPORTED_MODULE_9__.MatHeaderRow, _angular_material_table__WEBPACK_IMPORTED_MODULE_9__.MatRow, _angular_material_button__WEBPACK_IMPORTED_MODULE_23__.MatIconButton, _angular_material_form_field__WEBPACK_IMPORTED_MODULE_24__.MatFormField, _angular_material_form_field__WEBPACK_IMPORTED_MODULE_24__.MatLabel, _angular_material_form_field__WEBPACK_IMPORTED_MODULE_24__.MatSuffix, _angular_material_core__WEBPACK_IMPORTED_MODULE_22__.MatOption, _angular_forms__WEBPACK_IMPORTED_MODULE_16__["ɵNgNoValidate"], _angular_forms__WEBPACK_IMPORTED_MODULE_16__.DefaultValueAccessor, _angular_forms__WEBPACK_IMPORTED_MODULE_16__.NgControlStatus, _angular_forms__WEBPACK_IMPORTED_MODULE_16__.NgControlStatusGroup, _angular_forms__WEBPACK_IMPORTED_MODULE_16__.FormGroupDirective, _angular_forms__WEBPACK_IMPORTED_MODULE_16__.FormControlName, _angular_material_input__WEBPACK_IMPORTED_MODULE_25__.MatInput, _angular_material_icon__WEBPACK_IMPORTED_MODULE_26__.MatIcon, _fuse_components_alert_alert_component__WEBPACK_IMPORTED_MODULE_7__.FuseAlertComponent, _angular_material_tooltip__WEBPACK_IMPORTED_MODULE_27__.MatTooltip, _angular_material_autocomplete__WEBPACK_IMPORTED_MODULE_28__.MatAutocomplete, _angular_material_autocomplete__WEBPACK_IMPORTED_MODULE_28__.MatAutocompleteTrigger, _angular_material_datepicker__WEBPACK_IMPORTED_MODULE_29__.MatDatepicker, _angular_material_datepicker__WEBPACK_IMPORTED_MODULE_29__.MatDatepickerInput, _angular_material_datepicker__WEBPACK_IMPORTED_MODULE_29__.MatDatepickerToggle, _angular_common__WEBPACK_IMPORTED_MODULE_21__.AsyncPipe],
-  styles: ["@charset \"UTF-8\";\n.counter[_ngcontent-%COMP%] {\n  position: absolute;\n  bottom: 0.5rem;\n  right: 0.5rem;\n  font-size: 0.75rem;\n  color: #C9C9C9; \n}\n\n.counter.reached-max[_ngcontent-%COMP%] {\n  color: #e53e3e; \n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImVzdGFkb3MtdmVudGFzLmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBLGdCQUFnQjtBQUFoQjtFQUNJLGtCQUFBO0VBQ0EsY0FBQTtFQUNBLGFBQUE7RUFDQSxrQkFBQTtFQUNBLGNBQUEsRUFBQSx3QkFBQTtBQUVKOztBQUNBO0VBQ0ksY0FBQSxFQUFBLG9EQUFBO0FBRUoiLCJmaWxlIjoiZXN0YWRvcy12ZW50YXMuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIuY291bnRlciB7XHJcbiAgICBwb3NpdGlvbjogYWJzb2x1dGU7XHJcbiAgICBib3R0b206IDAuNXJlbTtcclxuICAgIHJpZ2h0OiAwLjVyZW07XHJcbiAgICBmb250LXNpemU6IDAuNzVyZW07XHJcbiAgICBjb2xvcjogI0M5QzlDOTsgLyogQ29sb3IgZGUgdGV4dG8gZ3JpcyAqL1xyXG59XHJcblxyXG4uY291bnRlci5yZWFjaGVkLW1heCB7XHJcbiAgICBjb2xvcjogI2U1M2UzZTsgLyogQ29sb3IgZGUgdGV4dG8gcm9qbyBjdWFuZG8gc2UgYWxjYW56YSBlbCBsw61taXRlICovXHJcbn0iXX0= */\n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8uL3NyYy9hcHAvbW9kdWxlcy92ZW50YXMvZ2VuZXJpY2FzL2NvbXBvbmVudHMvZXN0YWRvcy12ZW50YXMvZXN0YWRvcy12ZW50YXMuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUEsZ0JBQWdCO0FBQWhCO0VBQ0ksa0JBQUE7RUFDQSxjQUFBO0VBQ0EsYUFBQTtFQUNBLGtCQUFBO0VBQ0EsY0FBQSxFQUFBLHdCQUFBO0FBRUo7O0FBQ0E7RUFDSSxjQUFBLEVBQUEsb0RBQUE7QUFFSjtBQUNBLGd3QkFBZ3dCIiwic291cmNlc0NvbnRlbnQiOlsiLmNvdW50ZXIge1xyXG4gICAgcG9zaXRpb246IGFic29sdXRlO1xyXG4gICAgYm90dG9tOiAwLjVyZW07XHJcbiAgICByaWdodDogMC41cmVtO1xyXG4gICAgZm9udC1zaXplOiAwLjc1cmVtO1xyXG4gICAgY29sb3I6ICNDOUM5Qzk7IC8qIENvbG9yIGRlIHRleHRvIGdyaXMgKi9cclxufVxyXG5cclxuLmNvdW50ZXIucmVhY2hlZC1tYXgge1xyXG4gICAgY29sb3I6ICNlNTNlM2U7IC8qIENvbG9yIGRlIHRleHRvIHJvam8gY3VhbmRvIHNlIGFsY2FuemEgZWwgbMODwq1taXRlICovXHJcbn0iXSwic291cmNlUm9vdCI6IiJ9 */"]
+  styles: ["@charset \"UTF-8\";\n.counter[_ngcontent-%COMP%] {\n  position: absolute;\n  bottom: 0.5rem;\n  right: 0.5rem;\n  font-size: 0.75rem;\n  color: #C9C9C9; \n}\n\n.counter.reached-max[_ngcontent-%COMP%] {\n  color: #e53e3e; \n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImVzdGFkb3MtdmVudGFzLmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBLGdCQUFnQjtBQUFoQjtFQUNJLGtCQUFBO0VBQ0EsY0FBQTtFQUNBLGFBQUE7RUFDQSxrQkFBQTtFQUNBLGNBQUEsRUFBQSx3QkFBQTtBQUVKOztBQUNBO0VBQ0ksY0FBQSxFQUFBLG9EQUFBO0FBRUoiLCJmaWxlIjoiZXN0YWRvcy12ZW50YXMuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIuY291bnRlciB7XG4gICAgcG9zaXRpb246IGFic29sdXRlO1xuICAgIGJvdHRvbTogMC41cmVtO1xuICAgIHJpZ2h0OiAwLjVyZW07XG4gICAgZm9udC1zaXplOiAwLjc1cmVtO1xuICAgIGNvbG9yOiAjQzlDOUM5OyAvKiBDb2xvciBkZSB0ZXh0byBncmlzICovXG59XG5cbi5jb3VudGVyLnJlYWNoZWQtbWF4IHtcbiAgICBjb2xvcjogI2U1M2UzZTsgLyogQ29sb3IgZGUgdGV4dG8gcm9qbyBjdWFuZG8gc2UgYWxjYW56YSBlbCBsw61taXRlICovXG59Il19 */\n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8uL3NyYy9hcHAvbW9kdWxlcy92ZW50YXMvZ2VuZXJpY2FzL2NvbXBvbmVudHMvZXN0YWRvcy12ZW50YXMvZXN0YWRvcy12ZW50YXMuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUEsZ0JBQWdCO0FBQWhCO0VBQ0ksa0JBQUE7RUFDQSxjQUFBO0VBQ0EsYUFBQTtFQUNBLGtCQUFBO0VBQ0EsY0FBQSxFQUFBLHdCQUFBO0FBRUo7O0FBQ0E7RUFDSSxjQUFBLEVBQUEsb0RBQUE7QUFFSjtBQUNBLG91QkFBb3VCIiwic291cmNlc0NvbnRlbnQiOlsiLmNvdW50ZXIge1xuICAgIHBvc2l0aW9uOiBhYnNvbHV0ZTtcbiAgICBib3R0b206IDAuNXJlbTtcbiAgICByaWdodDogMC41cmVtO1xuICAgIGZvbnQtc2l6ZTogMC43NXJlbTtcbiAgICBjb2xvcjogI0M5QzlDOTsgLyogQ29sb3IgZGUgdGV4dG8gZ3JpcyAqL1xufVxuXG4uY291bnRlci5yZWFjaGVkLW1heCB7XG4gICAgY29sb3I6ICNlNTNlM2U7IC8qIENvbG9yIGRlIHRleHRvIHJvam8gY3VhbmRvIHNlIGFsY2FuemEgZWwgbMODwq1taXRlICovXG59Il0sInNvdXJjZVJvb3QiOiIifQ== */"]
 });
 
 
@@ -3152,7 +3152,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "FilterMenuComponent": () => (/* binding */ FilterMenuComponent)
 /* harmony export */ });
-/* harmony import */ var C_work_jeds_jedstion_source_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js */ 71670);
+/* harmony import */ var _app_source_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js */ 71670);
 /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/forms */ 69542);
 /* harmony import */ var _fuse_animations__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @fuse/animations */ 28288);
 /* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! rxjs */ 80228);
@@ -3433,7 +3433,7 @@ class FilterMenuComponent {
   */
   loadServices() {
     var _this = this;
-    return (0,C_work_jeds_jedstion_source_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
+    return (0,_app_source_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
       yield Promise.all([_this.getClientes(), _this.getVendedores(), _this.getTratamiento()]).then(() => {});
     })();
   }
@@ -3455,10 +3455,10 @@ class FilterMenuComponent {
   }
   getClientes(option) {
     var _this2 = this;
-    return (0,C_work_jeds_jedstion_source_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
+    return (0,_app_source_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
       const Clientes = yield (0,rxjs__WEBPACK_IMPORTED_MODULE_9__.firstValueFrom)(_this2._ventaGenericaService.getClientes(option));
       new Promise( /*#__PURE__*/function () {
-        var _ref = (0,C_work_jeds_jedstion_source_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* (resolve) {
+        var _ref = (0,_app_source_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* (resolve) {
           _this2.clientes = Clientes.list;
           _this2.filteredClientes = _this2.formFilters.get('cliente').valueChanges.pipe((0,rxjs__WEBPACK_IMPORTED_MODULE_10__.startWith)(''), (0,rxjs__WEBPACK_IMPORTED_MODULE_11__.map)(value => _this2._filterSelect(value, 'clientes')));
           resolve(true);
@@ -3471,10 +3471,10 @@ class FilterMenuComponent {
   }
   getVendedores(option) {
     var _this3 = this;
-    return (0,C_work_jeds_jedstion_source_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
+    return (0,_app_source_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
       const Vendedores = yield (0,rxjs__WEBPACK_IMPORTED_MODULE_9__.firstValueFrom)(_this3._ventaGenericaService.getVendedores(option));
       new Promise( /*#__PURE__*/function () {
-        var _ref2 = (0,C_work_jeds_jedstion_source_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* (resolve) {
+        var _ref2 = (0,_app_source_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* (resolve) {
           _this3.vendedores = Vendedores['list'];
           _this3.filteredVendedores = _this3.formFilters.get('vendedor').valueChanges.pipe((0,rxjs__WEBPACK_IMPORTED_MODULE_10__.startWith)(''), (0,rxjs__WEBPACK_IMPORTED_MODULE_11__.map)(value => _this3._filterVendodres(value)));
           resolve(true);
@@ -3487,10 +3487,10 @@ class FilterMenuComponent {
   }
   getTratamiento() {
     var _this4 = this;
-    return (0,C_work_jeds_jedstion_source_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
+    return (0,_app_source_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
       const Tratamientos = yield (0,rxjs__WEBPACK_IMPORTED_MODULE_9__.firstValueFrom)(_this4._ventaGenericaService.getTratamientos());
       new Promise( /*#__PURE__*/function () {
-        var _ref3 = (0,C_work_jeds_jedstion_source_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* (resolve) {
+        var _ref3 = (0,_app_source_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* (resolve) {
           _this4.tratamientos = Tratamientos['list'];
           _this4.filteredTratamientos = _this4.formFilters.get('tratamiento').valueChanges.pipe((0,rxjs__WEBPACK_IMPORTED_MODULE_10__.startWith)(''), (0,rxjs__WEBPACK_IMPORTED_MODULE_11__.map)(value => _this4._filterSelect(value, 'tratamientos')));
           resolve(true);
