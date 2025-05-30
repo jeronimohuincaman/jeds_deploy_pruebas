@@ -7858,7 +7858,7 @@ const appRoutes = [
   }, {
     path: 'articulos',
     canActivate: [_core_auth_guards_permiso_guard__WEBPACK_IMPORTED_MODULE_4__.PermisoGuard],
-    loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-node_modules_angular_material_fesm2022_checkbox_mjs"), __webpack_require__.e("default-src_app_shared_components_tabla-dinamica_tabla-dinamica_module_ts"), __webpack_require__.e("default-node_modules_angular_material_fesm2022_datepicker_mjs"), __webpack_require__.e("src_app_modules_stock_articulos_articulos_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./modules/stock/articulos/articulos.module */ 76270)).then(m => m.ArticulosModule)
+    loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-node_modules_angular_material_fesm2022_checkbox_mjs"), __webpack_require__.e("default-src_app_shared_components_tabla-dinamica_tabla-dinamica_module_ts"), __webpack_require__.e("default-node_modules_angular_material_fesm2022_datepicker_mjs"), __webpack_require__.e("default-node_modules_angular_material_fesm2022_radio_mjs-node_modules_angular_material_fesm20-5f235d"), __webpack_require__.e("default-src_app_modules_compras_ordenes-de-compra_components_save_save_component_ts"), __webpack_require__.e("src_app_modules_stock_articulos_articulos_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./modules/stock/articulos/articulos.module */ 76270)).then(m => m.ArticulosModule)
   }, {
     path: 'clientes',
     canActivate: [_core_auth_guards_permiso_guard__WEBPACK_IMPORTED_MODULE_4__.PermisoGuard],
@@ -7878,7 +7878,7 @@ const appRoutes = [
   }, {
     path: 'ordenes-de-compra',
     canActivate: [_core_auth_guards_permiso_guard__WEBPACK_IMPORTED_MODULE_4__.PermisoGuard],
-    loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-node_modules_angular_material_fesm2022_checkbox_mjs"), __webpack_require__.e("default-src_app_shared_components_tabla-dinamica_tabla-dinamica_module_ts"), __webpack_require__.e("default-node_modules_angular_material_fesm2022_datepicker_mjs"), __webpack_require__.e("src_app_modules_compras_ordenes-de-compra_ordenes-de-compra_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./modules/compras/ordenes-de-compra/ordenes-de-compra.module */ 37318)).then(m => m.OrdenesDeCompraModule)
+    loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-node_modules_angular_material_fesm2022_checkbox_mjs"), __webpack_require__.e("default-src_app_shared_components_tabla-dinamica_tabla-dinamica_module_ts"), __webpack_require__.e("default-node_modules_angular_material_fesm2022_datepicker_mjs"), __webpack_require__.e("default-src_app_modules_compras_ordenes-de-compra_components_save_save_component_ts"), __webpack_require__.e("src_app_modules_compras_ordenes-de-compra_ordenes-de-compra_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./modules/compras/ordenes-de-compra/ordenes-de-compra.module */ 37318)).then(m => m.OrdenesDeCompraModule)
   }, {
     path: 'movimientos-internos',
     canActivate: [_core_auth_guards_permiso_guard__WEBPACK_IMPORTED_MODULE_4__.PermisoGuard],
@@ -7910,7 +7910,11 @@ const appRoutes = [
   }, {
     path: 'cobranzas',
     canActivate: [_core_auth_guards_permiso_guard__WEBPACK_IMPORTED_MODULE_4__.PermisoGuard],
-    loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-node_modules_angular_material_fesm2022_checkbox_mjs"), __webpack_require__.e("default-src_app_shared_components_tabla-dinamica_tabla-dinamica_module_ts"), __webpack_require__.e("default-node_modules_angular_material_fesm2022_datepicker_mjs"), __webpack_require__.e("common"), __webpack_require__.e("src_app_modules_ventas_cobranzas_cobranzas_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./modules/ventas/cobranzas/cobranzas.module */ 57750)).then(m => m.CobranzasModule)
+    loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-node_modules_angular_material_fesm2022_checkbox_mjs"), __webpack_require__.e("default-src_app_shared_components_tabla-dinamica_tabla-dinamica_module_ts"), __webpack_require__.e("default-node_modules_angular_material_fesm2022_datepicker_mjs"), __webpack_require__.e("default-node_modules_angular_material_fesm2022_radio_mjs-node_modules_angular_material_fesm20-5f235d"), __webpack_require__.e("common"), __webpack_require__.e("src_app_modules_ventas_cobranzas_cobranzas_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./modules/ventas/cobranzas/cobranzas.module */ 57750)).then(m => m.CobranzasModule)
+  }, {
+    path: 'facturas',
+    canActivate: [_core_auth_guards_permiso_guard__WEBPACK_IMPORTED_MODULE_4__.PermisoGuard],
+    loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-node_modules_angular_material_fesm2022_checkbox_mjs"), __webpack_require__.e("default-src_app_shared_components_tabla-dinamica_tabla-dinamica_module_ts"), __webpack_require__.e("default-node_modules_angular_material_fesm2022_datepicker_mjs"), __webpack_require__.e("default-node_modules_angular_material_fesm2022_radio_mjs-node_modules_angular_material_fesm20-5f235d"), __webpack_require__.e("src_app_modules_ventas_facturacion_facturacion_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./modules/ventas/facturacion/facturacion.module */ 74642)).then(m => m.FacturacionModule)
   }, {
     path: 'entrega_qr',
     canActivate: [_core_auth_guards_permiso_guard__WEBPACK_IMPORTED_MODULE_4__.PermisoGuard],
@@ -17080,6 +17084,14 @@ const TitleType = [{
   icon: "",
   text: "Entrega QR",
   path: "/entrega_qr"
+}, {
+  icon: "",
+  text: "Facturas",
+  path: "/facturas"
+}, {
+  icon: "",
+  text: "Guardar Factura",
+  path: "/facturas/guardar-factura"
 }];
 
 /***/ }),
@@ -18332,6 +18344,7 @@ const environment = {
     vta_venta_calcular_item: `${$BASE_REST}/vta_venta/calcular_item`,
     vta_venta_calcular_unitario: `${$BASE_REST}/vta_venta/calcular_unitario`,
     vta_venta_get_datos: `${$BASE_REST}/vta_venta/get_datos`,
+    generar_reporte_venta: `${$BASE_REST}/vta_venta/generar_reporte_venta`,
     view_vta_ventas: `${$BASE_REST}/view_vta_ventas`,
     view_vta_venta_bonificado_detalles: `${$BASE_REST}/view_vta_venta_bonificado_detalles`,
     view_vta_venta_selects: `${$BASE_REST}/view_vta_venta_selects`,
@@ -18352,7 +18365,15 @@ const environment = {
     vta_cobros: `${$BASE_REST}/vta_cobros`,
     get_datos: `${$BASE_REST}/vta_cobro/get_datos`,
     view_vta_venta_estados: `${$BASE_REST}/view_vta_venta_estados`,
-    vta_venta_estados: `${$BASE_REST}/vta_venta_estados`
+    vta_venta_estados: `${$BASE_REST}/vta_venta_estados`,
+    get_datos_empresa: `${$BASE_REST}/fe_factura/get_datos_empresa`,
+    view_fe_facturas: `${$BASE_REST}/view_fe_facturas`,
+    fe_facturas: `${$BASE_REST}/fe_facturas`,
+    reporte_comprobante_pdf: `${$BASE_REST}/fe_factura/reporte_comprobante_pdf`,
+    asociar_cobro: `${$BASE_REST}/fe_factura/asociar_cobro`,
+    generar_comprobante_factura: `${$BASE_REST}/fe_factura/generar_comprobante`,
+    get_datos_factura: `${$BASE_REST}/fe_factura/get_datos`,
+    ultimo_comprobante_autorizado: `${$BASE_REST}/fe_factura/ultimo_comprobante_autorizado`
   },
   compras: {
     compras_cotizacion: `${$BASE_REST}/compras_cotizacion`,

@@ -2400,7 +2400,7 @@ class CalcularUnitarioComponent {
     this.creadoExitosamente = new _angular_core__WEBPACK_IMPORTED_MODULE_4__.EventEmitter();
     this.editadoExitosamente = new _angular_core__WEBPACK_IMPORTED_MODULE_4__.EventEmitter();
     this.deposito_default = 0;
-    this.title = `Calcular Precio Unitario ${this.data.descripcion}`;
+    this.title = `Calcular Precio Unitario `; /* ${this.data.descripcion} */
     // Subscribe to empresa data
     this._empresaService.empresa$.pipe((0,rxjs__WEBPACK_IMPORTED_MODULE_6__.takeUntil)(this._unsubscribeAll)).subscribe(empresa => {
       this.color_primario = empresa.color_primario;
@@ -3799,6 +3799,13 @@ class VentaGenericasComponent {
       iconoAccionado: venta => '',
       iconoDeshabilitado: venta => '',
       visible: venta => true
+    }, {
+      nombre_boton: "Reporte",
+      functionName: 'reporte',
+      iconoAccion: venta => 'jedstion:imprimir',
+      iconoAccionado: venta => '',
+      iconoDeshabilitado: venta => '',
+      visible: venta => true
     }];
     // Subscribe to empresa data
     this._empresaService.empresa$.pipe((0,rxjs__WEBPACK_IMPORTED_MODULE_16__.takeUntil)(this._unsubscribeAll)).subscribe(empresa => {
@@ -3951,6 +3958,9 @@ class VentaGenericasComponent {
         if (event.params.data.tipo_venta === 0) return this.alert.info('No se pueden ver los estados de venta del sistema anterior.');
         this.estadosVentas(event);
         break;
+      case 'reporte':
+        this.reporteVenta(event);
+        break;
     }
   }
   /**
@@ -4011,6 +4021,27 @@ class VentaGenericasComponent {
         }
       });
     }
+  }
+  /**
+  * Esta funcion Genera un Reporte y lo muestra en una nueva pestaña
+  */
+  reporteVenta(event) {
+    const idVenta = event.params.data.idventa;
+    this._ventaGenericasService.reporteVenta(idVenta).subscribe(data => {
+      if (data.success) {
+        const reportePath = data.path;
+        if (this.pwaService.isPwa()) {
+          this.router.navigate(['/reporte', reportePath]);
+        } else {
+          const reporteUrl = `${environments_environment__WEBPACK_IMPORTED_MODULE_1__.environment.baseRest}/${reportePath}`;
+          window.open(reporteUrl, '_blank');
+        }
+      } else {
+        console.error('Error al generar el reporte');
+      }
+    }, error => {
+      console.error('Error en la solicitud del reporte', error);
+    });
   }
   ngOnDestroy() {
     this._searchService.unsubscribe();
@@ -4113,6 +4144,14 @@ class VentaGenericasService {
   constructor(http, _authService) {
     this.http = http;
     this._authService = _authService;
+  }
+  /**
+   *
+   * @param idventa
+   * @returns
+   */
+  reporteVenta(idventa) {
+    return this.http.get(`${environments_environment__WEBPACK_IMPORTED_MODULE_0__.environment.ventas.generar_reporte_venta}?idventa=` + idventa);
   }
   /**
    *

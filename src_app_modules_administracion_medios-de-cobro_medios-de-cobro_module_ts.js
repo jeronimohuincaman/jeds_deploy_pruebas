@@ -617,7 +617,7 @@ __webpack_require__.r(__webpack_exports__);
 
 function SaveComponent_fuse_alert_8_Template(rf, ctx) {
   if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](0, "fuse-alert", 30);
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](0, "fuse-alert", 31);
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](1);
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
   }
@@ -630,7 +630,7 @@ function SaveComponent_fuse_alert_8_Template(rf, ctx) {
 }
 function SaveComponent_mat_option_20_Template(rf, ctx) {
   if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](0, "mat-option", 31);
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](0, "mat-option", 32);
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](1);
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
   }
@@ -700,7 +700,8 @@ class SaveComponent {
       lleva_vencimiento: new _angular_forms__WEBPACK_IMPORTED_MODULE_11__.FormControl(this.medio_de_cobro ? this.medio_de_cobro.lleva_vencimiento : ''),
       lleva_fecha_emision: new _angular_forms__WEBPACK_IMPORTED_MODULE_11__.FormControl(this.medio_de_cobro ? this.medio_de_cobro.lleva_fecha_emision : ''),
       lleva_fecha_cobro: new _angular_forms__WEBPACK_IMPORTED_MODULE_11__.FormControl(this.medio_de_cobro ? this.medio_de_cobro.lleva_fecha_cobro : ''),
-      es_pagare: new _angular_forms__WEBPACK_IMPORTED_MODULE_11__.FormControl(this.medio_de_cobro ? this.medio_de_cobro.es_pagare : '')
+      es_pagare: new _angular_forms__WEBPACK_IMPORTED_MODULE_11__.FormControl(this.medio_de_cobro ? this.medio_de_cobro.es_pagare : ''),
+      es_bonificado: new _angular_forms__WEBPACK_IMPORTED_MODULE_11__.FormControl(this.medio_de_cobro ? this.medio_de_cobro.es_bonificado : '')
     });
   }
   /**
@@ -732,6 +733,7 @@ class SaveComponent {
         lleva_vencimiento: this.form.get('lleva_vencimiento').value ? 1 : 0,
         lleva_fecha_emision: this.form.get('lleva_fecha_emision').value ? 1 : 0,
         lleva_fecha_cobro: this.form.get('lleva_fecha_cobro').value ? 1 : 0,
+        es_bonificado: this.form.get('es_bonificado').value ? 1 : 0,
         es_pagare: this.form.get('es_pagare').value ? 1 : 0,
         duplica_numero: this.form.get('duplica_numero').value ? 1 : 0,
         lleva_banco: this.form.get('lleva_banco').value ? 1 : 0,
@@ -775,9 +777,9 @@ SaveComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_4__["�
     creadoExitosamente: "creadoExitosamente",
     editadoExitosamente: "editadoExitosamente"
   },
-  decls: 48,
+  decls: 50,
   vars: 12,
-  consts: [[1, "fixed", "inset-0", "bg-white", "dark:bg-slate-900", "shadow-lg", "overflow-hidden", "overflow-y-auto", "sm:rounded-2xl", "md:min-w-auto", "sm:w-auto", "sm:min-w-90", "flex-col", "flex", "sm:inset-auto", "max-h-screen", "sm:static"], [1, "w-full", "px-4", "py-4", "flex", "justify-between", "items-center"], [1, "text-white", "font-bold", "text-lg"], ["mat-icon-button", "", 3, "click"], [1, "text-white"], ["class", "fixed top-0 left-0 w-full flex justify-center items-center mt-8 alert-main z-99999", 3, "type", "appearance", 4, "ngIf"], [1, "form-menu", "p-4", 3, "formGroup"], [1, "flex", "flex-col", "w-full", "h-full", "p-4"], [1, "flex", "gap-4", "flex-col", "sm:flex-row"], ["appearance", "outline", 1, "w-full", "sm:w-1/2"], ["matInput", "", "formControlName", "descripcion"], ["appearance", "outline", 1, "w-full", "sm:w-1/3"], ["formControlName", "idfondo"], [3, "value", 4, "ngFor", "ngForOf"], ["appearance", "outline", 1, "w-full", "sm:w-1/5"], ["matInput", "", "formControlName", "porcentaje"], [1, "p-2", "m-2"], [1, "flex", "flex-wrap", "justify-between", "gap-2"], ["formControlName", "lleva_numero", 1, "flex-1", "min-w-[45%]", "md:min-w-[20%]"], ["formControlName", "lleva_vencimiento", 1, "flex-1", "min-w-[45%]", "md:min-w-[20%]"], ["formControlName", "lleva_banco", 1, "flex-1", "min-w-[45%]", "md:min-w-[20%]"], ["formControlName", "activo", 1, "flex-1", "min-w-[45%]", "md:min-w-[20%]"], [1, "flex", "flex-wrap", "justify-between", "gap-2", "mt-2"], ["formControlName", "lleva_fecha_cobro", 1, "flex-1", "min-w-[45%]", "md:min-w-[30%]"], ["formControlName", "lleva_fecha_emision", 1, "flex-1", "min-w-[45%]", "md:min-w-[30%]", "ml-5", "pl-1"], ["formControlName", "duplica_numero", 1, "flex-1", "min-w-[45%]", "md:min-w-[30%]"], ["formControlName", "es_pagare", 1, "flex-1", "min-w-[45%]", "md:min-w-[30%]"], [1, "w-full", "md:flex", "md:justify-center", "md:pb-6", "md:px-6", "mt-auto"], ["mat-raised-button", "", 1, "w-full", "rounded-none", "md:w-36", "md:rounded-lg", "py-8", "md:py-0", 3, "click"], [1, "text-white", "font-medium", "text-base"], [1, "fixed", "top-0", "left-0", "w-full", "flex", "justify-center", "items-center", "mt-8", "alert-main", "z-99999", 3, "type", "appearance"], [3, "value"]],
+  consts: [[1, "fixed", "inset-0", "bg-white", "dark:bg-slate-900", "shadow-lg", "overflow-hidden", "overflow-y-auto", "sm:rounded-2xl", "md:min-w-auto", "sm:w-auto", "sm:min-w-90", "flex-col", "flex", "sm:inset-auto", "max-h-screen", "sm:static"], [1, "w-full", "px-4", "py-4", "flex", "justify-between", "items-center"], [1, "text-white", "font-bold", "text-lg"], ["mat-icon-button", "", 3, "click"], [1, "text-white"], ["class", "fixed top-0 left-0 w-full flex justify-center items-center mt-8 alert-main z-99999", 3, "type", "appearance", 4, "ngIf"], [1, "form-menu", "p-4", 3, "formGroup"], [1, "flex", "flex-col", "w-full", "h-full", "p-4"], [1, "flex", "gap-4", "flex-col", "sm:flex-row"], ["appearance", "outline", 1, "w-full", "sm:w-1/2"], ["matInput", "", "formControlName", "descripcion"], ["appearance", "outline", 1, "w-full", "sm:w-1/3"], ["formControlName", "idfondo"], [3, "value", 4, "ngFor", "ngForOf"], ["appearance", "outline", 1, "w-full", "sm:w-1/5"], ["matInput", "", "formControlName", "porcentaje"], [1, "p-2", "m-2"], [1, "flex", "flex-wrap", "justify-between", "gap-2"], ["formControlName", "lleva_numero", 1, "flex-1", "min-w-[45%]", "md:min-w-[20%]"], ["formControlName", "lleva_vencimiento", 1, "flex-1", "min-w-[45%]", "md:min-w-[20%]"], ["formControlName", "lleva_banco", 1, "flex-1", "min-w-[45%]", "md:min-w-[20%]"], ["formControlName", "activo", 1, "flex-1", "min-w-[45%]", "md:min-w-[20%]"], [1, "flex", "flex-wrap", "justify-between", "gap-2", "mt-2"], ["formControlName", "lleva_fecha_cobro", 1, "flex-1", "min-w-[45%]", "md:min-w-[30%]"], ["formControlName", "lleva_fecha_emision", 1, "flex-1", "min-w-[45%]", "md:min-w-[30%]", "ml-5", "pl-1"], ["formControlName", "duplica_numero", 1, "flex-1", "min-w-[45%]", "md:min-w-[30%]"], ["formControlName", "es_pagare", 1, "flex-1", "min-w-[45%]", "md:min-w-[30%]"], ["formControlName", "es_bonificado", 1, "flex-1", "min-w-[45%]", "md:min-w-[30%]"], [1, "w-full", "md:flex", "md:justify-center", "md:pb-6", "md:px-6", "mt-auto"], ["mat-raised-button", "", 1, "w-full", "rounded-none", "md:w-36", "md:rounded-lg", "py-8", "md:py-0", 3, "click"], [1, "text-white", "font-medium", "text-base"], [1, "fixed", "top-0", "left-0", "w-full", "flex", "justify-center", "items-center", "mt-8", "alert-main", "z-99999", 3, "type", "appearance"], [3, "value"]],
   template: function SaveComponent_Template(rf, ctx) {
     if (rf & 1) {
       _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](0, "div", 0)(1, "div", 1)(2, "span", 2);
@@ -830,13 +832,16 @@ SaveComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_4__["�
       _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
       _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](42, "mat-checkbox", 26);
       _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](43, "Es Pagar\u00E9");
+      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
+      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](44, "mat-checkbox", 27);
+      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](45, "Es Bonificado");
       _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]()()()()();
-      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](44, "div", 27)(45, "button", 28);
-      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵlistener"]("click", function SaveComponent_Template_button_click_45_listener() {
+      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](46, "div", 28)(47, "button", 29);
+      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵlistener"]("click", function SaveComponent_Template_button_click_47_listener() {
         return ctx.onSubmit();
       });
-      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](46, "span", 29);
-      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](47, "Guardar");
+      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](48, "span", 30);
+      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](49, "Guardar");
       _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]()()()();
     }
     if (rf & 2) {
@@ -851,7 +856,7 @@ SaveComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_4__["�
       _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵproperty"]("formGroup", ctx.form);
       _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](11);
       _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵproperty"]("ngForOf", ctx.fondos);
-      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](25);
+      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](27);
       _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵclassMap"](ctx.color_primario ? "" : ctx.default_color);
       _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵstyleProp"]("background-color", ctx.color_primario || "");
     }
